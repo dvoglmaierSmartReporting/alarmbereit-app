@@ -1,6 +1,0 @@
-Kivy==2.3.0
-├── Kivy-Garden [required: >=0.1.4, installed: 0.1.5]
-│   └── requests [required: Any, installed: 2.31.0]
-│       ├── certifi [required: >=2017.4.17, installed: 2023.11.17]
-│       └── urllib3 [required: >=1.21.1,<3, installed: 2.1.0]
-└── Pygments [required: Any, installed: 2.17.2]

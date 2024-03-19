@@ -8,7 +8,7 @@
 /testing.ipynb
 
 # buildozer
-.buildozer
+/app/.buildozer
 
 # built .apk files
-*.apk
+/app/bin/*.apk
