@@ -9,3 +9,6 @@
 
 # buildozer
 .buildozer
+
+# built .apk files
+*.apk
