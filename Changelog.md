@@ -15,11 +15,25 @@
     - Restliche Felder unverändert
     - Nächste Frage nach 2 s cooldown
 
+-------------------------------------------------------------------------
+
 # version 1.0
 1. Hauptmenü mit App Titel
 2. logo und bild
 3. Tank1 hinzufügen, Fahrzeugname einblenden
+    - technically: yaml is source of truth! (helper to create dict)
 4. erster Teil Bewerbsfragen hinzufügen
+
+bugfixes:
+- mehrfach korrekte Antworten
+- Abstand zw MR und G1&G2
+- Zeilenumbruch bei FK Fragen string
+
+
+
+-------------------------------------------------------------------------
+
+
 
 # version 1.1
 1. Game modus hinzufügen

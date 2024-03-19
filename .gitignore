@@ -1,7 +1,6 @@
 # local backup files
 /FA1000*.py
 /feuerwehr*.kv
-/feuerwehr_tools_storage.yaml
 
 # local testing
 /sandbox.py
