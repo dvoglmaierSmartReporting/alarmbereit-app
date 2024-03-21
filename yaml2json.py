@@ -1,13 +1,15 @@
+#!/usr/bin/env python3
+
 import yaml
 import json
 
 
-def yaml_to_json():
+def yaml_to_json(source_file_path: str, function_name: str) -> str:
 
     # choose indent tabs
     ind = 1
 
-    with open("feuerwehr_tools_storage.yaml", "r") as f:
+    with open(source_file_path, "r") as f:
         try:
             parsed_yaml = yaml.safe_load(f)
 
@@ -22,18 +24,25 @@ def yaml_to_json():
     )
 
     # assemble python function as string
-    output = (
-        " " * 4 * (ind - 1)
-        + "def load_total_storage():\n"
-        + " " * 4 * ind
-        + "total_storage = {\n"
-    )
+    output = f"{' ' * 4 * (ind - 1)}def {function_name}():\n{' ' * 4 * ind}return {{\n"
     output += indented_json_output
-    output += "\n\n" + " " * 4 * ind + "return total_storage"
 
     return output
 
 
-if __name__ == "__main__":
+def main() -> None:
+    with open("./app/helper/firetrucks.py", "w") as f:
+        # todo: validate input data!
+        f.write(yaml_to_json("./feuerwehr_tools_storage.yaml", "load_total_storage"))
 
-    print(yaml_to_json())
+    with open("./app/helper/competitions.py", "w") as f:
+        # todo: validate input data!
+        f.write(
+            yaml_to_json(
+                "./feuerwehr_competition_questions.yaml", "load_total_competition_questions"
+            )
+        )
+
+
+if __name__ == "__main__":
+    main()

@@ -1,5 +1,5 @@
 def load_total_storage():
-    total_storage = {
+    return {
         "Rüst+Lösch": {
             "Mannschaftsraum": [
                 "Winkerkelle",
@@ -209,12 +209,74 @@ def load_total_storage():
         },
         "Tank1": {
             "Mannschaftsraum": [
-                "Handfunkgerät"
+                "Handfunkgerät",
+                "Winkerkelle",
+                "Wärmebildkamera"
             ],
             "G1": [
+                "Überdruckbelüfter",
+                "Motorsäge"
+            ],
+            "G2": [
+                "Stromerzeuger",
+                "Schaufeltrage"
+            ],
+            "G3": [
+                "Schaummittelkanister"
+            ],
+            "G4": [
+                "Türöffnungswerkzeug",
+                "Verkehrsleitkegel"
+            ],
+            "G5": [
+                "Druckschlauch B",
+                "Druckschlauch C",
+                "Hohlstrahlrohr"
+            ],
+            "G6": [
+                "Druckschlauch C",
+                "Druckschlauch B",
+                "Feuerlöscher"
+            ],
+            "Heck": [
                 "Handfunkgerät"
+            ],
+            "Dach": [
+                "Einreißhaken",
+                "Hackenleiter",
+                "Kombileiter",
+                "Heugabel",
+                "Dunggabel",
+                "Breithaue",
+                "Feuerwehrpatschen",
+                "Schlauchbrücke",
+                "Krampen",
+                "Fassschaufel",
+                "Randschaufel",
+                "Sappine",
+                "Spaten",
+                "Notfalltank"
+            ]
+        },
+        "Leiter": {
+            "Mannschaftsraum": [
+                "Distanzmessgerät"
+            ],
+            "G1": [
+                "links"
+            ],
+            "G2": [
+                "rechts"
+            ],
+            "G3": [
+                "test"
+            ],
+            "G4": [
+                "test2"
+            ],
+            "Dach": [
+                "Wasserwerfer",
+                "Trage"
             ]
         }
     }
-
-    return total_storage

@@ -1,6 +1,7 @@
 # local backup files
 /FA1000*.py
 /feuerwehr*.kv
+backup*.kv
 
 # local testing
 /sandbox.py
