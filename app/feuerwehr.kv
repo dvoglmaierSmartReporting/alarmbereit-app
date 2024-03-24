@@ -111,18 +111,17 @@
         on_release:
             app.root.current = "startmenu"
             root.manager.transition.direction = "right"
-    
-    BoxLayout:
+
+    # BoxLayout:
+    GridLayout:
         #id: bewerbe_layout
         size_hint: 1, 0.9
-        orientation: 'vertical'
+        #orientation: 'vertical'
         spacing: "5dp"
-#        on_release:
-#            app.root.current = "bewerbgame"
-#            root.manager.transition.direction = "left"
+        cols: 1
 
         Button:
-            text: "Funk"
+            text: "Funk Bronze"
             font_size: "32sp"
             on_release:
                 app.root.current = "bewerbgame"
@@ -130,11 +129,21 @@
                 root.manager.get_screen('bewerbgame').select_competition(self.text)
                 root.manager.get_screen('bewerbgame').play()
 
+        Button:
+            text: "Funk Silber"
+            font_size: "32sp"
+            disabled: True
+
+        Button:
+            text: "Funk Gold"
+            font_size: "32sp"
+            disabled: True
+
 
 <FahrzeugkundeGame>:
     name: "fahrzeugkundegame"
-    question_label: question_label
-    answers_layout: answers_layout
+    tool_label: tool_label
+    rooms_layout: rooms_layout
     mannschaftsraum_layout: mannschaftsraum_layout
 
     Button:
@@ -151,7 +160,7 @@
         orientation: 'vertical'
 
         Label:
-            id: question_label
+            id: tool_label
             size_hint: 1, 0.15
             font_size: "25sp"
 
@@ -170,7 +179,7 @@
                 size_hint: 1, 0.003
             
             GridLayout:
-                id: answers_layout
+                id: rooms_layout
                 size_hint: 1, 0.797
                 spacing: "3dp"
                 cols: 2
@@ -178,9 +187,10 @@
 
 <BewerbGame>:
     name: "bewerbgame"
-    #question_label: question_label
-    #answers_layout: answers_layout
-    #mannschaftsraum_layout: mannschaftsraum_layout
+    question_label: question_label
+    question_id_label: question_id_label
+    answer_label: answer_label
+    # answers_layout: answers_layout  # multiple-choice
 
     Button:
         text: "<"
@@ -192,4 +202,41 @@
             app.root.current = "bewerbmenu"
             root.manager.transition.direction = "right"
 
+    Label:
+        id: question_id_label
+        font_size: "32sp"
+        size_hint: None, None
+        size: "50dp", "50dp"
+        pos_hint: {'right': 1, 'top': 1}
+
+    BoxLayout:
+        orientation: 'vertical'
+
+        Label:
+            id: question_label
+            size_hint: 1, 0.425
+            font_size: "35sp"
+        
+        Label:
+            id: answer_label
+            size_hint: 1, 0.425
+            font_size: "35sp"
+
+        GridLayout:
+            id: rooms_layout
+            size_hint: 1, 0.15
+            spacing: "3dp"
+            cols: 2
     
+            Button:
+                text: "Lösung"
+                font_size: "32sp"
+                on_release:
+                    root.manager.get_screen('bewerbgame').reveal_answer()
+    
+            Button:
+                text: "Nächste"
+                font_size: "32sp"
+                on_release:
+                    root.manager.get_screen('bewerbgame').next_question()
+        
