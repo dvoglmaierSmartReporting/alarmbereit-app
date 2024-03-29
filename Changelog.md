@@ -17,7 +17,7 @@
 
 -------------------------------------------------------------------------
 
-# version 1.0
+# version 0.2
 1. Hauptmenü mit App Titel
 2. logo und bild
 3. Tank1 hinzufügen, Fahrzeugname einblenden

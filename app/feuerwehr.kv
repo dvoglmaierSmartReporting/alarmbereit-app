@@ -1,12 +1,5 @@
 #:kivy 2.3.0
 
-#
-#WindowManager:
-#    StartMenu:
-#    FahrzeugkundeMenu:
-#    BewerbMenu:
-#    FeuerwehrGame:
-
 <StartMenu>:
     name: "startmenu"
 
@@ -51,7 +44,7 @@
 
 <FahrzeugkundeMenu>:
     name: "fahrzeugkundemenu"
-    #firetrucks_layout: firetrucks_layout
+    firetrucks_layout: firetrucks_layout
 
     Button:
         text: "<"
@@ -64,43 +57,15 @@
             root.manager.transition.direction = "right"
 
     BoxLayout:
-        #id: firetrucks_layout
+        id: firetrucks_layout
         size_hint: 1, 0.9
         orientation: 'vertical'
         spacing: "5dp"
 
-        Button:
-            text: "Rüst+Lösch"
-            font_size: "32sp"
-            on_release:
-                app.root.current = "fahrzeugkundegame"
-                root.manager.transition.direction = "left"
-                root.manager.get_screen('fahrzeugkundegame').select_firetruck(self.text)
-                root.manager.get_screen('fahrzeugkundegame').play()
-
-        Button:
-            text: "Tank1"
-            font_size: "32sp"
-            on_release:
-                app.root.current = "fahrzeugkundegame"
-                root.manager.transition.direction = "left"
-                root.manager.get_screen('fahrzeugkundegame').select_firetruck(self.text)
-                root.manager.get_screen('fahrzeugkundegame').play()
-
-        Button:
-            text: "Leiter"
-            font_size: "32sp"
-            on_release:
-                app.root.current = "fahrzeugkundegame"
-                root.manager.transition.direction = "left"
-                root.manager.get_screen('fahrzeugkundegame').select_firetruck(self.text)
-                root.manager.get_screen('fahrzeugkundegame').play()
-
-
 <BewerbMenu>:
     name: "bewerbmenu"
     #orientation: "vertical"
-    #bewerbe_layout: bewerbe_layout
+    bewerbe_layout: bewerbe_layout
 
     Button:
         text: "<"
@@ -114,37 +79,17 @@
 
     # BoxLayout:
     GridLayout:
-        #id: bewerbe_layout
+    # Scroll
+        id: bewerbe_layout
         size_hint: 1, 0.9
         #orientation: 'vertical'
         spacing: "5dp"
         cols: 1
 
-        Button:
-            text: "Funk Bronze"
-            font_size: "32sp"
-            on_release:
-                app.root.current = "bewerbgame"
-                root.manager.transition.direction = "left"
-                root.manager.get_screen('bewerbgame').select_competition(self.text)
-                root.manager.get_screen('bewerbgame').play()
-
-        Button:
-            text: "Funk Silber"
-            font_size: "32sp"
-            disabled: True
-
-        Button:
-            text: "Funk Gold"
-            font_size: "32sp"
-            disabled: True
-
-
 <FahrzeugkundeGame>:
     name: "fahrzeugkundegame"
     tool_label: tool_label
     rooms_layout: rooms_layout
-    mannschaftsraum_layout: mannschaftsraum_layout
 
     Button:
         text: "<"
@@ -164,26 +109,11 @@
             size_hint: 1, 0.15
             font_size: "25sp"
 
-        BoxLayout:
-            orientation: 'vertical'
-            size_hint: 1, 0.85
-
-            BoxLayout:
-                id: mannschaftsraum_layout
-                orientation: 'vertical'
-                size_hint: 1, 0.2
-            
-            BoxLayout:
-                id: spacer
-                orientation: 'vertical'
-                size_hint: 1, 0.003
-            
-            GridLayout:
-                id: rooms_layout
-                size_hint: 1, 0.797
-                spacing: "3dp"
-                cols: 2
-
+        GridLayout:
+            id: rooms_layout
+            size_hint: 1, 0.797
+            spacing: "3dp"
+            cols: 2
 
 <BewerbGame>:
     name: "bewerbgame"
@@ -205,8 +135,10 @@
     Label:
         id: question_id_label
         font_size: "32sp"
+        halign: "right"
         size_hint: None, None
-        size: "50dp", "50dp"
+        size: "500dp", "50dp"
+        text_size: self.width, None
         pos_hint: {'right': 1, 'top': 1}
 
     BoxLayout:

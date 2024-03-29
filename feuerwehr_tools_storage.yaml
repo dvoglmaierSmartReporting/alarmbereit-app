@@ -1,5 +1,11 @@
 Rüst+Lösch:
-  Mannschaftsraum:
+  Fahrer:
+    - Handfunkgerät
+    - Gasmessgerät
+    - Nüssler Gefahrguthelfer
+    - PAX-Meldertasche
+    - Auto-Öffnungswerkzeug
+  Mannschaft:
     - Winkerkelle
     - Handfunkgerät
     - Warnzeichen "Feuerwehr"
@@ -27,10 +33,6 @@ Rüst+Lösch:
     - Leichensack
     - Trainingsanzug
     - Handtuch
-    - Gasmessgerät
-    - Nüssler Gefahrguthelfer
-    - PAX-Meldertasche
-    - Auto-Öffnungswerkzeug
     - Euro-Blitz Leuchte
   G1:
     - Spinboard
@@ -197,7 +199,9 @@ Rüst+Lösch:
     - Schachtabdeckung
 
 Tank1:
-  Mannschaftsraum:
+  Fahrer:
+    - Handfunkgerät
+  Mannschaft:
     - Handfunkgerät
     - Winkerkelle
     - Wärmebildkamera
@@ -239,7 +243,7 @@ Tank1:
     - Notfalltank
 
 Leiter:
-  Mannschaftsraum:
+  Fahrer:
     - Distanzmessgerät
   G1:
     - links

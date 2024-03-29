@@ -12,3 +12,6 @@ backup*.kv
 
 # built .apk files
 /app/bin/*.apk
+
+# documents
+/documents

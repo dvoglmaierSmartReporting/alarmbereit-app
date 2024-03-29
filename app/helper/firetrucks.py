@@ -1,7 +1,14 @@
 def load_total_storage():
     return {
         "Rüst+Lösch": {
-            "Mannschaftsraum": [
+            "Fahrer": [
+                "Handfunkgerät",
+                "Gasmessgerät",
+                "Nüssler Gefahrguthelfer",
+                "PAX-Meldertasche",
+                "Auto-Öffnungswerkzeug"
+            ],
+            "Mannschaft": [
                 "Winkerkelle",
                 "Handfunkgerät",
                 "Warnzeichen \"Feuerwehr\"",
@@ -29,10 +36,6 @@ def load_total_storage():
                 "Leichensack",
                 "Trainingsanzug",
                 "Handtuch",
-                "Gasmessgerät",
-                "Nüssler Gefahrguthelfer",
-                "PAX-Meldertasche",
-                "Auto-Öffnungswerkzeug",
                 "Euro-Blitz Leuchte"
             ],
             "G1": [
@@ -208,7 +211,10 @@ def load_total_storage():
             ]
         },
         "Tank1": {
-            "Mannschaftsraum": [
+            "Fahrer": [
+                "Handfunkgerät"
+            ],
+            "Mannschaft": [
                 "Handfunkgerät",
                 "Winkerkelle",
                 "Wärmebildkamera"
@@ -259,7 +265,7 @@ def load_total_storage():
             ]
         },
         "Leiter": {
-            "Mannschaftsraum": [
+            "Fahrer": [
                 "Distanzmessgerät"
             ],
             "G1": [
