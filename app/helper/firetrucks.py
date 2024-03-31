@@ -1,17 +1,19 @@
 def load_total_storage():
     return {
         "Rüst+Lösch": {
-            "Fahrer": [
+            "Fahrer/GK": [
                 "Handfunkgerät",
                 "Gasmessgerät",
                 "Nüssler Gefahrguthelfer",
                 "PAX-Meldertasche",
-                "Auto-Öffnungswerkzeug"
+                "Auto-Öffnungswerkzeug",
+                "Pressluftatmer",
+                "Vollmaske f. Pressluftatmer"
             ],
             "Mannschaft": [
-                "Winkerkelle",
+                "Anhaltekelle",
                 "Handfunkgerät",
-                "Warnzeichen \"Feuerwehr\"",
+                "Warndreieck \"Feuerwehr\"",
                 "Rettungsleine",
                 "FW-Gurt",
                 "Notrettungsset",
@@ -22,14 +24,14 @@ def load_total_storage():
                 "Alu-Rettungsdecke",
                 "Wolldecke",
                 "Pressluftatmer",
-                "Reserveflasche",
                 "Vollmaske f. Pressluftatmer",
+                "Reserveflasche",
                 "Totmannwarner",
-                "Brandfluchthauben",
+                "Brandfluchthaube",
                 "Wärmebildkamera",
-                "FW-Handschuhe",
-                "Hochsichtbare Warnbekleidung",
-                "Handlampe Adalite",
+                "Schutzhandschuhe",
+                "Hochsichtbare Überwurfweste",
+                "Handlampe",
                 "Respihood",
                 "Kühlbox",
                 "Tragetuch",
@@ -51,7 +53,7 @@ def load_total_storage():
                 "Brechstange lang 1,5 m",
                 "Feuerwehraxt",
                 "Halligantool",
-                "Piassavabesen",
+                "Piassava-Besen",
                 "Fassschaufel",
                 "Aluminium Randschaufel",
                 "Krampen",
@@ -128,11 +130,11 @@ def load_total_storage():
                 "Schlauchtragekorb",
                 "Druckschlauch C",
                 "Hohlstrahlrohr C",
-                "D-Saugschlauch f. Zumischer",
+                "Saugschlauch D f. Zumischer",
                 "Schaummittelkanister",
                 "Zumischer Z2",
                 "Kombischaumrohr K2",
-                "Mobiler Rauchverschluss",
+                "Rauchvorhang",
                 "Arbeitsleine"
             ],
             "G4": [
@@ -171,13 +173,13 @@ def load_total_storage():
                 "Übergangsstück A125-A",
                 "Übergangsstück B-C",
                 "Überflurhydrantenschlüssel",
-                "C-Hydroschild",
-                "Tauchpumpen",
+                "Hydroschild C",
+                "Tauchpumpe",
                 "Blindkupplungen f. Ölsperre",
                 "Druckschlauch C"
             ],
             "G6": [
-                "Schneekette",
+                "Schneeketten",
                 "Kunststoffeimer",
                 "Löschdecke inkl. Beutel",
                 "CAFS Löscher 10 l",
@@ -211,45 +213,196 @@ def load_total_storage():
             ]
         },
         "Tank1": {
-            "Fahrer": [
-                "Handfunkgerät"
+            "Fahrer/GK": [
+                "Handfunkgerät",
+                "Gasmessgerät",
+                "Reserveakku f. Akkugeräte",
+                "Heumessgerät-Anzeige",
+                "Schlüsselset",
+                "Hinweiszettel Lift",
+                "Dreieck-Schlüssel",
+                "Handlampe",
+                "FFP2-Mask",
+                "Pressluftatmer",
+                "Vollmaske f. Pressluftatmer",
+                "Suchscheinwerfer",
+                "Einweghandschuhe"
             ],
             "Mannschaft": [
                 "Handfunkgerät",
-                "Winkerkelle",
-                "Wärmebildkamera"
+                "Schutzhandschuhe",
+                "Handbeil",
+                "Trainingsanzug",
+                "Handtuch",
+                "Warnzeichen \"Feuerwehr\"",
+                "Handscheinwerfer Warnlichthaube \"orange\"",
+                "FW-Gurt",
+                "Warnüberwurf",
+                "Reserveflasche",
+                "Ladekabel 10 m",
+                "Kippstange",
+                "Starterkabel",
+                "Filteratemschutz",
+                "Reservemaske",
+                "Rettungsleine",
+                "Wärmebildkamera",
+                "Handlampe",
+                "Pressluftatmer",
+                "Vollmaske f. Pressluftatmer",
+                "TNT-Tool",
+                "Erste-Hilfe-Koffer",
+                "Anhaltekelle",
+                "Decke",
+                "Tragetuch",
+                "Notrettungsset",
+                "Fluchthaube"
             ],
             "G1": [
-                "Überdruckbelüfter",
-                "Motorsäge"
+                "Elektrokettensäge",
+                "Kombikanister",
+                "Forsthelm",
+                "Schnittschutzbeinlinge",
+                "Motorkettensäge",
+                "Rettungssäge",
+                "Drucklüfter",
+                "Schneeketten",
+                "Waldbrandrucksack",
+                "Tauchpumpe",
+                "Abschleppseil",
+                "Stahlseil 5 m",
+                "Schäkel",
+                "Handfasspumpe",
+                "Pressluftschläuche",
+                "Pressluftschlauchgerät",
+                "Benzinkanister",
+                "Dieselkanister"
             ],
             "G2": [
-                "Stromerzeuger",
-                "Schaufeltrage"
+                "Deckelabzieher",
+                "Einbruchwerkzeug",
+                "Schaufeltrage",
+                "Krankentrage",
+                "Fluterbrücke",
+                "Fluter 1500 W",
+                "Schlüssel f. Trennschleifer",
+                "Stahlblecheimer",
+                "Kunststoffeimer",
+                "Schleifringkabeltrommel",
+                "Kabeltrommel 230/400 V",
+                "Lichtmaststeuerung",
+                "Verlängerungskabel",
+                "Abgasschlauch",
+                "Hacke",
+                "Schachthaken",
+                "Elektrowerkzeugsatz",
+                "Handhammer",
+                "Fassschlüssel",
+                "Zimmermannshammer",
+                "Trichter",
+                "Schutzbrille",
+                "Staubmaske",
+                "Werkzeugkiste",
+                "Stockschlüsselsatz",
+                "Verzurreinrichtung f. Stativ",
+                "Stromerzeuger 14 kVA",
+                "Absperrschlüssel f. Gas",
+                "Absperrschlüssel f. Hauswasser",
+                "Brechstange",
+                "Straßenbesen",
+                "Bolzenschneider",
+                "Feuerwehraxt",
+                "Vorschlaghammer",
+                "Randschaufel",
+                "Hacke lang",
+                "Brecheisen",
+                "Elektrorettungshaken"
             ],
             "G3": [
-                "Schaummittelkanister"
+                "Schaumrohr",
+                "Schaummittel",
+                "Netzmittel",
+                "Zumischer",
+                "Saugschlauch D",
+                "Flammschutzbekleidung",
+                "Hitzeschutzhaube",
+                "Schaum-Pumpenvormischer"
             ],
             "G4": [
-                "Türöffnungswerkzeug",
-                "Verkehrsleitkegel"
+                "Verkehrsleitkegel",
+                "Bodenteller f. Absperrstangen",
+                "Masken/Filter Zellstofffabrik",
+                "Fognail",
+                "Türöffnungskoffer",
+                "Absperrband",
+                "Schutzanzug Unterbekleidung",
+                "Chemieschutzanzug",
+                "Bogensäge",
+                "Arbeitsleine",
+                "Säureschutzhandschuhe",
+                "Schnürleine",
+                "Dekowanne",
+                "Müllsack",
+                "Kanalabdeckung",
+                "PE-Plane 4 x 4 m",
+                "Kunststofffolie 4 x 4 m",
+                "Absperrstangen"
             ],
             "G5": [
                 "Druckschlauch B",
-                "Druckschlauch C",
-                "Hohlstrahlrohr"
+                "Druckschlauch C42",
+                "Schlauchpaket",
+                "Verteiler CBC",
+                "Flankierer",
+                "Hohlstrahlrohr",
+                "Stützkrümmer",
+                "Mehrzweckstrahlrohr B",
+                "Hydrantenschlüssel",
+                "Übergangsstück A-B",
+                "Übergangsstück A-A125",
+                "ABC-Kupplungsschlüssel",
+                "Übergangsstück B-C",
+                "Hydroschild C",
+                "Druckbegrenzungsventil",
+                "Sammelstück",
+                "Schlauchtragekorb",
+                "Rauchvorhang",
+                "Schlauchhalter",
+                "Schlauchbinden"
             ],
             "G6": [
-                "Druckschlauch C",
+                "Löschdecke",
                 "Druckschlauch B",
-                "Feuerlöscher"
+                "Druckschlauch HD",
+                "Kaminkehrer Werkzeug",
+                "Schlauch f. Schaumaufsatz Wasserwerfer",
+                "Wasserwerfer",
+                "Schaumaufsatz f. Wasserwerfer",
+                "Sammelstück BBB-A",
+                "Fettbrandlöscher",
+                "ABC-Pulverlöscher",
+                "Hydrofix",
+                "CO2 Löscher",
+                "Metallbrand Pulverlöscher",
+                "HD Kupplungsschlüssel",
+                "Notkurbel f. Haspel",
+                "HD Pistolenstrahlrohr",
+                "Fahrzeug Unterlegkeile"
             ],
             "Heck": [
-                "Handfunkgerät"
+                "Handfunkgerät",
+                "ABC-Kupplungsschlüssel",
+                "HD-Rohr",
+                "Löschlanze",
+                "Atemschutzüberwachung",
+                "Heumessgerät"
             ],
             "Dach": [
+                "Steckleiter",
+                "Schiebeleiter",
+                "Monsunrohr",
+                "Rettungsring",
                 "Einreißhaken",
-                "Hackenleiter",
+                "Hakenleiter",
                 "Kombileiter",
                 "Heugabel",
                 "Dunggabel",
@@ -261,28 +414,275 @@ def load_total_storage():
                 "Randschaufel",
                 "Sappine",
                 "Spaten",
-                "Notfalltank"
+                "Notfalltank",
+                "Auffangbehälter",
+                "Besen",
+                "Axt"
             ]
         },
         "Leiter": {
-            "Fahrer": [
-                "Distanzmessgerät"
+            "Mannschaft": [
+                "Hochsichtbare Überwurfweste",
+                "Anhaltekelle",
+                "Meldertasche",
+                "Einweghandschuhe",
+                "Handscheinwerfer",
+                "Warnlichthaube f. Handscheinwerfer",
+                "Handlampe",
+                "Handfunkgerät",
+                "Mobilfunkgerät",
+                "Suchscheinwerfer",
+                "Arbietsmesser",
+                "Verbandskasten",
+                "Pannendreieck",
+                "Entfernungsmesser",
+                "Schutzhandschuhe",
+                "Schlüssel"
             ],
             "G1": [
-                "links"
+                "Baufolie 4 x 4 m",
+                "Korbtrage",
+                "Schaufeltrage",
+                "Schnittschutzhelm",
+                "Schnittschutzhose",
+                "Schnittschutzjacke",
+                "E-Motorsäge",
+                "Ersatzkette f. Motorsäge",
+                "Ölkanister",
+                "Bogensäge",
+                "Halligantool",
+                "FW-Doppelaxt",
+                "Hacke kurz",
+                "Handhammer 2 kg",
+                "Krankentrage 2-teilig",
+                "Schwerlastaufnahme",
+                "Arbeitsleine",
+                "Schnürleine",
+                "Sturmleine",
+                "Reifenfüllschlauch",
+                "KFZ Werkzeug",
+                "KFZ Starthilfekabel"
             ],
             "G2": [
-                "rechts"
+                "Notrettungsset",
+                "Basisausrüstung z. Halten v. Personen",
+                "Rettungsdecke",
+                "Rettungsleine 30 m",
+                "Pressluftatmer",
+                "Vollmaske f. Pressluftatmer",
+                "Reserveflasche",
+                "Brandfluchthaube",
+                "Safty Peak"
             ],
             "G3": [
-                "test"
+                "ABC Kupplungsschlüssel",
+                "Druckschlauch B75 25 m orange",
+                "Druckschlauch B75 20 m",
+                "Druckschlauch C52 15 m",
+                "Schlauchbinde C52",
+                "Schlauchbinde B75",
+                "Gurtschlauchhalter",
+                "Druckbegrenzungsventil",
+                "Überflurhydrantenschlüssel",
+                "Übergangsstück B75-C52",
+                "Verteiler B-CBC",
+                "Flankierer",
+                "Schlauchträger",
+                "Schlauchbrücke"
             ],
             "G4": [
-                "test2"
+                "Flutlichtscheinwerfer 1000 W",
+                "Dreibeinstativ",
+                "Kabeltrommel 230 V",
+                "Sprungpolster",
+                "Rollgliss",
+                "Werkzeugsatz i. Trage",
+                "Absturzsicherungsgerät",
+                "Verbindungsmittel 15 Vario",
+                "FW-Gurt"
+            ],
+            "G5": [
+                "Löschdecke",
+                "ABC Pulverlöscher",
+                "Verkehrsleitkegel",
+                "Warndreieck \"Feuerwehr\"",
+                "Absperrband"
+            ],
+            "G6": [
+                "Schäkel 6,5 t",
+                "Abschleppseil",
+                "Wagenheber 10 t",
+                "Schneeketten",
+                "Kanister",
+                "Einfüllstutzen"
             ],
             "Dach": [
-                "Wasserwerfer",
+                "Wenderohr",
                 "Trage"
+            ]
+        },
+        "Tank2": {
+            "Fahrer/GK": [
+                "Pressluftatmer",
+                "Vollmaske f. Pressluftatmer",
+                "Wärmebildkamera",
+                "Handlampe",
+                "Personen-Sicherungsset",
+                "Handfunkgerät",
+                "Gasmessgerät"
+            ],
+            "Mannschaft": [
+                "Nothammer",
+                "Pannendreieck",
+                "Fahrzeugwerkzeug",
+                "Pressluftatmer",
+                "Vollmaske f. Pressluftatmer",
+                "Reserveflasche",
+                "Schutzhandschuhe",
+                "Arbeitsmesser",
+                "Verbandskaste",
+                "Bergetuch",
+                "Rettungsleine",
+                "Steigergurt",
+                "Meldertasche",
+                "Handlampe",
+                "Anhaltekelle",
+                "Signaltaschenlampe",
+                "Suchscheinwerfer",
+                "Warndreieck \"Feuerwehr\"",
+                "Absperrband",
+                "Einweghandschuhe"
+            ],
+            "G1": [
+                "Faltbehälter 3000 l",
+                "Spiralluton",
+                "Wasserwerfer",
+                "Hydrofix",
+                "Tauchpumpe",
+                "Verlängerungskabel",
+                "Be- u. Entlüftungsgerät"
+            ],
+            "G2": [
+                "Hacke langstielig",
+                "Hacke kurzstielig",
+                "Hammer 2 kg",
+                "Rauchfangschlüsselsatz",
+                "Schachthakensatz",
+                "Bogensäge",
+                "Schnittschutzhose",
+                "Motorkettensäge",
+                "Treibstoff-Ölkanister",
+                "Werkzeugkiste",
+                "Lichtfluter 1000 W",
+                "Flutbrücke",
+                "KSA 20 m. Stromverteiler",
+                "E-Werkzeug",
+                "Kabeltrommel 230 V",
+                "Generator 8 kVA",
+                "Lichtmastbetätigung",
+                "Haue",
+                "Stativ",
+                "Abgasschlauch",
+                "Hammer 5 kg",
+                "Brechstange",
+                "Sappine",
+                "Mistgabel",
+                "Heugabel",
+                "Ausräumhaken",
+                "Piassava-Besen",
+                "Flachschaufel",
+                "Stichschaufel",
+                "Trassenband",
+                "Bolzenschneider",
+                "Krampe",
+                "Feuerwehraxt"
+            ],
+            "G3": [
+                "Feuerlöscher",
+                "Kaminkehrerwerkzeug",
+                "Sammelstück BBB-A",
+                "Hitzeschutzanzug",
+                "Schutzanzug Schutzstufe 2",
+                "Robisrohr m. Schlauch",
+                "Hydroschild C",
+                "Hydroschild B"
+            ],
+            "G4": [
+                "Druckschlauch B",
+                "Ölbindemittel",
+                "Gummistiefel m. Stiefelsocken",
+                "Seilstropp verz.",
+                "Abschleppseil",
+                "E-Gummimatte",
+                "Plastikfolie",
+                "Arbeitsleine",
+                "Schnürleine"
+            ],
+            "G5": [
+                "Druckschlauch C42",
+                "Hohlstrahlrohr C",
+                "Verteiler B-CBC",
+                "Kupplungsschlüssel",
+                "Übergangsstück B-C",
+                "Strahlrohr B m. Stützkrümmer",
+                "Stützkrümmer",
+                "Strahlrohr B",
+                "Einlaufkrümmer B",
+                "Druckbegrenzungsventil",
+                "Flankierer",
+                "Sammelstück BB-A",
+                "Schlauchtragekorb",
+                "Schaumrohr",
+                "Zumischer Z2/Z4"
+            ],
+            "G6": [
+                "Benzinkanister",
+                "Dieselkanister",
+                "Einfüllstutzen",
+                "Hochdruckhaspel m. Pistole",
+                "Druckschlauch HD",
+                "Druckschlauch B",
+                "Schlauchbrücke",
+                "Fahrzeug Unterlegkeile"
+            ],
+            "Heck": [
+                "Übergangsstück B-C",
+                "Hydrantenschlüssel",
+                "Handfunkgerät",
+                "ABC-Kupplungsschlüssel",
+                "Übergangsstück A110-B75",
+                "Übergangsstück A125-A110",
+                "Kupplungsschlüssel 125"
+            ],
+            "Dach": [
+                "Schaumausrüstung",
+                "Steckleiter",
+                "Wasserwerfer",
+                "Löschlanze",
+                "Monsunrohr",
+                "Einreißhaken"
+            ]
+        },
+        "Tunnel": {
+            "Fahrer/GK": [
+                "Handfunkgerät"
+            ],
+            "Mannschaft": [
+                "Wärmebildkamera"
+            ]
+        },
+        "Tunnel+Ölanh.": {
+            "Fahrer/GK": [
+                "Handfunkgerät"
+            ],
+            "Mannschaft": [
+                "Wärmebildkamera"
+            ],
+            "Ölanh. G1": [
+                "Verkehrsleitkegel"
+            ],
+            "Ölanh. G2": [
+                "Universal Ölbindemittel"
             ]
         }
     }
