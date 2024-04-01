@@ -71,6 +71,7 @@ class FahrzeugkundeGame(Screen):
         # troubleshooting: fix firetruck
         # self.selected_firetruck = "Tank1" "Rüst+Lösch"
         self.selected_firetruck = selected_firetruck
+        self.firetruck_label.text = selected_firetruck
 
     def play(self):
         self.load_firetruck_storage()
@@ -124,7 +125,7 @@ class FahrzeugkundeGame(Screen):
         self.rooms_layout.clear_widgets()
 
         for storage in self.rooms_list:
-            btn = Button(text=storage, font_size="32sp")
+            btn = Button(text=storage, font_size="28sp")
             btn.bind(on_press=self.on_answer)
             self.rooms_layout.add_widget(btn)
 

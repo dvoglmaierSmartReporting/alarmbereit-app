@@ -123,7 +123,7 @@ Rüst+Lösch:
     - Türöffnungsset
     - Schlauchtragekorb
     - Druckschlauch C
-    - Hohlstrahlrohr C
+    - Hohlstrahlrohr
     - Saugschlauch D f. Zumischer
     - Schaummittelkanister
     - Zumischer Z2
@@ -155,7 +155,7 @@ Rüst+Lösch:
     - Verbindungsschlauch B
     - Satz Schlauchbinden
     - Schlauchhalter
-    - Hohlstrahlrohr C
+    - Hohlstrahlrohr
     - Mehrzweckstrahlrohr B
     - Stützkrümmer B
     - Druckbegrenzungsventil B
@@ -183,14 +183,14 @@ Rüst+Lösch:
   Heck:
     - Handfunkgerät
     - Schlauchhaspel
-    - Atemschutz- Außenüberwachung
+    - Atemschutz Überwachungstafel
     - Abschleppstange
   Dach:
     - Moosgummiplatte
     - Schlauchbrücke Paar Alu
     - Schiebeleiter 3-teilig
     - Steckleiter 4-teilig
-    - Verbindungsteil Steckleiter
+    - Steckleiter Verbindungsteil
     - Chemieschutzstiefel
     - Chemieschutzhandschuhe
     - Chemieschutzanzug Stufe 2
@@ -216,7 +216,6 @@ Tank1:
     - Vollmaske f. Pressluftatmer
     - Suchscheinwerfer
     - Einweghandschuhe
-
   Mannschaft:
     - Handfunkgerät
     - Schutzhandschuhe
@@ -245,7 +244,6 @@ Tank1:
     - Tragetuch
     - Notrettungsset
     - Fluchthaube
-
   G1:
     - Elektrokettensäge
 
@@ -266,7 +264,6 @@ Tank1:
     - Pressluftschlauchgerät
     - Benzinkanister
     - Dieselkanister
-
   G2:
     - Deckelabzieher
     - Einbruchwerkzeug
@@ -307,7 +304,6 @@ Tank1:
     - Hacke lang
     - Brecheisen
     - Elektrorettungshaken
-
   G3:
     - Schaumrohr
     - Schaummittel
@@ -317,7 +313,6 @@ Tank1:
     - Flammschutzbekleidung
     - Hitzeschutzhaube
     - Schaum-Pumpenvormischer
-
   G4:
     - Verkehrsleitkegel
     - Bodenteller f. Absperrstangen
@@ -337,7 +332,6 @@ Tank1:
     - PE-Plane 4 x 4 m
     - Kunststofffolie 4 x 4 m
     - Absperrstangen
-
   G5:
     - Druckschlauch B
     - Druckschlauch C42
@@ -359,7 +353,6 @@ Tank1:
     - Rauchvorhang
     - Schlauchhalter
     - Schlauchbinden
-
   G6:
     - Löschdecke
     - Druckschlauch B
@@ -378,17 +371,15 @@ Tank1:
     - Notkurbel f. Haspel
     - HD Pistolenstrahlrohr
     - Fahrzeug Unterlegkeile
-
   Heck:
     - Handfunkgerät
     - ABC-Kupplungsschlüssel
     - HD-Rohr
     - Löschlanze
-    - Atemschutzüberwachung
+    - Atemschutz Überwachungstafel
     - Heumessgerät
-
   Dach:
-    - Steckleiter
+    - Steckleiter 4-teilig
     - Schiebeleiter
     - Monsunrohr
     - Rettungsring
@@ -398,7 +389,7 @@ Tank1:
     - Heugabel
     - Dunggabel
     - Breithaue
-    - Feuerwehrpatschen
+    - Feuerpatsche
     - Schlauchbrücke
     - Krampen
     - Fassschaufel
@@ -428,7 +419,6 @@ Leiter:
     - Entfernungsmesser
     - Schutzhandschuhe
     - Schlüssel
-
   G1:
     - Baufolie 4 x 4 m
     - Korbtrage
@@ -452,7 +442,6 @@ Leiter:
     - Reifenfüllschlauch
     - KFZ Werkzeug
     - KFZ Starthilfekabel
-
   G2:
     - Notrettungsset
     - Basisausrüstung z. Halten v. Personen
@@ -463,7 +452,6 @@ Leiter:
     - Reserveflasche
     - Brandfluchthaube
     - Safty Peak
-
   G3:
     - ABC Kupplungsschlüssel
     - Druckschlauch B75 25 m orange
@@ -479,7 +467,6 @@ Leiter:
     - Flankierer
     - Schlauchträger
     - Schlauchbrücke
-
   G4:
     - Flutlichtscheinwerfer 1000 W
     - Dreibeinstativ
@@ -490,14 +477,12 @@ Leiter:
     - Absturzsicherungsgerät
     - Verbindungsmittel 15 Vario
     - FW-Gurt
-
   G5:
     - Löschdecke
     - ABC Pulverlöscher
     - Verkehrsleitkegel
     - Warndreieck "Feuerwehr"
     - Absperrband
-
   G6:
     - Schäkel 6,5 t
     - Abschleppseil
@@ -505,11 +490,15 @@ Leiter:
     - Schneeketten
     - Kanister
     - Einfüllstutzen
-
   Dach:
+    - Stromerzeuger
+    - Abgasschlauch
+    - Benzinkanister 10 l
+    - Überdruckentlüfter
+    - Rollgliss Bügel
+    - Safety Peak Bügel
     - Wenderohr
-
-    - Trage
+    - Aufnahme f. Korbtrage
 
 Tank2:
   Fahrer/GK:
@@ -520,8 +509,10 @@ Tank2:
     - Personen-Sicherungsset
     - Handfunkgerät
     - Gasmessgerät
-
   Mannschaft:
+    - Handfunkterät
+
+    - Atemschutz Überwachungstafel
     - Nothammer
     - Pannendreieck
     - Fahrzeugwerkzeug
@@ -542,7 +533,6 @@ Tank2:
     - Warndreieck "Feuerwehr"
     - Absperrband
     - Einweghandschuhe
-
   G1:
     - Faltbehälter 3000 l
     - Spiralluton
@@ -551,7 +541,6 @@ Tank2:
     - Tauchpumpe
     - Verlängerungskabel
     - Be- u. Entlüftungsgerät
-
   G2:
     - Hacke langstielig
     - Hacke kurzstielig
@@ -586,7 +575,6 @@ Tank2:
     - Bolzenschneider
     - Krampe
     - Feuerwehraxt
-
   G3:
     - Feuerlöscher
     - Kaminkehrerwerkzeug
@@ -596,7 +584,6 @@ Tank2:
     - Robisrohr m. Schlauch
     - Hydroschild C
     - Hydroschild B
-
   G4:
     - Druckschlauch B
     - Ölbindemittel
@@ -607,10 +594,9 @@ Tank2:
     - Plastikfolie
     - Arbeitsleine
     - Schnürleine
-
   G5:
     - Druckschlauch C42
-    - Hohlstrahlrohr C
+    - Hohlstrahlrohr
     - Verteiler B-CBC
     - Kupplungsschlüssel
     - Übergangsstück B-C
@@ -624,7 +610,6 @@ Tank2:
     - Schlauchtragekorb
     - Schaumrohr
     - Zumischer Z2/Z4
-
   G6:
     - Benzinkanister
     - Dieselkanister
@@ -634,7 +619,6 @@ Tank2:
     - Druckschlauch B
     - Schlauchbrücke
     - Fahrzeug Unterlegkeile
-
   Heck:
     - Übergangsstück B-C
     - Hydrantenschlüssel
@@ -643,10 +627,9 @@ Tank2:
     - Übergangsstück A110-B75
     - Übergangsstück A125-A110
     - Kupplungsschlüssel 125
-
   Dach:
     - Schaumausrüstung
-    - Steckleiter
+    - Steckleiter 4-teilig
     - Wasserwerfer
     - Löschlanze
     - Monsunrohr
@@ -655,16 +638,311 @@ Tank2:
 Tunnel: &tunnel
   Fahrer/GK:
     - Handfunkgerät
-
+    - Handlampe
+    - Pressluftatmer
+    - Vollmaske f. Pressluftatmer
+    - Suchscheinwerfer
+    - Meldertasche
+    - Gasmessgerät
+    - Tablet
   Mannschaft:
+    - Handfunkgerät
     - Wärmebildkamera
+    - Schlüsselkasten
+    - Handlampe
+    - Atemschutz Überwachungstafel
+    - Information "Gefährliche Stoffe"
+    - Schreibmaterial
+    - Arbeitsmesser
+    - Pressluftatmer
+    - Vollmaske f. Pressluftatmer
+    - Notrettungsset
+    - Rettungsleine
+    - Brandfluchthaube
+    - Erste-Hilfe Rucksack
+    - Wolldecke
+    - Alu-Rettungsdecke
+    - Feuerwehrgurt
+    - Sauerstoff-Selbstretter
+    - Suchstock
+    - Einweghandschuhe
+    - Schutzhandschuhe
+    - Hochsichtbare Überwurfweste
+    - Anhaltekelle
+    - Set Powerflares
+  G1:
+    - Teleskopleiter
+    - Arbeitsleine
+    - Schnürleine
+    - Trennschleifer
+    - Säbelsäge
+    - Schutzbrille
+    - FFP2-Maske
+    - Müllsack
+    - Schutzdecke
+    - Stabfast
+    - Schwelleraufsatz
+    - Unterleghölzer
+    - Notfallwanne
+    - Glasmanagement Set
+    - Airbag Sicherung
+    - Verlängerungskabel 10 m
+    - Werkzeugkiste
+    - StabPacks
+    - NATO-Kabel
+  G2:
+    - Sichtschutz
+    - Druckschlauch C
+    - Ölbindemittelkanister
+    - Handscheinwerfer
+    - Verkehrsleitkegel
+    - Warndreieck "Feuerwehr"
+    - Absperrband
+    - Stativ
+    - Kabeltrommel 230 V
+    - LED-Schweinwerfer
+    - Warnblitzleuchte
+    - RIS-Beleuchtungssystem
+    - ABC-Kupplungsschlüssel
+    - Notkurbel HD-Haspel
+    - Lichtmaststeuerung
+    - Drucklöschgerät Bioversal
+    - ABC-Pulverlöscher
+    - Löschanlage
+  Tiefraum1:
+    - Abschleppseil
+    - Schäckel 65 kN
+    - Dieselkanister 20 l
+    - Einfüllstutzen
+  Tiefraum2:
+    - KFZ Unterlegkeile
+    - Löschdecke
+    - Stromgenerator
+  G3:
+    - Schleifkorbtrage
+    - Schaufeltrage
+    - Akku Kombigerät
+    - Akku Spreizer
+    - Akku Schere
+    - Akku Zylinder
+    - Zylinder Verlängerung
+    - Zylinder Unterlegsgestell
+    - Akkuladegerät
+    - Notstromkabel f. Schere/Spreizer
+    - Brechstange
+    - Handhammer
+    - Bolzenschneider
+    - Besen
+    - Flachschaufel
+    - Hacke kurz
+    - Halligan Tool
+    - Doppelaxt
+    - Türbrecheisen
+    - Rettungswerkzeug
+    - Schneekette
+    - Schwelleraufsatz
+    - Zubehör Schere/Spreizer
+    - Anhängekupplung Kugelkopf
+    - Anhängekupplung Maulkupplung
+    - Adapter 7/13-Pol
 
 Tunnel+Ölanh.:
   <<: *tunnel
-
   Ölanh. G1:
     - Verkehrsleitkegel
-
+    - Erdspieß
+    - Warndreieck "Öleinsatz"
+    - Auffangwanne m. Ausguss
+    - Ölschlange
+    - Warntafel
   Ölanh. G2:
+    - Abfüllschaufeln f. Ölbindemittel
+
     - Universal Ölbindemittel
-# Pumpe:
+    - Spannringfass 60 l
+    - Besen
+    - Alu-Schaufel
+    - Bindemittel Streuwagen
+    - Auffangwanne 150 l
+    - Arbeitsleine
+    - Schnürleine
+    - Spillbag 15
+    - Ölbindemittel Reservesack
+    - Ölschlange
+    - Schachtabdeckung
+    - Chemische Bindemittel
+    - Bindeflies Rolle
+    - Spilltech Öl-Absorbent 1,2 m
+    - Schutzanzug
+    - Chemische Schutzhandschuhe
+    - Leckdichtpaste
+    - Selbstschweißendes Dichtband
+    - Plane 3 x 4 m
+
+Pumpe:
+  Fahrer/GK:
+    - Handfunkgerät
+    - Anhaltekelle
+    - Meldertasche m. Zubehör
+    - Schlüsselkasten
+    - Suchscheinwerfer
+  Mannschaft:
+    - Arbeitsmesser
+    - Pressluftatmer
+    - Vollmaske f. Pressluftatmer
+    - Reserveflasche
+    - Handlampe
+    - Atemschutzfilter
+    - FW-Gurt
+    - Rettungsleine
+    - Notrettungsset
+    - Sicherungsgeschirr
+    - Sanitätskasten
+    - Wolldecke
+    - Handscheinwerfer
+    - Warndreieck "Feuerwehr"
+    - Hochsichtbare Überwurfweste
+    - Schutzhandschuhe
+    - Erste-Hilfe-Koffer
+    - Pannendreieck
+    - Wagenheber
+    - Warnlichthaube "orange"
+    - Feuerwehrbeil
+    - Bordwerkzeug
+    - Halteseil
+    - Kippstange
+    - Stützstange
+    - Bergetuch
+    - Starterkabel
+  G1:
+    - Saugkorb
+    - Schutzkorb f. Saugkorb
+    - ABC-Kupplungsschlüssel
+    - Leinensatz
+    - Sammelstück
+    - Übergnagsstück B-C
+    - Übergnagsstück A-B
+    - Druckbegrenzungsventil
+    - Werkzeug f. TS
+    - Motorkettensäge
+    - Werkzeug f. Motorkettensäge
+    - Kombikanister
+    - Schnittschutzhose
+    - Greifzug 30 kN
+    - Greifzugseil
+    - Leichtklappklobe
+    - Ölbindemittel
+    - Tragkraftspritze
+    - Tauchpumpe
+    - Forsthelm
+    - Keil
+    - Wathose
+    - Rundschlinge
+    - Schäkel
+    - Standrohr
+    - Unterflurhydrantenschlüssel
+    - Saugschlauch A
+  G2:
+    - Bolzenschneider
+    - Hacke langstielig
+    - Hacke kurzstielig
+    - Handhammer 2 kg
+    - Vorschlaghammer 5 kg
+    - Zimmermannshammer
+    - Schachthakensatz
+    - Rauchfangschlüsselsatz
+    - Tragkraftspritze
+    - Werkzeugkiste
+    - Krampe
+    - Brecheisen
+    - Brechstange
+    - Schneeketten
+    - Hubwinde
+    - Stahlseilstropp 5 m
+    - Stahlseilstropp 2,5 m
+    - Abschleppseil
+    - Kettengehänge
+    - Tauchpumpe
+    - Besen
+    - Schaufel
+    - Bogensäge
+    - Feuerwehraxt
+    - Kescher
+    - Eisensäge
+    - Ratschnesatz
+    - Absperrband
+    - ABC-Kupplungsschlüssel
+    - Saugkorb
+    - Schutzkorb f. Saugkorb
+    - Leinensatz
+    - Sammelstück
+    - Übergangsstück B-C
+    - Übergangsstück A-B
+    - Druckbegrenzungsventil
+    - Werkzeug f. TS
+  G3:
+    - Druckschlauch B
+    - Druckschlauch C
+    - Schlauchtragekorb
+    - Hohlstrahlrohr
+    - Stützkrümmer B
+    - Überflurhydrantenschlüssel
+    - Übergnagstück 110-125
+    - Kupplungsschlüssel 125
+    - Übergangsstück B-C
+    - Übergangsstück A-B
+    - Verteiler B-CBC
+    - Hydroschild C
+    - Pulverlöscher ABC 12 kg
+    - Löschdecke
+    - Mehrzweckstrahlrohr B
+    - Schlauchbinden
+    - Homelite-Pumpe
+    - Dieselkanister 20 l
+    - Benzinkanister 20 l
+    - Saugschlauch B
+    - Einfüllstutzen
+    - Unterflurhydrantenschlüssel
+    - Arbeitsleine
+    - Schnürleine
+    - Schlauchknickschutz
+    - Rohrkrümmer
+    - Flankierer
+    - KFZ Unterlegkeile
+    - Saugschlauch A
+    - Saugkopf B
+    - Kupplungsschlüssel B-C
+    - Trichter
+    - CO2 Löscher
+    - Segeltucheimer
+  G4:
+    - KSA 20
+
+    - Druckschlauch B
+    - Stromerzeuger MAG
+    - Stromerzeuger klein
+    - Abgasschlauch
+    - Verlängerungskabel 10 m
+    - Lichtfluter 1000 W
+    - Fluterbrücke
+    - Stativ 5 m
+    - Stativ 1,7 m
+    - Kunststofffolie
+    - Müllsack
+    - Kabeltrommel 230 V
+  Heck:
+    - Schlauchladen B
+    - Schlauchbrücken
+    - Kupplungsschlüssel B-C
+    - Sappine
+    - Dunggabel
+    - Heugabel
+    - Dungkralle
+    - Atemschutz Überwachungstafel
+    - Einreißhaken
+    - Feuerpatsche
+  Dach:
+    - Schiebeleiter 2-teilig
+    - Steckleiter 4-teilig
+    - Steckleiter Verbindungsteil
+    - Flachansauger

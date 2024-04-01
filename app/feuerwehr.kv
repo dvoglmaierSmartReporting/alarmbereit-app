@@ -9,23 +9,42 @@
         spacing: "3dp"
 
         Label:
-            text: "Modus:"
+            text: "Modus"
             font_size: "32sp"
+           # size_hint: 1, 0.5
         
-        BoxLayout:
+       # BoxLayout:
+        GridLayout:
+            size_hint: 1, 2
+            cols: 2
+
             Button:
                 text: "Training"
                 font_size: "32sp"
                 # on_press: 
+
             Button:
-                text: "Game"
+                text: "Wettkampf"
                 font_size: "32sp"
                 # on_press: 
                 disabled: True  # Disable since not implemented
+
+            Button:
+                text: "Stöbern"
+                font_size: "32sp"
+                # on_press:
+                disabled: True  # Disable since not implemented
+                
+            Button:
+                text: "Bilder"
+                font_size: "32sp"
+                # on_press:
+                disabled: True  # Disable since not implemented
         
         Label:
-            text: "Fragen:"
+            text: "Fragen"
             font_size: "32sp"
+           # size_hint: 1, 0.5
         
         Button:
             text: "Fahrzeugkunde"
@@ -88,6 +107,7 @@
 
 <FahrzeugkundeGame>:
     name: "fahrzeugkundegame"
+    firetruck_label: firetruck_label
     tool_label: tool_label
     rooms_layout: rooms_layout
 
@@ -100,6 +120,14 @@
         on_release:
             app.root.current = "fahrzeugkundemenu"
             root.manager.transition.direction = "right"
+    
+    Label:
+        id: firetruck_label
+        font_size: "20sp"
+        pos_hint: {'left': 1, 'top': 1}
+        text_size: self.width, None
+        halign: "left"
+        size_hint: 1, 0.25
 
     BoxLayout:
         orientation: 'vertical'
@@ -107,7 +135,7 @@
         Label:
             id: tool_label
             size_hint: 1, 0.15
-            font_size: "25sp"
+            font_size: "28sp"
 
         GridLayout:
             id: rooms_layout
