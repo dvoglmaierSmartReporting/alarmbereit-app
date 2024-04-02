@@ -1,7 +1,7 @@
 from kivy.app import App
 from kivy.uix.button import Button
+from kivy.uix.togglebutton import ToggleButton
 from kivy.uix.screenmanager import ScreenManager, Screen
-from kivy.lang import Builder
 from kivy.clock import Clock
 
 from random import shuffle
@@ -11,7 +11,25 @@ from helper.competitions import load_total_competition_questions
 
 
 class StartMenu(Screen):
-    pass
+    # current_choice = "Training"  # default
+
+    def forward_mode(self):
+        selected_mode = self.find_down_toggle_button(self)
+        if selected_mode:
+            self.manager.current = "fahrzeugkundemenu"
+            self.manager.get_screen("fahrzeugkundemenu").ids.mode_label.text = (
+                f"{selected_mode}   "
+            )
+
+    def find_down_toggle_button(self, widget, selected_mode=None):
+        # Recursively search for a ToggleButton in the 'down' state.
+        if isinstance(widget, ToggleButton) and widget.state == "down":
+            return widget.text
+        for child in widget.children:
+            result = self.find_down_toggle_button(child)
+            if result:  # If a 'down' ToggleButton is found, return its text
+                return result
+        return selected_mode  # Return None if no 'down' ToggleButton is found
 
 
 class FahrzeugkundeMenu(Screen):
@@ -71,7 +89,7 @@ class FahrzeugkundeGame(Screen):
         # troubleshooting: fix firetruck
         # self.selected_firetruck = "Tank1" "Rüst+Lösch"
         self.selected_firetruck = selected_firetruck
-        self.firetruck_label.text = selected_firetruck
+        self.firetruck_label.text = f"   {selected_firetruck}"
 
     def play(self):
         self.load_firetruck_storage()
@@ -235,6 +253,17 @@ class BewerbGame(Screen):
 class WindowManager(ScreenManager):
     pass
 
+
+class CustomToggleButton(ToggleButton):
+    def on_touch_up(self, touch):
+        # Call the superclass method to ensure standard behavior is preserved
+        super_result = super(CustomToggleButton, self).on_touch_up(touch)
+        if self.state == 'normal':  # Check if the button was just released
+            # Force it back to 'down' state if no other buttons are down
+            if not any(btn.state == 'down' for btn in self.get_widgets(self.group)):
+                self.state = 'down'
+        return super_result
+    
 
 class FeuerwehrApp(App):
     def build(self):

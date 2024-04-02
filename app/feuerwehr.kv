@@ -1,50 +1,65 @@
 #:kivy 2.3.0
 
+
+<CustomToggleButton>
+    group: "mode"
+    font_size: "32sp"
+
 <StartMenu>:
     name: "startmenu"
+    toggle_training: toggle_training
+    # toggle_game: toggle_game
+    # toggle_browse: toggle_browse
+    # toggle_images: toggle_images
 
     BoxLayout:
         orientation: "vertical"
-        size: root.width, root.height
         spacing: "3dp"
 
         Label:
             text: "Modus"
+            bold: True
             font_size: "32sp"
-           # size_hint: 1, 0.5
+            size_hint: 1, 0.5
         
-       # BoxLayout:
         GridLayout:
             size_hint: 1, 2
             cols: 2
+            spacing: "3dp"
 
-            Button:
+            CustomToggleButton:
+                id: toggle_training
+                state: "down"
+                # group: "mode"
                 text: "Training"
-                font_size: "32sp"
-                # on_press: 
+                #font_size: "32sp"
 
-            Button:
-                text: "Wettkampf"
-                font_size: "32sp"
-                # on_press: 
-                disabled: True  # Disable since not implemented
+            # CustomToggleButton:
+            #     id: toggle_game
+            #     #group: "mode"
+            #     text: "Wettkampf"
+            #     #font_size: "32sp"
+            #     # disabled: True  # Disable since not implemented
 
-            Button:
-                text: "Stöbern"
-                font_size: "32sp"
-                # on_press:
-                disabled: True  # Disable since not implemented
+            # CustomToggleButton:
+            #     id: toggle_browse
+            #     #group: "mode"
+            #     text: "Stöbern"
+            #     #font_size: "32sp"
+            #     # disabled: True  # Disable since not implemented
                 
-            Button:
-                text: "Bilder"
-                font_size: "32sp"
-                # on_press:
-                disabled: True  # Disable since not implemented
+            # CustomToggleButton:
+            #     id: toggle_images
+            #     #group: "mode"
+            #     text: "Bilder"
+            #     #font_size: "32sp"
+            #     disabled: True  # Disable since not implemented
         
         Label:
             text: "Fragen"
+            bold: True
             font_size: "32sp"
-           # size_hint: 1, 0.5
+            size_hint: 1, 0.5
         
         Button:
             text: "Fahrzeugkunde"
@@ -52,7 +67,8 @@
             on_release:
                 app.root.current = "fahrzeugkundemenu"
                 root.manager.transition.direction = "left"
-        
+                root.forward_mode()
+
         Button:
             text: "Bewerb"
             font_size: "32sp"
@@ -61,8 +77,10 @@
                 root.manager.transition.direction = "left"
             # disabled: True  # Disable since not implemented
 
+
 <FahrzeugkundeMenu>:
     name: "fahrzeugkundemenu"
+    mode_label: mode_label
     firetrucks_layout: firetrucks_layout
 
     Button:
@@ -75,11 +93,21 @@
             app.root.current = "startmenu"
             root.manager.transition.direction = "right"
 
+    Label:
+        id: mode_label
+        font_size: "20sp"
+        size_hint: None, None
+        size: "200dp", "50dp"
+        halign: "right"
+        text_size: self.width, None
+        pos_hint: {'right': 1, 'top': 1}
+    
     BoxLayout:
         id: firetrucks_layout
         size_hint: 1, 0.9
         orientation: 'vertical'
         spacing: "5dp"
+
 
 <BewerbMenu>:
     name: "bewerbmenu"
@@ -104,6 +132,7 @@
         #orientation: 'vertical'
         spacing: "5dp"
         cols: 1
+
 
 <FahrzeugkundeGame>:
     name: "fahrzeugkundegame"
@@ -142,6 +171,7 @@
             size_hint: 1, 0.797
             spacing: "3dp"
             cols: 2
+
 
 <BewerbGame>:
     name: "bewerbgame"
