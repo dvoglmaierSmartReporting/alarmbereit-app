@@ -8,6 +8,7 @@ from random import shuffle
 
 from helper.firetrucks import load_total_storage
 from helper.competitions import load_total_competition_questions
+from helper.functions import load_firetruck_storage, mode_str2bool
 
 
 class StartMenu(Screen):
@@ -47,15 +48,34 @@ class FahrzeugkundeMenu(Screen):
             self.firetrucks_layout.add_widget(btn)
 
     def on_button_release(self, instance):
-        # bind firetruck selection
-        app = App.get_running_app()
-        app.root.current = "fahrzeugkundegame"
-        app.root.transition.direction = "left"
 
-        # continue game with selected firetruck
-        fahrzeugkundegame_screen = app.root.get_screen("fahrzeugkundegame")
-        fahrzeugkundegame_screen.select_firetruck(instance.text)
-        fahrzeugkundegame_screen.play()
+        mode = mode_str2bool(self.mode_label.text.strip())
+        mode_training, mode_game, mode_browse, mode_images = mode
+
+        # bind firetruck and mode selection
+        app = App.get_running_app()
+
+        if mode_training or mode_game:
+            app.root.current = "fahrzeugkunde_training_game"
+            app.root.transition.direction = "left"
+
+            # continue game with selected firetruck
+            fahrzeugkunde_tg_screen = app.root.get_screen("fahrzeugkunde_training_game")
+            fahrzeugkunde_tg_screen.select_firetruck(instance.text)
+            # fahrzeugkunde_training_screen.forward_mode_str(self.mode_label.text)
+            # fahrzeugkunde_tg_screen.forward_mode(
+            #     mode_str2bool(self.mode_label.text.strip())
+            # )
+            fahrzeugkunde_tg_screen.forward_mode(mode)
+            fahrzeugkunde_tg_screen.play()
+
+        elif mode_browse:
+            app.root.current = "fahrzeugkunde_browse"
+            app.root.transition.direction = "left"
+
+        elif mode_images:
+            app.root.current = "fahrzeugkunde_images"
+            app.root.transition.direction = "left"
 
 
 class BewerbMenu(Screen):
@@ -84,49 +104,49 @@ class BewerbMenu(Screen):
         bewerbgame_screen.play()
 
 
-class FahrzeugkundeGame(Screen):
-    def select_firetruck(self, selected_firetruck):
+class FahrzeugkundeTrainingGame(Screen):
+    def select_firetruck(self, selected_firetruck: str):
         # troubleshooting: fix firetruck
         # self.selected_firetruck = "Tank1" "Rüst+Lösch"
         self.selected_firetruck = selected_firetruck
         self.firetruck_label.text = f"   {selected_firetruck}"
 
+    def forward_mode(self, mode: tuple):
+        self.mode_training: bool = mode[0]
+        self.mode_game: bool = mode[1]
+        self.mode_browse: bool = mode[2]
+        self.mode_images: bool = mode[3]
+
     def play(self):
-        self.load_firetruck_storage()
+        # training mode
+        print(f"{self.mode_training = }, {self.mode_game = }")
+        if self.mode_training or self.mode_game:
+            # self.load_firetruck_storage()
+            rooms, tools, tools_locations = load_firetruck_storage(
+                self.selected_firetruck
+            )
+            self.rooms: list = rooms
+            self.tools: list = tools
+            self.tools_locations: dict = tools_locations
+
+            shuffle(self.tools)
+
         self.next_tool()
         self.accept_answers = True  # Flag to indicate if answers should be processed
 
-    def load_firetruck_storage(self):
-        total_storage = load_total_storage()
-        self.competition_dict = total_storage[self.selected_firetruck]
-        self.rooms_list = self.competition_dict.keys()
-        self.tools_list = [
-            tool for room in self.competition_dict.values() for tool in room
-        ]
-        self.tools_list = list(set(self.tools_list))
-        shuffle(self.tools_list)
-        self.tool_locations = self.invert_firetruck_equipment()
-
-    def invert_firetruck_equipment(self):
-        tool_locations = {}
-        for location, tools in self.competition_dict.items():
-            for tool in tools:
-                if tool in tool_locations:
-                    tool_locations[tool].append(location)
-                else:
-                    tool_locations[tool] = [location]
-        return tool_locations
-
     def next_tool(self, *args):
         self.accept_answers = True  # Enable answer processing for the new tool
-        if not self.tools_list:
+
+        # training mode
+        if not self.tools:
             self.load_firetruck_storage()
+            shuffle(self.tools)
 
         # troubleshooting: fix tool
         # self.current_tool = "Handfunkgerät"  # "Druckschlauch B"
-        self.current_tool = self.tools_list.pop()
+        self.current_tool = self.tools.pop()
 
-        self.correct_storage = set(self.tool_locations.get(self.current_tool))
+        self.correct_storage = set(self.tools_locations.get(self.current_tool))
 
         if len(self.correct_storage) > 1:
             self.correct_storage_multiple = list(set(self.correct_storage))
@@ -142,7 +162,7 @@ class FahrzeugkundeGame(Screen):
         self.tool_label.text = tool_text
         self.rooms_layout.clear_widgets()
 
-        for storage in self.rooms_list:
+        for storage in self.rooms:
             btn = Button(text=storage, font_size="28sp")
             btn.bind(on_press=self.on_answer)
             self.rooms_layout.add_widget(btn)
@@ -179,13 +199,26 @@ class FahrzeugkundeGame(Screen):
                 # remove correct answer from set
                 self.correct_storage_multiple.remove(instance.text)
                 # display string "weitere"
-                self.tool_label.text += "\nweitere"
+                if self.tool_label.text[-7:] == "weitere":
+                    self.tool_label.text += " "
+                else:
+                    self.tool_label.text += "\n"
+                self.tool_label.text += "weitere"
                 return
 
         self.accept_answers = (
             False  # Disable answer processing after an answer is selected
         )
-        Clock.schedule_once(self.next_tool, 2)
+        # Clock.schedule_once(self.next_tool, 2)
+        Clock.schedule_once(self.next_tool, 0.2)
+
+
+class FahrzeugkundeBrowse(Screen):
+    pass
+
+
+class FahrzeugkundeImages(Screen):
+    pass
 
 
 class BewerbGame(Screen):
@@ -258,12 +291,12 @@ class CustomToggleButton(ToggleButton):
     def on_touch_up(self, touch):
         # Call the superclass method to ensure standard behavior is preserved
         super_result = super(CustomToggleButton, self).on_touch_up(touch)
-        if self.state == 'normal':  # Check if the button was just released
+        if self.state == "normal":  # Check if the button was just released
             # Force it back to 'down' state if no other buttons are down
-            if not any(btn.state == 'down' for btn in self.get_widgets(self.group)):
-                self.state = 'down'
+            if not any(btn.state == "down" for btn in self.get_widgets(self.group)):
+                self.state = "down"
         return super_result
-    
+
 
 class FeuerwehrApp(App):
     def build(self):
@@ -272,7 +305,9 @@ class FeuerwehrApp(App):
         sm.add_widget(StartMenu())
         sm.add_widget(FahrzeugkundeMenu())
         sm.add_widget(BewerbMenu())
-        sm.add_widget(FahrzeugkundeGame())
+        sm.add_widget(FahrzeugkundeTrainingGame())
+        sm.add_widget(FahrzeugkundeBrowse())
+        sm.add_widget(FahrzeugkundeImages())
         sm.add_widget(BewerbGame())
         return sm
 

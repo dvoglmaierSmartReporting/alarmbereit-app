@@ -30,30 +30,20 @@
             CustomToggleButton:
                 id: toggle_training
                 state: "down"
-                # group: "mode"
                 text: "Training"
-                #font_size: "32sp"
 
-            # CustomToggleButton:
-            #     id: toggle_game
-            #     #group: "mode"
-            #     text: "Wettkampf"
-            #     #font_size: "32sp"
-            #     # disabled: True  # Disable since not implemented
+            CustomToggleButton:
+                id: toggle_game
+                text: "Wettkampf"
+            
+            CustomToggleButton:
+                id: toggle_browse
+                text: "Stöbern"
 
-            # CustomToggleButton:
-            #     id: toggle_browse
-            #     #group: "mode"
-            #     text: "Stöbern"
-            #     #font_size: "32sp"
-            #     # disabled: True  # Disable since not implemented
-                
-            # CustomToggleButton:
-            #     id: toggle_images
-            #     #group: "mode"
-            #     text: "Bilder"
-            #     #font_size: "32sp"
-            #     disabled: True  # Disable since not implemented
+            CustomToggleButton:
+                id: toggle_images
+                text: "Bilder"
+                # disabled: True  # Disable since not implemented
         
         Label:
             text: "Fragen"
@@ -134,8 +124,8 @@
         cols: 1
 
 
-<FahrzeugkundeGame>:
-    name: "fahrzeugkundegame"
+<FahrzeugkundeTrainingGame>:
+    name: "fahrzeugkunde_training_game"
     firetruck_label: firetruck_label
     tool_label: tool_label
     rooms_layout: rooms_layout
@@ -171,6 +161,58 @@
             size_hint: 1, 0.797
             spacing: "3dp"
             cols: 2
+
+
+<FahrzeugkundeBrowse>:
+    name: "fahrzeugkunde_browse"
+    # firetruck_label: firetruck_label
+    # tool_label: tool_label
+    # rooms_layout: rooms_layout
+
+    Button:
+        text: "<"
+        font_size: "32sp"
+        size_hint: None, None
+        size: "50dp", "50dp"
+        pos_hint: {'left': 1, 'top': 1}
+        on_release:
+            app.root.current = "fahrzeugkundemenu"
+            root.manager.transition.direction = "right"
+    
+    Label:
+        # id: firetruck_label
+        text: "Stöbern"
+        font_size: "20sp"
+        pos_hint: {'left': 1, 'top': 1}
+        text_size: self.width, None
+        halign: "left"
+        size_hint: 1, 0.25
+
+
+<FahrzeugkundeImages>:
+    name: "fahrzeugkunde_images"
+    # firetruck_label: firetruck_label
+    # tool_label: tool_label
+    # rooms_layout: rooms_layout
+
+    Button:
+        text: "<"
+        font_size: "32sp"
+        size_hint: None, None
+        size: "50dp", "50dp"
+        pos_hint: {'left': 1, 'top': 1}
+        on_release:
+            app.root.current = "fahrzeugkundemenu"
+            root.manager.transition.direction = "right"
+    
+    Label:
+        # id: firetruck_label
+        text: "Bilder"
+        font_size: "20sp"
+        pos_hint: {'left': 1, 'top': 1}
+        text_size: self.width, None
+        halign: "left"
+        size_hint: 1, 0.25
 
 
 <BewerbGame>:
