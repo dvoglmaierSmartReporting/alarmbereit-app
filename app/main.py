@@ -131,6 +131,14 @@ class FahrzeugkundeTrainingGame(Screen):
 
             shuffle(self.tools)
 
+        if self.mode_training:
+            # implement strike of correct answers in a row
+            self.strike = 0
+
+        if self.mode_game:
+            # implement timer and score system
+            self.timer = 15  # seconds
+
         self.next_tool()
         self.accept_answers = True  # Flag to indicate if answers should be processed
 
