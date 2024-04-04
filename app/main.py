@@ -119,7 +119,7 @@ class FahrzeugkundeTrainingGame(Screen):
 
     def play(self):
         # training mode
-        print(f"{self.mode_training = }, {self.mode_game = }")
+        # print(f"{self.mode_training = }, {self.mode_game = }")
         if self.mode_training or self.mode_game:
             # self.load_firetruck_storage()
             rooms, tools, tools_locations = load_firetruck_storage(
@@ -209,8 +209,8 @@ class FahrzeugkundeTrainingGame(Screen):
         self.accept_answers = (
             False  # Disable answer processing after an answer is selected
         )
-        # Clock.schedule_once(self.next_tool, 2)
-        Clock.schedule_once(self.next_tool, 0.2)
+        Clock.schedule_once(self.next_tool, 2)
+        # Clock.schedule_once(self.next_tool, 0.2)
 
 
 class FahrzeugkundeBrowse(Screen):

@@ -1,3 +1,27 @@
+upcoming version
+1. Game modus
+2. Fahrer/GK und Mannschaft separiert
+3. Zug 1 Fahrzeuge
+4. Modus auswahl
+5. 
+
+
+-------------------------------------------------------------------------
+
+# version 0.2
+1. Hauptmenü mit App Titel
+2. logo und bild
+3. Tank1 hinzufügen, Fahrzeugname einblenden
+    - technically: yaml is source of truth! (helper to create dict)
+4. erster Teil Bewerbsfragen hinzufügen
+
+bugfixes:
+- mehrfach korrekte Antworten
+- Abstand zw MR und G1&G2
+- Zeilenumbruch bei FK Fragen string
+
+-------------------------------------------------------------------------
+
 # MVP (v0.1) - "FA1000"
 1. Hauptmenü
 2. Modus wählen
@@ -17,33 +41,13 @@
 
 -------------------------------------------------------------------------
 
-# version 0.2
-1. Hauptmenü mit App Titel
-2. logo und bild
-3. Tank1 hinzufügen, Fahrzeugname einblenden
-    - technically: yaml is source of truth! (helper to create dict)
-4. erster Teil Bewerbsfragen hinzufügen
-
-bugfixes:
-- mehrfach korrekte Antworten
-- Abstand zw MR und G1&G2
-- Zeilenumbruch bei FK Fragen string
-
-
-
--------------------------------------------------------------------------
-
-
-
-# version 1.1
-1. Game modus hinzufügen
+# backlog
+- Game modus hinzufügen
     - 10 sec progress bar pro frage
     - punkte pro frage
     - 15 Fragen, ohne Antwortmöglichkeiten
     - Gesamtpunkte einmalig anzeigen
     - alle Fragen mit ID
-2. App design verbessern
-
-# version 1.2
-1. mehr Fahrzeuge
-2. Modus "alle Fahrzeuge"
+- App design verbessern
+- mehr Fahrzeuge
+- Modus "alle Fahrzeuge"

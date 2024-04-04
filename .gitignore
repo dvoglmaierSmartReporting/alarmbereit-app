@@ -1,17 +1,10 @@
-# local backup files
-/FA1000*.py
-/feuerwehr*.kv
-backup*.kv
-
-# local testing
-/sandbox.py
-/testing.ipynb
+*.ipynb
 
 # buildozer
 /app/.buildozer
 
 # built .apk files
-/app/bin/*.apk
+/app/bin
 
-# documents
+# documents - official PDFs
 /documents
