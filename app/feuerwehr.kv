@@ -127,6 +127,8 @@
 <FahrzeugkundeTrainingGame>:
     name: "fahrzeugkunde_training_game"
     firetruck_label: firetruck_label
+    strike_label: strike_label
+    timer_label: timer_label
     tool_label: tool_label
     rooms_layout: rooms_layout
 
@@ -147,6 +149,26 @@
         text_size: self.width, None
         halign: "left"
         size_hint: 1, 0.25
+
+    Label:
+        id: strike_label
+        text: 'test'
+        font_size: "25sp"
+        pos_hint: {'right': 1, 'top': 1}
+        text_size: self.width, None
+        halign: "right"
+        size_hint: 1, 0.1
+        opacity: 1 if self.parent.strike_label_visible else 0
+    
+    Label:
+        id: timer_label
+        text: '1E s'
+        font_size: "25sp"
+        pos_hint: {'right': 1, 'top': 1}
+        text_size: self.width, None
+        halign: "right"
+        size_hint: 1, 0.1
+        opacity: 1 if self.parent.timer_label_visible else 0
 
     BoxLayout:
         orientation: 'vertical'

@@ -1,6 +1,12 @@
 from kivy.app import App
+
+# from kivy.uix.label import Label
 from kivy.uix.button import Button
 from kivy.uix.togglebutton import ToggleButton
+
+# from kivy.uix.floatlayout import FloatLayout
+# from kivy.uix.boxlayout import BoxLayout
+from kivy.properties import BooleanProperty
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.clock import Clock
 
@@ -105,6 +111,9 @@ class BewerbMenu(Screen):
 
 
 class FahrzeugkundeTrainingGame(Screen):
+    strike_label_visible = BooleanProperty(False)
+    timer_label_visible = BooleanProperty(False)
+
     def select_firetruck(self, selected_firetruck: str):
         # troubleshooting: fix firetruck
         # self.selected_firetruck = "Tank1" "Rüst+Lösch"
@@ -116,6 +125,18 @@ class FahrzeugkundeTrainingGame(Screen):
         self.mode_game: bool = mode[1]
         self.mode_browse: bool = mode[2]
         self.mode_images: bool = mode[3]
+
+    def display_strike_label(self, display: bool = True):
+        if display:
+            self.strike_label_visible = True
+        else:
+            self.strike_label_visible = False
+
+    def display_timer_label(self, display: bool = True):
+        if display:
+            self.timer_label_visible = True
+        else:
+            self.timer_label_visible = False
 
     def play(self):
         # training mode
@@ -132,12 +153,20 @@ class FahrzeugkundeTrainingGame(Screen):
             shuffle(self.tools)
 
         if self.mode_training:
-            # implement strike of correct answers in a row
+            self.display_timer_label(display=False)
+
+            # implement timer and score system
             self.strike = 0
 
+            self.display_strike_label()
+
         if self.mode_game:
+            self.display_strike_label(display=False)
+
             # implement timer and score system
             self.timer = 15  # seconds
+
+            self.display_timer_label()
 
         self.next_tool()
         self.accept_answers = True  # Flag to indicate if answers should be processed
@@ -145,9 +174,12 @@ class FahrzeugkundeTrainingGame(Screen):
     def next_tool(self, *args):
         self.accept_answers = True  # Enable answer processing for the new tool
 
+        if self.mode_training:
+            self.strike_label.text = str(self.strike)
+
         # training mode
         if not self.tools:
-            self.load_firetruck_storage()
+            load_firetruck_storage(self.selected_firetruck)
             shuffle(self.tools)
 
         # troubleshooting: fix tool
@@ -187,15 +219,19 @@ class FahrzeugkundeTrainingGame(Screen):
             for child in children:
                 if child.text in self.correct_storage:
                     child.background_color = (0, 1, 0, 1)
+                    self.strike += 1
             # Indicate if given answer was incorrect
             if instance.text not in self.correct_storage:
                 instance.background_color = (1, 0, 0, 1)
+                self.strike = 0
 
         # multiple correct answers
         else:
             # Indicate if given answer was incorrect and close
             if instance.text not in self.correct_storage_multiple:
                 instance.background_color = (1, 0, 0, 1)
+                self.strike = 0
+
                 for child in children:
                     if child.text in self.correct_storage_multiple:
                         child.background_color = (0, 1, 0, 1)
