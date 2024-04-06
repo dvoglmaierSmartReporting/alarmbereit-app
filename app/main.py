@@ -132,11 +132,49 @@ class FahrzeugkundeTrainingGame(Screen):
         else:
             self.strike_label_visible = False
 
+    def increment_strike(self):
+        self.strike += 1
+
+    def reset_strike(self):
+        self.strike = 0
+
     def display_timer_label(self, display: bool = True):
         if display:
             self.timer_label_visible = True
         else:
             self.timer_label_visible = False
+
+    def reset_timer(self):
+        self.time_left = 15  # seconds
+        self.timer_label.text = str(self.time_left)
+
+    def add_time(self):
+        time_extra = 3
+        self.time_left += time_extra  # Add 5 seconds
+        # todo: display time addition, green "+3"
+
+    def subtract_time(self):
+        time_punishment = 1
+        self.time_left = max(
+            0, self.time_left - time_punishment
+        )  # Subtract 5 seconds, ensuring time doesn't go negative
+
+    def update_time(self, *args):
+        if self.time_left > 0:
+            self.time_left -= 1
+            if not self.time_left == 0:
+                self.timer_label.text = str(self.time_left)
+            else:
+                self.timer_label.text = "Ende"
+                # todo: disable buttons between game end and menu screen animation
+        else:
+            Clock.unschedule(self.update_time)  # Stop the timer when it reaches 0
+            self.end_game()
+
+    def end_game(self):
+        app = App.get_running_app()
+        app.root.current = "fahrzeugkundemenu"
+        app.root.transition.direction = "right"
 
     def play(self):
         # training mode
@@ -156,7 +194,7 @@ class FahrzeugkundeTrainingGame(Screen):
             self.display_timer_label(display=False)
 
             # implement timer and score system
-            self.strike = 0
+            self.reset_strike()
 
             self.display_strike_label()
 
@@ -164,9 +202,12 @@ class FahrzeugkundeTrainingGame(Screen):
             self.display_strike_label(display=False)
 
             # implement timer and score system
-            self.timer = 15  # seconds
+            self.reset_timer()
 
             self.display_timer_label()
+
+            # Schedule the timer update every second
+            Clock.schedule_interval(self.update_time, 1)
 
         self.next_tool()
         self.accept_answers = True  # Flag to indicate if answers should be processed
@@ -207,6 +248,20 @@ class FahrzeugkundeTrainingGame(Screen):
             btn.bind(on_press=self.on_answer)
             self.rooms_layout.add_widget(btn)
 
+    def correct_answer(self):
+        if self.mode_training:
+            self.increment_strike()
+        elif self.mode_game:
+            self.add_time()
+        # todo: pause timer until next tool (?)
+
+    def incorrect_answer(self):
+        if self.mode_training:
+            self.reset_strike()
+        elif self.mode_game:
+            self.subtract_time()
+        # todo: pause timer until next tool (?)
+
     def on_answer(self, instance):
         if not self.accept_answers:  # Check if answer processing is enabled
             return  # Ignore the button press if answer processing is disabled
@@ -219,18 +274,21 @@ class FahrzeugkundeTrainingGame(Screen):
             for child in children:
                 if child.text in self.correct_storage:
                     child.background_color = (0, 1, 0, 1)
-                    self.strike += 1
+                    self.correct_answer()
+
             # Indicate if given answer was incorrect
             if instance.text not in self.correct_storage:
                 instance.background_color = (1, 0, 0, 1)
-                self.strike = 0
+
+                self.incorrect_answer()
 
         # multiple correct answers
         else:
             # Indicate if given answer was incorrect and close
             if instance.text not in self.correct_storage_multiple:
                 instance.background_color = (1, 0, 0, 1)
-                self.strike = 0
+
+                self.incorrect_answer()
 
                 for child in children:
                     if child.text in self.correct_storage_multiple:
