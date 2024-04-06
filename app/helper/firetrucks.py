@@ -108,7 +108,7 @@ def load_total_storage():
                 "Erdungsschiene",
                 "Erdungslitzen",
                 "Lichtfluter",
-                "Stative",
+                "Stativ",
                 "Aufnahmebrücke f. Fluter",
                 "Stromerzeuger",
                 "Abgasschlauch f. Stromerz.",
