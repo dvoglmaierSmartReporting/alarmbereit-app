@@ -113,6 +113,8 @@ class BewerbMenu(Screen):
 class FahrzeugkundeTrainingGame(Screen):
     strike_label_visible = BooleanProperty(False)
     timer_label_visible = BooleanProperty(False)
+    timer_change_label_visible = BooleanProperty(False)
+    timer_change_add = BooleanProperty(True)
 
     def select_firetruck(self, selected_firetruck: str):
         # troubleshooting: fix firetruck
@@ -144,13 +146,20 @@ class FahrzeugkundeTrainingGame(Screen):
         else:
             self.timer_label_visible = False
 
+    def display_timer_change_label(self, *args):
+        # state switch between True and False
+        self.timer_change_label_visible = not self.timer_change_label_visible
+
+    def display_timer_change_add(self):
+        self.timer_change_add = not self.timer_change_add
+
     def reset_timer(self):
         self.time_left = 15  # seconds
-        self.timer_label.text = str(self.time_left)
+        self.timer_label.text = f"{str(self.time_left)} s  "
 
     def add_time(self):
-        time_extra = 3
-        self.time_left += time_extra  # Add 5 seconds
+        time_extra = 4
+        self.time_left += time_extra
         # todo: display time addition, green "+3"
 
     def subtract_time(self):
@@ -163,9 +172,9 @@ class FahrzeugkundeTrainingGame(Screen):
         if self.time_left > 0:
             self.time_left -= 1
             if not self.time_left == 0:
-                self.timer_label.text = str(self.time_left)
+                self.timer_label.text = f"{str(self.time_left)} s  "
             else:
-                self.timer_label.text = "Ende"
+                self.timer_label.text = "Ende  "
                 # todo: disable buttons between game end and menu screen animation
         else:
             Clock.unschedule(self.update_time)  # Stop the timer when it reaches 0
@@ -227,12 +236,13 @@ class FahrzeugkundeTrainingGame(Screen):
         # self.current_tool = "Handfunkgerät"  # "Druckschlauch B"
         self.current_tool = self.tools.pop()
 
-        self.correct_storage = set(self.tools_locations.get(self.current_tool))
+        self.correct_storage: set = set(self.tools_locations.get(self.current_tool))
 
-        if len(self.correct_storage) > 1:
-            self.correct_storage_multiple = list(set(self.correct_storage))
-        else:
-            self.correct_storage_multiple = list()
+        # if len(self.correct_storage) > 1:
+        #     self.correct_storage_multiple = list(set(self.correct_storage))
+        # else:
+        #     self.correct_storage_multiple = list()
+        self.correct_storage_multiple = list(self.correct_storage)
 
         tool_text = self.current_tool
         if len(tool_text) >= 29:
@@ -252,6 +262,12 @@ class FahrzeugkundeTrainingGame(Screen):
         if self.mode_training:
             self.increment_strike()
         elif self.mode_game:
+            if not self.timer_change_add:
+                # if False, switch to True
+                self.display_timer_change_add()
+            self.display_timer_change_label()
+            Clock.schedule_once(self.display_timer_change_label, 2)
+
             self.add_time()
         # todo: pause timer until next tool (?)
 
@@ -259,6 +275,12 @@ class FahrzeugkundeTrainingGame(Screen):
         if self.mode_training:
             self.reset_strike()
         elif self.mode_game:
+            if self.timer_change_add:
+                # if True, switch to False
+                self.display_timer_change_add()
+            self.display_timer_change_label()
+            Clock.schedule_once(self.display_timer_change_label, 2)
+
             self.subtract_time()
         # todo: pause timer until next tool (?)
 
@@ -268,35 +290,36 @@ class FahrzeugkundeTrainingGame(Screen):
 
         children = self.rooms_layout.children
 
-        # one correct answer
+        if instance.text in self.correct_storage_multiple:
+            # correct answer
+            self.correct_answer()
+        else:
+            # incorrect answer
+            self.incorrect_answer()
+
+        # indicate if correct or incorrect answer
+        # for single correct answer
         if len(self.correct_storage_multiple) <= 1:
-            # Identify and indicate the correct answers
+            # always identify and indicate the correct answer
             for child in children:
                 if child.text in self.correct_storage:
                     child.background_color = (0, 1, 0, 1)
-                    self.correct_answer()
-
-            # Indicate if given answer was incorrect
+            # if, indicate incorrect answer
             if instance.text not in self.correct_storage:
                 instance.background_color = (1, 0, 0, 1)
 
-                self.incorrect_answer()
-
-        # multiple correct answers
+        # for multiple correct answers
         else:
-            # Indicate if given answer was incorrect and close
             if instance.text not in self.correct_storage_multiple:
+                # if, indicate incorrect and all correct answers and close
                 instance.background_color = (1, 0, 0, 1)
-
-                self.incorrect_answer()
-
                 for child in children:
                     if child.text in self.correct_storage_multiple:
                         child.background_color = (0, 1, 0, 1)
                 pass
 
-            # answer was correct
             else:
+                # answer in correct answers
                 instance.background_color = (0, 1, 0, 1)
                 # remove correct answer from set
                 self.correct_storage_multiple.remove(instance.text)

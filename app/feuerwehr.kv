@@ -129,6 +129,7 @@
     firetruck_label: firetruck_label
     strike_label: strike_label
     timer_label: timer_label
+    timer_change_label: timer_change_label
     tool_label: tool_label
     rooms_layout: rooms_layout
 
@@ -152,7 +153,6 @@
 
     Label:
         id: strike_label
-        # text: 'test'
         font_size: "25sp"
         pos_hint: {'right': 1, 'top': 1}
         text_size: self.width, None
@@ -162,13 +162,23 @@
     
     Label:
         id: timer_label
-        # text: '1E s'
         font_size: "25sp"
         pos_hint: {'right': 1, 'top': 1}
         text_size: self.width, None
         halign: "right"
         size_hint: 1, 0.1
         opacity: 1 if self.parent.timer_label_visible else 0
+
+    Label:
+        id: timer_change_label
+        text: '+ 3s  ' if self.parent.timer_change_add else '- 1s  '
+        color: (0,1,0,1) if self.parent.timer_change_add else (1,0,0,1)
+        font_size: "25sp"
+        pos_hint: {'right': 1, 'top': 1}
+        text_size: self.width, None
+        halign: "right"
+        size_hint: 1, 0.175
+        opacity: 1 if self.parent.timer_change_label_visible else 0
 
     BoxLayout:
         orientation: 'vertical'
