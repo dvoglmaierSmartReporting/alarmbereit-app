@@ -130,6 +130,7 @@
     strike_label: strike_label
     timer_label: timer_label
     timer_change_label: timer_change_label
+    score_label: score_label
     tool_label: tool_label
     rooms_layout: rooms_layout
 
@@ -179,6 +180,16 @@
         halign: "right"
         size_hint: 1, 0.175
         opacity: 1 if self.parent.timer_change_label_visible else 0
+    
+    Label:
+        id: score_label
+        # text: '0  '
+        font_size: "25sp"
+        pos_hint: {'right': 1, 'top': 1}
+        text_size: self.width, None
+        halign: "right"
+        size_hint: 1, 0.25
+        opacity: 1 if self.parent.timer_label_visible else 0
 
     BoxLayout:
         orientation: 'vertical'

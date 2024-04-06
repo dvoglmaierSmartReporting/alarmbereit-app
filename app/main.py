@@ -134,11 +134,16 @@ class FahrzeugkundeTrainingGame(Screen):
         else:
             self.strike_label_visible = False
 
-    def increment_strike(self):
-        self.strike += 1
+    def update_strike(self):
+        self.strike_label.text = f"{str(self.strike)}  "
 
     def reset_strike(self):
         self.strike = 0
+        self.update_strike()
+
+    def increment_strike(self):
+        self.strike += 1
+        self.update_strike()
 
     def display_timer_label(self, display: bool = True):
         if display:
@@ -180,6 +185,17 @@ class FahrzeugkundeTrainingGame(Screen):
             Clock.unschedule(self.update_time)  # Stop the timer when it reaches 0
             self.end_game()
 
+    def update_score(self):
+        self.score_label.text = f"{str(self.score)}  "
+
+    def reset_score(self):
+        self.score = 0
+        self.update_score()
+
+    def increment_score(self, add: int = 100):
+        self.score += add
+        self.update_score()
+
     def end_game(self):
         app = App.get_running_app()
         app.root.current = "fahrzeugkundemenu"
@@ -200,23 +216,20 @@ class FahrzeugkundeTrainingGame(Screen):
             shuffle(self.tools)
 
         if self.mode_training:
+            # disable timer and enable strike counter
             self.display_timer_label(display=False)
-
-            # implement timer and score system
             self.reset_strike()
-
             self.display_strike_label()
 
         if self.mode_game:
+            # disable strike and enable timer and score
             self.display_strike_label(display=False)
-
-            # implement timer and score system
             self.reset_timer()
-
             self.display_timer_label()
-
             # Schedule the timer update every second
             Clock.schedule_interval(self.update_time, 1)
+            # total score
+            self.reset_score()
 
         self.next_tool()
         self.accept_answers = True  # Flag to indicate if answers should be processed
@@ -224,10 +237,11 @@ class FahrzeugkundeTrainingGame(Screen):
     def next_tool(self, *args):
         self.accept_answers = True  # Enable answer processing for the new tool
 
-        if self.mode_training:
-            self.strike_label.text = str(self.strike)
+        # if self.mode_training:
+        #     self.strike_label.text = f"{str(self.strike)}  "
+        # elif self.mode_game:
+        #     self.score_label.text = f"{str(self.score)}  "
 
-        # training mode
         if not self.tools:
             load_firetruck_storage(self.selected_firetruck)
             shuffle(self.tools)
@@ -262,6 +276,7 @@ class FahrzeugkundeTrainingGame(Screen):
         if self.mode_training:
             self.increment_strike()
         elif self.mode_game:
+            self.increment_score()
             if not self.timer_change_add:
                 # if False, switch to True
                 self.display_timer_change_add()
