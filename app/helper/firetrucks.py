@@ -439,6 +439,10 @@ def load_total_storage():
                 "Schutzhandschuhe",
                 "Schlüssel"
             ],
+            "Korb": [
+                "Druckschlauch C 7 m",
+                "Hohlstrahlrohr"
+            ],
             "G1": [
                 "Baufolie 4 x 4 m",
                 "Korbtrage",
