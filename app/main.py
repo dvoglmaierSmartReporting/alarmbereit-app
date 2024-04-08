@@ -1,11 +1,6 @@
 from kivy.app import App
-
-# from kivy.uix.label import Label
 from kivy.uix.button import Button
 from kivy.uix.togglebutton import ToggleButton
-
-# from kivy.uix.floatlayout import FloatLayout
-# from kivy.uix.boxlayout import BoxLayout
 from kivy.properties import BooleanProperty
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.clock import Clock
@@ -14,21 +9,34 @@ from random import shuffle
 
 from helper.firetrucks import load_total_storage
 from helper.competitions import load_total_competition_questions
-from helper.functions import load_firetruck_storage, mode_str2bool
+from helper.functions import load_firetruck_storage, mode_str2bool, mode_bool2str
 
 
 class StartMenu(Screen):
-    # current_choice = "Training"  # default
+    mode: tuple[bool, bool, bool, bool] = (
+        True,  # training | default
+        False,  # game
+        False,  # browse
+        False,  # images
+    )
 
-    def forward_mode(self):
-        selected_mode = self.find_down_toggle_button(self)
-        if selected_mode:
-            self.manager.current = "fahrzeugkundemenu"
-            self.manager.get_screen("fahrzeugkundemenu").ids.mode_label.text = (
-                f"{selected_mode}   "
-            )
+    def on_button_release(self):
+        # if mode change, read mode label from current selection
+        self.mode = mode_str2bool(self.find_down_toggle_button(self))
 
-    def find_down_toggle_button(self, widget, selected_mode=None):
+        # disable not existing combinations
+        self.competition_button.disabled = False
+        mode_training, mode_game, mode_browse, mode_images = self.mode
+        if mode_game or mode_images:
+            self.competition_button.disabled = True
+
+    def forward_mode2menu(self, menu_screen: str):
+        selected_mode = mode_bool2str(self.mode)
+        self.manager.current = menu_screen
+        self.manager.get_screen(menu_screen).ids.mode_label.text = f"{selected_mode}   "
+
+    # def find_down_toggle_button(self, widget, selected_mode=None):
+    def find_down_toggle_button(self, widget):
         # Recursively search for a ToggleButton in the 'down' state.
         if isinstance(widget, ToggleButton) and widget.state == "down":
             return widget.text
@@ -36,17 +44,15 @@ class StartMenu(Screen):
             result = self.find_down_toggle_button(child)
             if result:  # If a 'down' ToggleButton is found, return its text
                 return result
-        return selected_mode  # Return None if no 'down' ToggleButton is found
+        return None  # if no 'down' ToggleButton is found
 
 
 class FahrzeugkundeMenu(Screen):
     def __init__(self, **kwargs):
         super(FahrzeugkundeMenu, self).__init__(**kwargs)
-
         # load available firetrucks
         total_storage = load_total_storage()
         self.total_firetrucks = list(total_storage.keys())
-
         # create button for all firetrucks
         for firetruck in self.total_firetrucks:
             btn = Button(text=firetruck, font_size="32sp")
@@ -54,7 +60,7 @@ class FahrzeugkundeMenu(Screen):
             self.firetrucks_layout.add_widget(btn)
 
     def on_button_release(self, instance):
-
+        # on question selection, read mode label text from current screen
         mode = mode_str2bool(self.mode_label.text.strip())
         mode_training, mode_game, mode_browse, mode_images = mode
 
@@ -64,15 +70,10 @@ class FahrzeugkundeMenu(Screen):
         if mode_training or mode_game:
             app.root.current = "fahrzeugkunde_training_game"
             app.root.transition.direction = "left"
-
             # continue game with selected firetruck
             fahrzeugkunde_tg_screen = app.root.get_screen("fahrzeugkunde_training_game")
             fahrzeugkunde_tg_screen.select_firetruck(instance.text)
-            # fahrzeugkunde_training_screen.forward_mode_str(self.mode_label.text)
-            # fahrzeugkunde_tg_screen.forward_mode(
-            #     mode_str2bool(self.mode_label.text.strip())
-            # )
-            fahrzeugkunde_tg_screen.forward_mode(mode)
+            fahrzeugkunde_tg_screen.forward_mode_2_fk_training_game(mode)
             fahrzeugkunde_tg_screen.play()
 
         elif mode_browse:
@@ -122,7 +123,7 @@ class FahrzeugkundeTrainingGame(Screen):
         self.selected_firetruck = selected_firetruck
         self.firetruck_label.text = f"   {selected_firetruck}"
 
-    def forward_mode(self, mode: tuple):
+    def forward_mode_2_fk_training_game(self, mode: tuple):
         self.mode_training: bool = mode[0]
         self.mode_game: bool = mode[1]
         self.mode_browse: bool = mode[2]

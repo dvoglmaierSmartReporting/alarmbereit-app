@@ -7,10 +7,7 @@
 
 <StartMenu>:
     name: "startmenu"
-    toggle_training: toggle_training
-    # toggle_game: toggle_game
-    # toggle_browse: toggle_browse
-    # toggle_images: toggle_images
+    competition_button: competition_button
 
     BoxLayout:
         orientation: "vertical"
@@ -28,21 +25,21 @@
             spacing: "3dp"
 
             CustomToggleButton:
-                id: toggle_training
                 state: "down"
                 text: "Training"
+                on_release: root.on_button_release()
 
             CustomToggleButton:
-                id: toggle_game
                 text: "Wettkampf"
+                on_release: root.on_button_release()
             
             CustomToggleButton:
-                id: toggle_browse
                 text: "Stöbern"
+                on_release: root.on_button_release()
 
             CustomToggleButton:
-                id: toggle_images
                 text: "Bilder"
+                on_release: root.on_button_release()
                 # disabled: True  # Disable since not implemented
         
         Label:
@@ -57,15 +54,16 @@
             on_release:
                 app.root.current = "fahrzeugkundemenu"
                 root.manager.transition.direction = "left"
-                root.forward_mode()
+                root.forward_mode2menu("fahrzeugkundemenu")
 
         Button:
+            id: competition_button
             text: "Bewerb"
             font_size: "32sp"
             on_release:
                 app.root.current = "bewerbmenu"
                 root.manager.transition.direction = "left"
-            # disabled: True  # Disable since not implemented
+                root.forward_mode2menu("bewerbmenu")
 
 
 <FahrzeugkundeMenu>:
@@ -102,6 +100,7 @@
 <BewerbMenu>:
     name: "bewerbmenu"
     #orientation: "vertical"
+    mode_label: mode_label
     bewerbe_layout: bewerbe_layout
 
     Button:
@@ -113,7 +112,15 @@
         on_release:
             app.root.current = "startmenu"
             root.manager.transition.direction = "right"
-
+    Label:
+        id: mode_label
+        font_size: "20sp"
+        size_hint: None, None
+        size: "200dp", "50dp"
+        halign: "right"
+        text_size: self.width, None
+        pos_hint: {'right': 1, 'top': 1}
+    
     # BoxLayout:
     GridLayout:
     # Scroll

@@ -33,3 +33,15 @@ def mode_str2bool(selected_mode: str) -> tuple:
         mode_browse,
         mode_images,
     )
+
+
+def mode_bool2str(mode: tuple) -> str:
+    mode_training, mode_game, mode_browse, mode_images = mode
+    if mode_training:
+        return "Training"
+    if mode_game:
+        return "Wettkampf"
+    if mode_browse:
+        return "Stöbern"
+    if mode_images:
+        return "Bilder"
