@@ -14,6 +14,17 @@ Later, if all other things already implemented, one can dream of a gamification 
 - distribution via app store
 - question content
 
+## Build Android package (.apk)
+```
+/app> ../yaml2jason.py && buildozer -v android debug
+```
+
+## Run locally
+
+```
+/app> python3 main.py
+```
+
 ## Repository content
 
 ### /app
