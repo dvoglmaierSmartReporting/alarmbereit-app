@@ -5,6 +5,7 @@
     group: "mode"
     font_size: "32sp"
 
+
 <StartMenu>:
     name: "startmenu"
     competition_button: competition_button
@@ -212,12 +213,17 @@
             spacing: "3dp"
             cols: 2
 
+<Container>:
+    orientation: 'vertical'
+    size_hint_y: None
+    height: self.minimum_height
 
 <FahrzeugkundeBrowse>:
     name: "fahrzeugkunde_browse"
-    # firetruck_label: firetruck_label
+    #firetruck_label: firetruck_label
     # tool_label: tool_label
     # rooms_layout: rooms_layout
+    # inventory: inventory
 
     Button:
         text: "<"
@@ -230,13 +236,28 @@
             root.manager.transition.direction = "right"
     
     Label:
-        # id: firetruck_label
+        id: firetruck_label
         text: "Stöbern"
         font_size: "20sp"
         pos_hint: {'left': 1, 'top': 1}
         text_size: self.width, None
         halign: "left"
         size_hint: 1, 0.25
+    
+    BoxLayout:
+        orientation: "vertical"
+        size: root.size
+        ScrollView:
+            BoxLayout:
+                # id: inventory
+                # orientation: "vertical"
+                # #spacing: "1dp"
+                # size_hint: 1, None
+                # #height: 10000
+                id: container
+                orientation: 'vertical'
+                size_hint_y: None
+                height: self.minimum_height
 
 
 <FahrzeugkundeImages>:

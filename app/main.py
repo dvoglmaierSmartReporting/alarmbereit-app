@@ -1,9 +1,12 @@
 from kivy.app import App
 from kivy.uix.button import Button
+from kivy.uix.label import Label
 from kivy.uix.togglebutton import ToggleButton
 from kivy.properties import BooleanProperty
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.clock import Clock
+
+from kivy.uix.boxlayout import BoxLayout
 
 from random import shuffle
 
@@ -79,6 +82,10 @@ class FahrzeugkundeMenu(Screen):
         elif mode_browse:
             app.root.current = "fahrzeugkunde_browse"
             app.root.transition.direction = "left"
+            # continue game with selected firetruck
+            # fahrzeugkunde_browse_screen = app.root.get_screen("fahrzeugkunde_browse")
+            # fahrzeugkunde_browse_screen.select_firetruck(instance.text)
+            # fahrzeugkunde_browse_screen.display()
 
         elif mode_images:
             app.root.current = "fahrzeugkunde_images"
@@ -204,9 +211,7 @@ class FahrzeugkundeTrainingGame(Screen):
 
     def play(self):
         # training mode
-        # print(f"{self.mode_training = }, {self.mode_game = }")
         if self.mode_training or self.mode_game:
-            # self.load_firetruck_storage()
             rooms, tools, tools_locations = load_firetruck_storage(
                 self.selected_firetruck
             )
@@ -355,7 +360,85 @@ class FahrzeugkundeTrainingGame(Screen):
 
 
 class FahrzeugkundeBrowse(Screen):
+    # def __init__(self, **kwargs):
+    #     super(FahrzeugkundeBrowse, self).__init__(**kwargs)
+    #     # load available firetrucks
+    #     total_storage = load_total_storage()
+    #     self.total_firetrucks = list(total_storage.keys())
+    #     # create button for all firetrucks
+
+    def __init__(self, **kwargs):
+        super(FahrzeugkundeBrowse, self).__init__(**kwargs)
+        self.populate_list()
+
+    def populate_list(self):
+        # Example list of strings
+        string_list = [f"Item {i}" for i in range(1, 51)]  # Creating 20 items
+        container = self.ids.container
+        for item in string_list:
+            label = Label(text=item, size_hint_y=None, height=50)
+            container.add_widget(label)
+
+    def select_firetruck(self, selected_firetruck: str):
+        # troubleshooting: fix firetruck
+        # self.selected_firetruck = "Tank1" "Rüst+Lösch"
+        self.selected_firetruck = selected_firetruck
+        # self.firetruck_label.text = f"   {selected_firetruck}"
+
+    def load_firetruck(self):
+        total_storage = load_total_storage()
+        self.firetruck: dict = total_storage[self.selected_firetruck]
+        self.rooms: list = list(self.firetruck.keys())
+
+    def display(self):
+        self.load_firetruck()
+        # size = dp(100)
+        size = "30dp"
+        height_sum = 0
+
+        for room in self.rooms:
+            self.inventory.add_widget(
+                Label(
+                    text=f"[b]{str(room)}[/b]",
+                    font_size="24sp",
+                    markup=True,
+                    size_hint=(1, None),
+                    size=(size, size),
+                )
+            )
+            height_sum += 30
+
+            for tool in self.firetruck.get(room):
+                self.inventory.add_widget(
+                    Label(
+                        text=str(tool),
+                        font_size="22sp",
+                        size_hint=(1, None),
+                        size=(size, size),
+                    )
+                )
+                height_sum += 30
+
+            break
+        print(f"{height_sum = }")
+        self.inventory.height = height_sum
+
+
+class Container(BoxLayout):
     pass
+
+
+# class CustomLabel(Label):
+#     def __init__(self, text: str, font_size: int, **kwargs):
+#         super(CustomLabel, self).__init__(**kwargs)
+#         size = "30dp"
+#         return Label(
+#             text=f"[b]{str(text)}[/b]",
+#             font_size=f"{font_size}sp",
+#             markup=True,
+#             size_hint=(1, None),
+#             size=(size, size),
+#         )
 
 
 class FahrzeugkundeImages(Screen):
