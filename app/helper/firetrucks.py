@@ -733,6 +733,12 @@ def load_total_storage():
                 "StabPacks",
                 "NATO-Kabel"
             ],
+            "Tiefraum1": [
+                "Abschleppseil",
+                "Schäckel 65 kN",
+                "Dieselkanister 20 l",
+                "Einfüllstutzen"
+            ],
             "G2": [
                 "Sichtschutz",
                 "Druckschlauch C",
@@ -752,12 +758,6 @@ def load_total_storage():
                 "Drucklöschgerät Bioversal",
                 "ABC-Pulverlöscher",
                 "Löschanlage"
-            ],
-            "Tiefraum1": [
-                "Abschleppseil",
-                "Schäckel 65 kN",
-                "Dieselkanister 20 l",
-                "Einfüllstutzen"
             ],
             "Tiefraum2": [
                 "KFZ Unterlegkeile",
@@ -851,6 +851,12 @@ def load_total_storage():
                 "StabPacks",
                 "NATO-Kabel"
             ],
+            "Tiefraum1": [
+                "Abschleppseil",
+                "Schäckel 65 kN",
+                "Dieselkanister 20 l",
+                "Einfüllstutzen"
+            ],
             "G2": [
                 "Sichtschutz",
                 "Druckschlauch C",
@@ -870,12 +876,6 @@ def load_total_storage():
                 "Drucklöschgerät Bioversal",
                 "ABC-Pulverlöscher",
                 "Löschanlage"
-            ],
-            "Tiefraum1": [
-                "Abschleppseil",
-                "Schäckel 65 kN",
-                "Dieselkanister 20 l",
-                "Einfüllstutzen"
             ],
             "Tiefraum2": [
                 "KFZ Unterlegkeile",

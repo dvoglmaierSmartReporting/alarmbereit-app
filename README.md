@@ -22,7 +22,7 @@ Later, if all other things already implemented, one can dream of a gamification 
 ## Run locally
 
 ```
-/app> python3 main.py
+/app> ./yaml2json.py && python3 main.py
 ```
 
 ## Repository content

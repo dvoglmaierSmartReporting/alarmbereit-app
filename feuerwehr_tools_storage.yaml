@@ -693,6 +693,11 @@ Tunnel: &tunnel
     - Werkzeugkiste
     - StabPacks
     - NATO-Kabel
+  Tiefraum1:
+    - Abschleppseil
+    - Schäckel 65 kN
+    - Dieselkanister 20 l
+    - Einfüllstutzen
   G2:
     - Sichtschutz
     - Druckschlauch C
@@ -712,11 +717,6 @@ Tunnel: &tunnel
     - Drucklöschgerät Bioversal
     - ABC-Pulverlöscher
     - Löschanlage
-  Tiefraum1:
-    - Abschleppseil
-    - Schäckel 65 kN
-    - Dieselkanister 20 l
-    - Einfüllstutzen
   Tiefraum2:
     - KFZ Unterlegkeile
     - Löschdecke
