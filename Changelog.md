@@ -1,10 +1,27 @@
-upcoming version
+upcoming version:
+1. 
+
+
+-------------------------------------------------------------------------
+# version 0.5
+1. Modus auswahl; nur erlaubte Kombinationen
+2. Stöbern-Modus
+
+Bekannte Fehler:
+- Zeilenumbrüche in Stöbern-Modus
+- Zeilenumbrüche und Textfelder in Bewerbs-Modus
+
+
+-------------------------------------------------------------------------
+
+# version 0.4
 1. Game modus
 2. Fahrer/GK und Mannschaft separiert
-3. Zug 1 Fahrzeuge
-4. Modus auswahl
-5. 
 
+-------------------------------------------------------------------------
+
+# version 0.3
+1. Zug 1 Fahrzeuge
 
 -------------------------------------------------------------------------
 
