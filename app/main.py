@@ -28,8 +28,11 @@ class StartMenu(Screen):
         self.mode = mode_str2bool(self.find_down_toggle_button(self))
 
         # disable not existing combinations
+        self.firetrucks_button.disabled = False
         self.competition_button.disabled = False
         mode_training, mode_game, mode_browse, mode_images = self.mode
+        if mode_images:
+            self.firetrucks_button.disabled = True
         if mode_game or mode_images or mode_browse:
             self.competition_button.disabled = True
 
