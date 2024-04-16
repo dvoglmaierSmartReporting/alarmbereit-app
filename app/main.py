@@ -30,7 +30,7 @@ class StartMenu(Screen):
         # disable not existing combinations
         self.competition_button.disabled = False
         mode_training, mode_game, mode_browse, mode_images = self.mode
-        if mode_game or mode_images:
+        if mode_game or mode_images or mode_browse:
             self.competition_button.disabled = True
 
     def forward_mode2menu(self, menu_screen: str):
