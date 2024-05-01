@@ -1,5 +1,7 @@
-upcoming version:
-1. 
+# version 0.6:
+1. Inhalte korrigiert (Rechtschreibfehler)
+2. "Game" Modus überarbeitet
+3. 
 
 
 -------------------------------------------------------------------------
