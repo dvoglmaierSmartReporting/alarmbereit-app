@@ -211,7 +211,7 @@ Tank1:
     - Hinweiszettel Lift
     - Dreieck-Schlüssel
     - Handlampe
-    - FFP2-Mask
+    - FFP2-Maske
     - Pressluftatmer
     - Vollmaske f. Pressluftatmer
     - Suchscheinwerfer
@@ -403,22 +403,22 @@ Tank1:
 
 Leiter:
   Mannschaft:
+    - Handscheinwerfer
+    - Warnlichthaube f. Handscheinwerfer
+    - Handlampe
+    - Suchscheinwerfer
+
     - Hochsichtbare Überwurfweste
     - Anhaltekelle
     - Meldertasche
     - Einweghandschuhe
-    - Handscheinwerfer
-    - Warnlichthaube f. Handscheinwerfer
-    - Handlampe
     - Handfunkgerät
-    - Mobilfunkgerät
-    - Suchscheinwerfer
-    - Arbietsmesser
+    - Arbeitsmesser
     - Verbandskasten
     - Pannendreieck
     - Entfernungsmesser
     - Schutzhandschuhe
-    - Schlüssel
+    - Schlüsselset
   Korb:
     - Druckschlauch C 7 m
     - Hohlstrahlrohr
@@ -890,7 +890,7 @@ Pumpe:
     - Hohlstrahlrohr
     - Stützkrümmer B
     - Überflurhydrantenschlüssel
-    - Übergnagstück 110-125
+    - Übergangsstück 110-125
     - Kupplungsschlüssel 125
     - Übergangsstück B-C
     - Übergangsstück A-B

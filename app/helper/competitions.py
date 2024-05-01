@@ -1206,7 +1206,7 @@ def load_total_competition_questions():
             "100": {
                 "Q": "Was bedeuten die Buchstaben der 4A - C - 4E - Regel?",
                 "A": [
-                    "Ausbreitung, Atemgifte, Atomare Strahlung, Angstreaktion, Chemikalien, Explosion, Ein-sturz, Elektrizität und Erkrankung/Verletzung."
+                    "Ausbreitung, Atemgifte, Atomare Strahlung, Angstreaktion, Chemikalien, Explosion, Einsturz, Elektrizität und Erkrankung/Verletzung."
                 ]
             },
             "101": {
@@ -1222,7 +1222,7 @@ def load_total_competition_questions():
                 ]
             },
             "103": {
-                "Q": "In welchem Umkreis von ausgeflossenen brennbaren Flüssigkeiten ist jede Zünd-quelle zu vermeiden?",
+                "Q": "In welchem Umkreis von ausgeflossenen brennbaren Flüssigkeiten ist jede Zündquelle zu vermeiden?",
                 "A": [
                     "In der Gefahrenzone. Windverhältnisse, Gefälle und Temperatur sind zu berücksichtigen."
                 ]
@@ -1242,7 +1242,7 @@ def load_total_competition_questions():
             "106": {
                 "Q": "Wie muss mit umluftunabhängigen Atemschutzgeräten vorgegangen werden?",
                 "A": [
-                    "Es ist truppweise vorzugehen. Der Atemschutztrupp hat grundsätzlich aus 3 Feuerwehr-mitgliedern zu bestehen. Ein Rettungstrupp muss bereitstehen oder sich auf der Anfahrt befinden."
+                    "Es ist truppweise vorzugehen. Der Atemschutztrupp hat grundsätzlich aus 3 Feuerwehrmitgliedern zu bestehen. Ein Rettungstrupp muss bereitstehen oder sich auf der Anfahrt befinden."
                 ]
             },
             "107": {
@@ -1254,23 +1254,23 @@ def load_total_competition_questions():
             "108": {
                 "Q": "Wann sind Schutzanzüge der Schutzstufe 3 einzusetzen?",
                 "A": [
-                    "Wenn der Verdacht auf Vorhandensein von Hautgiften, ätzenden oder radioaktiven Stof-fen besteht."
+                    "Wenn der Verdacht auf Vorhandensein von Hautgiften, ätzenden oder radioaktiven Stoffen besteht."
                 ]
             },
             "109": {
                 "Q": "Welche Aufgabe hat ein Atemschutzsammelplatz?",
                 "A": [
-                    "Die Registrierung der Atemschutztrupps, die Bevorratung und gegebenenfalls Wieder-befüllung der Reserveflaschen, Bereitstellung von AS-Trupps für den Einsatz."
+                    "Die Registrierung der Atemschutztrupps, die Bevorratung und gegebenenfalls Wiederbefüllung der Reserveflaschen, Bereitstellung von AS-Trupps für den Einsatz."
                 ]
             },
             "110": {
                 "Q": "Wie sind Transporte radioaktiver Stoffe gekennzeichnet?",
                 "A": [
-                    "Beim Transport radioaktiver Stoffe muss das Fahrzeug mit Großzetteln (mit Strahlensym-bol) an drei Seiten (links, rechts und hinten) und zusätzlich vorne und rückwärts mit der orangen Warntafel versehen sein."
+                    "Beim Transport radioaktiver Stoffe muss das Fahrzeug mit Großzetteln (mit Strahlensymbol) an drei Seiten (links, rechts und hinten) und zusätzlich vorne und rückwärts mit der orangen Warntafel versehen sein."
                 ]
             },
             "111": {
-                "Q": "Welche Bedeutung hat die im unteren Teil der orangefarbenen Warntafel angege-bene Nummer?",
+                "Q": "Welche Bedeutung hat die im unteren Teil der orangefarbenen Warntafel angegebene Nummer?",
                 "A": [
                     "Die vierstellige Nummer dient zur Kennzeichnung des Stoffes (Stoff- oder UN - Nummer)."
                 ]
@@ -1302,7 +1302,7 @@ def load_total_competition_questions():
                 ]
             },
             "116": {
-                "Q": "Welche drei prinzipiellen Maßnahmen zum Schutz vor Strahlenbelastung von au-ßen gibt es?",
+                "Q": "Welche drei prinzipiellen Maßnahmen zum Schutz vor Strahlenbelastung von außen gibt es?",
                 "A": [
                     "kurze Aufenthaltsdauer im verstrahlten Bereich; großer Abstand = 3-A-REGEL; gute Abschirmung"
                 ]
@@ -1332,13 +1332,13 @@ def load_total_competition_questions():
                 ]
             },
             "123": {
-                "Q": "Wie werden Fahrzeuge, die zum Transport von gefährlichen Gütern verwendet wer-den, gekennzeichnet?",
+                "Q": "Wie werden Fahrzeuge, die zum Transport von gefährlichen Gütern verwendet werden, gekennzeichnet?",
                 "A": [
                     "Durch orangefarbene Warntafeln und Gefahrzettel."
                 ]
             },
             "124": {
-                "Q": "Wie sind Warntafeln, die zur Kennzeichnung von Fahrzeugen zum Transport ge-fährlicher Güter verwendet werden, beschaffen?",
+                "Q": "Wie sind Warntafeln, die zur Kennzeichnung von Fahrzeugen zum Transport gefährlicher Güter verwendet werden, beschaffen?",
                 "A": [
                     "Es handelt sich um rechteckige, orangefarbene Tafeln mit schwarzem Rand; Bei Warntafeln mit Gefahr- und Stoffnummer ist das Feld der Tafel durch eine waagrechte Mittellinie geteilt. Im oberen Feld befindet sich die Nummer zur Kennzeichnung der Gefahr, im unteren Feld befindet sich die Nummer zur Kennzeichnung des Stoffes."
                 ]
@@ -1346,13 +1346,13 @@ def load_total_competition_questions():
             "125": {
                 "Q": "Was sagen Warntafeln ohne Zahl an Fahrzeugen zum Transport gefährlicher Güter über die Art der Versandstücke aus?",
                 "A": [
-                    "Sie stellen eine allgemeine Kennzeichnung dar. Sie sagen aus, dass verschiedene gefähr-liche Stoffe gemeinsam transportiert werden, sagen aber nichts über die Gefährlichkeit und die Art der transportierten Stoffe aus."
+                    "Sie stellen eine allgemeine Kennzeichnung dar. Sie sagen aus, dass verschiedene gefährliche Stoffe gemeinsam transportiert werden, sagen aber nichts über die Gefährlichkeit und die Art der transportierten Stoffe aus."
                 ]
             },
             "126": {
                 "Q": "Was sagen Warntafeln mit Zahl an Fahrzeugen zum Transport gefährlicher Güter über die Art der Versandstücke aus?",
                 "A": [
-                    "Sie stellen eine spezielle Kennzeichnung dar und geben durch die Nummern eine Infor-mation über die Art, Gefährlichkeit und den Namen des transportierten Stoffes."
+                    "Sie stellen eine spezielle Kennzeichnung dar und geben durch die Nummern eine Information über die Art, Gefährlichkeit und den Namen des transportierten Stoffes."
                 ]
             },
             "127": {
@@ -1362,9 +1362,9 @@ def load_total_competition_questions():
                 ]
             },
             "128": {
-                "Q": "Was bedeutet die vorgelegte Ziffer bei der Nummer zur Kennzeichnung der Gefahr auf Warntafeln, die an Fahrzeugen zum Transport von gefährlichen Gütern verwen-det werden? (3 Nummern werden gezogen)",
+                "Q": "Was bedeutet die vorgelegte Ziffer bei der Nummer zur Kennzeichnung der Gefahr auf Warntafeln, die an Fahrzeugen zum Transport von gefährlichen Gütern verwendet werden? (3 Nummern werden gezogen)",
                 "A": [
-                    "2 = Entweichen von Gas durch Druck oder chemische Reaktion; 3 = Entzündbarkeit von flüssigen Stoffen (Dämpfen) und Gasen oder selbsterhitzungsfä-higer flüssiger Stoff; 4 = Entzündbarkeit von festen Stoffen oder selbsterhitzungsfähiger fester Stoff; 5 = Oxidierende (brandfördernde) Wirkung; 6 = Giftigkeit oder Ansteckungsgefahr; 7 = Radioaktivität; 8 = Ätzwirkung; 9 = an 1. Stelle: umweltgefährdender Stoff verschiedene gefährliche Stoffe; an 2. oder 3. Stelle: Gefahr einer spontanen, heftigen Reaktion"
+                    "2 = Entweichen von Gas durch Druck oder chemische Reaktion; 3 = Entzündbarkeit von flüssigen Stoffen (Dämpfen) und Gasen oder selbsterhitzungsfähiger flüssiger Stoff; 4 = Entzündbarkeit von festen Stoffen oder selbsterhitzungsfähiger fester Stoff; 5 = Oxidierende (brandfördernde) Wirkung; 6 = Giftigkeit oder Ansteckungsgefahr; 7 = Radioaktivität; 8 = Ätzwirkung; 9 = an 1. Stelle: umweltgefährdender Stoff verschiedene gefährliche Stoffe; an 2. oder 3. Stelle: Gefahr einer spontanen, heftigen Reaktion"
                 ]
             },
             "129": {
@@ -1382,7 +1382,7 @@ def load_total_competition_questions():
             "131": {
                 "Q": "Was versteht man unter Einsatztaktik?",
                 "A": [
-                    "Den planvollen und zweckmäßigen Einsatz von Mannschaft und Gerät an der Einsatz-stelle."
+                    "Den planvollen und zweckmäßigen Einsatz von Mannschaft und Gerät an der Einsatzstelle."
                 ]
             },
             "132": {
@@ -1412,13 +1412,13 @@ def load_total_competition_questions():
             "136": {
                 "Q": "Welche Punkte umfasst das Führungsverfahren?",
                 "A": [
-                    "Das Führungsverfahren umfasst die Lagefeststellung, Beurteilung, Planung der Durchfüh-rung, Befehlsgebung und Kontrolle."
+                    "Das Führungsverfahren umfasst die Lagefeststellung, Beurteilung, Planung der Durchführung, Befehlsgebung und Kontrolle."
                 ]
             },
             "137": {
                 "Q": "Welche Möglichkeiten gibt es, um die Lage zu erkunden?",
                 "A": [
-                    "Das Sammeln von Informationen über die Lage durch eigene Feststellung, Meldung vom Erkundungstrupp, vorbereitete Einsatzunterlagen, Berichte von Beteiligten, Rückmel-dung von Lageberichten."
+                    "Das Sammeln von Informationen über die Lage durch eigene Feststellung, Meldung vom Erkundungstrupp, vorbereitete Einsatzunterlagen, Berichte von Beteiligten, Rückmeldung von Lageberichten."
                 ]
             },
             "138": {
@@ -1442,7 +1442,7 @@ def load_total_competition_questions():
             "141": {
                 "Q": "Wofür ist die Gateway- und Repeater-Funktion?",
                 "A": [
-                    "Die Gateway-Funktion stellt eine Verbindung zwischen TMO und DMO Modus her und erhöht damit die Reichweite im Einsatzgebiet. Die Repeater-Funktion verstärkt die DMO Abdeckung und steht in jedem wasserführenden Fahrzeug (TLFA, RLFA, LFWA) zur Ver-fügung. Sie wird speziell für Atemschutzeinsätze verwendet."
+                    "Die Gateway-Funktion stellt eine Verbindung zwischen TMO und DMO Modus her und erhöht damit die Reichweite im Einsatzgebiet. Die Repeater-Funktion verstärkt die DMO Abdeckung und steht in jedem wasserführenden Fahrzeug (TLFA, RLFA, LFWA) zur Verfügung. Sie wird speziell für Atemschutzeinsätze verwendet."
                 ]
             },
             "142": {
@@ -1460,7 +1460,7 @@ def load_total_competition_questions():
             "144": {
                 "Q": "Was ist ein Auftrag?",
                 "A": [
-                    "Anordnung eines bestimmten zu befolgenden Verhaltens, gegeben von einem Komman-danten/Vorgesetzten an seine taktische Einheit ohne feststehenden Wortlaut."
+                    "Anordnung eines bestimmten zu befolgenden Verhaltens, gegeben von einem Kommandanten/Vorgesetzten an seine taktische Einheit ohne feststehenden Wortlaut."
                 ]
             },
             "145": {
@@ -1496,13 +1496,13 @@ def load_total_competition_questions():
             "150": {
                 "Q": "Worauf ist bei der Aufstellung der Feuerwehrfahrzeuge am Einsatzort zu achten?",
                 "A": [
-                    "Fahrzeuge sind außerhalb des Gefahrenbereiches in Fluchtrichtung aufzustellen, Zu-fahrtswege dürfen nicht verstellt werden."
+                    "Fahrzeuge sind außerhalb des Gefahrenbereiches in Fluchtrichtung aufzustellen, Zufahrtswege dürfen nicht verstellt werden."
                 ]
             },
             "151": {
                 "Q": "Welche baulichen und betrieblichen Einrichtungen stellen eine besondere Gefahr für die Ausbreitung eines Brandes dar?",
                 "A": [
-                    "Durchbrochene Brandwände, Aufzugschächte, Kabelschächte, Stiegenhäuser, Lüftungs-schächte, Lichthöfe, Transportbänder u. ä."
+                    "Durchbrochene Brandwände, Aufzugschächte, Kabelschächte, Stiegenhäuser, Lüftungsschächte, Lichthöfe, Transportbänder u. ä."
                 ]
             },
             "152": {
@@ -1550,7 +1550,7 @@ def load_total_competition_questions():
             "159": {
                 "Q": "Was ist ein Brandschutzplan?",
                 "A": [
-                    "Brandschutzpläne sind färbige, vereinfachte Lage- und Gebäudepläne und müssen alle Informationen enthalten, die zur effizienten Durchführung von Feuerwehreinsätzen not-wendig sind. Sie sind grundsätzlich farbig zu gestalten und einvernehmlich mit der örtlich zuständigen Feuerwehr zu erstellen und von dieser freigeben zu lassen (Vidierung)."
+                    "Brandschutzpläne sind färbige, vereinfachte Lage- und Gebäudepläne und müssen alle Informationen enthalten, die zur effizienten Durchführung von Feuerwehreinsätzen notwendig sind. Sie sind grundsätzlich farbig zu gestalten und einvernehmlich mit der örtlich zuständigen Feuerwehr zu erstellen und von dieser freigeben zu lassen (Vidierung)."
                 ]
             },
             "160": {
@@ -1562,7 +1562,7 @@ def load_total_competition_questions():
             "161": {
                 "Q": "Was muss aus den Brandschutzplänen ersichtlich sein?",
                 "A": [
-                    "Aus den Brandschutzplänen müssen in übersichtlicher Weise Raumeinteilungen, Brand-abschnitte, Fluchtwege, Flächen für die Feuerwehr, Vorkehrungen für den Brandfall oder andere Schadensfälle sowie Hinweise auf besondere Gefahren ersichtlich sein."
+                    "Aus den Brandschutzplänen müssen in übersichtlicher Weise Raumeinteilungen, Brandabschnitte, Fluchtwege, Flächen für die Feuerwehr, Vorkehrungen für den Brandfall oder andere Schadensfälle sowie Hinweise auf besondere Gefahren ersichtlich sein."
                 ]
             },
             "162": {
@@ -1572,7 +1572,7 @@ def load_total_competition_questions():
                 ]
             },
             "163": {
-                "Q": "Welche Behelfe und Hilfsmittel sollen der Einsatzleitung zur Verfügung gestellt wer-den?",
+                "Q": "Welche Behelfe und Hilfsmittel sollen der Einsatzleitung zur Verfügung gestellt werden?",
                 "A": [
                     "Löschwasserentnahmestellenplan; Einsatzpläne; Brandschutzpläne; Einsatztagebuch; Kartenmaterial; Nachschlagwerke und Einsatzliteratur; u.ä."
                 ]
@@ -1592,7 +1592,7 @@ def load_total_competition_questions():
             "166": {
                 "Q": "Nennen Sie einige Maßnahmen des baulichen Brandschutzes?",
                 "A": [
-                    "Brandabschnittsbildung, Rauchabschnittsbildung, ordnungsgemäße Installationen in brandsicherer Ausführung, anlagentechnischer Brandschutz (Steigleitungen, Brandmel-deanlagen, Feuerwehraufzüge usw.)."
+                    "Brandabschnittsbildung, Rauchabschnittsbildung, ordnungsgemäße Installationen in brandsicherer Ausführung, anlagentechnischer Brandschutz (Steigleitungen, Brandmeldeanlagen, Feuerwehraufzüge usw.)."
                 ]
             },
             "167": {
@@ -1626,7 +1626,7 @@ def load_total_competition_questions():
                 ]
             },
             "173": {
-                "Q": "Was bedeutet bei einem Einsatz ein Dauerton mit der Autohupe, und welches Ver-halten hat dies zur Folge?",
+                "Q": "Was bedeutet bei einem Einsatz ein Dauerton mit der Autohupe, und welches Verhalten hat dies zur Folge?",
                 "A": [
                     "Es bedeutet Gefahr im Verzug.; Rückzug; Sammeln beim Fahrzeug; Feststellen der Vollzähligkeit durch den Gruppenkommandanten"
                 ]
@@ -1656,7 +1656,7 @@ def load_total_competition_questions():
                 ]
             },
             "178": {
-                "Q": "Wie werden das Auffinden der Brandmeldezentrale und das Eindringen in das Ob-jekt nach einem Brandmeldealarm erleichtert?",
+                "Q": "Wie werden das Auffinden der Brandmeldezentrale und das Eindringen in das Objekt nach einem Brandmeldealarm erleichtert?",
                 "A": [
                     "Durch eine orange Blitzleuchte und einen Schlüsselsafe."
                 ]
@@ -1670,13 +1670,13 @@ def load_total_competition_questions():
             "180": {
                 "Q": "Wie ist die Ablöse des Feuerwehr-Einsatzleiters vorzubereiten?",
                 "A": [
-                    "Durch eine Besprechung der bisher getroffenen Maßnahmen anhand der Aufzeichnun-gen der Einsatzleitstelle und eine gemeinsame Begehung der Einsatzstelle."
+                    "Durch eine Besprechung der bisher getroffenen Maßnahmen anhand der Aufzeichnungen der Einsatzleitstelle und eine gemeinsame Begehung der Einsatzstelle."
                 ]
             },
             "181": {
                 "Q": "Was sind die Hauptaufgaben einer Einsatzleitstelle?",
                 "A": [
-                    "Aufbereiten von Entscheidungshilfen für den Einsatzleiter, Weiterleitung von Entschei-dungen des Einsatzleiters, Dokumentation der Schadenslage, der Eigenen Lage und des Einsatzablaufes."
+                    "Aufbereiten von Entscheidungshilfen für den Einsatzleiter, Weiterleitung von Entscheidungen des Einsatzleiters, Dokumentation der Schadenslage, der Eigenen Lage und des Einsatzablaufes."
                 ]
             },
             "182": {
@@ -1698,13 +1698,13 @@ def load_total_competition_questions():
                 ]
             },
             "185": {
-                "Q": "Was bedeutet es, wenn die zweite und dritte Ziffer der Gefahrnummer auf Warn-tafeln an Fahrzeugen zum Transport gefährlicher Güter gleich sind?",
+                "Q": "Was bedeutet es, wenn die zweite und dritte Ziffer der Gefahrnummer auf Warntafeln an Fahrzeugen zum Transport gefährlicher Güter gleich sind?",
                 "A": [
                     "Dies weist auf die Zunahme der zusätzlichen Gefahr hin, z. B. bedeutet 266: Gas (2), das sehr giftig ist (66)."
                 ]
             },
             "186": {
-                "Q": "Welche zusätzliche Ziffer wird verwendet, wenn die Gefahr bei der Gefahrnummer auf der orangefarbenen Warntafel ausreichend von einer einzigen Ziffer angege-ben werden kann?",
+                "Q": "Welche zusätzliche Ziffer wird verwendet, wenn die Gefahr bei der Gefahrnummer auf der orangefarbenen Warntafel ausreichend von einer einzigen Ziffer angegeben werden kann?",
                 "A": [
                     "Die Ziffer „0\"."
                 ]
@@ -1712,7 +1712,7 @@ def load_total_competition_questions():
         },
         "FLA Gold - Technik": {
             "200": {
-                "Q": "Welchen Wasserdurchfluss haben Vollstrahlrohre bei verschiedenen Mundstück-weiten?",
+                "Q": "Welchen Wasserdurchfluss haben Vollstrahlrohre bei verschiedenen Mundstückweiten?",
                 "A": [
                     "C-Strahlrohr 9 mm ca. 100 l/min bei 4 bar; C-Strahlrohr 12 mm ca. 200 l/min bei 5 bar; B-Strahlrohr 16 mm ca. 400 l/min bei 6 bar; B-Strahlrohr 22 mm ca. 800 l/min bei 7 bar; C-Hohlstrahlrohre ca. 40 - 400 l/min bei 6 bar (je nach Typ und Einstellung)"
                 ]
@@ -1720,7 +1720,7 @@ def load_total_competition_questions():
             "201": {
                 "Q": "Welche Hebezeuge sind im Feuerwehrdienst hauptsächlich gebräuchlich?",
                 "A": [
-                    "Hydraulische Hebezeuge, hydraulische Rettungssätze, Hebekissen, Südbahn- oder Zahn-stangenwinde, Kräne"
+                    "Hydraulische Hebezeuge, hydraulische Rettungssätze, Hebekissen, Südbahn- oder Zahnstangenwinde, Kräne"
                 ]
             },
             "202": {
@@ -1738,13 +1738,13 @@ def load_total_competition_questions():
             "204": {
                 "Q": "Wann und wie sind Rettungsleinen gemäß ÖNORM F 5260 zu überprüfen?",
                 "A": [
-                    "Rettungsleinen sind nach jeder Verwendung, aber mindestens einmal jährlich zu über-prüfen. Hierbei ist die ausgespannte Leine eingehend auf Abnutzung, Flecken, mürbe Stellen usw. zu untersuchen. Nach 6 Jahren ist die Leine als Rettungsleine auszuscheiden."
+                    "Rettungsleinen sind nach jeder Verwendung, aber mindestens einmal jährlich zu überprüfen. Hierbei ist die ausgespannte Leine eingehend auf Abnutzung, Flecken, mürbe Stellen usw. zu untersuchen. Nach 6 Jahren ist die Leine als Rettungsleine auszuscheiden."
                 ]
             },
             "205": {
                 "Q": "Welche tragbaren Leitern werden im Feuerwehrdienst verwendet?",
                 "A": [
-                    "Alle der Norm entsprechenden Steckleitern, Schiebleitern, Hakenleitern und Mehrzweck-leitern."
+                    "Alle der Norm entsprechenden Steckleitern, Schiebleitern, Hakenleitern und Mehrzweckleitern."
                 ]
             },
             "206": {
@@ -1760,7 +1760,7 @@ def load_total_competition_questions():
                 ]
             },
             "208": {
-                "Q": "Welchen Einfluss hat eine große Saughöhe auf den Förderstrom einer Feuerlösch-pumpe?",
+                "Q": "Welchen Einfluss hat eine große Saughöhe auf den Förderstrom einer Feuerlöschpumpe?",
                 "A": [
                     "Der Förderstrom verringert sich bei gleichbleibender Motorleistung."
                 ]
@@ -1768,7 +1768,7 @@ def load_total_competition_questions():
             "209": {
                 "Q": "Wovon hängt die maximal erreichbare Saughöhe ab?",
                 "A": [
-                    "Von der Seehöhe des Standortes, vom spezifischen Gewicht des Wassers, vom Luftdruck, von der Wassertemperatur und von allfälligen Undichtheiten. Theoretisch ca. 10 m , prak-tisch ca. 8 m."
+                    "Von der Seehöhe des Standortes, vom spezifischen Gewicht des Wassers, vom Luftdruck, von der Wassertemperatur und von allfälligen Undichtheiten. Theoretisch ca. 10 m , praktisch ca. 8 m."
                 ]
             },
             "210": {
@@ -1798,7 +1798,7 @@ def load_total_competition_questions():
             "214": {
                 "Q": "Wovon hängt der Druckverlust in Schlauchleitungen ab?",
                 "A": [
-                    "Vom Höhenunterschied zwischen Anfang und Ende einer Schlauchleitung, von der Art des Schlauchmaterials, von der Schlauchlänge, vom Schlauchquerschnitt, von der Durch-flussmenge und von den eingebauten wasserführenden Armaturen."
+                    "Vom Höhenunterschied zwischen Anfang und Ende einer Schlauchleitung, von der Art des Schlauchmaterials, von der Schlauchlänge, vom Schlauchquerschnitt, von der Durchflussmenge und von den eingebauten wasserführenden Armaturen."
                 ]
             },
             "215": {
@@ -1810,7 +1810,7 @@ def load_total_competition_questions():
             "216": {
                 "Q": "Welche Vorteile bringt der Einsatz von hydraulischen Rettungsgeräten?",
                 "A": [
-                    "Schnelle, erschütterungs- und funkenarme Arbeit vor allem beim Retten von einge-klemmten Personen."
+                    "Schnelle, erschütterungs- und funkenarme Arbeit vor allem beim Retten von eingeklemmten Personen."
                 ]
             },
             "217": {
@@ -1828,7 +1828,7 @@ def load_total_competition_questions():
             "219": {
                 "Q": "Was bewirkt das Einscheren mit einer losen Rolle?",
                 "A": [
-                    "Es ermöglicht das Ziehen einer doppelt so schweren Last als die Nennzugkraft der Zu-geinrichtung."
+                    "Es ermöglicht das Ziehen einer doppelt so schweren Last als die Nennzugkraft der Zugeinrichtung."
                 ]
             },
             "220": {
@@ -1840,13 +1840,13 @@ def load_total_competition_questions():
             "221": {
                 "Q": "Wie soll man sich gegen Stichflammen oder Wärmestrahlung schützen?",
                 "A": [
-                    "Durch Deckung (z. B. hinter Türen, Mauervorsprüngen), Hitzeschutz und Vorgehen in Bo-dennähe."
+                    "Durch Deckung (z. B. hinter Türen, Mauervorsprüngen), Hitzeschutz und Vorgehen in Bodennähe."
                 ]
             },
             "222": {
-                "Q": "Welche Unfallverhütungsmaßnahmen sind beim Einsatz von hydraulischen Ret-tungsgeräten zu beachten?",
+                "Q": "Welche Unfallverhütungsmaßnahmen sind beim Einsatz von hydraulischen Rettungsgeräten zu beachten?",
                 "A": [
-                    "Zum Schutz des Gesichtes ist ein Helm mit Visier zu tragen; Schutzhandschuhe sind zu verwenden. Besondere Vorsicht ist bei gleichzeitiger Verwendung mehrerer Geräte ge-boten."
+                    "Zum Schutz des Gesichtes ist ein Helm mit Visier zu tragen; Schutzhandschuhe sind zu verwenden. Besondere Vorsicht ist bei gleichzeitiger Verwendung mehrerer Geräte geboten."
                 ]
             },
             "223": {
@@ -1862,7 +1862,7 @@ def load_total_competition_questions():
                 ]
             },
             "225": {
-                "Q": "Wie werden Bauprodukte (Bauteile) gem. ÖNORM EN 13501 hinsichtlich ihres Feu-erwiderstandes eingeteilt. Nenne die drei wesentlichen Leistungsmerkmale und welche zeitlichen Unterteilungen in Österreich zur Anwendung kommen. Führe eine beispielhafte Bezeichnung an?",
+                "Q": "Wie werden Bauprodukte (Bauteile) gem. ÖNORM EN 13501 hinsichtlich ihres Feuerwiderstandes eingeteilt. Nenne die drei wesentlichen Leistungsmerkmale und welche zeitlichen Unterteilungen in Österreich zur Anwendung kommen. Führe eine beispielhafte Bezeichnung an?",
                 "A": [
                     "R → Tragfähigkeit, E → Raumabschluss, I → Wärmedämmung; zeitliche Unterteilung 30, 60, 90 Minuten, Beispiel: REI 60, EI 30,…"
                 ]
@@ -1870,7 +1870,7 @@ def load_total_competition_questions():
             "226": {
                 "Q": "Welche Gefahren treten bei ungeschützten Stahlkonstruktionen im Brandfall auf?",
                 "A": [
-                    "Einsturzgefahr durch Verminderung der Tragfähigkeit oder Verformung, Sekundär-brände durch Wärmeleitung."
+                    "Einsturzgefahr durch Verminderung der Tragfähigkeit oder Verformung, Sekundärbrände durch Wärmeleitung."
                 ]
             },
             "227": {
@@ -1882,19 +1882,19 @@ def load_total_competition_questions():
             "228": {
                 "Q": "Was sind Brandwände?",
                 "A": [
-                    "Brandwände sind Wände, die in Brandabschnitte unterteilen und zumindest die Klassifi-zierung REI 90 und A2 oder EI 90 und A2 hinsichtlich des Feuerwiderstandes aufweisen müssen."
+                    "Brandwände sind Wände, die in Brandabschnitte unterteilen und zumindest die Klassifizierung REI 90 und A2 oder EI 90 und A2 hinsichtlich des Feuerwiderstandes aufweisen müssen."
                 ]
             },
             "229": {
                 "Q": "Wie müssen Öffnungen in Brandwänden innerhalb eines Gebäudes verschlossen werden?",
                 "A": [
-                    "Öffnungen in Brandwänden sind durch Abschlüsse (Brandschutztüren, Brandschutzklap-pen, Abschottungen, …) durch einen hierzu Befugten zu verschließen, die die gleiche Feu-erwiderstandsdauer wie diese Wände aufweisen."
+                    "Öffnungen in Brandwänden sind durch Abschlüsse (Brandschutztüren, Brandschutzklappen, Abschottungen, …) durch einen hierzu Befugten zu verschließen, die die gleiche Feuerwiderstandsdauer wie diese Wände aufweisen."
                 ]
             },
             "230": {
                 "Q": "Was ist ein „Tragbarer Feuerlöscher (TFL)“?",
                 "A": [
-                    "Ein Tragbarer Feuerlöscher ist ein Feuerlöscher, der getragen und von Hand bedient wer-den kann und im betriebsbereiten Zustand eine Masse von nicht mehr als 20 kg aufweist."
+                    "Ein Tragbarer Feuerlöscher ist ein Feuerlöscher, der getragen und von Hand bedient werden kann und im betriebsbereiten Zustand eine Masse von nicht mehr als 20 kg aufweist."
                 ]
             },
             "231": {
@@ -1912,7 +1912,7 @@ def load_total_competition_questions():
             "233": {
                 "Q": "Was ist ein „Flash Over“?",
                 "A": [
-                    "Schlagartiges Übergreifen (Durchzünden) eines Brandes auf die Oberfläche aller brenn-baren Stoffe eines Brandraumes."
+                    "Schlagartiges Übergreifen (Durchzünden) eines Brandes auf die Oberfläche aller brennbaren Stoffe eines Brandraumes."
                 ]
             },
             "234": {
@@ -1928,7 +1928,7 @@ def load_total_competition_questions():
                 ]
             },
             "236": {
-                "Q": "Welche Arten von brennbaren Stoffen nach dem Aggregatzustand (Erscheinungs-form) unterscheiden wir und nenne je ein Beispiel dazu?",
+                "Q": "Welche Arten von brennbaren Stoffen nach dem Aggregatzustand (Erscheinungsform) unterscheiden wir und nenne je ein Beispiel dazu?",
                 "A": [
                     "Feste Stoffe - z.B. Holz, Papier, Textilien; Flüssige Stoffe - z.B. Öle, Harze, Wachse, schmelzende Kunststoffe; Gasförmige Stoffe - z.B. Methan, Propan, Azetylen"
                 ]
@@ -1942,7 +1942,7 @@ def load_total_competition_questions():
             "238": {
                 "Q": "Was ist der Flammpunkt?",
                 "A": [
-                    "Niedrigste, unter festgelegten Bedingungen ermittelte Temperatur, bei der eine brenn-bare Flüssigkeit oberhalb des Flüssigkeitsspiegels mit Luft eine zündbare Dampfkonzent-ration bildet, die bei kurzzeitiger Einwirkung einer Zündquelle zur Entflammung führt."
+                    "Niedrigste, unter festgelegten Bedingungen ermittelte Temperatur, bei der eine brennbare Flüssigkeit oberhalb des Flüssigkeitsspiegels mit Luft eine zündbare Dampfkonzentration bildet, die bei kurzzeitiger Einwirkung einer Zündquelle zur Entflammung führt."
                 ]
             },
             "239": {
@@ -1960,19 +1960,19 @@ def load_total_competition_questions():
             "241": {
                 "Q": "Was ist eine Verpuffung?",
                 "A": [
-                    "Eine Verbrennung mit erhöhter Geschwindigkeit, mäßiger Druckentwicklung und dump-fem Knall."
+                    "Eine Verbrennung mit erhöhter Geschwindigkeit, mäßiger Druckentwicklung und dumpfem Knall."
                 ]
             },
             "242": {
                 "Q": "Was ist eine Explosion?",
                 "A": [
-                    "Exotherme Reaktion (chemische Reaktion unter freiwerden von Wärme) in explosionsfä-higen Gemischen."
+                    "Exotherme Reaktion (chemische Reaktion unter freiwerden von Wärme) in explosionsfähigen Gemischen."
                 ]
             },
             "243": {
                 "Q": "Was ist eine Detonation?",
                 "A": [
-                    "Explosion, die sich durch Koppelung von Stoßwelle und Flammenreaktion mit Überschall-geschwindigkeit ausbreitet."
+                    "Explosion, die sich durch Koppelung von Stoßwelle und Flammenreaktion mit Überschallgeschwindigkeit ausbreitet."
                 ]
             },
             "244": {
@@ -1996,7 +1996,7 @@ def load_total_competition_questions():
             "247": {
                 "Q": "Worauf beruht die Löschwirkung beim Hochdrucknebelstrahl?",
                 "A": [
-                    "Das fein versprühte Wasser des Hochdrucknebelstrahles wird sehr rasch in Wasserdampf umgewandelt, dadurch werden große Wärmemengen entzogen (Kühleffekt) und außer-dem wird die für die Verbrennung erforderliche Luft (Sauerstoff) verdrängt (Stickeffekt)."
+                    "Das fein versprühte Wasser des Hochdrucknebelstrahles wird sehr rasch in Wasserdampf umgewandelt, dadurch werden große Wärmemengen entzogen (Kühleffekt) und außerdem wird die für die Verbrennung erforderliche Luft (Sauerstoff) verdrängt (Stickeffekt)."
                 ]
             },
             "248": {
@@ -2036,7 +2036,7 @@ def load_total_competition_questions():
                 ]
             },
             "254": {
-                "Q": "Wie werden tragbare Feuerlöscher im Hinblick auf ihren Löschmittelinhalt be-nannt?",
+                "Q": "Wie werden tragbare Feuerlöscher im Hinblick auf ihren Löschmittelinhalt benannt?",
                 "A": [
                     "Nasslöscher, Schaumlöscher, Pulverlöscher, Kohlendioxidlöscher (CO2-Löscher)"
                 ]
@@ -2048,7 +2048,7 @@ def load_total_competition_questions():
                 ]
             },
             "256": {
-                "Q": "Welche Mindestabstände sind in elektrischen Hochspannungsanlagen (über 1.000 Volt) von unter Spannung stehenden Teilen beim Einsatz von Wasser als Löschmit-tel einzuhalten?",
+                "Q": "Welche Mindestabstände sind in elektrischen Hochspannungsanlagen (über 1.000 Volt) von unter Spannung stehenden Teilen beim Einsatz von Wasser als Löschmittel einzuhalten?",
                 "A": [
                     "C-Strahlrohr Sprühstrahl 5 m, Vollstrahl 10 m; Wasserwerfer Sprühstrahl 10 m, Vollstrahl 35 m"
                 ]
@@ -2060,7 +2060,7 @@ def load_total_competition_questions():
                 ]
             },
             "258": {
-                "Q": "Welche Mindestabstände sind in elektrischen Niederspannungsanlagen (unter 1.000 Volt) von unter Spannung stehenden Teilen beim Einsatz von Kohlendioxid-löschern einzuhalten?",
+                "Q": "Welche Mindestabstände sind in elektrischen Niederspannungsanlagen (unter 1.000 Volt) von unter Spannung stehenden Teilen beim Einsatz von Kohlendioxidlöschern einzuhalten?",
                 "A": [
                     "In Niederspannungsanlagen 1 m"
                 ]
@@ -2074,13 +2074,13 @@ def load_total_competition_questions():
             "260": {
                 "Q": "Wann besteht für einen Damm akute Gefahr?",
                 "A": [
-                    "Wenn sich Risse auf der Wasserseite der Dammkrone zeigen oder wenn das durchdrin-gende Sickerwasser trübe am Dammfuß austritt."
+                    "Wenn sich Risse auf der Wasserseite der Dammkrone zeigen oder wenn das durchdringende Sickerwasser trübe am Dammfuß austritt."
                 ]
             },
             "261": {
                 "Q": "Wie kann man einen Dammbruch verhindern?",
                 "A": [
-                    "Wenn die Einrissstelle rechtzeitig erkannt und mit Sandsäcken, großen Steinen und Dich-tungsmaterial unter Wasser verdämmt wird."
+                    "Wenn die Einrissstelle rechtzeitig erkannt und mit Sandsäcken, großen Steinen und Dichtungsmaterial unter Wasser verdämmt wird."
                 ]
             },
             "262": {
@@ -2092,11 +2092,11 @@ def load_total_competition_questions():
             "263": {
                 "Q": "Wie ist ein Dammbruch zu schließen?",
                 "A": [
-                    "1. Abdrängen der Strömung (durch Rauhbäume, Hilfsdamm u.ä.); 2. Befestigung der noch stehenden Dammköpfe (Strauchwerk oder Pfahlschutz mit Sand-packung); 3. Schließen der Dammlücke mit Behelfsdamm (Pilotierung, Pfostenwand, Sandsackver-bauung)"
+                    "1. Abdrängen der Strömung (durch Rauhbäume, Hilfsdamm u.ä.); 2. Befestigung der noch stehenden Dammköpfe (Strauchwerk oder Pfahlschutz mit Sandpackung); 3. Schließen der Dammlücke mit Behelfsdamm (Pilotierung, Pfostenwand, Sandsackverbauung)"
                 ]
             },
             "264": {
-                "Q": "Wie hoch ist der Luftverbrauch eines durchschnittlich gebauten, gesunden Men-schen?",
+                "Q": "Wie hoch ist der Luftverbrauch eines durchschnittlich gebauten, gesunden Menschen?",
                 "A": [
                     "leichte körperliche Arbeit - ca. 30 Liter/Minute; mittelschwere Arbeit - ca. 50 Liter/Minute; Schwerstarbeit - ca. 100 Liter/Minute"
                 ]
@@ -2108,27 +2108,27 @@ def load_total_competition_questions():
                 ]
             },
             "266": {
-                "Q": "Welcher Sicherheitsabstand ist zu unter Spannung stehenden Hochspannungsfrei-leitungen (über 1.000 Volt) einzuhalten?",
+                "Q": "Welcher Sicherheitsabstand ist zu unter Spannung stehenden Hochspannungsfreileitungen (über 1.000 Volt) einzuhalten?",
                 "A": [
-                    "Im Bereich von Hochspannungsfreileitungen muss ein Sicherheitsabstand von mindes-tens 5 m eingehalten werden. Dieser Abstand darf mit keinem Körperteil oder Geräteteil (z.B. Leiter oder Einreißhaken) unterschritten werden."
+                    "Im Bereich von Hochspannungsfreileitungen muss ein Sicherheitsabstand von mindestens 5 m eingehalten werden. Dieser Abstand darf mit keinem Körperteil oder Geräteteil (z.B. Leiter oder Einreißhaken) unterschritten werden."
                 ]
             },
             "267": {
                 "Q": "Welcher Sicherheitsabstand ist zu einer gerissenen und den Boden berührenden Hochspannungsfreileitung oder zu Gegenständen (Fahrzeug, Bauwerk, Baum, etc.), die mit der Leitung in unmittelbarer Verbindung stehen, einzuhalten?",
                 "A": [
-                    "Es ist ein Sicherheitsabstand von mindestens 20 m rund um die Schadensstelle einzuhal-ten. In diesem Bereich bildet sich, aufgrund der Stromableitung gegen Erde, ein soge-nannter Spannungstrichter, der zu einer lebensgefährlichen Schrittspannung führt."
+                    "Es ist ein Sicherheitsabstand von mindestens 20 m rund um die Schadensstelle einzuhalten. In diesem Bereich bildet sich, aufgrund der Stromableitung gegen Erde, ein sogenannter Spannungstrichter, der zu einer lebensgefährlichen Schrittspannung führt."
                 ]
             },
             "268": {
-                "Q": "Wann darf der Sicherheitsabstand zu einer Hochspannungsfreileitung oder zu ei-nem Gegenstand (Fahrzeug, Baum etc.), der mit dieser Leitung in unmittelbarer Verbindung steht, unterschritten werden oder Teile der Hochspannungsfreileitung durch Einsatzkräfte berührt werden?",
+                "Q": "Wann darf der Sicherheitsabstand zu einer Hochspannungsfreileitung oder zu einem Gegenstand (Fahrzeug, Baum etc.), der mit dieser Leitung in unmittelbarer Verbindung steht, unterschritten werden oder Teile der Hochspannungsfreileitung durch Einsatzkräfte berührt werden?",
                 "A": [
                     "An Teile einer Hochspannungsfreileitung dürfen sich Einsatzkräfte erst annähern oder diese Teile berühren, wenn eindeutig feststeht, dass die Leitungsanlage freigeschaltet und geerdet ist."
                 ]
             },
             "269": {
-                "Q": "Wie weit von der Einsatzstelle muss auf einer Freilandstraße mit den Absicherungs-maßnahmen begonnen werden?",
+                "Q": "Wie weit von der Einsatzstelle muss auf einer Freilandstraße mit den Absicherungsmaßnahmen begonnen werden?",
                 "A": [
-                    "Die Absicherungsmaßnahmen (Aufstellen von Triopan-Faltsignalen) auf Freilandstraße müssen ca. 150 m - 250 m vor der Einsatzstelle beginnen."
+                    "Die Absicherungsmaßnahmen (Aufstellen von TriopanFaltsignalen) auf Freilandstraße müssen ca. 150 m - 250 m vor der Einsatzstelle beginnen."
                 ]
             },
             "270": {
@@ -2140,7 +2140,7 @@ def load_total_competition_questions():
             "271": {
                 "Q": "Was versteht man unter Saughöhe?",
                 "A": [
-                    "Die Saughöhe ist der Höhenunterschied zwischen Ansaugwasserspiegel und Pum-penachse der Feuerlöschpumpe."
+                    "Die Saughöhe ist der Höhenunterschied zwischen Ansaugwasserspiegel und Pumpenachse der Feuerlöschpumpe."
                 ]
             },
             "272": {
@@ -2152,7 +2152,7 @@ def load_total_competition_questions():
             "273": {
                 "Q": "Welche Löschwirkung hat D-Löschpulver?",
                 "A": [
-                    "D-Löschpulver trennt die Sauerstoffzufuhr zum Metall durch Bildung einer Kruste. Diese entsteht durch Aufschmelzen des Löschpulvers auf die Oberfläche des brennenden Me-talls."
+                    "D-Löschpulver trennt die Sauerstoffzufuhr zum Metall durch Bildung einer Kruste. Diese entsteht durch Aufschmelzen des Löschpulvers auf die Oberfläche des brennenden Metalls."
                 ]
             },
             "274": {
@@ -2182,7 +2182,7 @@ def load_total_competition_questions():
             "278": {
                 "Q": "Was versteht man unter Deckungsbereich?",
                 "A": [
-                    "Bereich, der von einem Strahlrohr in Abhängigkeit von Durchflussmenge und Druckver-hältnissen beherrscht werden kann."
+                    "Bereich, der von einem Strahlrohr in Abhängigkeit von Durchflussmenge und Druckverhältnissen beherrscht werden kann."
                 ]
             },
             "279": {
@@ -2200,13 +2200,13 @@ def load_total_competition_questions():
             "281": {
                 "Q": "Welche Deckungsbreiten werden mit unterschiedlichen Strahlrohren erreicht?",
                 "A": [
-                    "H-Pistolenstrahlrohr 10 m (ca. 100 l/min bei 20 bar); C-Strahlrohr 9 mm 10 m (ca. 100 l/min bei 4 bar); C-Strahlrohr 12 mm 15 m (ca. 200 l/min bei 5 bar); B-Strahlrohr 16 mm 20 m (ca. 400 l/min bei 6 bar); B-Strahlrohr 22 mm 25 m (ca. 800 l/min bei 7 bar); C-Hohlstrahlrohre 14 – 40 m (je nach Typ und Einstellung)"
+                    "H-Pistolenstrahlrohr 10 m (ca. 100 l/min bei 20 bar); C-Strahlrohr 9 mm 10 m (ca. 100 l/min bei 4 bar); C-Strahlrohr 12 mm 15 m (ca. 200 l/min bei 5 bar); B-Strahlrohr 16 mm 20 m (ca. 400 l/min bei 6 bar); B-Strahlrohr 22 mm 25 m (ca. 800 l/min bei 7 bar); C-Hohlstrahlrohre 14 - 40 m (je nach Typ und Einstellung)"
                 ]
             },
             "282": {
                 "Q": "Wie kann die Entrauchung von verrauchten Räumen beschleunigt werden?",
                 "A": [
-                    "Öffnen von Zu- und Abluftöffnungen unter Beachtung des vorherrschenden Windes, Ein-setzen von Unter- oder Überdruckventilatoren."
+                    "Öffnen von Zu- und Abluftöffnungen unter Beachtung des vorherrschenden Windes, Einsetzen von Unter- oder Überdruckventilatoren."
                 ]
             },
             "283": {
@@ -2246,15 +2246,15 @@ def load_total_competition_questions():
                 ]
             },
             "289": {
-                "Q": "Welche Arten von Atemschutzgeräten stehen für den Feuerwehreinsatz zur Verfü-gung?",
+                "Q": "Welche Arten von Atemschutzgeräten stehen für den Feuerwehreinsatz zur Verfügung?",
                 "A": [
-                    "Umluftabhängige Atemschutzgeräte - Atemmasken mit Atemfilter; Umluftunabhängige Atemschutzgeräte - Behältergeräte (Pressluftatmer), Regenerations-geräte und Schlauchgeräte"
+                    "Umluftabhängige Atemschutzgeräte - Atemmasken mit Atemfilter; Umluftunabhängige Atemschutzgeräte - Behältergeräte (Pressluftatmer), Regenerationsgeräte und Schlauchgeräte"
                 ]
             },
             "290": {
                 "Q": "Warum dürfen Atemluftflaschen nicht vollständig entleert werden?",
                 "A": [
-                    "Damit gewährleistet ist, dass keine Feuchtigkeit, Schmutz und Schadstoffe in die Atem-luftflaschen gelangen kann."
+                    "Damit gewährleistet ist, dass keine Feuchtigkeit, Schmutz und Schadstoffe in die Atemluftflaschen gelangen kann."
                 ]
             },
             "291": {
@@ -2282,7 +2282,7 @@ def load_total_competition_questions():
                 ]
             },
             "295": {
-                "Q": "Welche Luftmenge muss dem Atemschutzgeräteträger für den gesicherten Rück-zug zur Verfügung stehen?",
+                "Q": "Welche Luftmenge muss dem Atemschutzgeräteträger für den gesicherten Rückzug zur Verfügung stehen?",
                 "A": [
                     "Mindestens die doppelte Luftmenge als jene, die beim Anmarschweg verbraucht wurde."
                 ]

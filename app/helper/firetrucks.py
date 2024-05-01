@@ -222,7 +222,7 @@ def load_total_storage():
                 "Hinweiszettel Lift",
                 "Dreieck-Schlüssel",
                 "Handlampe",
-                "FFP2-Mask",
+                "FFP2-Maske",
                 "Pressluftatmer",
                 "Vollmaske f. Pressluftatmer",
                 "Suchscheinwerfer",
@@ -430,14 +430,13 @@ def load_total_storage():
                 "Warnlichthaube f. Handscheinwerfer",
                 "Handlampe",
                 "Handfunkgerät",
-                "Mobilfunkgerät",
                 "Suchscheinwerfer",
-                "Arbietsmesser",
+                "Arbeitsmesser",
                 "Verbandskasten",
                 "Pannendreieck",
                 "Entfernungsmesser",
                 "Schutzhandschuhe",
-                "Schlüssel"
+                "Schlüsselset"
             ],
             "Korb": [
                 "Druckschlauch C 7 m",
