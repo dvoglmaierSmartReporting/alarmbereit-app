@@ -213,17 +213,18 @@ class FahrzeugkundeTrainingGame(Screen):
         app.root.current = "fahrzeugkundemenu"
         app.root.transition.direction = "right"
 
+    def reset_tool_list(self):
+        rooms, tools, tools_locations = load_firetruck_storage(self.selected_firetruck)
+        self.rooms: list = rooms
+        self.tools: list = tools
+        self.tools_locations: dict = tools_locations
+
+        shuffle(self.tools)
+
     def play(self):
         # training mode
         if self.mode_training or self.mode_game:
-            rooms, tools, tools_locations = load_firetruck_storage(
-                self.selected_firetruck
-            )
-            self.rooms: list = rooms
-            self.tools: list = tools
-            self.tools_locations: dict = tools_locations
-
-            shuffle(self.tools)
+            self.reset_tool_list()
 
         if self.mode_training:
             # disable timer and enable strike counter
@@ -247,14 +248,8 @@ class FahrzeugkundeTrainingGame(Screen):
     def next_tool(self, *args):
         self.accept_answers = True  # Enable answer processing for the new tool
 
-        # if self.mode_training:
-        #     self.strike_label.text = f"{str(self.strike)}  "
-        # elif self.mode_game:
-        #     self.score_label.text = f"{str(self.score)}  "
-
-        if not self.tools:
-            load_firetruck_storage(self.selected_firetruck)
-            shuffle(self.tools)
+        if len(self.tools) == 0:
+            self.reset_tool_list()
 
         # troubleshooting: fix tool
         # self.current_tool = "Handfunkgerät"  # "Druckschlauch B"
@@ -262,10 +257,6 @@ class FahrzeugkundeTrainingGame(Screen):
 
         self.correct_storage: set = set(self.tools_locations.get(self.current_tool))
 
-        # if len(self.correct_storage) > 1:
-        #     self.correct_storage_multiple = list(set(self.correct_storage))
-        # else:
-        #     self.correct_storage_multiple = list()
         self.correct_storage_multiple = list(self.correct_storage)
 
         tool_text = self.current_tool
@@ -359,7 +350,12 @@ class FahrzeugkundeTrainingGame(Screen):
         self.accept_answers = (
             False  # Disable answer processing after an answer is selected
         )
-        Clock.schedule_once(self.next_tool, 2)
+
+        timer_pause = 2
+        if self.mode_game:
+            timer_pause = 0.5
+
+        Clock.schedule_once(self.next_tool, timer_pause)
         # Clock.schedule_once(self.next_tool, 0.2)
 
 
