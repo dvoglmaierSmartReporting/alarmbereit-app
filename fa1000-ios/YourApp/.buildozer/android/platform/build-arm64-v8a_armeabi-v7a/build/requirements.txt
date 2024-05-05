@@ -1,2 +1,0 @@
-charset-normalizer==3.3.2
-kivy-garden
