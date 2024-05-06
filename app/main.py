@@ -113,13 +113,13 @@ class BewerbMenu(Screen):
     def on_button_release(self, instance):
         # bind competition selection
         app = App.get_running_app()
-        app.root.current = "bewerbgame"
+        app.root.current = "bewerbtraining"
         app.root.transition.direction = "left"
 
         # continue game with selected firetruck
-        bewerbgame_screen = app.root.get_screen("bewerbgame")
-        bewerbgame_screen.select_competition(instance.text)
-        bewerbgame_screen.play()
+        bewerbtraining_screen = app.root.get_screen("bewerbtraining")
+        bewerbtraining_screen.select_competition(instance.text)
+        bewerbtraining_screen.play()
 
 
 class FahrzeugkundeTrainingGame(Screen):
@@ -419,7 +419,7 @@ class FahrzeugkundeImages(Screen):
     pass
 
 
-class BewerbGame(Screen):
+class BewerbTraining(Screen):
     def select_competition(self, selected_competition):
         # troubleshooting: fix competition
         # self.selected_competition = "Funk"
@@ -435,8 +435,9 @@ class BewerbGame(Screen):
         self.competition_dict = total_questions[self.selected_competition]
 
         self.question_ids = list(set(self.competition_dict.keys()))
-        self.question_ids_total = len(self.question_ids)
         shuffle(self.question_ids)
+
+        self.question_ids_total = max([int(x) for x in self.question_ids])
 
     def break_lines(self, long_string: str) -> str:
         max_characters = 14
@@ -506,7 +507,7 @@ class FeuerwehrApp(App):
         sm.add_widget(FahrzeugkundeTrainingGame())
         sm.add_widget(FahrzeugkundeBrowse())
         sm.add_widget(FahrzeugkundeImages())
-        sm.add_widget(BewerbGame())
+        sm.add_widget(BewerbTraining())
         return sm
 
 

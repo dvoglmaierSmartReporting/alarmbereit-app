@@ -263,7 +263,7 @@
                 size_hint_y: None
                 size_hint_x: None
                # width: self.minimum_width
-                width: 1000
+                width: self.minimum_width
                 height: self.minimum_height
               #  spacing: 10
               #  padding: 10
@@ -295,8 +295,8 @@
         size_hint: 1, 0.25
 
 
-<BewerbGame>:
-    name: "bewerbgame"
+<BewerbTraining>:
+    name: "bewerbtraining"
     question_label: question_label
     question_id_label: question_id_label
     answer_label: answer_label
@@ -344,11 +344,11 @@
                 text: "Lösung"
                 font_size: "32sp"
                 on_release:
-                    root.manager.get_screen('bewerbgame').reveal_answer()
+                    root.manager.get_screen('bewerbtraining').reveal_answer()
     
             Button:
                 text: "Nächste"
                 font_size: "32sp"
                 on_release:
-                    root.manager.get_screen('bewerbgame').next_question()
+                    root.manager.get_screen('bewerbtraining').next_question()
         
