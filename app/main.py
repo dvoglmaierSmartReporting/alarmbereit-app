@@ -382,7 +382,7 @@ class FahrzeugkundeBrowse(Screen):
                 markup=True,
                 size_hint_y=None,
                 font_size="24sp",
-                height=70,
+                height=90,
                 halign="left",
                 text_size=(self.width, None),
             )
@@ -397,7 +397,7 @@ class FahrzeugkundeBrowse(Screen):
                     size_hint_y=None,
                     size_hint_x=1,
                     font_size="22sp",
-                    height=50,
+                    height=70,
                     halign="left",
                     valign="middle",
                 )

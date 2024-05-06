@@ -215,10 +215,12 @@
             spacing: "3dp"
             cols: 2
 
+
 <Container>:
     orientation: 'vertical'
     size_hint_y: None
     height: self.minimum_height
+
 
 <FahrzeugkundeBrowse>:
     name: "fahrzeugkunde_browse"
@@ -259,7 +261,9 @@
                 id: container
                 orientation: 'vertical'
                 size_hint_y: None
-                width: self.minimum_width
+                size_hint_x: None
+               # width: self.minimum_width
+                width: 1000
                 height: self.minimum_height
               #  spacing: 10
               #  padding: 10
