@@ -45,3 +45,4 @@ def mode_bool2str(mode: tuple) -> str:
         return "Stöbern"
     if mode_images:
         return "Bilder"
+    return ""
