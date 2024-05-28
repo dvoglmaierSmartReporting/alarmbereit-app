@@ -27,22 +27,15 @@ class StartMenu(Screen):
         # if mode change, read mode label from current selection
         self.mode = mode_str2bool(self.find_down_toggle_button(self))
 
-        # # disable not existing combinations
-        # self.firetrucks_button.disabled = False
-        # self.competition_button.disabled = False
-        # mode_training, mode_game, mode_browse, mode_images = self.mode
-        # if mode_images:
-        #     self.firetrucks_button.disabled = True
-        # if mode_game or mode_images or mode_browse:
-        #     self.competition_button.disabled = True
         # disable not existing combinations
-        self.firetrucks_button.enabled = True
-        self.competition_button.enabled = True
+        self.firetrucks_button.disabled = False
+        self.competition_button.disabled = False
         mode_training, mode_game, mode_browse, mode_images = self.mode
-        if not mode_images:
-            self.firetrucks_button.enabled = False
-        if not (mode_game or mode_images or mode_browse):
-            self.competition_button.enabled = False
+        if mode_images:
+            self.firetrucks_button.disabled = True
+        # if mode_game or mode_images or mode_browse:
+        if mode_game or mode_images:
+            self.competition_button.disabled = True
 
     def forward_mode2menu(self, menu_screen: str):
         selected_mode = mode_bool2str(self.mode)
@@ -107,11 +100,9 @@ class FahrzeugkundeMenu(Screen):
 class BewerbMenu(Screen):
     def __init__(self, **kwargs):
         super(BewerbMenu, self).__init__(**kwargs)
-
         # load available competitions
         total_competition_questions = load_total_competition_questions()
         self.total_competitions = list(total_competition_questions.keys())
-
         # create button for all firetrucks
         for competitions in self.total_competitions:
             btn = Button(text=competitions, font_size="32sp")
@@ -119,15 +110,42 @@ class BewerbMenu(Screen):
             self.bewerbe_layout.add_widget(btn)
 
     def on_button_release(self, instance):
+        # on question selection, read mode label text from current screen
+        mode = mode_str2bool(self.mode_label.text.strip())
+        mode_training, mode_game, mode_browse, mode_images = mode
+
         # bind competition selection
         app = App.get_running_app()
-        app.root.current = "bewerbtraining"
-        app.root.transition.direction = "left"
 
-        # continue game with selected firetruck
-        bewerbtraining_screen = app.root.get_screen("bewerbtraining")
-        bewerbtraining_screen.select_competition(instance.text)
-        bewerbtraining_screen.play()
+        # IDEA:
+        # add left-right-buttons to training mode to switch questions presicely
+        # and rename button to 'Zufällig'
+
+        # if mode_training or mode_game:
+        if mode_training:
+            app.root.current = "bewerbtraining"
+            app.root.transition.direction = "left"
+            # continue game with selected competition
+            bewerbtraining_screen = app.root.get_screen("bewerbtraining")
+            bewerbtraining_screen.select_competition(instance.text)
+            bewerbtraining_screen.play()
+            # adapt for competition
+            # fahrzeugkunde_tg_screen.forward_mode_2_fk_training_game(mode)
+
+        # adapt for competition
+        # elif mode_browse:
+        #     # change screen
+        #     app.root.current = "fahrzeugkunde_browse"
+        #     app.root.transition.direction = "left"
+        #     # continue game with selected firetruck
+        #     fahrzeugkunde_browse_screen = app.root.get_screen("fahrzeugkunde_browse")
+        #     fahrzeugkunde_browse_screen.select_firetruck(instance.text)
+        #     fahrzeugkunde_browse_screen.populate_list()
+
+        # adapt for competition
+        # elif mode_images:
+        #     app.root.current = "fahrzeugkunde_images"
+        #     app.root.transition.direction = "left"
 
 
 class FahrzeugkundeTrainingGame(Screen):
