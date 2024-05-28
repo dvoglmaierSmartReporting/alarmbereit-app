@@ -24,7 +24,7 @@ def load_firetruck_storage(selected_firetruck: str) -> tuple[list, list, dict]:
 
 def mode_str2bool(selected_mode: str) -> tuple:
     mode_training: bool = True if selected_mode == "Training" else False
-    mode_game: bool = True if selected_mode == "Game" else False
+    mode_game: bool = True if selected_mode == "Zeitdruck" else False
     mode_browse: bool = True if selected_mode == "Stöbern" else False
     mode_images: bool = True if selected_mode == "Bilder" else False
     return (
@@ -40,7 +40,7 @@ def mode_bool2str(mode: tuple) -> str:
     if mode_training:
         return "Training"
     if mode_game:
-        return "Game"
+        return "Zeitdruck"
     if mode_browse:
         return "Stöbern"
     if mode_images:
