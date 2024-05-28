@@ -225,9 +225,6 @@
 <FahrzeugkundeBrowse>:
     name: "fahrzeugkunde_browse"
     firetruck_label: firetruck_label
-    # tool_label: tool_label
-    # rooms_layout: rooms_layout
-    # inventory: inventory
 
     Button:
         text: "<"
@@ -249,8 +246,6 @@
         size: "200dp", "50dp"
     
     BoxLayout:
-        #orientation: "vertical"
-        # size: root.size
         Widget:
             size_hint_y: 0
             size_hint_x: 0.15
@@ -262,11 +257,8 @@
                 orientation: 'vertical'
                 size_hint_y: None
                 size_hint_x: None
-               # width: self.minimum_width
-                width: 1000
+                width: 1300
                 height: self.minimum_height
-              #  spacing: 10
-              #  padding: 10
 
 
 <FahrzeugkundeImages>:
@@ -299,7 +291,6 @@
     name: "bewerbtraining"
     question_label: question_label
     question_id_label: question_id_label
-    answer_label: answer_label
     # answers_layout: answers_layout  # multiple-choice
 
     Button:
@@ -325,15 +316,21 @@
         orientation: 'vertical'
 
         Label:
-            id: question_label
-            size_hint: 1, 0.425
-            font_size: "35sp"
-        
+            # placeholder
+            size_hint: 1, 0.07
+            text: ""
+
         Label:
-            id: answer_label
-            size_hint: 1, 0.425
+            id: question_label
+            #size_hint: 1, 0.425
             font_size: "35sp"
 
+            #text_size: self.width, None
+            text_size: self.size
+            size_hint: 1, 0.78
+            height: self.texture_size[1]
+            valign: "top"
+        
         GridLayout:
             id: rooms_layout
             size_hint: 1, 0.15

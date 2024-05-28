@@ -428,7 +428,6 @@ class BewerbTraining(Screen):
     def play(self):
         self.load_competition_questions()
         self.next_question()
-        self.accept_answers = True  # Flag to indicate if answers should be processed
 
     def load_competition_questions(self):
         total_questions = load_total_competition_questions()
@@ -439,24 +438,8 @@ class BewerbTraining(Screen):
 
         self.question_ids_total = max([int(x) for x in self.question_ids])
 
-    def break_lines(self, long_string: str) -> str:
-        max_characters = 14
-        words = long_string.split(" ")
-        text = line = words[0]
-        for word in words[1:]:
-            if len(line) <= max_characters:
-                text += " "
-                line += " "
-            else:
-                text += "\n"
-                line = ""
-            text += word
-            line += word
-        return text
-
     def next_question(self):
-        # self.accept_answers = True  # Enable answer processing for the new question
-        if not self.question_ids:
+        if len(self.question_ids) == 0:
             self.load_competition_questions()
 
         # troubleshooting: fix question
@@ -469,17 +452,14 @@ class BewerbTraining(Screen):
         self.current_question = self.competition_dict.get(self.current_question_id).get(
             "Q"
         )
-        self.current_question = self.break_lines(self.current_question)
         self.question_label.text = self.current_question
 
         self.current_answer = self.competition_dict.get(self.current_question_id).get(
             "A"
         )[0]
-        self.current_answer = self.break_lines(self.current_answer)
-        self.answer_label.text = ""
 
     def reveal_answer(self):
-        self.answer_label.text = self.current_answer
+        self.question_label.text += "\n\n" + self.current_answer
 
 
 class WindowManager(ScreenManager):
