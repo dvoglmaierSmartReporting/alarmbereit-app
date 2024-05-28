@@ -27,14 +27,22 @@ class StartMenu(Screen):
         # if mode change, read mode label from current selection
         self.mode = mode_str2bool(self.find_down_toggle_button(self))
 
+        # # disable not existing combinations
+        # self.firetrucks_button.disabled = False
+        # self.competition_button.disabled = False
+        # mode_training, mode_game, mode_browse, mode_images = self.mode
+        # if mode_images:
+        #     self.firetrucks_button.disabled = True
+        # if mode_game or mode_images or mode_browse:
+        #     self.competition_button.disabled = True
         # disable not existing combinations
-        self.firetrucks_button.disabled = False
-        self.competition_button.disabled = False
+        self.firetrucks_button.enabled = True
+        self.competition_button.enabled = True
         mode_training, mode_game, mode_browse, mode_images = self.mode
-        if mode_images:
-            self.firetrucks_button.disabled = True
-        if mode_game or mode_images or mode_browse:
-            self.competition_button.disabled = True
+        if not mode_images:
+            self.firetrucks_button.enabled = False
+        if not (mode_game or mode_images or mode_browse):
+            self.competition_button.enabled = False
 
     def forward_mode2menu(self, menu_screen: str):
         selected_mode = mode_bool2str(self.mode)
