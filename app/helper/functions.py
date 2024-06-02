@@ -1,4 +1,7 @@
 from helper.firetrucks import load_total_storage
+from helper.strings import HelperStrings
+
+strs = HelperStrings()
 
 
 def invert_firetruck_equipment(firetruck: dict) -> dict:
@@ -23,10 +26,10 @@ def load_firetruck_storage(selected_firetruck: str) -> tuple[list, list, dict]:
 
 
 def mode_str2bool(selected_mode: str) -> tuple:
-    mode_training: bool = True if selected_mode == "Training" else False
-    mode_game: bool = True if selected_mode == "Zeitdruck" else False
-    mode_browse: bool = True if selected_mode == "Stöbern" else False
-    mode_images: bool = True if selected_mode == "Bilder" else False
+    mode_training: bool = True if selected_mode == strs.button_str_training else False
+    mode_game: bool = True if selected_mode == strs.button_str_game else False
+    mode_browse: bool = True if selected_mode == strs.button_str_browse else False
+    mode_images: bool = True if selected_mode == strs.button_str_images else False
     return (
         mode_training,
         mode_game,
@@ -38,11 +41,11 @@ def mode_str2bool(selected_mode: str) -> tuple:
 def mode_bool2str(mode: tuple) -> str:
     mode_training, mode_game, mode_browse, mode_images = mode
     if mode_training:
-        return "Training"
+        return strs.button_str_training
     if mode_game:
-        return "Zeitdruck"
+        return strs.button_str_game
     if mode_browse:
-        return "Stöbern"
+        return strs.button_str_browse
     if mode_images:
-        return "Bilder"
+        return strs.button_str_images
     return ""

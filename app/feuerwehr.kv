@@ -8,6 +8,14 @@
 
 <StartMenu>:
     name: "startmenu"
+
+    mode_label: mode_label
+    training_button: training_button
+    game_button: game_button
+    browse_button: browse_button
+    images_button: images_button
+
+    questions_label: questions_label
     firetrucks_button: firetrucks_button
     competition_button: competition_button
 
@@ -16,7 +24,7 @@
         spacing: "3dp"
 
         Label:
-            text: "Modus"
+            id: mode_label
             bold: True
             font_size: "32sp"
             size_hint: 1, 0.5
@@ -27,25 +35,24 @@
             spacing: "3dp"
 
             CustomToggleButton:
+                id: training_button
                 state: "down"
-                text: "Training"
                 on_release: root.on_button_release()
 
             CustomToggleButton:
-                text: "Zeitdruck"
+                id: game_button
                 on_release: root.on_button_release()
             
             CustomToggleButton:
-                text: "Stöbern"
+                id: browse_button
                 on_release: root.on_button_release()
 
             CustomToggleButton:
-                text: "Bilder"
+                id: images_button
                 on_release: root.on_button_release()
-                # disabled: True  # Disable since not implemented
         
         Label:
-            text: "Fragen"
+            id: questions_label
             bold: True
             font_size: "32sp"
             size_hint: 1, 0.5
@@ -279,7 +286,7 @@
     
     Label:
         # id: firetruck_label
-        text: "Bilder"
+        text: "Bilder"  # move to strings.py
         font_size: "20sp"
         pos_hint: {'left': 1, 'top': 1}
         text_size: self.width, None

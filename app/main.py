@@ -13,6 +13,9 @@ from random import shuffle
 from helper.firetrucks import load_total_storage
 from helper.competitions import load_total_competition_questions
 from helper.functions import load_firetruck_storage, mode_str2bool, mode_bool2str
+from helper.strings import HelperStrings
+
+strs = HelperStrings()
 
 
 class StartMenu(Screen):
@@ -22,6 +25,17 @@ class StartMenu(Screen):
         False,  # browse
         False,  # images
     )
+
+    def __init__(self, **kwargs):
+        super(StartMenu, self).__init__(**kwargs)
+        # update button strings
+        self.training_button.text = strs.button_str_training
+        self.game_button.text = strs.button_str_game
+        self.browse_button.text = strs.button_str_browse
+        self.images_button.text = strs.button_str_images
+        # update label strings
+        self.mode_label.text = strs.label_str_mode
+        self.questions_label.text = strs.label_str_questions
 
     def on_button_release(self):
         # if mode change, read mode label from current selection
@@ -33,8 +47,8 @@ class StartMenu(Screen):
         mode_training, mode_game, mode_browse, mode_images = self.mode
         if mode_images:
             self.firetrucks_button.disabled = True
-        # if mode_game or mode_images or mode_browse:
-        if mode_game or mode_images:
+        if mode_game or mode_images or mode_browse:
+            # if mode_game or mode_images:
             self.competition_button.disabled = True
 
     def forward_mode2menu(self, menu_screen: str):
