@@ -35,9 +35,12 @@ class StartMenu(Screen):
         self.images_button.text = strs.button_str_images
         self.firetrucks_button.text = strs.button_str_firetrucks
         self.competitions_button.text = strs.button_str_competitions
+        self.standards_button.text = strs.button_str_standards
         # update label strings
         self.mode_label.text = strs.label_str_mode
         self.questions_label.text = strs.label_str_questions
+
+        self.standards_button.disabled = True
 
     def on_button_release(self):
         # if mode change, read mode label from current selection
@@ -45,13 +48,16 @@ class StartMenu(Screen):
 
         # disable not existing combinations
         self.firetrucks_button.disabled = False
-        self.competition_button.disabled = False
+        self.competitions_button.disabled = False
+        # self.standards_button.disabled = False
         mode_training, mode_game, mode_browse, mode_images = self.mode
         if mode_images:
             self.firetrucks_button.disabled = True
         if mode_game or mode_images or mode_browse:
             # if mode_game or mode_images:
-            self.competition_button.disabled = True
+            self.competitions_button.disabled = True
+        # if mode_training or mode_game or mode_images or mode_browse:
+        #     self.standards_button.disabled = True
 
     def forward_mode2menu(self, menu_screen: str):
         selected_mode = mode_bool2str(self.mode)
@@ -453,8 +459,8 @@ class FahrzeugkundeBrowse(Screen):
                 container.add_widget(label)
 
 
-class Container(BoxLayout):
-    pass
+# class Container(BoxLayout):
+#     pass
 
 
 class FahrzeugkundeImages(Screen):

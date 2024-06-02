@@ -17,7 +17,8 @@
 
     questions_label: questions_label
     firetrucks_button: firetrucks_button
-    competition_button: competition_button
+    competitions_button: competitions_button
+    standards_button: standards_button
 
     BoxLayout:
         orientation: "vertical"
@@ -66,12 +67,20 @@
                 root.forward_mode2menu("fahrzeugkundemenu")
 
         Button:
-            id: competition_button
+            id: competitions_button
             font_size: "32sp"
             on_release:
                 app.root.current = "bewerbmenu"
                 root.manager.transition.direction = "left"
                 root.forward_mode2menu("bewerbmenu")
+        
+        Button:
+            id: standards_button
+            font_size: "32sp"
+            on_release:
+                app.root.current = "standardsmenu"
+                root.manager.transition.direction = "left"
+                root.forward_mode2menu("standardsmenu")
 
 
 <FahrzeugkundeMenu>:
@@ -284,7 +293,7 @@
     
     Label:
         # id: firetruck_label
-        text: "Bilder"  # move to strings.py
+        text: "Bilder"
         font_size: "20sp"
         pos_hint: {'left': 1, 'top': 1}
         text_size: self.width, None
@@ -296,7 +305,6 @@
     name: "bewerbtraining"
     question_label: question_label
     question_id_label: question_id_label
-    # answers_layout: answers_layout  # multiple-choice
 
     Button:
         text: "<"
@@ -330,7 +338,6 @@
             #size_hint: 1, 0.425
             font_size: "35sp"
 
-            #text_size: self.width, None
             text_size: self.size
             size_hint: 1, 0.78
             height: self.texture_size[1]

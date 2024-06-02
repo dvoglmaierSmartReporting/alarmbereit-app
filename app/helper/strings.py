@@ -3,7 +3,7 @@ class HelperStrings:
 
         # StartMenu mode names
         self.label_str_mode = "Modus"
-        self.label_str_questions = "Fragen"
+        self.label_str_questions = "Inhalt"
 
         # StartMenu button names
         self.button_str_training = "Übung"
@@ -11,4 +11,5 @@ class HelperStrings:
         self.button_str_browse = "Stöbern"
         self.button_str_images = "Bilder"
         self.button_str_firetrucks = "Fahrzeugkunde"
-        self.button_str_competitions = "Bewerb"
+        self.button_str_competitions = "Bewerbsfragen"
+        self.button_str_standards = "Standard (coming soon)"  # Standardeinsatz
