@@ -33,6 +33,8 @@ class StartMenu(Screen):
         self.game_button.text = strs.button_str_game
         self.browse_button.text = strs.button_str_browse
         self.images_button.text = strs.button_str_images
+        self.firetrucks_button.text = strs.button_str_firetrucks
+        self.competitions_button.text = strs.button_str_competitions
         # update label strings
         self.mode_label.text = strs.label_str_mode
         self.questions_label.text = strs.label_str_questions
