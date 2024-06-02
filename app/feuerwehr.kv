@@ -260,12 +260,16 @@
         size: "200dp", "50dp"
     
     BoxLayout:
-        Widget:
-            size_hint_y: 0
-            size_hint_x: 0.15
+        orientation: 'vertical'
+
+        Label:
+            # placeholder
+            size_hint: 1, 0.1
+            text: ""
+
         ScrollView:
-            size_hint_y: 1
-            size_hint_x: 0.85
+            size_hint: 0.9, 1
+            pos_hint: {'center_x': 0.5}
             BoxLayout:
                 id: container
                 orientation: 'vertical'
@@ -301,6 +305,12 @@
         size_hint: 1, 0.25
 
 
+##
+<Container2>:
+    orientation: 'vertical'
+    size_hint_y: None
+    height: self.minimum_height
+##
 <BewerbTraining>:
     name: "bewerbtraining"
     question_label: question_label
@@ -330,19 +340,33 @@
 
         Label:
             # placeholder
-            size_hint: 1, 0.07
+            size_hint: 1, 0.1
             text: ""
 
-        Label:
-            id: question_label
-            #size_hint: 1, 0.425
-            font_size: "35sp"
-
-            text_size: self.size
-            size_hint: 1, 0.78
-            height: self.texture_size[1]
-            valign: "top"
+        #Label:
+        #    id: question_label
+        #    #size_hint: 1, 0.425
+        #    font_size: "35sp"
+        #
+        #    text_size: self.size
+        #    size_hint: 1, 0.78
+        #    height: self.texture_size[1]
+        #    valign: "top"
         
+        ScrollView:
+            size_hint: 0.9, 0.75
+            pos_hint: {'center_x': 0.5}
+            Label:
+                id: question_label
+                font_size: "32sp"
+                halign: "left"
+                valign: "top"
+                size_hint_y: None
+                text_size: self.width, None
+                height: self.texture_size[1]
+                markup: True
+        ##
+
         GridLayout:
             id: rooms_layout
             size_hint: 1, 0.15

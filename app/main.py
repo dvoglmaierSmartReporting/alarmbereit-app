@@ -458,6 +458,23 @@ class FahrzeugkundeBrowse(Screen):
 
                 container.add_widget(label)
 
+        # exceed list by empty entry
+        label = Label(
+            text="",
+            size_hint_y=None,
+            size_hint_x=1,
+            font_size="22sp",
+            height=70,
+            halign="left",
+            valign="middle",
+        )
+        label.text_size = (label.width, None)
+        label.bind(
+            width=lambda instance, value: setattr(instance, "text_size", (value, None))
+        )
+
+        container.add_widget(label)
+
 
 # class Container(BoxLayout):
 #     pass
@@ -508,6 +525,7 @@ class BewerbTraining(Screen):
 
     def reveal_answer(self):
         self.question_label.text += "\n\n" + self.current_answer
+        self.ids.question_label.height = self.ids.question_label.texture_size[1]
 
 
 class WindowManager(ScreenManager):
