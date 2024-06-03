@@ -1,8 +1,15 @@
+# version 0.7:
+1. Globales string management in extra file
+2. iOS Prototype erfolgreich gebaut
+3. Stardardeinsatz Platzhalter hinzugefügt
+4. Scrollview zur Ansicht von Bewerbsfragen
+5.
+
+
+-------------------------------------------------------------------------
 # version 0.6:
 1. Inhalte korrigiert (Rechtschreibfehler)
 2. "Game" Modus überarbeitet
-3. 
-
 
 -------------------------------------------------------------------------
 # version 0.5
@@ -12,7 +19,6 @@
 Bekannte Fehler:
 - Zeilenumbrüche in Stöbern-Modus
 - Zeilenumbrüche und Textfelder in Bewerbs-Modus
-
 
 -------------------------------------------------------------------------
 
