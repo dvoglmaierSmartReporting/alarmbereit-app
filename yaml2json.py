@@ -20,7 +20,8 @@ def yaml_to_json(source_file_path: str, function_name: str) -> str:
 
     # manipulate indent of each line of dict
     indented_json_output = "\n".join(
-        " " * 4 * ind + line for line in json_output.splitlines()[1:]
+        " " * 4 * ind + line.replace("\\\\", "\\")
+        for line in json_output.splitlines()[1:]
     )
 
     # assemble python function as string
@@ -35,13 +36,13 @@ def main() -> None:
         # todo: validate input data!
         f.write(yaml_to_json("./feuerwehr_tools_storage.yaml", "load_total_storage"))
 
-    with open("./app/helper/competitions.py", "w") as f:
-        # todo: validate input data!
-        f.write(
-            yaml_to_json(
-                "./feuerwehr_competition_questions.yaml", "load_total_competition_questions"
-            )
-        )
+    # with open("./app/helper/competitions.py", "w") as f:
+    #     # todo: validate input data!
+    #     f.write(
+    #         yaml_to_json(
+    #             "./feuerwehr_competition_questions.yaml", "load_total_competition_questions"
+    #         )
+    #     )
 
 
 if __name__ == "__main__":
