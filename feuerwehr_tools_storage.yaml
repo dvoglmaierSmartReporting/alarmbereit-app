@@ -101,7 +101,7 @@ Rüst+Lösch:
     - Erdungsspieß
     - Erdungszwingen
     - Erdungsschiene
-    - Erdungslitzen
+    - Erdungslitze
     - Lichtfluter
     - Stativ
     - Aufnahmebrücke f. Fluter
@@ -394,7 +394,7 @@ Tank1:
     - Krampen
     - Fassschaufel
     - Randschaufel
-    - Sappine
+    - Sappie
     - Spaten
     - Notfalltank
     - Auffangbehälter
@@ -567,7 +567,7 @@ Tank2:
     - Abgasschlauch
     - Hammer 5 kg
     - Brechstange
-    - Sappine
+    - Sappie
     - Mistgabel
     - Heugabel
     - Ausräumhaken
@@ -576,7 +576,7 @@ Tank2:
     - Stichschaufel
     - Trassenband
     - Bolzenschneider
-    - Krampe
+    - Krampen
     - Feuerwehraxt
   G3:
     - Feuerlöscher
@@ -684,7 +684,9 @@ Tunnel: &tunnel
     - Müllsack
     - Schutzdecke
     - Stabfast
+
     - Schwelleraufsatz
+
     - Unterleghölzer
     - Notfallwanne
     - Glasmanagement Set
@@ -743,7 +745,9 @@ Tunnel: &tunnel
     - Türbrecheisen
     - Rettungswerkzeug
     - Schneekette
+
     - Schwelleraufsatz
+
     - Zubehör Schere/Spreizer
     - Anhängekupplung Kugelkopf
     - Anhängekupplung Maulkupplung
@@ -856,7 +860,7 @@ Pumpe:
     - Rauchfangschlüsselsatz
     - Tragkraftspritze
     - Werkzeugkiste
-    - Krampe
+    - Krampen
     - Brecheisen
     - Brechstange
     - Schneeketten
@@ -937,7 +941,7 @@ Pumpe:
     - Schlauchladen B
     - Schlauchbrücken
     - Kupplungsschlüssel B-C
-    - Sappine
+    - Sappie
     - Dunggabel
     - Heugabel
     - Dungkralle
@@ -949,3 +953,260 @@ Pumpe:
     - Steckleiter 4-teilig
     - Steckleiter Verbindungsteil
     - Flachansauger
+
+Rüst:
+  Fahrer/GK:
+    - Handfunkgerät
+    - Helm mit Funkgarnitur
+    - Helmlampe
+    - Handscheinwerfer
+    - Signaltaschenlampe
+    - Schlüsselkasten
+    - Kransteuergerät
+    - Windensteuergerät
+    - Fernsteuerung f. Suchscheinwerfer am Heck
+    - Atemschutzmaske m. Filter
+    - FW-Gurt
+    - Arbeitsmesser
+    - Rettungsleine
+    - Sicherheitshandschuhe
+    - Einweghandschuhe
+    - Wolldecke
+    - Meldertasche
+    - KFZ Bordwerkzeug
+
+  G1-Drehfach-links:
+    - Umlenkrolle 140 kN
+    - Umlenkrolle 200 kN
+    - Klappkolben 60 kN
+    - Wirbelhaken
+    - Fussteil f. Kantenreiter
+    - Klappspaten
+    - Schachthaken
+    - Bolzenschneider
+    - Kaminschlüssel
+    - Feuerwehraxt
+    - Handhacke kurz
+    - Handhacke lang
+    - Krampen
+    - Kombisäge/Lochsäge
+    - Türbrecheisen/Schaleisen
+    - Freilandverankerung
+    - Vorschlaghammer 5 kg
+    - Brecheisen 70 cm
+    - Schäckel
+    - Erdspieße f. Freilandverankerung
+    - Greifzug HIT/32
+    - Greifzug T35
+    - Kantenreiter
+    - Werkzeugkiste
+    - Gedore Satz
+    - Rohrzange
+    - Nägel
+    - Endlosschlinge 60 kN 3 m
+    - Arbeitsleine 30 m
+    - Bogensäge
+    - Eisensäge
+    - Stange f. Rangierwagenheber
+
+  G1-Drehfach-rechts:
+    - Tauchpumpe 2400 l/min
+    - Tauchpumpe 850 l/min
+    - Radklammer
+    - Gurt f. Radklammer
+    - Hakenelement f. Takler
+    - Spezial Hebematte 2,5 t
+    - Hebegurt 4 m
+    - Hebegurt 6 m
+    - Bandschlinge f. PKW-Ösen
+    - Endlosschlinge blau 8 t
+    - Bindeleine 6 m
+    - Schäkel 6 t
+    - Schäkel 5 t
+    - Haken f. Kran
+    - Endstückbefestigung Kranarm
+    - Umlenkrolle f. Kranseilwinde
+    - Bolzen f. Umlenkrolle
+    - Seilführungsrolle f. Kranseilwinde
+    - Aufsatz f. Rodator
+    - Schlüssel f. Hauswasserabsperrung
+
+  G1-hinter-Drehfächern:
+    - Radkreuz f. LKW
+    - Radkreuz f. PKW
+    - Brechstange 1,4 m
+    - Brechstange 1,7 m
+    - Rangierwagenheber 1,5 t
+    - Sappie
+    - Trägerklemme 5 t
+    - Gripp Plattengreifer
+    - Motortrennschleifer
+    - Baumschoner
+    - Hydrantenschlüssel Oberflur
+    - ABC-Kupplungsschlüssel
+    - Druckschlauch B
+    - Übergangsstück B-C
+    - Grabenstütze
+    - Rüstholz
+
+  G2-Drehfach-rechts:
+    - Hydraulischer Rettungssatz
+    - Teleskoprettunszylinder
+    - Pedalschneider
+    - Ersatzmesser Rettungsschere
+    - Ersatzbacken Rettungsspreizer
+    - Handlampe
+    - Airbagsafe
+    - Warndreieck "Feuerwehr"
+    - Notrettungsset
+    - Brust-/Sitzgurt m. 1,5 m Leine
+    - Anhaltekelle
+    - Force Axt
+    - Federkörner
+    - Verbundglasschneider
+    - Verkehrsleitkegel
+    - Blitzleuchten
+    - Absperrband
+    - Flatterleine 5 m
+
+  G2-Drehfach-links:
+    - Stromerzeuger 30 kVA
+    - Stromerzeuger 10 kVA
+    - Kabeltrommel 230 V
+    - Kabeltrommel 400 V
+    - Schnellangriff Kabeltrommel m. Verteiler
+    - Hammer funkenfrei
+    - Fass-/Universalschlüssel funkenfrei
+    - Rohrzange funkenfrei
+    - Eckrohrzange klein funkenfrei
+    - Erdungsspieß funkenfrei
+    - Erdungsklemmen funkenfrei
+    - Erdungslitze
+    - Scheinwerferbrücke
+    - Scheinwerfer 1500 W
+    - Verlängerungskabel 230 V 10 m
+    - Verlängerungskabel 400 V
+    - Übergangsstück 400 V
+    - Übergangsstück 400 V m. Polwender
+    - Abgasschlauch
+
+  G2-hinter-Drehfächern:
+    - Hydraulikverlängerung 10 m
+    - Kurbel f. Hydraulikhaspel
+    - Südbahnwinde
+    - Stativ 5 m
+    - Verzurreinrichtung
+    - Kanister leer 10 l
+    - Schwelleraufsatz
+    - Rangierroller lenkbar
+    - Hydraulisches Kompaktaggregat
+    - Kabeltrommel 400 V
+    - Motorkettensäge kurz
+    - Motorkettensäge lang
+    - Forstarbeiterhelm
+    - Schnittschutzbeinlinge
+    - Schnittschutzhose
+    - Teleskopleiter 3,5 m
+    - Absperrstangen
+    - Auffangmulden
+    - Schlagbohrmaschine
+    - Handtrennschleifer
+    - Unterschiebbock
+    - Bohrhammer
+    - Strickleiter 20 m
+    - Erdungskabel
+
+  G3:
+    - Abschleppseil 12 mm 5 m
+    - Abschleppseil 16 mm 5 m
+    - Seilschlinge 16 mm 20 m
+    - Seilstropp 2,5 m
+    - Seilstropp 5 m
+    - Seilstropp 10 m
+    - Kettenstrang 8 t 3 m
+    - Kettenstrang 5 t 5 m
+    - Kettenstrang 10 t 3 m
+    - Kettenstrang 15 t 0,75 m
+    - Seilklemme
+    - Seilschlinge 25 mm 3 m
+    - Schäkel 10 t
+    - Schäkel 15 t
+    - Seilkeil klein
+    - Seilkeil groß
+    - Haken m. Öse 2 t
+    - Durchzugsnadel
+    - Kantholz
+    - Holzkeil
+    - Gummihammer
+    - Holzpfropfen
+    - Holzhammer
+    - Absperrpfropfen
+    - Dichtungsband
+    - Gerüstklemme
+    - Drahtstift
+    - Kunststoffsack
+    - Müllsack
+    - Plane 1,4 x 2,2 m
+    - Plane 4 x 4 m
+    - Gerüst f. Faltbehälter
+    - Faltbehälter
+    - Einhängefolie f. Faltbehälter
+    - Dreibeinstativ
+    - Rollgliss
+
+  G4:
+    - Sanitätskasten m. Beatmungsbeutel
+    - Elektrowerkzeug
+    - Feuerlöscher P12
+    - Feuerlöscher P6
+    - Löschdecke
+    - Unterlegrollen
+    - Hitzeschutzhaube
+    - Hitzeschutzhandschuhe
+    - Chemiehandschuhe
+    - Lederhandschuhe
+    - Wathose
+    - Hebekissen Satz groß
+    - Hebekissen Satz klein
+    - Doppelsteuerorgan Hebekissen
+    - Einzelsteuerorgan Hebekissen
+    - Verbindungsschlauch Hebekissen
+    - Verbindungsschlauch Leckdichtkissen
+    - Zurrgurt 7 m
+    - Schaumgummimatte
+    - Moosgummiplatte
+    - Schachtabdeckung
+    - Atemluftflasche 300 bar
+    - Leckdichtkissen
+    - Abschleppstange
+    - Rettungsplattform
+    - Unterlegmatten Gummi
+    - Krankentrage
+    - Schwelleraufsatz
+
+  Heck:
+    - Schneekette
+    - Kanister Diesel 10 l
+    - Kanister Benzin 10 l
+    - Kombikanister Motorsäge 5 l
+    - Ölbindemittel
+    - Einfüllstutzen
+    - Kranabstützunterlagen
+    - Schäkel 12 t
+
+  Dach:
+    - Steckleiter 4-teilig
+    - Schleifkorbtrage m. Gehänge
+    - Hebebaum
+    - Feuerpatsche
+    - Hohlschaufel
+    - Rundschaufel
+    - Spitzschaufel
+    - Piasava Besen
+    - Ausräumhaken
+    - Dunggabel
+    - Heugabel
+    - Rüstholz
+    - Öl-Auffangplane 5,5 x 5,5 m
+    - Einreißhaken
+    - Deckenstützen
