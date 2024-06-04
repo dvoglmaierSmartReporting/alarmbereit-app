@@ -310,9 +310,14 @@
 
 <BewerbTraining>:
     name: "bewerbtraining"
-    question_label: question_label
     question_id_label: question_id_label
     question_scrollview: question_scrollview
+    question_label: question_label
+
+    solution_button: solution_button
+    random_question_button: random_question_button
+    previous_question_button: previous_question_button
+    next_question_button: next_question_button
 
     Button:
         text: "<"
@@ -343,7 +348,7 @@
 
         ScrollView:
             id: question_scrollview
-            size_hint: 0.9, 0.75
+            size_hint: 0.9, 0.65
             pos_hint: {'center_x': 0.5}
             Label:
                 id: question_label
@@ -357,19 +362,33 @@
 
         GridLayout:
             id: rooms_layout
-            size_hint: 1, 0.15
+            size_hint: 1, 0.25
             spacing: "3dp"
             cols: 2
     
             Button:
-                text: "Lösung"
+                text: "<"
+                id: previous_question_button
+                font_size: "45sp"
+                on_release:
+                    root.manager.get_screen('bewerbtraining').next_question(previous=True)
+
+            Button:
+                text: ">"
+                id: next_question_button
+                font_size: "45sp"
+                on_release:
+                    root.manager.get_screen('bewerbtraining').next_question()
+
+            Button:
+                id: random_question_button
+                font_size: "32sp"
+                on_release:
+                    root.manager.get_screen('bewerbtraining').random_question()
+        
+            Button:
+                id: solution_button
                 font_size: "32sp"
                 on_release:
                     root.manager.get_screen('bewerbtraining').reveal_answer()
     
-            Button:
-                text: "Nächste"
-                font_size: "32sp"
-                on_release:
-                    root.manager.get_screen('bewerbtraining').next_question()
-        

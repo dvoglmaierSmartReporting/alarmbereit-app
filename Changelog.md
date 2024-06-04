@@ -5,8 +5,8 @@
 4. ScrollView zur Ansicht von Bewerbsfragen
 5. Rüstfahrzeug hinzugefügt
 6. Starte ScrollView immer von oben
-7. Frage 112 korrigiert
-
+7. mehrere Fragen korrigiert
+8. Fragen vor und zurück Funktion
 
 -------------------------------------------------------------------------
 # version 0.6:

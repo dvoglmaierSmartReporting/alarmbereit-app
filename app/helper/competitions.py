@@ -769,6 +769,24 @@ def load_total_competition_questions():
                     "Ja, nach dem allgemeinen Sozialversicherungsgesetz (ASVG)."
                 ]
             },
+            "8": {
+                "Q": "-- fehlt --",
+                "A": [
+                    "-- fehlt -- "
+                ]
+            },
+            "9": {
+                "Q": "-- fehlt --",
+                "A": [
+                    "-- fehlt -- "
+                ]
+            },
+            "10": {
+                "Q": "-- fehlt --",
+                "A": [
+                    "-- fehlt -- "
+                ]
+            },
             "11": {
                 "Q": "Wer kann einem Feuerwehrmitglied Auszeichnungen oder Anerkennungen verleihen?",
                 "A": [
@@ -1311,6 +1329,18 @@ def load_total_competition_questions():
                     "Die Aufnahme radioaktiver Stoffe in den Körper kann durch geeignete Schutzbekleidung und umluftunabhängigen Atemschutz verhindert werden."
                 ]
             },
+            "118": {
+                "Q": "-- fehlt --",
+                "A": [
+                    "-- fehlt -- "
+                ]
+            },
+            "119": {
+                "Q": "-- fehlt --",
+                "A": [
+                    "-- fehlt -- "
+                ]
+            },
             "120": {
                 "Q": "Aus welchen Bestandteilen setzt sich atmosphärische Luft zusammen?",
                 "A": [
@@ -1597,6 +1627,12 @@ def load_total_competition_questions():
                 "Q": "Welche Maßnahmen beinhaltet der betriebliche Brandschutz?",
                 "A": [
                     "Der betriebliche Brandschutz beinhaltet die Brandverhütung, die Erste und Erweiterte Löschhilfe und die Brandbekämpfung."
+                ]
+            },
+            "168": {
+                "Q": "-- fehlt --",
+                "A": [
+                    "-- fehlt -- "
                 ]
             },
             "169": {

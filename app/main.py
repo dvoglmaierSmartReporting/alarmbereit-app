@@ -482,41 +482,43 @@ class FahrzeugkundeImages(Screen):
 
 
 class BewerbTraining(Screen):
-    # def __init__(self, **kwargs):
-    #     super(BewerbTraining, self).__init__(**kwargs)
-    #     # update button strings
-    #     self.training_button.text = strs.button_str_training
-    #     self.game_button.text = strs.button_str_game
+    def __init__(self, **kwargs):
+        super(BewerbTraining, self).__init__(**kwargs)
+        # update button strings
+        self.solution_button.text = strs.button_str_solution
+        self.random_question_button.text = strs.button_str_random_question
 
     def select_competition(self, selected_competition):
         # troubleshooting: fix competition
         # self.selected_competition = "Funk"
         self.selected_competition = selected_competition
 
-    def play(self):
-        self.load_competition_questions()
-        self.next_question()
-
     def load_competition_questions(self):
         total_questions = load_total_competition_questions()
         self.competition_dict = total_questions[self.selected_competition]
 
-        self.question_ids = list(set(self.competition_dict.keys()))
+        self.question_ids = list(self.competition_dict.keys())
+        # shuffle(self.question_ids)  # moved to self.play()
+
+        self.question_ids_min = str(min([int(x) for x in self.question_ids]))
+        self.question_ids_max = str(max([int(x) for x in self.question_ids]))
+
+    def play(self):
+        self.load_competition_questions()
+        # self.next_question()
+
+        # start with smallest question id, then shuffle list
+        self.current_question_id = self.question_ids.pop(0)
         shuffle(self.question_ids)
 
-        self.question_ids_total = max([int(x) for x in self.question_ids])
+        self.previous_question_button.disabled = True
+        self.next_question_button.disabled = False
 
-    def next_question(self):
-        self.ids.question_scrollview.scroll_y = 1
+        self.process_question()
 
-        if len(self.question_ids) == 0:
-            self.load_competition_questions()
-
-        # troubleshooting: fix question
-        # self.current_question_id = "22" # -> "Xaver"
-        self.current_question_id = self.question_ids.pop()
+    def process_question(self):
         self.question_id_label.text = (
-            f"{self.current_question_id} von {self.question_ids_total}"
+            f"{self.current_question_id} von {self.question_ids_max}"
         )
 
         self.current_question = self.competition_dict.get(self.current_question_id).get(
@@ -528,7 +530,54 @@ class BewerbTraining(Screen):
             "A"
         )[0]
 
+    def random_question(self):
+        self.ids.question_scrollview.scroll_y = 1
+        self.previous_question_button.disabled = False
+        self.next_question_button.disabled = False
+        self.solution_button.disabled = False
+
+        if len(self.question_ids) == 0:
+            self.load_competition_questions()
+
+        # troubleshooting: fix question
+        # self.current_question_id = "22" # -> "Xaver"
+        self.current_question_id = self.question_ids.pop()
+
+        self.process_question()
+
+    # def previous_question(self):
+    #     self.previous_question_button.disabled = False
+    #     self.next_question_button.disabled = False
+
+    #     self.current_question_id = str(int(self.question_ids) - 1)
+
+    #     if self.current_question_id == self.question_ids_min:
+    #         self.previous_question_button.disabled = True
+    #     if self.current_question_id == self.question_ids_max:
+    #         self.next_question_button.disabled = True
+
+    #     self.process_question()
+
+    def next_question(self, previous: bool = False):
+        self.previous_question_button.disabled = False
+        self.next_question_button.disabled = False
+        self.solution_button.disabled = False
+
+        if previous:
+            self.current_question_id = str(int(self.current_question_id) - 1)
+        else:
+            self.current_question_id = str(int(self.current_question_id) + 1)
+
+        if self.current_question_id == self.question_ids_min:
+            self.previous_question_button.disabled = True
+        if self.current_question_id == self.question_ids_max:
+            self.next_question_button.disabled = True
+
+        self.process_question()
+
     def reveal_answer(self):
+        self.solution_button.disabled = True
+
         self.question_label.text += "\n\n" + self.current_answer
         self.ids.question_label.height = self.ids.question_label.texture_size[1]
 

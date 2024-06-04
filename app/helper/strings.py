@@ -13,3 +13,7 @@ class HelperStrings:
         self.button_str_firetrucks = "Fahrzeugkunde"
         self.button_str_competitions = "Bewerbsfragen"
         self.button_str_standards = "Standard (coming soon)"  # Standardeinsatz
+
+        # competition training
+        self.button_str_solution = 'Lösung'
+        self.button_str_random_question = 'Zufällig'
