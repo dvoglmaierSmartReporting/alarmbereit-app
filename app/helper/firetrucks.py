@@ -1357,7 +1357,7 @@ def load_total_storage():
                 "Kranabstützunterlagen",
                 "Schäkel 12 t"
             ],
-            "Dach": [
+            "Dach\noben": [
                 "Steckleiter 4-teilig",
                 "Schleifkorbtrage m. Gehänge",
                 "Hebebaum",

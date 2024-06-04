@@ -36,13 +36,13 @@ def main() -> None:
         # todo: validate input data!
         f.write(yaml_to_json("./feuerwehr_tools_storage.yaml", "load_total_storage"))
 
-    # with open("./app/helper/competitions.py", "w") as f:
-    #     # todo: validate input data!
-    #     f.write(
-    #         yaml_to_json(
-    #             "./feuerwehr_competition_questions.yaml", "load_total_competition_questions"
-    #         )
-    #     )
+    with open("./app/helper/competitions.py", "w") as f:
+        # todo: validate input data!
+        f.write(
+            yaml_to_json(
+                "./feuerwehr_competition_questions.yaml", "load_total_competition_questions"
+            )
+        )
 
 
 if __name__ == "__main__":

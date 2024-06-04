@@ -2,8 +2,10 @@
 1. Globales string management in extra file
 2. iOS Prototype erfolgreich gebaut
 3. Stardardeinsatz Platzhalter hinzugefügt
-4. Scrollview zur Ansicht von Bewerbsfragen
-5.
+4. ScrollView zur Ansicht von Bewerbsfragen
+5. Rüstfahrzeug hinzugefügt
+6. Starte ScrollView immer von oben
+7. Frage 112 korrigiert
 
 
 -------------------------------------------------------------------------

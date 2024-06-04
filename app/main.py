@@ -421,8 +421,9 @@ class FahrzeugkundeBrowse(Screen):
 
     def populate_list(self):
         self.load_firetruck()
-        container = self.ids.container
-        container.clear_widgets()
+        self.ids.browse_scrollview.scroll_y = 1
+        label_container = self.ids.labellist
+        label_container.clear_widgets()
 
         for room in self.rooms:
             label = Label(
@@ -437,7 +438,7 @@ class FahrzeugkundeBrowse(Screen):
             label.bind(
                 size=label.setter("text_size")
             )  # Update text_size on label size change
-            container.add_widget(label)
+            label_container.add_widget(label)
 
             for tool in self.firetruck.get(room):
                 label = Label(
@@ -456,7 +457,7 @@ class FahrzeugkundeBrowse(Screen):
                     )
                 )
 
-                container.add_widget(label)
+                label_container.add_widget(label)
 
         # exceed list by empty entry
         label = Label(
@@ -473,11 +474,7 @@ class FahrzeugkundeBrowse(Screen):
             width=lambda instance, value: setattr(instance, "text_size", (value, None))
         )
 
-        container.add_widget(label)
-
-
-# class Container(BoxLayout):
-#     pass
+        label_container.add_widget(label)
 
 
 class FahrzeugkundeImages(Screen):
@@ -485,6 +482,12 @@ class FahrzeugkundeImages(Screen):
 
 
 class BewerbTraining(Screen):
+    # def __init__(self, **kwargs):
+    #     super(BewerbTraining, self).__init__(**kwargs)
+    #     # update button strings
+    #     self.training_button.text = strs.button_str_training
+    #     self.game_button.text = strs.button_str_game
+
     def select_competition(self, selected_competition):
         # troubleshooting: fix competition
         # self.selected_competition = "Funk"
@@ -504,6 +507,8 @@ class BewerbTraining(Screen):
         self.question_ids_total = max([int(x) for x in self.question_ids])
 
     def next_question(self):
+        self.ids.question_scrollview.scroll_y = 1
+
         if len(self.question_ids) == 0:
             self.load_competition_questions()
 

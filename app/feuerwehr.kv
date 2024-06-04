@@ -230,7 +230,8 @@
             cols: 2
 
 
-<Container>:
+<LabelList>:
+    name: labellist
     orientation: 'vertical'
     size_hint_y: None
     height: self.minimum_height
@@ -239,6 +240,7 @@
 <FahrzeugkundeBrowse>:
     name: "fahrzeugkunde_browse"
     firetruck_label: firetruck_label
+    browse_scrollview: browse_scrollview
 
     Button:
         text: "<"
@@ -268,10 +270,11 @@
             text: ""
 
         ScrollView:
+            id: browse_scrollview
             size_hint: 0.9, 1
             pos_hint: {'center_x': 0.5}
             BoxLayout:
-                id: container
+                id: labellist
                 orientation: 'vertical'
                 size_hint_y: None
                 size_hint_x: None
@@ -305,16 +308,11 @@
         size_hint: 1, 0.25
 
 
-##
-<Container2>:
-    orientation: 'vertical'
-    size_hint_y: None
-    height: self.minimum_height
-##
 <BewerbTraining>:
     name: "bewerbtraining"
     question_label: question_label
     question_id_label: question_id_label
+    question_scrollview: question_scrollview
 
     Button:
         text: "<"
@@ -343,17 +341,8 @@
             size_hint: 1, 0.1
             text: ""
 
-        #Label:
-        #    id: question_label
-        #    #size_hint: 1, 0.425
-        #    font_size: "35sp"
-        #
-        #    text_size: self.size
-        #    size_hint: 1, 0.78
-        #    height: self.texture_size[1]
-        #    valign: "top"
-        
         ScrollView:
+            id: question_scrollview
             size_hint: 0.9, 0.75
             pos_hint: {'center_x': 0.5}
             Label:
@@ -365,7 +354,6 @@
                 text_size: self.width, None
                 height: self.texture_size[1]
                 markup: True
-        ##
 
         GridLayout:
             id: rooms_layout
