@@ -505,7 +505,6 @@ class BewerbTraining(Screen):
 
     def play(self):
         self.load_competition_questions()
-        # self.next_question()
 
         # start with smallest question id, then shuffle list
         self.current_question_id = self.question_ids.pop(0)
@@ -544,19 +543,6 @@ class BewerbTraining(Screen):
         self.current_question_id = self.question_ids.pop()
 
         self.process_question()
-
-    # def previous_question(self):
-    #     self.previous_question_button.disabled = False
-    #     self.next_question_button.disabled = False
-
-    #     self.current_question_id = str(int(self.question_ids) - 1)
-
-    #     if self.current_question_id == self.question_ids_min:
-    #         self.previous_question_button.disabled = True
-    #     if self.current_question_id == self.question_ids_max:
-    #         self.next_question_button.disabled = True
-
-    #     self.process_question()
 
     def next_question(self, previous: bool = False):
         self.previous_question_button.disabled = False
