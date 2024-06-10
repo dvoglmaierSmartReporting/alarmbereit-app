@@ -1,3 +1,7 @@
+# version 0.8:
+1. refactor main.py
+
+-------------------------------------------------------------------------
 # version 0.7:
 1. Globales string management in extra file
 2. iOS Prototype erfolgreich gebaut
