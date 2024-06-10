@@ -1,9 +1,9 @@
 *.ipynb
-.DS_Store
+/.DS_Store
 
 # buildozer
 /app/.buildozer
-app/.DS_Store
+/app/.DS_Store
 
 # built .apk files
 /app/bin

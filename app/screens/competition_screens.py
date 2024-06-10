@@ -1,0 +1,149 @@
+from kivy.app import App
+from kivy.uix.button import Button
+from kivy.uix.screenmanager import Screen
+
+from random import shuffle
+
+from helper.competitions import load_total_competition_questions
+from helper.functions import mode_str2bool
+from helper.strings import HelperStrings
+
+strs = HelperStrings()
+
+
+class BewerbMenu(Screen):
+    def __init__(self, **kwargs):
+        super(BewerbMenu, self).__init__(**kwargs)
+        # load available competitions
+        total_competition_questions = load_total_competition_questions()
+        self.total_competitions = list(total_competition_questions.keys())
+        # create button for all firetrucks
+        for competitions in self.total_competitions:
+            btn = Button(text=competitions, font_size="32sp")
+            btn.bind(on_release=self.on_button_release)
+            self.bewerbe_layout.add_widget(btn)
+
+    def on_button_release(self, instance):
+        # on question selection, read mode label text from current screen
+        mode = mode_str2bool(self.mode_label.text.strip())
+        mode_training, mode_game, mode_browse, mode_images = mode
+
+        # bind competition selection
+        app = App.get_running_app()
+
+        # IDEA:
+        # add left-right-buttons to training mode to switch questions presicely
+        # and rename button to 'Zufällig'
+
+        # if mode_training or mode_game:
+        if mode_training:
+            app.root.current = "bewerbtraining"
+            app.root.transition.direction = "left"
+            # continue game with selected competition
+            bewerbtraining_screen = app.root.get_screen("bewerbtraining")
+            bewerbtraining_screen.select_competition(instance.text)
+            bewerbtraining_screen.play()
+            # adapt for competition
+            # fahrzeugkunde_tg_screen.forward_mode_2_fk_training_game(mode)
+
+        # adapt for competition
+        # elif mode_browse:
+        #     # change screen
+        #     app.root.current = "fahrzeugkunde_browse"
+        #     app.root.transition.direction = "left"
+        #     # continue game with selected firetruck
+        #     fahrzeugkunde_browse_screen = app.root.get_screen("fahrzeugkunde_browse")
+        #     fahrzeugkunde_browse_screen.select_firetruck(instance.text)
+        #     fahrzeugkunde_browse_screen.populate_list()
+
+        # adapt for competition
+        # elif mode_images:
+        #     app.root.current = "fahrzeugkunde_images"
+        #     app.root.transition.direction = "left"
+
+
+class BewerbTraining(Screen):
+    def __init__(self, **kwargs):
+        super(BewerbTraining, self).__init__(**kwargs)
+        # update button strings
+        self.solution_button.text = strs.BUTTON_STR_SOLUTION
+        self.random_question_button.text = strs.BUTTON_STR_RANDOM_QUESTION
+
+    def select_competition(self, selected_competition):
+        # troubleshooting: fix competition
+        # self.selected_competition = "Funk"
+        self.selected_competition = selected_competition
+
+    def load_competition_questions(self):
+        total_questions = load_total_competition_questions()
+        self.competition_dict = total_questions[self.selected_competition]
+
+        self.question_ids = list(self.competition_dict.keys())
+        # shuffle(self.question_ids)  # moved to self.play()
+
+        self.question_ids_min = str(min([int(x) for x in self.question_ids]))
+        self.question_ids_max = str(max([int(x) for x in self.question_ids]))
+
+    def play(self):
+        self.load_competition_questions()
+
+        # start with smallest question id, then shuffle list
+        self.current_question_id = self.question_ids.pop(0)
+        shuffle(self.question_ids)
+
+        self.previous_question_button.disabled = True
+        self.next_question_button.disabled = False
+
+        self.process_question()
+
+    def process_question(self):
+        self.question_id_label.text = (
+            f"{self.current_question_id} von {self.question_ids_max}"
+        )
+
+        self.current_question = self.competition_dict.get(self.current_question_id).get(
+            "Q"
+        )
+        self.question_label.text = self.current_question
+
+        self.current_answer = self.competition_dict.get(self.current_question_id).get(
+            "A"
+        )[0]
+
+    def random_question(self):
+        self.ids.question_scrollview.scroll_y = 1
+        self.previous_question_button.disabled = False
+        self.next_question_button.disabled = False
+        self.solution_button.disabled = False
+
+        if len(self.question_ids) == 0:
+            self.load_competition_questions()
+
+        # troubleshooting: fix question
+        # self.current_question_id = "22" # -> "Xaver"
+        self.current_question_id = self.question_ids.pop()
+
+        self.process_question()
+
+    def next_question(self, previous: bool = False):
+        self.previous_question_button.disabled = False
+        self.next_question_button.disabled = False
+        self.solution_button.disabled = False
+
+        if previous:
+            self.current_question_id = str(int(self.current_question_id) - 1)
+        else:
+            self.current_question_id = str(int(self.current_question_id) + 1)
+
+        if self.current_question_id == self.question_ids_min:
+            self.previous_question_button.disabled = True
+        if self.current_question_id == self.question_ids_max:
+            self.next_question_button.disabled = True
+
+        self.process_question()
+
+    def reveal_answer(self):
+        self.solution_button.disabled = True
+
+        self.question_label.text += "\n\n" + self.current_answer
+        self.ids.question_label.height = self.ids.question_label.texture_size[1]

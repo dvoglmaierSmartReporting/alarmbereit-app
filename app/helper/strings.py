@@ -2,18 +2,18 @@ class HelperStrings:
     def __init__(self) -> None:
 
         # StartMenu mode names
-        self.label_str_mode = "Modus"
-        self.label_str_questions = "Inhalt"
+        self.LABEL_STR_MODE = "Modus"
+        self.LABEL_STR_QUESTIONS = "Inhalt"
 
         # StartMenu button names
-        self.button_str_training = "Übung"
-        self.button_str_game = "Zeitdruck"
-        self.button_str_browse = "Stöbern"
-        self.button_str_images = "Bilder"
-        self.button_str_firetrucks = "Fahrzeugkunde"
-        self.button_str_competitions = "Bewerbsfragen"
-        self.button_str_standards = "Standard (coming soon)"  # Standardeinsatz
+        self.BUTTON_STR_TRAINING = "Übung"
+        self.BUTTON_STR_GAME = "Zeitdruck"
+        self.BUTTON_STR_BROWSE = "Stöbern"
+        self.BUTTON_STR_IMAGES = "Bilder"
+        self.BUTTON_STR_FIRETRUCKS = "Fahrzeugkunde"
+        self.BUTTON_STR_COMPETITIONS = "Bewerbsfragen"
+        self.BUTTON_STR_STANDARDS = "Standard (coming soon)"  # Standardeinsatz
 
         # competition training
-        self.button_str_solution = 'Lösung'
-        self.button_str_random_question = 'Zufällig'
+        self.BUTTON_STR_SOLUTION = "Lösung"
+        self.BUTTON_STR_RANDOM_QUESTION = "Zufällig"
