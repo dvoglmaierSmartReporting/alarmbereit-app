@@ -1,0 +1,36 @@
+Funk Bronze:
+  1:
+    Q: Was ist vor Eröffnung eines Funkgespräches zu beachten?
+    A: Dass kein anderes Funkgespräch gestört wird und seitens des Funkgerätes der Verbindungsaufbau (hoher Piepton) erfolgt ist.
+    MC:
+      - Dass der Akku des Funkgeräts vollständig geladen ist.
+      - Dass die Lautstärke des Funkgeräts auf Maximum gestellt ist.
+      - Dass alle Teilnehmer des Gesprächs vorher informiert wurden.
+  2:
+    Q: Wie wird ein Funkgespräch eröffnet?
+    A: Durch Anruf und Anrufantwort.
+    MC:
+      - Durch Drücken der Sprechtaste und sofortiges Sprechen.
+      - Durch Einschalten des Funkgeräts und Warten auf ein Signal.
+      - Durch vorheriges Abhören des Kanals für mindestens 30 Sekunden.
+  3:
+    Q: Was muss der Anruf enthalten?
+    A: Den Namen der gerufenen Funkstelle, das Wort "von", den Namen der rufenden Funkstelle und das Wort "kommen" als Aufforderung zur Antwort.
+    MC:
+      - Die genaue Uhrzeit des Anrufs.
+      - Den Grund des Anrufs in kurzen Stichworten.
+      - Die Frequenz des verwendeten Kanals.
+  4:
+    Q: Was muss die Anrufantwort enthalten?
+    A: Das Wort "Hier", den Namen der gerufenen Funkstelle und die Aufforderung "kommen".
+    MC:
+      - Das Wort "Bereit", den Namen der rufenden Funkstelle und die Aufforderung "antworten".
+      - Das Wort "Fertig", gefolgt von der eigenen Funkkennung.
+      - Das Wort "Empfangen", gefolgt von der Bestätigung der Nachricht.
+  5:
+    Q: Welche Nachrichteninhalte gibt es?
+    A: Befehl, Meldung, Frage.
+    MC:
+      - Bestätigung, Rückruf, Besprechung.
+      - Warnung, Information, Anfrage.
+      - Vorschlag, Zustimmung, Kritik.
