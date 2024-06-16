@@ -13,9 +13,9 @@ from screens.firetruck_screens import (
 from screens.competition_screens import BewerbMenu, BewerbTraining
 
 from helper.functions import mode_str2bool, mode_bool2str
-from helper.strings import HelperStrings
+from helper.settings import Strings
 
-strs = HelperStrings()
+strs = Strings()
 
 
 class StartMenu(Screen):
@@ -51,8 +51,8 @@ class StartMenu(Screen):
         self.competitions_button.disabled = False
         # self.standards_button.disabled = False
         mode_training, mode_game, mode_browse, mode_images = self.mode
-        if mode_images:
-            self.firetrucks_button.disabled = True
+        # if mode_images:
+        #     self.firetrucks_button.disabled = True
         if mode_game or mode_images or mode_browse:
             # if mode_game or mode_images:
             self.competitions_button.disabled = True

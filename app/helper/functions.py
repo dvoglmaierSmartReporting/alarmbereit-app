@@ -1,7 +1,7 @@
 from helper.firetrucks import load_total_storage
-from helper.strings import HelperStrings
+from helper.settings import Strings
 
-strs = HelperStrings()
+strs = Strings()
 
 
 def invert_firetruck_equipment(firetruck: dict) -> dict:

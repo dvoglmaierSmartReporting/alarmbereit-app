@@ -1,6 +1,11 @@
 # version 0.8:
 1. refactor main.py
 
+tbd...
+2. Persönlicher Highscore wird lokal bespeichert
+3. Bewerbsfragen mit Multiple Choice Antworten
+4. Bilder aller Geräteräume für Zug 1
+
 -------------------------------------------------------------------------
 # version 0.7:
 1. Globales string management in extra file
@@ -69,16 +74,3 @@ bugfixes:
     - Wenn falsch, Auswahl rot, alle richtigen grün
     - Restliche Felder unverändert
     - Nächste Frage nach 2 s cooldown
-
--------------------------------------------------------------------------
-
-# backlog
-- Game modus hinzufügen
-    - 10 sec progress bar pro frage
-    - punkte pro frage
-    - 15 Fragen, ohne Antwortmöglichkeiten
-    - Gesamtpunkte einmalig anzeigen
-    - alle Fragen mit ID
-- App design verbessern
-- mehr Fahrzeuge
-- Modus "alle Fahrzeuge"

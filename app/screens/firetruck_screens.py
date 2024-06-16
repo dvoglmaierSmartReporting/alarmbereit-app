@@ -6,9 +6,16 @@ from kivy.uix.screenmanager import Screen
 from kivy.clock import Clock
 
 from random import shuffle
+import yaml
+import os
 
 from helper.firetrucks import load_total_storage
 from helper.functions import load_firetruck_storage, mode_str2bool
+from helper.settings import Settings
+
+from kivy.uix.image import AsyncImage, Image
+from kivy.uix.scatter import Scatter
+from kivy.uix.floatlayout import FloatLayout
 
 
 class FahrzeugkundeMenu(Screen):
@@ -52,6 +59,9 @@ class FahrzeugkundeMenu(Screen):
         elif mode_images:
             app.root.current = "fahrzeugkunde_images"
             app.root.transition.direction = "left"
+
+            fahrzeugkunde_images_screen = app.root.get_screen("fahrzeugkunde_images")
+            fahrzeugkunde_images_screen.select_firetruck(instance.text)
 
 
 class FahrzeugkundeTrainingGame(Screen):
@@ -140,7 +150,13 @@ class FahrzeugkundeTrainingGame(Screen):
         self.score += add
         self.update_score()
 
+    def save_high_score(self):
+        with open("./app/storage/high_score.yaml", "w") as f:
+            yaml.dump({"high_score": self.score}, f)
+
     def end_game(self):
+        self.save_high_score()
+
         app = App.get_running_app()
         app.root.current = "fahrzeugkundemenu"
         app.root.transition.direction = "right"
@@ -362,4 +378,34 @@ class FahrzeugkundeBrowse(Screen):
 
 
 class FahrzeugkundeImages(Screen):
-    pass
+    def __init__(self, **kwargs):
+        super(FahrzeugkundeImages, self).__init__(**kwargs)
+        # layout = FloatLayout()
+
+        # scatter = Scatter(do_scale=True, do_rotation=False, do_translation=True, size_hint=(1, 0.9))
+        # layout.add_widget(scatter)
+
+        image = Image(
+            source="assets/Rüst_G1_default-min.jpg",
+            allow_stretch=True,
+            keep_ratio=True,
+        )
+        self.scatter.add_widget(image)
+
+        # Bind the size and position of the image to the scatter
+        self.scatter.bind(size=self.update_image_size)
+        self.scatter.bind(pos=self.update_image_pos)
+
+        # self.add_widget(layout)
+
+    def update_image_size(self, instance, value):
+        instance.children[0].size = instance.size
+
+    def update_image_pos(self, instance, value):
+        instance.children[0].pos = instance.pos
+
+    def select_firetruck(self, selected_firetruck: str):
+        # troubleshooting: fix firetruck
+        # self.selected_firetruck = "Tank1" "Rüst+Lösch"
+        self.selected_firetruck = selected_firetruck
+        self.firetruck_label.text = f"   {selected_firetruck}"

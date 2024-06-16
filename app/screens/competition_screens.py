@@ -6,9 +6,9 @@ from random import shuffle
 
 from helper.competitions import load_total_competition_questions
 from helper.functions import mode_str2bool
-from helper.strings import HelperStrings
+from helper.settings import Strings
 
-strs = HelperStrings()
+strs = Strings()
 
 
 class BewerbMenu(Screen):
