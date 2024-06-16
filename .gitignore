@@ -1,5 +1,9 @@
+.DS_Store
+app/.DS_Store
+app/assets/.DS_Store
+
 *.ipynb
-/.DS_Store
+ideen_backlog.md
 
 # buildozer
 /app/.buildozer
