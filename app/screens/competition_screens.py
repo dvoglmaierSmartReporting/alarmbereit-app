@@ -31,10 +31,6 @@ class BewerbMenu(Screen):
         # bind competition selection
         app = App.get_running_app()
 
-        # IDEA:
-        # add left-right-buttons to training mode to switch questions presicely
-        # and rename button to 'Zufällig'
-
         # if mode_training or mode_game:
         if mode_training:
             app.root.current = "bewerbtraining"

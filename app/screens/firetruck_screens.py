@@ -17,6 +17,8 @@ from kivy.uix.image import AsyncImage, Image
 from kivy.uix.scatter import Scatter
 from kivy.uix.floatlayout import FloatLayout
 
+stgs = Settings()
+
 
 class FahrzeugkundeMenu(Screen):
     def __init__(self, **kwargs):
@@ -38,13 +40,22 @@ class FahrzeugkundeMenu(Screen):
         # bind firetruck and mode selection
         app = App.get_running_app()
 
-        if mode_training or mode_game:
-            app.root.current = "fahrzeugkunde_training_game"
+        if mode_training:
+            app.root.current = "fahrzeugkunde_training"
             app.root.transition.direction = "left"
             # continue game with selected firetruck
-            fahrzeugkunde_tg_screen = app.root.get_screen("fahrzeugkunde_training_game")
+            fahrzeugkunde_tg_screen = app.root.get_screen("fahrzeugkunde_training")
             fahrzeugkunde_tg_screen.select_firetruck(instance.text)
-            fahrzeugkunde_tg_screen.forward_mode_2_fk_training_game(mode)
+            fahrzeugkunde_tg_screen.forward_mode_2_fk_training(mode)
+            fahrzeugkunde_tg_screen.play()
+
+        if mode_game:
+            app.root.current = "fahrzeugkunde_game"
+            app.root.transition.direction = "left"
+            # continue game with selected firetruck
+            fahrzeugkunde_tg_screen = app.root.get_screen("fahrzeugkunde_game")
+            fahrzeugkunde_tg_screen.select_firetruck(instance.text)
+            fahrzeugkunde_tg_screen.forward_mode_2_fk_game(mode)
             fahrzeugkunde_tg_screen.play()
 
         elif mode_browse:
@@ -64,11 +75,8 @@ class FahrzeugkundeMenu(Screen):
             fahrzeugkunde_images_screen.select_firetruck(instance.text)
 
 
-class FahrzeugkundeTrainingGame(Screen):
+class FahrzeugkundeTraining(Screen):
     strike_label_visible = BooleanProperty(False)
-    timer_label_visible = BooleanProperty(False)
-    timer_change_label_visible = BooleanProperty(False)
-    timer_change_add = BooleanProperty(True)
 
     def select_firetruck(self, selected_firetruck: str):
         # troubleshooting: fix firetruck
@@ -76,17 +84,11 @@ class FahrzeugkundeTrainingGame(Screen):
         self.selected_firetruck = selected_firetruck
         self.firetruck_label.text = f"   {selected_firetruck}"
 
-    def forward_mode_2_fk_training_game(self, mode: tuple):
+    def forward_mode_2_fk_training(self, mode: tuple):
         self.mode_training: bool = mode[0]
         self.mode_game: bool = mode[1]
         self.mode_browse: bool = mode[2]
         self.mode_images: bool = mode[3]
-
-    def display_strike_label(self, display: bool = True):
-        if display:
-            self.strike_label_visible = True
-        else:
-            self.strike_label_visible = False
 
     def update_strike(self):
         self.strike_label.text = f"{str(self.strike)}  "
@@ -99,18 +101,158 @@ class FahrzeugkundeTrainingGame(Screen):
         self.strike += 1
         self.update_strike()
 
-    def display_timer_label(self, display: bool = True):
-        if display:
-            self.timer_label_visible = True
+    def update_score(self):
+        self.score_label.text = f"{str(self.score)}  "
+
+    def reset_score(self):
+        self.score = 0
+        self.update_score()
+
+    def increment_score(self, add: int = 100):
+        self.score += add
+        self.update_score()
+
+    def save_high_score(self):
+        with open("./app/storage/high_score.yaml", "w") as f:
+            yaml.dump({"high_score": self.score}, f)
+
+    def end_game(self):
+        self.save_high_score()
+
+        app = App.get_running_app()
+        app.root.current = "fahrzeugkundemenu"
+        app.root.transition.direction = "right"
+
+    def reset_tool_list(self):
+        rooms, tools, tools_locations = load_firetruck_storage(self.selected_firetruck)
+        self.rooms: list = rooms
+        self.tools: list = tools
+        self.tools_locations: dict = tools_locations
+
+        shuffle(self.tools)
+
+    def play(self):
+        self.reset_tool_list()
+
+        self.reset_strike()
+
+        self.next_tool()
+
+        self.accept_answers = True  # Flag to indicate if answers should be processed
+
+    def next_tool(self, *args):
+        self.accept_answers = True  # Enable answer processing for the new tool
+
+        if len(self.tools) == 0:
+            self.reset_tool_list()
+
+        # troubleshooting: fix tool
+        # self.current_tool = "Handfunkgerät"  # "Druckschlauch B"
+        self.current_tool = self.tools.pop()
+
+        self.correct_storage: set = set(self.tools_locations.get(self.current_tool))
+
+        self.correct_storage_multiple = list(self.correct_storage)
+
+        tool_text = self.current_tool
+        if len(tool_text) >= 29:
+            tool_text_lst = tool_text[14:].split(" ")
+            tool_text = (
+                tool_text[:14] + tool_text_lst[0] + "\n" + " ".join(tool_text_lst[1:])
+            )
+        self.tool_label.text = tool_text
+        self.rooms_layout.clear_widgets()
+
+        for storage in self.rooms:
+            btn = Button(text=storage, font_size="28sp")
+            btn.bind(on_press=self.on_answer)
+            self.rooms_layout.add_widget(btn)
+
+    def on_answer(self, instance):
+        if not self.accept_answers:  # Check if answer processing is enabled
+            return  # Ignore the button press if answer processing is disabled
+
+        children = self.rooms_layout.children
+
+        if instance.text in self.correct_storage_multiple:
+            # correct answer
+            self.increment_strike()
+
         else:
-            self.timer_label_visible = False
+            # incorrect answer
+            self.reset_strike()
 
-    def display_timer_change_label(self, *args):
-        # state switch between True and False
-        self.timer_change_label_visible = not self.timer_change_label_visible
+        # indicate if correct or incorrect answer
+        # for single correct answer
+        if len(self.correct_storage_multiple) <= 1:
+            # always identify and indicate the correct answer
+            for child in children:
+                if child.text in self.correct_storage:
+                    child.background_color = (0, 1, 0, 1)
+            # if, indicate incorrect answer
+            if instance.text not in self.correct_storage:
+                instance.background_color = (1, 0, 0, 1)
 
-    def display_timer_change_add(self):
-        self.timer_change_add = not self.timer_change_add
+        # for multiple correct answers
+        else:
+            if instance.text not in self.correct_storage_multiple:
+                # if, indicate incorrect and all correct answers and close
+                instance.background_color = (1, 0, 0, 1)
+                for child in children:
+                    if child.text in self.correct_storage_multiple:
+                        child.background_color = (0, 1, 0, 1)
+                pass
+
+            else:
+                # answer in correct answers
+                instance.background_color = (0, 1, 0, 1)
+                # remove correct answer from set
+                self.correct_storage_multiple.remove(instance.text)
+                # display string "weitere"
+                if self.tool_label.text[-7:] == "weitere":
+                    self.tool_label.text += " "
+                else:
+                    self.tool_label.text += "\n"
+                self.tool_label.text += "weitere"
+                return
+
+        self.accept_answers = (
+            False  # Disable answer processing after an answer is selected
+        )
+
+        Clock.schedule_once(self.next_tool, stgs.FEEDBACK_TRAINING_SEC)
+
+
+class FahrzeugkundeGame(Screen):
+    # strike_label_visible = BooleanProperty(False)
+    timer_label_visible = BooleanProperty(False)
+    timer_change_label_visible = BooleanProperty(False)
+    timer_change_add = BooleanProperty(True)
+
+    def select_firetruck(self, selected_firetruck: str):
+        # troubleshooting: fix firetruck
+        # self.selected_firetruck = "Tank1" "Rüst+Lösch"
+        self.selected_firetruck = selected_firetruck
+        self.firetruck_label.text = f"   {selected_firetruck}"
+
+    def forward_mode_2_fk_game(self, mode: tuple):
+        self.mode_training: bool = mode[0]
+        self.mode_game: bool = mode[1]
+        self.mode_browse: bool = mode[2]
+        self.mode_images: bool = mode[3]
+
+    # def display_timer_label(self, display: bool = True):
+    #     if display:
+    #         self.timer_label_visible = True
+    #     else:
+    #         self.timer_label_visible = False
+
+    # def display_timer_change_label(self, *args):
+    #     # state switch between True and False
+    #     self.timer_change_label_visible = not self.timer_change_label_visible
+
+    # def display_timer_change_add(self):
+    #     self.timer_change_add = not self.timer_change_add
 
     def reset_timer(self):
         self.time_left = 15  # seconds
@@ -170,25 +312,14 @@ class FahrzeugkundeTrainingGame(Screen):
         shuffle(self.tools)
 
     def play(self):
-        # training mode
-        if self.mode_training or self.mode_game:
-            self.reset_tool_list()
+        self.reset_tool_list()
 
-        if self.mode_training:
-            # disable timer and enable strike counter
-            self.display_timer_label(display=False)
-            self.reset_strike()
-            self.display_strike_label()
+        self.reset_timer()
 
-        if self.mode_game:
-            # disable strike and enable timer and score
-            self.display_strike_label(display=False)
-            self.reset_timer()
-            self.display_timer_label()
-            # Schedule the timer update every second
-            Clock.schedule_interval(self.update_time, 1)
-            # total score
-            self.reset_score()
+        Clock.schedule_interval(self.update_time, 1)
+
+        # total score
+        self.reset_score()
 
         self.next_tool()
         self.accept_answers = True  # Flag to indicate if answers should be processed
@@ -222,31 +353,32 @@ class FahrzeugkundeTrainingGame(Screen):
             self.rooms_layout.add_widget(btn)
 
     def correct_answer(self):
-        if self.mode_training:
-            self.increment_strike()
-        elif self.mode_game:
-            self.increment_score()
-            if not self.timer_change_add:
-                # if False, switch to True
-                self.display_timer_change_add()
-            self.display_timer_change_label()
-            Clock.schedule_once(self.display_timer_change_label, 2)
+        self.increment_score()
 
-            self.add_time()
-        # todo: pause timer until next tool (?)
+        # todo: fix color setting
+
+        # if not self.timer_change_add:
+        #     # if False, switch to True
+        #     self.display_timer_change_add()
+
+        # self.display_timer_change_label()
+
+        Clock.schedule_once(self.display_timer_change_label, stgs.FEEDBACK_GAME_SEC)
+
+        self.add_time()
 
     def incorrect_answer(self):
-        if self.mode_training:
-            self.reset_strike()
-        elif self.mode_game:
-            if self.timer_change_add:
-                # if True, switch to False
-                self.display_timer_change_add()
-            self.display_timer_change_label()
-            Clock.schedule_once(self.display_timer_change_label, 2)
+        # todo: fix color setting
 
-            self.subtract_time()
-        # todo: pause timer until next tool (?)
+        # if self.timer_change_add:
+        #     # if True, switch to False
+        #     self.display_timer_change_add()
+
+        # self.display_timer_change_label()
+
+        Clock.schedule_once(self.display_timer_change_label, stgs.FEEDBACK_GAME_SEC)
+
+        self.subtract_time()
 
     def on_answer(self, instance):
         if not self.accept_answers:  # Check if answer processing is enabled
@@ -299,12 +431,7 @@ class FahrzeugkundeTrainingGame(Screen):
             False  # Disable answer processing after an answer is selected
         )
 
-        timer_pause = 2
-        if self.mode_game:
-            timer_pause = 0.5
-
-        Clock.schedule_once(self.next_tool, timer_pause)
-        # Clock.schedule_once(self.next_tool, 0.2)
+        Clock.schedule_once(self.next_tool, stgs.FEEDBACK_GAME_SEC)
 
 
 class FahrzeugkundeBrowse(Screen):

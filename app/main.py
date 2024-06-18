@@ -6,7 +6,8 @@ from random import shuffle
 
 from screens.firetruck_screens import (
     FahrzeugkundeMenu,
-    FahrzeugkundeTrainingGame,
+    FahrzeugkundeTraining,
+    FahrzeugkundeGame,
     FahrzeugkundeBrowse,
     FahrzeugkundeImages,
 )
@@ -94,7 +95,8 @@ class FeuerwehrApp(App):
         sm.add_widget(StartMenu())
         sm.add_widget(FahrzeugkundeMenu())
         sm.add_widget(BewerbMenu())
-        sm.add_widget(FahrzeugkundeTrainingGame())
+        sm.add_widget(FahrzeugkundeTraining())
+        sm.add_widget(FahrzeugkundeGame())
         sm.add_widget(FahrzeugkundeBrowse())
         sm.add_widget(FahrzeugkundeImages())
         sm.add_widget(BewerbTraining())
