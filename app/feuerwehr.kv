@@ -382,19 +382,21 @@
             id: firetruck_label
             text: "Bilder"
             font_size: "20sp"
-            pos_hint: {'left': 1, 'top': 1}
+            # pos_hint: {'center': 1, 'top': 1}
             text_size: self.width, None
-            halign: "left"
-            size_hint: 1, 0.25
+            # halign: "left"
+            # size_hint: 0.5, 0.1
 
         FloatLayout:
+            # size_hint: 1, 0.8
+
             Scatter:
                 id: scatter
-                size_hint: 1, 0.8
+                # size_hint: 1, 0.8
                 do_rotation: False
 
         GridLayout:
-            size_hint: 1, 0.1
+            # size_hint: 1, 0.1
             spacing: "3dp"
             cols: 2
     

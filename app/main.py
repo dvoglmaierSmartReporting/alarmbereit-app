@@ -88,7 +88,7 @@ class CustomToggleButton(ToggleButton):  # used in feuerwehr.kv
         return super_result
 
 
-class Feuerwehr_App(App):
+class FeuerwehrApp(App):
     def build(self):
 
         sm = ScreenManager()

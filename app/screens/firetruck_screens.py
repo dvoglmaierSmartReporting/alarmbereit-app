@@ -73,6 +73,7 @@ class Fahrzeugkunde_Menu(Screen):
 
             fahrzeugkunde_images_screen = app.root.get_screen("fahrzeugkunde_images")
             fahrzeugkunde_images_screen.select_firetruck(instance.text)
+            fahrzeugkunde_images_screen.load_image()
 
 
 class Fahrzeugkunde_Training(Screen):
@@ -505,10 +506,12 @@ class Fahrzeugkunde_Browse(Screen):
 
 
 class Fahrzeugkunde_Images(Screen):
-    def __init__(self, **kwargs):
-        super(Fahrzeugkunde_Images, self).__init__(**kwargs)
+    # def __init__(self, **kwargs):
+    #     super(Fahrzeugkunde_Images, self).__init__(**kwargs)
 
     def load_image(self):
+        self.scatter.clear_widgets()
+
         image = Image(
             source="assets/Rüst_G1_default-min.jpg",
             # allow_stretch=True,
