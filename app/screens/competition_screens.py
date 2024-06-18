@@ -11,9 +11,9 @@ from helper.settings import Strings
 strs = Strings()
 
 
-class BewerbMenu(Screen):
+class Bewerb_Menu(Screen):
     def __init__(self, **kwargs):
-        super(BewerbMenu, self).__init__(**kwargs)
+        super(Bewerb_Menu, self).__init__(**kwargs)
         # load available competitions
         total_competition_questions = load_total_competition_questions()
         self.total_competitions = list(total_competition_questions.keys())
@@ -33,12 +33,12 @@ class BewerbMenu(Screen):
 
         # if mode_training or mode_game:
         if mode_training:
-            app.root.current = "bewerbtraining"
+            app.root.current = "bewerb_training"
             app.root.transition.direction = "left"
             # continue game with selected competition
-            bewerbtraining_screen = app.root.get_screen("bewerbtraining")
-            bewerbtraining_screen.select_competition(instance.text)
-            bewerbtraining_screen.play()
+            bewerb_training_screen = app.root.get_screen("bewerb_training")
+            bewerb_training_screen.select_competition(instance.text)
+            bewerb_training_screen.play()
             # adapt for competition
             # fahrzeugkunde_tg_screen.forward_mode_2_fk_training_game(mode)
 
@@ -58,9 +58,9 @@ class BewerbMenu(Screen):
         #     app.root.transition.direction = "left"
 
 
-class BewerbTraining(Screen):
+class Bewerb_Training(Screen):
     def __init__(self, **kwargs):
-        super(BewerbTraining, self).__init__(**kwargs)
+        super(Bewerb_Training, self).__init__(**kwargs)
         # update button strings
         self.solution_button.text = strs.BUTTON_STR_SOLUTION
         self.random_question_button.text = strs.BUTTON_STR_RANDOM_QUESTION

@@ -3,14 +3,15 @@ class Settings:
         self.FEEDBACK_TRAINING_SEC = 2
         self.FEEDBACK_GAME_SEC = 0.5
 
+
 class Strings:
     def __init__(self) -> None:
 
-        # StartMenu mode names
+        # Start_Menu mode names
         self.LABEL_STR_MODE = "Modus"
         self.LABEL_STR_QUESTIONS = "Inhalt"
 
-        # StartMenu button names
+        # Start_Menu button names
         self.BUTTON_STR_TRAINING = "Übung"
         self.BUTTON_STR_GAME = "Zeitdruck"
         self.BUTTON_STR_BROWSE = "Stöbern"

@@ -20,9 +20,9 @@ from kivy.uix.floatlayout import FloatLayout
 stgs = Settings()
 
 
-class FahrzeugkundeMenu(Screen):
+class Fahrzeugkunde_Menu(Screen):
     def __init__(self, **kwargs):
-        super(FahrzeugkundeMenu, self).__init__(**kwargs)
+        super(Fahrzeugkunde_Menu, self).__init__(**kwargs)
         # load available firetrucks
         total_storage = load_total_storage()
         self.total_firetrucks = list(total_storage.keys())
@@ -75,7 +75,7 @@ class FahrzeugkundeMenu(Screen):
             fahrzeugkunde_images_screen.select_firetruck(instance.text)
 
 
-class FahrzeugkundeTraining(Screen):
+class Fahrzeugkunde_Training(Screen):
     strike_label_visible = BooleanProperty(False)
 
     def select_firetruck(self, selected_firetruck: str):
@@ -120,7 +120,7 @@ class FahrzeugkundeTraining(Screen):
         self.save_high_score()
 
         app = App.get_running_app()
-        app.root.current = "fahrzeugkundemenu"
+        app.root.current = "fahrzeugkunde_menu"
         app.root.transition.direction = "right"
 
     def reset_tool_list(self):
@@ -223,7 +223,7 @@ class FahrzeugkundeTraining(Screen):
         Clock.schedule_once(self.next_tool, stgs.FEEDBACK_TRAINING_SEC)
 
 
-class FahrzeugkundeGame(Screen):
+class Fahrzeugkunde_Game(Screen):
     # strike_label_visible = BooleanProperty(False)
     timer_label_visible = BooleanProperty(False)
     timer_change_label_visible = BooleanProperty(False)
@@ -300,7 +300,7 @@ class FahrzeugkundeGame(Screen):
         self.save_high_score()
 
         app = App.get_running_app()
-        app.root.current = "fahrzeugkundemenu"
+        app.root.current = "fahrzeugkunde_menu"
         app.root.transition.direction = "right"
 
     def reset_tool_list(self):
@@ -434,7 +434,7 @@ class FahrzeugkundeGame(Screen):
         Clock.schedule_once(self.next_tool, stgs.FEEDBACK_GAME_SEC)
 
 
-class FahrzeugkundeBrowse(Screen):
+class Fahrzeugkunde_Browse(Screen):
     def select_firetruck(self, selected_firetruck: str):
         # troubleshooting: fix firetruck
         # self.selected_firetruck = "Tank1" "Rüst+Lösch"
@@ -449,7 +449,7 @@ class FahrzeugkundeBrowse(Screen):
     def populate_list(self):
         self.load_firetruck()
         self.ids.browse_scrollview.scroll_y = 1
-        label_container = self.ids.labellist
+        label_container = self.ids.label_list
         label_container.clear_widgets()
 
         for room in self.rooms:
@@ -504,27 +504,22 @@ class FahrzeugkundeBrowse(Screen):
         label_container.add_widget(label)
 
 
-class FahrzeugkundeImages(Screen):
+class Fahrzeugkunde_Images(Screen):
     def __init__(self, **kwargs):
-        super(FahrzeugkundeImages, self).__init__(**kwargs)
-        # layout = FloatLayout()
+        super(Fahrzeugkunde_Images, self).__init__(**kwargs)
 
-        # scatter = Scatter(do_scale=True, do_rotation=False, do_translation=True, size_hint=(1, 0.9))
-        # layout.add_widget(scatter)
-
+    def load_image(self):
         image = Image(
             source="assets/Rüst_G1_default-min.jpg",
             # allow_stretch=True,
             # keep_ratio=True,
-            fit_mode="cover",
+            fit_mode="contain",
         )
         self.scatter.add_widget(image)
 
         # Bind the size and position of the image to the scatter
         self.scatter.bind(size=self.update_image_size)
         self.scatter.bind(pos=self.update_image_pos)
-
-        # self.add_widget(layout)
 
     def update_image_size(self, instance, value):
         instance.children[0].size = instance.size

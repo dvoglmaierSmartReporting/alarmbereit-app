@@ -6,8 +6,8 @@
     font_size: "32sp"
 
 
-<StartMenu>:
-    name: "startmenu"
+<Start_Menu>:
+    name: "start_menu"
 
     mode_label: mode_label
     training_button: training_button
@@ -62,17 +62,17 @@
             id: firetrucks_button
             font_size: "32sp"
             on_release:
-                app.root.current = "fahrzeugkundemenu"
+                app.root.current = "fahrzeugkunde_menu"
                 root.manager.transition.direction = "left"
-                root.forward_mode2menu("fahrzeugkundemenu")
+                root.forward_mode2menu("fahrzeugkunde_menu")
 
         Button:
             id: competitions_button
             font_size: "32sp"
             on_release:
-                app.root.current = "bewerbmenu"
+                app.root.current = "bewerb_menu"
                 root.manager.transition.direction = "left"
-                root.forward_mode2menu("bewerbmenu")
+                root.forward_mode2menu("bewerb_menu")
         
         Button:
             id: standards_button
@@ -83,8 +83,8 @@
                 root.forward_mode2menu("standardsmenu")
 
 
-<FahrzeugkundeMenu>:
-    name: "fahrzeugkundemenu"
+<Fahrzeugkunde_Menu>:
+    name: "fahrzeugkunde_menu"
     mode_label: mode_label
     firetrucks_layout: firetrucks_layout
 
@@ -95,7 +95,7 @@
         size: "50dp", "50dp"
         pos_hint: {'left': 1, 'top': 1}
         on_release:
-            app.root.current = "startmenu"
+            app.root.current = "start_menu"
             root.manager.transition.direction = "right"
 
     Label:
@@ -114,8 +114,8 @@
         spacing: "5dp"
 
 
-<BewerbMenu>:
-    name: "bewerbmenu"
+<Bewerb_Menu>:
+    name: "bewerb_menu"
     #orientation: "vertical"
     mode_label: mode_label
     bewerbe_layout: bewerbe_layout
@@ -127,8 +127,9 @@
         size: "50dp", "50dp"
         pos_hint: {'left': 1, 'top': 1}
         on_release:
-            app.root.current = "startmenu"
+            app.root.current = "start_menu"
             root.manager.transition.direction = "right"
+
     Label:
         id: mode_label
         font_size: "20sp"
@@ -148,7 +149,7 @@
         cols: 1
 
 
-<FahrzeugkundeTraining>:
+<Fahrzeugkunde_Training>:
     name: "fahrzeugkunde_training"
     firetruck_label: firetruck_label
     strike_label: strike_label
@@ -162,7 +163,7 @@
         size: "50dp", "50dp"
         pos_hint: {'left': 1, 'top': 1}
         on_release:
-            app.root.current = "fahrzeugkundemenu"
+            app.root.current = "fahrzeugkunde_menu"
             root.manager.transition.direction = "right"
     
     Label:
@@ -182,7 +183,6 @@
         # size_hint: 1, 0.1
         size_hint: 0.5, 0.25
         # opacity: 1 if self.parent.strike_label_visible else 0
-    
     
     Label:
         id: high_score_label
@@ -209,7 +209,8 @@
             spacing: "3dp"
             cols: 2
 
-<FahrzeugkundeGame>:
+
+<Fahrzeugkunde_Game>:
     name: "fahrzeugkunde_game"
     firetruck_label: firetruck_label
     timer_label: timer_label
@@ -225,7 +226,7 @@
         size: "50dp", "50dp"
         pos_hint: {'left': 1, 'top': 1}
         on_release:
-            app.root.current = "fahrzeugkundemenu"
+            app.root.current = "fahrzeugkunde_menu"
             root.manager.transition.direction = "right"
     
     Label:
@@ -306,14 +307,14 @@
             cols: 2
 
 
-<LabelList>:
-    name: labellist
+<Label_List>:
+    name: label_list
     orientation: 'vertical'
     size_hint_y: None
     height: self.minimum_height
 
 
-<FahrzeugkundeBrowse>:
+<Fahrzeugkunde_Browse>:
     name: "fahrzeugkunde_browse"
     firetruck_label: firetruck_label
     browse_scrollview: browse_scrollview
@@ -325,7 +326,7 @@
         size: "50dp", "50dp"
         pos_hint: {'left': 1, 'top': 1}
         on_release:
-            app.root.current = "fahrzeugkundemenu"
+            app.root.current = "fahrzeugkunde_menu"
             root.manager.transition.direction = "right"
     
     Label:
@@ -350,7 +351,7 @@
             size_hint: 0.9, 1
             pos_hint: {'center_x': 0.5}
             BoxLayout:
-                id: labellist
+                id: label_list
                 orientation: 'vertical'
                 size_hint_y: None
                 size_hint_x: None
@@ -358,7 +359,7 @@
                 height: self.minimum_height
 
 
-<FahrzeugkundeImages>:
+<Fahrzeugkunde_Images>:
     name: "fahrzeugkunde_images"
     firetruck_label: firetruck_label
     # rooms_layout: rooms_layout
@@ -371,11 +372,12 @@
         size: "50dp", "50dp"
         pos_hint: {'left': 1, 'top': 1}
         on_release:
-            app.root.current = "fahrzeugkundemenu"
+            app.root.current = "fahrzeugkunde_menu"
             root.manager.transition.direction = "right"
     
     BoxLayout:
-        #orientation: vertical
+        orientation: 'vertical'
+        
         Label:
             id: firetruck_label
             text: "Bilder"
@@ -391,18 +393,29 @@
                 size_hint: 1, 0.8
                 do_rotation: False
 
-        BoxLayout:
-            #orientation: horizontal
+        GridLayout:
             size_hint: 1, 0.1
-
+            spacing: "3dp"
+            cols: 2
+    
             Button:
                 text: "<"
+                id: previous_image_button
+                font_size: "45sp"
+                disabled: True
+                # on_release:
+                #     root.manager.get_screen('fahrzeugkunde_images').load_image()
+
             Button:
                 text: ">"
+                id: next_image_button
+                font_size: "45sp"
+                on_release:
+                    root.manager.get_screen('fahrzeugkunde_images').load_image()
 
 
-<BewerbTraining>:
-    name: "bewerbtraining"
+<Bewerb_Training>:
+    name: "bewerb_training"
     question_id_label: question_id_label
     question_scrollview: question_scrollview
     question_label: question_label
@@ -419,7 +432,7 @@
         size: "50dp", "50dp"
         pos_hint: {'left': 1, 'top': 1}
         on_release:
-            app.root.current = "bewerbmenu"
+            app.root.current = "bewerb_menu"
             root.manager.transition.direction = "right"
 
     Label:
@@ -454,7 +467,6 @@
                 markup: True
 
         GridLayout:
-            id: rooms_layout
             size_hint: 1, 0.25
             spacing: "3dp"
             cols: 2
@@ -464,24 +476,24 @@
                 id: previous_question_button
                 font_size: "45sp"
                 on_release:
-                    root.manager.get_screen('bewerbtraining').next_question(previous=True)
+                    root.manager.get_screen('bewerb_training').next_question(previous=True)
 
             Button:
                 text: ">"
                 id: next_question_button
                 font_size: "45sp"
                 on_release:
-                    root.manager.get_screen('bewerbtraining').next_question()
+                    root.manager.get_screen('bewerb_training').next_question()
 
             Button:
                 id: random_question_button
                 font_size: "32sp"
                 on_release:
-                    root.manager.get_screen('bewerbtraining').random_question()
+                    root.manager.get_screen('bewerb_training').random_question()
         
             Button:
                 id: solution_button
                 font_size: "32sp"
                 on_release:
-                    root.manager.get_screen('bewerbtraining').reveal_answer()
+                    root.manager.get_screen('bewerb_training').reveal_answer()
     

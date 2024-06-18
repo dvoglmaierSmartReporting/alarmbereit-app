@@ -5,13 +5,13 @@ from kivy.uix.screenmanager import ScreenManager, Screen
 from random import shuffle
 
 from screens.firetruck_screens import (
-    FahrzeugkundeMenu,
-    FahrzeugkundeTraining,
-    FahrzeugkundeGame,
-    FahrzeugkundeBrowse,
-    FahrzeugkundeImages,
+    Fahrzeugkunde_Menu,
+    Fahrzeugkunde_Training,
+    Fahrzeugkunde_Game,
+    Fahrzeugkunde_Browse,
+    Fahrzeugkunde_Images,
 )
-from screens.competition_screens import BewerbMenu, BewerbTraining
+from screens.competition_screens import Bewerb_Menu, Bewerb_Training
 
 from helper.functions import mode_str2bool, mode_bool2str
 from helper.settings import Strings
@@ -19,7 +19,7 @@ from helper.settings import Strings
 strs = Strings()
 
 
-class StartMenu(Screen):
+class Start_Menu(Screen):
     mode: tuple[bool, bool, bool, bool] = (
         True,  # training | default
         False,  # game
@@ -28,7 +28,7 @@ class StartMenu(Screen):
     )
 
     def __init__(self, **kwargs):
-        super(StartMenu, self).__init__(**kwargs)
+        super(Start_Menu, self).__init__(**kwargs)
         # update button strings
         self.training_button.text = strs.BUTTON_STR_TRAINING
         self.game_button.text = strs.BUTTON_STR_GAME
@@ -88,18 +88,18 @@ class CustomToggleButton(ToggleButton):  # used in feuerwehr.kv
         return super_result
 
 
-class FeuerwehrApp(App):
+class Feuerwehr_App(App):
     def build(self):
 
         sm = ScreenManager()
-        sm.add_widget(StartMenu())
-        sm.add_widget(FahrzeugkundeMenu())
-        sm.add_widget(BewerbMenu())
-        sm.add_widget(FahrzeugkundeTraining())
-        sm.add_widget(FahrzeugkundeGame())
-        sm.add_widget(FahrzeugkundeBrowse())
-        sm.add_widget(FahrzeugkundeImages())
-        sm.add_widget(BewerbTraining())
+        sm.add_widget(Start_Menu())
+        sm.add_widget(Fahrzeugkunde_Menu())
+        sm.add_widget(Bewerb_Menu())
+        sm.add_widget(Fahrzeugkunde_Training())
+        sm.add_widget(Fahrzeugkunde_Game())
+        sm.add_widget(Fahrzeugkunde_Browse())
+        sm.add_widget(Fahrzeugkunde_Images())
+        sm.add_widget(Bewerb_Training())
         return sm
 
 
