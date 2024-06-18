@@ -514,8 +514,9 @@ class FahrzeugkundeImages(Screen):
 
         image = Image(
             source="assets/Rüst_G1_default-min.jpg",
-            allow_stretch=True,
-            keep_ratio=True,
+            # allow_stretch=True,
+            # keep_ratio=True,
+            fit_mode="cover",
         )
         self.scatter.add_widget(image)
 
