@@ -1,7 +1,13 @@
 class Settings:
     def __init__(self) -> None:
-        self.FEEDBACK_TRAINING_SEC = 2
-        self.FEEDBACK_GAME_SEC = 0.5
+        # training
+        self.FEEDBACK_TRAINING_SEC = round(2.0, 1)
+        # game
+        self.FEEDBACK_GAME_SEC = round(0.5, 1)
+        self.INTERVAL_GAME_SEC = round(0.1, 1)
+        self.START_TIME_GAME_SEC = round(15.0, 1)
+        self.PUNISHMENT_GAME_SEC = round(1.0, 1)
+        self.REWARD_GAME_SEC = round(4.0, 1)
 
 
 class Strings:
