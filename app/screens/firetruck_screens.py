@@ -102,23 +102,12 @@ class Fahrzeugkunde_Training(Screen):
         self.strike += 1
         self.update_strike()
 
-    def update_score(self):
-        self.score_label.text = f"{str(self.score)}  "
-
-    def reset_score(self):
-        self.score = 0
-        self.update_score()
-
-    def increment_score(self, add: int = 100):
-        self.score += add
-        self.update_score()
-
-    def save_high_score(self):
-        with open("./app/storage/high_score.yaml", "w") as f:
-            yaml.dump({"high_score": self.score}, f)
+    def save_high_strike(self):
+        with open("./app/storage/high_strike.yaml", "w") as f:
+            yaml.dump({"high_strike": self.strike}, f)
 
     def end_game(self):
-        self.save_high_score()
+        self.save_high_strike()
 
         app = App.get_running_app()
         app.root.current = "fahrzeugkunde_menu"
@@ -307,7 +296,7 @@ class Fahrzeugkunde_Game(Screen):
         self.score = 0
         self.update_score()
 
-    def increment_score(self, add: int = 100):
+    def increment_score(self, add: int = 1):
         self.score += add
         self.update_score()
 
