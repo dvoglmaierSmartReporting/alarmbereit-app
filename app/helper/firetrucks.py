@@ -1,6 +1,6 @@
 def load_total_storage():
     return {
-        "Rüst+Lösch - RLFA 2000": {
+        "RüstLösch - RLFA 2000": {
             "Fahrer/GK": [
                 "Handfunkgerät",
                 "Gasmessgerät",
@@ -212,7 +212,7 @@ def load_total_storage():
                 "Schachtabdeckung"
             ]
         },
-        "Tank1 - TLF-A 3000": {
+        "Tank 1 - TLF-A 3000": {
             "Fahrer/GK": [
                 "Handfunkgerät",
                 "Gasmessgerät",
@@ -530,7 +530,7 @@ def load_total_storage():
                 "Aufnahme f. Korbtrage"
             ]
         },
-        "Tank2 - TLF-A 4000": {
+        "Tank 2 - TLF-A 4000": {
             "Fahrer/GK": [
                 "Pressluftatmer",
                 "Vollmaske f. Pressluftatmer",
@@ -792,7 +792,7 @@ def load_total_storage():
                 "Adapter 7/13-Pol"
             ]
         },
-        "Voraus+Ölanh.": {
+        "Voraus + Ölanh.": {
             "Fahrer/GK": [
                 "Handfunkgerät",
                 "Handlampe",

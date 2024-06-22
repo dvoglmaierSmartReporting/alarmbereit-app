@@ -1,4 +1,4 @@
-Rüst+Lösch - RLFA 2000:
+RüstLösch - RLFA 2000:
   Fahrer/GK:
     - Handfunkgerät
     - Gasmessgerät
@@ -200,7 +200,7 @@ Rüst+Lösch - RLFA 2000:
     - Kescher
     - Schachtabdeckung
 
-Tank1 - TLF-A 3000:
+Tank 1 - TLF-A 3000:
   Fahrer/GK:
     - Handfunkgerät
 
@@ -503,7 +503,7 @@ Leiter - DLA(K) 23-12:
     - Wenderohr
     - Aufnahme f. Korbtrage
 
-Tank2 - TLF-A 4000:
+Tank 2 - TLF-A 4000:
   Fahrer/GK:
     - Pressluftatmer
     - Vollmaske f. Pressluftatmer
@@ -753,7 +753,7 @@ Voraus - VRFA-Tunnel: &tunnel
     - Anhängekupplung Maulkupplung
     - Adapter 7/13-Pol
 
-Voraus+Ölanh.:
+Voraus + Ölanh.:
   <<: *tunnel
   Ölanh. G1:
     - Verkehrsleitkegel
