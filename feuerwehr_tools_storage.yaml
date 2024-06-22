@@ -1,4 +1,4 @@
-Rüst+Lösch:
+Rüst+Lösch - RLFA 2000:
   Fahrer/GK:
     - Handfunkgerät
     - Gasmessgerät
@@ -200,7 +200,7 @@ Rüst+Lösch:
     - Kescher
     - Schachtabdeckung
 
-Tank1:
+Tank1 - TLF-A 3000:
   Fahrer/GK:
     - Handfunkgerät
 
@@ -401,7 +401,7 @@ Tank1:
     - Besen
     - Axt
 
-Leiter:
+Leiter - DLA(K) 23-12:
   Mannschaft:
     - Handscheinwerfer
     - Warnlichthaube f. Handscheinwerfer
@@ -503,7 +503,7 @@ Leiter:
     - Wenderohr
     - Aufnahme f. Korbtrage
 
-Tank2:
+Tank2 - TLF-A 4000:
   Fahrer/GK:
     - Pressluftatmer
     - Vollmaske f. Pressluftatmer
@@ -638,7 +638,7 @@ Tank2:
     - Monsunrohr
     - Einreißhaken
 
-Tunnel: &tunnel
+Voraus - VRFA-Tunnel: &tunnel
   Fahrer/GK:
     - Handfunkgerät
     - Handlampe
@@ -753,7 +753,7 @@ Tunnel: &tunnel
     - Anhängekupplung Maulkupplung
     - Adapter 7/13-Pol
 
-Tunnel+Ölanh.:
+Voraus+Ölanh.:
   <<: *tunnel
   Ölanh. G1:
     - Verkehrsleitkegel
@@ -786,7 +786,7 @@ Tunnel+Ölanh.:
     - Selbstschweißendes Dichtband
     - Plane 3 x 4 m
 
-Pumpe:
+Pumpe - LFA:
   Fahrer/GK:
     - Handfunkgerät
     - Anhaltekelle
@@ -954,7 +954,7 @@ Pumpe:
     - Steckleiter Verbindungsteil
     - Flachansauger
 
-Rüst:
+Rüst - SRFK-A:
   Fahrer/GK:
     - Handfunkgerät
     - Helm mit Funkgarnitur

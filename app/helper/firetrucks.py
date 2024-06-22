@@ -1,6 +1,6 @@
 def load_total_storage():
     return {
-        "Rüst+Lösch": {
+        "Rüst+Lösch - RLFA 2000": {
             "Fahrer/GK": [
                 "Handfunkgerät",
                 "Gasmessgerät",
@@ -212,7 +212,7 @@ def load_total_storage():
                 "Schachtabdeckung"
             ]
         },
-        "Tank1": {
+        "Tank1 - TLF-A 3000": {
             "Fahrer/GK": [
                 "Handfunkgerät",
                 "Gasmessgerät",
@@ -420,7 +420,7 @@ def load_total_storage():
                 "Axt"
             ]
         },
-        "Leiter": {
+        "Leiter - DLA(K) 23-12": {
             "Mannschaft": [
                 "Handscheinwerfer",
                 "Warnlichthaube f. Handscheinwerfer",
@@ -530,7 +530,7 @@ def load_total_storage():
                 "Aufnahme f. Korbtrage"
             ]
         },
-        "Tank2": {
+        "Tank2 - TLF-A 4000": {
             "Fahrer/GK": [
                 "Pressluftatmer",
                 "Vollmaske f. Pressluftatmer",
@@ -674,7 +674,7 @@ def load_total_storage():
                 "Einreißhaken"
             ]
         },
-        "Tunnel": {
+        "Voraus - VRFA-Tunnel": {
             "Fahrer/GK": [
                 "Handfunkgerät",
                 "Handlampe",
@@ -792,7 +792,7 @@ def load_total_storage():
                 "Adapter 7/13-Pol"
             ]
         },
-        "Tunnel+Ölanh.": {
+        "Voraus+Ölanh.": {
             "Fahrer/GK": [
                 "Handfunkgerät",
                 "Handlampe",
@@ -941,7 +941,7 @@ def load_total_storage():
                 "Plane 3 x 4 m"
             ]
         },
-        "Pumpe": {
+        "Pumpe - LFA": {
             "Fahrer/GK": [
                 "Handfunkgerät",
                 "Anhaltekelle",
@@ -1116,7 +1116,7 @@ def load_total_storage():
                 "Flachansauger"
             ]
         },
-        "Rüst": {
+        "Rüst - SRFK-A": {
             "Fahrer/GK": [
                 "Handfunkgerät",
                 "Helm mit Funkgarnitur",
