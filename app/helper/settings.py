@@ -1,13 +1,20 @@
 class Settings:
     def __init__(self) -> None:
         # training
-        self.FEEDBACK_TRAINING_SEC = round(2.0, 1)
+        self.FEEDBACK_TRAINING_SEC = 2
         # game
-        self.FEEDBACK_GAME_SEC = round(0.5, 1)
-        self.INTERVAL_GAME_SEC = round(0.1, 1)
-        self.START_TIME_GAME_SEC = round(1500.0, 1)
-        self.PUNISHMENT_GAME_SEC = round(1.0, 1)
-        self.REWARD_GAME_SEC = round(4.0, 1)
+        self.FEEDBACK_GAME_SEC = 0.5
+        self.INTERVAL_GAME_SEC = 0.1
+        self.START_TIME_GAME_SEC = 15
+        self.PUNISHMENT_GAME_SEC = 1  # to be replaced by extra_time
+        self.REWARD_GAME_SEC = 4  # to be replaced by extra_time
+        self.MAX_EXTRA_TIME_SEC = 5
+        self.EXTRA_TIME_REDUCTION_SEC = 0.5
+
+        # 15      +  5 + 4.5 + 4 + ... = 42.5
+        # 15 - 8  +  4 + 3.5 + 3 + ... = 25.0
+        # self.RENEW_EXTRA_TIME_INT = 25
+        self.RENEW_EXTRA_TIME_INT = 10
 
 
 class Strings:

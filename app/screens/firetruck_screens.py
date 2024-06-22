@@ -214,8 +214,6 @@ class Fahrzeugkunde_Training(Screen):
 
 
 class Fahrzeugkunde_Game(Screen):
-    # strike_label_visible = BooleanProperty(False)
-    timer_label_visible = BooleanProperty(False)
     timer_change_label_visible = BooleanProperty(False)
     timer_change_add = BooleanProperty(True)
 
@@ -231,12 +229,6 @@ class Fahrzeugkunde_Game(Screen):
         self.mode_browse: bool = mode[2]
         self.mode_images: bool = mode[3]
 
-    # def display_timer_label(self, display: bool = True):
-    #     if display:
-    #         self.timer_label_visible = True
-    #     else:
-    #         self.timer_label_visible = False
-
     # def display_timer_change_label(self, *args):
     #     # state switch between True and False
     #     self.timer_change_label_visible = not self.timer_change_label_visible
@@ -245,25 +237,42 @@ class Fahrzeugkunde_Game(Screen):
     #     self.timer_change_add = not self.timer_change_add
 
     def reset_timer(self):
-        # self.time_left = 15  # seconds
         self.time_left = stgs.START_TIME_GAME_SEC
-        self.timer_label.text = f"{str(self.time_left)} s  "
+        # self.timer_label.text = f"{str(self.time_left)} s  "
+        self.timer_label.text = f""
 
-        # set pb
         self.set_progress_bar()
 
-    def add_time(self):
-        # time_extra = 4  # seconds
-        time_extra = stgs.REWARD_GAME_SEC
-        self.time_left = round(self.time_left + time_extra, 1)
-        # todo: display time addition, green "+3"
+    def reset_extra_timer(self):
+        # init self.counter
 
-    def subtract_time(self):
-        # time_punishment = 1  # seconds
-        time_punishment = stgs.PUNISHMENT_GAME_SEC
-        self.time_left = round(
-            max(0, self.time_left - time_punishment), 1
-        )  # Subtract 5 seconds, ensuring time doesn't go negative
+        # self.extra_time_left = stgs.MAX_EXTRA_TIME_SEC
+
+        self.extra_time_left = max(
+            stgs.MAX_EXTRA_TIME_SEC
+            - self.extra_time_counter * stgs.EXTRA_TIME_REDUCTION_SEC,
+            0,
+        )
+
+        self.extra_time_label.text = f"{str(self.extra_time_left)} s  "
+
+    def reset_extra_time_counter(self):
+        self.extra_time_counter = 0
+
+    def add_time(self):
+        # max extra time reduces during game
+        # extra_time = max(stgs.MAX_EXTRA_TIME_SEC - self.extra_time_counter * stgs.EXTRA_TIME_REDUCTION_SEC, 0)
+
+        self.time_left = round(self.time_left + self.extra_time_left, 1)
+
+        # self.extra_time_counter += 1
+
+    # def subtract_time(self):
+    #     # to be replaced by extra_time
+    #     time_punishment = stgs.PUNISHMENT_GAME_SEC
+    #     self.time_left = round(
+    #         max(0, self.time_left - time_punishment), 1
+    #     )
 
     def set_progress_bar(self):
         self.progress_bar.max = stgs.START_TIME_GAME_SEC
@@ -272,15 +281,14 @@ class Fahrzeugkunde_Game(Screen):
         self.progress_bar.value = self.time_left
 
     def update_time(self, *args):
-        # update pb
         self.update_progress_bar()
 
         if self.time_left > 0.0:
-            # self.time_left -= 1
             self.time_left = round(self.time_left - stgs.INTERVAL_GAME_SEC, 1)
 
             if not self.time_left == 0.0:
-                self.timer_label.text = f"{str(self.time_left)} s  "
+                # self.timer_label.text = f"{str(self.time_left)} s  "
+                self.timer_label.text = f""
 
             else:
                 self.timer_label.text = "Ende  "
@@ -289,6 +297,23 @@ class Fahrzeugkunde_Game(Screen):
             Clock.unschedule(self.update_time)  # Stop the timer when it reaches 0
             self.end_game()
 
+    def update_extra_timer(self, *args):
+        # update extra_time_label
+
+        if self.extra_time_left > 0.0:
+            self.extra_time_left = round(
+                self.extra_time_left - stgs.INTERVAL_GAME_SEC, 1
+            )
+
+            self.extra_time_label.text = f"{str(self.extra_time_left)} s  "
+
+        else:
+            self.extra_time_label.text = ""
+
+            Clock.unschedule(
+                self.update_extra_timer
+            )  # Stop the timer when it reaches 0
+
     def update_score(self):
         self.score_label.text = f"{str(self.score)}  "
 
@@ -296,7 +321,7 @@ class Fahrzeugkunde_Game(Screen):
         self.score = 0
         self.update_score()
 
-    def increment_score(self, add: int = 1):
+    def increment_score(self, add: int = 100):
         self.score += add
         self.update_score()
 
@@ -322,15 +347,19 @@ class Fahrzeugkunde_Game(Screen):
     def play(self):
         self.reset_tool_list()
 
-        self.reset_timer()
-
-        # Clock.schedule_interval(self.update_time, 1)
-        Clock.schedule_interval(self.update_time, stgs.INTERVAL_GAME_SEC)
-
-        # total score
         self.reset_score()
 
+        self.reset_extra_time_counter()
+
+        # self.reset_extra_timer()
+
+        self.reset_timer()
+
+        Clock.schedule_interval(self.update_time, stgs.INTERVAL_GAME_SEC)
+
+        # start game
         self.next_tool()
+
         self.accept_answers = True  # Flag to indicate if answers should be processed
 
     def next_tool(self, *args):
@@ -361,6 +390,14 @@ class Fahrzeugkunde_Game(Screen):
             btn.bind(on_press=self.on_answer)
             self.rooms_layout.add_widget(btn)
 
+        # bonus: reset extra time option after x played tools
+        self.reset_extra_timer()
+
+        if self.extra_time_counter == stgs.RENEW_EXTRA_TIME_INT:
+            self.reset_extra_time_counter()
+
+        Clock.schedule_interval(self.update_extra_timer, stgs.INTERVAL_GAME_SEC)
+
     def correct_answer(self):
         self.increment_score()
 
@@ -374,7 +411,12 @@ class Fahrzeugkunde_Game(Screen):
 
         # Clock.schedule_once(self.display_timer_change_label, stgs.FEEDBACK_GAME_SEC)
 
+        # extra_time = max_extra_time - self.counter * interval
+        # add extra_time to total
+        # display green!
         self.add_time()
+
+        self.extra_time_counter += 1
 
     def incorrect_answer(self):
         # todo: fix color setting
@@ -387,13 +429,14 @@ class Fahrzeugkunde_Game(Screen):
 
         # Clock.schedule_once(self.display_timer_change_label, stgs.FEEDBACK_GAME_SEC)
 
-        self.subtract_time()
+        # self.subtract_time()
+        pass
 
     def on_answer(self, instance):
         if not self.accept_answers:  # Check if answer processing is enabled
             return  # Ignore the button press if answer processing is disabled
 
-        children = self.rooms_layout.children
+        Clock.unschedule(self.update_extra_timer)
 
         if instance.text in self.correct_storage_multiple:
             # correct answer
@@ -401,6 +444,8 @@ class Fahrzeugkunde_Game(Screen):
         else:
             # incorrect answer
             self.incorrect_answer()
+
+        children = self.rooms_layout.children
 
         # indicate if correct or incorrect answer
         # for single correct answer
