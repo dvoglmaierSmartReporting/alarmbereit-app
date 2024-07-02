@@ -16,13 +16,13 @@ Later, if all other things already implemented, one can dream of a gamification 
 
 ## Build Android package (.apk)
 ```
-/app> ../yaml2jason.py && buildozer -v android debug
+/app> buildozer -v android debug
 ```
 
 ## Run locally
 
 ```
-/app> ./yaml2json.py && python3 main.py
+/app> python3 main.py
 ```
 
 ## Repository content
@@ -38,14 +38,15 @@ Contains source-of-truth for competition questions:
 Contains source-of-truth for tool storage locations:
 `feuerwehr_tools_storage.yaml` (not complete)
 
-As some python packages caused issues in the apk creation, for now its avoided to use imported packages (e.g. PyYAML). Workaround is to manually convert yaml into dict and import as function variable (e.g. `firetrucks.py`). Run
-`/> ./yaml2json.py`
-to update regarding files.
+~~As some python packages caused issues in the apk creation, for now its avoided to use imported packages (e.g. PyYAML). Workaround is to manually convert yaml into dict and import as function variable (e.g. `firetrucks.py`). Run~~
+~~`/> ./yaml2json.py`~~
+~~to update regarding files.~~~
+UPDATE: successfully imported and compiled PyYaml package in apk
 
 Another helper function is `pip_dependencies.py`. Its used to generate package dependency string used in `buildozer.spec`. E.g. run
 `/> ./pip_dependencies.py kivy`
 to receive a string of all dep-tree in hierarchie order, like
-`Pygments==2.17.2,urllib3==2.1.0,idna==3.6,charset-normalizer==3.3.2,certifi==2023.11.17,requests==2.31.0,Kivy-Garden==0.1.5,docutils==0.20.1,Kivy==2.3.0`
+`Pygments==2.17.2,urllib3==2.1.0,idna==3.6,charset-normalizer==3.3.2,certifi==2023.11.17,requests==2.31.0,Kivy-Garden==0.1.5,docutils==0.20.1,Kivy==2.3.0,PyYAML==6.0.1`
 
 ### /app/assets
 Contains logos and icons of Freiwillige Feuerwehr Hallein. Usage is only allowed in context of this application. Authorisation can be revoked anytime.

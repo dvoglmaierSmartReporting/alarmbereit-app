@@ -17,3 +17,4 @@ ideen_backlog.md
 
 # sketches
 *.drawio
+!game_sequence.drawio

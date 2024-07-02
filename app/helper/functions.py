@@ -1,7 +1,27 @@
-from helper.firetrucks import load_total_storage
 from helper.settings import Strings
 
+import yaml
+
 strs = Strings()
+
+
+def load_total_storage() -> dict:
+    with open("./app/content/feuerwehr_tools_storage.yaml", "r") as file:
+        try:
+            return yaml.safe_load(file)
+        except yaml.YAMLError as exc:
+            print(exc)
+            return dict()
+
+
+def load_total_competition_questions() -> dict:
+    # with open("./app/content/feuerwehr_competition_questions_mc.yaml", "r") as file:
+    with open("./app/content/feuerwehr_competition_questions.yaml", "r") as file:
+        try:
+            return yaml.safe_load(file)
+        except yaml.YAMLError as exc:
+            print(exc)
+            return dict()
 
 
 def invert_firetruck_equipment(firetruck: dict) -> dict:

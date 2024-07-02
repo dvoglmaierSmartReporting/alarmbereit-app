@@ -1,10 +1,22 @@
-# version 0.8:
-1. refactor main.py
+# version 0.9:
+fix issues of version 0.8
+1. Persönlicher Highscore wird lokal bespeichert
+2. Bilder aller Geräteräume für Zug 1
+3. Update Zeitdruck modus gameplay
 
-tbd...
+todo:
+- app crash at end_game() func
+- import & compile PyYaml pkg
+
+new features:
+4. Bewerbsfragen mit Multiple Choice Antworten
+
+-------------------------------------------------------------------------
+# version 0.8 (alpha):
+1. refactor main.py
 2. Persönlicher Highscore wird lokal bespeichert
-3. Bewerbsfragen mit Multiple Choice Antworten
-4. Bilder aller Geräteräume für Zug 1
+3. Bilder aller Geräteräume für Zug 1
+4. Update Zeitdruck modus gameplay
 
 -------------------------------------------------------------------------
 # version 0.7:

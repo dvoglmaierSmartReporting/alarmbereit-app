@@ -4,7 +4,7 @@ from kivy.uix.screenmanager import Screen
 
 from random import shuffle
 
-from helper.competitions import load_total_competition_questions
+from helper.functions import mode_str2bool, load_total_competition_questions
 from helper.functions import mode_str2bool
 from helper.settings import Strings
 
@@ -75,7 +75,8 @@ class Bewerb_Training(Screen):
         self.competition_dict = total_questions[self.selected_competition]
 
         self.question_ids = list(self.competition_dict.keys())
-        # shuffle(self.question_ids)  # moved to self.play()
+        # self.question_ids = [int(question_id) for question_id in list(self.competition_dict.keys())]
+        shuffle(self.question_ids)  # moved to self.play()  # reverted!! needs to be executed each new load
 
         self.question_ids_min = str(min([int(x) for x in self.question_ids]))
         self.question_ids_max = str(max([int(x) for x in self.question_ids]))
@@ -85,7 +86,7 @@ class Bewerb_Training(Screen):
 
         # start with smallest question id, then shuffle list
         self.current_question_id = self.question_ids.pop(0)
-        shuffle(self.question_ids)
+        # shuffle(self.question_ids)  # moved to load_competition_questions()
 
         self.previous_question_button.disabled = True
         self.next_question_button.disabled = False
@@ -96,7 +97,9 @@ class Bewerb_Training(Screen):
         self.question_id_label.text = (
             f"{self.current_question_id} von {self.question_ids_max}"
         )
-
+        print(f"{self.current_question_id = }")
+        print(f"{self.competition_dict.get(self.current_question_id) = }")
+        print(f"{self.competition_dict.get(self.current_question_id).get("Q") = }")
         self.current_question = self.competition_dict.get(self.current_question_id).get(
             "Q"
         )
@@ -127,9 +130,11 @@ class Bewerb_Training(Screen):
         self.solution_button.disabled = False
 
         if previous:
-            self.current_question_id = str(int(self.current_question_id) - 1)
+            # self.current_question_id = str(int(self.current_question_id) - 1)
+            self.current_question_id = int(self.current_question_id) - 1
         else:
-            self.current_question_id = str(int(self.current_question_id) + 1)
+            # self.current_question_id = str(int(self.current_question_id) + 1)
+            self.current_question_id = int(self.current_question_id) + 1
 
         if self.current_question_id == self.question_ids_min:
             self.previous_question_button.disabled = True
