@@ -7,7 +7,7 @@ ideen_backlog.md
 
 # cache
 *.pyc
-__pycache__/
+__pycache__
 
 # buildozer
 /app/.buildozer
