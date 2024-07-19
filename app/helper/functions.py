@@ -2,11 +2,11 @@ from helper.settings import Strings
 
 import yaml
 
-strs = Strings()
+strings = Strings()
 
 
 def load_total_storage() -> dict:
-    with open("./app/content/feuerwehr_tools_storage.yaml", "r") as file:
+    with open("/".join(__file__.split("/")[:-2]) + "/content/feuerwehr_tools_storage.yaml", "r") as file:
         try:
             return yaml.safe_load(file)
         except yaml.YAMLError as exc:
@@ -16,7 +16,8 @@ def load_total_storage() -> dict:
 
 def load_total_competition_questions() -> dict:
     # with open("./app/content/feuerwehr_competition_questions_mc.yaml", "r") as file:
-    with open("./app/content/feuerwehr_competition_questions.yaml", "r") as file:
+    # with open("./app/content/feuerwehr_competition_questions.yaml", "r") as file:
+    with open("/".join(__file__.split("/")[:-2]) + "/content/feuerwehr_competition_questions.yaml", "r") as file:
         try:
             return yaml.safe_load(file)
         except yaml.YAMLError as exc:
@@ -46,10 +47,12 @@ def load_firetruck_storage(selected_firetruck: str) -> tuple[list, list, dict]:
 
 
 def mode_str2bool(selected_mode: str) -> tuple:
-    mode_training: bool = True if selected_mode == strs.BUTTON_STR_TRAINING else False
-    mode_game: bool = True if selected_mode == strs.BUTTON_STR_GAME else False
-    mode_browse: bool = True if selected_mode == strs.BUTTON_STR_BROWSE else False
-    mode_images: bool = True if selected_mode == strs.BUTTON_STR_IMAGES else False
+    mode_training: bool = (
+        True if selected_mode == strings.BUTTON_STR_TRAINING else False
+    )
+    mode_game: bool = True if selected_mode == strings.BUTTON_STR_GAME else False
+    mode_browse: bool = True if selected_mode == strings.BUTTON_STR_BROWSE else False
+    mode_images: bool = True if selected_mode == strings.BUTTON_STR_IMAGES else False
     return (
         mode_training,
         mode_game,
@@ -61,11 +64,11 @@ def mode_str2bool(selected_mode: str) -> tuple:
 def mode_bool2str(mode: tuple) -> str:
     mode_training, mode_game, mode_browse, mode_images = mode
     if mode_training:
-        return strs.BUTTON_STR_TRAINING
+        return strings.BUTTON_STR_TRAINING
     if mode_game:
-        return strs.BUTTON_STR_GAME
+        return strings.BUTTON_STR_GAME
     if mode_browse:
-        return strs.BUTTON_STR_BROWSE
+        return strings.BUTTON_STR_BROWSE
     if mode_images:
-        return strs.BUTTON_STR_IMAGES
+        return strings.BUTTON_STR_IMAGES
     return ""

@@ -5,6 +5,10 @@ app/assets/.DS_Store
 *.ipynb
 ideen_backlog.md
 
+# cache
+*.pyc
+__pycache__/
+
 # buildozer
 /app/.buildozer
 /app/.DS_Store
@@ -18,3 +22,7 @@ ideen_backlog.md
 # sketches
 *.drawio
 !game_sequence.drawio
+
+# logs
+/app/logs
+*.log

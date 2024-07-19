@@ -8,7 +8,7 @@ from helper.functions import mode_str2bool, load_total_competition_questions
 from helper.functions import mode_str2bool
 from helper.settings import Strings
 
-strs = Strings()
+strings = Strings()
 
 
 class Bewerb_Menu(Screen):
@@ -62,8 +62,8 @@ class Bewerb_Training(Screen):
     def __init__(self, **kwargs):
         super(Bewerb_Training, self).__init__(**kwargs)
         # update button strings
-        self.solution_button.text = strs.BUTTON_STR_SOLUTION
-        self.random_question_button.text = strs.BUTTON_STR_RANDOM_QUESTION
+        self.solution_button.text = strings.BUTTON_STR_SOLUTION
+        self.random_question_button.text = strings.BUTTON_STR_RANDOM_QUESTION
 
     def select_competition(self, selected_competition):
         # troubleshooting: fix competition

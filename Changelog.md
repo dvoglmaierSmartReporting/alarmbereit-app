@@ -3,13 +3,14 @@ fix issues of version 0.8
 1. Persönlicher Highscore wird lokal bespeichert
 2. Bilder aller Geräteräume für Zug 1
 3. Update Zeitdruck modus gameplay
+4. import & compile PyYaml pkg
 
 todo:
 - app crash at end_game() func
-- import & compile PyYaml pkg
+- multi-answer: already selected answer results incorrect answer
 
 new features:
-4. Bewerbsfragen mit Multiple Choice Antworten
+- Bewerbsfragen mit Multiple Choice Antworten
 
 -------------------------------------------------------------------------
 # version 0.8 (alpha):
