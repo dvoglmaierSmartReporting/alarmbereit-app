@@ -20,12 +20,12 @@ class Bewerb_Menu(Screen):
         # create button for all firetrucks
         for competitions in self.total_competitions:
             btn = Button(text=competitions, font_size="32sp")
-            btn.bind(on_release=self.on_button_release)
-            self.bewerbe_layout.add_widget(btn)
+            btn.bind(on_release=self.on_button_release)  # type: ignore
+            self.bewerbe_layout.add_widget(btn)  # type: ignore
 
     def on_button_release(self, instance):
         # on question selection, read mode label text from current screen
-        mode = mode_str2bool(self.mode_label.text.strip())
+        mode = mode_str2bool(self.mode_label.text.strip())  # type: ignore
         mode_training, mode_game, mode_browse, mode_images = mode
 
         # bind competition selection
@@ -33,10 +33,10 @@ class Bewerb_Menu(Screen):
 
         # if mode_training or mode_game:
         if mode_training:
-            app.root.current = "bewerb_training"
-            app.root.transition.direction = "left"
+            app.root.current = "bewerb_training"  # type: ignore
+            app.root.transition.direction = "left"  # type: ignore
             # continue game with selected competition
-            bewerb_training_screen = app.root.get_screen("bewerb_training")
+            bewerb_training_screen = app.root.get_screen("bewerb_training")  # type: ignore
             bewerb_training_screen.select_competition(instance.text)
             bewerb_training_screen.play()
             # adapt for competition
@@ -62,8 +62,8 @@ class Bewerb_Training(Screen):
     def __init__(self, **kwargs):
         super(Bewerb_Training, self).__init__(**kwargs)
         # update button strings
-        self.solution_button.text = strings.BUTTON_STR_SOLUTION
-        self.random_question_button.text = strings.BUTTON_STR_RANDOM_QUESTION
+        self.solution_button.text = strings.BUTTON_STR_SOLUTION  # type: ignore
+        self.random_question_button.text = strings.BUTTON_STR_RANDOM_QUESTION  # type: ignore
 
     def select_competition(self, selected_competition):
         # troubleshooting: fix competition
@@ -88,13 +88,13 @@ class Bewerb_Training(Screen):
         self.current_question_id = self.question_ids.pop(0)
         # shuffle(self.question_ids)  # moved to load_competition_questions()
 
-        self.previous_question_button.disabled = True
-        self.next_question_button.disabled = False
+        self.previous_question_button.disabled = True  # type: ignore
+        self.next_question_button.disabled = False  # type: ignore
 
         self.process_question()
 
     def process_question(self):
-        self.question_id_label.text = (
+        self.question_id_label.text = (  # type: ignore
             f"{self.current_question_id} von {self.question_ids_max}"
         )
         print(f"{self.current_question_id = }")
@@ -103,7 +103,7 @@ class Bewerb_Training(Screen):
         self.current_question = self.competition_dict.get(self.current_question_id).get(
             "Q"
         )
-        self.question_label.text = self.current_question
+        self.question_label.text = self.current_question  # type: ignore
 
         self.current_answer = self.competition_dict.get(self.current_question_id).get(
             "A"
@@ -111,9 +111,9 @@ class Bewerb_Training(Screen):
 
     def random_question(self):
         self.ids.question_scrollview.scroll_y = 1
-        self.previous_question_button.disabled = False
-        self.next_question_button.disabled = False
-        self.solution_button.disabled = False
+        self.previous_question_button.disabled = False  # type: ignore
+        self.next_question_button.disabled = False  # type: ignore
+        self.solution_button.disabled = False  # type: ignore
 
         if len(self.question_ids) == 0:
             self.load_competition_questions()
@@ -125,9 +125,9 @@ class Bewerb_Training(Screen):
         self.process_question()
 
     def next_question(self, previous: bool = False):
-        self.previous_question_button.disabled = False
-        self.next_question_button.disabled = False
-        self.solution_button.disabled = False
+        self.previous_question_button.disabled = False  # type: ignore
+        self.next_question_button.disabled = False  # type: ignore
+        self.solution_button.disabled = False  # type: ignore
 
         if previous:
             # self.current_question_id = str(int(self.current_question_id) - 1)
@@ -137,14 +137,14 @@ class Bewerb_Training(Screen):
             self.current_question_id = int(self.current_question_id) + 1
 
         if self.current_question_id == self.question_ids_min:
-            self.previous_question_button.disabled = True
+            self.previous_question_button.disabled = True  # type: ignore
         if self.current_question_id == self.question_ids_max:
-            self.next_question_button.disabled = True
+            self.next_question_button.disabled = True  # type: ignore
 
         self.process_question()
 
     def reveal_answer(self):
-        self.solution_button.disabled = True
+        self.solution_button.disabled = True  # type: ignore
 
-        self.question_label.text += "\n\n" + self.current_answer
+        self.question_label.text += "\n\n" + self.current_answer  # type: ignore
         self.ids.question_label.height = self.ids.question_label.texture_size[1]

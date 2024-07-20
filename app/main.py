@@ -88,39 +88,39 @@ class Start_Menu(Screen):
         Logger.info("Start_Menu: __init__")
         Logger.info(f"Start_Menu: {__name__ = }")
 
-        this_function_name = currentframe().f_code.co_name
+        this_function_name = currentframe().f_code.co_name  # type: ignore
         Logger.info(f"Start_Menu: {this_function_name = }")
 
         # update button strings
-        self.training_button.text = strings.BUTTON_STR_TRAINING
-        self.game_button.text = strings.BUTTON_STR_GAME
-        self.browse_button.text = strings.BUTTON_STR_BROWSE
-        self.images_button.text = strings.BUTTON_STR_IMAGES
-        self.firetrucks_button.text = strings.BUTTON_STR_FIRETRUCKS
-        self.competitions_button.text = strings.BUTTON_STR_COMPETITIONS
-        self.standards_button.text = strings.BUTTON_STR_STANDARDS
+        self.training_button.text = strings.BUTTON_STR_TRAINING  # type: ignore
+        self.game_button.text = strings.BUTTON_STR_GAME  # type: ignore
+        self.browse_button.text = strings.BUTTON_STR_BROWSE  # type: ignore
+        self.images_button.text = strings.BUTTON_STR_IMAGES  # type: ignore
+        self.firetrucks_button.text = strings.BUTTON_STR_FIRETRUCKS  # type: ignore
+        self.competitions_button.text = strings.BUTTON_STR_COMPETITIONS  # type: ignore
+        self.standards_button.text = strings.BUTTON_STR_STANDARDS  # type: ignore
         # update label strings
-        self.mode_label.text = strings.LABEL_STR_MODE
-        self.questions_label.text = strings.LABEL_STR_QUESTIONS
+        self.mode_label.text = strings.LABEL_STR_MODE  # type: ignore
+        self.questions_label.text = strings.LABEL_STR_QUESTIONS  # type: ignore
 
-        self.standards_button.disabled = True
+        self.standards_button.disabled = True  # type: ignore
 
     def on_button_release(self):
         # if mode change, read mode label from current selection
-        self.mode = mode_str2bool(self.find_down_toggle_button(self))
+        self.mode = mode_str2bool(self.find_down_toggle_button(self))  # type: ignore
 
         # disable not existing combinations
-        self.firetrucks_button.disabled = False
-        self.competitions_button.disabled = False
-        self.standards_button.disabled = False
+        self.firetrucks_button.disabled = False  # type: ignore
+        self.competitions_button.disabled = False  # type: ignore
+        self.standards_button.disabled = False  # type: ignore
         mode_training, mode_game, mode_browse, mode_images = self.mode
         if mode_images:
-            self.firetrucks_button.disabled = True
+            self.firetrucks_button.disabled = True  # type: ignore
         if mode_game or mode_images or mode_browse:
             # if mode_game or mode_images:
-            self.competitions_button.disabled = True
+            self.competitions_button.disabled = True  # type: ignore
         if mode_training or mode_game or mode_images or mode_browse:
-            self.standards_button.disabled = True
+            self.standards_button.disabled = True  # type: ignore
 
     def forward_mode2menu(self, menu_screen: str):
         selected_mode = mode_bool2str(self.mode)
