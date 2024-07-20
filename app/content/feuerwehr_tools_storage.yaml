@@ -181,7 +181,7 @@ RüstLösch:
     - Tragbarer Wasserwerfer
     - Unterlegsholz
     - Druckschlauch B
-  Heck:
+  G7 / Heck:
     - Handfunkgerät
     - Schlauchhaspel
     - Atemschutz Überwachungstafel
@@ -373,7 +373,7 @@ Tank 1:
     - Notkurbel f. Haspel
     - HD Pistolenstrahlrohr
     - Fahrzeug Unterlegkeile
-  Heck:
+  G7 / Heck:
     - Handfunkgerät
     - ABC-Kupplungsschlüssel
     - HD-Rohr
@@ -626,7 +626,7 @@ Tank 2:
     - Druckschlauch B
     - Schlauchbrücke
     - Fahrzeug Unterlegkeile
-  Heck:
+  G7 / Heck:
     - Übergangsstück B-C
     - Hydrantenschlüssel
     - Handfunkgerät
@@ -943,7 +943,7 @@ Pumpe:
     - Kunststofffolie
     - Müllsack
     - Kabeltrommel 230 V
-  Heck:
+  G5 / Heck:
     - Schlauchladen B
     - Schlauchbrücken
     - Kupplungsschlüssel B-C
@@ -1193,7 +1193,7 @@ Rüst:
     - Krankentrage
     - Schwelleraufsatz
 
-  Heck:
+  G5 / Heck:
     - Schneekette
     - Kanister Diesel 10 l
     - Kanister Benzin 10 l

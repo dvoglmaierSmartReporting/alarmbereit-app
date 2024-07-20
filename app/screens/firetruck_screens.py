@@ -15,7 +15,7 @@ import os
 
 from helper.functions import load_total_storage, load_firetruck_storage, mode_str2bool
 from helper.settings import Settings
-from helper.game_class import GameCore
+from helper.game_class import GameCore, ToolQuestion
 
 
 settings = Settings()
@@ -118,10 +118,9 @@ class Fahrzeugkunde_Training(Screen):
     #     app.root.transition.direction = "right"
 
     def reset_tool_list(self):
-        rooms, tools, tools_locations = load_firetruck_storage(self.selected_firetruck)
-        self.rooms: list = rooms
-        self.tools: list = tools
-        self.tools_locations: dict = tools_locations
+        (self.firetruck_rooms, self.tools, self.tools_locations) = (
+            load_firetruck_storage(self.selected_firetruck)
+        )
 
         shuffle(self.tools)
 
@@ -155,18 +154,18 @@ class Fahrzeugkunde_Training(Screen):
                 tool_text[:14] + tool_text_lst[0] + "\n" + " ".join(tool_text_lst[1:])
             )
         self.tool_label.text = tool_text  # type: ignore
-        self.rooms_layout.clear_widgets()  # type: ignore
+        self.firetruck_rooms_layout.clear_widgets()  # type: ignore
 
-        for storage in self.rooms:
+        for storage in self.firetruck_rooms:
             btn = Button(text=storage, font_size="28sp")
             btn.bind(on_press=self.on_answer)  # type: ignore
-            self.rooms_layout.add_widget(btn)  # type: ignore
+            self.firetruck_rooms_layout.add_widget(btn)  # type: ignore
 
     def on_answer(self, instance):
         if not self.accept_answers:  # Check if answer processing is enabled
             return  # Ignore the button press if answer processing is disabled
 
-        children = self.rooms_layout.children  # type: ignore
+        children = self.firetruck_rooms_layout.children  # type: ignore
 
         if instance.text in self.correct_storage_multiple:
             # correct answer
@@ -252,7 +251,8 @@ class Fahrzeugkunde_Game(Screen):
 
         # for testing...
         # self.extra_time_left = settings.MAX_EXTRA_TIME_SEC
-        factor = self.tool_counter % settings.RENEW_EXTRA_TIME_INT
+        # factor = self.tool_counter % settings.RENEW_EXTRA_TIME_INT
+        factor = 10 % settings.RENEW_EXTRA_TIME_INT  # to be fixed!!
         self.extra_time_left = max(
             settings.MAX_EXTRA_TIME_SEC - factor * settings.EXTRA_TIME_REDUCTION_SEC,
             0,
@@ -260,8 +260,8 @@ class Fahrzeugkunde_Game(Screen):
 
         # self.extra_time_label.text = f"{str(self.extra_time_left)} s  "
 
-    def reset_tool_counter(self):
-        self.tool_counter = 0
+    # def reset_tool_counter(self):
+    #     self.tool_counter = 0
 
     def add_time(self):
         # max extra time reduces during game
@@ -322,23 +322,26 @@ class Fahrzeugkunde_Game(Screen):
             #     self.update_extra_timer
             # )  # Stop the timer when it reaches 0
 
-    def update_score(self):
-        self.score_label.text = f"{str(self.score)}  "  # type: ignore
+    # def update_score(self):
+    # self.score_label.text = f"{str(self.score)}  "  # type: ignore
 
-    def reset_score(self):
-        self.score = 0
-        self.update_score()
+    # def reset_score(self):
+    #     self.score = 0
+    #     self.update_score()
 
     def increment_score(self, add: int = 100):
-        self.score += add
-        self.update_score()
+        # self.score += add
+        self.game.score += add
+        # self.update_score()
+        self.score_label.text = f"{str(self.game.score)}  "  # type: ignore
 
     def save_high_score(self):
         with open(
             "/".join(__file__.split("/")[:-2]) + "/storage/high_strike.yaml", "w"
         ) as f:
             # with open("./app/storage/high_score.yaml", "w") as f:
-            yaml.dump({"high_score": self.score}, f)
+            # yaml.dump({"high_score": self.score}, f)
+            yaml.dump({"high_score": self.game.score}, f)
 
     def end_game(self):
         self.save_high_score()
@@ -348,10 +351,9 @@ class Fahrzeugkunde_Game(Screen):
         app.root.transition.direction = "right"  # type: ignore
 
     def reset_tool_list(self):
-        rooms, tools, tools_locations = load_firetruck_storage(self.selected_firetruck)
-        self.rooms: list = rooms
-        self.tools: list = tools
-        self.tools_locations: dict = tools_locations
+        (self.firetruck_rooms, self.tools, self.tools_locations) = (
+            load_firetruck_storage(self.selected_firetruck)
+        )
 
         shuffle(self.tools)
 
@@ -362,9 +364,11 @@ class Fahrzeugkunde_Game(Screen):
         # reset game specific elements
         self.reset_tool_list()
 
-        self.reset_score()
+        # self.reset_score()
+        # inited as self.game.score = 0
 
-        self.reset_tool_counter()
+        # self.reset_tool_counter()
+        # not needed, it is property of GameCore()
 
         self.reset_timer()
 
@@ -375,6 +379,14 @@ class Fahrzeugkunde_Game(Screen):
 
         # self.accept_answers = True  # Flag to indicate if answers should be processed
 
+    def break_tool_name(self, tool_name: str) -> str:
+        if len(tool_name) >= 29:
+            tool_name_lst: list = tool_name[14:].split(" ")
+            return (
+                tool_name[:14] + tool_name_lst[0] + "\n" + " ".join(tool_name_lst[1:])
+            )
+        return tool_name
+
     def next_tool(self, *args):
         self.accept_answers = True  # Enable answer processing for the new tool
 
@@ -383,28 +395,46 @@ class Fahrzeugkunde_Game(Screen):
 
         # troubleshooting: fix tool
         # self.current_tool = "Handfunkgerät"  # "Druckschlauch B"
-        self.current_tool = self.tools.pop()
+        # self.current_tool = self.tools.pop()
+        # current_tool = self.tools.pop()
 
-        self.correct_storage = set(self.tools_locations.get(self.current_tool))  # type: ignore
+        # self.correct_storage = set(self.tools_locations.get(self.current_tool))  # type: ignore
+        # correct_storage = set(self.tools_locations.get(current_tool))
 
-        self.correct_storage_multiple = list(self.correct_storage)
+        # self.correct_storage_multiple = list(self.correct_storage)
+        # correct_storage_multiple = list(correct_storage)
 
-        tool_text = self.current_tool
-        if len(tool_text) >= 29:
-            tool_text_lst = tool_text[14:].split(" ")
-            tool_text = (
-                tool_text[:14] + tool_text_lst[0] + "\n" + " ".join(tool_text_lst[1:])
-            )
-        self.tool_label.text = tool_text  # type: ignore
-        self.rooms_layout.clear_widgets()  # type: ignore
+        # self.correct_storages = list(set(self.tools_locations.get(current_tool)))  # type: ignore
 
-        for storage in self.rooms:
+        self.current_question = ToolQuestion(
+            firetruck=self.selected_firetruck,
+            tool=self.tools.pop(),
+            rooms=list(
+                set(self.tools_locations.get(current_tool))  # type: ignore
+            ),  # = self.correct_storages
+        )
+
+        # tool_text = self.current_tool
+        # tool_text = current_tool
+        # tool_text = str(self.current_question.tool)  # avoid updating class property
+        # if len(tool_text) >= 29:
+        #     tool_text_lst = tool_text[14:].split(" ")
+        #     tool_text = (
+        #         tool_text[:14] + tool_text_lst[0] + "\n" + " ".join(tool_text_lst[1:])
+        #     )
+        # self.tool_label.text = tool_text  # type: ignore
+
+        self.tool_label.text = self.break_tool_name(self.current_question.tool)  # type: ignore
+
+        self.firetruck_rooms_layout.clear_widgets()  # type: ignore
+
+        for storage in self.firetruck_rooms:
             btn = Button(text=storage, font_size="28sp")
             btn.bind(on_press=self.on_answer)  # type: ignore
-            self.rooms_layout.add_widget(btn)  # type: ignore
+            self.firetruck_rooms_layout.add_widget(btn)  # type: ignore
 
         # reset tool specific elements
-        self.tool_counter += 1
+        # self.tool_counter += 1
 
         # bonus: reset extra time option after x played tools
         self.reset_extra_timer()
@@ -454,33 +484,48 @@ class Fahrzeugkunde_Game(Screen):
 
         # Clock.unschedule(self.update_extra_timer)
 
-        if instance.text in self.correct_storage_multiple:
+        ################
+        # to be fixed:
+        # avoid self.current_question.rooms.remove(instance.text)
+        # better: do not allow answering on the same room again
+        # then: compare correct_answer-set with answered-sed
+        ################
+
+        # if instance.text in self.correct_storage_multiple:
+        if instance.text in self.current_question.rooms:
             # correct answer
             self.correct_answer()
         else:
             # incorrect answer
             self.incorrect_answer()
 
-        children = self.rooms_layout.children  # type: ignore
+        children = self.firetruck_rooms_layout.children  # type: ignore
 
         # indicate if correct or incorrect answer
         # for single correct answer
-        if len(self.correct_storage_multiple) <= 1:
+        # if len(self.correct_storage_multiple) <= 1:
+        if len(self.current_question.rooms) <= 1:
             # always identify and indicate the correct answer
             for child in children:
-                if child.text in self.correct_storage:
+                # if child.text in self.correct_storage:
+                # if child.text in self.correct_storage_multiple:
+                if child.text in self.current_question.rooms:
                     child.background_color = (0, 1, 0, 1)
             # if, indicate incorrect answer
-            if instance.text not in self.correct_storage:
+            # if instance.text not in self.correct_storage:
+            # if instance.text not in self.correct_storage_multiple:
+            if instance.text not in self.current_question.rooms:
                 instance.background_color = (1, 0, 0, 1)
 
         # for multiple correct answers
         else:
-            if instance.text not in self.correct_storage_multiple:
+            # if instance.text not in self.correct_storage_multiple:
+            if instance.text not in self.current_question.rooms:
                 # if, indicate incorrect and all correct answers and close
                 instance.background_color = (1, 0, 0, 1)
                 for child in children:
-                    if child.text in self.correct_storage_multiple:
+                    # if child.text in self.correct_storage_multiple:
+                    if child.text in self.current_question.rooms:
                         child.background_color = (0, 1, 0, 1)
                 pass
 
@@ -488,7 +533,8 @@ class Fahrzeugkunde_Game(Screen):
                 # answer in correct answers
                 instance.background_color = (0, 1, 0, 1)
                 # remove correct answer from set
-                self.correct_storage_multiple.remove(instance.text)
+                # self.correct_storage_multiple.remove(instance.text)
+                self.current_question.rooms.remove(instance.text)
                 # display string "weitere"
                 if self.tool_label.text[-7:] == "weitere":  # type: ignore
                     self.tool_label.text += " "  # type: ignore
@@ -500,6 +546,9 @@ class Fahrzeugkunde_Game(Screen):
         self.accept_answers = (
             False  # Disable answer processing after an answer is selected
         )
+
+        # tool ends here. document tool and given answers in question history
+        self.game.questions.append(self.current_question)
 
         Clock.schedule_once(self.next_tool, settings.FEEDBACK_GAME_SEC)
 
@@ -514,7 +563,7 @@ class Fahrzeugkunde_Browse(Screen):
     def load_firetruck(self):
         total_storage = load_total_storage()
         self.firetruck: dict = total_storage[self.selected_firetruck]
-        self.rooms: list = list(self.firetruck.keys())
+        self.firetruck_rooms: list = list(self.firetruck.keys())
 
     def populate_list(self):
         self.load_firetruck()
@@ -522,7 +571,7 @@ class Fahrzeugkunde_Browse(Screen):
         label_container = self.ids.label_list
         label_container.clear_widgets()
 
-        for room in self.rooms:
+        for room in self.firetruck_rooms:
             label = Label(
                 text=f"[b]{str(room)}[/b]",
                 markup=True,

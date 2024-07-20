@@ -1,38 +1,33 @@
 from dataclasses import dataclass, field
 
 
-# @dataclass
-# class Customer:
-#     name: str
-#     group_name: str
-#     group_id: int = field(init=False, default=0)
-#     df_reports: DataFrame = field(init=False, repr=False)
-#     df_report_versions: DataFrame = field(init=False, repr=False)
-#     df_templates: DataFrame = field(init=False, repr=False)
-
-#     def fetch_reports(self, db: Connection) -> DataFrame:
-#         if not isinstance(self.group_id, list):
-#             group_lst = [str(self.group_id)]
-
-
-@dataclass
-class ToolQuestion:
-    tool: bool
-
-
-# @dataclass
-# class CompetitionQuestion:
-#     tool: bool
-
-
 @dataclass
 class GameCore:
     answers_correct_total: int = 0
     answers_correct_strike: int = 0
+    score: int = 0
 
     # concat history to review after a session
-    questions: dict = field(
-        init=False, repr=False
-    )
+    questions: list = field(default_factory=list, init=False, repr=False)
 
-    score: int = 0
+    @property
+    def questions_len(self) -> int:
+        return len(self.questions)
+
+
+@dataclass
+class ToolQuestion:
+    firetruck: str
+    tool: str
+    rooms: list
+
+    room_answered: list = field(default_factory=list, init=False, repr=False)
+
+    @property
+    def answered_correctly(self) -> bool:
+        return set(self.rooms) == set(self.room_answered)
+
+
+@dataclass
+class CompetitionQuestion:
+    init: bool
