@@ -27,8 +27,12 @@ class ToolQuestion:
 
 @dataclass
 class GameCore:
-    answers_correct_total: int
-    answers_correct_strike: int
+    answers_correct_total: int = 0
+    answers_correct_strike: int = 0
+
+    # concat history to review after a session
     questions: dict = field(
         init=False, repr=False
-    )  # concat history to review after a session
+    )
+
+    score: int = 0

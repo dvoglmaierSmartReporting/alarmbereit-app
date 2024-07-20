@@ -30,49 +30,49 @@ class Fahrzeugkunde_Menu(Screen):
         # create button for all firetrucks
         for firetruck in self.total_firetrucks:
             btn = Button(text=firetruck, font_size="32sp")
-            btn.bind(on_release=self.on_button_release)
-            self.firetrucks_layout.add_widget(btn)
+            btn.bind(on_release=self.on_button_release)  # type: ignore
+            self.firetrucks_layout.add_widget(btn)  # type: ignore
 
     def on_button_release(self, instance):
         # on question selection, read mode label text from current screen
-        mode = mode_str2bool(self.mode_label.text.strip())
+        mode = mode_str2bool(self.mode_label.text.strip())  # type: ignore
         mode_training, mode_game, mode_browse, mode_images = mode
 
         # bind firetruck and mode selection
         app = App.get_running_app()
 
         if mode_training:
-            app.root.current = "fahrzeugkunde_training"
-            app.root.transition.direction = "left"
+            app.root.current = "fahrzeugkunde_training"  # type: ignore
+            app.root.transition.direction = "left"  # type: ignore
             # continue game with selected firetruck
-            fahrzeugkunde_tg_screen = app.root.get_screen("fahrzeugkunde_training")
+            fahrzeugkunde_tg_screen = app.root.get_screen("fahrzeugkunde_training")  # type: ignore
             fahrzeugkunde_tg_screen.select_firetruck(instance.text)
             fahrzeugkunde_tg_screen.forward_mode_2_fk_training(mode)
             fahrzeugkunde_tg_screen.play()
 
         if mode_game:
-            app.root.current = "fahrzeugkunde_game"
-            app.root.transition.direction = "left"
-            # continue game with selected firetruck
-            fahrzeugkunde_tg_screen = app.root.get_screen("fahrzeugkunde_game")
+            app.root.current = "fahrzeugkunde_game"  # type: ignore
+            app.root.transition.direction = "left"  # type: ignore
+            # continue game with selected firetruck  # type: ignore
+            fahrzeugkunde_tg_screen = app.root.get_screen("fahrzeugkunde_game")  # type: ignore
             fahrzeugkunde_tg_screen.select_firetruck(instance.text)
             fahrzeugkunde_tg_screen.forward_mode_2_fk_game(mode)
             fahrzeugkunde_tg_screen.play()
 
         elif mode_browse:
             # change screen
-            app.root.current = "fahrzeugkunde_browse"
-            app.root.transition.direction = "left"
+            app.root.current = "fahrzeugkunde_browse"  # type: ignore
+            app.root.transition.direction = "left"  # type: ignore
             # continue game with selected firetruck
-            fahrzeugkunde_browse_screen = app.root.get_screen("fahrzeugkunde_browse")
+            fahrzeugkunde_browse_screen = app.root.get_screen("fahrzeugkunde_browse")  # type: ignore
             fahrzeugkunde_browse_screen.select_firetruck(instance.text)
             fahrzeugkunde_browse_screen.populate_list()
 
         elif mode_images:
-            app.root.current = "fahrzeugkunde_images"
-            app.root.transition.direction = "left"
+            app.root.current = "fahrzeugkunde_images"  # type: ignore
+            app.root.transition.direction = "left"  # type: ignore
 
-            fahrzeugkunde_images_screen = app.root.get_screen("fahrzeugkunde_images")
+            fahrzeugkunde_images_screen = app.root.get_screen("fahrzeugkunde_images")  # type: ignore
             fahrzeugkunde_images_screen.select_firetruck(instance.text)
             fahrzeugkunde_images_screen.load_image()
 
@@ -84,7 +84,7 @@ class Fahrzeugkunde_Training(Screen):
         # troubleshooting: fix firetruck
         # self.selected_firetruck = "Tank1" "Rüst+Lösch"
         self.selected_firetruck = selected_firetruck
-        self.firetruck_label.text = f"   {selected_firetruck}"
+        self.firetruck_label.text = f"   {selected_firetruck}"  # type: ignore
 
     def forward_mode_2_fk_training(self, mode: tuple):
         self.mode_training: bool = mode[0]
@@ -93,7 +93,7 @@ class Fahrzeugkunde_Training(Screen):
         self.mode_images: bool = mode[3]
 
     def update_strike(self):
-        self.strike_label.text = f"{str(self.strike)}  "
+        self.strike_label.text = f"{str(self.strike)}  "  # type: ignore
 
     def reset_strike(self):
         self.strike = 0
@@ -144,7 +144,7 @@ class Fahrzeugkunde_Training(Screen):
         # self.current_tool = "Handfunkgerät"  # "Druckschlauch B"
         self.current_tool = self.tools.pop()
 
-        self.correct_storage: set = set(self.tools_locations.get(self.current_tool))
+        self.correct_storage: set = set(self.tools_locations.get(self.current_tool))  # type: ignore
 
         self.correct_storage_multiple = list(self.correct_storage)
 
@@ -154,19 +154,19 @@ class Fahrzeugkunde_Training(Screen):
             tool_text = (
                 tool_text[:14] + tool_text_lst[0] + "\n" + " ".join(tool_text_lst[1:])
             )
-        self.tool_label.text = tool_text
-        self.rooms_layout.clear_widgets()
+        self.tool_label.text = tool_text  # type: ignore
+        self.rooms_layout.clear_widgets()  # type: ignore
 
         for storage in self.rooms:
             btn = Button(text=storage, font_size="28sp")
-            btn.bind(on_press=self.on_answer)
-            self.rooms_layout.add_widget(btn)
+            btn.bind(on_press=self.on_answer)  # type: ignore
+            self.rooms_layout.add_widget(btn)  # type: ignore
 
     def on_answer(self, instance):
         if not self.accept_answers:  # Check if answer processing is enabled
             return  # Ignore the button press if answer processing is disabled
 
-        children = self.rooms_layout.children
+        children = self.rooms_layout.children  # type: ignore
 
         if instance.text in self.correct_storage_multiple:
             # correct answer
@@ -203,11 +203,11 @@ class Fahrzeugkunde_Training(Screen):
                 # remove correct answer from set
                 self.correct_storage_multiple.remove(instance.text)
                 # display string "weitere"
-                if self.tool_label.text[-7:] == "weitere":
-                    self.tool_label.text += " "
+                if self.tool_label.text[-7:] == "weitere":  # type: ignore
+                    self.tool_label.text += " "  # type: ignore
                 else:
-                    self.tool_label.text += "\n"
-                self.tool_label.text += "weitere"
+                    self.tool_label.text += "\n"  # type: ignore
+                self.tool_label.text += "weitere"  # type: ignore
                 return
 
         self.accept_answers = (
@@ -225,7 +225,7 @@ class Fahrzeugkunde_Game(Screen):
         # troubleshooting: fix firetruck
         # self.selected_firetruck = "Tank1" "Rüst+Lösch"
         self.selected_firetruck = selected_firetruck
-        self.firetruck_label.text = f"   {selected_firetruck}"
+        self.firetruck_label.text = f"   {selected_firetruck}"  # type: ignore
 
     def forward_mode_2_fk_game(self, mode: tuple):
         self.mode_training: bool = mode[0]
@@ -243,7 +243,7 @@ class Fahrzeugkunde_Game(Screen):
     def reset_timer(self):
         self.time_left = settings.START_TIME_GAME_SEC
         # self.timer_label.text = f"{str(self.time_left)} s  "
-        self.timer_label.text = f""
+        self.timer_label.text = f""  # type: ignore
 
         self.set_progress_bar()
 
@@ -279,10 +279,10 @@ class Fahrzeugkunde_Game(Screen):
     #     )
 
     def set_progress_bar(self):
-        self.progress_bar.max = settings.START_TIME_GAME_SEC
+        self.progress_bar.max = settings.START_TIME_GAME_SEC  # type: ignore
 
     def update_progress_bar(self):
-        self.progress_bar.value = self.time_left
+        self.progress_bar.value = self.time_left  # type: ignore
 
     def update_timer(self, *args):
 
@@ -294,10 +294,10 @@ class Fahrzeugkunde_Game(Screen):
 
             if not self.time_left == 0.0:
                 # self.timer_label.text = f"{str(self.time_left)} s  "
-                self.timer_label.text = f""  # hide label for UI testing
+                self.timer_label.text = f""  # hide label for UI testing  # type: ignore
 
             else:
-                self.timer_label.text = "Ende  "
+                self.timer_label.text = "Ende  "  # type: ignore
                 # todo: disable buttons between game end and menu screen animation
         else:
             Clock.unschedule(self.update_timer)  # Stop the timer when it reaches 0
@@ -313,17 +313,17 @@ class Fahrzeugkunde_Game(Screen):
                 self.extra_time_left - settings.INTERVAL_GAME_SEC, 1
             )
 
-            self.extra_time_label.text = f"{str(self.extra_time_left)} s  "
+            self.extra_time_label.text = f"{str(self.extra_time_left)} s  "  # type: ignore
 
         else:
-            self.extra_time_label.text = ""
+            self.extra_time_label.text = ""  # type: ignore
 
             # Clock.unschedule(
             #     self.update_extra_timer
             # )  # Stop the timer when it reaches 0
 
     def update_score(self):
-        self.score_label.text = f"{str(self.score)}  "
+        self.score_label.text = f"{str(self.score)}  "  # type: ignore
 
     def reset_score(self):
         self.score = 0
@@ -344,8 +344,8 @@ class Fahrzeugkunde_Game(Screen):
         self.save_high_score()
 
         app = App.get_running_app()
-        app.root.current = "fahrzeugkunde_menu"
-        app.root.transition.direction = "right"
+        app.root.current = "fahrzeugkunde_menu"  # type: ignore
+        app.root.transition.direction = "right"  # type: ignore
 
     def reset_tool_list(self):
         rooms, tools, tools_locations = load_firetruck_storage(self.selected_firetruck)
@@ -357,6 +357,7 @@ class Fahrzeugkunde_Game(Screen):
 
     def play(self):
         ## init GameCore class instance
+        self.game = GameCore()
 
         # reset game specific elements
         self.reset_tool_list()
@@ -384,7 +385,7 @@ class Fahrzeugkunde_Game(Screen):
         # self.current_tool = "Handfunkgerät"  # "Druckschlauch B"
         self.current_tool = self.tools.pop()
 
-        self.correct_storage = set(self.tools_locations.get(self.current_tool))
+        self.correct_storage = set(self.tools_locations.get(self.current_tool))  # type: ignore
 
         self.correct_storage_multiple = list(self.correct_storage)
 
@@ -394,13 +395,13 @@ class Fahrzeugkunde_Game(Screen):
             tool_text = (
                 tool_text[:14] + tool_text_lst[0] + "\n" + " ".join(tool_text_lst[1:])
             )
-        self.tool_label.text = tool_text
-        self.rooms_layout.clear_widgets()
+        self.tool_label.text = tool_text  # type: ignore
+        self.rooms_layout.clear_widgets()  # type: ignore
 
         for storage in self.rooms:
             btn = Button(text=storage, font_size="28sp")
-            btn.bind(on_press=self.on_answer)
-            self.rooms_layout.add_widget(btn)
+            btn.bind(on_press=self.on_answer)  # type: ignore
+            self.rooms_layout.add_widget(btn)  # type: ignore
 
         # reset tool specific elements
         self.tool_counter += 1
@@ -460,7 +461,7 @@ class Fahrzeugkunde_Game(Screen):
             # incorrect answer
             self.incorrect_answer()
 
-        children = self.rooms_layout.children
+        children = self.rooms_layout.children  # type: ignore
 
         # indicate if correct or incorrect answer
         # for single correct answer
@@ -489,11 +490,11 @@ class Fahrzeugkunde_Game(Screen):
                 # remove correct answer from set
                 self.correct_storage_multiple.remove(instance.text)
                 # display string "weitere"
-                if self.tool_label.text[-7:] == "weitere":
-                    self.tool_label.text += " "
+                if self.tool_label.text[-7:] == "weitere":  # type: ignore
+                    self.tool_label.text += " "  # type: ignore
                 else:
-                    self.tool_label.text += "\n"
-                self.tool_label.text += "weitere"
+                    self.tool_label.text += "\n"  # type: ignore
+                self.tool_label.text += "weitere"  # type: ignore
                 return
 
         self.accept_answers = (
@@ -508,7 +509,7 @@ class Fahrzeugkunde_Browse(Screen):
         # troubleshooting: fix firetruck
         # self.selected_firetruck = "Tank1" "Rüst+Lösch"
         self.selected_firetruck = selected_firetruck
-        self.firetruck_label.text = f"{selected_firetruck}   "
+        self.firetruck_label.text = f"{selected_firetruck}   "  # type: ignore
 
     def load_firetruck(self):
         total_storage = load_total_storage()
@@ -531,12 +532,12 @@ class Fahrzeugkunde_Browse(Screen):
                 halign="left",
                 text_size=(self.width, None),
             )
-            label.bind(
-                size=label.setter("text_size")
+            label.bind(  # type: ignore
+                size=label.setter("text_size")  # type: ignore
             )  # Update text_size on label size change
             label_container.add_widget(label)
 
-            for tool in self.firetruck.get(room):
+            for tool in self.firetruck.get(room):  # type: ignore
                 label = Label(
                     text=f"   -  {str(tool)}",
                     size_hint_y=None,
@@ -547,7 +548,7 @@ class Fahrzeugkunde_Browse(Screen):
                     valign="middle",
                 )
                 label.text_size = (label.width, None)
-                label.bind(
+                label.bind(  # type: ignore
                     width=lambda instance, value: setattr(
                         instance, "text_size", (value, None)
                     )
@@ -566,7 +567,7 @@ class Fahrzeugkunde_Browse(Screen):
             valign="middle",
         )
         label.text_size = (label.width, None)
-        label.bind(
+        label.bind(  # type: ignore
             width=lambda instance, value: setattr(instance, "text_size", (value, None))
         )
 
@@ -578,7 +579,7 @@ class Fahrzeugkunde_Images(Screen):
     #     super(Fahrzeugkunde_Images, self).__init__(**kwargs)
 
     def load_image(self):
-        self.scatter.clear_widgets()
+        self.scatter.clear_widgets()  # type: ignore
 
         image = Image(
             source="assets/Rüst_G1_default-min.jpg",
@@ -586,11 +587,11 @@ class Fahrzeugkunde_Images(Screen):
             # keep_ratio=True,
             fit_mode="contain",
         )
-        self.scatter.add_widget(image)
+        self.scatter.add_widget(image)  # type: ignore
 
         # Bind the size and position of the image to the scatter
-        self.scatter.bind(size=self.update_image_size)
-        self.scatter.bind(pos=self.update_image_pos)
+        self.scatter.bind(size=self.update_image_size)  # type: ignore
+        self.scatter.bind(pos=self.update_image_pos)  # type: ignore
 
     def update_image_size(self, instance, value):
         instance.children[0].size = instance.size
@@ -602,4 +603,4 @@ class Fahrzeugkunde_Images(Screen):
         # troubleshooting: fix firetruck
         # self.selected_firetruck = "Tank1" "Rüst+Lösch"
         self.selected_firetruck = selected_firetruck
-        self.firetruck_label.text = f"   {selected_firetruck}"
+        self.firetruck_label.text = f"   {selected_firetruck}"  # type: ignore
