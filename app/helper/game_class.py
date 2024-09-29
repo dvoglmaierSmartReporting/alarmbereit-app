@@ -19,13 +19,15 @@ class GameCore:
 class ToolQuestion:
     firetruck: str
     tool: str
-    rooms: list
+    rooms: list  # correct locations
 
+    # list to document given answers
     room_answered: list = field(default_factory=list, init=False, repr=False)
 
+    # dynamic set for question with multiple answers
     @property
-    def answered_correctly(self) -> bool:
-        return set(self.rooms) == set(self.room_answered)
+    def rooms_to_be_answered(self) -> set:
+        return set(self.rooms) - set(self.room_answered)
 
 
 @dataclass

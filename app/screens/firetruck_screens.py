@@ -401,18 +401,27 @@ class Fahrzeugkunde_Game(Screen):
         # self.correct_storage = set(self.tools_locations.get(self.current_tool))  # type: ignore
         # correct_storage = set(self.tools_locations.get(current_tool))
 
-        # self.correct_storage_multiple = list(self.correct_storage)
-        # correct_storage_multiple = list(correct_storage)
+        current_tool = self.tools.pop()
+        ### for testing only!
+        # only multiple answers
+        # while True:
+        #     current_tool = self.tools.pop()
+        #     rooms = self.tools_locations.get(current_tool)
+        #     if len(rooms) <= 1:
+        #         continue
 
-        # self.correct_storages = list(set(self.tools_locations.get(current_tool)))  # type: ignore
+        #     break
+        ###
 
         self.current_question = ToolQuestion(
             firetruck=self.selected_firetruck,
-            tool=self.tools.pop(),
+            # tool=self.tools.pop(),
+            tool=current_tool,
             rooms=list(
                 set(self.tools_locations.get(current_tool))  # type: ignore
             ),  # = self.correct_storages
         )
+        print(f"{self.current_question.rooms = }")
 
         # tool_text = self.current_tool
         # tool_text = current_tool
@@ -484,14 +493,11 @@ class Fahrzeugkunde_Game(Screen):
 
         # Clock.unschedule(self.update_extra_timer)
 
-        ################
-        # to be fixed:
-        # avoid self.current_question.rooms.remove(instance.text)
-        # better: do not allow answering on the same room again
-        # then: compare correct_answer-set with answered-sed
-        ################
+        # do not accept identical answer
+        if instance.text in self.current_question.room_answered:
+            return
 
-        # if instance.text in self.correct_storage_multiple:
+        # process actual answer
         if instance.text in self.current_question.rooms:
             # correct answer
             self.correct_answer()
@@ -503,28 +509,24 @@ class Fahrzeugkunde_Game(Screen):
 
         # indicate if correct or incorrect answer
         # for single correct answer
-        # if len(self.correct_storage_multiple) <= 1:
-        if len(self.current_question.rooms) <= 1:
+        if len(self.current_question.rooms_to_be_answered) <= 1:
             # always identify and indicate the correct answer
             for child in children:
-                # if child.text in self.correct_storage:
-                # if child.text in self.correct_storage_multiple:
                 if child.text in self.current_question.rooms:
                     child.background_color = (0, 1, 0, 1)
             # if, indicate incorrect answer
-            # if instance.text not in self.correct_storage:
-            # if instance.text not in self.correct_storage_multiple:
             if instance.text not in self.current_question.rooms:
                 instance.background_color = (1, 0, 0, 1)
 
         # for multiple correct answers
         else:
-            # if instance.text not in self.correct_storage_multiple:
+            # document given answers in class instance
+            self.current_question.room_answered.append(instance.text)
+
             if instance.text not in self.current_question.rooms:
                 # if, indicate incorrect and all correct answers and close
                 instance.background_color = (1, 0, 0, 1)
                 for child in children:
-                    # if child.text in self.correct_storage_multiple:
                     if child.text in self.current_question.rooms:
                         child.background_color = (0, 1, 0, 1)
                 pass
@@ -532,9 +534,7 @@ class Fahrzeugkunde_Game(Screen):
             else:
                 # answer in correct answers
                 instance.background_color = (0, 1, 0, 1)
-                # remove correct answer from set
-                # self.correct_storage_multiple.remove(instance.text)
-                self.current_question.rooms.remove(instance.text)
+
                 # display string "weitere"
                 if self.tool_label.text[-7:] == "weitere":  # type: ignore
                     self.tool_label.text += " "  # type: ignore
@@ -542,6 +542,9 @@ class Fahrzeugkunde_Game(Screen):
                     self.tool_label.text += "\n"  # type: ignore
                 self.tool_label.text += "weitere"  # type: ignore
                 return
+
+        # document given answers in class instance
+        self.current_question.room_answered.append(instance.text)
 
         self.accept_answers = (
             False  # Disable answer processing after an answer is selected
