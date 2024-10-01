@@ -76,7 +76,9 @@ class Bewerb_Training(Screen):
 
         self.question_ids = list(self.competition_dict.keys())
         # self.question_ids = [int(question_id) for question_id in list(self.competition_dict.keys())]
-        shuffle(self.question_ids)  # moved to self.play()  # reverted!! needs to be executed each new load
+        shuffle(
+            self.question_ids
+        )  # moved to self.play()  # reverted!! needs to be executed each new load
 
         self.question_ids_min = str(min([int(x) for x in self.question_ids]))
         self.question_ids_max = str(max([int(x) for x in self.question_ids]))
@@ -97,9 +99,9 @@ class Bewerb_Training(Screen):
         self.question_id_label.text = (  # type: ignore
             f"{self.current_question_id} von {self.question_ids_max}"
         )
-        print(f"{self.current_question_id = }")
-        print(f"{self.competition_dict.get(self.current_question_id) = }")
-        print(f"{self.competition_dict.get(self.current_question_id).get("Q") = }")
+        # print(f"{self.current_question_id = }")
+        # print(f"{self.competition_dict.get(self.current_question_id) = }")
+        # print(f"{self.competition_dict.get(self.current_question_id).get("Q") = }")
         self.current_question = self.competition_dict.get(self.current_question_id).get(
             "Q"
         )

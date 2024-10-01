@@ -1,4 +1,5 @@
 from kivy.logger import Logger
+
 # from kivy.config import Config
 
 # Config.read("/".join(__file__.split("/")[:-1]) + "/kivy.config")
@@ -56,13 +57,11 @@ from random import shuffle
 from inspect import currentframe
 import os
 
-from screens.firetruck_screens import (
-    Fahrzeugkunde_Menu,
-    Fahrzeugkunde_Training,
-    Fahrzeugkunde_Game,
-    Fahrzeugkunde_Browse,
-    Fahrzeugkunde_Images,
-)
+from screens.firetruck_menu import Fahrzeugkunde_Menu
+from screens.firetruck_training import Fahrzeugkunde_Training
+from screens.firetruck_game import Fahrzeugkunde_Game
+from screens.firetruck_browse import Fahrzeugkunde_Browse
+from screens.firetruck_images import Fahrzeugkunde_Images
 from screens.competition_screens import Bewerb_Menu, Bewerb_Training
 
 from helper.functions import mode_str2bool, mode_bool2str
