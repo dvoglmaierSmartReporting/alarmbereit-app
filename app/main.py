@@ -53,16 +53,15 @@ from kivy.app import App
 from kivy.uix.togglebutton import ToggleButton
 from kivy.uix.screenmanager import ScreenManager, Screen
 
-from random import shuffle
 from inspect import currentframe
-import os
 
 from screens.firetruck_menu import Fahrzeugkunde_Menu
 from screens.firetruck_training import Fahrzeugkunde_Training
 from screens.firetruck_game import Fahrzeugkunde_Game
 from screens.firetruck_browse import Fahrzeugkunde_Browse
 from screens.firetruck_images import Fahrzeugkunde_Images
-from screens.competition_screens import Bewerb_Menu, Bewerb_Training
+from screens.competition_menu import Bewerb_Menu
+from screens.competition_training import Bewerb_Training
 
 from helper.functions import mode_str2bool, mode_bool2str
 from helper.settings import Strings

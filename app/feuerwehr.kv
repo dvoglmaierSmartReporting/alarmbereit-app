@@ -291,7 +291,6 @@
     
     Label:
         id: extra_time_label
-        text: '+ 4.1 s  '
         size_hint: None, None
         size: '100dp', '50dp'
         pos_hint: {'right': 1, 'y': 0.80}
@@ -299,9 +298,7 @@
         valign: "middle"
         text_size: self.size
         font_size: "20sp"
-        # text: '+ 3s  ' if self.parent.timer_change_add else '- 1s  '
-        # color: (0,1,0,1) if self.parent.timer_change_add else (1,0,0,1)
-        # opacity: 1 if self.parent.timer_change_label_visible else 0
+        color: (0,1,0,1)
 
     Label:
         id: timer_label

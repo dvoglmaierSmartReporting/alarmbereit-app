@@ -6,11 +6,13 @@ class Settings:
         self.FEEDBACK_GAME_SEC = 0.5
         self.INTERVAL_GAME_SEC = 0.1
         self.START_TIME_GAME_SEC = 15.0
+
+        self.EXTRA_TIME = 10.0
+        self.CORRECT_FOR_EXTRA_TIME = 5
+        self.DISPLAY_EXTRA_TIME_LABEL = 2
+
         self.MAX_EXTRA_TIME_SEC = 5.0
         self.EXTRA_TIME_REDUCTION_SEC = 0.5
-
-        # 15      +  5 + 4.5 + 4 + ... = 42.5
-        # 15 - 8  +  4 + 3.5 + 3 + ... = 25.0
         # self.RENEW_EXTRA_TIME_INT = 25
         self.RENEW_EXTRA_TIME_INT = 15
 

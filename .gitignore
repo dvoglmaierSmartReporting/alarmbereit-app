@@ -18,6 +18,7 @@ __pycache__
 
 # documents - official PDFs
 /documents
+Feuerwehr App Pitch.*
 
 # sketches
 *.drawio
@@ -26,3 +27,4 @@ __pycache__
 # logs
 /app/logs
 *.log
+storage
