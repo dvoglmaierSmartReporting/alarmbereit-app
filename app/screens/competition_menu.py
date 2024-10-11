@@ -17,7 +17,7 @@ class Bewerb_Menu(Screen):
         # load available competitions
         total_competition_questions = load_total_competition_questions()
         self.total_competitions = list(total_competition_questions.keys())
-        # create button for all firetrucks
+        # create button for all competitions
         for competitions in self.total_competitions:
             btn = Button(text=competitions, font_size="32sp")
             btn.bind(on_release=self.on_button_release)  # type: ignore

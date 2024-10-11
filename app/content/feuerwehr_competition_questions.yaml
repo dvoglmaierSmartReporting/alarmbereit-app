@@ -14,7 +14,7 @@ Funk Bronze:
   4:
     Q: Was muss die Anrufantwort enthalten?
     A:
-      - Das Wort "Hier", den Namen der gerufenen Funkstelle und die Aufforderung "kommen".
+      - "Das Wort 'Hier', den Namen der gerufenen Funkstelle und die Aufforderung 'kommen'."
   5:
     Q: Welche Nachrichteninhalte gibt es?
     A:
@@ -178,7 +178,7 @@ Funk Silber:
     A:
       - Die Nachricht soll kurz, logisch, klar und vollständig sein und nur das Wesentlichste und Wichtigste enthalten.
   5:
-    Q: Darf die Sprechtaste gedrückt werden, ohne dass ein Gespräch eröffnet wird?
+    Q: Darf die Sprechtaste gedrückt werden, ohne dass ein Gespräch eröffnet wird?
     A:
       - Nein.
   6:
@@ -192,7 +192,7 @@ Funk Silber:
   8:
     Q: Was versteht man unter "Übermittlungsverkehr"?
     A:
-      - Wenn die absetzende Funkstelle die gewünschte Gegenstelle im TMO/DMO nicht direkt erreichen kann und die Nachricht durch eine dritte Funkstelle übermittelt werden muss.
+      - Wenn die absetzende Funkstelle die gewünschte Gegenstelle im TMO/DMO nicht direkt erreichen kann und die Nachricht durch eine dritte Funkstelle übermittelt werden muss.
   9:
     Q: Wie wird die Wiederholung einer Nachricht gefordert?
     A:
@@ -202,7 +202,7 @@ Funk Silber:
     A:
       - Aus dem Rufnamen des Fahrzeuges (z.B. Tank) und dem Orts- bzw. Bezirksnamen.
   11:
-    Q: Wie wird ein Funkgespräch angekündigt, das wörtlich mitzuschreiben ist?
+    Q: Wie wird ein Funkgespräch angekündigt, das wörtlich mitzuschreiben ist?
     A:
       - Mit dem Zusatz „Achtung Spruch“ bei Anruf und Anrufantwort.
   12:
@@ -222,7 +222,7 @@ Funk Silber:
     A:
       - Senkrecht (Vertikal).
   16:
-    Q: Welche Antennenart ist für Fahrzeugfunkgeräte geeignet?
+    Q: Welche Antennenart ist für Fahrzeugfunkgeräte geeignet?
     A:
       - Ein vertikaler Rundstrahler (Stabantenne).
   17:
@@ -230,17 +230,17 @@ Funk Silber:
     A:
       - Durch die Rufnummer/Kennung (ISSI) oder den Funkrufnamen.
   18:
-    Q: Wofür wird die Gateway Funktion verwendet?
+    Q: Wofür wird die Gateway Funktion verwendet?
     A:
       - Sie stellt eine Verbindung zwischen TMO- und DMO-Modus her und erhöht damit die Reichweite im Einsatzgebiet.
   19:
-    Q: Wofür wird die Repeater Funktion verwendet?
+    Q: Wofür wird die Repeater Funktion verwendet?
     A:
       - Sie verstärkt die DMO-Abdeckung und wird im speziellen bei Atemschutzeinsätzen verwendet.
   20:
     Q: In welchem Fahrzeug ist die Repeater-Funktion aktivierbar?
     A:
-      - In allen wasserführenden Fahrzeugen (TLFA, RLFA, LFWA).
+      - In allen wasserführenden Fahrzeugen (TLFA, RLFA, LFWA).
   21:
     Q: Welche Gesprächsart ist nach der ersten Verbindungsaufnahme zu verwenden?
     A:
@@ -298,7 +298,7 @@ Funk Silber:
     A:
       - Auf den BOS-Sprechgruppen.
   35:
-    Q: Auf welchen Sprechgruppen werden Veranstaltungen durchgeführt?
+    Q: Auf welchen Sprechgruppen werden Veranstaltungen durchgeführt?
     A:
       - Auf den VERA-Sprechgruppen.
   36:
@@ -308,7 +308,7 @@ Funk Silber:
   37:
     Q: Wann darf auf andere Sprechgruppen umgeschaltet werden?
     A:
-      - Auf Anordnung des Einsatz- bzw. Übungsleiters nach Rücksprache mit der LAWZ/BAWZ.
+      - Auf Anordnung des Einsatz- bzw. Übungsleiters nach Rücksprache mit der LAWZ/BAWZ.
   38:
     Q: Welches Zivilschutzsignal wird zur Warnung verwendet?
     A:
@@ -324,7 +324,7 @@ Funk Silber:
 
 Funk Gold:
   1:
-    Q: Warum ist bei der Durchgabe von längeren Funksprüchen in Sprechpausen die Sprechtaste freizugeben?
+    Q: Warum ist bei der Durchgabe von längeren Funksprüchen in Sprechpausen die Sprechtaste freizugeben?
     A:
       - Um anderen Funkstellen bei Gefahr in Verzug die Durchgabe einer Nachricht zu ermöglichen.
   2:
@@ -336,7 +336,7 @@ Funk Gold:
     A:
       - Die Funkgeräte werden im Direktbetrieb betrieben. Eine Kommunikation ist nur in unmittelbarer Nähe möglich.
   4:
-    Q: Mit welcher Taste können sie aus allen Untermenüs direkt in den Ausgangsmodus wechseln?
+    Q: Mit welcher Taste können sie aus allen Untermenüs direkt in den Ausgangsmodus wechseln?
     A:
       - Mit der Ein/Aus Taste.
   5:
@@ -344,7 +344,7 @@ Funk Gold:
     A:
       - Der rote Kennring kennzeichnet ein Feuerwehrfunkgerät.
   6:
-    Q: Was bedeutet es, wenn die Status-LED grün blinkt?
+    Q: Was bedeutet es, wenn die Status-LED grün blinkt?
     A:
       - Das Gerät ist in Betrieb.
   7:
@@ -362,7 +362,7 @@ Funk Gold:
   10:
     Q: Wie erkennen Sie am Display, dass Sie sich im TMO befinden?
     A:
-      - Durch das Symbol „Netz verfügbar“ (Strichanzeige) im Display.
+      - Durch das Symbol „Netz verfügbar“ (Strichanzeige) im Display.
   11:
     Q: Wie wird der Ladestatus des Funkgerätes angezeigt?
     A:
@@ -370,7 +370,7 @@ Funk Gold:
   12:
     Q: Wo finden Sie die ISSI-Nummer ihres Funkgerätes?
     A:
-      - Die ISSI-Nummer wird am Display angezeigt (ausgenommen die erste Stelle)
+      - Die ISSI-Nummer wird am Display angezeigt (ausgenommen die erste Stelle).
   13:
     Q: Welches Mikrofon ist beim Funken mit dem Handfunkgerät aktiv?
     A:
@@ -378,13 +378,13 @@ Funk Gold:
   14:
     Q: Ist die Notruffunktion bei den Feuerwehrgeräten aktiv?
     A:
-      - Nein
+      - Nein.
   15:
     Q: Ist bei ortsfesten Anlagen ein Blitzschutz vorgesehen?
     A:
-      - Ja
+      - Ja.
   16:
-    Q: Wofür ist die Gateway Funktion?
+    Q: Wofür ist die Gateway Funktion?
     A:
       - Sie stellt eine Verbindung zwischen TMO- und DMO-Modus her und erhöht damit die Reichweite im Einsatzgebiet.
   17:
@@ -412,23 +412,23 @@ Funk Gold:
     A:
       - Sie wird in Volt gemessen.
   23:
-    Q: Was kann am Mobilfunkgerät überprüft werden, wenn keine Funkverbindung zustande kommt?
+    Q: Was kann am Mobilfunkgerät überprüft werden, wenn keine Funkverbindung zustande kommt?
     A:
-      - Man überprüft, ob das Funkgerät eingeschaltet ist, die Betriebsart, die Sprechgruppe, die Lautstärke und die Mobilantenne. Im TMO-Betrieb, ob ein Netz vorhanden ist.
+      - Man überprüft, ob das Funkgerät eingeschaltet ist, die Betriebsart, die Sprechgruppe, die Lautstärke und die Mobilantenne. Im TMO-Betrieb, ob ein Netz vorhanden ist.
   24:
-    Q: Was ist beim Drücken der Sprechtaste zu beachten?
+    Q: Was ist beim Drücken der Sprechtaste zu beachten?
     A:
       - Es ist zu beachten, dass die Sprechgruppe nicht belegt ist und der Verbindungsaufbau (Freigabeton) zum Netz vor dem Sprechen abgewartet wird.
   25:
-    Q: Dürfen Funkgeräte in unmittelbarer Nähe von elektrischen Sprengzündern verwendet werden?
+    Q: Dürfen Funkgeräte in unmittelbarer Nähe von elektrischen Sprengzündern verwendet werden?
     A:
       - Nein.
   26:
-    Q: Wofür wird die Repeater Funktion verwendet?
+    Q: Wofür wird die Repeater Funktion verwendet?
     A:
-      - Sie verstärkt die DMO Abdeckung und steht in jedem wasserführenden Fahrzeug (TLFA, RLFA, LFW) zur Verfügung. Sie wird speziell für Atemschutzeinsätze verwendet.
+      - Sie verstärkt die DMO Abdeckung und steht in jedem wasserführenden Fahrzeug (TLFA, RLFA, LFW) zur Verfügung. Sie wird speziell für Atemschutzeinsätze verwendet.
   27:
-    Q: In welchem Modus wird bei Innenangriffen die Kommunikation mit Atemschutztrupps durchgeführt, wenn keine Gebäudefunkanlage vorhanden ist?
+    Q: In welchem Modus wird bei Innenangriffen die Kommunikation mit Atemschutztrupps durchgeführt, wenn keine Gebäudefunkanlage vorhanden ist?
     A:
       - Im DMO-Modus.
   28:
@@ -440,15 +440,15 @@ Funk Gold:
     A:
       - Mit den BOS-Sprechgruppen.
   30:
-    Q: Welche Alarm- und Warnzentralen umfasst das Salzburger Feuerwehrführungsnetz?
+    Q: Welche Alarm- und Warnzentralen umfasst das Salzburger Feuerwehrführungsnetz?
     A:
-      - Landesalarm- und Warnzentrale (LAWZ), Bezirksalarm- und Warnzentralen (BAWZ)
+      - Landesalarm- und Warnzentrale (LAWZ), Bezirksalarm- und Warnzentralen (BAWZ).
   31:
-    Q: Welche Funkstationen sind dem Feuerwehr-Führungsnetz zugeordnet?
+    Q: Welche Funkstationen sind dem Feuerwehr-Führungsnetz zugeordnet?
     A:
       - Landesalarm- und Warnzentrale, Bezirksalarm- und Warnzentralen, Einsatzleitfahrzeuge der Bezirke.
   32:
-    Q: Wer führt die Alarmierungen der Feuerwehren im Bundesland Salzburg durch?
+    Q: Wer führt die Alarmierungen der Feuerwehren im Bundesland Salzburg durch?
     A:
       - Die LAWZ oder die BAWZ.
   33:
@@ -460,27 +460,27 @@ Funk Gold:
     A:
       - Im Einsatztagebuch werden chronologisch die ein- und ausgehenden Meldungen dokumentiert, um einen Einsatzverlauf nachvollziehen zu können.
   35:
-    Q: Was bedeutet in einem Führungsstab das Sachgebiet 1?
+    Q: Was bedeutet in einem Führungsstab das Sachgebiet 1?
     A:
       - Personal
   36:
-    Q: Was bedeutet in einem Führungsstab das Sachgebiet 2?
+    Q: Was bedeutet in einem Führungsstab das Sachgebiet 2?
     A:
       - Lage
   37:
-    Q: Was bedeutet in einem Führungsstab das Sachgebiet 3?
+    Q: Was bedeutet in einem Führungsstab das Sachgebiet 3?
     A:
       - Einsatz
   38:
-    Q: Was bedeutet in einem Führungsstab das Sachgebiet 4?
+    Q: Was bedeutet in einem Führungsstab das Sachgebiet 4?
     A:
       - Versorgung
   39:
-    Q: Was bedeutet in einem Führungsstab das Sachgebiet 5?
+    Q: Was bedeutet in einem Führungsstab das Sachgebiet 5?
     A:
       - Presse und Öffentlichkeitsarbeit
   40:
-    Q: Was bedeutet in einem Führungsstab das Sachgebiet 6?
+    Q: Was bedeutet in einem Führungsstab das Sachgebiet 6?
     A:
       - Kommunikation
 
@@ -492,11 +492,11 @@ FLA Gold - Organisation:
   2:
     Q: Wer befasst sich außer der Gemeinde noch mit dem vorbeugenden Brandschutz?
     A:
-      - Die Feuerwehr, der Landesfeuerwehrverband, die Landesstelle für Brandverhütung, die Gewerbebehörde, das Arbeitsinspektorat usw.
+      - Die Feuerwehr, der Landesfeuerwehrverband, die Landesstelle für Brandverhütung, die Gewerbebehörde, das Arbeitsinspektorat usw.
   3:
-    Q: Wer ist bei Unfällen, bei denen eine Gefährdung des Grundwassers besteht, unverzüglich zu verständigen?
+    Q: Wer ist bei Unfällen, bei denen eine Gefährdung des Grundwassers besteht, unverzüglich zu verständigen?
     A:
-      - Die Wasserrechtsbehörde (Bezirkshauptmannschaft oder Magistrat), bei Gefahr im Verzug der Bürgermeister (Gemeindeamt) oder die nächste Dienststelle der Polizei, gegebenenfalls auch die Straßenverwaltung.
+      - Die Wasserrechtsbehörde (Bezirkshauptmannschaft oder Magistrat), bei Gefahr im Verzug der Bürgermeister (Gemeindeamt) oder die nächste Dienststelle der Polizei, gegebenenfalls auch die Straßenverwaltung.
   4:
     Q: Was ist der Österreichische Bundesfeuerwehrverband und was ist seine wichtigste Aufgabe?
     A:
@@ -508,7 +508,7 @@ FLA Gold - Organisation:
   6:
     Q: Was obliegt dem Gerätewart einer Feuerwehr?
     A:
-      - Die Instandhaltung aller Geräte und Ausrüstungen sowie die Führung eines geeigneten Überprüfungsnachweises (z. B. Kartei).
+      - Die Instandhaltung aller Geräte und Ausrüstungen sowie die Führung eines geeigneten Überprüfungsnachweises (z. B. Kartei).
   7:
     Q: Sind die Mitglieder von Freiwilligen Feuerwehren und Betriebsfeuerwehren im Einsatz-, Übungsdienst und bei der Ausbildung unfallversichert?
     A:
@@ -538,7 +538,7 @@ FLA Gold - Organisation:
   13:
     Q: Was versteht man unter „Feuerpolizei“ und wer ist die Feuerpolizeibehörde I. Instanz?
     A:
-      - Die Feuerpolizei umfasst Maßnahmen, die der Verhütung und Bekämpfung von Bränden dienen, sowie Sicherungsmaßnahmen nach einem Brand. Die Gemeinde ist die Feuerpolizeibehörde I. Instanz.
+      - Die Feuerpolizei umfasst Maßnahmen, die der Verhütung und Bekämpfung von Bränden dienen, sowie Sicherungsmaßnahmen nach einem Brand. Die Gemeinde ist die Feuerpolizeibehörde I. Instanz.
   14:
     Q: In welchem Gesetz ist die Feuerbeschau verankert?
     A:
@@ -553,7 +553,7 @@ FLA Gold - Organisation:
     A:
       - Aus den aktiven Mitgliedern, den nicht aktiven Mitgliedern und den Mitgliedern der Feuerwehrjugend.
   17:
-    Q: Für den aktiven Feuerwehrdienst ist eine Person geeignet, wenn Sie?
+    Q: Für den aktiven Feuerwehrdienst ist eine Person geeignet, wenn Sie?
     A:
       - "- mindestens das 15. und noch nicht das 70. Lebensjahr vollendet hat;\n
         - körperlich und geistig den Anforderungen des Feuerwehrdienstes gewachsen ist;\n
@@ -562,23 +562,23 @@ FLA Gold - Organisation:
   18:
     Q: Welche Mitglieder leisten in der Freiwilligen Feuerwehr den regelmäßigen Feuerwehrdienst?
     A:
-      - Der regelmäßige Feuerwehrdienst wird durch die aktiven Mitglieder geleistet. Die nicht aktiven Mitglieder leisten nur über Aufforderung Feuerwehrdienst, hierbei dürfen sie lediglich zu ihrer körperlichen Verfassung entsprechenden Leistungen herangezogen werden.
+      - Der regelmäßige Feuerwehrdienst wird durch die aktiven Mitglieder geleistet. Die nicht aktiven Mitglieder leisten nur über Aufforderung Feuerwehrdienst, hierbei dürfen sie lediglich zu ihrer körperlichen Verfassung entsprechenden Leistungen herangezogen werden.
   19:
     Q: Wer wählt den Ortsfeuerwehrkommandanten und wie wird gewählt?
     A:
       - Der Ortsfeuerwehrkommandant wird von allen aktiven Mitgliedern der Freiwilligen Feuerwehr in geheimer Wahl gewählt.
   20:
-    Q: Wer führt den Vorsitz in der Mitgliederversammlung bei der Wahl des Ortsfeuerwehrkommandanten?
+    Q: Wer führt den Vorsitz in der Mitgliederversammlung bei der Wahl des Ortsfeuerwehrkommandanten?
     A:
-      - Der Bürgermeister oder ein von ihm bestellter Vertreter.
+      - Der Bürgermeister oder ein von ihm bestellter Vertreter.
   21:
     Q: Was versteht man unter dem Begriff „Leitende Dienstgrade“?
     A:
-      - Als „Leitende Dienstgrade“ werden in der Freiwilligen Feuerwehr der Ortsfeuerwehrkommandant, der Ortsfeuerwehrkommandant-Stellvertreter, die Kommandanten von abgesonderten Löschzügen und die Zugskommandanten sowie deren Stellvertreter (ab Dienstgrad Brandmeister aufwärts) bezeichnet.
+      - Als „Leitende Dienstgrade“ werden in der Freiwilligen Feuerwehr der Ortsfeuerwehrkommandant, der Ortsfeuerwehrkommandant-Stellvertreter, die Kommandanten von abgesonderten Löschzügen und die Zugskommandanten sowie deren Stellvertreter (ab Dienstgrad Brandmeister aufwärts) bezeichnet.
   22:
     Q: Wer bildet den Ortsfeuerwehrrat?
     A:
-      - Die Leitenden Dienstgrade der Freiwilligen Feuerwehr bilden unter dem Vorsitz des Ortsfeuerwehrkommandanten den Ortsfeuerwehrrat. Den Beratungen können weitere Mitglieder der Feuerwehr (z.B. Schriftführer) sowie sonstige Sachverständige mit beratender Stimme beigezogen werden.
+      - Die Leitenden Dienstgrade der Freiwilligen Feuerwehr bilden unter dem Vorsitz des Ortsfeuerwehrkommandanten den Ortsfeuerwehrrat. Den Beratungen können weitere Mitglieder der Feuerwehr (z.B. Schriftführer) sowie sonstige Sachverständige mit beratender Stimme beigezogen werden.
   23:
     Q: Welche Kommandanten der Feuerwehr und Organe des Landesfeuerwehrverbandes werden in geheimer Wahl gewählt und wie lange dauert deren Funktionsperiode?
     A:
@@ -613,9 +613,9 @@ FLA Gold - Organisation:
   30:
     Q: Was versteht man unter dem Begriff „Einsatzleitung“?
     A:
-      - Die personelle Zusammensetzung der erforderlichen Führungskräfte wird als Einsatzleitung bezeichnet.
+      - Die personelle Zusammensetzung der erforderlichen Führungskräfte wird als Einsatzleitung bezeichnet.
   31:
-    Q: Welche Behörde ist für den Katastrophenhilfsdienst auf Bezirksebene zuständig und wer ist der Einsatzleiter?
+    Q: Welche Behörde ist für den Katastrophenhilfsdienst auf Bezirksebene zuständig und wer ist der Einsatzleiter?
     A:
       - Die Bezirkshauptmannschaft, Einsatzleiter ist der Bezirkshauptmann oder ein von ihm beauftragter Stellvertreter.
   32:
@@ -630,27 +630,27 @@ FLA Gold - Organisation:
   33:
     Q: Was ist ein Einsatzfahrzeug?
     A:
-      - Ein Fahrzeug, das auf Grund kraftfahrrechtlicher Vorschriften als Warnzeichen Blaulicht und Folgetonhorn führt, für die Dauer der Verwendung eines dieser Signale.
+      - Ein Fahrzeug, das auf Grund kraftfahrrechtlicher Vorschriften als Warnzeichen Blaulicht und Folgetonhorn führt, für die Dauer der Verwendung eines dieser Signale.
   34:
-    Q: Wann dürfen die Lenker von Einsatzfahrzeugen Blaulicht und Folgetonhorn verwenden?
+    Q: Wann dürfen die Lenker von Einsatzfahrzeugen Blaulicht und Folgetonhorn verwenden?
     A:
-      - Nur bei Gefahr in Verzug, z.B. auf Fahrten zum und vom Ort des dringenden Einsatzes. Blaulicht darf aus Gründen der Verkehrssicherheit auch an der Einsatzstelle verwendet werden.
+      - Nur bei Gefahr in Verzug, z.B. auf Fahrten zum und vom Ort des dringenden Einsatzes. Blaulicht darf aus Gründen der Verkehrssicherheit auch an der Einsatzstelle verwendet werden.
   35:
-    Q: Was haben Lenker von Einsatzfahrzeugen hinsichtlich der Straßenverkehrsordnung zu berücksichtigen?
+    Q: Was haben Lenker von Einsatzfahrzeugen hinsichtlich der Straßenverkehrsordnung zu berücksichtigen?
     A:
-      - Die Lenker von Einsatzfahrzeugen sind bei ihrer Fahrt an Verkehrsverbote oder an Verkehrsbeschränkungen nicht gebunden, sie dürfen aber dabei keine Personen gefährden oder Sachen beschädigen.
+      - Die Lenker von Einsatzfahrzeugen sind bei ihrer Fahrt an Verkehrsverbote oder an Verkehrsbeschränkungen nicht gebunden, sie dürfen aber dabei keine Personen gefährden oder Sachen beschädigen.
   36:
     Q: Wann darf ein Einsatzfahrzeug eine "Einbahn" in der Gegenrichtung befahren?
     A:
-      - Nur wenn die Einsatzstelle anders nicht oder nicht in der gebotenen Zeit erreicht werden kann oder wo Ausnahmen für Kraftfahrzeuge oder Fuhrwerke gelten.
+      - Nur wenn die Einsatzstelle anders nicht oder nicht in der gebotenen Zeit erreicht werden kann oder wo Ausnahmen für Kraftfahrzeuge oder Fuhrwerke gelten.
   37:
     Q: Darf der Lenker eines Einsatzfahrzeuges in eine Kreuzung einfahren, wenn ihm ein rotes Licht Halt gebietet?
     A:
-      - Ja, er muss jedoch vorher anhalten und sich überzeugen, dass die Kreuzung gefahrlos überquert werden kann. Blaulicht und Folgetonhorn sind dabei zu verwenden.
+      - Ja, er muss jedoch vorher anhalten und sich überzeugen, dass die Kreuzung gefahrlos überquert werden kann. Blaulicht und Folgetonhorn sind dabei zu verwenden.
   38:
-    Q: Wann darf mit einem Einsatzfahrzeug die höchstzulässige Geschwindigkeit überschritten werden?
+    Q: Wann darf mit einem Einsatzfahrzeug die höchstzulässige Geschwindigkeit überschritten werden?
     A:
-      - Bei Gefahr im Verzug, z.B. auf Fahrten zu einem dringenden Einsatz. Dabei dürfen aber keine Personen gefährdet oder Sachen beschädigt werden.
+      - Bei Gefahr im Verzug, z.B. auf Fahrten zu einem dringenden Einsatz. Dabei dürfen aber keine Personen gefährdet oder Sachen beschädigt werden.
   39:
     Q: Welche Pflichten hat jeder an einem Verkehrsunfall beteiligter Kraftfahrer?
     A:
@@ -658,19 +658,19 @@ FLA Gold - Organisation:
   40:
     Q: Wie können Unfälle im Feuerwehrdienst verhindert werden?
     A:
-      - Durch Ausbildung der Feuerwehrmitglieder, Erkennen der Gefahren und Verwendung von persönlicher Schutzausrüstung.
+      - Durch Ausbildung der Feuerwehrmitglieder, Erkennen der Gefahren und Verwendung von persönlicher Schutzausrüstung.
   41:
     Q: Nach welchen didaktischen Grundsätzen ist die Ausbildung zu gestalten?
     A:
       - "Die Ausbildung soll anschaulich, zeitgemäß und wirklichkeitsnahe sein.\n
         Die Teilnehmer sollen mitarbeiten können.\n
-        Eine Erfolgskontrolle zur Sicherung des Lernstoffes ist durchzuführen."
+        Eine Erfolgskontrolle zur Sicherung des Lernstoffes ist durchzuführen."
   42:
     Q: In welcher Reihenfolge geht der Ausbilder in der „Anlernstufe“ vor?
     A:
       - "1. Der Ausbilder zeigt Tätigkeiten oder Geräte selbst vor und erklärt sie.\n
         2. Der Ausbilder lässt die Teilnehmer die Tätigkeit machen und erklären.\n
-        3. Der Teilnehmer übt unter Anleitung."
+        3. Der Teilnehmer übt unter Anleitung."
   43:
     Q: Welche Ziele sind bei der Ausbildung in der „Festigungsstufe“ zu erreichen?
     A:
@@ -690,13 +690,13 @@ FLA Gold - Organisation:
     A:
       - "Der gesamte Ablauf soll allen Teilnehmern erklärt werden.\n
         Alle positiven und negativen Punkte sollen aufgezeigt werden.\n
-        Alle aufgezeigten Fehler müssen richtiggestellt werden."
+        Alle aufgezeigten Fehler müssen richtiggestellt werden."
   47:
-    Q: Welche Voraussetzungen müssen Teilnehmer bei der Leistungsprüfung Technische Hilfeleistung der Stufe 1 - Bronze haben?
+    Q: Welche Voraussetzungen müssen Teilnehmer bei der Leistungsprüfung Technische Hilfeleistung der Stufe 1 - Bronze haben?
     A:
       - "Aktives Feuerwehrmitglied, Grundlehrgang, Feuerwehrleistungsabzeichen Bronze\n
         GRKDT - Gruppenkommandanten- oder Fortbildungslehrgang 1\n
-        MA - Maschinistenlehrgang, betreffende Lenkberechtigung für das Fahrzeug\n
+        MA - Maschinistenlehrgang, betreffende Lenkberechtigung für das Fahrzeug\n
         Unterweisung in Erster Hilfe (nicht älter als 5 Jahre)"
   48:
     Q: Warum muss bei Einsätzen und Übungen Einsatzbekleidung getragen werden?
@@ -715,7 +715,7 @@ FLA Gold - Organisation:
     A:
       - Um Schadstoffe, die sich während des Einsatzes in der Einsatzbekleidung festgesetzt haben, zu entfernen.
   51:
-    Q: Welche Ausbildungsmittel außer dem Handbuch für die Grundausbildung stehen für die Grundausbildung noch zur Verfügung?
+    Q: Welche Ausbildungsmittel außer dem Handbuch für die Grundausbildung stehen für die Grundausbildung noch zur Verfügung?
     A:
       - "Fachschriftenhefte\n
         DVD bzw. Videofilme\n
@@ -723,7 +723,7 @@ FLA Gold - Organisation:
         Lehrbehelfe der Landesfeuerwehrschule\n
         Sonstige einschlägige Fachliteratur"
   52:
-    Q: Wer darf einen öffentlichen Verkehrsweg für Einsatzzwecke sperren?
+    Q: Wer darf einen öffentlichen Verkehrsweg für Einsatzzwecke sperren?
     A:
       - "Organe der Straßenaufsicht (Polizei)\n
         Organe des Straßenerhalters\n
@@ -731,7 +731,7 @@ FLA Gold - Organisation:
   53:
     Q: Wie kann die Feuerwehr bei der Ermittlung von Brandursachen mitwirken?
     A:
-      - Durch unverzügliche Mitteilung aller im Zuge der Brandbekämpfung gemachten Beobachtungen und Feststellungen an die Erhebungsorgane, die auf die Brandursache hinweisen können.
+      - Durch unverzügliche Mitteilung aller im Zuge der Brandbekämpfung gemachten Beobachtungen und Feststellungen an die Erhebungsorgane, die auf die Brandursache hinweisen können.
   54:
     Q: Welche Behörden sind in erster Linie mit dem Genehmigungsverfahren und mit der Überwachung der Sicherheitsvorschriften in gewerblichen Betrieben befasst?
     A:
@@ -767,11 +767,11 @@ FLA Gold - Organisation:
   62:
     Q: Was ist ein Löschtrupp?
     A:
-      - Teil einer Löschgruppe, bestehend aus Truppführer und Truppmann, der mit den erforderlichen Geräten eingesetzt wird.
+      - Teil einer Löschgruppe, bestehend aus Truppführer und Truppmann, der mit den erforderlichen Geräten eingesetzt wird.
   63:
     Q: Was ist ein Löschzug?
     A:
-      - Ist eine taktische Feuerwehreinheit, die aus einem Zugtrupp und mindestens zwei Löschgruppen besteht, die unter Führung eines Zugskommandanten entsprechend eingesetzt werden kann.
+      - Ist eine taktische Feuerwehreinheit, die aus einem Zugtrupp und mindestens zwei Löschgruppen besteht, die unter Führung eines Zugskommandanten entsprechend eingesetzt werden kann.
   64:
     Q: Was versteht man unter einem Einsatzabschnitt?
     A:
@@ -795,15 +795,15 @@ FLA Gold - Organisation:
   69:
     Q: Was ist eine Einsatzleitstelle?
     A:
-      - Eine am Ort des Einsatzes eingerichtete und besonders gekennzeichnete Stelle, an der sich Personen befinden, die für die taktische Leitung des Einsatzes verantwortlich sind.
+      - Eine am Ort des Einsatzes eingerichtete und besonders gekennzeichnete Stelle, an der sich Personen befinden, die für die taktische Leitung des Einsatzes verantwortlich sind.
   70:
     Q: Was versteht man unter Einsatzbereitschaft?
     A:
-      - Zustand einer taktischen Einheit, in dem sie für den Einsatz zur Verfügung steht und jederzeit alarmiert werden kann.
+      - Zustand einer taktischen Einheit, in dem sie für den Einsatz zur Verfügung steht und jederzeit alarmiert werden kann.
   71:
     Q: Was heißt Bereitstellen einer taktischen Einheit?
     A:
-      - Die taktische Einheit in einem Bereitstellungsraum vorsorglich für einen Einsatz alarmbereit zu halten.
+      - Die taktische Einheit in einem Bereitstellungsraum vorsorglich für einen Einsatz alarmbereit zu halten.
   72:
     Q: Was ist ein Bereitstellungsraum?
     A:
@@ -811,39 +811,39 @@ FLA Gold - Organisation:
   73:
     Q: Was ist eine Brandsicherheitswache?
     A:
-      - Eine Wache, gestellt durch eine Feuerwehr oder geschultes Personal, die z.B. aufgrund von Rechtsvorschriften bei besonderen Risiken zur Brandverhütung und Brandbekämpfung vorgesehen ist.
+      - Eine Wache, gestellt durch eine Feuerwehr oder geschultes Personal, die z.B. aufgrund von Rechtsvorschriften bei besonderen Risiken zur Brandverhütung und Brandbekämpfung vorgesehen ist.
   74:
     Q: Was versteht man unter dem Begriff „Erste Löschhilfe“?
     A:
-      - Ist die Gesamtheit jener Löschmaßnahmen, die vor Eintreffen der Feuerwehr mit im unmittelbaren Gefahrenbereich vorhandenen Löschgeräten, hauptsächlich Tragbaren Feuerlöschern, von Jedermann durchgeführt werden kann.
+      - Ist die Gesamtheit jener Löschmaßnahmen, die vor Eintreffen der Feuerwehr mit im unmittelbaren Gefahrenbereich vorhandenen Löschgeräten, hauptsächlich Tragbaren Feuerlöschern, von Jedermann durchgeführt werden kann.
   75:
     Q: Was versteht man unter dem Begriff „Erweiterte Löschhilfe“?
     A:
-      - Ist die Gesamtheit jener Löschmaßnahmen, die vor Eintreffen der Feuerwehr entsprechend einem vorbereiteten Organisationsschema von hierfür geschulten und hierzu bestimmten Personen mit Löschgeräten durchgeführt werden kann.
+      - Ist die Gesamtheit jener Löschmaßnahmen, die vor Eintreffen der Feuerwehr entsprechend einem vorbereiteten Organisationsschema von hierfür geschulten und hierzu bestimmten Personen mit Löschgeräten durchgeführt werden kann.
   76:
     Q: Was versteht man unter Kleinbrand?
     A:
-      - Brand zu dessen erfolgreicher Bekämpfung ein C-Strahlrohr oder gleichwertiges Löschgerät ausreicht.
+      - Brand, zu dessen erfolgreicher Bekämpfung ein C-Strahlrohr oder gleichwertiges Löschgerät ausreicht.
   77:
     Q: Was versteht man unter Mittelbrand?
     A:
-      - Brand zu dessen erfolgreicher Bekämpfung gleichzeitig 2-3 C-Strahlrohre oder gleichwertige Löschgeräte eingesetzt werden müssen.
+      - Brand, zu dessen erfolgreicher Bekämpfung gleichzeitig 2-3 C-Strahlrohre oder gleichwertige Löschgeräte eingesetzt werden müssen.
   78:
     Q: Was versteht man unter Großbrand?
     A:
-      - Brand zu dessen erfolgreicher Bekämpfung gleichzeitig mehr als 3 C-Strahlrohre oder gleichwertige Löschgeräte eingesetzt werden müssen.
+      - Brand, zu dessen erfolgreicher Bekämpfung gleichzeitig mehr als 3 C-Strahlrohre oder gleichwertige Löschgeräte eingesetzt werden müssen.
   79:
     Q: Welche taktischen Einheiten gibt es im Katastrophenhilfsdienst?
     A:
-      - Katastrophenzüge der Bezirke, Int. Katastrophenhilfszug des Landesfeuerwehrverbandes
+      - Katastrophenzüge der Bezirke, Int. Katastrophenhilfszug des Landesfeuerwehrverbandes
   80:
     Q: Was ist der vorbeugende Brandschutz?
     A:
-      - Der vorbeugende Brandschutz ist die Gesamtheit aller Maßnahmen zur Verhinderung eines Brandausbruches, einer Brandausbreitung sowie zur Sicherung der Flucht- und Rettungswege. Der vorbeugende Brandschutz schafft Voraussetzungen für einen wirkungsvollen abwehrenden Brandschutz.
+      - Der vorbeugende Brandschutz ist die Gesamtheit aller Maßnahmen zur Verhinderung eines Brandausbruches, einer Brandausbreitung sowie zur Sicherung der Flucht- und Rettungswege. Der vorbeugende Brandschutz schafft Voraussetzungen für einen wirkungsvollen abwehrenden Brandschutz.
   81:
     Q: Was ist der abwehrende Brandschutz?
     A:
-      - Der abwehrende Brandschutz ist die Gesamtheit aller Maßnahmen zur Bekämpfung von Gefahren für Leben, Gesundheit und Sachen, die bei Bränden entstehen.
+      - Der abwehrende Brandschutz ist die Gesamtheit aller Maßnahmen zur Bekämpfung von Gefahren für Leben, Gesundheit und Sachen, die bei Bränden entstehen.
   82:
     Q: Nach welchen lernpsychologischen Grundsätzen ist die Ausbildung zu gestalten?
     A:
@@ -863,25 +863,25 @@ FLA Gold - Taktik:
         - Sichern der Umgebung der Unfallstelle\n
         - Verhindern des Einsickerns in Kanäle, Gewässer, Erdreich usw."
   102:
-    Q: Wie groß ist die Sicherheitszone beim Ausfließen von brennbaren Flüssigkeiten der Gefahrenklasse I?
+    Q: Wie groß ist die Sicherheitszone beim Ausfließen von brennbaren Flüssigkeiten der Gefahrenklasse I?
     A:
-      - Mindestens 30 bis 60 Meter, Windrichtung, Windgeschwindigkeit und Gelände sind zu berücksichtigen.
+      - Mindestens 30 bis 60 Meter, Windrichtung, Windgeschwindigkeit und Gelände sind zu berücksichtigen.
   103:
-    Q: In welchem Umkreis von ausgeflossenen brennbaren Flüssigkeiten ist jede Zündquelle zu vermeiden?
+    Q: In welchem Umkreis von ausgeflossenen brennbaren Flüssigkeiten ist jede Zündquelle zu vermeiden?
     A:
-      - In der Gefahrenzone. Windverhältnisse, Gefälle und Temperatur sind zu berücksichtigen.
+      - In der Gefahrenzone. Windverhältnisse, Gefälle und Temperatur sind zu berücksichtigen.
   104:
     Q: Wodurch kann die Ausbreitung von Mineralölen auf Gewässern verhindert werden?
     A:
       - Durch die Errichtung von Ölsperren.
   105:
-    Q: Wann müssen umluftunabhängige Atemschutzgeräte verwendet werden?
+    Q: Wann müssen umluftunabhängige Atemschutzgeräte verwendet werden?
     A:
       - "bei Sauerstoffmangel\n
         bei Vorhandensein von Atemgiften\n
         beim Innenangriff\n
         bei Nachlöscharbeiten\n
-        bei Verwendung von Schutzanzügen"
+        bei Verwendung von Schutzanzügen"
   106:
     Q: Wie muss mit umluftunabhängigen Atemschutzgeräten vorgegangen werden?
     A:
@@ -889,46 +889,46 @@ FLA Gold - Taktik:
   107:
     Q: Wie geht der Atemschutztrupp in Gebäuden und bei schlechten Sichtverhältnissen vor?
     A:
-      - Mit Beleuchtungsgerät, in gebückter Haltung, gesichert durch eine unter Druck stehende Löschleitung oder durch Leinen.
+      - Mit Beleuchtungsgerät, in gebückter Haltung, gesichert durch eine unter Druck stehende Löschleitung oder durch Leinen.
   108:
-    Q: Wann sind Schutzanzüge der Schutzstufe 3 einzusetzen?
+    Q: Wann sind Schutzanzüge der Schutzstufe 3 einzusetzen?
     A:
       - Wenn der Verdacht auf Vorhandensein von Hautgiften, ätzenden oder radioaktiven Stoffen besteht.
   109:
     Q: Welche Aufgabe hat ein Atemschutzsammelplatz?
     A:
-      - Die Registrierung der Atemschutztrupps, die Bevorratung und gegebenenfalls Wiederbefüllung der Reserveflaschen, Bereitstellung von AS-Trupps für den Einsatz.
+      - Die Registrierung der Atemschutztrupps, die Bevorratung und gegebenenfalls Wiederbefüllung der Reserveflaschen, Bereitstellung von AS-Trupps für den Einsatz.
   110:
     Q: Wie sind Transporte radioaktiver Stoffe gekennzeichnet?
     A:
-      - Beim Transport radioaktiver Stoffe muss das Fahrzeug mit Großzetteln (mit Strahlensymbol) an drei Seiten (links, rechts und hinten) und zusätzlich vorne und rückwärts mit der orangen Warntafel versehen sein.
+      - Beim Transport radioaktiver Stoffe muss das Fahrzeug mit Großzetteln (mit Strahlensymbol) an drei Seiten (links, rechts und hinten) und zusätzlich vorne und rückwärts mit der orangen Warntafel versehen sein.
   111:
     Q: Welche Bedeutung hat die im unteren Teil der orangefarbenen Warntafel angegebene Nummer?
     A:
       - Die vierstellige Nummer dient zur Kennzeichnung des Stoffes (Stoff- oder UN - Nummer).
   112:
-    Q: Was enthält die „schriftliche Weisung für den Fahrzeuglenker“ (Unfallmerkblatt) beim Transport gefährlicher Güter?
+    Q: Was enthält die „schriftliche Weisung für den Fahrzeuglenker“ (Unfallmerkblatt) beim Transport gefährlicher Güter?
     A:
-      - "Ist ein für alle Stoffe einheitliches Dokument und enthält:\n
+      - "Ist ein für alle Stoffe einheitliches Dokument und enthält:\n
         - Maßnahmen bei Unfall oder Notfall\n
         - Allgemeine Hinweise wie Motor abschalten, absichern, Alarmierung,…\n
-        - Zusätzliche Hinweise für Klasse 1-9\n
+        - Zusätzliche Hinweise für Klasse 1-9\n
         - Gefahreneigenschaften und weitere Hinweise\n
-        - Mitzuführende Ausrüstung"
+        - Mitzuführende Ausrüstung"
   113:
-    Q: Wie werden Versandstücke gefährlicher Güter beim Transport gekennzeichnet?
+    Q: Wie werden Versandstücke gefährlicher Güter beim Transport gekennzeichnet?
     A:
       - Durch Gefahrzettel in der Form eines auf die Spitze gestellten Quadrates.
   114:
-    Q: Wie werden brennbare Flüssigkeiten nach der ADR unterteilt?
+    Q: Wie werden brennbare Flüssigkeiten nach der ADR unterteilt?
     A:
       - "Stoffe mit einem Flammpunkt unter 21°C\n
         Stoffe mit einem Flammpunkt zwischen 21°C und 55°C\n
-        Stoffe mit einem Flammpunkt über 55°C"
+        Stoffe mit einem Flammpunkt über 55°C"
   115:
-    Q: Wie sieht das Warnzeichen für radioaktive Stoffe oder ionisierende Strahlung aus?
+    Q: Wie sieht das Warnzeichen für radioaktive Stoffe oder ionisierende Strahlung aus?
     A:
-      - Ein schwarzes Windrad mit 3 Flügeln auf gelben Grund.
+      - Ein schwarzes Windrad mit 3 Flügeln auf gelben Grund.
   116:
     Q: Welche drei prinzipiellen Maßnahmen zum Schutz vor Strahlenbelastung von außen gibt es?
     A:
@@ -943,11 +943,11 @@ FLA Gold - Taktik:
   118:
     Q: "-- fehlt --"
     A:
-      - "-- fehlt -- "
+      - "-- fehlt --"
   119:
     Q: "-- fehlt --"
     A:
-      - "-- fehlt -- "
+      - "-- fehlt --"
   120:
     Q: Aus welchen Bestandteilen setzt sich atmosphärische Luft zusammen?
     A:
@@ -961,31 +961,31 @@ FLA Gold - Taktik:
     A:
       - Ein farbloses Gas, schwerer als Luft. Wirkt bei höherer Konzentration erstickend, entsteht bei vollkommener Verbrennung und bei Gärung.
   123:
-    Q: Wie werden Fahrzeuge, die zum Transport von gefährlichen Gütern verwendet werden, gekennzeichnet?
+    Q: Wie werden Fahrzeuge, die zum Transport von gefährlichen Gütern verwendet werden, gekennzeichnet?
     A:
       - Durch orangefarbene Warntafeln und Gefahrzettel.
   124:
-    Q: Wie sind Warntafeln, die zur Kennzeichnung von Fahrzeugen zum Transport gefährlicher Güter verwendet werden, beschaffen?
+    Q: Wie sind Warntafeln, die zur Kennzeichnung von Fahrzeugen zum Transport gefährlicher Güter verwendet werden, beschaffen?
     A:
       - Es handelt sich um rechteckige, orangefarbene Tafeln mit schwarzem Rand; Bei Warntafeln mit Gefahr- und Stoffnummer ist das Feld der Tafel durch eine waagrechte Mittellinie geteilt. Im oberen Feld befindet sich die Nummer zur Kennzeichnung der Gefahr, im unteren Feld befindet sich die Nummer zur Kennzeichnung des Stoffes.
   125:
-    Q: Was sagen Warntafeln ohne Zahl an Fahrzeugen zum Transport gefährlicher Güter über die Art der Versandstücke aus?
+    Q: Was sagen Warntafeln ohne Zahl an Fahrzeugen zum Transport gefährlicher Güter über die Art der Versandstücke aus?
     A:
-      - Sie stellen eine allgemeine Kennzeichnung dar. Sie sagen aus, dass verschiedene gefährliche Stoffe gemeinsam transportiert werden, sagen aber nichts über die Gefährlichkeit und die Art der transportierten Stoffe aus.
+      - Sie stellen eine allgemeine Kennzeichnung dar. Sie sagen aus, dass verschiedene gefährliche Stoffe gemeinsam transportiert werden, sagen aber nichts über die Gefährlichkeit und die Art der transportierten Stoffe aus.
   126:
-    Q: Was sagen Warntafeln mit Zahl an Fahrzeugen zum Transport gefährlicher Güter über die Art der Versandstücke aus?
+    Q: Was sagen Warntafeln mit Zahl an Fahrzeugen zum Transport gefährlicher Güter über die Art der Versandstücke aus?
     A:
-      - Sie stellen eine spezielle Kennzeichnung dar und geben durch die Nummern eine Information über die Art, Gefährlichkeit und den Namen des transportierten Stoffes.
+      - Sie stellen eine spezielle Kennzeichnung dar und geben durch die Nummern eine Information über die Art, Gefährlichkeit und den Namen des transportierten Stoffes.
   127:
-    Q: Aus wie vielen Ziffern kann die Nummer zur Kennzeichnung der Gefahr auf den Warntafeln, die zur Kennzeichnung von Fahrzeugen zum Transport gefährlicher Güter verwendet werden, bestehen?
+    Q: Aus wie vielen Ziffern kann die Nummer zur Kennzeichnung der Gefahr auf den Warntafeln, die zur Kennzeichnung von Fahrzeugen zum Transport gefährlicher Güter verwendet werden, bestehen?
     A:
       - Die Nummer zur Kennzeichnung der Gefahr in der oberen Hälfte der Warntafel setzt sich aus mind. 2 höchstens 3 Ziffern zusammen.
   128:
-    Q: Was bedeutet die vorgelegte Ziffer bei der Nummer zur Kennzeichnung der Gefahr auf Warntafeln, die an Fahrzeugen zum Transport von gefährlichen Gütern verwendet werden? (3 Nummern werden gezogen)
+    Q: Was bedeutet die vorgelegte Ziffer bei der Nummer zur Kennzeichnung der Gefahr auf Warntafeln, die an Fahrzeugen zum Transport von gefährlichen Gütern verwendet werden? (3 Nummern werden gezogen)
     A:
       - "2 = Entweichen von Gas durch Druck oder chemische Reaktion\n
-        3 = Entzündbarkeit von flüssigen Stoffen (Dämpfen) und Gasen oder selbsterhitzungsfähiger flüssiger Stoff\n
-        4 = Entzündbarkeit von festen Stoffen oder selbsterhitzungsfähiger fester Stoff\n
+        3 = Entzündbarkeit von flüssigen Stoffen (Dämpfen) und Gasen oder selbsterhitzungsfähiger flüssiger Stoff\n
+        4 = Entzündbarkeit von festen Stoffen oder selbsterhitzungsfähiger fester Stoff\n
         5 = Oxidierende (brandfördernde) Wirkung\n
         6 = Giftigkeit oder Ansteckungsgefahr\n
         7 = Radioaktivität\n
@@ -993,17 +993,17 @@ FLA Gold - Taktik:
         9 = an 1. Stelle: umweltgefährdender Stoff und verschiedene gefährliche Stoffe\n
         an 2. oder 3. Stelle: Gefahr einer spontanen, heftigen Reaktion"
   129:
-    Q: Was bedeutet es, wenn die beiden ersten Ziffern der Nummer zur Kennzeichnung der Gefahr auf Warntafeln an Fahrzeugen zum Transport gefährlicher Güter gleich sind? (Nenne 2 Beispiele)
+    Q: Was bedeutet es, wenn die beiden ersten Ziffern der Nummer zur Kennzeichnung der Gefahr auf Warntafeln an Fahrzeugen zum Transport gefährlicher Güter gleich sind? (Nenne 2 Beispiele)
     A:
       - "Dies weist auf die Zunahme der entsprechenden Gefahr hin.\n
-        33 = leicht entzündbarer flüssiger Stoff (Flammpunkt unter 23˚C)\n
+        33 = leicht entzündbarer flüssiger Stoff (Flammpunkt unter 23˚C)\n
         55 = stark oxidierender (brandfördernder) Stoff\n
         66 = sehr giftiger Stoff\n
         88 = stark ätzender Stoff"
   130:
-    Q: Was bedeutet es, wenn der Nummer zur Kennzeichnung der Gefahr auf Warntafeln an Fahrzeugen zum Transport gefährlicher Güter der Buchstabe "X" vorausgesetzt wird?
+    Q: Was bedeutet es, wenn der Nummer zur Kennzeichnung der Gefahr auf Warntafeln an Fahrzeugen zum Transport gefährlicher Güter der Buchstabe "X" vorausgesetzt wird?
     A:
-      - Der Stoff darf nicht mit Wasser oder wasserhaltigen Löschmitteln in Berührung gebracht werden, da dieser Stoff mit Wasser in gefährlicher Weise reagiert.
+      - Der Stoff darf nicht mit Wasser oder wasserhaltigen Löschmitteln in Berührung gebracht werden, da dieser Stoff mit Wasser in gefährlicher Weise reagiert.
   131:
     Q: Was versteht man unter Einsatztaktik?
     A:
@@ -1015,26 +1015,26 @@ FLA Gold - Taktik:
   133:
     Q: Was ist eine taktische Einheit?
     A:
-      - Eine Einheit, die aufgrund ihrer Mannschaftsstärke und Ausrüstung in der Lage ist, einen Einsatzauftrag selbständig zu erfüllen.
+      - Eine Einheit, die aufgrund ihrer Mannschaftsstärke und Ausrüstung in der Lage ist, einen Einsatzauftrag selbständig zu erfüllen.
   134:
     Q: Welche taktischen Einheiten gibt es bei der Feuerwehr?
     A:
       - Die Gruppe, den Zug.
   135:
-    Q: Welche Einsatzformen sind für den Einsatz eines Löschzuges möglich?
+    Q: Welche Einsatzformen sind für den Einsatz eines Löschzuges möglich?
     A:
       - "Einsatz getrennt\n
         Einsatz nebeneinander (gemeinsam)\n
         Einsatz hintereinander (gestaffelt)\n
         Einsatz der Löschgruppen mit verschiedenen Aufgaben (gemischt)"
   136:
-    Q: Welche Punkte umfasst das Führungsverfahren?
+    Q: Welche Punkte umfasst das Führungsverfahren?
     A:
-      - Das Führungsverfahren umfasst die Lagefeststellung, Beurteilung, Planung der Durchführung, Befehlsgebung und Kontrolle.
+      - Das Führungsverfahren umfasst die Lagefeststellung, Beurteilung, Planung der Durchführung, Befehlsgebung und Kontrolle.
   137:
     Q: Welche Möglichkeiten gibt es, um die Lage zu erkunden?
     A:
-      - Das Sammeln von Informationen über die Lage durch eigene Feststellung, Meldung vom Erkundungstrupp, vorbereitete Einsatzunterlagen, Berichte von Beteiligten, Rückmeldung von Lageberichten.
+      - Das Sammeln von Informationen über die Lage durch eigene Feststellung, Meldung vom Erkundungstrupp, vorbereitete Einsatzunterlagen, Berichte von Beteiligten, Rückmeldung von Lageberichten.
   138:
     Q: Was hat der Einsatzleiter an der Brandstelle zu erkunden?
     A:
@@ -1043,7 +1043,7 @@ FLA Gold - Taktik:
         - Sind besondere Gefahren vorhanden oder zu erwarten?\n
         - Besteht Ausbreitungsgefahr?\n
         - Wo ist der beste Angriffsweg?\n
-        - Welche Wasserentnahmestellen stehen zur Verfügung?"
+        - Welche Wasserentnahmestellen stehen zur Verfügung?"
   139:
     Q: Wodurch wird die Gesamtlage an der Einsatzstelle bestimmt?
     A:
@@ -1055,16 +1055,16 @@ FLA Gold - Taktik:
     A:
       - "- Lage\n
         - Entschluss / Auftrag\n
-        - Durchführung\n
+        - Durchführung\n
         - Versorgung\n
         - Verbindung\n
-        - Gibt es Fragen? - Durchführen!"
+        - Gibt es Fragen? - Durchführen!"
   141:
-    Q: Wofür ist die Gateway- und Repeater-Funktion?
+    Q: Wofür ist die Gateway- und Repeater-Funktion?
     A:
-      - Die Gateway-Funktion stellt eine Verbindung zwischen TMO und DMO Modus her und erhöht damit die Reichweite im Einsatzgebiet. Die Repeater-Funktion verstärkt die DMO Abdeckung und steht in jedem wasserführenden Fahrzeug (TLFA, RLFA, LFWA) zur Verfügung. Sie wird speziell für Atemschutzeinsätze verwendet.
+      - Die Gateway-Funktion stellt eine Verbindung zwischen TMO und DMO Modus her und erhöht damit die Reichweite im Einsatzgebiet. Die Repeater-Funktion verstärkt die DMO Abdeckung und steht in jedem wasserführenden Fahrzeug (TLFA, RLFA, LFWA) zur Verfügung. Sie wird speziell für Atemschutzeinsätze verwendet.
   142:
-    Q: In welchem Modus wird bei Innenangriffen die Kommunikation mit Atemschutz-trupps durchgeführt, wenn keine Gebäudefunkanlage vorhanden ist?
+    Q: In welchem Modus wird bei Innenangriffen die Kommunikation mit Atemschutztrupps durchgeführt, wenn keine Gebäudefunkanlage vorhanden ist?
     A:
       - Im Direktmodus (DMO-Modus).
   143:
@@ -1078,11 +1078,11 @@ FLA Gold - Taktik:
   145:
     Q: Was ist ein Befehl?
     A:
-      - Eine Anordnung mit nicht feststehendem Wortlaut, die an bestimmte Personen ergeht und die Durchführung bestimmter Tätigkeiten zum Ziele hat.
+      - Eine Anordnung mit nicht feststehendem Wortlaut, die an bestimmte Personen ergeht und die Durchführung bestimmter Tätigkeiten zum Ziele hat.
   146:
     Q: Was ist ein Kommando?
     A:
-      - Anordnung mit feststehendem Wortlaut, der unverzüglich in der vorgeschriebenen Form nachzukommen ist.
+      - Anordnung mit feststehendem Wortlaut, der unverzüglich in der vorgeschriebenen Form nachzukommen ist.
   147:
     Q: Was muss eine Meldung enthalten?
     A:
@@ -1097,17 +1097,17 @@ FLA Gold - Taktik:
     A:
       - Er fördert die Verbrennung, erschwert die Löscharbeiten und bewirkt Funkenflug.
   149:
-    Q: Welche Vorkehrungen müssen für das Eintreffen weiterer Einsatzkräfte getroffen werden?
+    Q: Welche Vorkehrungen müssen für das Eintreffen weiterer Einsatzkräfte getroffen werden?
     A:
       - Aufstellen von Lotsen zur Einweisung und Übermittlung von Aufträgen.
   150:
     Q: Worauf ist bei der Aufstellung der Feuerwehrfahrzeuge am Einsatzort zu achten?
     A:
-      - Fahrzeuge sind außerhalb des Gefahrenbereiches in Fluchtrichtung aufzustellen, Zufahrtswege dürfen nicht verstellt werden.
+      - Fahrzeuge sind außerhalb des Gefahrenbereiches in Fluchtrichtung aufzustellen, Zufahrtswege dürfen nicht verstellt werden.
   151:
-    Q: Welche baulichen und betrieblichen Einrichtungen stellen eine besondere Gefahr für die Ausbreitung eines Brandes dar?
+    Q: Welche baulichen und betrieblichen Einrichtungen stellen eine besondere Gefahr für die Ausbreitung eines Brandes dar?
     A:
-      - Durchbrochene Brandwände, Aufzugschächte, Kabelschächte, Stiegenhäuser, Lüftungsschächte, Lichthöfe, Transportbänder u. ä.
+      - Durchbrochene Brandwände, Aufzugschächte, Kabelschächte, Stiegenhäuser, Lüftungsschächte, Lichthöfe, Transportbänder u. ä.
   152:
     Q: Welche Vorkehrungen sind bei einem Rauchfangbrand zu treffen?
     A:
@@ -1115,13 +1115,13 @@ FLA Gold - Taktik:
         - geeignetes Löschmittel bereitstellen, Abbrand kontrollieren\n
         - Funkenflug beobachten und Nachbarschaft sichern\n
         - brennbare Stoffe aus Rauchfangnähe entfernen\n
-        - Kamin von der Sohle bis zum Austritt auf Beschädigungen (Risse, defekte Putztüren) kontrollieren.\n
+        - Kamin von der Sohle bis zum Austritt auf Beschädigungen (Risse, defekte Putztüren) kontrollieren.\n
         - Rauchfangkehrer verständigen"
   153:
     Q: Welche Gefahren entstehen bei einem Rauchfangbrand?
     A:
       - "- Beschädigung des Rauchfangmauerwerkes und der Reinigungsöffnungen\n
-        - Entzündung von brennbaren Stoffen und Bauteilen in Rauchfangnähe\n
+        - Entzündung von brennbaren Stoffen und Bauteilen in Rauchfangnähe\n
         - Funkenflug"
   154:
     Q: Mit welchen Gefahren ist beim Innenangriff zu rechnen?
@@ -1144,14 +1144,14 @@ FLA Gold - Taktik:
     A:
       - Den Damm bei Hochwasser zu beobachten und Schäden sofort der Einsatzleitung zu melden.
   158:
-    Q: Wo liegt der hauptsächliche Unterschied zwischen Erd- und Flüssiggas?
+    Q: Wo liegt der hauptsächliche Unterschied zwischen Erd- und Flüssiggas?
     A:
       - "Erdgas ist leichter als Luft\n
-        Flüssiggas ist schwerer als Luft"
+        Flüssiggas ist schwerer als Luft"
   159:
     Q: Was ist ein Brandschutzplan?
     A:
-      - Brandschutzpläne sind färbige, vereinfachte Lage- und Gebäudepläne und müssen alle Informationen enthalten, die zur effizienten Durchführung von Feuerwehreinsätzen notwendig sind. Sie sind grundsätzlich farbig zu gestalten und einvernehmlich mit der örtlich zuständigen Feuerwehr zu erstellen und von dieser freigeben zu lassen (Vidierung).
+      - Brandschutzpläne sind färbige, vereinfachte Lage- und Gebäudepläne und müssen alle Informationen enthalten, die zur effizienten Durchführung von Feuerwehreinsätzen notwendig sind. Sie sind grundsätzlich farbig zu gestalten und einvernehmlich mit der örtlich zuständigen Feuerwehr zu erstellen und von dieser freigeben zu lassen (Vidierung).
   160:
     Q: Woraus besteht ein Brandschutzplan?
     A:
@@ -1159,7 +1159,7 @@ FLA Gold - Taktik:
   161:
     Q: Was muss aus den Brandschutzplänen ersichtlich sein?
     A:
-      - Aus den Brandschutzplänen müssen in übersichtlicher Weise Raumeinteilungen, Brandabschnitte, Fluchtwege, Flächen für die Feuerwehr, Vorkehrungen für den Brandfall oder andere Schadensfälle sowie Hinweise auf besondere Gefahren ersichtlich sein.
+      - Aus den Brandschutzplänen müssen in übersichtlicher Weise Raumeinteilungen, Brandabschnitte, Fluchtwege, Flächen für die Feuerwehr, Vorkehrungen für den Brandfall oder andere Schadensfälle sowie Hinweise auf besondere Gefahren ersichtlich sein.
   162:
     Q: Welche Maßnahmen beachten sie im Feuerwehreinsatz bei einem Verkehrsunfall?
     A:
@@ -1167,12 +1167,12 @@ FLA Gold - Taktik:
         - Verletzte Personen betreuen\n
         - Mindestens zweifachen Brandschutz aufbauen\n
         - Sichern des Fahrzeuges\n
-        - Zündquellen entfernen, Batterie abklemmen\n
+        - Zündquellen entfernen, Batterie abklemmen\n
         - Kontakt mit weiteren Einsatzkräften herstellen\n
-        - Sicherheitssysteme beachten (z.B. Airbags, Gurtstraffer, Überrollbügel)\n
+        - Sicherheitssysteme beachten (z.B. Airbags, Gurtstraffer, Überrollbügel)\n
         - Rettungsmaßnahmen treffen"
   163:
-    Q: Welche Behelfe und Hilfsmittel sollen der Einsatzleitung zur Verfügung gestellt werden?
+    Q: Welche Behelfe und Hilfsmittel sollen der Einsatzleitung zur Verfügung gestellt werden?
     A:
       - "- Löschwasserentnahmestellenplan\n
         - Einsatzpläne\n
@@ -1182,9 +1182,9 @@ FLA Gold - Taktik:
         - Nachschlagwerke und Einsatzliteratur\n
         - u.ä."
   164:
-    Q: Wie müssen bewusstlose Personen gelagert werden?
+    Q: Wie müssen bewusstlose Personen gelagert werden?
     A:
-      - Bewusstlose Personen müssen in stabiler Seitenlage gelagert werden, eine Person zur Betreuung ist abzustellen.
+      - Bewusstlose Personen müssen in stabiler Seitenlage gelagert werden, eine Person zur Betreuung ist abzustellen.
   165:
     Q: Was bedeutet die GAMS-Regel?
     A:
@@ -1195,15 +1195,15 @@ FLA Gold - Taktik:
   166:
     Q: Nennen Sie einige Maßnahmen des baulichen Brandschutzes?
     A:
-      - Brandabschnittsbildung, Rauchabschnittsbildung, ordnungsgemäße Installationen in brandsicherer Ausführung, anlagentechnischer Brandschutz (Steigleitungen, Brandmeldeanlagen, Feuerwehraufzüge usw.).
+      - Brandabschnittsbildung, Rauchabschnittsbildung, ordnungsgemäße Installationen in brandsicherer Ausführung, anlagentechnischer Brandschutz (Steigleitungen, Brandmeldeanlagen, Feuerwehraufzüge usw.).
   167:
     Q: Welche Maßnahmen beinhaltet der betriebliche Brandschutz?
     A:
-      - Der betriebliche Brandschutz beinhaltet die Brandverhütung, die Erste und Erweiterte Löschhilfe und die Brandbekämpfung.
+      - Der betriebliche Brandschutz beinhaltet die Brandverhütung, die Erste und Erweiterte Löschhilfe und die Brandbekämpfung.
   168:
     Q: "-- fehlt --"
     A:
-      - "-- fehlt -- "
+      - "-- fehlt --"
   169:
     Q: Wie gliedert sich die Gruppe im Technischen Einsatz?
     A:
@@ -1221,21 +1221,21 @@ FLA Gold - Taktik:
   171:
     Q: Welche Aufgaben hat der Rettungstrupp?
     A:
-      - "- führt alle Maßnahmen zur Rettung aus dem Gefahrenbereich durch\n
+      - "- führt alle Maßnahmen zur Rettung aus dem Gefahrenbereich durch\n
         - leistet Erste Hilfe\n
         - bedient die technischen Geräte zur Rettung von Menschen und Tieren"
   172:
     Q: Welche Aufgaben hat der Gerätetrupp?
     A:
-      - "- bereitet die befohlenen Geräte für den Einsatz vor\n
-        - betreibt und überwacht sie zusammen mit dem Maschinisten\n
-        - sorgt für die Beleuchtung der Einsatzstelle\n
-        - unterstützt bei Bedarf den Rettungstrupp"
+      - "- bereitet die befohlenen Geräte für den Einsatz vor\n
+        - betreibt und überwacht sie zusammen mit dem Maschinisten\n
+        - sorgt für die Beleuchtung der Einsatzstelle\n
+        - unterstützt bei Bedarf den Rettungstrupp"
   173:
     Q: Was bedeutet bei einem Einsatz ein Dauerton mit der Autohupe, und welches Verhalten hat dies zur Folge?
     A:
       - "Es bedeutet Gefahr im Verzug.\n
-        - Rückzug\n
+        - Rückzug\n
         - Sammeln beim Fahrzeug\n
         - Feststellen der Vollzähligkeit durch den Gruppenkommandanten"
   174:
@@ -1255,7 +1255,7 @@ FLA Gold - Taktik:
   176:
     Q: Wozu dienen Brandmeldeanlagen?
     A:
-      - Zur Früherkennung von Bränden und zur Meldung an eine ständig besetzte Stelle.
+      - Zur Früherkennung von Bränden und zur Meldung an eine ständig besetzte Stelle.
   177:
     Q: Welche zwei prinzipiell unterschiedlichen Arten von Brandmeldern gibt es?
     A:
@@ -1263,9 +1263,9 @@ FLA Gold - Taktik:
   178:
     Q: Wie werden das Auffinden der Brandmeldezentrale und das Eindringen in das Objekt nach einem Brandmeldealarm erleichtert?
     A:
-      - Durch eine orange Blitzleuchte und einen Schlüsselsafe.
+      - Durch eine orange Blitzleuchte und einen Schlüsselsafe.
   179:
-    Q: Womit kann an Einsatzstellen eine eventuell bestehende Explosionsgefahr nach Austritt von Gas oder brennbaren Flüssigkeiten festgestellt werden?
+    Q: Womit kann an Einsatzstellen eine eventuell bestehende Explosionsgefahr nach Austritt von Gas oder brennbaren Flüssigkeiten festgestellt werden?
     A:
       - Mit einem Explosionsgrenzenmessgerät (Explosimeter).
   180:
@@ -1275,7 +1275,7 @@ FLA Gold - Taktik:
   181:
     Q: Was sind die Hauptaufgaben einer Einsatzleitstelle?
     A:
-      - Aufbereiten von Entscheidungshilfen für den Einsatzleiter, Weiterleitung von Entscheidungen des Einsatzleiters, Dokumentation der Schadenslage, der Eigenen Lage und des Einsatzablaufes.
+      - Aufbereiten von Entscheidungshilfen für den Einsatzleiter, Weiterleitung von Entscheidungen des Einsatzleiters, Dokumentation der Schadenslage, der Eigenen Lage und des Einsatzablaufes.
   182:
     Q: Mit wem hat der Einsatzleiter bei einem Waldbrand Kontakt aufzunehmen?
     A:
@@ -1293,7 +1293,7 @@ FLA Gold - Taktik:
         Empfangsbestätigung\n
         Gesprächsabschluss (Ende)"
   185:
-    Q: Was bedeutet es, wenn die zweite und dritte Ziffer der Gefahrnummer auf Warntafeln an Fahrzeugen zum Transport gefährlicher Güter gleich sind?
+    Q: Was bedeutet es, wenn die zweite und dritte Ziffer der Gefahrnummer auf Warntafeln an Fahrzeugen zum Transport gefährlicher Güter gleich sind?
     A:
       - "Dies weist auf die Zunahme der zusätzlichen Gefahr hin, z. B. bedeutet 266: Gas (2), das sehr giftig ist (66)."
   186:
@@ -1303,7 +1303,7 @@ FLA Gold - Taktik:
 
 FLA Gold - Technik:
   200:
-    Q: Welchen Wasserdurchfluss haben Vollstrahlrohre bei verschiedenen Mundstückweiten?
+    Q: Welchen Wasserdurchfluss haben Vollstrahlrohre bei verschiedenen Mundstückweiten?
     A:
       - "C-Strahlrohr 9 mm ca. 100 l/min bei 4 bar\n
         C-Strahlrohr 12 mm ca. 200 l/min bei 5 bar\n
@@ -1313,19 +1313,19 @@ FLA Gold - Technik:
   201:
     Q: Welche Hebezeuge sind im Feuerwehrdienst hauptsächlich gebräuchlich?
     A:
-      - Hydraulische Hebezeuge, hydraulische Rettungssätze, Hebekissen, Südbahn- oder Zahnstangenwinde, Kräne
+      - Hydraulische Hebezeuge, hydraulische Rettungssätze, Hebekissen, Südbahn- oder Zahnstangenwinde, Kräne
   202:
     Q: Wie können Greifzug oder Seilrollen im freien Gelände verankert werden?
     A:
       - An einer Freilandverankerung oder an geeigneten Fahrzeugen.
   203:
-    Q: Welche Länge und welchen Durchmesser müssen Rettungsleinen gemäß ÖNORM F 5260 haben und wie sind sie zu behandeln?
+    Q: Welche Länge und welchen Durchmesser müssen Rettungsleinen gemäß ÖNORM F 5260 haben und wie sind sie zu behandeln?
     A:
-      - 20 oder 30 m Länge, geflochtene Leine 12 mm Durchmesser, Kernmantelseil 11 mm Durchmesser, nicht ruckartig beanspruchen, nicht über scharfe Kanten führen, trocken und vor Sonnenbestrahlung geschützt aufbewahren.
+      - 20 oder 30 m Länge, geflochtene Leine 12 mm Durchmesser, Kernmantelseil 11 mm Durchmesser, nicht ruckartig beanspruchen, nicht über scharfe Kanten führen, trocken und vor Sonnenbestrahlung geschützt aufbewahren.
   204:
-    Q: Wann und wie sind Rettungsleinen gemäß ÖNORM F 5260 zu überprüfen?
+    Q: Wann und wie sind Rettungsleinen gemäß ÖNORM F 5260 zu überprüfen?
     A:
-      - Rettungsleinen sind nach jeder Verwendung, aber mindestens einmal jährlich zu überprüfen. Hierbei ist die ausgespannte Leine eingehend auf Abnutzung, Flecken, mürbe Stellen usw. zu untersuchen. Nach 6 Jahren ist die Leine als Rettungsleine auszuscheiden.
+      - Rettungsleinen sind nach jeder Verwendung, aber mindestens einmal jährlich zu überprüfen. Hierbei ist die ausgespannte Leine eingehend auf Abnutzung, Flecken, mürbe Stellen usw. zu untersuchen. Nach 6 Jahren ist die Leine als Rettungsleine auszuscheiden.
   205:
     Q: Welche tragbaren Leitern werden im Feuerwehrdienst verwendet?
     A:
@@ -1337,7 +1337,7 @@ FLA Gold - Technik:
   207:
     Q: Woraus besteht eine tragbare Feuerlöschpumpe (Tragkraftspritze)?
     A:
-      - Aus Motor, Kreiselpumpe, Entlüftungseinrichtung und Kontrollinstrumenten.
+      - Aus Motor, Kreiselpumpe, Entlüftungseinrichtung und Kontrollinstrumenten.
   208:
     Q: Welchen Einfluss hat eine große Saughöhe auf den Förderstrom einer Feuerlöschpumpe?
     A:
@@ -1349,7 +1349,7 @@ FLA Gold - Technik:
   210:
     Q: Welche Maßnahmen sind nach dem Betrieb einer Feuerlöschpumpe zu treffen?
     A:
-      - Pumpe und Entlüftungseinrichtung vollkommen entleeren, Trockensaugen, anschließend Vakuumdichtprobe durchführen.
+      - Pumpe und Entlüftungseinrichtung vollkommen entleeren, Trockensaugen, anschließend Vakuumdichtprobe durchführen.
   211:
     Q: Welche Druck- und Saugschlauchgrößen werden vorwiegend verwendet?
     A:
@@ -1363,16 +1363,16 @@ FLA Gold - Technik:
   212:
     Q: Welche genormten Druckschlauchlängen werden verwendet?
     A:
-      - "15 oder 20 m für C- und H-(faltbar)Druckschläuche\n
-        5, 15 oder 20 m für A-, B- und D-Druckschläuche"
+      - "15 oder 20 m für C- und H-(faltbar)Druckschläuche\n
+        5, 15 oder 20 m für A-, B- und D-Druckschläuche"
   213:
-    Q: Nennen Sie mindestens vier wasserführende Armaturen
+    Q: Nennen Sie mindestens vier wasserführende Armaturen.
     A:
-      - Kupplungen, Verteiler, Sammelstück, Übergangsstück, Saugkorb, Strahlrohr, Standrohr, usw.
+      - Kupplungen, Verteiler, Sammelstück, Übergangsstück, Saugkorb, Strahlrohr, Standrohr, usw.
   214:
     Q: Wovon hängt der Druckverlust in Schlauchleitungen ab?
     A:
-      - Vom Höhenunterschied zwischen Anfang und Ende einer Schlauchleitung, von der Art des Schlauchmaterials, von der Schlauchlänge, vom Schlauchquerschnitt, von der Durchflussmenge und von den eingebauten wasserführenden Armaturen.
+      - Vom Höhenunterschied zwischen Anfang und Ende einer Schlauchleitung, von der Art des Schlauchmaterials, von der Schlauchlänge, vom Schlauchquerschnitt, von der Durchflussmenge und von den eingebauten wasserführenden Armaturen.
   215:
     Q: Welche Wasserfahrzeuge verwendet die Feuerwehr?
     A:
@@ -1380,7 +1380,7 @@ FLA Gold - Technik:
   216:
     Q: Welche Vorteile bringt der Einsatz von hydraulischen Rettungsgeräten?
     A:
-      - Schnelle, erschütterungs- und funkenarme Arbeit vor allem beim Retten von eingeklemmten Personen.
+      - Schnelle, erschütterungs- und funkenarme Arbeit vor allem beim Retten von eingeklemmten Personen.
   217:
     Q: Beschreiben sie die Eigenschaften von Hebekissen?
     A:
@@ -1394,22 +1394,22 @@ FLA Gold - Technik:
     A:
       - Es ermöglicht das Ziehen einer doppelt so schweren Last als die Nennzugkraft der Zugeinrichtung.
   220:
-    Q: Welche Wassermenge befindet sich in gefüllten, genormten Druckschläuchen?
+    Q: Welche Wassermenge befindet sich in gefüllten, genormten Druckschläuchen?
     A:
       - "B-Druckschläuche (20 m) - ca. 100 l\n
         C-Druckschläuche (15 m) - ca. 35 l"
   221:
-    Q: Wie soll man sich gegen Stichflammen oder Wärmestrahlung schützen?
+    Q: Wie soll man sich gegen Stichflammen oder Wärmestrahlung schützen?
     A:
-      - Durch Deckung (z. B. hinter Türen, Mauervorsprüngen), Hitzeschutz und Vorgehen in Bodennähe.
+      - Durch Deckung (z. B. hinter Türen, Mauervorsprüngen), Hitzeschutz und Vorgehen in Bodennähe.
   222:
-    Q: Welche Unfallverhütungsmaßnahmen sind beim Einsatz von hydraulischen Rettungsgeräten zu beachten?
+    Q: Welche Unfallverhütungsmaßnahmen sind beim Einsatz von hydraulischen Rettungsgeräten zu beachten?
     A:
       - Zum Schutz des Gesichtes ist ein Helm mit Visier zu tragen; Schutzhandschuhe sind zu verwenden. Besondere Vorsicht ist bei gleichzeitiger Verwendung mehrerer Geräte geboten.
   223:
     Q: Welche Anforderungen werden an Löschwasserentnahmestellen gestellt?
     A:
-      - Ganzjährig benutzbar, ausreichend Wasser, gesicherte Zufahrtswege, günstige Lage zu den Objekten, gute Kennzeichnung.
+      - Ganzjährig benutzbar, ausreichend Wasser, gesicherte Zufahrtswege, günstige Lage zu den Objekten, gute Kennzeichnung.
   224:
     Q: Wie wurden die Brandwiderstandsklassen nach ÖNORM B 3800 vor Inkrafttreten der ÖNORM EN 13501 unterschieden?
     A:
@@ -1418,12 +1418,12 @@ FLA Gold - Technik:
         F 90 - brandbeständig\n
         F 180 - hochbrandbeständig"
   225:
-    Q: Wie werden Bauprodukte (Bauteile) gem. ÖNORM EN 13501 hinsichtlich ihres Feuerwiderstandes eingeteilt. Nenne die drei wesentlichen Leistungsmerkmale und welche zeitlichen Unterteilungen in Österreich zur Anwendung kommen. Führe eine beispielhafte Bezeichnung an?
+    Q: Wie werden Bauprodukte (Bauteile) gem. ÖNORM EN 13501 hinsichtlich ihres Feuerwiderstandes eingeteilt. Nenne die drei wesentlichen Leistungsmerkmale und welche zeitlichen Unterteilungen in Österreich zur Anwendung kommen. Führe eine beispielhafte Bezeichnung an?
     A:
       - "R → Tragfähigkeit, E → Raumabschluss, I → Wärmedämmung\n
         zeitliche Unterteilung 30, 60, 90 Minuten, Beispiel: REI 60, EI 30,…"
   226:
-    Q: Welche Gefahren treten bei ungeschützten Stahlkonstruktionen im Brandfall auf?
+    Q: Welche Gefahren treten bei ungeschützten Stahlkonstruktionen im Brandfall auf?
     A:
       - Einsturzgefahr durch Verminderung der Tragfähigkeit oder Verformung, Sekundärbrände durch Wärmeleitung.
   227:
@@ -1434,11 +1434,11 @@ FLA Gold - Technik:
   228:
     Q: Was sind Brandwände?
     A:
-      - Brandwände sind Wände, die in Brandabschnitte unterteilen und zumindest die Klassifizierung REI 90 und A2 oder EI 90 und A2 hinsichtlich des Feuerwiderstandes aufweisen müssen.
+      - Brandwände sind Wände, die in Brandabschnitte unterteilen und zumindest die Klassifizierung REI 90 und A2 oder EI 90 und A2 hinsichtlich des Feuerwiderstandes aufweisen müssen.
   229:
-    Q: Wie müssen Öffnungen in Brandwänden innerhalb eines Gebäudes verschlossen werden?
+    Q: Wie müssen Öffnungen in Brandwänden innerhalb eines Gebäudes verschlossen werden?
     A:
-      - Öffnungen in Brandwänden sind durch Abschlüsse (Brandschutztüren, Brandschutzklappen, Abschottungen, …) durch einen hierzu Befugten zu verschließen, die die gleiche Feuerwiderstandsdauer wie diese Wände aufweisen.
+      - Öffnungen in Brandwänden sind durch Abschlüsse (Brandschutztüren, Brandschutzklappen, Abschottungen, …) durch einen hierzu Befugten zu verschließen, die die gleiche Feuerwiderstandsdauer wie diese Wände aufweisen.
   230:
     Q: Was ist ein „Tragbarer Feuerlöscher (TFL)“?
     A:
@@ -1454,11 +1454,11 @@ FLA Gold - Technik:
   233:
     Q: Was ist ein „Flash Over“?
     A:
-      - Schlagartiges Übergreifen (Durchzünden) eines Brandes auf die Oberfläche aller brennbaren Stoffe eines Brandraumes.
+      - Schlagartiges Übergreifen (Durchzünden) eines Brandes auf die Oberfläche aller brennbaren Stoffe eines Brandraumes.
   234:
     Q: Was ist ein „Backdraft“?
     A:
-      - Eine Unterart der Rauchgasdurchzündung, wobei der Brand in einem geschlossenen Raum mangels Sauerstoffzufuhr erlischt oder nur noch als Schwelbrand vorhanden ist. Durch die vorangegangene Verbrennung sind jedoch genügend sogenannte pyrolyse Gase vorhanden, die bei einer Öffnung des Raumes in Verbindung mit dem eintretenden Sauerstoff schlagartig (explosionsartig) zur Entzündung kommen.
+      - Eine Unterart der Rauchgasdurchzündung, wobei der Brand in einem geschlossenen Raum mangels Sauerstoffzufuhr erlischt oder nur noch als Schwelbrand vorhanden ist. Durch die vorangegangene Verbrennung sind jedoch genügend sogenannte pyrolyse Gase vorhanden, die bei einer Öffnung des Raumes in Verbindung mit dem eintretenden Sauerstoff schlagartig (explosionsartig) zur Entzündung kommen.
   235:
     Q: Was ist eine Verbrennung?
     A:
@@ -1467,22 +1467,22 @@ FLA Gold - Technik:
     Q: Welche Arten von brennbaren Stoffen nach dem Aggregatzustand (Erscheinungsform) unterscheiden wir und nenne je ein Beispiel dazu?
     A:
       - "Feste Stoffe - z.B. Holz, Papier, Textilien\n
-        Flüssige Stoffe - z.B. Öle, Harze, Wachse, schmelzende Kunststoffe\n
+        Flüssige Stoffe - z.B. Öle, Harze, Wachse, schmelzende Kunststoffe\n
         Gasförmige Stoffe - z.B. Methan, Propan, Azetylen"
   237:
-    Q: Welche Voraussetzungen müssen für eine Verbrennung vorhanden sein?
+    Q: Welche Voraussetzungen müssen für eine Verbrennung vorhanden sein?
     A:
-      - Brennbarer Stoff, Sauerstoff im richtigen Mischungsverhältnis und die entsprechende Zündtemperatur.
+      - Brennbarer Stoff, Sauerstoff im richtigen Mischungsverhältnis und die entsprechende Zündtemperatur.
   238:
     Q: Was ist der Flammpunkt?
     A:
-      - Niedrigste, unter festgelegten Bedingungen ermittelte Temperatur, bei der eine brennbare Flüssigkeit oberhalb des Flüssigkeitsspiegels mit Luft eine zündbare Dampfkonzentration bildet, die bei kurzzeitiger Einwirkung einer Zündquelle zur Entflammung führt.
+      - Niedrigste, unter festgelegten Bedingungen ermittelte Temperatur, bei der eine brennbare Flüssigkeit oberhalb des Flüssigkeitsspiegels mit Luft eine zündbare Dampfkonzentration bildet, die bei kurzzeitiger Einwirkung einer Zündquelle zur Entflammung führt.
   239:
-    Q: Was ist die Zündtemperatur?
+    Q: Was ist die Zündtemperatur?
     A:
-      - Niedrigste, unter festgelegten Bedingungen ermittelte Temperatur, bei der sich ein brennbarer Stoff in Luft selbst (ohne Zündquelle) entzündet.
+      - Niedrigste, unter festgelegten Bedingungen ermittelte Temperatur, bei der sich ein brennbarer Stoff in Luft selbst (ohne Zündquelle) entzündet.
   240:
-    Q: Was ist der Explosions-(Zünd-)bereich?
+    Q: Was ist der Explosions-(Zünd-)bereich?
     A:
       - Konzentrationsbereich zwischen der unteren und der oberen Explosionsgrenze, in dem sich ein Brennen selbständig fortpflanzt.
   241:
@@ -1500,32 +1500,32 @@ FLA Gold - Technik:
   244:
     Q: Was heißt "Löschen"?
     A:
-      - Das Beseitigen mindestens einer Voraussetzung für eine Verbrennung.
+      - Das Beseitigen mindestens einer Voraussetzung für eine Verbrennung.
   245:
     Q: Welche Hauptlöscheffekte gibt es und wie werden sie wirksam?
     A:
-      - "Kühlen - Entzug der Wärme\n
+      - "Kühlen - Entzug der Wärme\n
         Ersticken - Entzug der Luft (des Sauerstoffes)\n
-        Verdünnen - Entzug des brennbaren Stoffes\n
+        Verdünnen - Entzug des brennbaren Stoffes\n
         Stören - Eingriff in die Verbrennungsreaktion"
   246:
-    Q: Bei welchen Bränden wird der Kühleffekt und bei welchen der Stickeffekt wirksam?
+    Q: Bei welchen Bränden wird der Kühleffekt und bei welchen der Stickeffekt wirksam?
     A:
-      - "Kühleffekt - hauptsächlich bei Glutbränden\n
-        Stickeffekt - hauptsächlich bei Flüssigkeitsbränden"
+      - "Kühleffekt - hauptsächlich bei Glutbränden\n
+        Stickeffekt - hauptsächlich bei Flüssigkeitsbränden"
   247:
     Q: Worauf beruht die Löschwirkung beim Hochdrucknebelstrahl?
     A:
-      - Das fein versprühte Wasser des Hochdrucknebelstrahles wird sehr rasch in Wasserdampf umgewandelt, dadurch werden große Wärmemengen entzogen (Kühleffekt) und außerdem wird die für die Verbrennung erforderliche Luft (Sauerstoff) verdrängt (Stickeffekt).
+      - Das fein versprühte Wasser des Hochdrucknebelstrahles wird sehr rasch in Wasserdampf umgewandelt, dadurch werden große Wärmemengen entzogen (Kühleffekt) und außerdem wird die für die Verbrennung erforderliche Luft (Sauerstoff) verdrängt (Stickeffekt).
   248:
     Q: Wie wird Löschschaum erzeugt?
     A:
-      - Durch beimengen von Schaummittel zum Löschwasser unter anschließender Zuführung von Luft.
+      - Durch Beimengen von Schaummittel zum Löschwasser unter anschließender Zuführung von Luft.
   249:
     Q: Welche Arten von Löschschaum gibt es und wo finden sie Verwendung?
     A:
-      - "Schwerschaum - zur Bekämpfung von Flüssigkeitsbränden\n
-        Mittelschaum - zur Bekämpfung von Flüssigkeitsbränden\n
+      - "Schwerschaum - zur Bekämpfung von Flüssigkeitsbränden\n
+        Mittelschaum - zur Bekämpfung von Flüssigkeitsbränden\n
         Leichtschaum - zum Fluten von Räumen"
   250:
     Q: Mit welchen Geräten werden die verschiedenen Schaumarten aufgebracht?
@@ -1539,49 +1539,49 @@ FLA Gold - Technik:
   252:
     Q: Soll man brennendes, unter Druck ausströmendes Gas löschen?
     A:
-      - Die Flammen nicht löschen, sondern nur so überwachen, dass andere Stoffe nicht in Brand geraten, bis das Gas abgesperrt ist. Brennendes Gas ist kontrolliertes Gas.
+      - Die Flammen nicht löschen, sondern nur so überwachen, dass andere Stoffe nicht in Brand geraten, bis das Gas abgesperrt ist. Brennendes Gas ist kontrolliertes Gas.
   253:
     Q: Wie heißen die Brandklassen (ÖNORM EN 2)?
     A:
       - "Brandklasse A - Brände fester Stoffe\n
-        Brandklasse B - Brände von flüssigen oder flüssig werdenden Stoffen\n
+        Brandklasse B - Brände von flüssigen oder flüssig werdenden Stoffen\n
         Brandklasse C - Brände von Gasen\n
         Brandklasse D - Brände von Metallen\n
-        Brandklasse F - Brände von Speiseölen/-fetten in Frittier- und Fettbackgeräten und anderen Kücheneinrichtungen und -geräten"
+        Brandklasse F - Brände von Speiseölen/-fetten in Frittier- und Fettbackgeräten und anderen Kücheneinrichtungen und -geräten"
   254:
     Q: Wie werden tragbare Feuerlöscher im Hinblick auf ihren Löschmittelinhalt benannt?
     A:
       - Nasslöscher, Schaumlöscher, Pulverlöscher, Kohlendioxidlöscher (CO2-Löscher)
   255:
-    Q: Welche tragbaren Feuerlöscher sind für welche Brandklassen geeignet?
+    Q: Welche tragbaren Feuerlöscher sind für welche Brandklassen geeignet?
     A:
-      - "Nasslöscher für Brandklasse A\n
-        Schaumlöscher für Brandklassen A und B\n
-        Pulverlöscher mit Flammbrandpulver für Brandklassen B und C\n
-        Pulverlöscher mit Glutbrandpulver für Brandklassen A, B und C\n
-        Kohlendioxidlöscher für Brandklasse B (mit Gasdüse)\n
-        Fettbrandlöscher für die Brandklasse F"
+      - "Nasslöscher für Brandklasse A\n
+        Schaumlöscher für Brandklassen A und B\n
+        Pulverlöscher mit Flammbrandpulver für Brandklassen B und C\n
+        Pulverlöscher mit Glutbrandpulver für Brandklassen A, B und C\n
+        Kohlendioxidlöscher für Brandklasse B (mit Gasdüse)\n
+        Fettbrandlöscher für die Brandklasse F"
   256:
-    Q: Welche Mindestabstände sind in elektrischen Hochspannungsanlagen (über 1.000 Volt) von unter Spannung stehenden Teilen beim Einsatz von Wasser als Löschmittel einzuhalten?
+    Q: Welche Mindestabstände sind in elektrischen Hochspannungsanlagen (über 1.000 Volt) von unter Spannung stehenden Teilen beim Einsatz von Wasser als Löschmittel einzuhalten?
     A:
-      - "C-Strahlrohr Sprühstrahl 5 m, Vollstrahl 10 m\n
-        Wasserwerfer Sprühstrahl 10 m, Vollstrahl 35 m"
+      - "C-Strahlrohr Sprühstrahl 5 m, Vollstrahl 10 m\n
+        Wasserwerfer Sprühstrahl 10 m, Vollstrahl 35 m"
   257:
     Q: Welche Mindestabstände sind in elektrischen Niederspannungsanlagen (unter 1.000 Volt) von unter Spannung stehenden Teilen beim Einsatz von Wasser als Löschmittel einzuhalten?
     A:
-      - C-Strahlrohr Sprühstrahl 1 m, Vollstrahl 5 m
+      - C-Strahlrohr Sprühstrahl 1 m, Vollstrahl 5 m
   258:
     Q: Welche Mindestabstände sind in elektrischen Niederspannungsanlagen (unter 1.000 Volt) von unter Spannung stehenden Teilen beim Einsatz von Kohlendioxidlöschern einzuhalten?
     A:
       - In Niederspannungsanlagen 1 m
   259:
-    Q: Warum ist es wichtig, Einsatzberichte und Statistiken genau zu führen?
+    Q: Warum ist es wichtig, Einsatzberichte und Statistiken genau zu führen?
     A:
-      - Um der Gemeinde und der Öffentlichkeit Rechenschaft über die Tätigkeit der Feuerwehr geben zu können
+      - Um der Gemeinde und der Öffentlichkeit Rechenschaft über die Tätigkeit der Feuerwehr geben zu können
   260:
-    Q: Wann besteht für einen Damm akute Gefahr?
+    Q: Wann besteht für einen Damm akute Gefahr?
     A:
-      - Wenn sich Risse auf der Wasserseite der Dammkrone zeigen oder wenn das durchdringende Sickerwasser trübe am Dammfuß austritt.
+      - Wenn sich Risse auf der Wasserseite der Dammkrone zeigen oder wenn das durchdringende Sickerwasser trübe am Dammfuß austritt.
   261:
     Q: Wie kann man einen Dammbruch verhindern?
     A:
@@ -1595,7 +1595,7 @@ FLA Gold - Technik:
     A:
       - "1. Abdrängen der Strömung (durch Rauhbäume, Hilfsdamm u.ä.)\n
         2. Befestigung der noch stehenden Dammköpfe (Strauchwerk oder Pfahlschutz mit Sandpackung)\n
-        3. Schließen der Dammlücke mit Behelfsdamm (Pilotierung, Pfostenwand, Sandsackverbauung)"
+        3. Schließen der Dammlücke mit Behelfsdamm (Pilotierung, Pfostenwand, Sandsackverbauung)"
   264:
     Q: Wie hoch ist der Luftverbrauch eines durchschnittlich gebauten, gesunden Menschen?
     A:
@@ -1607,25 +1607,25 @@ FLA Gold - Technik:
     A:
       - Kohlendioxyd, Propan, Butan
   266:
-    Q: Welcher Sicherheitsabstand ist zu unter Spannung stehenden Hochspannungsfreileitungen (über 1.000 Volt) einzuhalten?
+    Q: Welcher Sicherheitsabstand ist zu unter Spannung stehenden Hochspannungsfreileitungen (über 1.000 Volt) einzuhalten?
     A:
       - Im Bereich von Hochspannungsfreileitungen muss ein Sicherheitsabstand von mindestens 5 m eingehalten werden. Dieser Abstand darf mit keinem Körperteil oder Geräteteil (z.B. Leiter oder Einreißhaken) unterschritten werden.
   267:
-    Q: Welcher Sicherheitsabstand ist zu einer gerissenen und den Boden berührenden Hochspannungsfreileitung oder zu Gegenständen (Fahrzeug, Bauwerk, Baum, etc.), die mit der Leitung in unmittelbarer Verbindung stehen, einzuhalten?
+    Q: Welcher Sicherheitsabstand ist zu einer gerissenen und den Boden berührenden Hochspannungsfreileitung oder zu Gegenständen (Fahrzeug, Bauwerk, Baum, etc.), die mit der Leitung in unmittelbarer Verbindung stehen, einzuhalten?
     A:
-      - Es ist ein Sicherheitsabstand von mindestens 20 m rund um die Schadensstelle einzuhalten. In diesem Bereich bildet sich, aufgrund der Stromableitung gegen Erde, ein sogenannter Spannungstrichter, der zu einer lebensgefährlichen Schrittspannung führt.
+      - Es ist ein Sicherheitsabstand von mindestens 20 m rund um die Schadensstelle einzuhalten. In diesem Bereich bildet sich, aufgrund der Stromableitung gegen Erde, ein sogenannter Spannungstrichter, der zu einer lebensgefährlichen Schrittspannung führt.
   268:
-    Q: Wann darf der Sicherheitsabstand zu einer Hochspannungsfreileitung oder zu einem Gegenstand (Fahrzeug, Baum etc.), der mit dieser Leitung in unmittelbarer Verbindung steht, unterschritten werden oder Teile der Hochspannungsfreileitung durch Einsatzkräfte berührt werden?
+    Q: Wann darf der Sicherheitsabstand zu einer Hochspannungsfreileitung oder zu einem Gegenstand (Fahrzeug, Baum etc.), der mit dieser Leitung in unmittelbarer Verbindung steht, unterschritten werden oder Teile der Hochspannungsfreileitung durch Einsatzkräfte berührt werden?
     A:
-      - An Teile einer Hochspannungsfreileitung dürfen sich Einsatzkräfte erst annähern oder diese Teile berühren, wenn eindeutig feststeht, dass die Leitungsanlage freigeschaltet und geerdet ist.
+      - An Teile einer Hochspannungsfreileitung dürfen sich Einsatzkräfte erst annähern oder diese Teile berühren, wenn eindeutig feststeht, dass die Leitungsanlage freigeschaltet und geerdet ist.
   269:
     Q: Wie weit von der Einsatzstelle muss auf einer Freilandstraße mit den Absicherungsmaßnahmen begonnen werden?
     A:
-      - Die Absicherungsmaßnahmen (Aufstellen von TriopanFaltsignalen) auf Freilandstraße müssen ca. 150 m - 250 m vor der Einsatzstelle beginnen.
+      - Die Absicherungsmaßnahmen (Aufstellen von Triopan-Faltsignalen) auf Freilandstraßen müssen ca. 150 m - 250 m vor der Einsatzstelle beginnen.
   270:
     Q: Wie weit in Fahrtrichtung vor der Einsatzstelle muss auf einer Autobahn mit den Absicherungsmaßnahmen begonnen werden?
     A:
-      - Die Absicherungsmaßnahmen (Aufstellen von Triopan-Faltsignalen) auf Autobahnen müssen in Fahrtrichtung ca. 400 m vor der Einsatzstelle beginnen. Ein weiteres Triopan-Faltsignal ist ca. 250 m vor der Einsatzstelle aufzustellen.
+      - Die Absicherungsmaßnahmen (Aufstellen von Triopan-Faltsignalen) auf Autobahnen müssen in Fahrtrichtung ca. 400 m vor der Einsatzstelle beginnen. Ein weiteres Triopan-Faltsignal ist ca. 250 m vor der Einsatzstelle aufzustellen.
   271:
     Q: Was versteht man unter Saughöhe?
     A:
@@ -1649,8 +1649,8 @@ FLA Gold - Technik:
       - "Brand in Windrichtung angreifen\n
         Flächenbrände vorne beginnend ablöschen\n
         Tropf- und Fließbrände von oben nach unten löschen\n
-        Genügend Löschmittel auf einmal einsetzen, nicht hintereinander\n
-        Vorsicht vor Wiederentzündung"
+        Genügend Löschmittel auf einmal einsetzen, nicht hintereinander\n
+        Vorsicht vor Wiederentzündung"
   276:
     Q: Welche Vorteile bietet das Löschmittel Wasser?
     A:
@@ -1658,7 +1658,7 @@ FLA Gold - Technik:
         ungiftig\n
         großes Wärmebindungsvermögen\n
         gute Förderung mittels Schläuche und Pumpen\n
-        fast überall vorhanden\n
+        fast überall vorhanden\n
         große Wurfweite und Wurfhöhe möglich\n
         mechanische Wirkung, Auftreffwucht usw.\n
         bestes Löschmittel in der Brandklasse A\n
@@ -1699,7 +1699,7 @@ FLA Gold - Technik:
   283:
     Q: Welche Rolle spielt der Sauerstoff (O2) beim Verbrennungsvorgang?
     A:
-      - Sauerstoff ist eine der drei wesentlichen Voraussetzungen für eine Verbrennung.
+      - Sauerstoff ist eine der drei wesentlichen Voraussetzungen für eine Verbrennung.
   284:
     Q: Wie groß muss der Förderstrom einer Feuerlöschpumpe bei 7,5 m Saughöhe und dem Nennförderdruck sein?
     A:
@@ -1719,14 +1719,14 @@ FLA Gold - Technik:
   288:
     Q: Was ist nach dem Anlegen der Atemschutzgeräte zu beachten?
     A:
-      - Eine Funktionskontrolle (Einsatzkurzprüfung) ist durchzuführen.
+      - Eine Funktionskontrolle (Einsatzkurzprüfung) ist durchzuführen.
   289:
-    Q: Welche Arten von Atemschutzgeräten stehen für den Feuerwehreinsatz zur Verfügung?
+    Q: Welche Arten von Atemschutzgeräten stehen für den Feuerwehreinsatz zur Verfügung?
     A:
       - "Umluftabhängige Atemschutzgeräte - Atemmasken mit Atemfilter\n
         Umluftunabhängige Atemschutzgeräte - Behältergeräte (Pressluftatmer), Regenerationsgeräte und Schlauchgeräte"
   290:
-    Q: Warum dürfen Atemluftflaschen nicht vollständig entleert werden?
+    Q: Warum dürfen Atemluftflaschen nicht vollständig entleert werden?
     A:
       - Damit gewährleistet ist, dass keine Feuchtigkeit, Schmutz und Schadstoffe in die Atemluftflaschen gelangen kann.
   291:
@@ -1734,9 +1734,9 @@ FLA Gold - Technik:
     A:
       - Unter Fortdauer der Wasserförderung bei geringem Druck werden die Schläuche vom Strahlrohr aus beginnend einzeln abgekuppelt, jeder Schlauch wird sofort entleert und gerollt.
   292:
-    Q: Wie oft müssen Feuerlöscher überprüft werden?
+    Q: Wie oft müssen Feuerlöscher überprüft werden?
     A:
-      - Nach jeder Verwendung, längstens alle zwei Jahre, durch einen geprüften Löscherwart.
+      - Nach jeder Verwendung, längstens alle zwei Jahre, durch einen geprüften Löscherwart.
   293:
     Q: Welche Faktoren spielen bei der Festlegung der Anzahl der tragbaren Feuerlöscher eine Rolle?
     A:
@@ -1744,15 +1744,15 @@ FLA Gold - Technik:
   294:
     Q: Welche Arten der Löschwasserversorgung sind bekannt?
     A:
-      - "a) natürliche Löschwasserversorgung\n
-        z.B.: stehende Gewässer (Seen, Teiche, Biotope), offene Gerinne (Flüsse, Bäche)\n
-        b) künstliche Löschwasserversorgung:\n
+      - "a) natürliche Löschwasserversorgung\n
+        z.B.: stehende Gewässer (Seen, Teiche, Biotope), offene Gerinne (Flüsse, Bäche)\n
+        b) künstliche Löschwasserversorgung:\n
         - Unabhängige Löschwasserversorgung\n
         z.B.: Löschwasserteiche, offene und gedeckte Löschwasserbehälter, Flachspiegellöschwasserbrunnen\n
         - Abhängige Löschwasserversorgung\n
         z.B.: Trink-, Nutz- und Löschwasserrohrleitungsnetz (Hydranten), offene Kanäle, Tiefspiegellöschwasserbrunnen"
   295:
-    Q: Welche Luftmenge muss dem Atemschutzgeräteträger für den gesicherten Rückzug zur Verfügung stehen?
+    Q: Welche Luftmenge muss dem Atemschutzgeräteträger für den gesicherten Rückzug zur Verfügung stehen?
     A:
       - Mindestens die doppelte Luftmenge als jene, die beim Anmarschweg verbraucht wurde.
   296:
@@ -1762,17 +1762,17 @@ FLA Gold - Technik:
 
 TechnLP Stufe II:
   1:
-    Q: Welche Fahrzeuge sind speziell für technische Hilfeleistung ausgerüstet?
+    Q: Welche Fahrzeuge sind speziell für technische Hilfeleistung ausgerüstet?
     A:
-      - "Rüstfahrzeuge (RF, KRF, VRF, SRF)\n
-        Rüst-Löschfahrzeuge (RLF)\n
-        Löschfahrzeuge mit Bergeausrüstung (LF-B)"
+      - "Rüstfahrzeuge (RF, KRF, VRF, SRF)\n
+        Rüst-Löschfahrzeuge (RLF)\n
+        Löschfahrzeuge mit Bergeausrüstung (LF-B)"
   2:
     Q: Welche Aufgaben hat der Gruppenkommandant beim „Technischen Feuer-wehreinsatz“?
     A:
       - Der GRKDT erkundet, leitet den Einsatz und ist an keinen festen Platz gebunden
   3:
-    Q: Was gehört zur persönlichen Schutzausrüstung des Rettungstrupps?
+    Q: Was gehört zur persönlichen Schutzausrüstung des Rettungstrupps?
     A:
       - "Einsatzhose, -overall oder Schutzhose\n
         Schutzjacke\n
@@ -1781,7 +1781,7 @@ TechnLP Stufe II:
         Feuerwehrschutzhandschuhe oder Technische Handschuhe\n
         Einmal-Untersuchungshandschuhe"
   4:
-    Q: Wer übernimmt die Absicherung der Einsatzstelle?
+    Q: Wer übernimmt die Absicherung der Einsatzstelle?
     A:
       - Der Sicherungstrupp
   5:
@@ -1804,7 +1804,7 @@ TechnLP Stufe II:
   8:
     Q: Welche Vorteile bringt der Einsatz von hydraulischen Rettungsgeräten?
     A:
-      - Schnelle, erschütterungs- und funkenfreie Arbeit
+      - Schnelle, erschütterungs- und funkenfreie Arbeit
   9:
     Q: Was bedeutet beim Spreizer die Typenbezeichnung SP 45?
     A:
@@ -1822,13 +1822,13 @@ TechnLP Stufe II:
     A:
       - Lenksäule und gehärtete Teile
   13:
-    Q: Wie oft müssen Spreizer und Schneidgerät überprüft werden?
+    Q: Wie oft müssen Spreizer und Schneidgerät überprüft werden?
     A:
-      - "Sichtprüfung nach jeder Benutzung\n
-        Funktionsprüfung mindestens einmal jährlich\n
-        Leistungsprüfung mindestens alle drei Jahre"
+      - "Sichtprüfung nach jeder Benutzung\n
+        Funktionsprüfung mindestens einmal jährlich\n
+        Leistungsprüfung mindestens alle drei Jahre"
   14:
-    Q: Welche zusätzliche Schutzausrüstung ist beim Arbeiten mit einer Motorkettensäge zu tragen?
+    Q: Welche zusätzliche Schutzausrüstung ist beim Arbeiten mit einer Motorkettensäge zu tragen?
     A:
       - "Feuerwehrhelm mit Gesichtsschutz\n
         Gehörschutz\n
@@ -1855,7 +1855,7 @@ TechnLP Stufe II:
     A:
       - Man kann damit große Lasten heben
   20:
-    Q: Wie viele Kabeltrommeln dürfen maximal hintereinandergeschaltet werden?
+    Q: Wie viele Kabeltrommeln dürfen maximal hintereinandergeschaltet werden?
     A:
       - Zwei Trommeln zu je 50 m
   21:
@@ -1881,27 +1881,27 @@ TechnLP Stufe II:
     A:
       - Ca. 20 Sekunden (0,6 kg/s)
   26:
-    Q: In welchen Zeitabständen müssen Tragbare Feuerlöscher überprüft werden?
+    Q: In welchen Zeitabständen müssen Tragbare Feuerlöscher überprüft werden?
     A:
       - Alle zwei Jahre
   27:
     Q: Was ist der Flammpunkt?
     A:
-      - Niedrigste, unter festgelegten Bedingungen ermittelte Temperatur, bei der eine brennbare Flüssigkeit oberhalb des Flüssigkeitsspiegels mit Luft eine zündbare Dampfkonzentration bildet, die bei kurzzeitiger Einwirkung einer Zündquelle zur Entflammung führt.
+      - Niedrigste, unter festgelegten Bedingungen ermittelte Temperatur, bei der eine brennbare Flüssigkeit oberhalb des Flüssigkeitsspiegels mit Luft eine zündbare Dampfkonzentration bildet, die bei kurzzeitiger Einwirkung einer Zündquelle zur Entflammung führt.
   28:
     Q: Was ist zuerst beim Eintreffen am Verkehrsunfallort zu machen?
     A:
       - Unfallstelle absichern (Warnzeichen, Verkehrsleitkegel usw)
   29:
-    Q: Was gehört zur persönlichen Ausrüstung eines Verkehrsreglers?
+    Q: Was gehört zur persönlichen Ausrüstung eines Verkehrsreglers?
     A:
-      - Reflektierende Warnbekleidung (Warnüberwurf), Anhaltestab
+      - Reflektierende Warnbekleidung (Warnüberwurf), Anhaltestab
   30:
     Q: Zu welchem Zweck setzen die Feuerwehren Warnzeichen und Warnblinkleuchten ein?
     A:
       - Zum Absichern der Einsatzstelle
   31:
-    Q: In welchem Abstand ist die Unfallstellen auf Bundes-, Landes- und Gemeindestraßen außerhalb des Ortsgebietes abzusichern?
+    Q: In welchem Abstand ist die Unfallstelle auf Bundes-, Landes- und Gemeindestraßen außerhalb des Ortsgebietes abzusichern?
     A:
       - In einer Entfernung von 150 m bis 250 m
   32:
@@ -1914,11 +1914,11 @@ TechnLP Stufe II:
       - "Vor der Einsatzstelle zur Sicherung und zum Schutz der Einsatzkräfte\n
         Wenn es einsatztaktisch möglich ist, immer einen Fahrstreifen freihalten"
   34:
-    Q: Wer ist für die Verkehrsregelung an der Einsatzstelle zuständig?
+    Q: Wer ist für die Verkehrsregelung an der Einsatzstelle zuständig?
     A:
       - Polizei oder Feuerwehr mit besonders geschulte Kräften
   35:
-    Q: Welche Vorschrift regelt den Transport gefährlicher Güter auf der Straße?
+    Q: Welche Vorschrift regelt den Transport gefährlicher Güter auf der Straße?
     A:
       - ADR
   36:
@@ -1932,11 +1932,11 @@ TechnLP Stufe II:
   38:
     Q: Was bedeutet die Gefahrennummer 30?
     A:
-      - Entzündbarer flüssiger Stoff (Flammpunkt von 23°C bis 60°C)
+      - Entzündbarer flüssiger Stoff (Flammpunkt von 23°C bis 60°C)
   39:
     Q: Was bedeutet die Gefahrennummer 33?
     A:
-      - Leicht entzündbarer flüssiger Stoff (Flammpunkt unter 23°C)
+      - Leicht entzündbarer flüssiger Stoff (Flammpunkt unter 23°C)
   40:
     Q: Was bedeutet die Gefahrennummer 80?
     A:
@@ -1946,22 +1946,22 @@ TechnLP Stufe II:
     A:
       - Der Stoff reagiert in gefährlicher Weise mit Wasser
   42:
-    Q: Welche Farbkennzeichnung werden für Sauerstoff- und Acetylengasflaschen verwendet?
+    Q: Welche Farbkennzeichnung werden für Sauerstoff- und Acetylengasflaschen verwendet?
     A:
       - "Sauerstoff weiß\n
         Acetylen kastanienbraun"
   43:
     Q: Was bedeutet ein waagrechter 30 cm breiter, orangegelber umlaufender Streifen an einem Kesselwagon?
     A:
-      - Kesselwagon für flüssige Gase
+      - Kesselwagon für flüssige Gase
   44:
     Q: Wie werden Verpackungen gekennzeichnet, die gefährliche Stoffe enthalten?
     A:
       - Durch Gefahrenzettel
   45:
-    Q: Welche schriftliche Unterlagen werden beim Transport Gefährlicher Stoffe mitgeführt und wo befinden sie sich?
+    Q: Welche schriftliche Unterlagen werden beim Transport Gefährlicher Stoffe mitgeführt und wo befinden sie sich?
     A:
-      - Schriftliche Weisungen bzw. Frachtpapiere im Führerhaus
+      - Schriftliche Weisungen bzw. Frachtpapiere im Führerhaus
   46:
     Q: Was bedeutet die obere Zahl in einer orangefarbenen Warntafel?
     A:
@@ -1975,17 +1975,17 @@ TechnLP Stufe II:
     A:
       - Durch den Einbau von Ölsperren
   49:
-    Q: Was ist beim Einsatz von Vollschutzanzügen zu beachten?
+    Q: Was ist beim Einsatz von Vollschutzanzügen zu beachten?
     A:
       - Die Beständigkeitslisten
   50:
     Q: Welche Behörde ist bei Gefahrgutunfällen zu verständigen?
     A:
-      - Die Bezirkshauptmannschaft über die LAWZ oder Polizei
+      - Die Bezirkshauptmannschaft über die LAWZ oder Polizei
   51:
-    Q: Was ist die mindestens erforderliche Schutzausrüstung bei einem Fahrzeugbrand?
+    Q: Was ist die mindestens erforderliche Schutzausrüstung bei einem Fahrzeugbrand?
     A:
-      - Persönliche Schutzausrüstung inklusive schwerem Atemschutz
+      - Persönliche Schutzausrüstung inklusive schwerem Atemschutz
   52:
     Q: Wie sind die Hochvoltkomponenten bei einem Elektro- bzw. Hybridfahrzeug farblich gekennzeichnet?
     A:
@@ -2008,11 +2008,11 @@ TechnLP Stufe II:
   56:
     Q: Wie ist beim Brand einer Hochvoltbatterie vorzugehen?
     A:
-      - Mit viel Wasser kühlen
+      - Mit viel Wasser kühlen
   57:
     Q: Welche Maßnahmen sind bei verunfallten Elektro- bzw. Hybridfahrzeugen zu treffen?
     A:
-      - Zündung deaktivieren, 12 Volt Batterie abklemmen
+      - Zündung deaktivieren, 12 Volt Batterie abklemmen
   58:
     Q: Was bedeutet eine offensichtlich verformte Hochvoltbatterie?
     A:
@@ -2039,7 +2039,7 @@ ASLP Stufe I:
     A:
       - Durch eine falsche Atemtechnik ( z.B. durch flaches, hastiges Atmen )
   3:
-    Q: Wie lange kann ein Mensch ohne Sauerstoff ( Atmung ) leben?
+    Q: Wie lange kann ein Mensch ohne Sauerstoff (Atmung) leben?
     A:
       - Etwa 3 Minuten
   4:
@@ -2049,7 +2049,7 @@ ASLP Stufe I:
   5:
     Q: Welches Atemgift wirkt auf die äußere Atmung?
     A:
-      - Kohlenstoffdioxid ( CO2 )
+      - Kohlenstoffdioxid (CO2)
   6:
     Q: Was sind Atemschutzgeräte?
     A:
@@ -2063,43 +2063,43 @@ ASLP Stufe I:
     A:
       - Nach jeder Verwendung
   9:
-    Q: Wie wird die Dichtprüfung bei der Atemmaske durchgeführt?
+    Q: Wie wird die Dichtprüfung bei der Atemmaske durchgeführt?
     A:
-      - Das Anschlussstück wird mit dem Handballen abgedichtet, gleichzeitig wird eingeatmet. Es darf dabei keine einströmende Luft spürbar sein.
+      - Das Anschlussstück wird mit dem Handballen abgedichtet, gleichzeitig wird eingeatmet. Es darf dabei keine einströmende Luft spürbar sein.
   10:
     Q: Wo darf man Filtergeräte nicht verwenden?
     A:
-      - Bei Bränden in geschlossenen Räumen ( CO ), bei Sauerstoffmangel, bei Schadstoffanteil über 0,5 Vol.%
+      - Bei Bränden in geschlossenen Räumen (CO), bei Sauerstoffmangel, bei Schadstoffanteil über 0,5 Vol.%
   11:
-    Q: Welche Kurzprüfungen müssen nach einem Flaschenwechsel durchgeführt werden?
+    Q: Welche Kurzprüfungen müssen nach einem Flaschenwechsel durchgeführt werden?
     A:
-      - Flaschendruckprüfung, Hochdruckdichtprüfung, Überprüfung der Restluftwarneinrichtung, Sichtprüfung (Begurtung etc.)
+      - Flaschendruckprüfung, Hochdruckdichtprüfung, Überprüfung der Restluftwarneinrichtung, Sichtprüfung (Begurtung etc.)
   12:
-    Q: Wie viel Druckabfall darf bei der Hochdruckdichtprüfung innerhalb einer Minute sein?
+    Q: Wie viel Druckabfall darf bei der Hochdruckdichtprüfung innerhalb einer Minute sein?
     A:
       - Keiner, höchstens ein Teilstrich am Manometer (10 bar)
   13:
-    Q: Wie viel Mindestdruck müssen Pressluftatmer haben, um einsatzbereit zu sein?
+    Q: Wie viel Mindestdruck müssen Pressluftatmer haben, um einsatzbereit zu sein?
     A:
       - 180 bar beim 200 bar Gerät und 270 bar beim 300 bar Gerät
   14:
-    Q: Was sind die Voraussetzungen für einen Flash Over?
+    Q: Was sind die Voraussetzungen für einen Flash Over?
     A:
-      - genügend Sauerstoff und Brandlast im Raum
+      - genügend Sauerstoff und Brandlast im Raum
   15:
-    Q: Was sind die Voraussetzungen für einen Backdraft?
+    Q: Was sind die Voraussetzungen für einen Backdraft?
     A:
-      - Im Brandraum herrscht Sauerstoffmangel, genügend brennbare Gase, Pyrolyseprodukte und eine Temperatur größer der Zündtemperatur der Gase
+      - Im Brandraum herrscht Sauerstoffmangel, genügend brennbare Gase, Pyrolyseprodukte und eine Temperatur größer der Zündtemperatur der Gase
   16:
-    Q: Was sind die Ziele der Brandrauchkühlung?
+    Q: Was sind die Ziele der Brandrauchkühlung?
     A:
-      - Wasserdampf entsteht, Zündfähigkeit und die Pyrolyse wird unterbunden
+      - Wasserdampf entsteht, Zündfähigkeit und die Pyrolyse wird unterbunden
   17:
-    Q: Wie oft muss jeder Atemschutzgeräteträger eine Atemschutzübung machen?
+    Q: Wie oft muss jeder Atemschutzgeräteträger eine Atemschutzübung machen?
     A:
       - 2 Übungen im Jahr, ÖFAST wird als sinnvolle Übung angerechnet
   18:
-    Q: Wie sichert sich ein Atemschutztrupp seinen Rückmarschweg?
+    Q: Wie sichert sich ein Atemschutztrupp seinen Rückmarschweg?
     A:
       - Mittels Schlauchleitung oder Leine
   19:
@@ -2107,25 +2107,25 @@ ASLP Stufe I:
     A:
       - Drei
   20:
-    Q: Wie erfolgt die Berechnung des Rückzugzeitpunktes mittels Manometer?
+    Q: Wie erfolgt die Berechnung des Rückzugzeitpunktes mittels Manometer?
     A:
-      - Rückzugzeitpunkt = Verbrauchte Luft beim Anmarsch + 100 % Reserve
+      - Rückzugzeitpunkt = Verbrauchte Luft beim Anmarsch + 100 % Reserve
   21:
     Q: Warum darf ein Flaschenwechsel nicht bei Regen vorgenommen werden?
     A:
       - Wegen Vereisungsgefahr im Druckminderer und Flaschenventil
   22:
-    Q: Wie verhält sich der Atemschutztrupp, wenn bei einem Mann die Restluftwarneinrichtung ( Signalpfeife ) anspricht?
+    Q: Wie verhält sich der Atemschutztrupp, wenn bei einem Mann die Restluftwarneinrichtung (Signalpfeife) anspricht?
     A:
-      - Es wird sofort der gemeinsame Rückzug angetreten
+      - Es wird sofort der gemeinsame Rückzug angetreten
   23:
-    Q: Welche Aufgabe hat der Truppführer eines Atemschutztrupps?
+    Q: Welche Aufgabe hat der Truppführer eines Atemschutztrupps?
     A:
-      - Verantwortlich für den gesamten Trupp
+      - Verantwortlich für den gesamten Trupp
   24:
     Q: Wann darf ein Atemschutzgeräteträger nicht eingesetzt werden?
     A:
-      - Wenn er unter Alkoholeinfluss steht, krank ist oder sich den körperlichen und geistigen Anforderungen des Einsatzes nicht gewachsen fühlt
+      - Wenn er unter Alkoholeinfluss steht, krank ist oder sich den körperlichen und geistigen Anforderungen des Einsatzes nicht gewachsen fühlt
   25:
     Q: Warum ist ein Pressluftatmer mit einer Restluftwarneinrichtung ausgestattet?
     A:
@@ -2133,15 +2133,15 @@ ASLP Stufe I:
   26:
     Q: Welche Aufgabe hat der Rettungstrupp beim Atemschutzeinsatz?
     A:
-      - Er muss für Notfälle bereitstehen.
+      - Er muss für Notfälle bereitstehen.
   27:
-    Q: Wo meldet sich der aus dem Einsatz kommende Atemschutztrupp zurück?
+    Q: Wo meldet sich der aus dem Einsatz kommende Atemschutztrupp zurück?
     A:
-      - Zuerst beim Gruppenkommandanten, dann beim Leiter des Atemschutz-sammelplatzes
+      - Zuerst beim Gruppenkommandanten, dann beim Leiter des Atemschutzsammelplatzes
   28:
-    Q: Wie weit soll der Rettungstrupp ausgerüstet sein?
+    Q: Wie weit soll der Rettungstrupp ausgerüstet sein?
     A:
-      - Komplett ausgerüstet, Maske angelegt, Flasche(n) aufgedreht
+      - Komplett ausgerüstet, Maske angelegt, Flasche(n) aufgedreht
   29:
     Q: Wie viel Luft benötigt man bei mittelschwerer Arbeit mit einem Pressluftatmer?
     A:
@@ -2151,9 +2151,9 @@ ASLP Stufe II:
   30:
     Q: Was ist bei Einsätzen in verqualmten Räumen zu beachten?
     A:
-      - Gebückt oder kriechend vorgehen, Rückmarschweg sichern und zusammenbleiben
+      - Gebückt oder kriechend vorgehen, Rückmarschweg sichern und zusammenbleiben
   31:
-    Q: Was ist Kohlenmonoxid für ein Gas und wie wirkt es?
+    Q: Was ist Kohlenmonoxid für ein Gas und wie wirkt es?
     A:
       - Blut- und Nervengift, es verhindert den Sauerstofftransport im Blut
   32:
@@ -2161,7 +2161,7 @@ ASLP Stufe II:
     A:
       - Nur mit speziellen Messgeräten
   33:
-    Q: Woran erkennt man eine günstige Atemtechnik?
+    Q: Woran erkennt man eine günstige Atemtechnik?
     A:
       - Am ruhigen Aus- und Einatmen
   34:
@@ -2171,7 +2171,7 @@ ASLP Stufe II:
   35:
     Q: Was geschieht mit der Atemluft in der Lunge?
     A:
-      - Ein Teil des Sauerstoffes geht in das Blut über, die restliche Atemluft wird wieder ausgeatmet.
+      - Ein Teil des Sauerstoffes geht in das Blut über, die restliche Atemluft wird wieder ausgeatmet.
   36:
     Q: Kann auf Atemschutz verzichtet werden, wenn bestimmte physikalische Eigenschaften (z.B. brennbar, wasserlöslich) eines Atemgiftes bekannt sind?
     A:
@@ -2189,7 +2189,7 @@ ASLP Stufe II:
     A:
       - Die Landesatemschutzzentrale bzw. autorisierte Atemschutzwerkstätten
   40:
-    Q: In welchen Zeitabständen müssen Atemschutzgeräte grundüberholt werden?
+    Q: In welchen Zeitabständen müssen Atemschutzgeräte grundüberholt werden?
     A:
       - Alle 10 Jahre
   41:
@@ -2197,7 +2197,7 @@ ASLP Stufe II:
     A:
       - Er gibt dem Geräteträger die Menge Luft, welche er jeweils benötigt.
   42:
-    Q: Schützt ein Atemfilter gegen höhere Konzentrationen von Atemgiften?
+    Q: Schützt ein Atemfilter gegen höhere Konzentrationen von Atemgiften?
     A:
       - Grundsätzlich nein
   43:
@@ -2205,31 +2205,31 @@ ASLP Stufe II:
     A:
       - Damit ein Schutz vor Gasen und Partikeln gegeben ist
   44:
-    Q: Schützen Filtergeräte gegen Sauerstoffmangel?
+    Q: Schützen Filtergeräte gegen Sauerstoffmangel?
     A:
       - Nein
   45:
-    Q: Wogegen schützt die Fluchthaube?
+    Q: Wogegen schützt die Fluchthaube?
     A:
       - Gegen verschiedene Atemgifte einschließlich Kohlenstoffmonoxid
   46:
-    Q: Welcher Bauteil der Atemmaske sorgt für gute Sprechverbindung?
+    Q: Welcher Bauteil der Atemmaske sorgt für gute Sprechverbindung?
     A:
       - Die in der Maske eingebaute Sprechmembrane
   47:
-    Q: Welches Ventil ist für die Dichtheit der Maske besonders wichtig?
+    Q: Welches Ventil ist für die Dichtheit der Maske besonders wichtig?
     A:
       - Das Ausatemventil
   48:
-    Q: Wer führt die Pflege der Atemmaske nach der Verwendung durch?
+    Q: Wer führt die Pflege der Atemmaske nach der Verwendung durch?
     A:
-      - Jeder Geräteträger, der Atemschutzwart überwacht und prüft
+      - Jeder Geräteträger, der Atemschutzwart überwacht und prüft
   49:
     Q: Warum sind Atemmasken mit einer Innenmaske ausgestattet?
     A:
       - Der Totraum wird verkleinert. Die eingebauten Steuerventile regeln den Luftstrom in der Maske, dadurch wird das Beschlagen der Innenseite der Sichtscheibe verhindert.
   50:
-    Q: Woran erkennt man eine durchgeführte Jahresprüfung eines Pressluftatmer?
+    Q: Woran erkennt man eine durchgeführte Jahresprüfung eines Pressluftatmers?
     A:
       - An einer Plakette mit Datum
   51:
@@ -2245,13 +2245,13 @@ ASLP Stufe II:
     A:
       - Es muss als Einsatzreserve außerhalb ein Trupp mehr vorhanden sein, als innerhalb eingesetzt sind
   54:
-    Q: Wer unterstützt den Ortsfeuerwehrkommandanten auf Ortsebene bei der Weiterbildung der Atemschutzgeräteträger?
+    Q: Wer unterstützt den Ortsfeuerwehrkommandanten auf Ortsebene bei der Weiterbildung der Atemschutzgeräteträger?
     A:
       - Der Atemschutzwart
   55:
-    Q: Welche Prüfungen hat der Atemschutzwart monatlich durchzuführen?
+    Q: Welche Prüfungen hat der Atemschutzwart monatlich durchzuführen?
     A:
-      - Sichtprüfungen, Kurzprüfungen, Druck der Reserveflaschen
+      - Sichtprüfungen, Kurzprüfungen, Druck der Reserveflaschen
   56:
     Q: Was bedeutet die obere Ziffer bei einer orangen Warntafel?
     A:
@@ -2259,17 +2259,17 @@ ASLP Stufe II:
   57:
     Q: Was bedeutet ein „X“ vor der Gefahrnummer?
     A:
-      - Der Stoff darf nicht mit Wasser in Berührung kommen.
+      - Der Stoff darf nicht mit Wasser in Berührung kommen.
   58:
     Q: Wie kann man eine Atemkrise vermeiden?
     A:
       - Durch festes, konzentriertes Ausatmen (CO2 Anteil im Blut wird gesenkt)
   59:
-    Q: Wie erkenne ich die Grundüberholung (10-jährige Prüfung) an einem Pressluftatmer?
+    Q: Wie erkenne ich die Grundüberholung (10-jährige Prüfung) an einem Pressluftatmer?
     A:
       - An der Datumsmarke am Druckminderer
   60:
-    Q: Mindestalter für Atemschutzgeräteträger?
+    Q: Mindestalter für Atemschutzgeräteträger?
     A:
       - Vollendetes 18. Lebensjahr
 
@@ -2281,9 +2281,9 @@ ASLP Stufe III:
   2:
     Q: Wie kann eine Atemkrise entstehen?
     A:
-      - Durch eine falsche Atemtechnik ( z.B. durch flaches, hastiges Atmen )
+      - Durch eine falsche Atemtechnik (z.B. durch flaches, hastiges Atmen)
   3:
-    Q: Wie lange kann ein Mensch ohne Sauerstoff ( Atmung ) leben?
+    Q: Wie lange kann ein Mensch ohne Sauerstoff (Atmung) leben?
     A:
       - Etwa 3 Minuten
   4:
@@ -2293,9 +2293,9 @@ ASLP Stufe III:
   5:
     Q: Welches Atemgift wirkt auf die äußere Atmung?
     A:
-      - Kohlenstoffdioxid ( CO2 )
+      - Kohlenstoffdioxid (CO2)
   6:
-    Q: Was ist Kohlenmonoxyd für ein Gas, und wie wirkt es?
+    Q: Was ist Kohlenmonoxid für ein Gas, und wie wirkt es?
     A:
       - Blut- und Nervengift, es verhindert den Sauerstofftransport im Blut
   7:
@@ -2303,7 +2303,7 @@ ASLP Stufe III:
     A:
       - Nur mit speziellen Messgeräten
   8:
-    Q: Woran erkennt man eine günstige Atemtechnik?
+    Q: Woran erkennt man eine günstige Atemtechnik?
     A:
       - Am ruhigen Aus- und Einatmen
   9:
@@ -2313,7 +2313,7 @@ ASLP Stufe III:
   10:
     Q: Was geschieht mit der Atemluft in der Lunge?
     A:
-      - Ein Teil des Sauerstoffes geht in das Blut über, die restliche Atemluft wird wieder ausgeatmet.
+      - Ein Teil des Sauerstoffes geht in das Blut über, die restliche Atemluft wird wieder ausgeatmet.
   11:
     Q: Kann auf Atemschutz verzichtet werden, wenn bestimmte physikalische Eigenschaften (z.B. brennbar, wasserlöslich) eines Atemgiftes bekannt sind?
     A:
@@ -2331,27 +2331,27 @@ ASLP Stufe III:
     A:
       - Macht den Träger unabhängig von der Umgebungsatmosphäre
   15:
-    Q: Wann muss man Atemschutzmasken reinigen ?
+    Q: Wann muss man Atemschutzmasken reinigen?
     A:
       - Nach jeder Verwendung
   16:
-    Q: Wie wird die Dichtprüfung bei der Atemmaske durchgeführt ?
+    Q: Wie wird die Dichtprüfung bei der Atemmaske durchgeführt?
     A:
-      - Das Anschlussstück wird mit dem Handballen abgedichtet, gleichzeitig wird eingeatmet. Es darf dabei keine einströmende Luft spürbar sein.
+      - Das Anschlussstück wird mit dem Handballen abgedichtet, gleichzeitig wird eingeatmet. Es darf dabei keine einströmende Luft spürbar sein.
   17:
     Q: Wo darf man Filtergeräte nicht verwenden?
     A:
-      - Bei Bränden in geschlossenen Räumen ( CO ), bei Sauerstoffmangel, bei Schadstoffanteil über 0,5 Vol.%
+      - Bei Bränden in geschlossenen Räumen (CO), bei Sauerstoffmangel, bei Schadstoffanteil über 0,5 Vol.%
   18:
-    Q: Welche Kurzprüfungen müssen nach einem Flaschenwechsel durchgeführt werden?
+    Q: Welche Kurzprüfungen müssen nach einem Flaschenwechsel durchgeführt werden?
     A:
-      - Flaschendruckprüfung, Hochdruckdichtprüfung, Überprüfung der Restluftwarneinrichtung, Sichtprüfung (Begurtung etc.)
+      - Flaschendruckprüfung, Hochdruckdichtprüfung, Überprüfung der Restluftwarneinrichtung, Sichtprüfung (Begurtung etc.)
   19:
-    Q: Wie viel Druckabfall darf bei der Hochdruckdichtprüfung innerhalb einer Minute sein?
+    Q: Wie viel Druckabfall darf bei der Hochdruckdichtprüfung innerhalb einer Minute sein?
     A:
       - Keiner, höchstens ein Teilstrich am Manometer (10 bar)
   20:
-    Q: Wie viel Mindestdruck müssen Pressluftatmer haben, um einsatzbereit zu sein?
+    Q: Wie viel Mindestdruck müssen Pressluftatmer haben, um einsatzbereit zu sein?
     A:
       - 180 bar beim 200 bar Gerät und 270 bar beim 300 bar Gerät
   21:
@@ -2363,7 +2363,7 @@ ASLP Stufe III:
     A:
       - Die Landesatemschutzzentrale bzw. autorisierte Atemschutzwerkstätten
   23:
-    Q: In welchen Zeitabständen müssen Atemschutzgeräte grundüberholt werden?
+    Q: In welchen Zeitabständen müssen Atemschutzgeräte grundüberholt werden?
     A:
       - Alle 10 Jahre
   24:
@@ -2371,7 +2371,7 @@ ASLP Stufe III:
     A:
       - Er gibt dem Geräteträger die Menge Luft, welche er jeweils benötigt.
   25:
-    Q: Schützt ein Atemfilter gegen höhere Konzentrationen von Atemgiften?
+    Q: Schützt ein Atemfilter gegen höhere Konzentrationen von Atemgiften?
     A:
       - Grundsätzlich “Nein“
   26:
@@ -2379,35 +2379,35 @@ ASLP Stufe III:
     A:
       - Damit ein Schutz vor Gasen und Partikeln gegeben ist
   27:
-    Q: Schützen Filtergeräte gegen Sauerstoffmangel?
+    Q: Schützen Filtergeräte gegen Sauerstoffmangel?
     A:
       - Nein
   28:
-    Q: Wogegen schützt die Fluchthaube?
+    Q: Wogegen schützt die Fluchthaube?
     A:
       - Gegen verschiedene Atemgifte einschließlich Kohlenstoffmonoxid
   29:
-    Q: Welcher Bauteil der Atemmaske sorgt für gute Sprechverbindung?
+    Q: Welcher Bauteil der Atemmaske sorgt für gute Sprechverbindung?
     A:
       - Die in der Maske eingebaute Sprechmembrane
   30:
-    Q: Welches Ventil ist für die Dichtheit der Maske besonders wichtig?
+    Q: Welches Ventil ist für die Dichtheit der Maske besonders wichtig?
     A:
       - Das Ausatemventil
   31:
-    Q: Wer führt die Pflege der Atemmaske nach der Verwendung durch?
+    Q: Wer führt die Pflege der Atemmaske nach der Verwendung durch?
     A:
-      - Jeder Geräteträger, der Atemschutzwart überwacht und prüft
+      - Jeder Geräteträger, der Atemschutzwart überwacht und prüft
   32:
     Q: Warum sind Atemmasken mit einer Innenmaske ausgestattet?
     A:
       - Der Totraum wird verkleinert. Die eingebauten Steuerventile regeln den Luftstrom in der Maske, dadurch wird das Beschlagen der Innenseite der Sichtscheibe verhindert.
   33:
-    Q: Woran erkennt man eine durchgeführte Jahresprüfung eines Pressluftatmers?
+    Q: Woran erkennt man eine durchgeführte Jahresprüfung eines Pressluftatmers?
     A:
       - An einer Plakette mit Datum
   34:
-    Q: Wann müssen Pressluftflaschen ( Stahl ) vom TÜV überprüft werden?
+    Q: Wann müssen Pressluftflaschen (Stahl) vom TÜV überprüft werden?
     A:
       - Alle 10 Jahre
   35:
@@ -2419,7 +2419,7 @@ ASLP Stufe III:
     A:
       - 10 - 30 Minuten
   37:
-    Q: Welche Atemluftversorgung benötigt man bei gasdichten Vollschutzanzügen?
+    Q: Welche Atemluftversorgung benötigt man bei gasdichten Vollschutzanzügen?
     A:
       - Pressluftatmer mit akustischer Restluftwarnung oder Druckluftschlauchgeräte
   38:
@@ -2427,27 +2427,27 @@ ASLP Stufe III:
     A:
       - Es wird dringend Hilfe benötigt.
   39:
-    Q: Wann ist ein Schutzanzug der Schutzstufe 3 zu überprüfen?
+    Q: Wann ist ein Schutzanzug der Schutzstufe 3 zu überprüfen?
     A:
       - Nach jeder Verwendung, ansonsten 1x jährlich
   40:
-    Q: Wie oft muss jeder Atemschutzgeräteträger eine Atemschutzübung machen?
+    Q: Wie oft muss jeder Atemschutzgeräteträger eine Atemschutzübung machen?
     A:
       - 2 Übungen im Jahr, ÖFAST wird als sinnvolle Übung angerechnet
   41:
-    Q: Was sind die Voraussetzungen für einen Flash Over?
+    Q: Was sind die Voraussetzungen für einen Flash Over?
     A:
-      - genügend Sauerstoff und Brandlast im Raum
+      - genügend Sauerstoff und Brandlast im Raum
   42:
-    Q: Was sind die Voraussetzungen für einen Backdraft?
+    Q: Was sind die Voraussetzungen für einen Backdraft?
     A:
       - Im Brandraum herrscht Sauerstoffmangel
   43:
-    Q: Was sind die Ziele der Brandrauchkühlung?
+    Q: Was sind die Ziele der Brandrauchkühlung?
     A:
-      - Wasserdampf entsteht, Zündfähigkeit und die Pyrolyse wird unterbunden
+      - Wasserdampf entsteht, Zündfähigkeit und die Pyrolyse wird unterbunden
   44:
-    Q: Wie sichert sich ein Atemschutztrupp seinen Rückmarschweg?
+    Q: Wie sichert sich ein Atemschutztrupp seinen Rückmarschweg?
     A:
       - Mittels Schlauchleitung oder Leine
   45:
@@ -2455,25 +2455,25 @@ ASLP Stufe III:
     A:
       - Drei
   46:
-    Q: Wie erfolgt die Berechnung des Rückzugzeitpunktes mittels Manometer?
+    Q: Wie erfolgt die Berechnung des Rückzugzeitpunktes mittels Manometer?
     A:
-      - Rückmarschzeitpunkt = Verbrauchte Luft des Anmarsches + 100 % Reserve
+      - Rückmarschzeitpunkt = Verbrauchte Luft des Anmarsches + 100 % Reserve
   47:
     Q: Warum darf ein Flaschenwechsel nicht bei Regen vorgenommen werden?
     A:
       - Wegen Vereisungsgefahr im Druckminderer und Flaschenventil
   48:
-    Q: Wie verhält sich der Atemschutztrupp, wenn bei einem Mann die Restluftwarneinrichtung ( Signalpfeife ) anspricht?
+    Q: Wie verhält sich der Atemschutztrupp, wenn bei einem Mann die Restluftwarneinrichtung (Signalpfeife) anspricht?
     A:
-      - Es wird sofort der gemeinsame Rückzug angetreten.
+      - Es wird sofort der gemeinsame Rückzug angetreten.
   49:
-    Q: Welche Aufgabe hat der Truppführer eines Atemschutztrupps?
+    Q: Welche Aufgabe hat der Truppführer eines Atemschutztrupps?
     A:
-      - Verantwortlich für den gesamten Trupp
+      - Verantwortlich für den gesamten Trupp
   50:
     Q: Wann darf ein Atemschutzgeräteträger nicht eingesetzt werden?
     A:
-      - Wenn er unter Alkoholeinfluss steht, krank ist oder sich den körperlichen und geistigen Anforderungen des Einsatzes nicht gewachsen fühlt
+      - Wenn er unter Alkoholeinfluss steht, krank ist oder sich den körperlichen und geistigen Anforderungen des Einsatzes nicht gewachsen fühlt
   51:
     Q: Warum ist ein Pressluftatmer mit einer Restluftwarneinrichtung ausgestattet?
     A:
@@ -2481,15 +2481,15 @@ ASLP Stufe III:
   52:
     Q: Welche Aufgabe hat der Rettungstrupp beim Atemschutzeinsatz?
     A:
-      - Er muss für Notfälle bereitstehen.
+      - Er muss für Notfälle bereitstehen.
   53:
-    Q: Wo meldet sich der aus dem Einsatz kommende Atemschutztrupp zurück?
+    Q: Wo meldet sich der aus dem Einsatz kommende Atemschutztrupp zurück?
     A:
       - Zuerst beim Gruppenkommandanten, dann beim Leiter des Atemschutzsammelplatzes
   54:
-    Q: Wie weit soll der Rettungstrupp ausgerüstet sein?
+    Q: Wie weit soll der Rettungstrupp ausgerüstet sein?
     A:
-      - Komplett ausgerüstet, Maske angelegt, Flasche aufgedreht
+      - Komplett ausgerüstet, Maske angelegt, Flasche aufgedreht
   55:
     Q: Wie viel Luft benötigt man bei mittelschwerer Arbeit mit einem Pressluftatmer?
     A:
@@ -2497,7 +2497,7 @@ ASLP Stufe III:
   56:
     Q: Was ist bei Einsätzen in verqualmten Räumen zu beachten?
     A:
-      - Gebückt oder im Seitkriechgang vorgehen, Rückzugsicherung und beisammenbleiben
+      - Gebückt oder im Seitkriechgang vorgehen, Rückzugsicherung und beisammenbleiben
   57:
     Q: Woran ist ein Pressluftatmer gebunden?
     A:
@@ -2511,13 +2511,13 @@ ASLP Stufe III:
     A:
       - Es muss als Einsatzreserve außerhalb ein Trupp mehr vorhanden sein, als innerhalb eingesetzt sind
   60:
-    Q: Wer unterstützt den Ortsfeuerwehrkommandanten auf Ortsebene bei der Weiterbildung der Atemschutzgeräteträger?
+    Q: Wer unterstützt den Ortsfeuerwehrkommandanten auf Ortsebene bei der Weiterbildung der Atemschutzgeräteträger?
     A:
       - Der Atemschutzwart
   61:
-    Q: Welche Prüfungen hat der Atemschutzwart monatlich durchzuführen?
+    Q: Welche Prüfungen hat der Atemschutzwart monatlich durchzuführen?
     A:
-      - Sichtprüfungen, Kurzprüfungen, Druck der Reserveflaschen
+      - Sichtprüfungen, Kurzprüfungen, Druck der Reserveflaschen
   62:
     Q: Was bedeutet die obere Ziffer bei einer orangen Warntafel?
     A:
@@ -2525,21 +2525,21 @@ ASLP Stufe III:
   63:
     Q: Was bedeutet ein „X“ vor der Gefahrnummer?
     A:
-      - Der Stoff darf nicht mit Wasser in Berührung kommen.
+      - Der Stoff darf nicht mit Wasser in Berührung kommen.
   64:
     Q: Wie kann man eine Atemkrise vermeiden?
     A:
       - Durch festes, konzentriertes Ausatmen (CO2 Anteil im Blut wird gesenkt)
   65:
-    Q: Wie erkenne ich die Grundüberholung (10-jährige Prüfung) an einem Pressluftatmer?
+    Q: Wie erkenne ich die Grundüberholung (10-jährige Prüfung) an einem Pressluftatmer?
     A:
       - An der Datumsmarke am Druckminderer
   66:
-    Q: Mindestalter für Atemschutzgeräteträger?
+    Q: Mindestalter für Atemschutzgeräteträger?
     A:
       - Vollendetes 18. Lebensjahr
   67:
-    Q: Welche Bedeutung hat die „GAMS“- Regel der Feuerwehr?
+    Q: Welche Bedeutung hat die „GAMS“-Regel der Feuerwehr?
     A:
       - Gefahr erkennen, Absperren, Menschenrettung, Spezialkräfte anfordern
   68:
@@ -2549,7 +2549,7 @@ ASLP Stufe III:
   69:
     Q: Ein Angriffstrupp dringt in einen Raum ein, der stark verraucht und der Rauch besonders heiß ist. Was ist jetzt sofort zu tun?
     A:
-      - Den heißen Rauch sofort mit Wassersprühstrahl kühlen, um einen Flash-Over bzw. Backdraft zu verhindern.
+      - Den heißen Rauch sofort mit Wassersprühstrahl kühlen, um einen Flash-Over bzw. Backdraft zu verhindern.
   70:
     Q: Welche Umstände schließen einen Innenangriff aus?
     A:
@@ -2563,11 +2563,11 @@ ASLP Stufe III:
     A:
       - Kastanienbraun
   73:
-    Q: Mit welcher Farbe sind Druckgasflaschen für alle brennbaren Gase, außer Acetylen, gekennzeichnet?
+    Q: Mit welcher Farbe sind Druckgasflaschen für alle brennbaren Gase, außer Acetylen, gekennzeichnet?
     A:
       - Rot
   74:
-    Q: Ein Eisenträger glüht dunkelrot. Welche Temperatur hat er?
+    Q: Ein Eisenträger glüht dunkelrot. Welche Temperatur hat er?
     A:
       - 700 Grad Celsius
   75:
@@ -2583,7 +2583,7 @@ ASLP Stufe III:
     A:
       - Mit einem Explosimeter
   78:
-    Q: Was bedeutet die Stoffnummer ( UN-Nummer )?
+    Q: Was bedeutet die Stoffnummer (UN-Nummer)?
     A:
       - Sie kennzeichnet den Stoff
   79:
@@ -2597,11 +2597,11 @@ ASLP Stufe III:
   81:
     Q: Was ist beim Erkennen von Gefahr in Verzug von gefährlichen Stoffen zu tun?
     A:
-      - Sofortiger Rückzug der Trupps und Meldung beim Einsatzleiter
+      - Sofortiger Rückzug der Trupps und Meldung beim Einsatzleiter
   82:
     Q: Welcher Sicherheitsabstand ist bei Brandbekämpfung im Bereich elektr. Anlagen mit Spannungen bis 1000 Volt beim Einsatz von C-Mehrzweckstrahlrohren einzuhalten?
     A:
-      - Sprühstrahl 1m / Vollstrahl 5 m
+      - Sprühstrahl 1m / Vollstrahl 5 m
   83:
     Q: Welches Löschmittel darf bei Fettbränden nicht eingesetzt werden?
     A:
@@ -2609,7 +2609,7 @@ ASLP Stufe III:
   84:
     Q: Welcher Wasserstrahl wird vorzugsweise bei Innenangriffen eingesetzt?
     A:
-      - Sprühstrahl
+      - Sprühstrahl
   85:
     Q: Wie muss eine Verpackung, die gefährlichen Stoffe enthält, gekennzeichnet sein?
     A:
@@ -2621,23 +2621,23 @@ ASLP Stufe III:
   87:
     Q: Wie werden Säuredämpfe niedergeschlagen?
     A:
-      - Mit Wassersprühstrahl
+      - Mit Wassersprühstrahl
   88:
-    Q: Welche Stoffe neigen zu Selbstentzündung?
+    Q: Welche Stoffe neigen zu Selbstentzündung?
     A:
       - Phosphor, in Öl getränkte Putzwolle, feuchtes Heu
   89:
     Q: Welches ist das Hauptlöschverfahren bei Glutbränden?
     A:
-      - Abkühlen
+      - Abkühlen
   90:
     Q: Wo ist bei einem Brand die Kohlenmonoxydbildung besonders groß?
     A:
       - Bei Bränden in geschlossenen Räumen, bei Kunststoffbränden
   91:
-    Q: Wo benützt man Einsatzpläne?
+    Q: Wo benützt man Einsatzpläne?
     A:
-      - Für besondere Objekte mit erhöhtem Gefahrenpotential
+      - Für besondere Objekte mit erhöhtem Gefahrenpotential
   92:
     Q: Wann muss gewaltsam in eine Brandstelle eingedrungen werden?
     A:
@@ -2661,9 +2661,9 @@ ASLP Stufe III:
   96:
     Q: Welche Maßnahmen sind bei Bränden im Bereich von Druckgasbehältern zu treffen?
     A:
-      - Aus sicherer Deckung heraus kühlen
+      - Aus sicherer Deckung heraus kühlen
   97:
-    Q: Worauf beruht sich die abkühlende Löschwirkung von Wasser?
+    Q: Worauf beruht sich die abkühlende Löschwirkung von Wasser?
     A:
       - Auf dem großen spezifischen Wärmebindungsvermögen
   98:
@@ -2671,11 +2671,11 @@ ASLP Stufe III:
     A:
       - Teil einer Einsatzstelle, der von der Einsatzleitung einer Einheit zugewiesen wird
   99:
-    Q: Welche brennbaren Stoffe dürfen nicht mit Wasser gelöscht werden?
+    Q: Welche brennbaren Stoffe dürfen nicht mit Wasser gelöscht werden?
     A:
       - Benzin, Leichtmetalle, Wachs, Fett
   100:
-    Q: Wann müssen Schutzhandschuhe getragen werden?
+    Q: Wann müssen Schutzhandschuhe getragen werden?
     A:
       - Bei allen Tätigkeiten im Einsatz und bei Übungen
 
@@ -2691,7 +2691,7 @@ BDLP GRKDT Stufe I:
   2:
     Q: Wie geht der Atemschutztrupp in Gebäuden und bei schlechten Sichtverhältnissen vor?
     A:
-      - Mit Beleuchtungsgerät, in gebückter Haltung, gesichert durch eine unter Druck stehende Löschleitung oder durch Leinen.
+      - Mit Beleuchtungsgerät, in gebückter Haltung, gesichert durch eine unter Druck stehende Löschleitung oder durch Leinen.
   3:
     Q: Welche Aufgabe hat ein Atemschutzsammelplatz?
     A:
@@ -2719,7 +2719,7 @@ BDLP GRKDT Stufe I:
   9:
     Q: Was ist eine taktische Einheit?
     A:
-      - Eine Einheit, die aufgrund ihrer Mannschaftsstärke und Ausrüstung in der Lage ist, einen Einsatzauftrag selbständig zu erfüllen.
+      - Eine Einheit, die aufgrund ihrer Mannschaftsstärke und Ausrüstung in der Lage ist, einen Einsatzauftrag selbständig zu erfüllen.
   10:
     Q: Welche taktischen Einheiten gibt es bei der Feuerwehr?
     A:
@@ -2731,7 +2731,7 @@ BDLP GRKDT Stufe I:
         Eigene Lage\n
         Allgemeine Lage"
   12:
-    Q: In welchem Modus wird bei Innenangriffen die Kommunikation mit Atemschutztrupps durchgeführt, wenn keine Gebäudefunkanlage vorhanden ist?
+    Q: In welchem Modus wird bei Innenangriffen die Kommunikation mit Atemschutztrupps durchgeführt, wenn keine Gebäudefunkanlage vorhanden ist?
     A:
       - Im DMO-Modus.
   13:
@@ -2754,7 +2754,7 @@ BDLP GRKDT Stufe I:
   16:
     Q: Worauf ist bei der Aufstellung der Feuerwehrfahrzeuge am Einsatzort zu achten?
     A:
-      - Fahrzeuge sind außerhalb des Gefahrenbereiches in Fluchtrichtung aufzustellen, Zufahrtswege dürfen nicht verstellt werden.
+      - Fahrzeuge sind außerhalb des Gefahrenbereiches in Fluchtrichtung aufzustellen, Zufahrtswege dürfen nicht verstellt werden.
   17:
     Q: Was bedeutet die GAMS-Regel?
     A:
@@ -2765,7 +2765,7 @@ BDLP GRKDT Stufe I:
   18:
     Q: Welche Aufgaben hat der Angriffstrupp?
     A:
-      - "Rettung und Bergung von Menschen, Tieren und Sachgütern\n
+      - "Rettung und Bergung von Menschen, Tieren und Sachgütern\n
         Setzt den Verteiler\n
         Nimmt die erste Löschleitung vor (1. Rohr)"
   19:
@@ -2774,32 +2774,32 @@ BDLP GRKDT Stufe I:
       - "Bringt mit dem Schlauchtrupp die TS in Stellung und stellt die Saugleitung her\n
         Stellt die Verbindung vom Hydrant zum TLF her\n
         Nimmt die zweite Löschleitung vor (2.Rohr)\n
-        Unterstützt den Angriffstrupp beim B-Rohr\n
+        Unterstützt den Angriffstrupp beim B-Rohr\n
         Nimmt beim Schaumangriff den Zumischer und die Schaummittelkanister vor"
   20:
     Q: Welche Aufgaben hat der Schlauchtrupp?
     A:
       - "Bringt mit dem Wassertrupp die TS in Stellung und stellt die Saugleitung her\n
-        Verlegt Schlauchleitungen, setzt Schlauchbrücken und überwacht diese\n
+        Verlegt Schlauchleitungen, setzt Schlauchbrücken und überwacht diese\n
         Besetzt den Verteiler\n
         Nimmt die dritte Löschleitung vor (3.Rohr)"
   21:
     Q: Wie werden das Auffinden der Brandmeldezentrale und das Eindringen in das Objekt nach einem Brandmeldealarm erleichtert?
     A:
-      - Durch eine orange Blitzleuchte und einen Schlüsselsafe.
+      - Durch eine orange Blitzleuchte und einen Schlüsselsafe.
   22:
     Q: Bei welchen Einsätzen ist Wasser als Löschmittel ungeeignet?
     A:
       - Rauchfangbrand, Metallbrand, Mineralölbrand, Fettbrand, Gefährliche Stoffe mit der Kennzeichnung „X“ in der Warntafel.
   23:
-    Q: Bei welchen Bränden wird der Kühleffekt und bei welchen der Stickeffekt wirksam?
+    Q: Bei welchen Bränden wird der Kühleffekt und bei welchen der Stickeffekt wirksam?
     A:
-      - "Kühleffekt - hauptsächlich bei Glutbränden\n
-        Stickeffekt - hauptsächlich bei Flüssigkeitsbränden"
+      - "Kühleffekt - hauptsächlich bei Glutbränden\n
+        Stickeffekt - hauptsächlich bei Flüssigkeitsbränden"
   24:
     Q: Wie wird Löschschaum erzeugt?
     A:
-      - Durch Beimengen von Schaummittel zum Löschwasser unter anschließender Zuführung von Luft.
+      - Durch Beimengen von Schaummittel zum Löschwasser unter anschließender Zuführung von Luft.
   25:
     Q: Wann spricht die akustische Warneinrichtung beim Pressluftatmer an?
     A:
@@ -2811,9 +2811,9 @@ BDLP GRKDT Stufe II:
     A:
       - Ausbreitung, Atemgifte, Atomare Strahlung, Angstreaktion, Chemikalien, Explosion, Einsturz, Elektrizität und Erkrankung/Verletzung.
   32:
-    Q: In welchem Umkreis von ausgeflossenen brennbaren Flüssigkeiten ist jede Zündquelle zu vermeiden?
+    Q: In welchem Umkreis von ausgeflossenen brennbaren Flüssigkeiten ist jede Zündquelle zu vermeiden?
     A:
-      - In der Gefahrenzone. Windverhältnisse, Gefälle und Temperatur sind zu berücksichtigen.
+      - In der Gefahrenzone. Windverhältnisse, Gefälle und Temperatur sind zu berücksichtigen.
   33:
     Q: Wie muss mit umluftunabhängigen Atemschutzgeräten vorgegangen werden?
     A:
@@ -2823,60 +2823,60 @@ BDLP GRKDT Stufe II:
     A:
       - Die vierstellige Nummer dient zur Kennzeichnung des Stoffes (Stoff- oder UN - Nummer).
   35:
-    Q: Was bedeutet es, wenn der Nummer zur Kennzeichnung der Gefahr auf Warntafeln an Fahrzeugen zum Transport gefährlicher Güter der Buchstabe "X" vorausgesetzt wird?
+    Q: Was bedeutet es, wenn der Nummer zur Kennzeichnung der Gefahr auf Warntafeln an Fahrzeugen zum Transport gefährlicher Güter der Buchstabe "X" vorausgesetzt wird?
     A:
-      - Der Stoff darf nicht mit Wasser oder wasserhaltigen Löschmitteln in Berührung gebracht werden, da dieser Stoff mit Wasser in gefährlicher Weise reagiert.
+      - Der Stoff darf nicht mit Wasser oder wasserhaltigen Löschmitteln in Berührung gebracht werden, da dieser Stoff mit Wasser in gefährlicher Weise reagiert.
   36:
     Q: Welche Möglichkeiten gibt es, um die Lage zu erkunden?
     A:
-      - Das Sammeln von Informationen über die Lage durch eigene Feststellung, Meldung vom Erkundungstrupp, vorbereitete Einsatzunterlagen, Berichte von Beteiligten, Rückmeldung von Lageberichten.
+      - Das Sammeln von Informationen über die Lage durch eigene Feststellung, Meldung vom Erkundungstrupp, vorbereitete Einsatzunterlagen, Berichte von Beteiligten, Rückmeldung von Lageberichten.
   37:
-    Q: Wofür sind die Gateway- und Repeater-Funktion?
+    Q: Wofür sind die Gateway- und Repeater-Funktion?
     A:
-      - Die Gateway-Funktion stellt eine Verbindung zwischen TMO und DMO Modus her und erhöht damit die Reichweite im Einsatzgebiet. Die Repeater-Funktion verstärkt die DMO Abdeckung und steht in jedem wasserführenden Fahrzeug (TLFA, RLFA, LFWA) zur Verfügung. Sie wird speziell für Atemschutzeinsätze verwendet.
+      - Die Gateway-Funktion stellt eine Verbindung zwischen TMO und DMO Modus her und erhöht damit die Reichweite im Einsatzgebiet. Die Repeater-Funktion verstärkt die DMO Abdeckung und steht in jedem wasserführenden Fahrzeug (TLFA, RLFA, LFWA) zur Verfügung. Sie wird speziell für Atemschutzeinsätze verwendet.
   38:
-    Q: Wo liegt der hauptsächliche Unterschied zwischen Erd- und Flüssiggas?
+    Q: Wo liegt der hauptsächliche Unterschied zwischen Erd- und Flüssiggas?
     A:
-      - Erdgas ist leichter als Luft, Flüssiggas ist schwerer als Luft
+      - Erdgas ist leichter als Luft, Flüssiggas ist schwerer als Luft
   39:
-    Q: Welche Behelfe und Hilfsmittel sollen der Einsatzleitung zur Verfügung gestellt werden?
+    Q: Welche Behelfe und Hilfsmittel sollen der Einsatzleitung zur Verfügung gestellt werden?
     A:
       - "Löschwasserentnahmestellenplan\n
         Einsatzpläne\n
         Brandschutzpläne\n
-        Material zur Lageführung\n
+        Material zur Lageführung\n
         Nachschlagwerke und Einsatzliteratur"
   40:
     Q: Was bedeutet bei einem Einsatz ein Dauerton mit der Autohupe und welches Verhalten hat dies zur Folge?
     A:
-      - "Es ist ein Rückzugsignal und bedeutet Gefahr im Verzug.\n
+      - "Es ist ein Rückzugsignal und bedeutet Gefahr im Verzug.\n
         Einsatztätigkeiten abbrechen und beim Fahrzeug sammeln.\n
         Feststellen der Vollzähligkeit durch den Gruppenkommandanten."
   41:
     Q: Welche Hauptlöscheffekte gibt es und wie werden sie wirksam?
     A:
-      - "Kühlen: Entzug der Wärme\n
+      - "Kühlen: Entzug der Wärme\n
         Ersticken: Entzug der Luft (des Sauerstoffes)\n
-        Verdünnen Entzug des brennbaren Stoffes\n
+        Verdünnen Entzug des brennbaren Stoffes\n
         Stören: Eingriff in die Verbrennungsreaktion"
   42:
     Q: Welche Arten von Löschschaum gibt es und wo finden sie Verwendung?
     A:
-      - "Schwerschaum - zur Bekämpfung von Flüssigkeitsbränden\n
-        Mittelschaum - zur Bekämpfung von Flüssigkeitsbränden\n
+      - "Schwerschaum - zur Bekämpfung von Flüssigkeitsbränden\n
+        Mittelschaum - zur Bekämpfung von Flüssigkeitsbränden\n
         Leichtschaum - zum Fluten von Räumen"
   43:
     Q: Wie hoch ist der Luftverbrauch unter Atemschutz bei mittelschwerer und schwerer Arbeit?
     A:
       - Bei mittelschwerer Arbeit ca. 50 Liter/Minute, bei schwerer Arbeit ca. 100 Liter/Minute.
   44:
-    Q: Welcher Sicherheitsabstand ist zu unter Spannung stehenden Hochspannungsfreileitungen (über 1.000 Volt) einzuhalten?
+    Q: Welcher Sicherheitsabstand ist zu unter Spannung stehenden Hochspannungsfreileitungen (über 1.000 Volt) einzuhalten?
     A:
       - Im Bereich von Hochspannungsfreileitungen muss ein Sicherheitsabstand von mindestens 5 m eingehalten werden. Dieser Abstand darf mit keinem Körperteil oder Geräteteil (z.B. Leiter oder Einreißhaken) unterschritten werden.
   45:
-    Q: Welcher Sicherheitsabstand ist zu einer gerissenen und den Boden berührenden Hochspannungsfreileitung oder zu Gegenständen (Fahrzeug, Bauwerk, Baum, etc.), die mit der Leitung in  unmittelbarer Verbindung stehen, einzuhalten?
+    Q: Welcher Sicherheitsabstand ist zu einer gerissenen und den Boden berührenden Hochspannungsfreileitung oder zu Gegenständen (Fahrzeug, Bauwerk, Baum, etc.), die mit der Leitung in  unmittelbarer Verbindung stehen, einzuhalten?
     A:
-      - Es ist ein Sicherheitsabstand von mindestens 20 m rund um die Schadensstelle einzuhalten. In diesem Bereich bildet sich, aufgrund der Stromableitung gegen Erde, ein sogenannter Spannungstrichter, der zu einer lebensgefährlichen Schrittspannung führt.
+      - Es ist ein Sicherheitsabstand von mindestens 20 m rund um die Schadensstelle einzuhalten. In diesem Bereich bildet sich, aufgrund der Stromableitung gegen Erde, ein sogenannter Spannungstrichter, der zu einer lebensgefährlichen Schrittspannung führt.
   46:
     Q: Was sind die Nachteile des Leichtschaums?
     A:
@@ -2891,22 +2891,22 @@ BDLP GRKDT Stufe II:
   48:
     Q: Was ist nach dem Anlegen der Atemschutzgeräte zu beachten?
     A:
-      - Eine Funktionskontrolle (Einsatzkurzprüfung) ist durchzuführen.
+      - Eine Funktionskontrolle (Einsatzkurzprüfung) ist durchzuführen.
   49:
-    Q: Welche Arten von Atemschutzgeräten stehen für den Feuerwehreinsatz zur Verfügung?
+    Q: Welche Arten von Atemschutzgeräten stehen für den Feuerwehreinsatz zur Verfügung?
     A:
       - "Umluftabhängige Atemschutzgeräte - Atemmasken mit Atemfilter\n
         Umluftunabhängige Atemschutzgeräte - Behältergeräte (Pressluftatmer), Regenerationsgeräte und Schlauchgeräte"
   50:
-    Q: Warum dürfen Atemluftflaschen nicht vollständig entleert werden?
+    Q: Warum dürfen Atemluftflaschen nicht vollständig entleert werden?
     A:
       - Damit gewährleistet ist, dass keine Feuchtigkeit, kein Schmutz und keine Schadstoffe in die Atemluftflaschen gelangen können.
   51:
-    Q: Wie oft müssen Feuerlöscher überprüft werden?
+    Q: Wie oft müssen Feuerlöscher überprüft werden?
     A:
-      - Nach jeder Verwendung, längstens alle zwei Jahre durch einen geprüften Löscherwart.
+      - Nach jeder Verwendung, längstens alle zwei Jahre durch einen geprüften Löscherwart.
   52:
-    Q: Welche Luftmenge muss dem Atemschutzgeräteträger für den gesicherten Rückzug zur Verfügung stehen?
+    Q: Welche Luftmenge muss dem Atemschutzgeräteträger für den gesicherten Rückzug zur Verfügung stehen?
     A:
       - Mindestens die doppelte Luftmenge als jene, die beim Anmarschweg verbraucht wurde.
   53:
@@ -2918,9 +2918,9 @@ BDLP GRKDT Stufe II:
     A:
       - Bereich, der von einem Strahlrohr in Abhängigkeit von Durchflussmenge und Druckverhältnissen beherrscht werden kann.
   55:
-    Q: Wie groß ist die Sicherheitszone beim Ausfließen von brennbaren Flüssigkeiten der Gefahrenklasse I?
+    Q: Wie groß ist die Sicherheitszone beim Ausfließen von brennbaren Flüssigkeiten der Gefahrenklasse I?
     A:
-      - Mindestens 30 bis 60 Meter, Windrichtung, Windgeschwindigkeit und Gelände sind zu berücksichtigen.
+      - Mindestens 30 bis 60 Meter, Windrichtung, Windgeschwindigkeit und Gelände sind zu berücksichtigen.
 
 BDLP MA Stufe II:
   1:
@@ -2928,7 +2928,7 @@ BDLP MA Stufe II:
     A:
       - 1 bar
   2:
-    Q: Wann dürfen Blaulicht und Folgetonhorn bei einem Feuerwehrfahrzeug verwendet werden?
+    Q: Wann dürfen Blaulicht und Folgetonhorn bei einem Feuerwehrfahrzeug verwendet werden?
     A:
       - Bei Gefahr in Verzug auf der Fahrt zum Einsatzort und an der Einsatzstelle
   3:
@@ -2959,15 +2959,15 @@ BDLP MA Stufe II:
     A:
       - Durch Öffnen des freien Druckausganges und durch Auskuppeln der Pumpe
   9:
-    Q: Was ist beim Aufladen einer Batterie wichtig und wie wird sie überprüft?
+    Q: Was ist beim Aufladen einer Batterie wichtig und wie wird sie überprüft?
     A:
-      - Ladegerät anschließen, Verschraubungen (wenn vorhanden) bei den Zellen öffnen, Batteriewasser kontrollieren, Überprüfung mit Säuredichtmesser/Zellenprüfer
+      - Ladegerät anschließen, Verschraubungen (wenn vorhanden) bei den Zellen öffnen, Batteriewasser kontrollieren, Überprüfung mit Säuredichtmesser/Zellenprüfer
   10:
     Q: Wie kann man eine eingefrorene Pumpe beim Einsatz auftauen?
     A:
       - TS auskuppeln (nicht bei allen Modellen möglich), Motor laufen lassen, Auspuffgase erwärmen die Kreiselpumpe, Entleerungshahn öffnen.
   11:
-    Q: Wie viele bzw. welche Rohre dürfen von einem TLF 2000 in der Erstphase ohne gesicherte Wasserversorgung vorgenommen werden?
+    Q: Wie viele bzw. welche Rohre dürfen von einem TLF 2000 in der Erstphase ohne gesicherte Wasserversorgung vorgenommen werden?
     A:
       - 1 C-Rohr oder 1 HD-Rohr
   12:
@@ -2975,7 +2975,7 @@ BDLP MA Stufe II:
     A:
       - Löschwasser, Löschschaum, Löschpulver, Löschgase, Sonderlöschmittel
   13:
-    Q: Wie lautet die Faustregel für die Ermittlung der erforderlichen Schlauchanzahl für den Innenangriff (lt. FSH Nr. 122)?
+    Q: Wie lautet die Faustregel für die Ermittlung der erforderlichen Schlauchanzahl für den Innenangriff (lt. FSH Nr. 122)?
     A:
       - Verteilerstandort ca. 1. Schlauchlänge vor dem Objekt, 1 Schlauch vor dem Objekt + 1 Schlauch je Stockwerk + mind. 1 Schlauch als Reserve.
   14:
@@ -2985,19 +2985,19 @@ BDLP MA Stufe II:
   15:
     Q: Welche Deckungsbreiten in Meter werden mit welchem Strahlrohr maximal erreicht?
     A:
-      - "C-Mehrzweckstrahlrohr ohne Mundstück 15 Meter\n
-        B-Mehrzweckstrahlrohr mit Mundstück 20 Meter."
+      - "C-Mehrzweckstrahlrohr ohne Mundstück 15 Meter\n
+        B-Mehrzweckstrahlrohr mit Mundstück 20 Meter."
 
 BDLP ME+Trupps Stufe II:
   1:
     Q: Was ist beim Arbeiten mit Leitern zu beachten?
     A:
       - "Sicherer Stand (fester Untergrund)\n
-        Wenn möglich nicht vor Türen/Ausgängen\n
+        Wenn möglich nicht vor Türen/Ausgängen\n
         3 Sprossen Überhang\n
         Leiter muss beim Besteigen gesichert werden (2 Personen am Fußteil)"
   2:
-    Q: Welche Voraussetzungen müssen für eine Verbrennung gegeben sein?
+    Q: Welche Voraussetzungen müssen für eine Verbrennung gegeben sein?
     A:
       - Brennbarer Stoff, Sauerstoff, Wärme, richtiges Mischungsverhältnis (Reaktionsbereitschaft)
   3:
@@ -3006,8 +3006,8 @@ BDLP ME+Trupps Stufe II:
       - "Brand mit der Windrichtung angreifen\n
         Flächenbrände von vorne beginnend ablöschen\n
         Tropf- und Fließbrände von oben nach unten löschen\n
-        genügend Löschmittel auf einmal einsetzen, nicht hintereinander\n
-        Vorsicht vor Wiederentzündung"
+        genügend Löschmittel auf einmal einsetzen, nicht hintereinander\n
+        Vorsicht vor Wiederentzündung"
   4:
     Q: Welche Eigenschaften hat Kohlenmonoxid (CO)?
     A:
@@ -3022,28 +3022,28 @@ BDLP ME+Trupps Stufe II:
   6:
     Q: Was bedeutet ein mindestens 30 Sekunden langer Dauerton der Fahrzeughupe und wie haben die Mitglieder der Löschgruppe darauf zu reagieren?
     A:
-      - „Alle Mann zurück!“ Alle Mitglieder der Löschgruppe haben sich unverzüglich bei ihrem Fahrzeug oder beim Verteiler einzufinden.
+      - „Alle Mann zurück!“ Alle Mitglieder der Löschgruppe haben sich unverzüglich bei ihrem Fahrzeug oder beim Verteiler einzufinden.
   7:
-    Q: Welche Maßnahmen können in der Einsatzvorbereitung geübt werden, um Unfälle zu vermeiden/verringern?
+    Q: Welche Maßnahmen können in der Einsatzvorbereitung geübt werden, um Unfälle zu vermeiden/verringern?
     A:
-      - "Bewusstseinsbildung über Gefahren\n
+      - "Bewusstseinsbildung über Gefahren\n
         Ausbildung und Schulung an Geräten und Fahrzeugen\n
-        Persönliche Schutzausrüstung und bei Bedarf weitere Schutzausrüstung verwenden"
+        Persönliche Schutzausrüstung und bei Bedarf weitere Schutzausrüstung verwenden"
   8:
-    Q: Wo liegt der hauptsächliche Unterschied zwischen Erd- und Flüssiggas?
+    Q: Wo liegt der hauptsächliche Unterschied zwischen Erd- und Flüssiggas?
     A:
       - "Erdgas ist leichter als Luft (z.B. Methan)\n
-        Flüssiggas ist schwerer als Luft (z.B. Propan, Butan)"
+        Flüssiggas ist schwerer als Luft (z.B. Propan, Butan)"
   9:
-    Q: Wie kann man sich vor gefährlichen Stoffen schützen?
+    Q: Wie kann man sich vor gefährlichen Stoffen schützen?
     A:
-      - Durch Schutzanzüge bzw. Atemschutz oder ausreichenden Abstand
+      - Durch Schutzanzüge bzw. Atemschutz oder ausreichenden Abstand
   10:
     Q: Welche persönlichen Maßnahmen sind nach dem Einsatz mit gefährlichen Stoffen zu treffen?
     A:
       - Bekleidung wechseln und Körperreinigung (Duschen)
   11:
-    Q: Welche Luftmenge muss dem AS-Träger für den gesicherten Rückzug zur Verfügung stehen?
+    Q: Welche Luftmenge muss dem AS-Träger für den gesicherten Rückzug zur Verfügung stehen?
     A:
       - Mindestens die doppelte Luftmenge als jene, die beim Einmarschweg verbraucht wurde
   12:
@@ -3053,12 +3053,12 @@ BDLP ME+Trupps Stufe II:
   13:
     Q: Wie geht der AS-Trupp in Gebäuden im Innenangriff vor?
     A:
-      - Gesichert durch eine unter Druck stehende Löschleitung oder durch eine Leine als Rückzugsicherung
+      - Gesichert durch eine unter Druck stehende Löschleitung oder durch eine Leine als Rückzugsicherung
   14:
-    Q: Warum ist die Lagemeldung der Einsatzleitung an eine übergeordnete Stelle wichtig?
+    Q: Warum ist die Lagemeldung der Einsatzleitung an eine übergeordnete Stelle wichtig?
     A:
       - "Um weitere Einsatzkräfte alarmieren zu können\n
-        Um die übergeordnete Stelle über Schadenslage und Einsatzmaßnahmen in Kenntnis zu setzen"
+        Um die übergeordnete Stelle über Schadenslage und Einsatzmaßnahmen in Kenntnis zu setzen"
   15:
     Q: Was ist eine Brandwache?
     A:
