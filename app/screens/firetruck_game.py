@@ -124,7 +124,7 @@ class Fahrzeugkunde_Game(Screen):
         shuffle(self.tools)
 
     def play(self):
-        ## init GameCore class instance
+        # init GameCore class instance
         self.game = GameCore()
 
         # reset game specific elements

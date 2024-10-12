@@ -19,7 +19,14 @@ class Bewerb_Menu(Screen):
         self.total_competitions = list(total_competition_questions.keys())
         # create button for all competitions
         for competitions in self.total_competitions:
-            btn = Button(text=competitions, font_size="32sp")
+            # btn = Button(text=competitions, font_size="32sp")
+            btn = Button(
+                text=competitions,
+                font_size="32sp",
+                size_hint_y=None,
+                height=150,
+                size_hint_x=1,
+            )
             btn.bind(on_release=self.on_button_release)  # type: ignore
             self.bewerbe_layout.add_widget(btn)  # type: ignore
 

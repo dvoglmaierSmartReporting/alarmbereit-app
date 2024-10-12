@@ -32,4 +32,10 @@ class ToolQuestion:
 
 @dataclass
 class CompetitionQuestion:
-    init: bool
+    id: int
+    question: str
+    answers: list[str]
+
+    @property
+    def correct_answer(self) -> str:
+        return self.answers[0]

@@ -1219,3 +1219,193 @@ Rüst:
     - Öl-Auffangplane 5,5 x 5,5 m
     - Einreißhaken
     - Deckenstützen
+
+# Tank Dürrnberg - TLFA 3000:
+# "Tank Dürrnberg\nTLFA 3000":
+Tank Dürrnberg:
+  Fahrer/GK:
+    - Gasmessgerät
+    - Handfunkgerät
+    - Kartentasche
+    - KFZ-Warndreieck
+    - Meldertasche
+    - Schlüsselsortiment
+    - Schnellinfo Gefahrenstoffe
+    - Arbeitsmesser
+    - Suchscheinwerfer
+    - Adalitlampe
+  Mannschaft:
+    - Handscheinwerfer
+    - Handfunkgerät
+    - Rettungsleine
+    - Verbandskasten
+    - Schlauchhalter
+    - Sitzgurt-Rettungsgeschirr
+    - Feuerwehrhandschuhe
+    - Starthilfekabel
+    - Adalitlampe
+    - TNT Tool
+    - Tragetuch
+    - Sicherungsleine 2m
+    - Wärmebildkamera
+    - Warnlichthauben für Handscheinwerfer
+    - Warnüberwurf Einsatzleiter
+    - Triopan FEUERWEHR
+    - Wathose
+    - Anhaltestab
+    - Wolldecke
+  G1:
+    - Abschleppseil
+    - Brechstange
+    - Druckbelüftungsgerät
+    - Druckluftschlauch 20m
+    - Luftschnellangriff 20m
+    - Handluftpumpe
+    - Randschaufel
+    - Rohrdichtkissen
+    - Schäkel
+    - Seilstropp 5 m
+    - PVC Einfülltrichter
+    - Absperrschlüssel Hauswasser
+    - Rohrzange
+    - Bindedraht
+    - Gerüstklammern
+    - Nägel
+    - Steckschlüsselsatz
+    - Straßenbesen
+    - Tauchpumpe 230 V
+    - Werkzeugkoffer aus Stahlblech
+    - Forsthelm
+    - Kombikanister
+    - Elektrokettensäge
+    - Motorkettensäge
+    - Motorseilwinde
+    - Schnittschutzhose
+    - Bolzenschneider
+    - Feuerwehrsappel
+    - Hacke kurzstielig
+    - Hacke langstielig
+    - Handfäustel 2 kg
+    - Atemschutztisch
+    - Schachthaken
+    - Zimmermannshammer
+    - Fassbundöffner
+    - Spitzschneidekrampen
+    - Türöffner
+    - Vorschlaghammer 5 kg
+  G2:
+    - Abgasschlauch für Stromerzeuger
+    - Fluterbrücke
+    - Stromschnellangriff
+    - Einbaugenerator 10 kVA
+    - Übergangsstück 400 V mit Polwender
+    - Verlängerungskabel 10 m
+    - Verteilerkabeltrommel 230 V 30 m
+    - Rollgliss mit Abseilachter
+    - Absperrband 500 m
+    - Dreibeinstativ
+    - Schaufeltrage
+    - Schlagbohrmaschine
+    - Schleiferbrille
+    - Schmutzwasserpumpe
+    - Absperrstange
+    - Bodenteller
+    - Kabelfernbedienung Lichtmast
+    - Minihebekissensatz
+    - Verkehrsunfall- Schnellangriffskoffer
+    - Ersatztrennscheiben
+    - Trennschleifer
+    - Verkehrsleitkegel
+  G3:
+    - C-Mehrzweckstrahlrohr
+    - Hitzeschutzanzug
+    - Hitzeschutzhandschuhe
+    - Hitzeschutzhaube
+    - Rundschlinge
+    - D-Saugschlauch für Pumpenvormischer
+    - Schaumaufsatz für Pistolenstrahlrohr
+    - Mehrbereichsschaummittel
+    - Präzisionszumischer
+    - Zurrgurt mit Ratsche
+  G4:
+    - Arbeitsleine
+    - Bogensäge
+    - Benzin-Kanister 20 l
+    - Diesel-Kanister 20 l
+    - Dekontaminationswanne
+    - Ölbindemittel
+    - Schachtabdeckung
+    - Schlauchbrücke
+    - Schnürleine 6 m
+    - Einfüllstutzen
+    - Abdeckplanen grün
+    - Kunststoffplanen 4x4m
+    - Müllsäcke
+    - Chemieschutzanzug mit Stiefel
+  G5:
+    - Druckbegrenzungsventil
+    - Kanalspülratte
+    - Sammelstück A - 2B
+    - Schlauchtragekorb
+    - Verteiler B-CBC
+    - B-Mehrzweckstrahlrohr
+    - C-Strahlrohr
+    - Hydroschild C
+    - Kupplungsschlüssel ABC
+    - Stützkrümmer
+    - Überflurhydrantenschlüssel
+    - Übergangsstück A 125/110
+    - Übergangsstück A/B
+    - Übergangsstück B/C
+    - Verbindungsschlauch B 5m
+    - Druckschlauch B
+    - Druckschlauch C
+    - Säureschutzhandschuhe
+    - Schlauchbindensatz
+    - Schlauchhalter
+    - Absperrschieber B
+    - Rauchabschluss
+    - Löschrucksack Waldbrand
+  G6:
+    - Druckschlauch B
+    - HD Druckschlauch 15 m
+    - Kaminkehrwerkzeug
+    - Löschdecke
+    - Wasserwerfer
+    - Hydrofix 10l
+    - Kohlendioxydlöscher 6kg
+    - Pulverlöscher ABC 12 kg
+    - HD-Strahlrohr
+    - HD Kupplungsschlüssel
+    - Schneeketten
+    - Notkurbel für Schlauchhaspel
+    - Unterlegkeil
+  G7 / Heck:
+    - HD Schlauch 60 m
+    - HD-Strahlrohr
+    - Kupplungsschlüssel ABC
+    - Atemschutz Überwachungstafel
+    - Funkfernbedienung Lichtmast
+    - Fußtaster
+    - Heumesssonde / Heumesssonde
+  Dach:
+    - Einreißhaken
+    - Mehrzweckleiter
+    - Schiebeleiter 3-teilig
+    - Auffangbehälter 30 l
+    - Steckleiter
+    - Schuttwanne
+    - Ausräumhaken
+    - Dunggabel
+    - Stahlblecheimer
+    - Sappine
+    - Heugabel
+    - Piasavabesen
+    - Randschaufel
+    - Rohrdichtkissen
+    - Kunststoffeimer
+    - Spitzschaufel
+    - Krampen
+    - Standrohr
+    - Unterflurhydrantenschlüssel
+    - Feuerpatsche

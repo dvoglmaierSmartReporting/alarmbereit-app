@@ -1,3 +1,11 @@
+# version 1.0:
+known issues:
+1. use classes in truck game&training and competition game&training
+2. save strike and PB correctly (currently displayed incorrectly)
+3. competition questions arrow behavior incorrect
+4. competition allows to select questions out of range
+
+
 # version 0.9:
 fix issues of version 0.8
 1. Persönlicher Highscore wird lokal bespeichert
