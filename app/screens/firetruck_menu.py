@@ -17,7 +17,6 @@ class Fahrzeugkunde_Menu(Screen):
         self.total_firetrucks = list(total_storage.keys())
         # create button for all firetrucks
         for firetruck in self.total_firetrucks:
-            # btn = Button(text=firetruck, font_size="32sp")
             btn = Button(
                 text=firetruck,
                 font_size="32sp",

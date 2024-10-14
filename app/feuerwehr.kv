@@ -142,14 +142,6 @@
         text_size: self.width, None
         pos_hint: {'right': 1, 'top': 1}
     
-    ## BoxLayout:
-    #GridLayout:
-    ## Scroll
-    #    id: bewerbe_layout
-    #    size_hint: 1, 0.9
-    #    #orientation: 'vertical'
-    #    spacing: "5dp"
-    #    cols: 1
     ScrollView:
         size_hint: 1, 0.9
         BoxLayout:
@@ -190,21 +182,18 @@
         font_size: "25sp"
         pos_hint: {'right': 1, 'top': 1}
         text_size: self.width, None
+        text: "0"
+        size_hint: 0.1, 0.25
         # halign: "right"
-        # size_hint: 1, 0.1
-        size_hint: 0.5, 0.25
-        # opacity: 1 if self.parent.strike_label_visible else 0
     
     Label:
         id: high_score_label
-        text: 'PB: 12300  '
+        text: 'Best: 123  '
         font_size: "20sp"
         pos_hint: {'right': 1, 'top': 1}
         text_size: self.width, None
         halign: "right"
         size_hint: 1, 0.05
-        # size_hint: 0.35, 0.25
-        # opacity: 1 if self.parent.timer_label_visible else 0
 
     BoxLayout:
         orientation: 'vertical'
@@ -243,7 +232,6 @@
 
     Label:
         id: firetruck_label
-        # text: "Tunnel+Ölanh."
         size_hint: None, None
         size: "200dp", "50dp"
         pos_hint: {'x': 0.1, 'top': 1}
@@ -263,11 +251,10 @@
         text_size: self.size
         font_size: "25sp"
         # color: (0,1,0,1) if self.parent.timer_change_label_visible else (1,0,0,1)
-        # opacity: 1 if self.parent.timer_label_visible else 0
 
     Label:
         id: high_score_label
-        text: 'PB: 12300  '
+        text: 'Best: 12300  '
         size_hint: None, None
         size: "100dp", "50dp"
         pos_hint: {'right': 1, 'top': 1}
@@ -275,7 +262,6 @@
         valign: "middle"
         text_size: self.size
         font_size: "20sp"
-        # opacity: 1 if self.parent.timer_label_visible else 0
 
     BoxLayout:
         orientation: 'vertical'
@@ -321,7 +307,6 @@
         text_size: self.size
         font_size: "22sp"
         # color: (0,1,0,1) if self.parent.timer_change_label_visible else (1,0,0,1)
-        # opacity: 1 if self.parent.timer_label_visible else 0
 
 
 <Label_List>:

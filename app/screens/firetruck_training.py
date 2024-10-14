@@ -7,8 +7,9 @@ from kivy.clock import Clock
 from random import shuffle
 import yaml
 
-from helper.functions import load_firetruck_storage
+from helper.functions import load_firetruck_storage, break_tool_name
 from helper.settings import Settings
+from helper.game_class import GameCore, ToolQuestion
 
 
 settings = Settings()
@@ -29,23 +30,24 @@ class Fahrzeugkunde_Training(Screen):
         self.mode_browse: bool = mode[2]
         self.mode_images: bool = mode[3]
 
-    def update_strike(self):
-        self.strike_label.text = f"{str(self.strike)}  "  # type: ignore
+    def update_strike_label(self):
+        self.strike_label.text = f"{str(self.game.answers_correct_strike)}  "  # type: ignore
 
-    def reset_strike(self):
-        self.strike = 0
-        self.update_strike()
+    def reset_strike(self, *arg):
+        self.game.answers_correct_strike = 0
+        self.update_strike_label()
 
     def increment_strike(self):
-        self.strike += 1
-        self.update_strike()
+        self.game.answers_correct_strike += 1
+        self.update_strike_label()
 
     def save_high_strike(self):
         # with open("./app/storage/high_strike.yaml", "w") as f:
         with open(
             "/".join(__file__.split("/")[:-2]) + "/storage/high_strike.yaml", "w"
         ) as f:
-            yaml.dump({"high_strike": self.strike}, f)
+            # yaml.dump({"high_strike": self.strike}, f)
+            yaml.dump({"high_strike": self.game.answers_correct_strike}, f)
 
     # def end_game(self):
     #     self.save_high_strike()
@@ -62,13 +64,13 @@ class Fahrzeugkunde_Training(Screen):
         shuffle(self.tools)
 
     def play(self):
+        # init GameCore class instance
+        self.game = GameCore()
+
+        # reset game specific elements
         self.reset_tool_list()
 
-        self.reset_strike()
-
         self.next_tool()
-
-        self.accept_answers = True  # Flag to indicate if answers should be processed
 
     def next_tool(self, *args):
         self.accept_answers = True  # Enable answer processing for the new tool
@@ -78,19 +80,16 @@ class Fahrzeugkunde_Training(Screen):
 
         # troubleshooting: fix tool
         # self.current_tool = "Handfunkgerät"  # "Druckschlauch B"
-        self.current_tool = self.tools.pop()
+        current_tool = self.tools.pop()
 
-        self.correct_storage: set = set(self.tools_locations.get(self.current_tool))  # type: ignore
+        self.current_question = ToolQuestion(
+            firetruck=self.selected_firetruck,
+            tool=current_tool,
+            rooms=list(set(self.tools_locations.get(current_tool))),  # type: ignore
+        )
 
-        self.correct_storage_multiple = list(self.correct_storage)
+        self.tool_label.text = break_tool_name(current_tool)  # type: ignore
 
-        tool_text = self.current_tool
-        if len(tool_text) >= 29:
-            tool_text_lst = tool_text[14:].split(" ")
-            tool_text = (
-                tool_text[:14] + tool_text_lst[0] + "\n" + " ".join(tool_text_lst[1:])
-            )
-        self.tool_label.text = tool_text  # type: ignore
         self.firetruck_rooms_layout.clear_widgets()  # type: ignore
 
         for storage in self.firetruck_rooms:
@@ -98,46 +97,62 @@ class Fahrzeugkunde_Training(Screen):
             btn.bind(on_press=self.on_answer)  # type: ignore
             self.firetruck_rooms_layout.add_widget(btn)  # type: ignore
 
+    def correct_answer(self):
+        self.increment_strike()
+
+        self.game.answers_correct_total += 1
+
+    def incorrect_answer(self):
+        # self.reset_strike()
+        Clock.schedule_once(self.reset_strike, settings.FEEDBACK_TRAINING_SEC)
+
+        # todo: check for PB score!
+
     def on_answer(self, instance):
         if not self.accept_answers:  # Check if answer processing is enabled
             return  # Ignore the button press if answer processing is disabled
 
-        children = self.firetruck_rooms_layout.children  # type: ignore
+        # do not accept identical answer
+        if instance.text in self.current_question.room_answered:
+            return
 
-        if instance.text in self.correct_storage_multiple:
-            # correct answer
-            self.increment_strike()
+        # process actual answer
+        if instance.text in self.current_question.rooms:
+            self.correct_answer()
 
         else:
-            # incorrect answer
-            self.reset_strike()
+            self.incorrect_answer()
+
+        children = self.firetruck_rooms_layout.children  # type: ignore
 
         # indicate if correct or incorrect answer
         # for single correct answer
-        if len(self.correct_storage_multiple) <= 1:
+        if len(self.current_question.rooms_to_be_answered) <= 1:
             # always identify and indicate the correct answer
             for child in children:
-                if child.text in self.correct_storage:
+                if child.text in self.current_question.rooms:
                     child.background_color = (0, 1, 0, 1)
             # if, indicate incorrect answer
-            if instance.text not in self.correct_storage:
+            if instance.text not in self.current_question.rooms:
                 instance.background_color = (1, 0, 0, 1)
 
         # for multiple correct answers
         else:
-            if instance.text not in self.correct_storage_multiple:
+            # document given answers in class instance
+            self.current_question.room_answered.append(instance.text)
+
+            if instance.text not in self.current_question.rooms:
                 # if, indicate incorrect and all correct answers and close
                 instance.background_color = (1, 0, 0, 1)
                 for child in children:
-                    if child.text in self.correct_storage_multiple:
+                    if child.text in self.current_question.rooms:
                         child.background_color = (0, 1, 0, 1)
                 pass
 
             else:
                 # answer in correct answers
                 instance.background_color = (0, 1, 0, 1)
-                # remove correct answer from set
-                self.correct_storage_multiple.remove(instance.text)
+
                 # display string "weitere"
                 if self.tool_label.text[-7:] == "weitere":  # type: ignore
                     self.tool_label.text += " "  # type: ignore
@@ -146,8 +161,14 @@ class Fahrzeugkunde_Training(Screen):
                 self.tool_label.text += "weitere"  # type: ignore
                 return
 
+        # document given answers in class instance
+        self.current_question.room_answered.append(instance.text)
+
         self.accept_answers = (
             False  # Disable answer processing after an answer is selected
         )
+
+        # tool ends here. document tool and given answers in question history
+        self.game.questions.append(self.current_question)
 
         Clock.schedule_once(self.next_tool, settings.FEEDBACK_TRAINING_SEC)

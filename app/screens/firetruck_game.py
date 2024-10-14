@@ -8,7 +8,7 @@ from kivy.clock import Clock
 from random import shuffle
 import yaml
 
-from helper.functions import load_firetruck_storage
+from helper.functions import load_firetruck_storage, break_tool_name
 from helper.settings import Settings
 from helper.game_class import GameCore, ToolQuestion
 
@@ -137,16 +137,6 @@ class Fahrzeugkunde_Game(Screen):
         # start game
         self.next_tool()
 
-        # self.accept_answers = True  # Flag to indicate if answers should be processed
-
-    def break_tool_name(self, tool_name: str) -> str:
-        if len(tool_name) >= 29:
-            tool_name_lst: list = tool_name[14:].split(" ")
-            return (
-                tool_name[:14] + tool_name_lst[0] + "\n" + " ".join(tool_name_lst[1:])
-            )
-        return tool_name
-
     def next_tool(self, *args):
         self.accept_answers = True  # Enable answer processing for the new tool
 
@@ -175,14 +165,11 @@ class Fahrzeugkunde_Game(Screen):
 
         self.current_question = ToolQuestion(
             firetruck=self.selected_firetruck,
-            # tool=self.tools.pop(),
             tool=current_tool,
-            rooms=list(
-                set(self.tools_locations.get(current_tool))  # type: ignore
-            ),  # = self.correct_storages
+            rooms=list(set(self.tools_locations.get(current_tool))),  # type: ignore
         )
 
-        self.tool_label.text = self.break_tool_name(self.current_question.tool)  # type: ignore
+        self.tool_label.text = break_tool_name(self.current_question.tool)  # type: ignore
 
         self.firetruck_rooms_layout.clear_widgets()  # type: ignore
 
@@ -190,14 +177,6 @@ class Fahrzeugkunde_Game(Screen):
             btn = Button(text=storage, font_size="28sp")
             btn.bind(on_press=self.on_answer)  # type: ignore
             self.firetruck_rooms_layout.add_widget(btn)  # type: ignore
-
-        # reset tool specific elements
-        # self.tool_counter += 1
-
-        # if self.tool_counter == settings.RENEW_EXTRA_TIME_INT:
-        #     self.reset_tool_counter()
-
-        # Clock.schedule_interval(self.update_extra_timer, settings.INTERVAL_GAME_SEC)
 
     def correct_answer(self):
         self.increment_score()

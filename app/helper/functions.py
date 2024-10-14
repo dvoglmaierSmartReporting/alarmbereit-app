@@ -6,7 +6,10 @@ strings = Strings()
 
 
 def load_total_storage() -> dict:
-    with open("/".join(__file__.split("/")[:-2]) + "/content/feuerwehr_tools_storage.yaml", "r") as file:
+    with open(
+        "/".join(__file__.split("/")[:-2]) + "/content/feuerwehr_tools_storage.yaml",
+        "r",
+    ) as file:
         try:
             return yaml.safe_load(file)
         except yaml.YAMLError as exc:
@@ -17,7 +20,11 @@ def load_total_storage() -> dict:
 def load_total_competition_questions() -> dict:
     # with open("./app/content/feuerwehr_competition_questions_mc.yaml", "r") as file:
     # with open("./app/content/feuerwehr_competition_questions.yaml", "r") as file:
-    with open("/".join(__file__.split("/")[:-2]) + "/content/feuerwehr_competition_questions.yaml", "r") as file:
+    with open(
+        "/".join(__file__.split("/")[:-2])
+        + "/content/feuerwehr_competition_questions.yaml",
+        "r",
+    ) as file:
         try:
             return yaml.safe_load(file)
         except yaml.YAMLError as exc:
@@ -72,3 +79,10 @@ def mode_bool2str(mode: tuple) -> str:
     if mode_images:
         return strings.BUTTON_STR_IMAGES
     return ""
+
+
+def break_tool_name(tool_name: str) -> str:
+    if len(tool_name) >= 29:
+        tool_name_lst: list = tool_name[14:].split(" ")
+        return tool_name[:14] + tool_name_lst[0] + "\n" + " ".join(tool_name_lst[1:])
+    return tool_name
