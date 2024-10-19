@@ -228,7 +228,6 @@ RüstLösch:
 Tank 1:
   Fahrer/GK:
     - Handfunkgerät
-
     - Gasmessgerät
     - Reserveakku f. Akkugeräte
     - Heumessgerät-Anzeige
@@ -271,7 +270,6 @@ Tank 1:
     - Fluchthaube
   G1:
     - Elektrokettensäge
-
     - Kombikanister
     - Forsthelm
     - Schnittschutzbeinlinge
@@ -292,7 +290,6 @@ Tank 1:
   G2:
     - Deckelabzieher
     - Einbruchwerkzeug
-
     - Schaufeltrage
     - Krankentrage
     - Fluterbrücke
@@ -378,6 +375,7 @@ Tank 1:
     - Rauchvorhang
     - Schlauchhalter
     - Schlauchbinden
+    - Mittelschaumpistole
   G6:
     - Löschdecke
     - Druckschlauch B
