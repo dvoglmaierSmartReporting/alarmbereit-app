@@ -1,10 +1,12 @@
 [app]
 
 # (str) Title of your application
-title = FA1000
+#title = FA1000
+title = FahrzeugkundeApp
 
 # (str) Package name
-package.name = FA1000
+#package.name = FA1000
+package.name = FahrzeugkundeApp
 
 # (str) Package domain (needed for android/ios packaging)
 package.domain = feuerwehrhallein.apps
@@ -13,7 +15,8 @@ package.domain = feuerwehrhallein.apps
 source.dir = .
 
 # (list) Source files to include (let empty to include all the files)
-source.include_exts = py,png,jpg,kv,atlas
+#source.include_exts = py,png,jpg,kv,atlas
+#source.include_exts = 
 
 # (list) List of inclusions using pattern matching
 #source.include_patterns = assets/*,images/*.png
@@ -29,7 +32,7 @@ source.include_exts = py,png,jpg,kv,atlas
 #source.exclude_patterns = license,images/*/*.jpg
 
 # (str) Application versioning (method 1)
-version = 1.0
+version = 1.1
 
 # (str) Application versioning (method 2)
 # version.regex = __version__ = ['"](.*)['"]
@@ -49,7 +52,8 @@ presplash.filename = %(source.dir)s/assets/ffh_logo.png
 
 # (str) Icon of the application
 #icon.filename = %(source.dir)s/data/icon.png
-icon.filename = %(source.dir)s/assets/ffh_icon.png
+#icon.filename = %(source.dir)s/assets/ffh_icon.png
+icon.filename = %(source.dir)s/assets/firetruck_icon.png
 
 # (list) Supported orientations
 # Valid options are: landscape, portrait, portrait-reverse or landscape-reverse

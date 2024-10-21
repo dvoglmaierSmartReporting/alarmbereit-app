@@ -20,49 +20,27 @@ class Fahrzeugkunde_Browse(Screen):
         self.firetruck: dict = total_storage[self.selected_firetruck]
         self.firetruck_rooms: list = list(self.firetruck.keys())
 
-    def populate_list(self):
-        self.load_firetruck()
-        self.ids.browse_scrollview.scroll_y = 1
-        label_container = self.ids.label_list
-        label_container.clear_widgets()
-
-        for room in self.firetruck_rooms:
-            label = Label(
-                text=f"[b]{str(room)}[/b]",
-                markup=True,
-                size_hint_y=None,
-                font_size="24sp",
-                height=90,
-                halign="left",
-                text_size=(self.width, None),
-            )
-            label.bind(  # type: ignore
-                size=label.setter("text_size")  # type: ignore
-            )  # Update text_size on label size change
-            label_container.add_widget(label)
-
-            for tool in self.firetruck.get(room):  # type: ignore
-                label = Label(
-                    text=f"   -  {str(tool)}",
-                    size_hint_y=None,
-                    size_hint_x=1,
-                    font_size="22sp",
-                    height=70,
-                    halign="left",
-                    valign="middle",
-                )
-                label.text_size = (label.width, None)
-                label.bind(  # type: ignore
-                    width=lambda instance, value: setattr(
-                        instance, "text_size", (value, None)
-                    )
-                )
-
-                label_container.add_widget(label)
-
-        # exceed list by empty entry
+    def give_room_label(self, label_text: str):
         label = Label(
-            text="",
+            text=f"[b]{str(label_text)}[/b]",
+            markup=True,
+            size_hint_y=None,
+            font_size="24sp",
+            height=90,
+            halign="left",
+            text_size=(self.width, None),
+        )
+        label.bind(  # type: ignore
+            size=label.setter("text_size")  # type: ignore
+        )  # Update text_size on label size change
+        return label
+
+    def give_item_label(self, label_text: str = ""):
+        if label_text != "":
+            label_text = f"   -  {str(label_text)}"
+
+        label = Label(
+            text=label_text,
             size_hint_y=None,
             size_hint_x=1,
             font_size="22sp",
@@ -74,5 +52,33 @@ class Fahrzeugkunde_Browse(Screen):
         label.bind(  # type: ignore
             width=lambda instance, value: setattr(instance, "text_size", (value, None))
         )
+        return label
 
-        label_container.add_widget(label)
+    def add_items(self, truck: dict):
+        self.ids.browse_scrollview.scroll_y = 1
+        label_container = self.ids.label_list
+        label_container.clear_widgets()
+
+        for room in truck.keys():
+            label_container.add_widget(self.give_room_label(room))
+
+            for tool in truck.get(room):  # type: ignore
+                label_container.add_widget(self.give_item_label(tool))
+
+        # exceed list by empty entry
+        label_container.add_widget(self.give_item_label())
+
+    def display_all_tools(self):
+        self.load_firetruck()
+        self.add_items(self.firetruck)
+
+    def filter_list(self):
+        filter_text = self.filter_text.text
+
+        # Dictionary comprehension with case-insensitive filtering
+        filtered_dict = {
+            key: [item for item in value if filter_text.lower() in item.lower()]
+            for key, value in self.firetruck.items()
+        }
+
+        self.add_items(filtered_dict)

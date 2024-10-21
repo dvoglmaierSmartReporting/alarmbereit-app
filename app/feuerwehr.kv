@@ -320,6 +320,7 @@
     name: "fahrzeugkunde_browse"
     firetruck_label: firetruck_label
     browse_scrollview: browse_scrollview
+    filter_text: filter_text
 
     Button:
         text: "<"
@@ -359,6 +360,30 @@
                 size_hint_x: None
                 width: 1300
                 height: self.minimum_height
+        
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint: 1, 0.1
+            
+            #Label:
+            #    # placeholder
+            #    size_hint: 0.1, 1
+            #    text: ""
+
+            TextInput:
+                id: filter_text
+                size_hint: 0.7, 1
+                pos_hint: {'center_x': 0.5}
+                text: ""
+                text_size: self.width, None
+                font_size: "25sp"
+                multiline: False
+            
+            Button:
+                size_hint: 0.3, 1
+                text: "search"
+                on_release:
+                    root.manager.get_screen('fahrzeugkunde_browse').filter_list()
 
 
 <Fahrzeugkunde_Images>:

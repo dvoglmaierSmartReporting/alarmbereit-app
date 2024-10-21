@@ -60,7 +60,7 @@ class Fahrzeugkunde_Menu(Screen):
             # continue game with selected firetruck
             fahrzeugkunde_browse_screen = app.root.get_screen("fahrzeugkunde_browse")  # type: ignore
             fahrzeugkunde_browse_screen.select_firetruck(instance.text)
-            fahrzeugkunde_browse_screen.populate_list()
+            fahrzeugkunde_browse_screen.display_all_tools()
 
         elif mode_images:
             app.root.current = "fahrzeugkunde_images"  # type: ignore
