@@ -86,3 +86,22 @@ def break_tool_name(tool_name: str) -> str:
         tool_name_lst: list = tool_name[14:].split(" ")
         return tool_name[:14] + tool_name_lst[0] + "\n" + " ".join(tool_name_lst[1:])
     return tool_name
+
+
+def read_scores_file():
+    with open("/".join(__file__.split("/")[:-2]) + "/storage/scores.yaml", "r") as file:
+        return yaml.safe_load(file)
+
+
+def read_scores_file_key(key: str):
+    content = read_scores_file()
+    # self.current_high_score = content.get(key)
+    return content.get(key)
+
+
+def save_to_scores_file(key: str, value: int):
+    content = read_scores_file()
+    # content["game_high_score"] = self.game.score
+    content[key] = value
+    with open("/".join(__file__.split("/")[:-2]) + "/storage/scores.yaml", "w") as file:
+        yaml.dump(content, file)

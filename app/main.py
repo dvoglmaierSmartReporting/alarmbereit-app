@@ -93,15 +93,16 @@ class Start_Menu(Screen):
         self.training_button.text = strings.BUTTON_STR_TRAINING  # type: ignore
         self.game_button.text = strings.BUTTON_STR_GAME  # type: ignore
         self.browse_button.text = strings.BUTTON_STR_BROWSE  # type: ignore
-        self.images_button.text = strings.BUTTON_STR_IMAGES  # type: ignore
+        # self.images_button.text = strings.BUTTON_STR_IMAGES  # type: ignore
         self.firetrucks_button.text = strings.BUTTON_STR_FIRETRUCKS  # type: ignore
         self.competitions_button.text = strings.BUTTON_STR_COMPETITIONS  # type: ignore
-        self.standards_button.text = strings.BUTTON_STR_STANDARDS  # type: ignore
+        # self.standards_button.text = strings.BUTTON_STR_STANDARDS  # type: ignore
+
         # update label strings
         self.mode_label.text = strings.LABEL_STR_MODE  # type: ignore
         self.questions_label.text = strings.LABEL_STR_QUESTIONS  # type: ignore
 
-        self.standards_button.disabled = True  # type: ignore
+        # self.standards_button.disabled = True  # type: ignore
 
     def on_button_release(self):
         # if mode change, read mode label from current selection
@@ -110,15 +111,15 @@ class Start_Menu(Screen):
         # disable not existing combinations
         self.firetrucks_button.disabled = False  # type: ignore
         self.competitions_button.disabled = False  # type: ignore
-        self.standards_button.disabled = False  # type: ignore
+        # self.standards_button.disabled = False  # type: ignore
         mode_training, mode_game, mode_browse, mode_images = self.mode
         if mode_images:
             self.firetrucks_button.disabled = True  # type: ignore
         if mode_game or mode_images or mode_browse:
             # if mode_game or mode_images:
             self.competitions_button.disabled = True  # type: ignore
-        if mode_training or mode_game or mode_images or mode_browse:
-            self.standards_button.disabled = True  # type: ignore
+        # if mode_training or mode_game or mode_images or mode_browse:
+        #     self.standards_button.disabled = True  # type: ignore
 
     def forward_mode2menu(self, menu_screen: str):
         selected_mode = mode_bool2str(self.mode)
@@ -160,6 +161,7 @@ class FeuerwehrApp(App):
         sm.add_widget(Fahrzeugkunde_Browse())
         sm.add_widget(Fahrzeugkunde_Images())
         sm.add_widget(Bewerb_Training())
+
         return sm
 
 

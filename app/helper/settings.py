@@ -36,3 +36,16 @@ class Strings:
         # competition training
         self.BUTTON_STR_SOLUTION = "Lösung"
         self.BUTTON_STR_RANDOM_QUESTION = "Zufällig"
+
+        self.trucks = {
+            "TestTruck": "testing",
+            "RüstLösch": "RLFA 2000",
+            "Tank1": "TLF-A 3000",
+            "Leiter": "DLA(K) 23-12",
+            "Tank2": "TLF-A 4000",
+            "Voraus": "VRFA-Tunnel",
+            "Voraus+Ölanh.": "VRFA-Tunnel",
+            "Pumpe": "LFA",
+            "Rüst": "SRFK-A",
+            "TankDürrnberg": "TLFA 3000",
+        }

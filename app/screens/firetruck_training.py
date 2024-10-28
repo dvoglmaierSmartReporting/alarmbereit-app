@@ -7,7 +7,12 @@ from kivy.clock import Clock
 from random import shuffle
 import yaml
 
-from helper.functions import load_firetruck_storage, break_tool_name
+from helper.functions import (
+    load_firetruck_storage,
+    break_tool_name,
+    read_scores_file_key,
+    save_to_scores_file,
+)
 from helper.settings import Settings
 from helper.game_class import GameCore, ToolQuestion
 
@@ -41,13 +46,13 @@ class Fahrzeugkunde_Training(Screen):
         self.game.answers_correct_strike += 1
         self.update_strike_label()
 
-    def save_high_strike(self):
-        # with open("./app/storage/high_strike.yaml", "w") as f:
-        with open(
-            "/".join(__file__.split("/")[:-2]) + "/storage/high_strike.yaml", "w"
-        ) as f:
-            # yaml.dump({"high_strike": self.strike}, f)
-            yaml.dump({"high_strike": self.game.answers_correct_strike}, f)
+    # def save_high_strike(self):
+    #     # with open("./app/storage/high_strike.yaml", "w") as f:
+    #     with open(
+    #         "/".join(__file__.split("/")[:-2]) + "/storage/high_strike.yaml", "w"
+    #     ) as f:
+    #         # yaml.dump({"high_strike": self.strike}, f)
+    #         yaml.dump({"high_strike": self.game.answers_correct_strike}, f)
 
     # def end_game(self):
     #     self.save_high_strike()
@@ -67,8 +72,13 @@ class Fahrzeugkunde_Training(Screen):
         # init GameCore class instance
         self.game = GameCore()
 
-        # reset game specific elements
+        # (re)set game specific elements
         self.reset_tool_list()
+
+        self.current_high_strike = read_scores_file_key("training_high_strike")
+
+        # NEXT: when to update high_strike???
+        # todo: display best strike!
 
         self.next_tool()
 

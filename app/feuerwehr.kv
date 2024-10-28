@@ -13,12 +13,12 @@
     training_button: training_button
     game_button: game_button
     browse_button: browse_button
-    images_button: images_button
+    # images_button: images_button
 
     questions_label: questions_label
     firetrucks_button: firetrucks_button
     competitions_button: competitions_button
-    standards_button: standards_button
+    # standards_button: standards_button
 
     BoxLayout:
         orientation: "vertical"
@@ -30,27 +30,46 @@
             font_size: "32sp"
             size_hint: 1, 0.5
         
-        GridLayout:
-            size_hint: 1, 2
-            cols: 2
-            spacing: "3dp"
+        ##-- Removed before testing release as images is not working yet
+        #GridLayout:
+        #    size_hint: 1, 2
+        #    cols: 2
+        #    spacing: "3dp"
+        #
+        #    CustomToggleButton:
+        #        id: training_button
+        #        state: "down"
+        #        on_release: root.on_button_release()
+        #
+        #    CustomToggleButton:
+        #        id: game_button
+        #        on_release: root.on_button_release()
+        #    
+        #    CustomToggleButton:
+        #        id: browse_button
+        #        on_release: root.on_button_release()
+        #
+        #    CustomToggleButton:
+        #        id: images_button
+        #        on_release: root.on_button_release()
+        ##-- 
+        CustomToggleButton:
+            id: training_button
+            state: "down"
+            on_release: root.on_button_release()
+    
+        CustomToggleButton:
+            id: game_button
+            on_release: root.on_button_release()
+        
+        CustomToggleButton:
+            id: browse_button
+            on_release: root.on_button_release()
+        ##--
 
-            CustomToggleButton:
-                id: training_button
-                state: "down"
-                on_release: root.on_button_release()
-
-            CustomToggleButton:
-                id: game_button
-                on_release: root.on_button_release()
-            
-            CustomToggleButton:
-                id: browse_button
-                on_release: root.on_button_release()
-
-            CustomToggleButton:
-                id: images_button
-                on_release: root.on_button_release()
+        Label:  # placeholder
+            size_hint: 1, 0.5
+            text: ""
         
         Label:
             id: questions_label
@@ -74,13 +93,15 @@
                 root.manager.transition.direction = "left"
                 root.forward_mode2menu("bewerb_menu")
         
-        Button:
-            id: standards_button
-            font_size: "32sp"
-            on_release:
-                app.root.current = "standardsmenu"
-                root.manager.transition.direction = "left"
-                root.forward_mode2menu("standardsmenu")
+        ###- Removed before 'testing release' as no content yet
+        #Button:
+        #    id: standards_button
+        #    font_size: "32sp"
+        #    on_release:
+        #        app.root.current = "standardsmenu"
+        #        root.manager.transition.direction = "left"
+        #        root.forward_mode2menu("standardsmenu")
+        ###-
 
 
 <Fahrzeugkunde_Menu>:
@@ -156,6 +177,7 @@
     name: "fahrzeugkunde_training"
     firetruck_label: firetruck_label
     strike_label: strike_label
+    high_strike_label: high_strike_label
     tool_label: tool_label
     firetruck_rooms_layout: firetruck_rooms_layout
 
@@ -187,8 +209,8 @@
         # halign: "right"
     
     Label:
-        id: high_score_label
-        text: 'Best: 123  '
+        id: high_strike_label
+        text: ''
         font_size: "20sp"
         pos_hint: {'right': 1, 'top': 1}
         text_size: self.width, None
@@ -216,6 +238,7 @@
     timer_label: timer_label
     extra_time_label: extra_time_label
     score_label: score_label
+    high_score_label: high_score_label
     tool_label: tool_label
     firetruck_rooms_layout: firetruck_rooms_layout
     progress_bar: progress_bar
@@ -227,6 +250,7 @@
         pos_hint: {'x': 0, 'top': 1}
         font_size: "32sp"
         on_release:
+            root.manager.get_screen('fahrzeugkunde_game').end_game()
             app.root.current = "fahrzeugkunde_menu"
             root.manager.transition.direction = "right"
 
@@ -242,7 +266,7 @@
 
     Label:
         id: score_label
-        text: "0"
+        text: ""
         size_hint: None, None
         size: '70dp', '50dp'
         pos_hint: {'center_x': 0.5, 'top': 1}
@@ -254,9 +278,9 @@
 
     Label:
         id: high_score_label
-        text: 'Best: 12300  '
+        text: ''
         size_hint: None, None
-        size: "100dp", "50dp"
+        size: "500dp", "50dp"
         pos_hint: {'right': 1, 'top': 1}
         halign: "right"
         valign: "middle"
@@ -344,8 +368,7 @@
     BoxLayout:
         orientation: 'vertical'
 
-        Label:
-            # placeholder
+        Label:  # placeholder
             size_hint: 1, 0.1
             text: ""
 
@@ -365,8 +388,7 @@
             orientation: 'horizontal'
             size_hint: 1, 0.1
             
-            #Label:
-            #    # placeholder
+            #Label:  # placeholder
             #    size_hint: 0.1, 1
             #    text: ""
 
@@ -476,8 +498,7 @@
     BoxLayout:
         orientation: 'vertical'
 
-        Label:
-            # placeholder
+        Label:  # placeholder
             size_hint: 1, 0.1
             text: ""
 

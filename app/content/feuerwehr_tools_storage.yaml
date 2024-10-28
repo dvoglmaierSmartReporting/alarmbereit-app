@@ -21,7 +21,6 @@ TestTruck:
   Dach:
     - Moosgummiplatte
 
-# RüstLösch - RLFA 2000:
 RüstLösch:
   Fahrer/GK:
     - Handfunkgerät
@@ -224,8 +223,7 @@ RüstLösch:
     - Kescher
     - Schachtabdeckung
 
-# Tank 1 - TLF-A 3000:
-Tank 1:
+Tank1:
   Fahrer/GK:
     - Handfunkgerät
     - Gasmessgerät
@@ -424,7 +422,6 @@ Tank 1:
     - Besen
     - Axt
 
-# Leiter - DLA(K) 23-12:
 Leiter:
   Mannschaft:
     - Handscheinwerfer
@@ -527,8 +524,7 @@ Leiter:
     - Wenderohr
     - Aufnahme f. Korbtrage
 
-# Tank 2 - TLF-A 4000:
-Tank 2:
+Tank2:
   Fahrer/GK:
     - Pressluftatmer
     - Vollmaske f. Pressluftatmer
@@ -663,7 +659,6 @@ Tank 2:
     - Monsunrohr
     - Einreißhaken
 
-# Voraus - VRFA-Tunnel: &tunnel
 Voraus: &tunnel
   Fahrer/GK:
     - Handfunkgerät
@@ -779,7 +774,7 @@ Voraus: &tunnel
     - Anhängekupplung Maulkupplung
     - Adapter 7/13-Pol
 
-Voraus + Ölanh.:
+Voraus+Ölanh.:
   <<: *tunnel
   Ölanh. G1:
     - Verkehrsleitkegel
@@ -812,7 +807,6 @@ Voraus + Ölanh.:
     - Selbstschweißendes Dichtband
     - Plane 3 x 4 m
 
-# Pumpe - LFA:
 Pumpe:
   Fahrer/GK:
     - Handfunkgerät
@@ -981,7 +975,6 @@ Pumpe:
     - Steckleiter Verbindungsteil
     - Flachansauger
 
-# Rüst - SRFK-A:
 Rüst:
   Fahrer/GK:
     - Handfunkgerät
@@ -1241,9 +1234,8 @@ Rüst:
     - Einreißhaken
     - Deckenstützen
 
-# Tank Dürrnberg - TLFA 3000:
 # "Tank Dürrnberg\nTLFA 3000":
-Tank Dürrnberg:
+TankDürrnberg:
   Fahrer/GK:
     - Gasmessgerät
     - Handfunkgerät

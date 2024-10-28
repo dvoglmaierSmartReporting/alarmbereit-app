@@ -1,3 +1,7 @@
+# version 1.1:
+1. browse modus with search text
+2. use classes in truck game&training and competition game&training
+
 # version 1.0:
 known issues:
 1. use classes in truck game&training and competition game&training
