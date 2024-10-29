@@ -12,9 +12,6 @@ strings = Strings()
 class Bewerb_Game(Screen):
     def __init__(self, **kwargs):
         super(Bewerb_Game, self).__init__(**kwargs)
-        # update button strings
-        # self.solution_button.text = strings.BUTTON_STR_SOLUTION  # type: ignore
-        # self.random_question_button.text = strings.BUTTON_STR_RANDOM_QUESTION  # type: ignore
 
     def select_competition(self, selected_competition):
         # troubleshooting: fix competition
@@ -31,12 +28,8 @@ class Bewerb_Game(Screen):
             self.selected_competition
         )
 
-        self.question_ids = list(self.competition_dict.keys())
-        self.question_ids_bak = list(self.competition_dict.keys())
-
-        # shuffle(
-        #     self.question_ids
-        # )  # moved to self.play()  # reverted!! needs to be executed each new load
+        self.question_ids = list(self.competition_dict.keys())  # type: ignore
+        self.question_ids_bak = list(self.competition_dict.keys())  # type: ignore
 
         self.question_ids_min = min([int(x) for x in self.question_ids])
         self.question_ids_max = max([int(x) for x in self.question_ids])
@@ -59,33 +52,14 @@ class Bewerb_Game(Screen):
         # (re)set game specific elements
         self.reset_competition_questions()
 
-        # self.shuffle_questions()
-
-        # start with smallest question id, then shuffle list
-        # self.current_question_id = self.question_ids.pop(0)
-        # current_question_id = self.question_ids.pop(0)
-
-        # shuffle(self.question_ids)  # moved to reset_competition_questions()
-
         self.current_question = CompetitionQuestion(
             competition=self.selected_competition,
             question_id=0,
             question="dummy question",
             answers=["dummy answers"],
         )
-        # current_question_id = 0
+
         self.next_question()
-
-        # self.current_question = self.competition_dict.get(self.current_question_id).get(
-        #     "Q"
-        # )
-        # self.current_answer = self.competition_dict.get(self.current_question_id).get(
-        #     "A"
-        # )[0]
-
-        # self.check_arrow_buttons()
-
-        # self.display_question()
 
     def display_question(self):
         self.question_id_label.text = (  # type: ignore
@@ -147,9 +121,9 @@ class Bewerb_Game(Screen):
 
         self.display_question()
 
-    def reveal_answer(self):
-        self.solution_button.disabled = True  # type: ignore
+    # def reveal_answer(self):
+    #     self.solution_button.disabled = True  # type: ignore
 
-        # self.question_label.text += "\n\n" + self.current_answer  # type: ignore
-        self.question_label.text += "\n\n" + self.current_question.correct_answer  # type: ignore
-        self.ids.question_label.height = self.ids.question_label.texture_size[1]
+    #     # self.question_label.text += "\n\n" + self.current_answer  # type: ignore
+    #     self.question_label.text += "\n\n" + self.current_question.correct_answer  # type: ignore
+    #     self.ids.question_label.height = self.ids.question_label.texture_size[1]

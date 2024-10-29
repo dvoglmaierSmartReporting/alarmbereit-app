@@ -31,6 +31,33 @@ firetrucks:
         high_strike: 2
 
 competitions:
-    Funk:
+    Test:
         high_score: 0
-        high_strike: 0
+    "Funk Bronze":
+        high_score: 0
+    "Funk Silber":
+        high_score: 0
+    "Funk Gold":
+        high_score: 0
+    "FLA Gold - Organisation":
+        high_score: 0
+    "FLA Gold - Taktik":
+        high_score: 0
+    "FLA Gold - Technik":
+        high_score: 0
+    "TechnLP Stufe II":
+        high_score: 0
+    "ASLP Stufe I":
+        high_score: 0
+    "ASLP Stufe II":
+        high_score: 0
+    "ASLP Stufe III":
+        high_score: 0
+    "BDLP GRKDT Stufe I":
+        high_score: 0
+    "BDLP GRKDT Stufe II":
+        high_score: 0
+    "BDLP MA Stufe II":
+        high_score: 0
+    "BDLP ME+Trupps Stufe II":
+        high_score: 0
