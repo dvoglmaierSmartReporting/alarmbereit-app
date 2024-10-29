@@ -5,7 +5,6 @@ from kivy.clock import Clock
 
 
 from random import shuffle
-import yaml
 
 from helper.functions import (
     load_firetruck_storage,
@@ -29,11 +28,11 @@ class Fahrzeugkunde_Training(Screen):
         self.selected_firetruck = selected_firetruck
         self.firetruck_label.text = f"   {selected_firetruck}"  # type: ignore
 
-    def forward_mode_2_fk_training(self, mode: tuple):
-        self.mode_training: bool = mode[0]
-        self.mode_game: bool = mode[1]
-        self.mode_browse: bool = mode[2]
-        self.mode_images: bool = mode[3]
+    # def forward_mode_2_fk_training(self, mode: tuple):
+    #     self.mode_training: bool = mode[0]
+    #     self.mode_game: bool = mode[1]
+    #     self.mode_browse: bool = mode[2]
+    #     self.mode_images: bool = mode[3]
 
     def update_strike_label(self):
         self.strike_label.text = f"{str(self.game.answers_correct_strike)}  "  # type: ignore

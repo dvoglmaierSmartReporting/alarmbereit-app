@@ -22,7 +22,7 @@ def load_total_competition_questions() -> dict:
     # with open("./app/content/feuerwehr_competition_questions.yaml", "r") as file:
     with open(
         "/".join(__file__.split("/")[:-2])
-        + "/content/feuerwehr_competition_questions.yaml",
+        + "/content/feuerwehr_competition_questions_multiple_choice.yaml",
         "r",
     ) as file:
         try:
@@ -98,16 +98,25 @@ def read_scores_file_key(firetruck: str, key: str):
     return content.get(firetruck).get(key)
 
 
-def save_to_scores_file(firetruck: str, key: str, value: int):
+def save_to_scores_file(
+    firetruck: str, key: str, value: int, questions: str = "firetrucks"
+):
     content = read_scores_file()
 
-    if not firetruck in content.keys():
-        raise ValueError(f"Firetruck {firetruck} not found in scores.yaml")
+    if not questions in content.keys():
+        raise ValueError(f"Questions {questions} not found in scores.yaml")
 
-    if not key in content[firetruck].keys():
-        raise ValueError(f"Key {key} not found in firetruck {firetruck} in scores.yaml")
+    if not firetruck in content.get(questions).keys():
+        raise ValueError(
+            f"Firetruck {firetruck} not found in scores.yaml > {questions}"
+        )
 
-    content[firetruck][key] = value
+    if not key in content.get(questions).get(firetruck).keys():
+        raise ValueError(
+            f"Key {key} not found in scores.yaml > {questions} > {firetruck}"
+        )
+
+    content[questions][firetruck][key] = value
 
     with open("/".join(__file__.split("/")[:-2]) + "/storage/scores.yaml", "w") as file:
         yaml.dump(content, file)

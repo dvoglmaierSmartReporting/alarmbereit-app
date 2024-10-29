@@ -32,10 +32,19 @@ class ToolQuestion:
 
 @dataclass
 class CompetitionQuestion:
-    id: int
+    competition: str
+    question_id: int
     question: str
     answers: list[str]
 
     @property
     def correct_answer(self) -> str:
         return self.answers[0]
+
+    @property
+    def shuffled_answers(self) -> tuple:
+        # shuffle wrong answers
+        # pick random position -> return position
+        # include correct answer
+        # return list of answers
+        return (None, None)

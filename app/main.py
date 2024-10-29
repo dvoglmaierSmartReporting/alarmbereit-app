@@ -62,6 +62,7 @@ from screens.firetruck_browse import Fahrzeugkunde_Browse
 from screens.firetruck_images import Fahrzeugkunde_Images
 from screens.competition_menu import Bewerb_Menu
 from screens.competition_training import Bewerb_Training
+from screens.competition_game import Bewerb_Game
 
 from helper.functions import mode_str2bool, mode_bool2str
 from helper.settings import Strings
@@ -115,7 +116,8 @@ class Start_Menu(Screen):
         mode_training, mode_game, mode_browse, mode_images = self.mode
         if mode_images:
             self.firetrucks_button.disabled = True  # type: ignore
-        if mode_game or mode_images or mode_browse:
+        # if mode_game or mode_images or mode_browse:
+        if mode_images or mode_browse:
             # if mode_game or mode_images:
             self.competitions_button.disabled = True  # type: ignore
         # if mode_training or mode_game or mode_images or mode_browse:
@@ -161,6 +163,7 @@ class FeuerwehrApp(App):
         sm.add_widget(Fahrzeugkunde_Browse())
         sm.add_widget(Fahrzeugkunde_Images())
         sm.add_widget(Bewerb_Training())
+        sm.add_widget(Bewerb_Game())
 
         return sm
 

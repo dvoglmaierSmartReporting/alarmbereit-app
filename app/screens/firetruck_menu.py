@@ -34,17 +34,17 @@ class Fahrzeugkunde_Menu(Screen):
                 height=150,
                 size_hint_x=1,
             )
-            btn.bind(on_release=self.on_button_release)
+            btn.bind(on_release=self.on_button_release)  # type: ignore
 
             # Add the button to the layout
-            self.firetrucks_layout.add_widget(btn)
+            self.firetrucks_layout.add_widget(btn)  # type: ignore
 
     def on_button_release(self, instance):
         # on question selection, read mode label text from current screen
         mode = mode_str2bool(self.mode_label.text.strip())  # type: ignore
         mode_training, mode_game, mode_browse, mode_images = mode
 
-        # bind firetruck and mode selection
+        # bind firetruck selection
         app = App.get_running_app()
 
         if mode_training:
@@ -53,7 +53,7 @@ class Fahrzeugkunde_Menu(Screen):
             # continue game with selected firetruck
             fahrzeugkunde_tg_screen = app.root.get_screen("fahrzeugkunde_training")  # type: ignore
             fahrzeugkunde_tg_screen.select_firetruck(instance.text.split(' ')[0])
-            fahrzeugkunde_tg_screen.forward_mode_2_fk_training(mode)
+            # fahrzeugkunde_tg_screen.forward_mode_2_fk_training(mode)
             fahrzeugkunde_tg_screen.play()
 
         if mode_game:

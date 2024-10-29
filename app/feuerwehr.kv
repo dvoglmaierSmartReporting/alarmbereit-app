@@ -564,4 +564,75 @@
                 font_size: "32sp"
                 on_release:
                     root.manager.get_screen('bewerb_training').reveal_answer()
+
+<Bewerb_Game>:
+    name: "bewerb_game"
+    question_id_label: question_id_label
+    question_scrollview: question_scrollview
+    question_label: question_label
+
+    Button:
+        text: "<"
+        font_size: "32sp"
+        size_hint: None, None
+        size: "50dp", "50dp"
+        pos_hint: {'left': 1, 'top': 1}
+        on_release:
+            app.root.current = "bewerb_menu"
+            root.manager.transition.direction = "right"
+
+    Label:
+        id: question_id_label
+        font_size: "32sp"
+        halign: "right"
+        size_hint: None, None
+        size: "500dp", "50dp"
+        text_size: self.width, None
+        pos_hint: {'right': 1, 'top': 1}
     
+    BoxLayout:
+        orientation: 'vertical'
+
+        Label:  # placeholder
+            size_hint: 1, 0.1
+            text: ""
+        
+        ScrollView:
+            id: question_scrollview
+            size_hint: 0.9, 0.65
+            pos_hint: {'center_x': 0.5}
+            Label:
+                id: question_label
+                font_size: "32sp"
+                halign: "left"
+                valign: "top"
+                size_hint_y: None
+                text_size: self.width, None
+                height: self.texture_size[1]
+                markup: True
+        
+        GridLayout:
+            size_hint: 1, 0.25
+            spacing: "3dp"
+            cols: 2
+
+            Button:
+                text: "A"
+                font_size: "45sp"
+                on_release:
+                    root.manager.get_screen('bewerb_game').answer(self.text)
+            Button:
+                text: "B"
+                font_size: "45sp"
+                on_release:
+                    root.manager.get_screen('bewerb_game').answer(self.text)
+            Button:
+                text: "C"
+                font_size: "45sp"
+                on_release:
+                    root.manager.get_screen('bewerb_game').answer(self.text)
+            Button:
+                text: "D"
+                font_size: "45sp"
+                on_release:
+                    root.manager.get_screen('bewerb_game').answer(self.text)

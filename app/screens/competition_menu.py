@@ -37,16 +37,21 @@ class Bewerb_Menu(Screen):
         # bind competition selection
         app = App.get_running_app()
 
-        # if mode_training or mode_game:
         if mode_training:
             app.root.current = "bewerb_training"  # type: ignore
             app.root.transition.direction = "left"  # type: ignore
             # continue game with selected competition
             bewerb_training_screen = app.root.get_screen("bewerb_training")  # type: ignore
-            bewerb_training_screen.select_competition(instance.text.split(' ')[0])
+            bewerb_training_screen.select_competition(instance.text)
             bewerb_training_screen.play()
-            # adapt for competition
-            # fahrzeugkunde_tg_screen.forward_mode_2_fk_training_game(mode)
+
+        if mode_game:
+            app.root.current = "bewerb_game"  # type: ignore
+            app.root.transition.direction = "left"  # type: ignore
+            # continue game with selected competition
+            bewerb_game_screen = app.root.get_screen("bewerb_game")  # type: ignore
+            bewerb_game_screen.select_competition(instance.text)
+            bewerb_game_screen.play()
 
         # adapt for competition
         # elif mode_browse:

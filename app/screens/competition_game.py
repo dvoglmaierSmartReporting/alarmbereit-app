@@ -9,12 +9,12 @@ from helper.game_class import GameCore, CompetitionQuestion
 strings = Strings()
 
 
-class Bewerb_Training(Screen):
+class Bewerb_Game(Screen):
     def __init__(self, **kwargs):
-        super(Bewerb_Training, self).__init__(**kwargs)
+        super(Bewerb_Game, self).__init__(**kwargs)
         # update button strings
-        self.solution_button.text = strings.BUTTON_STR_SOLUTION  # type: ignore
-        self.random_question_button.text = strings.BUTTON_STR_RANDOM_QUESTION  # type: ignore
+        # self.solution_button.text = strings.BUTTON_STR_SOLUTION  # type: ignore
+        # self.random_question_button.text = strings.BUTTON_STR_RANDOM_QUESTION  # type: ignore
 
     def select_competition(self, selected_competition):
         # troubleshooting: fix competition
@@ -93,39 +93,39 @@ class Bewerb_Training(Screen):
         )
         self.question_label.text = self.current_question.question  # type: ignore
 
-    def random_question(self):
-        # move scrollview to top
-        self.ids.question_scrollview.scroll_y = 1
+    # def random_question(self):
+    #     # move scrollview to top
+    #     self.ids.question_scrollview.scroll_y = 1
 
-        self.solution_button.disabled = False  # type: ignore
+    #     self.solution_button.disabled = False  # type: ignore
 
-        self.previous_question_button.disabled = False  # type: ignore
-        self.next_question_button.disabled = False  # type: ignore
+    #     self.previous_question_button.disabled = False  # type: ignore
+    #     self.next_question_button.disabled = False  # type: ignore
 
-        if len(self.question_ids) == 0:
-            # self.reset_competition_questions()
-            self.question_ids = list(set(self.question_ids_bak))
+    #     if len(self.question_ids) == 0:
+    #         # self.reset_competition_questions()
+    #         self.question_ids = list(set(self.question_ids_bak))
 
-        self.shuffle_questions()
-        # troubleshooting: fix question
-        # self.current_question_id = "22" # -> "Xaver"
-        # self.current_question_id = self.question_ids.pop()
-        upcoming_question_id = self.question_ids.pop()
+    #     self.shuffle_questions()
+    #     # troubleshooting: fix question
+    #     # self.current_question_id = "22" # -> "Xaver"
+    #     # self.current_question_id = self.question_ids.pop()
+    #     upcoming_question_id = self.question_ids.pop()
 
-        self.current_question = CompetitionQuestion(
-            competition=self.selected_competition,
-            question_id=upcoming_question_id,
-            question=self.competition_dict.get(upcoming_question_id).get("Q"),  # type: ignore
-            answers=self.competition_dict.get(upcoming_question_id).get("A"),  # type: ignore
-        )
+    #     self.current_question = CompetitionQuestion(
+    #         competition=self.selected_competition,
+    #         question_id=upcoming_question_id,
+    #         question=self.competition_dict.get(upcoming_question_id).get("Q"),  # type: ignore
+    #         answers=self.competition_dict.get(upcoming_question_id).get("A"),  # type: ignore
+    #     )
 
-        self.display_question()
+    #     self.display_question()
 
     def next_question(self, previous: bool = False):
         # move scrollview to top
         self.ids.question_scrollview.scroll_y = 1
 
-        self.solution_button.disabled = False  # type: ignore
+        # self.solution_button.disabled = False  # type: ignore
 
         if not previous:
             upcoming_question_id = int(self.current_question.question_id) + 1
@@ -143,7 +143,7 @@ class Bewerb_Training(Screen):
         if upcoming_question_id in self.question_ids:
             self.question_ids.remove(upcoming_question_id)
 
-        self.check_arrow_buttons()
+        # self.check_arrow_buttons()
 
         self.display_question()
 
