@@ -31,11 +31,11 @@ class Fahrzeugkunde_Game(Screen):
         self.selected_firetruck = selected_firetruck
         self.firetruck_label.text = f"   {selected_firetruck}"  # type: ignore
 
-    def forward_mode_2_fk_game(self, mode: tuple):
-        self.mode_training: bool = mode[0]
-        self.mode_game: bool = mode[1]
-        self.mode_browse: bool = mode[2]
-        self.mode_images: bool = mode[3]
+    # def forward_mode_2_fk_game(self, mode: tuple):
+    #     self.mode_training: bool = mode[0]
+    #     self.mode_game: bool = mode[1]
+    #     self.mode_browse: bool = mode[2]
+    #     self.mode_images: bool = mode[3]
 
     def display_timer_change_label(self, *args):
         # state switch between True and False
@@ -112,7 +112,7 @@ class Fahrzeugkunde_Game(Screen):
 
     def end_game(self):
         if self.game.score > self.current_high_score:
-            save_to_scores_file("game_high_score", self.game.score)
+            save_to_scores_file(self.selected_firetruck, "high_score", self.game.score)
 
         app = App.get_running_app()
         app.root.current = "fahrzeugkunde_menu"  # type: ignore
@@ -134,7 +134,9 @@ class Fahrzeugkunde_Game(Screen):
 
         self.reset_timer()
 
-        self.current_high_score = read_scores_file_key("game_high_score")
+        self.current_high_score = read_scores_file_key(
+            self.selected_firetruck, "high_score"
+        )
 
         self.update_score_labels()
 

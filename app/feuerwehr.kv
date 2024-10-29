@@ -201,11 +201,12 @@
 
     Label:
         id: strike_label
-        font_size: "25sp"
+        # text: '0'
+        text: ''
+        size_hint: 0.1, 0.25
         pos_hint: {'right': 1, 'top': 1}
         text_size: self.width, None
-        text: "0"
-        size_hint: 0.1, 0.25
+        font_size: "25sp"
         # halign: "right"
     
     Label:
@@ -266,7 +267,7 @@
 
     Label:
         id: score_label
-        text: ""
+        text: ''
         size_hint: None, None
         size: '70dp', '50dp'
         pos_hint: {'center_x': 0.5, 'top': 1}
@@ -346,55 +347,46 @@
     browse_scrollview: browse_scrollview
     filter_text: filter_text
 
-    Button:
-        text: "<"
-        font_size: "32sp"
-        size_hint: None, None
-        size: "50dp", "50dp"
-        pos_hint: {'left': 1, 'top': 1}
-        on_release:
-            app.root.current = "fahrzeugkunde_menu"
-            root.manager.transition.direction = "right"
-    
+    #Button:
+    #    text: "<"
+    #    font_size: "32sp"
+    #    size_hint: None, None
+    #    size: "50dp", "50dp"
+    #    pos_hint: {'left': 1, 'top': 1}
+    #    on_release:
+    #        app.root.current = "fahrzeugkunde_menu"
+    #        root.manager.transition.direction = "right"
+    #
+    #Label:
+    #    id: firetruck_label
+    #    font_size: "20sp"
+    #    pos_hint: {'right': 1, 'top': 1}
+    #    text_size: self.width, None
+    #    halign: "right"
+    #    size_hint: None, None
+    #    size: "200dp", "50dp"
     Label:
         id: firetruck_label
         font_size: "20sp"
-        pos_hint: {'right': 1, 'top': 1}
+        pos_hint: {'center_x': 1, 'top': 1}
         text_size: self.width, None
-        halign: "right"
-        size_hint: None, None
-        size: "200dp", "50dp"
+        halign: "left"
+        size_hint: 0.7, 0.25
     
     BoxLayout:
         orientation: 'vertical'
 
-        Label:  # placeholder
-            size_hint: 1, 0.1
-            text: ""
-
-        ScrollView:
-            id: browse_scrollview
-            size_hint: 0.9, 1
-            pos_hint: {'center_x': 0.5}
-            BoxLayout:
-                id: label_list
-                orientation: 'vertical'
-                size_hint_y: None
-                size_hint_x: None
-                width: 1300
-                height: self.minimum_height
-        
         BoxLayout:
             orientation: 'horizontal'
             size_hint: 1, 0.1
             
-            #Label:  # placeholder
-            #    size_hint: 0.1, 1
-            #    text: ""
+            Label:  # placeholder
+                size_hint: 0.2, 1
+                text: ""
 
             TextInput:
                 id: filter_text
-                size_hint: 0.7, 1
+                size_hint: 0.6, 1
                 pos_hint: {'center_x': 0.5}
                 text: ""
                 text_size: self.width, None
@@ -406,6 +398,32 @@
                 text: "search"
                 on_release:
                     root.manager.get_screen('fahrzeugkunde_browse').filter_list()
+
+        Label:  # placeholder
+            size_hint: 1, 0.1
+            text: ""
+        
+        ScrollView:
+            id: browse_scrollview
+            size_hint: 0.9, 1
+            pos_hint: {'center_x': 0.5}
+            BoxLayout:
+                id: label_list
+                orientation: 'vertical'
+                size_hint_y: None
+                size_hint_x: None
+                width: 1300
+                height: self.minimum_height
+    
+    Button:
+        text: "<"
+        font_size: "32sp"
+        size_hint: None, None
+        size: "50dp", "50dp"
+        pos_hint: {'left': 1, 'top': 1}
+        on_release:
+            app.root.current = "fahrzeugkunde_menu"
+            root.manager.transition.direction = "right"
 
 
 <Fahrzeugkunde_Images>:

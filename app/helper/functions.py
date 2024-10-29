@@ -93,15 +93,21 @@ def read_scores_file():
         return yaml.safe_load(file)
 
 
-def read_scores_file_key(key: str):
+def read_scores_file_key(firetruck: str, key: str):
     content = read_scores_file()
-    # self.current_high_score = content.get(key)
-    return content.get(key)
+    return content.get(firetruck).get(key)
 
 
-def save_to_scores_file(key: str, value: int):
+def save_to_scores_file(firetruck: str, key: str, value: int):
     content = read_scores_file()
-    # content["game_high_score"] = self.game.score
-    content[key] = value
+
+    if not firetruck in content.keys():
+        raise ValueError(f"Firetruck {firetruck} not found in scores.yaml")
+
+    if not key in content[firetruck].keys():
+        raise ValueError(f"Key {key} not found in firetruck {firetruck} in scores.yaml")
+
+    content[firetruck][key] = value
+
     with open("/".join(__file__.split("/")[:-2]) + "/storage/scores.yaml", "w") as file:
         yaml.dump(content, file)

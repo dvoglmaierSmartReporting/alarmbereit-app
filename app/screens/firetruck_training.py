@@ -38,6 +38,9 @@ class Fahrzeugkunde_Training(Screen):
     def update_strike_label(self):
         self.strike_label.text = f"{str(self.game.answers_correct_strike)}  "  # type: ignore
 
+    def update_high_strike_label(self):
+        self.high_strike_label.text = f"Best: {str(self.current_high_strike)}  "  # type: ignore
+
     def reset_strike(self, *arg):
         self.game.answers_correct_strike = 0
         self.update_strike_label()
@@ -45,14 +48,6 @@ class Fahrzeugkunde_Training(Screen):
     def increment_strike(self):
         self.game.answers_correct_strike += 1
         self.update_strike_label()
-
-    # def save_high_strike(self):
-    #     # with open("./app/storage/high_strike.yaml", "w") as f:
-    #     with open(
-    #         "/".join(__file__.split("/")[:-2]) + "/storage/high_strike.yaml", "w"
-    #     ) as f:
-    #         # yaml.dump({"high_strike": self.strike}, f)
-    #         yaml.dump({"high_strike": self.game.answers_correct_strike}, f)
 
     # def end_game(self):
     #     self.save_high_strike()
@@ -75,7 +70,13 @@ class Fahrzeugkunde_Training(Screen):
         # (re)set game specific elements
         self.reset_tool_list()
 
-        self.current_high_strike = read_scores_file_key("training_high_strike")
+        self.reset_strike()
+
+        self.current_high_strike = read_scores_file_key(
+            self.selected_firetruck, "high_strike"
+        )
+
+        self.update_high_strike_label()
 
         # NEXT: when to update high_strike???
         # todo: display best strike!
@@ -111,6 +112,13 @@ class Fahrzeugkunde_Training(Screen):
         self.increment_strike()
 
         self.game.answers_correct_total += 1
+
+        if self.game.answers_correct_strike > self.current_high_strike:
+            self.current_high_strike = self.game.answers_correct_strike
+            self.update_high_strike_label()
+            save_to_scores_file(
+                self.selected_firetruck, "high_strike", self.game.answers_correct_strike
+            )
 
     def incorrect_answer(self):
         # self.reset_strike()
