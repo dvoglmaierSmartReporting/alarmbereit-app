@@ -39,7 +39,7 @@ RüstLösch:
     - Notrettungsset
     - Feuerwehrauffanggurt
     - Basis Sichern/Auffangen
-    - A2-Sanitätsrucksack
+    - Sanitätsrucksack
     - Einweghandschuhe
     - Alu-Rettungsdecke
     - Wolldecke
@@ -116,7 +116,7 @@ RüstLösch:
     - Rauchfangtürschlüssel
   G2:
     - Schlagbohrmaschine mit Bohrersatz
-    - Europa Absperrband
+    - Absperrband
     - Absperrständer
     - Bodenteller f. Absperrständer
     - Verkehrsleitkegel
@@ -129,7 +129,7 @@ RüstLösch:
     - Stativ
     - Aufnahmebrücke f. Fluter
     - Stromerzeuger
-    - Abgasschlauch f. Stromerz.
+    - Abgasschlauch
     - Kraftstoffkanister f. Stromerz.
     - Einfüllstutzen
     - Verteilerkabeltrommel 30 m 400 V
@@ -173,7 +173,7 @@ RüstLösch:
     - Holzhammer
     - Dichtpfropfen
   G5:
-    - Kupplungsschlüssel ABC
+    - ABC-Kupplungsschlüssel
     - Druckschlauch B
     - Verbindungsschlauch B
     - Satz Schlauchbinden
@@ -349,8 +349,8 @@ Tank1:
     - Dekowanne
     - Müllsack
     - Kanalabdeckung
-    - PE-Plane 4 x 4 m
-    - Kunststofffolie 4 x 4 m
+    - PE-Plane 4x4 m
+    - Kunststofffolie 4x4 m
     - Absperrstangen
   G5:
     - Druckschlauch B
@@ -477,7 +477,7 @@ Leiter:
     - Brandfluchthaube
     - Safty Peak
   G3:
-    - ABC Kupplungsschlüssel
+    - ABC-Kupplungsschlüssel
     - Druckschlauch B75 25 m orange
     - Druckschlauch B75 20 m
     - Druckschlauch C52 15 m
@@ -503,7 +503,7 @@ Leiter:
     - FW-Gurt
   G5:
     - Löschdecke
-    - ABC Pulverlöscher
+    - ABC-Pulverlöscher
     - Verkehrsleitkegel
     - Warndreieck "Feuerwehr"
     - Absperrband
@@ -622,7 +622,7 @@ Tank2:
     - Druckschlauch C42
     - Hohlstrahlrohr
     - Verteiler B-CBC
-    - Kupplungsschlüssel
+    - ABC-Kupplungsschlüssel
     - Übergangsstück B-C
     - Strahlrohr B m. Stützkrümmer
     - Stützkrümmer
@@ -805,7 +805,7 @@ Voraus+Ölanh.:
     - Chemische Schutzhandschuhe
     - Leckdichtpaste
     - Selbstschweißendes Dichtband
-    - Plane 3 x 4 m
+    - Plane 3x4 m
 
 Pumpe:
   Fahrer/GK:
@@ -921,7 +921,7 @@ Pumpe:
     - Übergangsstück A-B
     - Verteiler B-CBC
     - Hydroschild C
-    - Pulverlöscher ABC 12 kg
+    - ABC-Pulverlöscher
     - Löschdecke
     - Mehrzweckstrahlrohr B
     - Schlauchbinden
@@ -1170,7 +1170,7 @@ Rüst:
     - Kunststoffsack
     - Müllsack
     - Plane 1,4 x 2,2 m
-    - Plane 4 x 4 m
+    - Plane 4x4 m
     - Gerüst f. Faltbehälter
     - Faltbehälter
     - Einhängefolie f. Faltbehälter
@@ -1307,7 +1307,7 @@ TankDürrnberg:
     - Türöffner
     - Vorschlaghammer 5 kg
   G2:
-    - Abgasschlauch für Stromerzeuger
+    - Abgasschlauch
     - Fluterbrücke
     - Stromschnellangriff
     - Einbaugenerator 10 kVA
@@ -1315,7 +1315,7 @@ TankDürrnberg:
     - Verlängerungskabel 10 m
     - Verteilerkabeltrommel 230 V 30 m
     - Rollgliss mit Abseilachter
-    - Absperrband 500 m
+    - Absperrband
     - Dreibeinstativ
     - Schaufeltrage
     - Schlagbohrmaschine
@@ -1351,8 +1351,8 @@ TankDürrnberg:
     - Schlauchbrücke
     - Schnürleine 6 m
     - Einfüllstutzen
-    - Abdeckplanen grün
-    - Kunststoffplanen 4x4m
+    - Abdeckplane
+    - Kunststoffplane 4x4m
     - Müllsäcke
     - Chemieschutzanzug mit Stiefel
   G5:
@@ -1364,7 +1364,7 @@ TankDürrnberg:
     - B-Mehrzweckstrahlrohr
     - C-Strahlrohr
     - Hydroschild C
-    - Kupplungsschlüssel ABC
+    - ABC-Kupplungsschlüssel
     - Stützkrümmer
     - Überflurhydrantenschlüssel
     - Übergangsstück A 125/110
@@ -1387,7 +1387,7 @@ TankDürrnberg:
     - Wasserwerfer
     - Hydrofix 10l
     - Kohlendioxydlöscher 6kg
-    - Pulverlöscher ABC 12 kg
+    - ABC-Pulverlöscher
     - HD-Strahlrohr
     - HD Kupplungsschlüssel
     - Schneeketten
@@ -1396,7 +1396,7 @@ TankDürrnberg:
   G7 / Heck:
     - HD Schlauch 60 m
     - HD-Strahlrohr
-    - Kupplungsschlüssel ABC
+    - ABC-Kupplungsschlüssel
     - Atemschutz Überwachungstafel
     - Funkfernbedienung Lichtmast
     - Fußtaster
@@ -1422,3 +1422,165 @@ TankDürrnberg:
     - Standrohr
     - Unterflurhydrantenschlüssel
     - Feuerpatsche
+
+PumpeDürrnberg:
+  Fahrer/GK:
+    - Handfunkgerät
+    - Handlampe
+    - Handscheinwerfer
+    - Schreibmaterial
+    - Steuerung Seilwinde
+  Mannschaft:
+    - Arbeitsmesser
+    - Warnüberwurf
+    - Anhaltestab
+    - Handfunkgerät
+    - Warnzeichen "Feuerwehr"
+    - Rettungsleine 30 m
+    - FW-Gurt
+    - Tragetuch
+    - Rettungsdecke
+    - Sicherheitsgeschirr
+    - Sanitätsrucksack
+    - FW-Einsatzhandschuhe
+    - Einweghandschuhe
+    - Pressluftatmer
+    - Reserveflasche
+    - Atemschutzmaske
+    - Atemschutzmaske m. Filter
+    - Handlampe Adalit
+  G1:
+    - Bolzenschneider 75 cm
+    - Brechstange 1,5 m
+    - Feuerwehraxt
+    - Hacke langstielig
+    - Hacke kurzstielig
+    - Handhammer 2 kg
+    - Zimmermannshammer
+    - Nageleisen
+    - Vorschlaghammer 5 kg
+    - TNT Tool
+    - Straßenbesen
+    - Flachschaufel
+    - Randschaufel
+    - Schnittschutzhose
+    - Forsthelm
+    - Spitzschneidekrampen 2,5 kg
+    - Feuerwehrsappel
+    - Hubwinde 100 kN
+    - Motorkettensäge
+    - Elektrokettensäge
+    - Forstkeil
+    - Ersatzkette f. Motorkettensäge
+    - Kombikanister
+    - Tauchpumpe
+    - Werkzeugkoffer
+    - Schneeketten
+    - Ölbindemittelkanister
+    - Luftschlauch m. Luftpistole
+    - Luftdruckprüfer
+  G2:
+    - Kabelbedienung Lichtmast
+    - Funkbedienung Lichtmast
+    - Generator 9 kVA
+    - Kabeltrommel 230 V
+    - Kabeltrommel 400 V
+    - Schleifringtrommel 400 V
+    - LED-Schweinwerfer
+    - Klebeband
+    - Absperrband
+    - Fluterbrücke
+    - Euroblitzleuchte
+    - Verlängerungskabel 230 V
+    - Einfüllstutzen
+    - Fremdbetankungs-Garnitur
+    - Benzin-Kanister 10 l
+    - Benzin-Kanister 20 l
+    - Diesel-Kanister 20 l
+    - Verkehrsleitkegel faltbar
+    - Beleuchtungssystem RLS2000
+    - Abdeckplane
+    - Dreibeinstativ
+    - Abgasschlauch
+    - PVC-Folie
+    - Müllsäcke
+    - Kabelbinder
+    - Stromverteiler
+  G3:
+    - ABC-Kupplungsschlüssel
+    - A-Saugkorb m. Rückschlagventil
+    - Ventilhalteleine
+    - Drahtschutzkorb
+    - Schwimmsauger
+    - B-Druckschlauch
+    - B-Verbindungsschlauch
+    - C-Druckschlauch
+    - Schlauchtragekorb
+    - Segeltuchbeutel f. Schlauchbinden
+    - Schlauchbrücke
+    - Schlauchhalter
+    - B-Mehrzweckstrahlrohr
+    - B-Stützkrümmer
+    - C-Hohlstrahlrohr
+    - Druckbegrenzungsventil
+    - Sammelstück A-BB
+    - Überflurhydrantenschlüssel
+    - Überflurhydrantenschlüssel m. Ratsche
+    - Übergangsstück 125-110
+    - Übergangsstück A-B
+    - Übergangsstück B-C
+    - Verteiler B-CBC
+    - C-Schlauchpaket m. Absperrhahn
+  G4:
+    - Wathose
+    - Arbeitsleine
+    - Schnürleine
+    - Wassersauger m. Zubehör
+    - Koffer Abschleppösen
+    - ABC Pulverlöscher
+    - Löschdecke
+    - Umlenkrolle 140 kN
+    - Seilrolle 60 kN
+    - Basisausrüstung ÖBFV
+    - Rundschlinge 60 kN
+    - Rundschlinge 40 kN
+    - Kantenreiter
+    - Windenkeil
+    - Zurrgurt m. Ratsche 8m 2-teilig
+    - Zurrgurt 7m 1-teilig
+    - Gerüstklammern
+    - Schäkel 65 kN
+    - Schäkel 120 kN
+    - Kettengehänge 19 kN
+    - Kettengehänge 40 kN
+    - Kettengehänge 56 kN
+    - Kettengehänge 67 kN
+    - Greifzug
+    - Erdanker
+    - Seil f. Greifzug
+    - Abschleppseil
+    - Bandschlinge 22 kN
+    - Seilstropp 5 m
+    - Seilstropp 10 m
+    - Unterleghölzer
+    - Bindedraht
+    - Nägel
+  G5 / Heck:
+    - A-Saugschlauch
+    - Tragkraftspritze
+    - Radkeil
+    - Schlauchrollwagen
+    - Werkzeugsatz Tragkraftspritze
+    - Unterflur-Hydrantenstandrohr
+    - Unterflur-Hydrantenschlüssel
+  Dach:
+    - Schiebeleiter 2-teilig 8 m
+    - Korbtrage
+    - Ausräumhaken
+    - Einreißhaken
+    - Spitzschaufel
+    - Heugabel
+    - Schaufeltrage
+    - Wasserschieber
+    - Tafel "Ölspur"
+    - Streuwagen

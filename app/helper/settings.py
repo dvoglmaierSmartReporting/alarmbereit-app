@@ -48,4 +48,5 @@ class Strings:
             "Pumpe": "LFA",
             "Rüst": "SRFK-A",
             "TankDürrnberg": "TLFA 3000",
+            "PumpeDürrnberg": "LFA",
         }
