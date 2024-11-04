@@ -1,63 +1,62 @@
-firetrucks:
-    Leiter:
-        high_score: 0
-        high_strike: 0
-    Pumpe:
-        high_score: 0
-        high_strike: 0
-    "R\xFCst":
-        high_score: 0
-        high_strike: 0
-    "R\xFCstL\xF6sch":
-        high_score: 3300
-        high_strike: 11
-    Tank1:
-        high_score: 0
-        high_strike: 0
-    Tank2:
-        high_score: 0
-        high_strike: 0
-    "TankD\xFCrrnberg":
-        high_score: 0
-        high_strike: 2
-    TestTruck:
-        high_score: 0
-        high_strike: 1
-    Voraus:
-        high_score: 0
-        high_strike: 0
-    "Voraus+\xD6lanh.":
-        high_score: 0
-        high_strike: 2
-
 competitions:
-    Test:
-        high_score: 0
-    "Funk Bronze":
-        high_score: 0
-    "Funk Silber":
-        high_score: 0
-    "Funk Gold":
-        high_score: 0
-    "FLA Gold - Organisation":
-        high_score: 0
-    "FLA Gold - Taktik":
-        high_score: 0
-    "FLA Gold - Technik":
-        high_score: 0
-    "TechnLP Stufe II":
-        high_score: 0
-    "ASLP Stufe I":
-        high_score: 0
-    "ASLP Stufe II":
-        high_score: 0
-    "ASLP Stufe III":
-        high_score: 0
-    "BDLP GRKDT Stufe I":
-        high_score: 0
-    "BDLP GRKDT Stufe II":
-        high_score: 0
-    "BDLP MA Stufe II":
-        high_score: 0
-    "BDLP ME+Trupps Stufe II":
-        high_score: 0
+  ASLP Stufe I:
+    high_score: 0
+  ASLP Stufe II:
+    high_score: 0
+  ASLP Stufe III:
+    high_score: 0
+  BDLP GRKDT Stufe I:
+    high_score: 0
+  BDLP GRKDT Stufe II:
+    high_score: 0
+  BDLP MA Stufe II:
+    high_score: 0
+  BDLP ME+Trupps Stufe II:
+    high_score: 0
+  FLA Gold - Organisation:
+    high_score: 0
+  FLA Gold - Taktik:
+    high_score: 0
+  FLA Gold - Technik:
+    high_score: 0
+  Funk Bronze:
+    high_score: 0
+  Funk Gold:
+    high_score: 0
+  Funk Silber:
+    high_score: 0
+  TechnLP Stufe II:
+    high_score: 0
+  Test:
+    high_score: 0
+firetrucks:
+  Leiter:
+    high_score: 0
+    high_strike: 0
+  Pumpe:
+    high_score: 0
+    high_strike: 0
+  "R\xFCst":
+    high_score: 0
+    high_strike: 0
+  "R\xFCstL\xF6sch":
+    high_score: 3300
+    high_strike: 11
+  Tank1:
+    high_score: 0
+    high_strike: 0
+  Tank2:
+    high_score: 0
+    high_strike: 0
+  "TankD\xFCrrnberg":
+    high_score: 0
+    high_strike: 2
+  TestTruck:
+    high_score: 1300
+    high_strike: 9
+  Voraus:
+    high_score: 0
+    high_strike: 0
+  "Voraus+\xD6lanh.":
+    high_score: 0
+    high_strike: 2

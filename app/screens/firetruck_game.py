@@ -31,21 +31,8 @@ class Fahrzeugkunde_Game(Screen):
         self.selected_firetruck = selected_firetruck
         self.firetruck_label.text = f"   {selected_firetruck}"  # type: ignore
 
-    # def forward_mode_2_fk_game(self, mode: tuple):
-    #     self.mode_training: bool = mode[0]
-    #     self.mode_game: bool = mode[1]
-    #     self.mode_browse: bool = mode[2]
-    #     self.mode_images: bool = mode[3]
-
-    def display_timer_change_label(self, *args):
-        # state switch between True and False
-        self.timer_change_label_visible = not self.timer_change_label_visible
-
     def hide_label(self, *args):
         self.extra_time_label.opacity = 0  # type: ignore
-
-    # def display_timer_change_add(self):
-    #     self.timer_change_add = not self.timer_change_add
 
     def reset_timer(self):
         self.time_left = settings.START_TIME_GAME_SEC
@@ -60,21 +47,12 @@ class Fahrzeugkunde_Game(Screen):
 
         self.extra_time_label.text = f"+ {settings.EXTRA_TIME} s  "  # type: ignore
 
-        # self.display_timer_change_label()
         self.extra_time_label.opacity = 1  # type: ignore
 
         Clock.schedule_once(
-            # self.display_timer_change_label(), settings.DISPLAY_EXTRA_TIME_LABEL
             self.hide_label,
             settings.DISPLAY_EXTRA_TIME_LABEL,
         )
-
-    # def subtract_time(self):
-    #     # to be replaced by extra_time
-    #     time_punishment = settings.PUNISHMENT_GAME_SEC
-    #     self.time_left = round(
-    #         max(0, self.time_left - time_punishment), 1
-    #     )
 
     def set_progress_bar(self):
         self.progress_bar.max = settings.START_TIME_GAME_SEC  # type: ignore
@@ -83,7 +61,6 @@ class Fahrzeugkunde_Game(Screen):
         self.progress_bar.value = self.time_left  # type: ignore
 
     def update_timer(self, *args):
-
         # update game time
         self.update_progress_bar()
 

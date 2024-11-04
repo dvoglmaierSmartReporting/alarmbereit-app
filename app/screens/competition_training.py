@@ -64,7 +64,7 @@ class Bewerb_Training(Screen):
 
     def display_question(self):
         self.question_id_label.text = (  # type: ignore
-            f"{self.current_question.question_id} von {self.question_ids_max}"
+            f"{self.current_question.question_id} von {self.question_ids_max}   "
         )
         self.question_label.text = self.current_question.question  # type: ignore
 

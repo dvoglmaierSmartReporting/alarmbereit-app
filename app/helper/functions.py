@@ -93,9 +93,8 @@ def read_scores_file():
         return yaml.safe_load(file)
 
 
-def read_scores_file_key(firetruck: str, key: str):
-    content = read_scores_file()
-    return content.get(firetruck).get(key)
+def read_scores_file_key(firetruck: str, key: str, questions: str = "firetrucks"):
+    return read_scores_file().get(questions).get(firetruck).get(key)
 
 
 def save_to_scores_file(

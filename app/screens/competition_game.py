@@ -1,22 +1,97 @@
+from kivy.app import App
 from kivy.uix.screenmanager import Screen
+from kivy.clock import Clock
 
 from random import shuffle
 
-from helper.functions import load_total_competition_questions
-from helper.settings import Strings
+from helper.functions import (
+    load_total_competition_questions,
+    read_scores_file_key,
+    save_to_scores_file,
+)
+from helper.settings import Settings
 from helper.game_class import GameCore, CompetitionQuestion
 
-strings = Strings()
+settings = Settings()
 
 
 class Bewerb_Game(Screen):
-    def __init__(self, **kwargs):
-        super(Bewerb_Game, self).__init__(**kwargs)
+    # def __init__(self, **kwargs):
+    #     super(Bewerb_Game, self).__init__(**kwargs)
 
     def select_competition(self, selected_competition):
         # troubleshooting: fix competition
         # self.selected_competition = "Funk"
         self.selected_competition = selected_competition
+        self.competition_label.text = f"   {selected_competition}"  # type: ignore
+
+    def hide_label(self, *args):
+        self.extra_time_label.opacity = 0  # type: ignore
+
+    def reset_timer(self):
+        self.time_left = settings.COMPETITION_START_TIME_GAME_SEC
+
+        # self.timer_label.text = f"{str(self.time_left)} s  "
+        self.timer_label.text = f""  # type: ignore
+
+        self.set_progress_bar()
+
+    def add_time(self, extra_time: float):
+        self.time_left = round(self.time_left + extra_time, 1)
+
+        self.extra_time_label.text = f"+ {settings.COMPETITION_EXTRA_TIME} s  "  # type: ignore
+
+        self.extra_time_label.opacity = 1  # type: ignore
+
+        Clock.schedule_once(
+            self.hide_label,
+            settings.DISPLAY_EXTRA_TIME_LABEL,
+        )
+
+    def set_progress_bar(self):
+        self.progress_bar.max = settings.COMPETITION_START_TIME_GAME_SEC  # type: ignore
+
+    def update_progress_bar(self):
+        self.progress_bar.value = self.time_left  # type: ignore
+
+    def update_timer(self, *args):
+        # update game time
+        self.update_progress_bar()
+
+        if self.time_left > 0.0:
+            self.time_left = round(self.time_left - settings.INTERVAL_GAME_SEC, 1)
+
+            if not self.time_left == 0.0:
+                # self.timer_label.text = f"{str(self.time_left)} s  "
+                self.timer_label.text = f""  # hide label for UI testing  # type: ignore
+
+            else:
+                self.timer_label.text = "Ende  "  # type: ignore
+                # todo: disable buttons between game end and menu screen animation
+        else:
+            Clock.unschedule(self.update_timer)  # Stop the timer when it reaches 0
+            self.end_game()
+            pass
+
+    def increment_score(self, add: int = 100):
+        self.game.score += add
+        self.score_label.text = f"{str(self.game.score)}  "  # type: ignore
+
+    def update_score_labels(self):
+        self.score_label.text = f"{str(self.game.score)}  "  # type: ignore
+        self.high_score_label.text = f"Best: {str(self.current_high_score)}  "  # type: ignore
+
+    def end_game(self):
+        if self.game.score > self.current_high_score:
+            save_to_scores_file(
+                self.selected_competition, "high_score", self.game.score, "competitions"
+            )
+
+        app = App.get_running_app()
+        app.root.current = "bewerb_menu"  # type: ignore
+        app.root.transition.direction = "right"  # type: ignore
+
+## CONTINUE HERE!
 
     def shuffle_questions(self):
         shuffle(
@@ -63,7 +138,7 @@ class Bewerb_Game(Screen):
 
     def display_question(self):
         self.question_id_label.text = (  # type: ignore
-            f"{self.current_question.question_id} von {self.question_ids_max}"
+            f"{self.current_question.question_id} von {self.question_ids_max}   "
         )
         self.question_label.text = self.current_question.question  # type: ignore
 

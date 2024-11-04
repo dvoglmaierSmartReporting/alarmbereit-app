@@ -191,32 +191,61 @@
             app.root.current = "fahrzeugkunde_menu"
             root.manager.transition.direction = "right"
     
+    #Label:
+    #    id: firetruck_label
+    #    font_size: "20sp"
+    #    pos_hint: {'left': 1, 'top': 1}
+    #    text_size: self.width, None
+    #    halign: "left"
+    #    size_hint: 1, 0.25
     Label:
         id: firetruck_label
-        font_size: "20sp"
-        pos_hint: {'left': 1, 'top': 1}
-        text_size: self.width, None
+        size_hint: None, None
+        size: "200dp", "50dp"
+        pos_hint: {'x': 0.1, 'top': 1}
         halign: "left"
-        size_hint: 1, 0.25
+        valign: "middle"
+        text_size: self.size
+        font_size: "20sp"
 
+    #Label:
+    #    id: strike_label
+    #    # text: '0'
+    #    text: ''
+    #    size_hint: 0.1, 0.25
+    #    pos_hint: {'right': 1, 'top': 1}
+    #    text_size: self.width, None
+    #    font_size: "25sp"
+    #    # halign: "right"
     Label:
         id: strike_label
-        # text: '0'
         text: ''
-        size_hint: 0.1, 0.25
-        pos_hint: {'right': 1, 'top': 1}
-        text_size: self.width, None
+        size_hint: None, None
+        size: '70dp', '50dp'
+        pos_hint: {'center_x': 0.5, 'top': 1}
+        halign: "right"
+        valign: "middle"
+        text_size: self.size
         font_size: "25sp"
-        # halign: "right"
     
+    #Label:
+    #    id: high_strike_label
+    #    text: ''
+    #    font_size: "20sp"
+    #    pos_hint: {'right': 1, 'top': 1}
+    #    text_size: self.width, None
+    #    halign: "right"
+    #    size_hint: 1, 0.05
     Label:
         id: high_strike_label
         text: ''
-        font_size: "20sp"
+        size_hint: None, None
+        size: "500dp", "50dp"
         pos_hint: {'right': 1, 'top': 1}
-        text_size: self.width, None
         halign: "right"
-        size_hint: 1, 0.05
+        valign: "middle"
+        text_size: self.size
+        font_size: "20sp"
 
     BoxLayout:
         orientation: 'vertical'
@@ -287,29 +316,6 @@
         valign: "middle"
         text_size: self.size
         font_size: "20sp"
-
-    BoxLayout:
-        orientation: 'vertical'
-
-        Label:
-            # spacer
-            size_hint: 1, 0.2
-
-        Label:
-            id: tool_label
-            size_hint: 1, 1
-            font_size: "28sp"
-        
-        ProgressBar:
-            id: progress_bar
-            size_hint: 1, 0.1
-            # color: green if added, red if reduced
-        
-        GridLayout:
-            id: firetruck_rooms_layout
-            size_hint: 1, 4
-            spacing: "3dp"
-            cols: 2
     
     Label:
         id: extra_time_label
@@ -332,6 +338,28 @@
         text_size: self.size
         font_size: "22sp"
         # color: (0,1,0,1) if self.parent.timer_change_label_visible else (1,0,0,1)
+
+    BoxLayout:
+        orientation: 'vertical'
+
+        Label:  # placeholder
+            size_hint: 1, 0.2
+
+        Label:
+            id: tool_label
+            size_hint: 1, 1
+            font_size: "28sp"
+        
+        ProgressBar:
+            id: progress_bar
+            size_hint: 1, 0.1
+            # color: green if added, red if reduced
+        
+        GridLayout:
+            id: firetruck_rooms_layout
+            size_hint: 1, 4
+            spacing: "3dp"
+            cols: 2
 
 
 <Label_List>:
@@ -567,6 +595,11 @@
 
 <Bewerb_Game>:
     name: "bewerb_game"
+    competition_label: competition_label
+    score_label: score_label
+    high_score_label: high_score_label
+
+    progress_bar: progress_bar
     question_id_label: question_id_label
     question_scrollview: question_scrollview
     question_label: question_label
@@ -578,24 +611,84 @@
         size: "50dp", "50dp"
         pos_hint: {'left': 1, 'top': 1}
         on_release:
+            root.manager.get_screen('bewerb_game').end_game()
             app.root.current = "bewerb_menu"
             root.manager.transition.direction = "right"
 
     Label:
+        id: competition_label
+        size_hint: None, None
+        size: "200dp", "50dp"
+        pos_hint: {'x': 0.1, 'top': 1}
+        halign: "left"
+        valign: "middle"
+        text_size: self.size
+        font_size: "20sp"
+    
+    Label:
+        id: score_label
+        text: ''
+        size_hint: None, None
+        size: '70dp', '50dp'
+        pos_hint: {'center_x': 0.5, 'top': 1}
+        halign: "right"
+        valign: "middle"
+        text_size: self.size
+        font_size: "25sp"
+
+    Label:
+        id: high_score_label
+        text: ''
+        size_hint: None, None
+        size: "500dp", "50dp"
+        pos_hint: {'right': 1, 'top': 1}
+        halign: "right"
+        valign: "middle"
+        text_size: self.size
+        font_size: "20sp"
+
+    Label:
         id: question_id_label
-        font_size: "32sp"
+        font_size: "20sp"
         halign: "right"
         size_hint: None, None
         size: "500dp", "50dp"
         text_size: self.width, None
-        pos_hint: {'right': 1, 'top': 1}
+        pos_hint: {'right': 1, 'top': 0.95}
+    
+
+    Label:
+        id: extra_time_label
+        size_hint: None, None
+        size: '100dp', '50dp'
+        pos_hint: {'right': 1, 'y': 0.80}
+        halign: "right"
+        valign: "middle"
+        text_size: self.size
+        font_size: "20sp"
+        color: (0,1,0,1)
+
+    Label:
+        id: timer_label
+        size_hint: None, None
+        size: '100dp', '50dp'
+        pos_hint: {'right': 1, 'y': 0.75}
+        halign: "right"
+        valign: "middle"
+        text_size: self.size
+        font_size: "22sp"
     
     BoxLayout:
         orientation: 'vertical'
 
         Label:  # placeholder
             size_hint: 1, 0.1
-            text: ""
+            #size_hint: 1, 0.05
+        
+        ProgressBar:
+            id: progress_bar
+            #size_hint: 1, 0.1
+            size_hint: 1, 0.03
         
         ScrollView:
             id: question_scrollview
