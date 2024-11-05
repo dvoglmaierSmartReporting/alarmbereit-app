@@ -1,4 +1,5 @@
 from kivy.app import App
+from kivy.uix.button import Button
 from kivy.uix.screenmanager import Screen
 from kivy.clock import Clock
 
@@ -13,6 +14,9 @@ from helper.settings import Settings
 from helper.game_class import GameCore, CompetitionQuestion
 
 settings = Settings()
+
+# answer_idx: dict = {"A": 0, "B": 1, "C": 2, "D": 3}
+answer_idx: dict = {0: "A", 1: "B", 2: "C", 3: "D"}
 
 
 class Bewerb_Game(Screen):
@@ -133,7 +137,7 @@ class Bewerb_Game(Screen):
         # start game
         self.next_question()
 
-    def next_question(self):
+    def next_question(self, *args):
         # move scrollview to top
         self.ids.question_scrollview.scroll_y = 1
 
@@ -144,16 +148,23 @@ class Bewerb_Game(Screen):
             self.reset_competition_questions()
 
         # select question
-        current_tool = self.question_ids.pop()
+        current_question = self.question_ids.pop()
 
         self.current_question = CompetitionQuestion(
             competition=self.selected_competition,
-            question_id=current_tool,
-            question=self.competition_dict.get(upcoming_question_id).get("Q"),  # type: ignore
-            answers=self.competition_dict.get(upcoming_question_id).get("A"),  # type: ignore
+            question_id=current_question,
+            question=self.competition_dict.get(current_question).get("Q"),  # type: ignore
+            answers=self.competition_dict.get(current_question).get("A"),  # type: ignore
         )
 
         self.display_question()
+
+        self.answer_buttons_layout.clear_widgets()  # type: ignore
+
+        for letter in answer_idx.values():
+            btn = Button(text=letter, font_size="45sp")
+            btn.bind(on_press=self.on_answer)  # type: ignore
+            self.answer_buttons_layout.add_widget(btn)  # type: ignore
 
     def display_question(self):
         self.question_id_label.text = (  # type: ignore
@@ -161,14 +172,13 @@ class Bewerb_Game(Screen):
         )
 
         text = self.current_question.question + "\n\n"
-        letters = ["A", "B", "C", "D"]
 
-        for letter, answer in zip(letters, self.current_question.shuffled_answers):
-            text += f"[b]{letter}:[\b]  {answer}\n\n"
+        for letter, answer in zip(
+            answer_idx.values(), self.current_question.shuffled_answers
+        ):
+            text += f"[b]{letter}:[/b]  {answer}\n\n"
 
         self.question_label.text = text  # type: ignore
-
-    ## CONTINUE HERE!
 
     def correct_answer(self):
         self.increment_score()
@@ -178,66 +188,46 @@ class Bewerb_Game(Screen):
         if self.game.answers_correct_total % settings.CORRECT_FOR_EXTRA_TIME == 0:
             self.add_time(settings.EXTRA_TIME)
 
-        self.game.answers_correct_strike += 1
-
     def incorrect_answer(self):
-        self.game.answers_correct_strike = 0
+        pass
 
+    # def on_answer(self, instance):
     def on_answer(self, instance):
         if not self.accept_answers:  # Check if answer processing is enabled
             return  # Ignore the button press if answer processing is disabled
 
-        # do not accept identical answer
-        if instance.text in self.current_question.room_answered:
-            return
+        correct_answer_button = answer_idx.get(
+            self.current_question.correct_answer_position
+        )
 
         # process actual answer
-        if instance.text in self.current_question.rooms:
+        if instance.text == correct_answer_button:
             self.correct_answer()
-
         else:
             self.incorrect_answer()
 
-        children = self.firetruck_rooms_layout.children  # type: ignore
+        children = self.answer_buttons_layout.children  # type: ignore
 
-        # indicate if correct or incorrect answer
-        # for single correct answer
-        if len(self.current_question.rooms_to_be_answered) <= 1:
-            # always identify and indicate the correct answer
-            for child in children:
-                if child.text in self.current_question.rooms:
-                    child.background_color = (0, 1, 0, 1)
-            # if, indicate incorrect answer
-            if instance.text not in self.current_question.rooms:
-                instance.background_color = (1, 0, 0, 1)
+        # always identify and indicate the correct answer
+        for child in children:
+            if child.text == correct_answer_button:
+                child.background_color = (0, 1, 0, 1)
 
-        # for multiple correct answers
-        else:
-            # document given answers in class instance
-            self.current_question.room_answered.append(instance.text)
-
-            if instance.text not in self.current_question.rooms:
-                # if, indicate incorrect and all correct answers and close
-                instance.background_color = (1, 0, 0, 1)
-                for child in children:
-                    if child.text in self.current_question.rooms:
-                        child.background_color = (0, 1, 0, 1)
-                pass
-
-            else:
-                # answer in correct answers
-                instance.background_color = (0, 1, 0, 1)
-
-                # display string "weitere"
-                if self.tool_label.text[-7:] == "weitere":  # type: ignore
-                    self.tool_label.text += " "  # type: ignore
-                else:
-                    self.tool_label.text += "\n"  # type: ignore
-                self.tool_label.text += "weitere"  # type: ignore
-                return
+        # indicate incorrect answer
+        if instance.text != correct_answer_button:
+            instance.background_color = (1, 0, 0, 1)
 
         # document given answers in class instance
-        self.current_question.room_answered.append(instance.text)
+        for key, value in answer_idx.items():
+            if value == instance.text:
+                given_answer_idx = key
+
+        doc = (
+            instance.text == correct_answer_button,
+            instance.text,
+            self.current_question.shuffled_answers[given_answer_idx],  # type: ignore
+        )
+        self.current_question.given_answer.append(doc)
 
         self.accept_answers = (
             False  # Disable answer processing after an answer is selected

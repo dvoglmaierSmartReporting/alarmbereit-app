@@ -171,10 +171,8 @@ class Fahrzeugkunde_Game(Screen):
         if self.game.answers_correct_total % settings.CORRECT_FOR_EXTRA_TIME == 0:
             self.add_time(settings.EXTRA_TIME)
 
-        self.game.answers_correct_strike += 1
-
     def incorrect_answer(self):
-        self.game.answers_correct_strike = 0
+        pass
 
     def on_answer(self, instance):
         if not self.accept_answers:  # Check if answer processing is enabled
@@ -207,6 +205,7 @@ class Fahrzeugkunde_Game(Screen):
         # for multiple correct answers
         else:
             # document given answers in class instance
+            # todo: add if answer was correct
             self.current_question.room_answered.append(instance.text)
 
             if instance.text not in self.current_question.rooms:

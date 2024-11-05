@@ -41,15 +41,25 @@ class CompetitionQuestion:
     question: str
     answers: list[str]
 
-    @property
-    def correct_answer(self) -> str:
-        return self.answers[0]
+    #
+
+    # list to document given answers
+    given_answer: list = field(default_factory=list, init=False, repr=False)
 
     @property
+    def correct_answer(self) -> str:
+        print(f"{self.answers[0] = }")
+        return self.answers[0]
+
+    # NEXT: fix properties; each call shuffles the answers
+    @property
     def shuffled_answers(self) -> list[str]:
-        # return shuffle(self.answers[:])
-        return shuffle(self.answers)  # type: ignore
+        shuffled_answers = self.answers
+        shuffle(shuffled_answers)
+        print(f"{shuffled_answers = }")
+        return shuffled_answers
 
     @property
     def correct_answer_position(self) -> int:
+        print(f"{self.shuffled_answers.index(self.correct_answer) = }")
         return self.shuffled_answers.index(self.correct_answer)

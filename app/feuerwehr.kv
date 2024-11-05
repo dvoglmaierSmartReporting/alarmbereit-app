@@ -598,11 +598,15 @@
     competition_label: competition_label
     score_label: score_label
     high_score_label: high_score_label
+    timer_label: timer_label
+    extra_time_label: extra_time_label
 
     progress_bar: progress_bar
     question_id_label: question_id_label
     question_scrollview: question_scrollview
     question_label: question_label
+
+    answer_buttons_layout: answer_buttons_layout
 
     Button:
         text: "<"
@@ -705,28 +709,7 @@
                 markup: True
         
         GridLayout:
+            id: answer_buttons_layout
             size_hint: 1, 0.25
             spacing: "3dp"
             cols: 2
-
-            Button:
-                text: "A"
-                font_size: "45sp"
-                on_release:
-                    # root.manager.get_screen('bewerb_game').on_answer(self.text)
-                    root.manager.get_screen('bewerb_game').on_answer(0)
-            Button:
-                text: "B"
-                font_size: "45sp"
-                on_release:
-                    root.manager.get_screen('bewerb_game').on_answer(1)
-            Button:
-                text: "C"
-                font_size: "45sp"
-                on_release:
-                    root.manager.get_screen('bewerb_game').on_answer(2)
-            Button:
-                text: "D"
-                font_size: "45sp"
-                on_release:
-                    root.manager.get_screen('bewerb_game').on_answer(3)
