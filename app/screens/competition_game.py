@@ -91,13 +91,6 @@ class Bewerb_Game(Screen):
         app.root.current = "bewerb_menu"  # type: ignore
         app.root.transition.direction = "right"  # type: ignore
 
-## CONTINUE HERE!
-
-    def shuffle_questions(self):
-        shuffle(
-            self.question_ids
-        )  # moved to self.play()  # reverted!! needs to be executed each new load
-
     def reset_competition_questions(self):
         self.competition_dict = load_total_competition_questions().get(
             self.selected_competition
@@ -109,16 +102,7 @@ class Bewerb_Game(Screen):
         self.question_ids_min = min([int(x) for x in self.question_ids])
         self.question_ids_max = max([int(x) for x in self.question_ids])
 
-    def check_arrow_buttons(self):
-        if self.current_question.question_id == self.question_ids_min:
-            self.previous_question_button.disabled = True  # type: ignore
-        else:
-            self.previous_question_button.disabled = False  # type: ignore
-
-        if self.current_question.question_id == self.question_ids_max:
-            self.next_question_button.disabled = True  # type: ignore
-        else:
-            self.next_question_button.disabled = False  # type: ignore
+        shuffle(self.question_ids)
 
     def play(self):
         # init GameCore class instance
@@ -127,78 +111,139 @@ class Bewerb_Game(Screen):
         # (re)set game specific elements
         self.reset_competition_questions()
 
-        self.current_question = CompetitionQuestion(
-            competition=self.selected_competition,
-            question_id=0,
-            question="dummy question",
-            answers=["dummy answers"],
+        self.reset_timer()
+
+        # self.current_question = CompetitionQuestion(
+        #     competition=self.selected_competition,
+        #     question_id=0,
+        #     question="dummy question",
+        #     answers=["dummy answers"],
+        # )
+
+        self.current_high_score = read_scores_file_key(
+            firetruck=self.selected_competition,
+            key="high_score",
+            questions="competitions",
         )
 
+        self.update_score_labels()
+
+        Clock.schedule_interval(self.update_timer, settings.INTERVAL_GAME_SEC)
+
+        # start game
         self.next_question()
+
+    def next_question(self):
+        # move scrollview to top
+        self.ids.question_scrollview.scroll_y = 1
+
+        # Enable answer processing for the new tool
+        self.accept_answers = True
+
+        if len(self.question_ids) == 0:
+            self.reset_competition_questions()
+
+        # select question
+        current_tool = self.question_ids.pop()
+
+        self.current_question = CompetitionQuestion(
+            competition=self.selected_competition,
+            question_id=current_tool,
+            question=self.competition_dict.get(upcoming_question_id).get("Q"),  # type: ignore
+            answers=self.competition_dict.get(upcoming_question_id).get("A"),  # type: ignore
+        )
+
+        self.display_question()
 
     def display_question(self):
         self.question_id_label.text = (  # type: ignore
             f"{self.current_question.question_id} von {self.question_ids_max}   "
         )
-        self.question_label.text = self.current_question.question  # type: ignore
 
-    # def random_question(self):
-    #     # move scrollview to top
-    #     self.ids.question_scrollview.scroll_y = 1
+        text = self.current_question.question + "\n\n"
+        letters = ["A", "B", "C", "D"]
 
-    #     self.solution_button.disabled = False  # type: ignore
+        for letter, answer in zip(letters, self.current_question.shuffled_answers):
+            text += f"[b]{letter}:[\b]  {answer}\n\n"
 
-    #     self.previous_question_button.disabled = False  # type: ignore
-    #     self.next_question_button.disabled = False  # type: ignore
+        self.question_label.text = text  # type: ignore
 
-    #     if len(self.question_ids) == 0:
-    #         # self.reset_competition_questions()
-    #         self.question_ids = list(set(self.question_ids_bak))
+    ## CONTINUE HERE!
 
-    #     self.shuffle_questions()
-    #     # troubleshooting: fix question
-    #     # self.current_question_id = "22" # -> "Xaver"
-    #     # self.current_question_id = self.question_ids.pop()
-    #     upcoming_question_id = self.question_ids.pop()
+    def correct_answer(self):
+        self.increment_score()
 
-    #     self.current_question = CompetitionQuestion(
-    #         competition=self.selected_competition,
-    #         question_id=upcoming_question_id,
-    #         question=self.competition_dict.get(upcoming_question_id).get("Q"),  # type: ignore
-    #         answers=self.competition_dict.get(upcoming_question_id).get("A"),  # type: ignore
-    #     )
+        self.game.answers_correct_total += 1
 
-    #     self.display_question()
+        if self.game.answers_correct_total % settings.CORRECT_FOR_EXTRA_TIME == 0:
+            self.add_time(settings.EXTRA_TIME)
 
-    def next_question(self, previous: bool = False):
-        # move scrollview to top
-        self.ids.question_scrollview.scroll_y = 1
+        self.game.answers_correct_strike += 1
 
-        # self.solution_button.disabled = False  # type: ignore
+    def incorrect_answer(self):
+        self.game.answers_correct_strike = 0
 
-        if not previous:
-            upcoming_question_id = int(self.current_question.question_id) + 1
+    def on_answer(self, instance):
+        if not self.accept_answers:  # Check if answer processing is enabled
+            return  # Ignore the button press if answer processing is disabled
+
+        # do not accept identical answer
+        if instance.text in self.current_question.room_answered:
+            return
+
+        # process actual answer
+        if instance.text in self.current_question.rooms:
+            self.correct_answer()
+
         else:
-            upcoming_question_id = int(self.current_question.question_id) - 1
+            self.incorrect_answer()
 
-        self.current_question = CompetitionQuestion(
-            competition=self.selected_competition,
-            question_id=upcoming_question_id,
-            question=self.competition_dict.get(upcoming_question_id).get("Q"),  # type: ignore
-            answers=self.competition_dict.get(upcoming_question_id).get("A"),  # type: ignore
+        children = self.firetruck_rooms_layout.children  # type: ignore
+
+        # indicate if correct or incorrect answer
+        # for single correct answer
+        if len(self.current_question.rooms_to_be_answered) <= 1:
+            # always identify and indicate the correct answer
+            for child in children:
+                if child.text in self.current_question.rooms:
+                    child.background_color = (0, 1, 0, 1)
+            # if, indicate incorrect answer
+            if instance.text not in self.current_question.rooms:
+                instance.background_color = (1, 0, 0, 1)
+
+        # for multiple correct answers
+        else:
+            # document given answers in class instance
+            self.current_question.room_answered.append(instance.text)
+
+            if instance.text not in self.current_question.rooms:
+                # if, indicate incorrect and all correct answers and close
+                instance.background_color = (1, 0, 0, 1)
+                for child in children:
+                    if child.text in self.current_question.rooms:
+                        child.background_color = (0, 1, 0, 1)
+                pass
+
+            else:
+                # answer in correct answers
+                instance.background_color = (0, 1, 0, 1)
+
+                # display string "weitere"
+                if self.tool_label.text[-7:] == "weitere":  # type: ignore
+                    self.tool_label.text += " "  # type: ignore
+                else:
+                    self.tool_label.text += "\n"  # type: ignore
+                self.tool_label.text += "weitere"  # type: ignore
+                return
+
+        # document given answers in class instance
+        self.current_question.room_answered.append(instance.text)
+
+        self.accept_answers = (
+            False  # Disable answer processing after an answer is selected
         )
 
-        # remove viewed question from list
-        if upcoming_question_id in self.question_ids:
-            self.question_ids.remove(upcoming_question_id)
+        # tool ends here. document tool and given answers in question history
+        self.game.questions.append(self.current_question)
 
-        # self.check_arrow_buttons()
-
-        self.display_question()
-
-    # def reveal_answer(self):
-    #     self.solution_button.disabled = True  # type: ignore
-
-    #     # self.question_label.text += "\n\n" + self.current_answer  # type: ignore
-    #     self.question_label.text += "\n\n" + self.current_question.correct_answer  # type: ignore
-    #     self.ids.question_label.height = self.ids.question_label.texture_size[1]
+        Clock.schedule_once(self.next_question, settings.FEEDBACK_GAME_SEC)

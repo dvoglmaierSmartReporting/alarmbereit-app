@@ -713,19 +713,20 @@
                 text: "A"
                 font_size: "45sp"
                 on_release:
-                    root.manager.get_screen('bewerb_game').answer(self.text)
+                    # root.manager.get_screen('bewerb_game').on_answer(self.text)
+                    root.manager.get_screen('bewerb_game').on_answer(0)
             Button:
                 text: "B"
                 font_size: "45sp"
                 on_release:
-                    root.manager.get_screen('bewerb_game').answer(self.text)
+                    root.manager.get_screen('bewerb_game').on_answer(1)
             Button:
                 text: "C"
                 font_size: "45sp"
                 on_release:
-                    root.manager.get_screen('bewerb_game').answer(self.text)
+                    root.manager.get_screen('bewerb_game').on_answer(2)
             Button:
                 text: "D"
                 font_size: "45sp"
                 on_release:
-                    root.manager.get_screen('bewerb_game').answer(self.text)
+                    root.manager.get_screen('bewerb_game').on_answer(3)

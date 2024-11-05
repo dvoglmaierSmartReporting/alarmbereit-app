@@ -6,7 +6,6 @@ from kivy.clock import Clock
 
 
 from random import shuffle
-import yaml
 
 from helper.functions import (
     load_firetruck_storage,
@@ -112,7 +111,8 @@ class Fahrzeugkunde_Game(Screen):
         self.reset_timer()
 
         self.current_high_score = read_scores_file_key(
-            self.selected_firetruck, "high_score"
+            firetruck=self.selected_firetruck,
+            key="high_score",
         )
 
         self.update_score_labels()
