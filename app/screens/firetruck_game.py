@@ -34,27 +34,25 @@ class Fahrzeugkunde_Game(Screen):
         self.extra_time_label.opacity = 0  # type: ignore
 
     def reset_timer(self):
-        self.time_left = settings.START_TIME_GAME_SEC
+        self.time_left = settings.FIRETRUCK_START_TIME_SEC
 
         # self.timer_label.text = f"{str(self.time_left)} s  "
         self.timer_label.text = f""  # type: ignore
 
-        self.set_progress_bar()
+        # self.set_progress_bar()
+        self.progress_bar.max = settings.FIRETRUCK_START_TIME_SEC  # type: ignore
 
-    def add_time(self, extra_time: float):
-        self.time_left = round(self.time_left + extra_time, 1)
+    def add_time(self):
+        self.time_left = round(self.time_left + settings.FIRETRUCK_EXTRA_TIME_SEC, 1)
 
-        self.extra_time_label.text = f"+ {settings.EXTRA_TIME} s  "  # type: ignore
+        self.extra_time_label.text = f"+ {settings.FIRETRUCK_EXTRA_TIME_SEC} s  "  # type: ignore
 
         self.extra_time_label.opacity = 1  # type: ignore
 
         Clock.schedule_once(
             self.hide_label,
-            settings.DISPLAY_EXTRA_TIME_LABEL,
+            settings.DISPLAY_EXTRA_TIME_LABEL_SEC,
         )
-
-    def set_progress_bar(self):
-        self.progress_bar.max = settings.START_TIME_GAME_SEC  # type: ignore
 
     def update_progress_bar(self):
         self.progress_bar.value = self.time_left  # type: ignore
@@ -128,25 +126,7 @@ class Fahrzeugkunde_Game(Screen):
         if len(self.tools) == 0:
             self.reset_tool_list()
 
-        # troubleshooting: fix tool
-        # self.current_tool = "Handfunkgerät"  # "Druckschlauch B"
-        # self.current_tool = self.tools.pop()
-        # current_tool = self.tools.pop()
-
-        # self.correct_storage = set(self.tools_locations.get(self.current_tool))  # type: ignore
-        # correct_storage = set(self.tools_locations.get(current_tool))
-
         current_tool = self.tools.pop()
-        ### for testing only!
-        # only multiple answers
-        # while True:
-        #     current_tool = self.tools.pop()
-        #     rooms = self.tools_locations.get(current_tool)
-        #     if len(rooms) <= 1:
-        #         continue
-
-        #     break
-        ###
 
         self.current_question = ToolQuestion(
             firetruck=self.selected_firetruck,
@@ -168,8 +148,11 @@ class Fahrzeugkunde_Game(Screen):
 
         self.game.answers_correct_total += 1
 
-        if self.game.answers_correct_total % settings.CORRECT_FOR_EXTRA_TIME == 0:
-            self.add_time(settings.EXTRA_TIME)
+        if (
+            self.game.answers_correct_total % settings.FIRETRUCK_CORRECT_FOR_EXTRA_TIME
+            == 0
+        ):
+            self.add_time()
 
     def incorrect_answer(self):
         pass

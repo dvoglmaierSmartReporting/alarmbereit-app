@@ -15,14 +15,10 @@ from helper.game_class import GameCore, CompetitionQuestion
 
 settings = Settings()
 
-# answer_idx: dict = {"A": 0, "B": 1, "C": 2, "D": 3}
 answer_idx: dict = {0: "A", 1: "B", 2: "C", 3: "D"}
 
 
 class Bewerb_Game(Screen):
-    # def __init__(self, **kwargs):
-    #     super(Bewerb_Game, self).__init__(**kwargs)
-
     def select_competition(self, selected_competition):
         # troubleshooting: fix competition
         # self.selected_competition = "Funk"
@@ -33,27 +29,25 @@ class Bewerb_Game(Screen):
         self.extra_time_label.opacity = 0  # type: ignore
 
     def reset_timer(self):
-        self.time_left = settings.COMPETITION_START_TIME_GAME_SEC
+        self.time_left = settings.COMPETITION_START_TIME_SEC
 
         # self.timer_label.text = f"{str(self.time_left)} s  "
         self.timer_label.text = f""  # type: ignore
 
-        self.set_progress_bar()
+        # self.set_progress_bar()
+        self.progress_bar.max = settings.COMPETITION_START_TIME_SEC  # type: ignore
 
-    def add_time(self, extra_time: float):
-        self.time_left = round(self.time_left + extra_time, 1)
+    def add_time(self):
+        self.time_left = round(self.time_left + settings.COMPETITION_EXTRA_TIME_SEC, 1)
 
-        self.extra_time_label.text = f"+ {settings.COMPETITION_EXTRA_TIME} s  "  # type: ignore
+        self.extra_time_label.text = f"+ {settings.COMPETITION_EXTRA_TIME_SEC} s  "  # type: ignore
 
         self.extra_time_label.opacity = 1  # type: ignore
 
         Clock.schedule_once(
             self.hide_label,
-            settings.DISPLAY_EXTRA_TIME_LABEL,
+            settings.DISPLAY_EXTRA_TIME_LABEL_SEC,
         )
-
-    def set_progress_bar(self):
-        self.progress_bar.max = settings.COMPETITION_START_TIME_GAME_SEC  # type: ignore
 
     def update_progress_bar(self):
         self.progress_bar.value = self.time_left  # type: ignore
@@ -185,13 +179,16 @@ class Bewerb_Game(Screen):
 
         self.game.answers_correct_total += 1
 
-        if self.game.answers_correct_total % settings.CORRECT_FOR_EXTRA_TIME == 0:
-            self.add_time(settings.EXTRA_TIME)
+        if (
+            self.game.answers_correct_total
+            % settings.COMPETITION_CORRECT_FOR_EXTRA_TIME
+            == 0
+        ):
+            self.add_time()
 
     def incorrect_answer(self):
         pass
 
-    # def on_answer(self, instance):
     def on_answer(self, instance):
         if not self.accept_answers:  # Check if answer processing is enabled
             return  # Ignore the button press if answer processing is disabled
@@ -222,12 +219,13 @@ class Bewerb_Game(Screen):
             if value == instance.text:
                 given_answer_idx = key
 
-        doc = (
-            instance.text == correct_answer_button,
-            instance.text,
-            self.current_question.shuffled_answers[given_answer_idx],  # type: ignore
+        self.current_question.given_answer.append(
+            (
+                instance.text == correct_answer_button,  # was the answer correct?
+                instance.text,  # given answer by user, button and text
+                self.current_question.shuffled_answers[given_answer_idx],  # type: ignore
+            )
         )
-        self.current_question.given_answer.append(doc)
 
         self.accept_answers = (
             False  # Disable answer processing after an answer is selected

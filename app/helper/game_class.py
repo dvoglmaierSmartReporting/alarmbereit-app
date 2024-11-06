@@ -41,25 +41,32 @@ class CompetitionQuestion:
     question: str
     answers: list[str]
 
-    #
-
     # list to document given answers
     given_answer: list = field(default_factory=list, init=False, repr=False)
 
+    # avoid multiple shuffle executions on answer list
+    _shuffled_answers: list[str] = field(default_factory=list, init=False, repr=False)
+    _correct_answer_position: int = field(init=False, repr=False)
+
+    def __post_init__(self):
+        # shuffle the answers only once and store them in _shuffled_answers
+        self._shuffled_answers = self.answers[:]
+        shuffle(self._shuffled_answers)
+        
+        # find the position of the correct answer in the shuffled list
+        self._correct_answer_position = self._shuffled_answers.index(
+            self.correct_answer
+        )
+
     @property
     def correct_answer(self) -> str:
-        print(f"{self.answers[0] = }")
         return self.answers[0]
 
     # NEXT: fix properties; each call shuffles the answers
     @property
     def shuffled_answers(self) -> list[str]:
-        shuffled_answers = self.answers
-        shuffle(shuffled_answers)
-        print(f"{shuffled_answers = }")
-        return shuffled_answers
+        return self._shuffled_answers
 
     @property
     def correct_answer_position(self) -> int:
-        print(f"{self.shuffled_answers.index(self.correct_answer) = }")
-        return self.shuffled_answers.index(self.correct_answer)
+        return self._correct_answer_position

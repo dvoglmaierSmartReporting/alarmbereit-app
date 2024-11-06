@@ -5,14 +5,14 @@ class Settings:
         # game
         self.FEEDBACK_GAME_SEC = 0.5
         self.INTERVAL_GAME_SEC = 0.1
-        self.DISPLAY_EXTRA_TIME_LABEL = 2
+        self.DISPLAY_EXTRA_TIME_LABEL_SEC = 2
         ## firetruck
-        self.START_TIME_GAME_SEC = 15.0
-        self.EXTRA_TIME = 10.0
-        self.CORRECT_FOR_EXTRA_TIME = 5
+        self.FIRETRUCK_START_TIME_SEC = 15.0
+        self.FIRETRUCK_EXTRA_TIME_SEC = 10.0
+        self.FIRETRUCK_CORRECT_FOR_EXTRA_TIME = 5
         ## competition
-        self.COMPETITION_START_TIME_GAME_SEC = 90.0
-        self.COMPETITION_EXTRA_TIME = 60.0
+        self.COMPETITION_START_TIME_SEC = 90.0
+        self.COMPETITION_EXTRA_TIME_SEC = 60.0
         self.COMPETITION_CORRECT_FOR_EXTRA_TIME = 1
 
 
