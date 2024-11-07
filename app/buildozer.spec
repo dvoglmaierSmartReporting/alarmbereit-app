@@ -15,7 +15,7 @@ package.domain = feuerwehrhallein
 source.dir = .
 
 # (list) Source files to include (let empty to include all the files)
-source.include_exts = py,png,jpg,kv,atlas, yaml
+source.include_exts = py,png,jpg,kv,atlas,yaml
 
 # (list) List of inclusions using pattern matching
 #source.include_patterns = assets/*,images/*.png
@@ -31,7 +31,7 @@ source.include_exts = py,png,jpg,kv,atlas, yaml
 #source.exclude_patterns = license,images/*/*.jpg
 
 # (str) Application versioning (method 1)
-version = 1.2
+version = 1.3
 
 # (str) Application versioning (method 2)
 # version.regex = __version__ = ['"](.*)['"]
