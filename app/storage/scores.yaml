@@ -16,11 +16,11 @@ competitions:
   FLA Gold - Organisation:
     high_score: 0
   FLA Gold - Taktik:
-    high_score: 400
+    high_score: 0
   FLA Gold - Technik:
     high_score: 0
   Funk Bronze:
-    high_score: 500
+    high_score: 0
   Funk Gold:
     high_score: 0
   Funk Silber:
@@ -40,8 +40,8 @@ firetrucks:
     high_score: 0
     high_strike: 0
   "R\xFCstL\xF6sch":
-    high_score: 3300
-    high_strike: 11
+    high_score: 0
+    high_strike: 0
   Tank1:
     high_score: 0
     high_strike: 0
@@ -50,13 +50,13 @@ firetrucks:
     high_strike: 0
   "TankD\xFCrrnberg":
     high_score: 0
-    high_strike: 2
+    high_strike: 0
   TestTruck:
-    high_score: 1300
-    high_strike: 9
+    high_score: 0
+    high_strike: 0
   Voraus:
     high_score: 0
     high_strike: 0
   "Voraus+\xD6lanh.":
     high_score: 0
-    high_strike: 2
+    high_strike: 0

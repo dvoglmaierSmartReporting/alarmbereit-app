@@ -13,7 +13,7 @@ class Settings:
         ## competition
         self.COMPETITION_START_TIME_SEC = 90.0
         self.COMPETITION_EXTRA_TIME_SEC = 60.0
-        self.COMPETITION_CORRECT_FOR_EXTRA_TIME = 1
+        self.COMPETITION_CORRECT_FOR_EXTRA_TIME = 4
 
 
 class Strings:

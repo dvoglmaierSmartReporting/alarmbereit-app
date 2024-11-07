@@ -1,25 +1,25 @@
-TestTruck:
-  Fahrer/GK:
-    - Handfunkgerät
-  Mannschaft:
-    - Anhaltekelle
-    - Handfunkgerät
-  G1:
-    - Spinboard
-  G2:
-    - Schlagbohrmaschine mit Bohrersatz
-  G3:
-    - Türöffnungsset
-  G4:
-    - Werkzeugsatz
-  G5:
-    - Druckschlauch B
-  G6:
-    - Druckschlauch B
-  G7 / Heck:
-    - Handfunkgerät
-  Dach:
-    - Moosgummiplatte
+# TestTruck:
+#   Fahrer/GK:
+#     - Handfunkgerät
+#   Mannschaft:
+#     - Anhaltekelle
+#     - Handfunkgerät
+#   G1:
+#     - Spinboard
+#   G2:
+#     - Schlagbohrmaschine mit Bohrersatz
+#   G3:
+#     - Türöffnungsset
+#   G4:
+#     - Werkzeugsatz
+#   G5:
+#     - Druckschlauch B
+#   G6:
+#     - Druckschlauch B
+#   G7 / Heck:
+#     - Handfunkgerät
+#   Dach:
+#     - Moosgummiplatte
 
 RüstLösch:
   Fahrer/GK:

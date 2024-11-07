@@ -1,39 +1,43 @@
-Test:
-  1:
-    Q: Was ist vor Eröffnung eines Funkgespräches zu beachten?
-    A:
-      - Dass kein anderes Funkgespräch gestört wird und seitens des Funkgerätes der Verbindungsaufbau (hoher Piepton) erfolgt ist.
-      - Dass die Uhrzeit genau überprüft wird.
-      - Dass der Funker sich mit dem Empfänger verständigt hat.
-      - Dass der Funker bereits mehrere Gespräche geführt hat.
-  2:
-    Q: Wie wird ein Funkgespräch eröffnet?
-    A:
-      - Durch Anruf und Anrufantwort.
-      - Durch sofortiges Durchgeben der Nachricht.
-      - Durch das Drücken der Sprechtaste ohne Anruf.
-      - Durch das Senden eines kurzen Signals.
-  3:
-    Q: Was muss der Anruf enthalten?
-    A:
-      - Den Namen der gerufenen Funkstelle, das Wort "von", den Namen der rufenden Funkstelle und das Wort "kommen" als Aufforderung zur Antwort.
-      - Nur den Namen der rufenden Funkstelle.
-      - Die Nachricht direkt ohne Begrüßung.
-      - Eine persönliche Mitteilung an die gerufene Person.
-  4:
-    Q: Was muss die Anrufantwort enthalten?
-    A:
-      - "Das Wort 'Hier', den Namen der gerufenen Funkstelle und die Aufforderung 'kommen'."
-      - Nur den Namen der Funkstelle.
-      - "'Hier' und die Uhrzeit der Übertragung."
-      - Die Nachricht ohne weitere Aufforderung.
-  5:
-    Q: Welche Nachrichteninhalte gibt es?
-    A:
-      - Befehl, Meldung, Frage.
-      - Aussage, Vermutung, Information.
-      - Bitte, Empfehlung, Befehl.
-      - Vorschlag, Bericht, Nachfrage.
+# Test:
+#   1:
+#     Q: Was ist vor Eröffnung eines Funkgespräches zu beachten?
+#     A:
+#       - Dass kein anderes Funkgespräch gestört wird und seitens des Funkgerätes der Verbindungsaufbau (hoher Piepton) erfolgt ist.
+#       - Dass die Uhrzeit genau überprüft wird.
+#       - Dass der Funker sich mit dem Empfänger verständigt hat.
+#       - Dass der Funker bereits mehrere Gespräche geführt hat.
+#   2:
+#     Q: Wie wird ein Funkgespräch eröffnet?
+#     A:
+#       - Durch Anruf und Anrufantwort.
+#       - Durch sofortiges Durchgeben der Nachricht.
+#       - Durch das Drücken der Sprechtaste ohne Anruf.
+#       - Durch das Senden eines kurzen Signals.
+#   3:
+#     Q: Was muss der Anruf enthalten?
+#     A:
+#       - Den Namen der gerufenen Funkstelle, das Wort "von", den Namen der rufenden Funkstelle und das Wort "kommen" als Aufforderung zur Antwort.
+#       - Nur den Namen der rufenden Funkstelle.
+#       - Die Nachricht direkt ohne Begrüßung.
+#       - Eine persönliche Mitteilung an die gerufene Person.
+#   4:
+#     Q: Was muss die Anrufantwort enthalten?
+#     A:
+#       - "Das Wort 'Hier', den Namen der gerufenen Funkstelle und die Aufforderung 'kommen'."
+#       - Nur den Namen der Funkstelle.
+#       - "'Hier' und die Uhrzeit der Übertragung."
+#       - Die Nachricht ohne weitere Aufforderung.
+#   5:
+#     Q: Welche Nachrichteninhalte gibt es?
+#     A:
+#       - Befehl, Meldung, Frage.
+#       - Aussage, Vermutung, Information.
+#       - Bitte, Empfehlung, Befehl.
+#       - Vorschlag, Bericht, Nachfrage.
+#   6:
+#     Q: "-- fehlt --"
+#     A:
+#       - "-- fehlt --"
 
 Funk Bronze:
   1:

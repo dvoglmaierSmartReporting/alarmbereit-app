@@ -138,18 +138,23 @@ class Bewerb_Game(Screen):
         # Enable answer processing for the new tool
         self.accept_answers = True
 
-        if len(self.question_ids) == 0:
-            self.reset_competition_questions()
+        while True:
+            if len(self.question_ids) == 0:
+                self.reset_competition_questions()
 
-        # select question
-        current_question = self.question_ids.pop()
+            # select question
+            current_question = self.question_ids.pop()
 
-        self.current_question = CompetitionQuestion(
-            competition=self.selected_competition,
-            question_id=current_question,
-            question=self.competition_dict.get(current_question).get("Q"),  # type: ignore
-            answers=self.competition_dict.get(current_question).get("A"),  # type: ignore
-        )
+            self.current_question = CompetitionQuestion(
+                competition=self.selected_competition,
+                question_id=current_question,
+                question=self.competition_dict.get(current_question).get("Q"),  # type: ignore
+                answers=self.competition_dict.get(current_question).get("A"),  # type: ignore
+            )
+
+            # avoid missing question content
+            if not self.current_question.question == "-- fehlt --":
+                break
 
         self.display_question()
 
