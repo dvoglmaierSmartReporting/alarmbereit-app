@@ -9,7 +9,7 @@ title = FahrzeugkundeApp
 package.name = FahrzeugkundeApp
 
 # (str) Package domain (needed for android/ios packaging)
-package.domain = feuerwehrhallein
+package.domain = feuerwehrhallein.fahrzeugkundeapp
 
 # (str) Source code where the main.py live
 source.dir = .
@@ -31,7 +31,7 @@ source.include_exts = py,png,jpg,kv,atlas,yaml
 #source.exclude_patterns = license,images/*/*.jpg
 
 # (str) Application versioning (method 1)
-version = 1.3
+version = 1.4
 
 # (str) Application versioning (method 2)
 # version.regex = __version__ = ['"](.*)['"]
