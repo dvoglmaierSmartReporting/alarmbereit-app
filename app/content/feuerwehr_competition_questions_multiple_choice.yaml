@@ -3103,2241 +3103,1765 @@ TechnLP Stufe II:
     Q: Welche Aussage ist bei Verwendung von Kabeltrommeln unter Belastung richtig?
     A:
       - Die Kabel sind ganz abzurollen
-    choices:
       - Die Kabel dürfen zur Hälfte abgerollt bleiben
       - Die Kabel müssen in der Mitte eingeklemmt werden
       - Die Kabel sollten an den Enden abgekuppelt werden
-      - Die Kabel sind ganz abzurollen
   22:
     Q: Was ist bei Einsatz des Lichtfluters auf einem Stativ zu beachten?
     A:
       - "Bei Wind ist das Stativ mit Sturmleinen zu sichern\n
         Anschlusskabel ordentlich auslegen\n
         Abstand zu brennbaren Gegenständen einhalten"
-    choices:
       - Bei Wind muss das Stativ verankert werden
       - Das Stativ muss elektrisch isoliert werden
       - Nur eine Stativstange darf verwendet werden
-      - Bei Wind ist das Stativ mit Sturmleinen zu sichern
   23:
     Q: Welche Löschmittel können bei einem Autoreifenbrand verwendet werden?
     A:
       - Wasser, Glutbrandpulver (ABC-Pulver), Schaum
-    choices:
       - Kohlendioxid, Wasser, Sand
       - Wasser, Metallbrandpulver, Sand
       - Kohlendioxid, Glutbrandpulver, Wasser
-      - Wasser, Glutbrandpulver (ABC-Pulver), Schaum
   24:
     Q: Was bedeutet die Feuerlöscherbezeichnung PG 12?
     A:
       - Tragbarer Feuerlöscher mit 12 kg Glutbrandpulver (Brandklasse ABC)
-    choices:
       - Tragbarer Feuerlöscher mit 12 Litern Wasser
       - Tragbarer Feuerlöscher mit 12 kg Kohlendioxid
       - Tragbarer Feuerlöscher mit 12 kg ABC-Schaum
-      - Tragbarer Feuerlöscher mit 12 kg Glutbrandpulver (Brandklasse ABC)
   25:
     Q: Wie lange ist die Funktionsdauer eines PG 12?
     A:
       - Ca. 20 Sekunden (0,6 kg/s)
-    choices:
       - Ca. 5 Sekunden (0,5 kg/s)
       - Ca. 30 Sekunden (0,7 kg/s)
       - Ca. 60 Sekunden (1 kg/s)
-      - Ca. 20 Sekunden (0,6 kg/s)
   26:
     Q: In welchen Zeitabständen müssen Tragbare Feuerlöscher überprüft werden?
     A:
       - Alle zwei Jahre
-    choices:
       - Alle drei Jahre
       - Jährlich
       - Alle sechs Monate
-      - Alle zwei Jahre
   27:
     Q: Was ist der Flammpunkt?
     A:
       - Niedrigste, unter festgelegten Bedingungen ermittelte Temperatur, bei der eine brennbare Flüssigkeit oberhalb des Flüssigkeitsspiegels mit Luft eine zündbare Dampfkonzentration bildet, die bei kurzzeitiger Einwirkung einer Zündquelle zur Entflammung führt.
-    choices:
       - Die Temperatur, bei der ein fester Stoff beginnt zu schmelzen
       - Die Temperatur, bei der sich Gase in festen Stoffen lösen
       - Die höchste Temperatur, bei der ein Gas entflammt
-      - Niedrigste, unter festgelegten Bedingungen ermittelte Temperatur, bei der eine brennbare Flüssigkeit oberhalb des Flüssigkeitsspiegels mit Luft eine zündbare Dampfkonzentration bildet, die bei kurzzeitiger Einwirkung einer Zündquelle zur Entflammung führt.
   28:
     Q: Was ist zuerst beim Eintreffen am Verkehrsunfallort zu machen?
     A:
       - Unfallstelle absichern (Warnzeichen, Verkehrsleitkegel usw)
-    choices:
       - Verletzte Personen bergen
       - Das Fahrzeug der Feuerwehr sichern
       - Den Verkehr umleiten
-      - Unfallstelle absichern (Warnzeichen, Verkehrsleitkegel usw)
   29:
     Q: Was gehört zur persönlichen Ausrüstung eines Verkehrsreglers?
     A:
       - Reflektierende Warnbekleidung (Warnüberwurf), Anhaltestab
-    choices:
       - Schutzhelm, Handschuhe, Taschenlampe
       - Schutzhelm, Warnschilder, Taschenlampe
       - Reflektierende Warnbekleidung (Warnüberwurf), Feuerlöscher
-      - Reflektierende Warnbekleidung (Warnüberwurf), Anhaltestab
   30:
     Q: Zu welchem Zweck setzen die Feuerwehren Warnzeichen und Warnblinkleuchten ein?
     A:
       - Zum Absichern der Einsatzstelle
-    choices:
       - Zur Warnung vor explosiven Stoffen
       - Zum Markieren von Fluchtwegen
       - Zur Signalgebung für andere Einsatzkräfte
-      - Zum Absichern der Einsatzstelle
   31:
     Q: In welchem Abstand ist die Unfallstelle auf Bundes-, Landes- und Gemeindestraßen außerhalb des Ortsgebietes abzusichern?
     A:
       - In einer Entfernung von 150 m bis 250 m
-    choices:
       - In einer Entfernung von 10 m bis 50 m
       - In einer Entfernung von 50 m bis 100 m
       - In einer Entfernung von 100 m bis 200 m
-      - In einer Entfernung von 150 m bis 250 m
   32:
     Q: In welchem Abstand ist die Unfallstelle auf Autobahnen abzusichern?
     A:
       - In einer Entfernung von 250 m und 400 m
-    choices:
       - In einer Entfernung von 50 m und 100 m
       - In einer Entfernung von 100 m und 150 m
       - In einer Entfernung von 200 m und 300 m
-      - In einer Entfernung von 250 m und 400 m
   33:
     Q: Wie werden Einsatzfahrzeuge bei einem Verkehrsunfall aufgestellt?
     A:
       - "Vor der Einsatzstelle zur Sicherung und zum Schutz der Einsatzkräfte\n
         Wenn es einsatztaktisch möglich ist, immer einen Fahrstreifen freihalten"
-    choices:
       - Immer hinter der Einsatzstelle
       - Immer quer zur Fahrbahn
       - Zwischen den verunfallten Fahrzeugen
-      - "Vor der Einsatzstelle zur Sicherung und zum Schutz der Einsatzkräfte\n
         Wenn es einsatztaktisch möglich ist, immer einen Fahrstreifen freihalten"
   34:
     Q: Wer ist für die Verkehrsregelung an der Einsatzstelle zuständig?
     A:
       - Polizei oder Feuerwehr mit besonders geschulte Kräften
-    choices:
       - Der Einsatzleiter der Feuerwehr
       - Die Verkehrsteilnehmer selbst
       - Nur die Polizei
-      - Polizei oder Feuerwehr mit besonders geschulte Kräften
   35:
     Q: Welche Vorschrift regelt den Transport gefährlicher Güter auf der Straße?
     A:
       - ADR
-    choices:
       - StVO
       - Gefahrgutverordnung
       - HAZMAT-Richtlinien
-      - ADR
   36:
     Q: Was bedeutet die GAMS-Regel?
     A:
       - Gefahr erkennen, Absperren, Menschenrettung, Spezialkräfte anfordern
-    choices:
       - Gase abschalten, Ausrüstung mitnehmen, Menschen retten, Schutz anlegen
       - Gefahr angeben, Abschirmung, Material sichern, Schutzkräfte anfordern
       - Gase abdichten, Ausrüstung sichern, Menschen evakuieren, Schutz einrichten
-      - Gefahr erkennen, Absperren, Menschenrettung, Spezialkräfte anfordern
   37:
     Q: In welchem Abstand ist bei einem Gefahrguteinsatz abzusperren?
     A:
       - In einem Abstand von 30 - 60 Meter, bei Gasen und Explosivstoffen mehrere 100 bis 1000 Meter
-    choices:
       - In einem Abstand von 10 - 30 Meter
       - In einem Abstand von 50 - 100 Meter
       - In einem Abstand von 1 Kilometer
-      - In einem Abstand von 30 - 60 Meter, bei Gasen und Explosivstoffen mehrere 100 bis 1000 Meter
   38:
     Q: Was bedeutet die Gefahrennummer 30?
     A:
       - Entzündbarer flüssiger Stoff (Flammpunkt von 23°C bis 60°C)
-    choices:
       - Explosiver Stoff
       - Giftiger Stoff
       - Entzündbarer gasförmiger Stoff
-      - Entzündbarer flüssiger Stoff (Flammpunkt von 23°C bis 60°C)
   39:
     Q: Was bedeutet die Gefahrennummer 33?
     A:
       - Leicht entzündbarer flüssiger Stoff (Flammpunkt unter 23°C)
-    choices:
       - Giftiger gasförmiger Stoff
       - Explosionsfähiger Stoff
       - Brennbares Metall
-      - Leicht entzündbarer flüssiger Stoff (Flammpunkt unter 23°C)
   40:
     Q: Was bedeutet die Gefahrennummer 80?
     A:
       - Ätzender oder schwach ätzender Stoff
-    choices:
       - Entzündlicher Stoff
       - Strahlenbelasteter
   41:
-    Q: Was bedeutet ein X vor der Gefahrnummer?
     A:
       - Der Stoff reagiert in gefährlicher Weise mit Wasser
-    choices:
       - Der Stoff ist explosiv bei Kontakt mit Luft
       - Der Stoff darf nicht erhitzt werden
       - Der Stoff ist giftig bei Hautkontakt
-      - Der Stoff reagiert in gefährlicher Weise mit Wasser
   42:
     Q: Welche Farbkennzeichnung werden für Sauerstoff- und Acetylengasflaschen verwendet?
     A:
       - "Sauerstoff weiß\nAcetylen kastanienbraun"
-    choices:
       - "Sauerstoff blau\nAcetylen rot"
       - "Sauerstoff grün\nAcetylen gelb"
       - "Sauerstoff schwarz\nAcetylen lila"
-      - "Sauerstoff weiß\nAcetylen kastanienbraun"
   43:
     Q: Was bedeutet ein waagrechter 30 cm breiter, orangegelber umlaufender Streifen an einem Kesselwagon?
     A:
       - Kesselwagon für flüssige Gase
-    choices:
       - Kesselwagon für explosive Stoffe
       - Kesselwagon für ätzende Stoffe
       - Kesselwagon für giftige Gase
-      - Kesselwagon für flüssige Gase
   44:
     Q: Wie werden Verpackungen gekennzeichnet, die gefährliche Stoffe enthalten?
     A:
       - Durch Gefahrenzettel
-    choices:
       - Durch einen roten Streifen
       - Durch Warnsignale
       - Durch ein Warnschild mit Symbol
-      - Durch Gefahrenzettel
   45:
     Q: Welche schriftliche Unterlagen werden beim Transport Gefährlicher Stoffe mitgeführt und wo befinden sie sich?
     A:
       - Schriftliche Weisungen bzw. Frachtpapiere im Führerhaus
-    choices:
       - Gefahrennummernlisten im Lager
       - Gefahrgut-Sicherheitsdatenblätter in der Verpackung
       - Notfallpläne beim Beifahrer
-      - Schriftliche Weisungen bzw. Frachtpapiere im Führerhaus
   46:
     Q: Was bedeutet die obere Zahl in einer orangefarbenen Warntafel?
     A:
       - Gefahrnummer
-    choices:
       - Stoffnummer
       - Gefahrenstufe
       - Transportnummer
-      - Gefahrnummer
   47:
     Q: Wie kann ausgelaufenes Öl beseitigt werden?
     A:
       - Es wird mit Ölbindemittel gebunden
-    choices:
       - Es wird mit Sand abgesaugt
       - Es wird mit Wasser abgewaschen
       - Es wird verdampft
-      - Es wird mit Ölbindemittel gebunden
   48:
     Q: Wodurch kann die Ausbreitung von Mineralölen auf Gewässern verhindert werden?
     A:
       - Durch den Einbau von Ölsperren
-    choices:
       - Durch das Abpumpen von Wasser
       - Durch das Verdünnen mit Chemikalien
       - Durch das Schließen der Wasserzufuhr
-      - Durch den Einbau von Ölsperren
   49:
     Q: Was ist beim Einsatz von Vollschutzanzügen zu beachten?
     A:
       - Die Beständigkeitslisten
-    choices:
       - Der richtige Sitz des Anzuges
       - Die richtige Farbe des Anzuges
       - Der Temperaturbereich
-      - Die Beständigkeitslisten
   50:
     Q: Welche Behörde ist bei Gefahrgutunfällen zu verständigen?
     A:
       - Die Bezirkshauptmannschaft über die LAWZ oder Polizei
-    choices:
       - Die Feuerwehrzentrale
       - Der Betreiber des Transportfahrzeugs
       - Die Landesregierung
-      - Die Bezirkshauptmannschaft über die LAWZ oder Polizei
   51:
     Q: Was ist die mindestens erforderliche Schutzausrüstung bei einem Fahrzeugbrand?
     A:
       - Persönliche Schutzausrüstung inklusive schwerem Atemschutz
-    choices:
       - Persönliche Schutzausrüstung ohne Atemschutz
       - Leichte Schutzkleidung und Handschuhe
       - Persönliche Schutzausrüstung inklusive Handschuhe
-      - Persönliche Schutzausrüstung inklusive schwerem Atemschutz
   52:
     Q: Wie sind die Hochvoltkomponenten bei einem Elektro- bzw. Hybridfahrzeug farblich gekennzeichnet?
     A:
       - Orange
-    choices:
       - Blau
       - Rot
       - Gelb
-      - Orange
   53:
     Q: Wer darf verunfallte Elektro- bzw. Hybridfahrzeuge abschleppen?
     A:
       - Autorisiertes Abschleppunternehmen
-    choices:
       - Jeder Feuerwehrmann
       - Fachkundige Privatpersonen
       - Jeder Fahrer mit Abschlepplizenz
-      - Autorisiertes Abschleppunternehmen
   54:
     Q: Was besagt die „AUTO - Regel“?
     A:
       - "A - Austritt von Stoffen\nU - Unterboden-, Kofferraum-, Motorraum-Kontrolle\nT - Tankdeckel öffnen\nO - Oberfläche kontrollieren"
-    choices:
       - "A - Auskuppeln\nU - Unterfahren\nT - Trennen\nO - Offenhalten"
       - "A - Aufräumen\nU - Überwachen\nT - Testen\nO - Öffnen"
       - "A - Ausschalten\nU - Unterbrechen\nT - Trennen\nO - Oberflächen prüfen"
-      - "A - Austritt von Stoffen\nU - Unterboden-, Kofferraum-, Motorraum-Kontrolle\nT - Tankdeckel öffnen\nO - Oberfläche kontrollieren"
   55:
     Q: Was ist die sicherste Methode zum Erkennen von Fahrzeugen mit alternativen Antrieben?
     A:
       - Die Rettungskarte
-    choices:
       - Die Fahrzeugscheinprüfung
       - Die Farbe des Fahrzeugs
       - Die Batteriespannung
-      - Die Rettungskarte
   56:
     Q: Wie ist beim Brand einer Hochvoltbatterie vorzugehen?
     A:
       - Mit viel Wasser kühlen
-    choices:
       - Mit Schaum abdecken
       - Gasabzug sicherstellen
       - Brennstoffe entfernen
-      - Mit viel Wasser kühlen
   57:
     Q: Welche Maßnahmen sind bei verunfallten Elektro- bzw. Hybridfahrzeugen zu treffen?
     A:
       - Zündung deaktivieren, 12 Volt Batterie abklemmen
-    choices:
       - Fahrzeug isolieren, Sicherungen herausnehmen
       - Fahrzeug aus der Gefahrenzone entfernen
       - Fahrzeuginsassen evakuieren
-      - Zündung deaktivieren, 12 Volt Batterie abklemmen
   58:
     Q: Was bedeutet eine offensichtlich verformte Hochvoltbatterie?
     A:
       - Mit einer exothermen Reaktion ist zu rechnen
-    choices:
       - Die Batterie ist ungefährlich
       - Die Batterie kann wieder aufgeladen werden
       - Die Batterie muss sofort entsorgt werden
-      - Mit einer exothermen Reaktion ist zu rechnen
   59:
     Q: Wie hat eine verunfalltes Elektro- bzw. Hybridfahrzeug abgestellt zu werden?
     A:
       - Platz im Freien mit rundumabstand von 10 m zu Gebäuden, Fahrzeugen und brennbaren Gegenständen
-    choices:
       - In einer geschützten Garage
       - In einem gesicherten Bereich mit 2 m Abstand
       - Im nächsten Feuerwehrstützpunkt
-      - Platz im Freien mit rundumabstand von 10 m zu Gebäuden, Fahrzeugen und brennbaren Gegenständen
   60:
     Q: Welche Maßnahmen sind zur Stabilisierung eines Unfallfahrzeuges zu setzen?
     A:
       - "Sichern gegen Abrollen\nSichern gegen Abrutschen\nUnterbauen des Fahrzeuges\nStabilisieren gegen Kippen"
-    choices:
       - "Sichern gegen Aufrollen\nFixieren der Reifen\nBefestigen mit Seilen\nAnheben des Fahrzeugs"
       - "Sichern der Insassen\nStützen unter den Türen\nWegrollen verhindern\nKippen blockieren"
       - "Abstützen des Fahrzeugs\nSeilzug sichern\nBlockierung der Räder\nBremsen anziehen"
-      - "Sichern gegen Abrollen\nSichern gegen Abrutschen\nUnterbauen des Fahrzeuges\nStabilisieren gegen Kippen"
 
 ASLP Stufe I:
   1:
     Q: Woraus setzt sich atembare Luft zusammen?
     A:
       - 21 % Sauerstoff, 78 % Stickstoff, 0,04 % Kohlenstoffdioxid, 0.96 % Edelgase
-    choices:
       - 30 % Sauerstoff, 65 % Stickstoff, 2 % Kohlenstoffdioxid, 3 % Edelgase
       - 19 % Sauerstoff, 80 % Stickstoff, 0,5 % Kohlenstoffdioxid, 0,5 % Edelgase
       - 15 % Sauerstoff, 70 % Stickstoff, 10 % Kohlenstoffdioxid, 5 % Edelgase
-      - 21 % Sauerstoff, 78 % Stickstoff, 0,04 % Kohlenstoffdioxid, 0.96 % Edelgase
   2:
     Q: Wie kann eine Atemkrise entstehen?
     A:
       - Durch eine falsche Atemtechnik ( z.B. durch flaches, hastiges Atmen )
-    choices:
       - Durch einen hohen Sauerstoffgehalt in der Luft
       - Durch den Konsum von zu viel Wasser
       - Durch zu tiefe Atmung bei geringer Belastung
-      - Durch eine falsche Atemtechnik (z.B. durch flaches, hastiges Atmen)
   3:
     Q: Wie lange kann ein Mensch ohne Sauerstoff (Atmung) leben?
     A:
       - Etwa 3 Minuten
-    choices:
       - Etwa 10 Minuten
       - Etwa 30 Sekunden
       - Etwa 15 Minuten
-      - Etwa 3 Minuten
   4:
     Q: Aus welchen Bestandteilen setzt sich die ausgeatmete Atemluft zusammen?
     A:
       - 17 % Sauerstoff, 78 % Stickstoff, 4,04 % Kohlenstoffdioxid, der Rest aus Edelgasen
-    choices:
       - 10 % Sauerstoff, 85 % Stickstoff, 4 % Kohlenstoffdioxid, der Rest aus Edelgasen
       - 20 % Sauerstoff, 75 % Stickstoff, 3 % Kohlenstoffdioxid, 2 % Edelgase
       - 15 % Sauerstoff, 70 % Stickstoff, 5 % Kohlenstoffdioxid, 10 % Edelgase
-      - 17 % Sauerstoff, 78 % Stickstoff, 4,04 % Kohlenstoffdioxid, der Rest aus Edelgasen
   5:
     Q: Welches Atemgift wirkt auf die äußere Atmung?
     A:
       - Kohlenstoffdioxid (CO2)
-    choices:
       - Sauerstoff (O2)
       - Kohlenmonoxid (CO)
       - Stickstoff (N2)
-      - Kohlenstoffdioxid (CO2)
   6:
     Q: Was sind Atemschutzgeräte?
     A:
       - Geräte, die es ermöglichen, sich in nicht atembarer Atmosphäre oder sauerstoffarmer Luft aufzuhalten
-    choices:
       - Geräte, die die Luft reinigen
       - Filtermasken für Staubpartikel
       - Geräte, die Sauerstoff produzieren
-      - Geräte, die es ermöglichen, sich in nicht atembarer Atmosphäre oder sauerstoffarmer Luft aufzuhalten
   7:
     Q: Welche Schutzwirkung hat der Pressluftatmer?
     A:
       - Macht den Träger unabhängig von der Umgebungsatmosphäre
-    choices:
       - Schützt vor hoher Luftfeuchtigkeit
       - Verhindert den Kontakt mit Staubpartikeln
       - Schützt vor Hitzeentwicklung
-      - Macht den Träger unabhängig von der Umgebungsatmosphäre
   8:
     Q: Wann muss man Atemschutzmasken reinigen?
     A:
       - Nach jeder Verwendung
-    choices:
       - Einmal im Monat
       - Vor jeder Verwendung
       - Nur bei sichtbarer Verschmutzung
-      - Nach jeder Verwendung
   9:
     Q: Wie wird die Dichtprüfung bei der Atemmaske durchgeführt?
     A:
       - Das Anschlussstück wird mit dem Handballen abgedichtet, gleichzeitig wird eingeatmet. Es darf dabei keine einströmende Luft spürbar sein.
-    choices:
       - Man drückt auf das Ventil und überprüft, ob es fest sitzt
       - Man bläst Luft in die Maske und prüft, ob sie herauskommt
       - Die Maske wird unter Wasser gehalten und auf Luftblasen geachtet
-      - Das Anschlussstück wird mit dem Handballen abgedichtet, gleichzeitig wird eingeatmet. Es darf dabei keine einströmende Luft spürbar sein.
   10:
     Q: Wo darf man Filtergeräte nicht verwenden?
     A:
       - Bei Bränden in geschlossenen Räumen (CO), bei Sauerstoffmangel, bei Schadstoffanteil über 0,5 Vol.%
-    choices:
       - Bei Bränden im Freien
       - Bei Rauchentwicklung im Wald
       - Bei starkem Wind
-      - Bei Bränden in geschlossenen Räumen (CO), bei Sauerstoffmangel, bei Schadstoffanteil über 0,5 Vol.%
   11:
     Q: Welche Kurzprüfungen müssen nach einem Flaschenwechsel durchgeführt werden?
     A:
       - Flaschendruckprüfung, Hochdruckdichtprüfung, Überprüfung der Restluftwarneinrichtung, Sichtprüfung (Begurtung etc.)
-    choices:
       - Filterwechsel, Flaschendrucktest, Ventilprüfung
       - Sichtprüfung, Ventilreinigung, Druckentlastungstest
       - Filterprüfung, Druckabfalltest, Ventildichtungstest
-      - Flaschendruckprüfung, Hochdruckdichtprüfung, Überprüfung der Restluftwarneinrichtung, Sichtprüfung (Begurtung etc.)
   12:
     Q: Wie viel Druckabfall darf bei der Hochdruckdichtprüfung innerhalb einer Minute sein?
     A:
       - Keiner, höchstens ein Teilstrich am Manometer (10 bar)
-    choices:
       - 5 bar
       - 15 bar
       - 20 bar
-      - Keiner, höchstens ein Teilstrich am Manometer (10 bar)
   13:
     Q: Wie viel Mindestdruck müssen Pressluftatmer haben, um einsatzbereit zu sein?
     A:
       - 180 bar beim 200 bar Gerät und 270 bar beim 300 bar Gerät
-    choices:
       - 100 bar beim 200 bar Gerät und 250 bar beim 300 bar Gerät
       - 150 bar beim 200 bar Gerät und 200 bar beim 300 bar Gerät
       - 200 bar beim 200 bar Gerät und 300 bar beim 300 bar Gerät
-      - 180 bar beim 200 bar Gerät und 270 bar beim 300 bar Gerät
   14:
     Q: Was sind die Voraussetzungen für einen Flash Over?
     A:
       - genügend Sauerstoff und Brandlast im Raum
-    choices:
       - Geringe Hitze und hohe Luftfeuchtigkeit
       - Sauerstoffmangel und viel Wasser im Raum
       - Starke Rauchentwicklung und keine Flammen
-      - genügend Sauerstoff und Brandlast im Raum
   15:
     Q: Was sind die Voraussetzungen für einen Backdraft?
     A:
       - Im Brandraum herrscht Sauerstoffmangel, genügend brennbare Gase, Pyrolyseprodukte und eine Temperatur größer der Zündtemperatur der Gase
-    choices:
       - Hoher Sauerstoffgehalt und wenig brennbare Gase
       - Geringer Rauchgehalt und niedrige Temperatur
       - Ausreichende Belüftung und niedrige Temperaturen
-      - Im Brandraum herrscht Sauerstoffmangel, genügend brennbare Gase, Pyrolyseprodukte und eine Temperatur größer der Zündtemperatur der Gase
   16:
     Q: Was sind die Ziele der Brandrauchkühlung?
     A:
       - Wasserdampf entsteht, Zündfähigkeit und die Pyrolyse wird unterbunden
-    choices:
       - Der Rauch wird dünner und die Hitze nimmt zu
       - Der Brand wird gelöscht und keine Pyrolyseprodukte entstehen
       - Es entsteht Sauerstoff, um den Brand zu ersticken
-      - Wasserdampf entsteht, Zündfähigkeit und die Pyrolyse wird unterbunden
   17:
     Q: Wie oft muss jeder Atemschutzgeräteträger eine Atemschutzübung machen?
     A:
       - 2 Übungen im Jahr, ÖFAST wird als sinnvolle Übung angerechnet
-    choices:
       - 1 Übung pro Monat
       - 4 Übungen pro Jahr
       - 1 Übung im Jahr
-      - 2 Übungen im Jahr, ÖFAST wird als sinnvolle Übung angerechnet
   18:
     Q: Wie sichert sich ein Atemschutztrupp seinen Rückmarschweg?
     A:
       - Mittels Schlauchleitung oder Leine
-    choices:
       - Mittels Rauchsignalen
       - Durch den Einsatz von GPS
       - Mit Markierungen an den Wänden
-      - Mittels Schlauchleitung oder Leine
   19:
+    Q: Aus wie vielen Personen besteht ein Atemschutztrupp?
+    A:
+      - Drei
+      - Zwei
+      - Vier
+      - Sechs
   20:
+    Q: Wie erfolgt die Berechnung des Rückzugzeitpunktes mittels Manometer?
+    A:
+      - Rückzugzeitpunkt = Verbrauchte Luft beim Anmarsch + 100 % Reserve
+      - Rückzugzeitpunkt = Verbrauchte Luft beim Anmarsch + 50 % Reserve
+      - Rückzugzeitpunkt = Gesamte verfügbare Luft - 25 % Reserve
+      - Rückzugzeitpunkt = Luftverbrauch beim Einsatz + 20 % Reserve
   21:
     Q: Warum darf ein Flaschenwechsel nicht bei Regen vorgenommen werden?
     A:
       - Wegen Vereisungsgefahr im Druckminderer und Flaschenventil
-    choices:
       - Wegen der Gefahr des Rutschens
       - Wegen der Kondenswasserbildung in der Flasche
       - Wegen möglicher Wasserschäden am Gerät
-      - Wegen Vereisungsgefahr im Druckminderer und Flaschenventil
   22:
     Q: Wie verhält sich der Atemschutztrupp, wenn bei einem Mann die Restluftwarneinrichtung (Signalpfeife) anspricht?
     A:
       - Es wird sofort der gemeinsame Rückzug angetreten
-    choices:
       - Der betroffene Mann zieht sich alleine zurück
       - Der Trupp setzt den Einsatz fort
       - Es wird eine Pause eingelegt
-      - Es wird sofort der gemeinsame Rückzug angetreten
   23:
     Q: Welche Aufgabe hat der Truppführer eines Atemschutztrupps?
     A:
       - Verantwortlich für den gesamten Trupp
-    choices:
       - Verantwortlich nur für die Kommunikation
       - Verantwortlich nur für den Rückweg
       - Verantwortlich für die Geräte
-      - Verantwortlich für den gesamten Trupp
   24:
     Q: Wann darf ein Atemschutzgeräteträger nicht eingesetzt werden?
     A:
       - Wenn er unter Alkoholeinfluss steht, krank ist oder sich den körperlichen und geistigen Anforderungen des Einsatzes nicht gewachsen fühlt
-    choices:
       - Wenn er zu wenig gegessen hat
       - Wenn er jünger als 25 Jahre ist
       - Wenn er über 10 Jahre Erfahrung hat
-      - Wenn er unter Alkoholeinfluss steht, krank ist oder sich den körperlichen und geistigen Anforderungen des Einsatzes nicht gewachsen fühlt
   25:
     Q: Warum ist ein Pressluftatmer mit einer Restluftwarneinrichtung ausgestattet?
     A:
       - Um rechtzeitig auf den zu Ende gehenden Atemluftvorrat aufmerksam zu machen
-    choices:
       - Um die Umgebungsluftqualität zu überwachen
       - Um den Sauerstoffgehalt in der Flasche zu messen
       - Um die Außentemperatur zu überwachen
-      - Um rechtzeitig auf den zu Ende gehenden Atemluftvorrat aufmerksam zu machen
   26:
     Q: Welche Aufgabe hat der Rettungstrupp beim Atemschutzeinsatz?
     A:
       - Er muss für Notfälle bereitstehen.
-    choices:
       - Er unterstützt den Truppführer bei der Navigation
       - Er überwacht die Atemschutzgeräte
       - Er leitet den Einsatz an der Einsatzstelle
-      - Er muss für Notfälle bereitstehen.
   27:
     Q: Wo meldet sich der aus dem Einsatz kommende Atemschutztrupp zurück?
     A:
       - Zuerst beim Gruppenkommandanten, dann beim Leiter des Atemschutzsammelplatzes
-    choices:
       - Direkt bei der Feuerwehrzentrale
       - Beim Rettungsdienst vor Ort
       - Nur beim Gruppenkommandanten
-      - Zuerst beim Gruppenkommandanten, dann beim Leiter des Atemschutzsammelplatzes
   28:
     Q: Wie weit soll der Rettungstrupp ausgerüstet sein?
     A:
       - Komplett ausgerüstet, Maske angelegt, Flasche(n) aufgedreht
-    choices:
       - Nur mit Handschuhen und Helm
       - Mit angelegter Maske, Flaschen geschlossen
       - Nur mit Helm und Schutzkleidung
-      - Komplett ausgerüstet, Maske angelegt, Flasche(n) aufgedreht
   29:
     Q: Wie viel Luft benötigt man bei mittelschwerer Arbeit mit einem Pressluftatmer?
     A:
       - ca. 50 Liter/min
-    choices:
       - ca. 20 Liter/min
       - ca. 70 Liter/min
       - ca. 30 Liter/min
-      - ca. 50 Liter/min
 
 ASLP Stufe II:
   30:
     Q: Was ist bei Einsätzen in verqualmten Räumen zu beachten?
     A:
       - Gebückt oder kriechend vorgehen, Rückmarschweg sichern und zusammenbleiben
-    choices:
       - Aufrecht gehen und zügig handeln
       - Nur der Truppführer sichert den Rückweg
       - Türen und Fenster stets verschlossen halten
-      - Gebückt oder kriechend vorgehen, Rückmarschweg sichern und zusammenbleiben
   31:
     Q: Was ist Kohlenmonoxid für ein Gas und wie wirkt es?
     A:
       - Blut- und Nervengift, es verhindert den Sauerstofftransport im Blut
-    choices:
       - Reizgas, das die Augen schädigt
       - Ein harmloses Gas ohne Wirkungen
       - Es löst sofort Kopfschmerzen aus
-      - Blut- und Nervengift, es verhindert den Sauerstofftransport im Blut
   32:
     Q: Wie kann man Sauerstoffmangel erkennen?
     A:
       - Nur mit speziellen Messgeräten
-    choices:
       - Durch die Atemfrequenz
       - Durch bläuliche Hautfärbung
       - Durch Schwindelgefühle
-      - Nur mit speziellen Messgeräten
   33:
     Q: Woran erkennt man eine günstige Atemtechnik?
     A:
       - Am ruhigen Aus- und Einatmen
-    choices:
       - An schnellen, tiefen Atemzügen
       - Durch kurze Atempausen
       - An verstärktem Einatmen
-      - Am ruhigen Aus- und Einatmen
   34:
     Q: Welche Folgen ergeben sich aus der Störung der Atmung?
     A:
       - Lebensgefahr
-    choices:
       - Leichte Erschöpfung
       - Leichte Benommenheit
       - Temporäre Ohnmacht
-      - Lebensgefahr
   35:
     Q: Was geschieht mit der Atemluft in der Lunge?
     A:
       - Ein Teil des Sauerstoffes geht in das Blut über, die restliche Atemluft wird wieder ausgeatmet.
-    choices:
       - Sie wird vollständig ausgeatmet
       - Der gesamte Sauerstoff wird ins Blut aufgenommen
       - Sie wird unverändert im Körper gespeichert
-      - Ein Teil des Sauerstoffes geht in das Blut über, die restliche Atemluft wird wieder ausgeatmet.
   36:
     Q: Kann auf Atemschutz verzichtet werden, wenn bestimmte physikalische Eigenschaften (z.B. brennbar, wasserlöslich) eines Atemgiftes bekannt sind?
     A:
       - Es kann niemals auf Grund der physikalischen Eigenschaften auf Atemschutz verzichtet werden.
-    choices:
       - Ja, wenn das Gas wasserlöslich ist
       - Ja, bei brennbaren Gasen
       - Ja, wenn der Raum gut belüftet ist
-      - Es kann niemals auf Grund der physikalischen Eigenschaften auf Atemschutz verzichtet werden.
   37:
     Q: Können feste Stoffe Atemgifte sein?
     A:
       - Ja, z.B. in Form von Staub
-    choices:
       - Nein, nur Gase können Atemgifte sein
       - Nein, nur Flüssigkeiten können Atemgifte sein
       - Ja, aber nur in flüssiger Form
-      - Ja, z.B. in Form von Staub
   38:
     Q: Darf mit einem Pressluftatmer getaucht werden?
     A:
       - Nein
-    choices:
       - Ja, aber nur in flachem Wasser
       - Ja, aber nur mit speziellem Anzug
       - Ja, aber nur für kurze Zeit
-      - Nein
   39:
     Q: Wer darf Atemschutzgeräte und Atemmasken reparieren?
     A:
       - Die Landesatemschutzzentrale bzw. autorisierte Atemschutzwerkstätten
-    choices:
       - Jeder Atemschutzgeräteträger
       - Nur der Einsatzleiter
       - Der Truppführer
-      - Die Landesatemschutzzentrale bzw. autorisierte Atemschutzwerkstätten
   40:
     Q: In welchen Zeitabständen müssen Atemschutzgeräte grundüberholt werden?
     A:
       - Alle 10 Jahre
-    choices:
       - Alle 5 Jahre
       - Alle 6 Monate
       - Alle 15 Jahre
-      - Alle 10 Jahre
   41:
     Q: Welche Aufgabe hat der Lungenautomat?
     A:
       - Er gibt dem Geräteträger die Menge Luft, welche er jeweils benötigt.
-    choices:
       - Er filtert die eingeatmete Luft
       - Er mischt Luft mit Sauerstoff
       - Er überwacht den Druck der Atemluftflasche
-      - Er gibt dem Geräteträger die Menge Luft, welche er jeweils benötigt.
   42:
     Q: Schützt ein Atemfilter gegen höhere Konzentrationen von Atemgiften?
     A:
       - Grundsätzlich nein
-    choices:
       - Ja, aber nur bei kurzem Einsatz
       - Ja, bei geringer Sauerstoffkonzentration
       - Ja, bei geschlossenem Ventil
-      - Grundsätzlich nein
   43:
     Q: Warum werden bei der Feuerwehr Kombinationsfilter verwendet?
     A:
       - Damit ein Schutz vor Gasen und Partikeln gegeben ist
-    choices:
       - Um gegen alle Gase zu schützen
       - Um eine bessere Luftzirkulation zu ermöglichen
       - Um die Lebensdauer der Filter zu verlängern
-      - Damit ein Schutz vor Gasen und Partikeln gegeben ist
   44:
     Q: Schützen Filtergeräte gegen Sauerstoffmangel?
     A:
       - Nein
-    choices:
       - Ja, aber nur kurzfristig
       - Ja, wenn die Umgebung gut belüftet ist
       - Ja, aber nur bei niedrigem Sauerstoffbedarf
-      - Nein
   45:
     Q: Wogegen schützt die Fluchthaube?
     A:
       - Gegen verschiedene Atemgifte einschließlich Kohlenstoffmonoxid
-    choices:
       - Gegen Staub und Schmutz
       - Nur gegen Gase
       - Gegen Flüssigkeiten
-      - Gegen verschiedene Atemgifte einschließlich Kohlenstoffmonoxid
   46:
     Q: Welcher Bauteil der Atemmaske sorgt für gute Sprechverbindung?
     A:
       - Die in der Maske eingebaute Sprechmembrane
-    choices:
       - Das Einatemventil
       - Der Lungenautomat
       - Der Filter
-      - Die in der Maske eingebaute Sprechmembrane
   47:
     Q: Welches Ventil ist für die Dichtheit der Maske besonders wichtig?
     A:
       - Das Ausatemventil
-    choices:
       - Das Einatemventil
       - Der Druckminderer
       - Der Lungenautomat
-      - Das Ausatemventil
   48:
     Q: Wer führt die Pflege der Atemmaske nach der Verwendung durch?
     A:
       - Jeder Geräteträger, der Atemschutzwart überwacht und prüft
-    choices:
       - Nur der Atemschutzwart
       - Der Einsatzleiter
       - Der Truppführer
-      - Jeder Geräteträger, der Atemschutzwart überwacht und prüft
   49:
     Q: Warum sind Atemmasken mit einer Innenmaske ausgestattet?
     A:
       - Der Totraum wird verkleinert. Die eingebauten Steuerventile regeln den Luftstrom in der Maske, dadurch wird das Beschlagen der Innenseite der Sichtscheibe verhindert.
-    choices:
       - Um die Luftzufuhr zu erhöhen
       - Um die Maske robuster zu machen
       - Um den Tragekomfort zu verbessern
-      - Der Totraum wird verkleinert. Die eingebauten Steuerventile regeln den Luftstrom in der Maske, dadurch wird das Beschlagen der Innenseite der Sichtscheibe verhindert.
   50:
     Q: Woran erkennt man eine durchgeführte Jahresprüfung eines Pressluftatmers?
     A:
       - An einer Plakette mit Datum
-    choices:
       - An der Farbe des Pressluftatmers
       - An der Position des Manometers
       - An der Größe der Atemmaske
-      - An einer Plakette mit Datum
   51:
     Q: Woran ist ein Pressluftatmer gebunden?
     A:
       - An die Zeit
-    choices:
       - An die Sauerstoffkonzentration
       - An die Größe des Atemschutzträgers
       - An die Umgebungsbedingungen
-      - An die Zeit
   52:
     Q: Kann ein Vollbartträger als Atemschutzgeräteträger eingesetzt werden?
     A:
       - Nein, der Dichtsitz der Atemmaske ist nicht mehr gewährleistet.
-    choices:
       - Ja, wenn der Bart getrimmt ist
       - Ja, wenn die Maske angepasst ist
       - Ja, solange der Bart kurz ist
-      - Nein, der Dichtsitz der Atemmaske ist nicht mehr gewährleistet.
   53:
     Q: Wie groß muss die Einsatzreserve sein?
     A:
       - Es muss als Einsatzreserve außerhalb ein Trupp mehr vorhanden sein, als innerhalb eingesetzt sind
-    choices:
       - Die Hälfte der eingesetzten Trupps
       - Genauso viele wie im Einsatz
       - Nur ein Atemschutzgeräteträger
-      - Es muss als Einsatzreserve außerhalb ein Trupp mehr vorhanden sein, als innerhalb eingesetzt sind
   54:
     Q: Wer unterstützt den Ortsfeuerwehrkommandanten auf Ortsebene bei der Weiterbildung der Atemschutzgeräteträger?
     A:
       - Der Atemschutzwart
-    choices:
       - Der Truppführer
       - Der Gruppenkommandant
       - Der Einsatzleiter
-      - Der Atemschutzwart
   55:
     Q: Welche Prüfungen hat der Atemschutzwart monatlich durchzuführen?
     A:
       - Sichtprüfungen, Kurzprüfungen, Druck der Reserveflaschen
-    choices:
       - Funktionsprüfung der Maskenfilter
       - Überprüfung der Atemschutztruppausbildung
       - Kontrolle der Atemschutzgeräte nach jedem Einsatz
-      - Sichtprüfungen, Kurzprüfungen, Druck der Reserveflaschen
   56:
     Q: Was bedeutet die obere Ziffer bei einer orangen Warntafel?
     A:
       - Die Gefahrennummer
-    choices:
       - Die Stoffnummer
       - Die Fahrzeugnummer
       - Die Ankunftszeit
-      - Die Gefahrennummer
   57:
     Q: Was bedeutet ein „X“ vor der Gefahrnummer?
     A:
       - Der Stoff darf nicht mit Wasser in Berührung kommen.
-    choices:
       - Der Stoff ist explosiv
       - Der Stoff ist radioaktiv
       - Der Stoff darf nur unter bestimmten Temperaturen transportiert werden
-      - Der Stoff darf nicht mit Wasser in Berührung kommen.
   58:
     Q: Wie kann man eine Atemkrise vermeiden?
     A:
       - Durch festes, konzentriertes Ausatmen (CO2 Anteil im Blut wird gesenkt)
-    choices:
       - Durch schnelles Einatmen
       - Durch das Anhalten des Atems
       - Durch schnelles Atmen
-      - Durch festes, konzentriertes Ausatmen (CO2 Anteil im Blut wird gesenkt)
   59:
     Q: Wie erkenne ich die Grundüberholung (10-jährige Prüfung) an einem Pressluftatmer?
     A:
       - An der Datumsmarke am Druckminderer
-    choices:
       - An der Farbe der Flasche
       - Am Tragegestell
       - An der Atemmaske
-      - An der Datumsmarke am Druckminderer
   60:
     Q: Mindestalter für Atemschutzgeräteträger?
     A:
       - Vollendetes 18. Lebensjahr
-    choices:
       - 16 Jahre
       - 21 Jahre
       - 25 Jahre
-      - Vollendetes 18. Lebensjahr
 
 ASLP Stufe III:
   1:
     Q: Woraus setzt sich atembare Luft zusammen?
     A:
       - 21 % Sauerstoff, 78 % Stickstoff, 0,04 % Kohlenstoffdioxid, 0.96 % Edelgase
-    choices:
       - 20 % Sauerstoff, 80 % Stickstoff, 0.1 % Kohlenstoffdioxid, 0.9 % Edelgase
       - 21 % Sauerstoff, 75 % Stickstoff, 2 % Kohlenstoffdioxid, 2 % Edelgase
       - 19 % Sauerstoff, 79 % Stickstoff, 1 % Kohlenstoffdioxid, 1 % Edelgase
-      - 21 % Sauerstoff, 78 % Stickstoff, 0,04 % Kohlenstoffdioxid, 0.96 % Edelgase
   2:
     Q: Wie kann eine Atemkrise entstehen?
     A:
       - Durch eine falsche Atemtechnik (z.B. durch flaches, hastiges Atmen)
-    choices:
       - Durch intensives und schnelles Atmen
       - Durch das Tragen eines Atemschutzgerätes
       - Durch das Einatmen von Sauerstoff
-      - Durch eine falsche Atemtechnik (z.B. durch flaches, hastiges Atmen)
   3:
     Q: Wie lange kann ein Mensch ohne Sauerstoff (Atmung) leben?
     A:
       - Etwa 3 Minuten
-    choices:
       - 10 Minuten
       - 5 Minuten
       - 15 Minuten
-      - Etwa 3 Minuten
   4:
     Q: Aus welchen Bestandteilen setzt sich die ausgeatmete Atemluft zusammen?
     A:
       - 17 % Sauerstoff, 78 % Stickstoff, 4,04 % Kohlenstoffdioxid, der Rest aus Edelgasen
-    choices:
       - 16 % Sauerstoff, 79 % Stickstoff, 3 % Kohlenstoffdioxid, der Rest Edelgase
       - 18 % Sauerstoff, 76 % Stickstoff, 5 % Kohlenstoffdioxid, der Rest Edelgase
       - 20 % Sauerstoff, 75 % Stickstoff, 5 % Kohlenstoffdioxid, der Rest Edelgase
-      - 17 % Sauerstoff, 78 % Stickstoff, 4,04 % Kohlenstoffdioxid, der Rest aus Edelgasen
   5:
     Q: Welches Atemgift wirkt auf die äußere Atmung?
     A:
       - Kohlenstoffdioxid (CO2)
-    choices:
       - Sauerstoff (O2)
       - Kohlenmonoxid (CO)
       - Stickstoff (N2)
-      - Kohlenstoffdioxid (CO2)
   6:
     Q: Was ist Kohlenmonoxid für ein Gas, und wie wirkt es?
     A:
       - Blut- und Nervengift, es verhindert den Sauerstofftransport im Blut
-    choices:
       - Ein brennbares Gas, das leicht entzündlich ist
       - Ein geruchloses Gas, das in der Lunge absorbiert wird
       - Ein toxisches Gas, das die Lungenfunktion verbessert
-      - Blut- und Nervengift, es verhindert den Sauerstofftransport im Blut
   7:
     Q: Wie kann man Sauerstoffmangel erkennen?
     A:
       - Nur mit speziellen Messgeräten
-    choices:
       - Durch Atemnot
       - Durch Übelkeit und Schwindel
       - Durch Verfärbung der Haut
-      - Nur mit speziellen Messgeräten
   8:
     Q: Woran erkennt man eine günstige Atemtechnik?
     A:
       - Am ruhigen Aus- und Einatmen
-    choices:
       - Am schnellen Ein- und Ausatmen
       - Am starken Einatmen
       - Am lauten Atemgeräusch
-      - Am ruhigen Aus- und Einatmen
   9:
     Q: Welche Folgen ergeben sich aus der Störung der Atmung?
     A:
       - Lebensgefahr
-    choices:
       - Hustenanfälle
       - Kurzatmigkeit
       - Geringere Leistungsfähigkeit
-      - Lebensgefahr
   10:
     Q: Was geschieht mit der Atemluft in der Lunge?
     A:
       - Ein Teil des Sauerstoffes geht in das Blut über, die restliche Atemluft wird wieder ausgeatmet.
-    choices:
       - Der gesamte Sauerstoff wird im Körper gespeichert
       - Die Lunge speichert Sauerstoff und Kohlendioxid
       - Die gesamte Atemluft wird im Körper verbraucht
-      - Ein Teil des Sauerstoffes geht in das Blut über, die restliche Atemluft wird wieder ausgeatmet.
   11:
     Q: Kann auf Atemschutz verzichtet werden, wenn bestimmte physikalische Eigenschaften (z.B. brennbar, wasserlöslich) eines Atemgiftes bekannt sind?
     A:
       - Es kann niemals auf Grund der physikalischen Eigenschaften auf Atemschutz verzichtet werden.
-    choices:
       - Ja, wenn die Konzentration niedrig genug ist
       - Ja, wenn die Substanz wasserlöslich ist
       - Nein, nur wenn der Schadstoffanteil unter 0.1 % ist
-      - Es kann niemals auf Grund der physikalischen Eigenschaften auf Atemschutz verzichtet werden.
   12:
     Q: Können feste Stoffe Atemgifte sein?
     A:
       - Ja, z.B. in Form von Staub
-    choices:
       - Nein, feste Stoffe sind ungefährlich
       - Nur, wenn sie brennbar sind
       - Nur, wenn sie in flüssiger Form vorliegen
-      - Ja, z.B. in Form von Staub
   13:
     Q: Was sind Atemschutzgeräte?
     A:
       - Geräte, die es ermöglichen, sich in nicht atembarer oder sauerstoffarmer Luft aufzuhalten
-    choices:
       - Geräte, die die Atemluft filtern
       - Geräte, die nur bei Rauchentwicklung verwendet werden
       - Geräte, die den Luftdruck erhöhen
-      - Geräte, die es ermöglichen, sich in nicht atembarer oder sauerstoffarmer Luft aufzuhalten
   14:
     Q: Welche Schutzwirkung hat der Pressluftatmer?
     A:
       - Macht den Träger unabhängig von der Umgebungsatmosphäre
-    choices:
       - Filtert die Luft und entfernt Partikel
       - Erhöht die Luftfeuchtigkeit für leichteres Atmen
       - Schützt nur vor giftigen Gasen
-      - Macht den Träger unabhängig von der Umgebungsatmosphäre
   15:
     Q: Wann muss man Atemschutzmasken reinigen?
     A:
       - Nach jeder Verwendung
-    choices:
       - Nur nach intensiven Einsätzen
       - Einmal pro Woche
       - Nur, wenn sie stark verschmutzt sind
-      - Nach jeder Verwendung
   16:
     Q: Wie wird die Dichtprüfung bei der Atemmaske durchgeführt?
     A:
       - Das Anschlussstück wird mit dem Handballen abgedichtet, gleichzeitig wird eingeatmet. Es darf dabei keine einströmende Luft spürbar sein.
-    choices:
       - Die Maske wird auf den Kopf gesetzt und bewegt
       - Die Maske wird mit Wasser bespritzt
       - Luft wird in die Maske geblasen, um Lecks zu erkennen
-      - Das Anschlussstück wird mit dem Handballen abgedichtet, gleichzeitig wird eingeatmet. Es darf dabei keine einströmende Luft spürbar sein.
   17:
     Q: Wo darf man Filtergeräte nicht verwenden?
     A:
       - Bei Bränden in geschlossenen Räumen (CO), bei Sauerstoffmangel, bei Schadstoffanteil über 0,5 Vol.%
-    choices:
       - Im Freien
       - Bei niedrigen Temperaturen
       - In staubigen Umgebungen
-      - Bei Bränden in geschlossenen Räumen (CO), bei Sauerstoffmangel, bei Schadstoffanteil über 0,5 Vol.%
   18:
     Q: Welche Kurzprüfungen müssen nach einem Flaschenwechsel durchgeführt werden?
     A:
       - Flaschendruckprüfung, Hochdruckdichtprüfung, Überprüfung der Restluftwarneinrichtung, Sichtprüfung (Begurtung etc.)
-    choices:
       - Nur die Druckkontrolle
       - Sichtprüfung der Maske und der Atemschutzträger
       - Kurzprüfung der Filter und Ventile
-      - Flaschendruckprüfung, Hochdruckdichtprüfung, Überprüfung der Restluftwarneinrichtung, Sichtprüfung (Begurtung etc.)
   19:
     Q: Wie viel Druckabfall darf bei der Hochdruckdichtprüfung innerhalb einer Minute sein?
     A:
       - Keiner, höchstens ein Teilstrich am Manometer (10 bar)
-    choices:
       - Maximal 5 Bar
       - Bis zu 15 Bar
       - 0,5 % des Gesamtdrucks
-      - Keiner, höchstens ein Teilstrich am Manometer (10 bar)
   20:
   21:
     Q: Darf mit einem Pressluftatmer getaucht werden?
     A:
       - Nein
-    choices:
       - Ja, aber nur in seichten Gewässern
       - Ja, wenn das Gerät wasserdicht ist
       - Ja, bei niedrigem Druck
-      - Nein
   22:
     Q: Wer darf Atemschutzgeräte und Atemmasken reparieren?
     A:
       - Die Landesatemschutzzentrale bzw. autorisierte Atemschutzwerkstätten
-    choices:
       - Jeder Feuerwehrmann mit Erfahrung
       - Der Atemschutzgeräteträger selbst
       - Jede Feuerwehrstation
-      - Die Landesatemschutzzentrale bzw. autorisierte Atemschutzwerkstätten
   23:
     Q: In welchen Zeitabständen müssen Atemschutzgeräte grundüberholt werden?
     A:
       - Alle 10 Jahre
-    choices:
       - Alle 5 Jahre
       - Alle 3 Jahre
       - Nach jeder Verwendung
-      - Alle 10 Jahre
   24:
     Q: Welche Aufgabe hat der Lungenautomat?
     A:
       - Er gibt dem Geräteträger die Menge Luft, welche er jeweils benötigt.
-    choices:
       - Er filtert die Luft und entfernt Schadstoffe
       - Er speichert Luft für den Notfall
       - Er reguliert die Luftfeuchtigkeit
-      - Er gibt dem Geräteträger die Menge Luft, welche er jeweils benötigt.
   25:
     Q: Schützt ein Atemfilter gegen höhere Konzentrationen von Atemgiften?
     A:
       - Grundsätzlich “Nein“
-    choices:
       - Ja, bei geringer Luftfeuchtigkeit
       - Ja, bei niedrigen Temperaturen
       - Ja, aber nur kurzzeitig
-      - Grundsätzlich “Nein“
   26:
     Q: Warum werden bei der Feuerwehr Kombinationsfilter verwendet?
     A:
       - Damit ein Schutz vor Gasen und Partikeln gegeben ist
-    choices:
       - Um die Atemluft zu befeuchten
       - Um nur vor festen Stoffen zu schützen
       - Um die Sicht zu verbessern
-      - Damit ein Schutz vor Gasen und Partikeln gegeben ist
   27:
     Q: Schützen Filtergeräte gegen Sauerstoffmangel?
     A:
       - Nein
-    choices:
       - Ja, bis zu 30 Minuten
       - Ja, aber nur bei Temperaturen über 0°C
       - Ja, wenn die Schadstoffkonzentration niedrig ist
-      - Nein
   28:
     Q: Wogegen schützt die Fluchthaube?
     A:
       - Gegen verschiedene Atemgifte einschließlich Kohlenstoffmonoxid
-    choices:
       - Nur gegen Staubpartikel
       - Nur gegen Sauerstoffmangel
       - Nur gegen Kohlendioxid
-      - Gegen verschiedene Atemgifte einschließlich Kohlenstoffmonoxid
   29:
     Q: Welcher Bauteil der Atemmaske sorgt für gute Sprechverbindung?
     A:
       - Die in der Maske eingebaute Sprechmembrane
-    choices:
       - Das Einatemventil
       - Das Ausatemventil
       - Der Filtereinsatz
-      - Die in der Maske eingebaute Sprechmembrane
   30:
     Q: Welches Ventil ist für die Dichtheit der Maske besonders wichtig?
     A:
       - Das Ausatemventil
-    choices:
       - Das Einatemventil
       - Das Überdruckventil
       - Das Sicherheitsventil
-      - Das Ausatemventil
   31:
     Q: Wer führt die Pflege der Atemmaske nach der Verwendung durch?
     A:
       - Jeder Geräteträger, der Atemschutzwart überwacht und prüft
-    choices:
       - Der Gruppenkommandant
       - Der Atemschutzträger selbst ohne Überwachung
       - Der Atemschutzwart alleine
-      - Jeder Geräteträger, der Atemschutzwart überwacht und prüft
   32:
     Q: Warum sind Atemmasken mit einer Innenmaske ausgestattet?
     A:
       - Der Totraum wird verkleinert. Die eingebauten Steuerventile regeln den Luftstrom in der Maske, dadurch wird das Beschlagen der Innenseite der Sichtscheibe verhindert.
-    choices:
       - Um die Luft besser zu filtern
       - Um das Gewicht der Maske zu verringern
       - Um die Maske wasserfest zu machen
-      - Der Totraum wird verkleinert. Die eingebauten Steuerventile regeln den Luftstrom in der Maske, dadurch wird das Beschlagen der Innenseite der Sichtscheibe verhindert.
   33:
     Q: Woran erkennt man eine durchgeführte Jahresprüfung eines Pressluftatmers?
     A:
       - An einer Plakette mit Datum
-    choices:
       - An einer speziellen Markierung am Druckminderer
       - An einem digitalen Display am Gerät
       - Am Siegel auf der Atemschutzmaske
-      - An einer Plakette mit Datum
   34:
     Q: Wann müssen Pressluftflaschen (Stahl) vom TÜV überprüft werden?
     A:
       - Alle 10 Jahre
-    choices:
       - Alle 2 Jahre
       - Alle 5 Jahre
       - Jährlich
-      - Alle 10 Jahre
   35:
     Q: Zu welcher Schutzstufe gehört der gasdichte Vollschutzanzug?
     A:
       - Schutzstufe 3
-    choices:
       - Schutzstufe 1
       - Schutzstufe 2
       - Schutzstufe 4
-      - Schutzstufe 3
   36:
     Q: Mit welcher Einsatzzeit ist mit gasdichten Vollschutzanzug zu rechnen?
     A:
       - 10 - 30 Minuten
-    choices:
       - 1 - 5 Stunden
       - 5 - 10 Minuten
       - 30 - 60 Minuten
-      - 10 - 30 Minuten
   37:
     Q: Welche Atemluftversorgung benötigt man bei gasdichten Vollschutzanzügen?
     A:
       - Pressluftatmer mit akustischer Restluftwarnung oder Druckluftschlauchgeräte
-    choices:
       - Filtergeräte mit CO2-Filter
       - Sauerstoffflaschen ohne Restluftwarnung
       - Nur Filtergeräte
-      - Pressluftatmer mit akustischer Restluftwarnung oder Druckluftschlauchgeräte
   38:
     Q: Was bedeutet das Zeichen mit der Hand, wobei der Daumen nach unten zeigt?
     A:
       - Es wird dringend Hilfe benötigt.
-    choices:
       - Rückzug
       - Sofort weitergehen
       - Gefahr erkannt
-      - Es wird dringend Hilfe benötigt.
   39:
     Q: Wann ist ein Schutzanzug der Schutzstufe 3 zu überprüfen?
     A:
       - Nach jeder Verwendung, ansonsten 1x jährlich
-    choices:
       - Nur nach schweren Einsätzen
       - Alle 5 Jahre
       - Einmal alle zwei Monate
-      - Nach jeder Verwendung, ansonsten 1x jährlich
   40:
     Q: Wie oft muss jeder Atemschutzgeräteträger eine Atemschutzübung machen?
     A:
       - 2 Übungen im Jahr, ÖFAST wird als sinnvolle Übung angerechnet
-    choices:
       - 1 Übung pro Jahr
       - 4 Übungen im Jahr
       - Alle zwei Monate
-      - 2 Übungen im Jahr, ÖFAST wird als sinnvolle Übung angerechnet
   41:
     Q: Was sind die Voraussetzungen für einen Flash Over?
     A:
       - genügend Sauerstoff und Brandlast im Raum
-    choices:
       - Niedrige Temperatur und wenig Rauch
       - Keine brennbaren Materialien im Raum
       - Kein Sauerstoff und wenig Rauch
-      - genügend Sauerstoff und Brandlast im Raum
   42:
     Q: Was sind die Voraussetzungen für einen Backdraft?
     A:
       - Im Brandraum herrscht Sauerstoffmangel
-    choices:
       - Im Brandraum herrscht übermäßiger Sauerstoffgehalt
       - Es herrscht extreme Hitze, aber viel Luft
       - Der Brand ist unter Kontrolle
-      - Im Brandraum herrscht Sauerstoffmangel
   43:
     Q: Was sind die Ziele der Brandrauchkühlung?
     A:
       - Wasserdampf entsteht, Zündfähigkeit und die Pyrolyse wird unterbunden
-    choices:
       - Hitzeausbreitung verstärken
       - Nur Rauch entfernen
       - Den Brand beschleunigen
-      - Wasserdampf entsteht, Zündfähigkeit und die Pyrolyse wird unterbunden
   44:
     Q: Wie sichert sich ein Atemschutztrupp seinen Rückmarschweg?
     A:
       - Mittels Schlauchleitung oder Leine
-    choices:
       - Mit Rauchmeldern
       - Durch Markierung der Wände
       - Nur durch Sichtkontakt
-      - Mittels Schlauchleitung oder Leine
   45:
     Q: Aus wie vielen Personen besteht ein Atemschutztrupp?
     A:
       - Drei
-    choices:
       - Zwei
       - Vier
       - Fünf
-      - Drei
   46:
     Q: Wie erfolgt die Berechnung des Rückzugzeitpunktes mittels Manometer?
     A:
       - Rückmarschzeitpunkt = Verbrauchte Luft des Anmarsches + 100 % Reserve
-    choices:
       - Rückmarschzeitpunkt = Hälfte der gesamten Luftkapazität
       - Rückmarschzeitpunkt = Restluft + 20 % Reserve
       - Rückmarschzeitpunkt = Nach 10 Minuten Einsatz
-      - Rückmarschzeitpunkt = Verbrauchte Luft des Anmarsches + 100 % Reserve
   47:
     Q: Warum darf ein Flaschenwechsel nicht bei Regen vorgenommen werden?
     A:
       - Wegen Vereisungsgefahr im Druckminderer und Flaschenventil
-    choices:
       - Wegen erhöhter Verletzungsgefahr
       - Wegen verminderter Sicht
       - Wegen schlechter Verbindung der Ventile
-      - Wegen Vereisungsgefahr im Druckminderer und Flaschenventil
   48:
     Q: Wie verhält sich der Atemschutztrupp, wenn bei einem Mann die Restluftwarneinrichtung (Signalpfeife) anspricht?
     A:
       - Es wird sofort der gemeinsame Rückzug angetreten.
-    choices:
       - Der betroffene Mann bleibt zurück
       - Nur der betroffene Mann tritt den Rückzug an
       - Der Trupp wartet auf Verstärkung
-      - Es wird sofort der gemeinsame Rückzug angetreten.
   49:
     Q: Welche Aufgabe hat der Truppführer eines Atemschutztrupps?
     A:
       - Verantwortlich für den gesamten Trupp
-    choices:
       - Nur für die Kommunikation zuständig
       - Verantwortlich für die Materialversorgung
       - Nur für das Teammanagement
-      - Verantwortlich für den gesamten Trupp
   50:
     Q: Wann darf ein Atemschutzgeräteträger nicht eingesetzt werden?
     A:
       - Wenn er unter Alkoholeinfluss steht, krank ist oder sich den körperlichen und geistigen Anforderungen des Einsatzes nicht gewachsen fühlt
-    choices:
       - Wenn er älter als 35 Jahre ist
       - Wenn er weniger als 2 Jahre Dienst hat
       - Wenn er unter Stress steht
-      - Wenn er unter Alkoholeinfluss steht, krank ist oder sich den körperlichen und geistigen Anforderungen des Einsatzes nicht gewachsen fühlt
   51:
     Q: Warum ist ein Pressluftatmer mit einer Restluftwarneinrichtung ausgestattet?
     A:
       - Um rechtzeitig auf den zu Ende gehenden Atemluftvorrat aufmerksam zu machen
-    choices:
       - Um die Luftqualität zu überwachen
       - Um den Sauerstoffgehalt zu steigern
       - Um die Zeit im Einsatz zu verlängern
-      - Um rechtzeitig auf den zu Ende gehenden Atemluftvorrat aufmerksam zu machen
   52:
     Q: Welche Aufgabe hat der Rettungstrupp beim Atemschutzeinsatz?
     A:
       - Er muss für Notfälle bereitstehen.
-    choices:
       - Er übernimmt den Rückzug
       - Er koordiniert die Atemschutzlogistik
       - Er sichert die Sauerstoffzufuhr
-      - Er muss für Notfälle bereitstehen.
   53:
     Q: Wo meldet sich der aus dem Einsatz kommende Atemschutztrupp zurück?
     A:
       - Zuerst beim Gruppenkommandanten, dann beim Leiter des Atemschutzsammelplatzes
-    choices:
       - Beim Rettungstruppführer
       - Direkt bei der Polizei
       - Nur beim Gruppenkommandanten
-      - Zuerst beim Gruppenkommandanten, dann beim Leiter des Atemschutzsammelplatzes
   54:
     Q: Wie weit soll der Rettungstrupp ausgerüstet sein?
     A:
       - Komplett ausgerüstet, Maske angelegt, Flasche aufgedreht
-    choices:
       - Nur mit Kommunikationsgeräten
       - Nur teilweise ausgerüstet, Flasche geschlossen
       - Nur Maske und Helm
-      - Komplett ausgerüstet, Maske angelegt, Flasche aufgedreht
   55:
     Q: Wie viel Luft benötigt man bei mittelschwerer Arbeit mit einem Pressluftatmer?
     A:
       - ca. 50 Liter/min
-    choices:
       - ca. 30 Liter/min
       - ca. 10 Liter/min
       - ca. 80 Liter/min
-      - ca. 50 Liter/min
   56:
     Q: Was ist bei Einsätzen in verqualmten Räumen zu beachten?
     A:
       - Gebückt oder im Seitkriechgang vorgehen, Rückzugsicherung und beisammenbleiben
-    choices:
       - Aufrecht stehen, um schneller zu reagieren
       - In entgegengesetzte Richtungen aufteilen
       - Nur die Luft filternde Masken verwenden
-      - Gebückt oder im Seitkriechgang vorgehen, Rückzugsicherung und beisammenbleiben
   57:
     Q: Woran ist ein Pressluftatmer gebunden?
     A:
       - An die Zeit
-    choices:
       - An den Luftdruck
       - An die Temperatur
       - An den Standort
-      - An die Zeit
   58:
     Q: Kann ein Vollbartträger als Atemschutzgeräteträger eingesetzt werden?
     A:
       - Nein, der Dichtsitz der Atemmaske ist nicht mehr gewährleistet.
-    choices:
       - Ja, mit speziellen Masken
       - Ja, wenn der Bart kurz ist
       - Ja, aber nur in Notfällen
-      - Nein, der Dichtsitz der Atemmaske ist nicht mehr gewährleistet.
   59:
     Q: Wie groß muss die Einsatzreserve sein?
     A:
       - Es muss als Einsatzreserve außerhalb ein Trupp mehr vorhanden sein, als innerhalb eingesetzt sind
-    choices:
       - Nur ein Mann in Reserve genügt
       - Kein Trupp wird in Reserve benötigt
       - Ein Trupp weniger als eingesetzt
-      - Es muss als Einsatzreserve außerhalb ein Trupp mehr vorhanden sein, als innerhalb eingesetzt sind
   60:
     Q: Wer unterstützt den Ortsfeuerwehrkommandanten auf Ortsebene bei der Weiterbildung der Atemschutzgeräteträger?
     A:
       - Der Atemschutzwart
-    choices:
       - Der Gruppenkommandant
       - Der Einsatzleiter
       - Der Rettungstruppführer
-      - Der Atemschutzwart
   61:
     Q: Welche Prüfungen hat der Atemschutzwart monatlich durchzuführen?
     A:
       - Sichtprüfungen, Kurzprüfungen, Druck der Reserveflaschen
-    choices:
       - Nur Sichtprüfungen
       - Nur Funktionsprüfungen
       - Reinigung der Masken
-      - Sichtprüfungen, Kurzprüfungen, Druck der Reserveflaschen
   62:
     Q: Was bedeutet die obere Ziffer bei einer orangen Warntafel?
     A:
       - Die Gefahrennummer
-    choices:
       - Die Stoffnummer
       - Die Transportnummer
       - Die Seriennummer
-      - Die Gefahrennummer
   63:
     Q: Was bedeutet ein „X“ vor der Gefahrnummer?
     A:
       - Der Stoff darf nicht mit Wasser in Berührung kommen.
-    choices:
       - Der Stoff ist ungefährlich
       - Der Stoff darf nicht mit Luft in Berührung kommen
       - Der Stoff ist wasserlöslich
-      - Der Stoff darf nicht mit Wasser in Berührung kommen.
   64:
     Q: Wie kann man eine Atemkrise vermeiden?
     A:
       - Durch festes, konzentriertes Ausatmen (CO2 Anteil im Blut wird gesenkt)
-    choices:
       - Durch schnelleres Einatmen
       - Durch kurze Atempausen
       - Durch das Anhalten der Atmung
-      - Durch festes, konzentriertes Ausatmen (CO2 Anteil im Blut wird gesenkt)
   65:
     Q: Wie erkenne ich die Grundüberholung (10-jährige Prüfung) an einem Pressluftatmer?
     A:
       - An der Datumsmarke am Druckminderer
-    choices:
       - Am Seriennummernaufkleber
       - An der Plakette am Maskenband
       - Am Farbcode auf der Flasche
-      - An der Datumsmarke am Druckminderer
   66:
     Q: Mindestalter für Atemschutzgeräteträger?
     A:
       - Vollendetes 18. Lebensjahr
-    choices:
       - 16 Jahre
       - 21 Jahre
       - 25 Jahre
-      - Vollendetes 18. Lebensjahr
   67:
     Q: Welche Bedeutung hat die „GAMS“-Regel der Feuerwehr?
     A:
       - Gefahr erkennen, Absperren, Menschenrettung, Spezialkräfte anfordern
-    choices:
       - Gase messen, Ausrüsten, Monitor starten, Sichern
       - Gas absperren, Maschinen abschalten, Schutzkleidung tragen
       - Gefahr erkennen, Anhalten, Menschen evakuieren, Schutzmaßnahmen anwenden
-      - Gefahr erkennen, Absperren, Menschenrettung, Spezialkräfte anfordern
   68:
     Q: Wann darf man im Atemschutzeinsatz die Sprechgruppe wechseln?
     A:
       - Nur auf Anweisung des Einsatzleiters
-    choices:
       - Nach Bedarf
       - Auf Befehl des Truppführers
       - Automatisch alle 30 Minuten
-      - Nur auf Anweisung des Einsatzleiters
   69:
     Q: Ein Angriffstrupp dringt in einen Raum ein, der stark verraucht und der Rauch besonders heiß ist. Was ist jetzt sofort zu tun?
     A:
       - Den heißen Rauch sofort mit Wassersprühstrahl kühlen, um einen Flash-Over bzw. Backdraft zu verhindern.
-    choices:
       - Rückzug aus dem Raum
       - Den Rauch ignorieren
       - Schnell durch den Rauch laufen
-      - Den heißen Rauch sofort mit Wassersprühstrahl kühlen, um einen Flash-Over bzw. Backdraft zu verhindern.
   70:
     Q: Welche Umstände schließen einen Innenangriff aus?
     A:
       - Einsturz- und Explosionsgefahr
-    choices:
       - Dichte Rauchentwicklung
       - Kalter Rauch
       - Starker Regen
-      - Einsturz- und Explosionsgefahr
   71:
     Q: Warum ist der Innenangriff der beste Angriff?
     A:
       - Wegen des größeren Löscherfolges. Der Brandherd wird schnell, sicher und nachhaltig gelöscht.
-    choices:
       - Es ist schneller als der Außenangriff
       - Es ist einfacher zu koordinieren
       - Der Schaden wird minimiert
-      - Wegen des größeren Löscherfolges. Der Brandherd wird schnell, sicher und nachhaltig gelöscht.
   72:
     Q: Welche Farbkennzeichnung haben Acetylengasflaschen?
     A:
       - Kastanienbraun
-    choices:
       - Rot
       - Blau
       - Gelb
-      - Kastanienbraun
   73:
     Q: Mit welcher Farbe sind Druckgasflaschen für alle brennbaren Gase, außer Acetylen, gekennzeichnet?
     A:
       - Rot
-    choices:
       - Grün
       - Blau
       - Schwarz
-      - Rot
   74:
     Q: Ein Eisenträger glüht dunkelrot. Welche Temperatur hat er?
     A:
       - 700 Grad Celsius
-    choices:
       - 500 Grad Celsius
       - 300 Grad Celsius
       - 900 Grad Celsius
-      - 700 Grad Celsius
   75:
     Q: Wieviel von seiner Tragfähigkeit verliert ein Eisenträger bei einer Temperatur von 700 Grad Celsius?
     A:
       - Zwei Drittel
-    choices:
       - Ein Drittel
       - Die Hälfte
       - Gar nichts
-      - Zwei Drittel
   76:
     Q: Mit welcher Geschwindigkeitseinheit breitet sich eine Explosion aus?
     A:
       - m/s
-    choices:
       - km/h
       - m/min
       - km/s
-      - m/s
   77:
     Q: Womit kann eine explosionsfähige Atmosphäre am Einsatzort nachgewiesen werden?
     A:
       - Mit einem Explosimeter
-    choices:
       - Mit einem Temperaturmesser
       - Mit einem CO2-Melder
       - Mit einem Geigerzähler
-      - Mit einem Explosimeter
   78:
     Q: Was bedeutet die Stoffnummer (UN-Nummer)?
     A:
       - Sie kennzeichnet den Stoff
-    choices:
       - Sie gibt die Gefahrengruppe an
       - Sie gibt die Lagerart an
       - Sie ist eine Zufallszahl
-      - Sie kennzeichnet den Stoff
   79:
     Q: Was ist beim Einsatz eines Atemschutztrupps zu beachten?
     A:
       - Notieren der Namen, der Abmarschzeit und des Einsatzzieles. Bereitstellen eines Rettungstrupps
-    choices:
       - Notieren der Flaschenanzahl
       - Nur den Einsatzziel notieren
       - Keine Notizen machen
-      - Notieren der Namen, der Abmarschzeit und des Einsatzzieles. Bereitstellen eines Rettungstrupps
   80:
     Q: Wann muss sich ein Atemschutzgeräteträger ärztlich untersuchen lassen?
     A:
       - Erstuntersuchung, Wiederholungsuntersuchung bis zum 40. Lebensjahr alle 5 Jahre, zwischen dem 40. und 50. Lebensjahr alle 3 Jahre und ab dem 50. Lebensjahr alle zwei Jahre, sowie nach schwerer Krankheit
-    choices:
       - Nur alle 10 Jahre
       - Alle 2 Jahre ab 18
       - Nur nach dem 50. Lebensjahr
-      - Erstuntersuchung, Wiederholungsuntersuchung bis zum 40. Lebensjahr alle 5 Jahre, zwischen dem 40. und 50. Lebensjahr alle 3 Jahre und ab dem 50. Lebensjahr alle zwei Jahre, sowie nach schwerer Krankheit
   81:
     Q: Was ist beim Erkennen von Gefahr in Verzug von gefährlichen Stoffen zu tun?
     A:
       - Sofortiger Rückzug der Trupps und Meldung beim Einsatzleiter
-    choices:
       - Trupps fortsetzen ihre Arbeit
       - Sofort die Polizei verständigen
       - Auf Anweisungen der Kollegen warten
-      - Sofortiger Rückzug der Trupps und Meldung beim Einsatzleiter
   82:
     Q: Welcher Sicherheitsabstand ist bei Brandbekämpfung im Bereich elektr. Anlagen mit Spannungen bis 1000 Volt beim Einsatz von C-Mehrzweckstrahlrohren einzuhalten?
     A:
       - Sprühstrahl 1m / Vollstrahl 5 m
-    choices:
       - Sprühstrahl 2m / Vollstrahl 10 m
       - Sprühstrahl 0,5m / Vollstrahl 7 m
       - Sprühstrahl 3m / Vollstrahl 15 m
-      - Sprühstrahl 1m / Vollstrahl 5 m
   83:
     Q: Welches Löschmittel darf bei Fettbränden nicht eingesetzt werden?
     A:
       - Wasser
-    choices:
       - Löschschaum
       - Sand
       - ABC-Pulver
-      - Wasser
   84:
     Q: Welcher Wasserstrahl wird vorzugsweise bei Innenangriffen eingesetzt?
     A:
       - Sprühstrahl
-    choices:
       - Vollstrahl
       - Nebelstrahl
       - Hochdruckstrahl
-      - Sprühstrahl
   85:
     Q: Wie muss eine Verpackung, die gefährlichen Stoffe enthält, gekennzeichnet sein?
     A:
       - Mit Gefahrzettel und UN-Nummer
-    choices:
       - Mit einer Warnmarke
       - Mit einem Barcode
       - Nur mit der UN-Nummer
-      - Mit Gefahrzettel und UN-Nummer
   86:
     Q: Wann ist die komplette Einsatzbekleidung (mit Schutzjacke) zu tragen?
     A:
       - Bei jedem Einsatz und bei jeder Übung
-    choices:
       - Nur bei Brandeinsätzen
       - Nur bei Übungen
       - Bei Nachlöscharbeiten
-      - Bei jedem Einsatz und bei jeder Übung
   87:
     Q: Wie werden Säuredämpfe niedergeschlagen?
     A:
       - Mit Wassersprühstrahl
-    choices:
       - Mit Löschpulver
       - Mit Kohlendioxid
       - Mit Schaum
-      - Mit Wassersprühstrahl
   88:
     Q: Welche Stoffe neigen zu Selbstentzündung?
     A:
       - Phosphor, in Öl getränkte Putzwolle, feuchtes Heu
-    choices:
       - Glas, Sand, Blei
       - Holz, Stahl, Glaswolle
       - Alkohol, Benzin, Glas
-      - Phosphor, in Öl getränkte Putzwolle, feuchtes Heu
   89:
     Q: Welches ist das Hauptlöschverfahren bei Glutbränden?
     A:
       - Abkühlen
-    choices:
       - Ersticken
       - Verdünnen
       - Isolieren
-      - Abkühlen
   90:
     Q: Wo ist bei einem Brand die Kohlenmonoxydbildung besonders groß?
     A:
       - Bei Bränden in geschlossenen Räumen, bei Kunststoffbränden
-    choices:
       - Im Freien
       - Bei Bränden von Papier
       - Bei Ölbrennen
-      - Bei Bränden in geschlossenen Räumen, bei Kunststoffbränden
   91:
     Q: Wo benützt man Einsatzpläne?
     A:
       - Für besondere Objekte mit erhöhtem Gefahrenpotential
-    choices:
       - Für alle Gebäude
       - Bei kleineren Einsätzen
       - Für alle privaten Wohnungen
-      - Für besondere Objekte mit erhöhtem Gefahrenpotential
   92:
     Q: Wann muss gewaltsam in eine Brandstelle eingedrungen werden?
     A:
       - Wenn sonst keine Möglichkeit besteht, den Brandherd zu erreichen
-    choices:
       - Wenn es regnet
       - Wenn der Brand klein ist
       - Immer zu Beginn eines Einsatzes
-      - Wenn sonst keine Möglichkeit besteht, den Brandherd zu erreichen
   93:
     Q: Welche Gefahren entstehen durch Verbrennen von PVC an der Einsatzstelle?
     A:
       - Salzsäuredämpfe und heiße Tropfen
-    choices:
       - Kohlenstoffdioxid und Wasserstoff
       - Rauchgasexplosion
       - Glut und Funken
-      - Salzsäuredämpfe und heiße Tropfen
   94:
     Q: Von wievielen Personen darf eine Leiter gleichzeitig bestiegen werden?
     A:
       - Von 1 Person, ausgenommen bei Menschenrettung von 2 Personen
-    choices:
       - Von 2 Personen immer
       - Von maximal 3 Personen
       - Immer nur von 1 Person
-      - Von 1 Person, ausgenommen bei Menschenrettung von 2 Personen
   95:
     Q: Wie muss ein sehr giftiger Stoff gekennzeichnet sein?
     A:
       - "66"
-    choices:
       - "99"
       - "44"
       - "77"
-      - "66"
   101:
     Q: Wie muss ein ätzender Stoff gekennzeichnet sein?
     A:
       - "80"
-    choices:
       - "90"
       - "70"
       - "60"
-      - "80"
   96:
     Q: Welche Maßnahmen sind bei Bränden im Bereich von Druckgasbehältern zu treffen?
     A:
       - Aus sicherer Deckung heraus kühlen
-    choices:
       - Behälter öffnen
       - Behälter umdrehen
       - Nichts unternehmen
-      - Aus sicherer Deckung heraus kühlen
   97:
     Q: Worauf beruht sich die abkühlende Löschwirkung von Wasser?
     A:
       - Auf dem großen spezifischen Wärmebindungsvermögen
-    choices:
       - Auf der chemischen Reaktion
       - Auf dem geringen spezifischen Gewicht
       - Auf der Oberflächenspannung
-      - Auf dem großen spezifischen Wärmebindungsvermögen
   98:
     Q: Was versteht man unter Einsatzabschnitt?
     A:
       - Teil einer Einsatzstelle, der von der Einsatzleitung einer Einheit zugewiesen wird
-    choices:
       - Ein großer Teil des Gebäudes
       - Der Bereich, in dem Wasser gespeichert ist
       - Die Sammelstelle für alle Geräte
-      - Teil einer Einsatzstelle, der von der Einsatzleitung einer Einheit zugewiesen wird
   99:
     Q: Welche brennbaren Stoffe dürfen nicht mit Wasser gelöscht werden?
     A:
       - Benzin, Leichtmetalle, Wachs, Fett
-    choices:
       - Holz, Papier, Textilien
       - Kunststoff, Schaum, Gummi
       - Glas, Metall, Sand
-      - Benzin, Leichtmetalle, Wachs, Fett
   100:
     Q: Wann müssen Schutzhandschuhe getragen werden?
     A:
       - Bei allen Tätigkeiten im Einsatz und bei Übungen
-    choices:
       - Nur bei Arbeiten mit Feuer
       - Nur bei Temperaturen über 30 Grad
       - Nur bei Nachlöscharbeiten
-      - Bei allen Tätigkeiten im Einsatz und bei Übungen
 
 BDLP GRKDT Stufe I:
   1:
     Q: Worin bestehen die Sofortmaßnahmen bei Ölunfällen auf Verkehrsflächen?
     A:
       - "Absichern der Einsatzstelle\nRetten von Personen\nBrandbekämpfung oder Verhinderung eines Brandausbruches\nSichern der Umgebung der Unfallstelle\nVerhindern des Einsickerns in Kanäle, Gewässer, Erdreich usw."
-    choices:
       - Nur die Unfallstelle sichern
       - Unfallstelle sichern und auf Polizei warten
       - Nur Öl auffangen
-      - "Absichern der Einsatzstelle\nRetten von Personen\nBrandbekämpfung oder Verhinderung eines Brandausbruches\nSichern der Umgebung der Unfallstelle\nVerhindern des Einsickerns in Kanäle, Gewässer, Erdreich usw."
   2:
     Q: Wie geht der Atemschutztrupp in Gebäuden und bei schlechten Sichtverhältnissen vor?
     A:
       - Mit Beleuchtungsgerät, in gebückter Haltung, gesichert durch eine unter Druck stehende Löschleitung oder durch Leinen.
-    choices:
       - Aufrecht und schnell, um Rauch zu vermeiden
       - Ohne Beleuchtungsgerät, um nicht entdeckt zu werden
       - Im freien Lauf ohne Sicherung
-      - Mit Beleuchtungsgerät, in gebückter Haltung, gesichert durch eine unter Druck stehende Löschleitung oder durch Leinen.
   3:
     Q: Welche Aufgabe hat ein Atemschutzsammelplatz?
     A:
       - Festlegung des Bedarfes von AS-Trupps, ausreichende Bereitstellung von Atemschutzkräften, rechtzeitige Anforderung von AS-Reservekräften, Erfassen von am Einsatzort vorhandenen AS-Kräften, AS-Geräte und Reserveflaschen
-    choices:
       - Nur das Erstellen eines Berichts
       - Die Koordination des gesamten Einsatzes
       - Keine besondere Aufgabe
-      - Festlegung des Bedarfes von AS-Trupps, ausreichende Bereitstellung von Atemschutzkräften, rechtzeitige Anforderung von AS-Reservekräften, Erfassen von am Einsatzort vorhandenen AS-Kräften, AS-Geräte und Reserveflaschen
   4:
     Q: Aus welchen Bestandteilen setzt sich atmosphärische Luft zusammen?
     A:
       - 21 % Sauerstoff, 78 % Stickstoff, 0,96 % Edelgase, 0,04 % CO2.
-    choices:
       - 30 % Sauerstoff, 50 % Stickstoff, 10 % Edelgase, 10 % CO2
       - 100 % Sauerstoff
       - 50 % Stickstoff, 50 % Sauerstoff
-      - 21 % Sauerstoff, 78 % Stickstoff, 0,96 % Edelgase, 0,04 % CO2.
   5:
     Q: Was ist Kohlenmonoxid?
     A:
       - Ein farb-, geruch- und geschmackloses Gas. Es entsteht bei unvollständiger Verbrennung, ist brennbar und ein gefährliches Atemgift.
-    choices:
       - Ein sichtbares Gas ohne Wirkung
       - Eine Flüssigkeit, die harmlos ist
       - Ein brennbarer Feststoff
-      - Ein farb-, geruch- und geschmackloses Gas. Es entsteht bei unvollständiger Verbrennung, ist brennbar und ein gefährliches Atemgift.
   6:
     Q: Was ist Kohlendioxid?
     A:
       - Ein farbloses Gas, schwerer als Luft. Wirkt bei höherer Konzentration erstickend, entsteht bei vollkommener Verbrennung und bei Gärung.
-    choices:
       - Ein farbloses, leichtes Gas, das unschädlich ist
       - Ein brennbarer Feststoff
       - Eine giftige Flüssigkeit
-      - Ein farbloses Gas, schwerer als Luft. Wirkt bei höherer Konzentration erstickend, entsteht bei vollkommener Verbrennung und bei Gärung.
   7:
     Q: Was versteht man unter Einsatztaktik?
     A:
       - Den planvollen und zweckmäßigen Einsatz von Mannschaft und Gerät an der Einsatzstelle.
-    choices:
       - Spontane Entscheidungen am Einsatzort
       - Die Aufstellung von Fahrzeugen an der Einsatzstelle
       - Nur das Einsetzen von Geräten
-      - Den planvollen und zweckmäßigen Einsatz von Mannschaft und Gerät an der Einsatzstelle.
   8:
     Q: Welche Hauptaufgaben hat die Feuerwehr beim Brandeinsatz zu bewältigen?
     A:
       - Zuerst Menschen und Tiere retten, sodann die Ausbreitung des Brandes verhindern und den Brand löschen.
-    choices:
       - Nur den Brand löschen
       - Nur Sachgüter retten
       - Das Gebiet absichern
-      - Zuerst Menschen und Tiere retten, sodann die Ausbreitung des Brandes verhindern und den Brand löschen.
   9:
     Q: Was ist eine taktische Einheit?
     A:
       - Eine Einheit, die aufgrund ihrer Mannschaftsstärke und Ausrüstung in der Lage ist, einen Einsatzauftrag selbständig zu erfüllen.
-    choices:
       - Eine Gruppe von zwei Personen
       - Ein einzelner Feuerwehrmann
       - Eine lose Gruppe von Helfern
-      - Eine Einheit, die aufgrund ihrer Mannschaftsstärke und Ausrüstung in der Lage ist, einen Einsatzauftrag selbständig zu erfüllen.
   10:
     Q: Welche taktischen Einheiten gibt es bei der Feuerwehr?
     A:
       - Die Gruppe, den Zug.
-    choices:
       - Nur die Gruppe
       - Nur das Löschfahrzeug
       - Die Feuerwehrzentrale
-      - Die Gruppe, den Zug.
   11:
     Q: Wodurch wird die Gesamtlage an der Einsatzstelle bestimmt?
     A:
       - "Schadenslage\nEigene Lage\nAllgemeine Lage"
-    choices:
       - Nur durch die allgemeine Lage
       - Nur durch die eigene Lage
       - Durch die Anzahl der Fahrzeuge
-      - "Schadenslage\nEigene Lage\nAllgemeine Lage"
   12:
     Q: In welchem Modus wird bei Innenangriffen die Kommunikation mit Atemschutztrupps durchgeführt, wenn keine Gebäudefunkanlage vorhanden ist?
     A:
       - Im DMO-Modus.
-    choices:
       - Im TMO-Modus
       - Nur per Handzeichen
       - Durch Rufen
-      - Im DMO-Modus.
   13:
     Q: Wann darf auf eine andere Sprechgruppe ausgewichen werden?
     A:
       - Auf Anordnung des Einsatz- oder Übungsleiters nach Freigabe durch die LAWZ oder BAWZ.
-    choices:
       - Auf eigene Entscheidung
       - Wenn ein Feuerwehrmitglied es verlangt
       - Bei Ankunft an der Einsatzstelle
-      - Auf Anordnung des Einsatz- oder Übungsleiters nach Freigabe durch die LAWZ oder BAWZ.
   14:
     Q: Was muss eine Meldung enthalten?
     A:
       - "Von wem ? (Absender der Meldung)\nVon wo ? (Ort des Absenders)\nWann ? (Zeit der Absendung)\nAn wen ? (Empfänger der Meldung)\nWohin ? (Ort des Empfängers)\nWas ? (Inhalt der Meldung)"
-    choices:
       - Nur den Empfänger der Meldung
       - Nur den Ort des Empfängers
       - Nur die Zeit der Absendung
-      - "Von wem ? (Absender der Meldung)\nVon wo ? (Ort des Absenders)\nWann ? (Zeit der Absendung)\nAn wen ? (Empfänger der Meldung)\nWohin ? (Ort des Empfängers)\nWas ? (Inhalt der Meldung)"
   15:
     Q: Wie wirkt sich der Wind bei einem Brand aus?
     A:
       - Er fördert die Verbrennung, erschwert die Löscharbeiten und bewirkt Funkenflug.
-    choices:
       - Er stoppt die Verbrennung
       - Er hat keinen Einfluss
       - Er verhindert die Löscharbeiten
-      - Er fördert die Verbrennung, erschwert die Löscharbeiten und bewirkt Funkenflug.
   16:
     Q: Worauf ist bei der Aufstellung der Feuerwehrfahrzeuge am Einsatzort zu achten?
     A:
       - Fahrzeuge sind außerhalb des Gefahrenbereiches in Fluchtrichtung aufzustellen, Zufahrtswege dürfen nicht verstellt werden.
-    choices:
       - Fahrzeuge werden nah an den Brandherd gestellt
       - Fahrzeuge bleiben am Einsatzort stehen
       - Fahrzeuge blockieren Zufahrtswege
-      - Fahrzeuge sind außerhalb des Gefahrenbereiches in Fluchtrichtung aufzustellen, Zufahrtswege dürfen nicht verstellt werden.
   17:
     Q: Was bedeutet die GAMS-Regel?
     A:
       - "Gefahr erkennen\nAbsperren\nMenschen retten\nSpezialkräfte anfordern"
-    choices:
       - "Gefahr ignorieren\nAbsperren\nSachgüter retten\nSpezialkräfte anfordern"
       - "Gefahr erkennen\nWarten\nMenschen retten\nSpezialkräfte anfordern"
       - "Gefahr erkennen\nAbsperren\nSachgüter retten\nWarten"
-      - "Gefahr erkennen\nAbsperren\nMenschen retten\nSpezialkräfte anfordern"
   18:
     Q: Welche Aufgaben hat der Angriffstrupp?
     A:
       - "Rettung und Bergung von Menschen, Tieren und Sachgütern\nSetzt den Verteiler\nNimmt die erste Löschleitung vor (1. Rohr)"
-    choices:
       - "Nur die Brandbekämpfung\nSetzt den Verteiler\nSichert den Rückzug"
       - "Stellt die Wasserversorgung sicher\nVerlegt Schlauchleitungen\nNimmt die dritte Löschleitung vor"
       - "Überwacht den Einsatzort\nUnterstützt den Wassertrupp\nSichert die Umgebung"
-      - "Rettung und Bergung von Menschen, Tieren und Sachgütern\nSetzt den Verteiler\nNimmt die erste Löschleitung vor (1. Rohr)"
   19:
     Q: Welche Aufgaben hat der Wassertrupp?
     A:
       - "Bringt mit dem Schlauchtrupp die TS in Stellung und stellt die Saugleitung her\nStellt die Verbindung vom Hydrant zum TLF her\nNimmt die zweite Löschleitung vor (2.Rohr)\nUnterstützt den Angriffstrupp beim B-Rohr\nNimmt beim Schaumangriff den Zumischer und die Schaummittelkanister vor"
-    choices:
       - "Bereitstellen des Verteiler\nÜberwacht die Wasserversorgung\nLöscht den Brand direkt"
       - "Bringt den Angriffstrupp in Stellung\nUnterstützt bei der Evakuierung\nSichert die Umgebung"
       - "Verlegt Schlauchleitungen\nSetzt die Pumpe ein\nÜberwacht den Brand"
-      - "Bringt mit dem Schlauchtrupp die TS in Stellung und stellt die Saugleitung her\nStellt die Verbindung vom Hydrant zum TLF her\nNimmt die zweite Löschleitung vor (2.Rohr)\nUnterstützt den Angriffstrupp beim B-Rohr\nNimmt beim Schaumangriff den Zumischer und die Schaummittelkanister vor"
   20:
     Q: Welche Aufgaben hat der Schlauchtrupp?
     A:
       - "Bringt mit dem Wassertrupp die TS in Stellung und stellt die Saugleitung her\nVerlegt Schlauchleitungen, setzt Schlauchbrücken und überwacht diese\nBesetzt den Verteiler\nNimmt die dritte Löschleitung vor (3.Rohr)"
-    choices:
       - "Sichert den Brandherd\nÜberwacht die Wasserversorgung\nStellt den Löschschaum bereit"
       - "Verbindet den Hydranten mit der Wasserleitung\nSetzt das erste Rohr\nSchützt den Angriffstrupp"
       - "Bringt den Verteiler in Stellung\nVerlegt die Löschleitung\nBeobachtet die Einsatzstelle"
-      - "Bringt mit dem Wassertrupp die TS in Stellung und stellt die Saugleitung her\nVerlegt Schlauchleitungen, setzt Schlauchbrücken und überwacht diese\nBesetzt den Verteiler\nNimmt die dritte Löschleitung vor (3.Rohr)"
   21:
     Q: Wie werden das Auffinden der Brandmeldezentrale und das Eindringen in das Objekt nach einem Brandmeldealarm erleichtert?
     A:
       - Durch eine orange Blitzleuchte und einen Schlüsselsafe.
-    choices:
       - Durch ein akustisches Signal am Einsatzort
       - Durch die Sicherung des Bereichs mit Warnbändern
       - Durch einen rot blinkenden Lichtstrahler
-      - Durch eine orange Blitzleuchte und einen Schlüsselsafe.
   22:
     Q: Bei welchen Einsätzen ist Wasser als Löschmittel ungeeignet?
     A:
       - Rauchfangbrand, Metallbrand, Mineralölbrand, Fettbrand, Gefährliche Stoffe mit der Kennzeichnung „X“ in der Warntafel.
-    choices:
       - Kunststoffbrände, Papierbrände, Holzbrände
       - Fettbrände, Kunststoffbrände, Papierbrände
       - Metallbrand, Glutbrand, Papierbrand
-      - Rauchfangbrand, Metallbrand, Mineralölbrand, Fettbrand, Gefährliche Stoffe mit der Kennzeichnung „X“ in der Warntafel.
   23:
     Q: Bei welchen Bränden wird der Kühleffekt und bei welchen der Stickeffekt wirksam?
     A:
       - "Kühleffekt - hauptsächlich bei Glutbränden\nStickeffekt - hauptsächlich bei Flüssigkeitsbränden"
-    choices:
       - "Kühleffekt - bei Papierbränden\nStickeffekt - bei Kunststoffbränden"
       - "Kühleffekt - hauptsächlich bei Gasbränden\nStickeffekt - bei Holzbränden"
       - "Kühleffekt - bei Staubbränden\nStickeffekt - bei Glutbränden"
-      - "Kühleffekt - hauptsächlich bei Glutbränden\nStickeffekt - hauptsächlich bei Flüssigkeitsbränden"
   24:
     Q: Wie wird Löschschaum erzeugt?
     A:
       - Durch Beimengen von Schaummittel zum Löschwasser unter anschließender Zuführung von Luft.
-    choices:
       - Durch das Einleiten von Druckluft in das Löschwasser
       - Durch Beimengen von Schaummittel zu CO2 unter Zuführung von Luft
       - Durch Beimengen von Wasserstoff zum Löschwasser
-      - Durch Beimengen von Schaummittel zum Löschwasser unter anschließender Zuführung von Luft.
   25:
     Q: Wann spricht die akustische Warneinrichtung beim Pressluftatmer an?
     A:
       - Bei 55 ±5 bar Restdruck.
-    choices:
       - Bei 30 ±5 bar Restdruck
       - Bei 70 ±5 bar Restdruck
       - Bei 45 ±5 bar Restdruck
-      - Bei 55 ±5 bar Restdruck.
 
 BDLP GRKDT Stufe II:
   31:
     Q: Was bedeuten die Buchstaben der 4A - C - 4E - Regel?
     A:
       - Ausbreitung, Atemgifte, Atomare Strahlung, Angstreaktion, Chemikalien, Explosion, Einsturz, Elektrizität und Erkrankung/Verletzung.
-    choices:
       - Ausrüstung, Atemschutz, Atomenergie, Chemikalien, Einsturz, Erdbeben
       - Ausweitung, Angst, Atomwaffen, Chemikalien, Elektronik, Explosion
       - Angriff, Atemtechnik, Ausfall, Elektrizität, Entzug, Entsorgung
-      - Ausbreitung, Atemgifte, Atomare Strahlung, Angstreaktion, Chemikalien, Explosion, Einsturz, Elektrizität und Erkrankung/Verletzung.
   32:
     Q: In welchem Umkreis von ausgeflossenen brennbaren Flüssigkeiten ist jede Zündquelle zu vermeiden?
     A:
       - In der Gefahrenzone. Windverhältnisse, Gefälle und Temperatur sind zu berücksichtigen.
-    choices:
       - In einem Umkreis von 10 Metern, unabhängig von Windrichtung
       - Nur direkt am Unfallort, ohne weitere Vorsichtsmaßnahmen
       - Innerhalb von 5 Metern, abhängig von Windrichtung
-      - In der Gefahrenzone. Windverhältnisse, Gefälle und Temperatur sind zu berücksichtigen.
   33:
     Q: Wie muss mit umluftunabhängigen Atemschutzgeräten vorgegangen werden?
     A:
       - Es ist truppweise vorzugehen. Der Atemschutztrupp hat grundsätzlich aus 3 Feuerwehrmitgliedern zu bestehen. Ein Rettungstrupp muss bereitstehen oder sich auf der Anfahrt befinden.
-    choices:
       - Es darf nur eine Person mit dem Atemschutzgerät vorgehen
       - Es wird ohne Trupp vorgegangen, da das Gerät unabhängig ist
       - Es müssen mindestens 5 Feuerwehrmitglieder vor Ort sein
-      - Es ist truppweise vorzugehen. Der Atemschutztrupp hat grundsätzlich aus 3 Feuerwehrmitgliedern zu bestehen. Ein Rettungstrupp muss bereitstehen oder sich auf der Anfahrt befinden.
   34:
     Q: Welche Bedeutung hat die im unteren Teil der orangefarbenen Warntafel angegebene Nummer?
     A:
       - Die vierstellige Nummer dient zur Kennzeichnung des Stoffes (Stoff- oder UN - Nummer).
-    choices:
       - Die Nummer gibt die Brandgefahr an
       - Die Nummer zeigt die Größe des Behälters an
       - Die Nummer bezeichnet die Fahrzeugkennzeichnung
-      - Die vierstellige Nummer dient zur Kennzeichnung des Stoffes (Stoff- oder UN - Nummer).
   35:
     Q: Was bedeutet es, wenn der Nummer zur Kennzeichnung der Gefahr auf Warntafeln an Fahrzeugen zum Transport gefährlicher Güter der Buchstabe "X" vorausgesetzt wird?
     A:
       - Der Stoff darf nicht mit Wasser oder wasserhaltigen Löschmitteln in Berührung gebracht werden, da dieser Stoff mit Wasser in gefährlicher Weise reagiert.
-    choices:
       - Der Stoff ist wasserlöslich und ungefährlich
       - Der Stoff darf nicht mit Feuer in Berührung kommen
       - Der Stoff darf nur in offenen Behältern transportiert werden
-      - Der Stoff darf nicht mit Wasser oder wasserhaltigen Löschmitteln in Berührung gebracht werden, da dieser Stoff mit Wasser in gefährlicher Weise reagiert.
   36:
     Q: Welche Möglichkeiten gibt es, um die Lage zu erkunden?
     A:
       - Das Sammeln von Informationen über die Lage durch eigene Feststellung, Meldung vom Erkundungstrupp, vorbereitete Einsatzunterlagen, Berichte von Beteiligten, Rückmeldung von Lageberichten.
-    choices:
       - Die Lage durch eine Drohne erkunden
       - Nur durch Rücksprache mit dem Einsatzleiter
       - Durch direkte Kommunikation mit Zeugen
-      - Das Sammeln von Informationen über die Lage durch eigene Feststellung, Meldung vom Erkundungstrupp, vorbereitete Einsatzunterlagen, Berichte von Beteiligten, Rückmeldung von Lageberichten.
   37:
     Q: Wofür sind die Gateway- und Repeater-Funktion?
     A:
       - Die Gateway-Funktion stellt eine Verbindung zwischen TMO und DMO Modus her und erhöht damit die Reichweite im Einsatzgebiet. Die Repeater-Funktion verstärkt die DMO Abdeckung und steht in jedem wasserführenden Fahrzeug (TLFA, RLFA, LFWA) zur Verfügung. Sie wird speziell für Atemschutzeinsätze verwendet.
-    choices:
       - Die Gateway-Funktion sorgt für die Verbindung zwischen Einsatzfahrzeugen
       - Die Gateway-Funktion ermöglicht die Verbindung zu Rettungsdiensten
       - Die Repeater-Funktion verstärkt das Funksignal bei jeder Art von Einsatz
-      - Die Gateway-Funktion stellt eine Verbindung zwischen TMO und DMO Modus her und erhöht damit die Reichweite im Einsatzgebiet. Die Repeater-Funktion verstärkt die DMO Abdeckung und steht in jedem wasserführenden Fahrzeug (TLFA, RLFA, LFWA) zur Verfügung. Sie wird speziell für Atemschutzeinsätze verwendet.
   38:
     Q: Wo liegt der hauptsächliche Unterschied zwischen Erd- und Flüssiggas?
     A:
       - Erdgas ist leichter als Luft, Flüssiggas ist schwerer als Luft
-    choices:
       - Erdgas ist schwerer als Luft, Flüssiggas ist leichter als Luft
       - Beide Gase sind gleich schwer und gleich gefährlich
       - Flüssiggas ist sicherer zu handhaben als Erdgas
-      - Erdgas ist leichter als Luft, Flüssiggas ist schwerer als Luft
   39:
     Q: Welche Behelfe und Hilfsmittel sollen der Einsatzleitung zur Verfügung gestellt werden?
     A:
       - "Löschwasserentnahmestellenplan\nEinsatzpläne\nBrandschutzpläne\nMaterial zur Lageführung\nNachschlagwerke und Einsatzliteratur"
-    choices:
       - "Einsatzkarte des Geländes\nErste-Hilfe-Koffer\nFunksystem\nWasservorräte"
       - "Feuerlöscher\nErste-Hilfe-Koffer\nRettungsdecke\nLagekarte"
       - "Hydrantendaten\nWasserreserven\nBrandschutzschilder\nDrohne"
-      - "Löschwasserentnahmestellenplan\nEinsatzpläne\nBrandschutzpläne\nMaterial zur Lageführung\nNachschlagwerke und Einsatzliteratur"
   40:
     Q: Was bedeutet bei einem Einsatz ein Dauerton mit der Autohupe und welches Verhalten hat dies zur Folge?
     A:
       - "Es ist ein Rückzugsignal und bedeutet Gefahr im Verzug.\nEinsatztätigkeiten abbrechen und beim Fahrzeug sammeln.\nFeststellen der Vollzähligkeit durch den Gruppenkommandanten."
-    choices:
       - "Bedeutet das Ende des Einsatzes.\nAusrüstung sichern und Rückzug antreten."
       - "Signalisiert einen Gasalarm.\nAusrüstung kontrollieren und Rückmeldung geben."
       - "Hinweis auf erhöhte Brandgefahr.\nFeuer löschen und das Gebäude verlassen."
-      - "Es ist ein Rückzugsignal und bedeutet Gefahr im Verzug.\nEinsatztätigkeiten abbrechen und beim Fahrzeug sammeln.\nFeststellen der Vollzähligkeit durch den Gruppenkommandanten."
   41:
     Q: Welche Hauptlöscheffekte gibt es und wie werden sie wirksam?
     A:
       - "Kühlen: Entzug der Wärme\nErsticken: Entzug der Luft (des Sauerstoffes)\nVerdünnen: Entzug des brennbaren Stoffes\nStören: Eingriff in die Verbrennungsreaktion"
-    choices:
       - "Kühlen: Entzug von Wasser\nErsticken: Zufuhr von Sauerstoff\nVerdünnen: Reduzierung der Flammen\nStören: Entzug von Hitze"
       - "Ersticken: Zufuhr von Sauerstoff\nVerdünnen: Entzug der Flammen\nKühlen: Wasserzufuhr\nStören: Blockierung des Rauchabzugs"
       - "Kühlen: Erhöhung der Temperatur\nErsticken: Zufuhr von Sauerstoff\nStören: Reduktion von Flammen\nVerdünnen: Reduzierung des Rauchs"
-      - "Kühlen: Entzug der Wärme\nErsticken: Entzug der Luft (des Sauerstoffes)\nVerdünnen: Entzug des brennbaren Stoffes\nStören: Eingriff in die Verbrennungsreaktion"
   42:
+    Q: Welche Arten von Löschschaum gibt es und wo finden sie Verwendung?
+    A:
+      - "Schwerschaum - zur Bekämpfung von Flüssigkeitsbränden\nMittelschaum - zur Bekämpfung von Flüssigkeitsbränden\nLeichtschaum - zum Fluten von Räumen"
+      - "Schwerschaum - für Metallbrände\nMittelschaum - zur Bekämpfung von Glutbränden\nLeichtschaum - für Außenbrände"
+      - "Schwerschaum - zum Löschen von Gasbränden\nMittelschaum - zum Löschen von Fettbränden\nLeichtschaum - für technische Brände"
+      - "Schwerschaum - für elektrische Brände\nMittelschaum - zum Löschen von festen Stoffen\nLeichtschaum - für Brände mit hoher Hitzeentwicklung"
   43:
     Q: Wie hoch ist der Luftverbrauch unter Atemschutz bei mittelschwerer und schwerer Arbeit?
     A:
       - Bei mittelschwerer Arbeit ca. 50 Liter/Minute, bei schwerer Arbeit ca. 100 Liter/Minute.
-    choices:
       - Bei mittelschwerer Arbeit ca. 30 Liter/Minute, bei schwerer Arbeit ca. 80 Liter/Minute.
       - Bei mittelschwerer Arbeit ca. 20 Liter/Minute, bei schwerer Arbeit ca. 60 Liter/Minute.
       - Bei mittelschwerer Arbeit ca. 70 Liter/Minute, bei schwerer Arbeit ca. 120 Liter/Minute.
-      - Bei mittelschwerer Arbeit ca. 50 Liter/Minute, bei schwerer Arbeit ca. 100 Liter/Minute.
   44:
     Q: Welcher Sicherheitsabstand ist zu unter Spannung stehenden Hochspannungsfreileitungen (über 1.000 Volt) einzuhalten?
     A:
       - Im Bereich von Hochspannungsfreileitungen muss ein Sicherheitsabstand von mindestens 5 m eingehalten werden. Dieser Abstand darf mit keinem Körperteil oder Geräteteil (z.B. Leiter oder Einreißhaken) unterschritten werden.
-    choices:
       - Ein Abstand von mindestens 2 Metern ist ausreichend.
       - Der Abstand darf 10 Meter nicht unterschreiten.
       - Ein Abstand von 3 Metern genügt, solange keine Geräte verwendet werden.
-      - Im Bereich von Hochspannungsfreileitungen muss ein Sicherheitsabstand von mindestens 5 m eingehalten werden. Dieser Abstand darf mit keinem Körperteil oder Geräteteil (z.B. Leiter oder Einreißhaken) unterschritten werden.
   45:
     Q: Welcher Sicherheitsabstand ist zu einer gerissenen und den Boden berührenden Hochspannungsfreileitung oder zu Gegenständen (Fahrzeug, Bauwerk, Baum, etc.), die mit der Leitung in  unmittelbarer Verbindung stehen, einzuhalten?
     A:
       - Es ist ein Sicherheitsabstand von mindestens 20 m rund um die Schadensstelle einzuhalten. In diesem Bereich bildet sich, aufgrund der Stromableitung gegen Erde, ein sogenannter Spannungstrichter, der zu einer lebensgefährlichen Schrittspannung führt.
-    choices:
       - Ein Abstand von mindestens 5 Metern ist einzuhalten.
       - Der Abstand kann auf 10 Meter reduziert werden, wenn keine Gefahr besteht.
       - 15 Meter Abstand genügen, solange das Fahrzeug nicht mit der Leitung in Berührung steht.
-      - Es ist ein Sicherheitsabstand von mindestens 20 m rund um die Schadensstelle einzuhalten. In diesem Bereich bildet sich, aufgrund der Stromableitung gegen Erde, ein sogenannter Spannungstrichter, der zu einer lebensgefährlichen Schrittspannung führt.
   46:
     Q: Was sind die Nachteile des Leichtschaums?
     A:
       - "Einsatz nur in geschlossenen Räumen möglich\nLeichtschaumgeneratoren sind teuer\nSchwierige Förderung des Schaums\nSchaumerzeugung im Winter problematisch"
-    choices:
       - "Einsatz nur im Freien möglich\nLeichtschaumgeneratoren sind kostengünstig\nSchaumerzeugung im Sommer problematisch"
       - "Einsatz nur bei Metallbränden möglich\nErzeugung des Schaums ist sehr einfach\nSchaumerzeugung ist im Winter effizienter"
       - "Kann nur in Großbränden eingesetzt werden\nSchaum verflüchtigt sich schnell\nErfordert spezielle Ausrüstung"
-      - "Einsatz nur in geschlossenen Räumen möglich\nLeichtschaumgeneratoren sind teuer\nSchwierige Förderung des Schaums\nSchaumerzeugung im Winter problematisch"
   47:
     Q: Wie kann die Entrauchung von verrauchten Räumen beschleunigt werden?
     A:
       - Öffnen von Zu- und Abluftöffnungen unter Beachtung des vorherrschenden Windes, Einsetzen von Unter- oder Überdruckventilatoren, durch hydraulische Ventilation.
-    choices:
       - Türen und Fenster geschlossen halten, damit der Rauch nicht entweicht.
       - Nur mit hydraulischer Ventilation arbeiten, Zu- und Abluftöffnungen verschließen.
       - Fenster öffnen, Ventilatoren weglassen, um Luftzirkulation zu vermeiden.
-      - Öffnen von Zu- und Abluftöffnungen unter Beachtung des vorherrschenden Windes, Einsetzen von Unter- oder Überdruckventilatoren, durch hydraulische Ventilation.
   48:
     Q: Was ist nach dem Anlegen der Atemschutzgeräte zu beachten?
     A:
       - Eine Funktionskontrolle (Einsatzkurzprüfung) ist durchzuführen.
-    choices:
       - Direkte Verwendung ohne Überprüfung, da Atemschutzgeräte zuverlässig sind.
       - Eine Sichtprüfung reicht aus, eine Funktionskontrolle ist optional.
       - Eine Funktionskontrolle kann nach dem Einsatz durchgeführt werden.
-      - Eine Funktionskontrolle (Einsatzkurzprüfung) ist durchzuführen.
   49:
     Q: Welche Arten von Atemschutzgeräten stehen für den Feuerwehreinsatz zur Verfügung?
     A:
       - "Umluftabhängige Atemschutzgeräte - Atemmasken mit Atemfilter\nUmluftunabhängige Atemschutzgeräte - Behältergeräte (Pressluftatmer), Regenerationsgeräte und Schlauchgeräte"
-    choices:
       - "Nur umluftabhängige Atemschutzgeräte\nAtemmasken ohne Filter"
       - "Umluftunabhängige Atemschutzgeräte ohne Schlauchgeräte\nRegenerationsgeräte nicht erforderlich"
       - "Nur umluftabhängige Atemschutzgeräte\nRegenerationsgeräte ohne Filter"
-      - "Umluftabhängige Atemschutzgeräte - Atemmasken mit Atemfilter\nUmluftunabhängige Atemschutzgeräte - Behältergeräte (Pressluftatmer), Regenerationsgeräte und Schlauchgeräte"
   50:
     Q: Warum dürfen Atemluftflaschen nicht vollständig entleert werden?
     A:
       - Damit gewährleistet ist, dass keine Feuchtigkeit, kein Schmutz und keine Schadstoffe in die Atemluftflaschen gelangen können.
-    choices:
       - Um den Flascheninhalt zu konservieren.
       - Damit das Atemschutzgerät nach dem Einsatz gereinigt werden kann.
       - Um den Druck zu halten und die Flaschen leichter zu transportieren.
-      - Damit gewährleistet ist, dass keine Feuchtigkeit, kein Schmutz und keine Schadstoffe in die Atemluftflaschen gelangen können.
   51:
     Q: Wie oft müssen Feuerlöscher überprüft werden?
     A:
       - Nach jeder Verwendung, längstens alle zwei Jahre durch einen geprüften Löscherwart.
-    choices:
       - Nur einmal nach der Installation.
       - Alle 5 Jahre oder bei sichtbaren Schäden.
       - Nach jedem größeren Einsatz oder nach 3 Jahren.
-      - Nach jeder Verwendung, längstens alle zwei Jahre durch einen geprüften Löscherwart.
   52:
     Q: Welche Luftmenge muss dem Atemschutzgeräteträger für den gesicherten Rückzug zur Verfügung stehen?
     A:
       - Mindestens die doppelte Luftmenge als jene, die beim Anmarschweg verbraucht wurde.
-    choices:
       - Die gleiche Luftmenge, die für den Anmarsch verbraucht wurde.
       - Eine beliebige Menge, solange noch Luft vorhanden ist.
       - Die Hälfte der Anmarschluft reicht aus.
-      - Mindestens die doppelte Luftmenge als jene, die beim Anmarschweg verbraucht wurde.
   53:
     Q: Was ist die Verschäumungszahl?
     A:
       - Das Verhältnis des Rauminhaltes (der Menge) des erzeugten Schaumes zum Rauminhalt (der Menge) des dazu benötigten Wasser-Schaummittel-Gemisches.
-    choices:
       - Die Anzahl der Schaumgeneratoren pro Einsatzgebiet.
       - Die Menge an Wasser, die für die Schaumerzeugung nötig ist.
       - Das Volumen der Schaummittelbehälter im Verhältnis zum Schaum.
-      - Das Verhältnis des Rauminhaltes (der Menge) des erzeugten Schaumes zum Rauminhalt (der Menge) des dazu benötigten Wasser-Schaummittel-Gemisches.
   54:
     Q: Was versteht man unter Deckungsbereich?
     A:
       - Bereich, der von einem Strahlrohr in Abhängigkeit von Durchflussmenge und Druckverhältnissen beherrscht werden kann.
-    choices:
       - Der Bereich, der durch das Fahrzeug abgedeckt wird.
       - Der Bereich, in dem sich der Feuerlöscher befindet.
       - Bereich, der von einem Löschfahrzeug mit Schläuchen abgedeckt werden kann.
-      - Bereich, der von einem Strahlrohr in Abhängigkeit von Durchflussmenge und Druckverhältnissen beherrscht werden kann.
   55:
     Q: Wie groß ist die Sicherheitszone beim Ausfließen von brennbaren Flüssigkeiten der Gefahrenklasse I?
     A:
       - Mindestens 30 bis 60 Meter, Windrichtung, Windgeschwindigkeit und Gelände sind zu berücksichtigen.
-    choices:
       - Maximal 10 Meter, unabhängig von der Umgebung.
       - Mindestens 100 Meter, Windrichtung und Gelände sind irrelevant.
       - 20 Meter Abstand genügt, Windgeschwindigkeit nicht relevant.
-      - Mindestens 30 bis 60 Meter, Windrichtung, Windgeschwindigkeit und Gelände sind zu berücksichtigen.
 
 BDLP MA Stufe II:
   1:
@@ -5353,259 +4877,204 @@ BDLP MA Stufe II:
     Q: Wann dürfen Blaulicht und Folgetonhorn bei einem Feuerwehrfahrzeug verwendet werden?
     A:
       - Bei Gefahr in Verzug auf der Fahrt zum Einsatzort und an der Einsatzstelle
-    choices:
       - Nur während Übungsfahrten
       - Nur bei Großbränden
       - Bei Fahrten unter normalen Verkehrsbedingungen
-      - Bei Gefahr in Verzug auf der Fahrt zum Einsatzort und an der Einsatzstelle
   3:
     Q: Was ist beim Aufstellen einer Tragkraftspritze zu beachten?
     A:
-      - "Saugleitung so kurz als möglich\n TS so nahe wie möglich zur Wasserentnahmestelle\n Nicht brennbarer Untergrund\n Max. Schräglage von 15°"
-    choices:
-      - "Die Saugleitung darf nicht kürzer als 30 Meter sein\n Der Untergrund kann auch aus brennbarem Material bestehen\n Die Pumpe kann in jedem beliebigen Winkel aufgestellt werden\n Die Pumpe sollte auf maximal 15° Schräglage aufgestellt werden."
+      - "Saugleitung so kurz wie möglich\nTS so nahe wie möglich zur Wasserentnahmestelle\nNicht brennbarer Untergrund\nMax. Schräglage von 15°"
+      - "Saugleitung so lang wie möglich\nTS weit entfernt von der Wasserentnahmestelle\nBrennbarer Untergrund\nMax. Schräglage von 30°"
+      - "Saugleitung und TS unabhängig vom Wasserentnahmestandort\nBrennbarer Untergrund\nBeliebige Schräglage"
+      - "TS immer auf brennbarem Untergrund\nOhne Schräglage beachten\nLange Saugleitung bevorzugt"
   4:
     Q: Was sind die wichtigsten Teile einer Kreiselpumpe?
     A:
       - Laufrad, Leitapparat, Entleerungshahn, Druckabgänge, Abdichtungen, Saugeingang und Manometer
-    choices:
       - Laufrad, Leitapparat, Luftfilter, Drucktanks, Entleerungsschläuche
       - Laufrad, Öltank, Entlüftungsventil, Ansaugrohr, Leitungspumpe
       - Leitapparat, Entleerungshahn, Absaugpumpe, Zylinderkopf, Druckventile
-      - Laufrad, Leitapparat, Entleerungshahn, Druckabgänge, Abdichtungen, Saugeingang und Manometer
   5:
     Q: Was bewirkt das Schließen eines Strahlrohres?
     A:
       - Steigen des Ausgangsdruckes und Ansteigen der Drehzahl
-    choices:
       - Absinken des Ausgangsdruckes und Drehzahl
       - Vergrößerung der Wasserabgabe
       - Absenkung des Wasserdruckes
-      - Steigen des Ausgangsdruckes und Ansteigen der Drehzahl
   6:
     Q: Wie kann man „Kavitation“ erkennen?
     A:
       - Vibrieren der TS, rasselnde Geräusche, Absinken des Förderdruckes bei Ansteigen der Drehzahl, Vakuummanometer zeigt eine höhere manometrische Saughöhe an
-    choices:
       - Absinken der Drehzahl, Geräuschloses Pumpen
       - Lauter Knall, kein Druckverlust
       - Keine Veränderung im Förderdruck
-      - Vibrieren der TS, rasselnde Geräusche, Absinken des Förderdruckes bei Ansteigen der Drehzahl, Vakuummanometer zeigt eine höhere manometrische Saughöhe an
   7:
     Q: Wie erkennt der Maschinist einen Schlauchplatzer?
     A:
       - Ausgangsdruck und Drehzahl sinken plötzlich ab, Vakuummanometer zeigt eine erhöhte manometrische Saughöhe an
-    choices:
       - Ausgangsdruck steigt, Drehzahl bleibt konstant
       - Drehzahl erhöht sich, ohne Druckverlust
       - Es gibt keinerlei Veränderung
-      - Ausgangsdruck und Drehzahl sinken plötzlich ab, Vakuummanometer zeigt eine erhöhte manometrische Saughöhe an
   8:
     Q: Wie kann ein Heißlaufen der TS verhindert werden?
     A:
       - Durch Öffnen des freien Druckausganges und durch Auskuppeln der Pumpe
-    choices:
       - Durch Erhöhen der Drehzahl
       - Durch Schließen des Druckausganges
       - Durch Steigerung der Wasserabgabe
-      - Durch Öffnen des freien Druckausganges und durch Auskuppeln der Pumpe
   9:
     Q: Was ist beim Aufladen einer Batterie wichtig und wie wird sie überprüft?
     A:
       - Ladegerät anschließen, Verschraubungen (wenn vorhanden) bei den Zellen öffnen, Batteriewasser kontrollieren, Überprüfung mit Säuredichtmesser/Zellenprüfer
-    choices:
       - Batterie muss entladen sein, keine Überprüfung notwendig
       - Ladegerät anschließen, Zellen immer geschlossen halten
       - Batterie auf Betriebstemperatur bringen, Verschraubungen versiegeln
-      - Ladegerät anschließen, Verschraubungen (wenn vorhanden) bei den Zellen öffnen, Batteriewasser kontrollieren, Überprüfung mit Säuredichtmesser/Zellenprüfer
   10:
     Q: Wie kann man eine eingefrorene Pumpe beim Einsatz auftauen?
     A:
       - TS auskuppeln (nicht bei allen Modellen möglich), Motor laufen lassen, Auspuffgase erwärmen die Kreiselpumpe, Entleerungshahn öffnen.
-    choices:
       - Wasser in die Pumpe geben, Motor auslassen
       - Motor ausschalten, und Heißluftgebläse verwenden
       - TS voll in Betrieb nehmen, Entlüftungsventile schließen
-      - TS auskuppeln (nicht bei allen Modellen möglich), Motor laufen lassen, Auspuffgase erwärmen die Kreiselpumpe, Entleerungshahn öffnen.
   11:
     Q: Wie viele bzw. welche Rohre dürfen von einem TLF 2000 in der Erstphase ohne gesicherte Wasserversorgung vorgenommen werden?
     A:
       - 1 C-Rohr oder 1 HD-Rohr
-    choices:
       - 2 B-Rohre
       - 1 D-Rohr
       - 2 C-Rohre gleichzeitig
-      - 1 C-Rohr oder 1 HD-Rohr
   12:
     Q: Welche Löschmittel werden verwendet?
     A:
       - Löschwasser, Löschschaum, Löschpulver, Löschgase, Sonderlöschmittel
-    choices:
       - Löschwasser, Löschsand, Öle, Trockenpulver
       - Wasser, Feuerlöschmittel, Gaskartuschen
       - Löschgase, Öle, Gase
-      - Löschwasser, Löschschaum, Löschpulver, Löschgase, Sonderlöschmittel
   13:
     Q: Wie lautet die Faustregel für die Ermittlung der erforderlichen Schlauchanzahl für den Innenangriff (lt. FSH Nr. 122)?
     A:
       - Verteilerstandort ca. 1. Schlauchlänge vor dem Objekt, 1 Schlauch vor dem Objekt + 1 Schlauch je Stockwerk + mind. 1 Schlauch als Reserve.
-    choices:
       - 2 Schläuche pro Stockwerk unabhängig vom Objekt
       - 1 Schlauch pro Stockwerk, keine Reserve notwendig
       - Nur 2 Schläuche insgesamt
-      - Verteilerstandort ca. 1. Schlauchlänge vor dem Objekt, 1 Schlauch vor dem Objekt + 1 Schlauch je Stockwerk + mind. 1 Schlauch als Reserve.
   14:
     Q: In welche Geschoße gelangt man mit der 2-teiligen-Schiebeleiter oder der 4-teiligen Steckleiter im Idealfall?
     A:
       - 2. Obergeschoß
-    choices:
       - 1. Obergeschoß
       - Erdgeschoß
       - 3. Obergeschoß
-      - 2. Obergeschoß
   15:
     Q: Welche Deckungsbreiten in Meter werden mit welchem Strahlrohr maximal erreicht?
     A:
       - "C-Mehrzweckstrahlrohr ohne Mundstück 15 Meter\n B-Mehrzweckstrahlrohr mit Mundstück 20 Meter."
-    choices:
       - "C-Mehrzweckstrahlrohr ohne Mundstück 5 Meter\n B-Mehrzweckstrahlrohr mit Mundstück 30 Meter."
       - "C-Mehrzweckstrahlrohr ohne Mundstück 10 Meter\n B-Mehrzweckstrahlrohr mit Mundstück 15 Meter."
       - "C-Mehrzweckstrahlrohr ohne Mundstück 25 Meter\n B-Mehrzweckstrahlrohr mit Mundstück 40 Meter."
-      - "C-Mehrzweckstrahlrohr ohne Mundstück 15 Meter\n B-Mehrzweckstrahlrohr mit Mundstück 20 Meter."
 
 BDLP ME+Trupps Stufe II:
   1:
     Q: Was ist beim Arbeiten mit Leitern zu beachten?
     A:
       - "Sicherer Stand (fester Untergrund)\nWenn möglich nicht vor Türen/Ausgängen\n3 Sprossen Überhang\nLeiter muss beim Besteigen gesichert werden (2 Personen am Fußteil)"
-    choices:
       - "Sicherer Stand (weicher Untergrund)\nDirekt vor Türen/Ausgängen\nKein Überhang nötig\nLeiter muss nicht gesichert werden"
       - "Sicherer Stand, unabhängig vom Untergrund\nWenn möglich immer vor Ausgängen\n2 Sprossen Überhang\nLeiter immer vom Oberteil gesichert"
       - "Leitern immer alleine benutzen\nSprossenabstand nicht beachten\nKein Sicherheitsbedarf"
-      - "Sicherer Stand (fester Untergrund)\nWenn möglich nicht vor Türen/Ausgängen\n3 Sprossen Überhang\nLeiter muss beim Besteigen gesichert werden (2 Personen am Fußteil)"
   2:
     Q: Welche Voraussetzungen müssen für eine Verbrennung gegeben sein?
     A:
       - Brennbarer Stoff, Sauerstoff, Wärme, richtiges Mischungsverhältnis (Reaktionsbereitschaft)
-    choices:
       - Brennbarer Stoff, Sauerstoff, keine Wärme erforderlich
       - Nur Wärme und Sauerstoff
       - Brennbarer Stoff, Reibung, Luftdruck
-      - Brennbarer Stoff, Sauerstoff, Wärme, richtiges Mischungsverhältnis (Reaktionsbereitschaft)
   3:
     Q: Welche allgemeinen Verhaltensregeln beim Einsatz mittels Löschpulver sind bekannt?
     A:
       - "Brand mit der Windrichtung angreifen\nFlächenbrände von vorne beginnend ablöschen\nTropf- und Fließbrände von oben nach unten löschen\nGenügend Löschmittel auf einmal einsetzen, nicht hintereinander\nVorsicht vor Wiederentzündung"
-    choices:
       - "Brand gegen die Windrichtung angreifen\nFlächenbrände von oben nach unten löschen\nTropfbrände seitlich ablöschen\nWenig Löschmittel verwenden"
       - "Brand mit der Windrichtung angreifen\nFlächenbrände von hinten nach vorne löschen\nTropf- und Fließbrände von unten nach oben löschen\nLöschmittel sparsam einsetzen"
       - "Brand mit der Windrichtung angreifen\nTropfbrände ohne Löschmittel ersticken\nNur einen Tropfbrand auf einmal bekämpfen"
-      - "Brand mit der Windrichtung angreifen\nFlächenbrände von vorne beginnend ablöschen\nTropf- und Fließbrände von oben nach unten löschen\nGenügend Löschmittel auf einmal einsetzen, nicht hintereinander\nVorsicht vor Wiederentzündung"
   4:
     Q: Welche Eigenschaften hat Kohlenmonoxid (CO)?
     A:
       - "ist leichter als Luft\nfarb-, geruch- und geschmacklos\nentsteht bei unvollkommener Verbrennung und ist somit brennbar\nist giftig (Blut- und Nervengift)"
-    choices:
       - "ist schwerer als Luft\nist farb-, geruch- und geschmacklos\nist nicht brennbar\nungefährlich"
       - "ist schwerer als Luft\nhat einen stechenden Geruch\nnicht brennbar"
       - "ist schwerer als Luft\nfärbt sich bei Verbrennung gelb\nhoch brennbar und gefährlich"
-      - "ist leichter als Luft\nfarb-, geruch- und geschmacklos\nentsteht bei unvollkommener Verbrennung und ist somit brennbar\nist giftig (Blut- und Nervengift)"
   5:
     Q: Was zeichnet den Einsatz von Löschpulver in richtiger Anwendung bei Bränden der Brandklassen B und C aus?
     A:
       - Schlagartiges Abklingen der Verbrennung
-    choices:
       - Langsames Abklingen der Verbrennung
       - Es bleibt eine große Glutzone
       - Schlagartiges Entstehen neuer Flammen
-      - Schlagartiges Abklingen der Verbrennung
   6:
     Q: Was bedeutet ein mindestens 30 Sekunden langer Dauerton der Fahrzeughupe und wie haben die Mitglieder der Löschgruppe darauf zu reagieren?
     A:
       - „Alle Mann zurück!“ Alle Mitglieder der Löschgruppe haben sich unverzüglich bei ihrem Fahrzeug oder beim Verteiler einzufinden.
-    choices:
       - „Zurück zum Verteilpunkt!“ Alle Mitglieder sollten sich langsam vom Einsatzort entfernen.
       - „Vorsicht! Gasaustritt!“ Die Gruppe entfernt sich schnell in alle Richtungen.
       - „Sofortiges Vorgehen!“ Die Gruppe muss die Arbeiten beschleunigen.
-      - „Alle Mann zurück!“ Alle Mitglieder der Löschgruppe haben sich unverzüglich bei ihrem Fahrzeug oder beim Verteiler einzufinden.
   7:
     Q: Welche Maßnahmen können in der Einsatzvorbereitung geübt werden, um Unfälle zu vermeiden/verringern?
     A:
       - "Bewusstseinsbildung über Gefahren\nAusbildung und Schulung an Geräten und Fahrzeugen\nPersönliche Schutzausrüstung und bei Bedarf weitere Schutzausrüstung verwenden"
-    choices:
       - "Keine Maßnahmen notwendig\nKeine zusätzliche Schutzausrüstung"
       - "Einzelne Schulungen pro Jahr\nGefahrbewusstsein erst im Einsatz entwickeln"
       - "Ausrüstung auslassen\nGefahren ignorieren"
-      - "Bewusstseinsbildung über Gefahren\nAusbildung und Schulung an Geräten und Fahrzeugen\nPersönliche Schutzausrüstung und bei Bedarf weitere Schutzausrüstung verwenden"
   8:
     Q: Wo liegt der hauptsächliche Unterschied zwischen Erd- und Flüssiggas?
     A:
       - "Erdgas ist leichter als Luft (z.B. Methan)\nFlüssiggas ist schwerer als Luft (z.B. Propan, Butan)"
-    choices:
       - "Erdgas ist schwerer als Luft\nFlüssiggas ist leichter als Luft"
       - "Flüssiggas wird nur für Heizungen genutzt\nErdgas ist immer explosiver"
       - "Erdgas und Flüssiggas haben denselben Aggregatzustand"
-      - "Erdgas ist leichter als Luft (z.B. Methan)\nFlüssiggas ist schwerer als Luft (z.B. Propan, Butan)"
   9:
     Q: Wie kann man sich vor gefährlichen Stoffen schützen?
     A:
       - Durch Schutzanzüge bzw. Atemschutz oder ausreichenden Abstand
-    choices:
       - Durch das Ignorieren der Gefahrenstoffe
       - Keine Schutzausrüstung nötig, nur Abstand
       - Durch verstärkte Lüftung ohne zusätzliche Ausrüstung
-      - Durch Schutzanzüge bzw. Atemschutz oder ausreichenden Abstand
   10:
     Q: Welche persönlichen Maßnahmen sind nach dem Einsatz mit gefährlichen Stoffen zu treffen?
     A:
       - Bekleidung wechseln und Körperreinigung (Duschen)
-    choices:
       - Nichts, da die Schutzkleidung ausreichend ist
       - Nur die Schuhe reinigen
       - Handschuhe ausziehen reicht aus
-      - Bekleidung wechseln und Körperreinigung (Duschen)
   11:
     Q: Welche Luftmenge muss dem AS-Träger für den gesicherten Rückzug zur Verfügung stehen?
     A:
       - Mindestens die doppelte Luftmenge als jene, die beim Einmarschweg verbraucht wurde
-    choices:
       - Dieselbe Luftmenge wie für den Einmarschweg
       - Die Luftmenge spielt keine Rolle
       - Nur eine geringe Luftmenge für den Rückzug
-      - Mindestens die doppelte Luftmenge als jene, die beim Einmarschweg verbraucht wurde
   12:
     Q: Wie muss mit umluftunabhängigen Atemschutzgeräten vorgegangen werden?
     A:
       - Es ist truppweise vorzugehen. Der Atemschutztrupp hat grundsätzlich aus 3 Feuerwehrmitgliedern zu bestehen. Ein Rettungstrupp muss bereitstehen oder sich auf der Anfahrt befinden.
-    choices:
       - Nur eine Person darf das Atemschutzgerät tragen
       - Ein Trupp von 2 Personen reicht aus
       - Truppweise vorgehen, aber Rettungstrupp ist nicht erforderlich
-      - Es ist truppweise vorzugehen. Der Atemschutztrupp hat grundsätzlich aus 3 Feuerwehrmitgliedern zu bestehen. Ein Rettungstrupp muss bereitstehen oder sich auf der Anfahrt befinden.
   13:
     Q: Wie geht der AS-Trupp in Gebäuden im Innenangriff vor?
     A:
       - Gesichert durch eine unter Druck stehende Löschleitung oder durch eine Leine als Rückzugsicherung
-    choices:
       - Ohne Sicherheitsmaßnahmen
       - Nur durch Sichtkontakt gesichert
       - Ohne Löschleitung oder Leine
-      - Gesichert durch eine unter Druck stehende Löschleitung oder durch eine Leine als Rückzugsicherung
   14:
     Q: Warum ist die Lagemeldung der Einsatzleitung an eine übergeordnete Stelle wichtig?
     A:
       - "Um weitere Einsatzkräfte alarmieren zu können\nUm die übergeordnete Stelle über Schadenslage und Einsatzmaßnahmen in Kenntnis zu setzen"
-    choices:
       - Die Lagemeldung ist nicht wichtig
       - Um nur die Schadenslage zu melden
       - Um den Einsatz zu verschieben
-      - "Um weitere Einsatzkräfte alarmieren zu können\nUm die übergeordnete Stelle über Schadenslage und Einsatzmaßnahmen in Kenntnis zu setzen"
   15:
     Q: Was ist eine Brandwache?
     A:
       - Vom Einsatzleiter bestimmte Einsatzkräfte der Feuerwehr, die an einer Brandstelle verbleiben, um wiederaufflammende Brandnester zu löschen.
-    choices:
       - Eine Wache, die den Brand dokumentiert
       - Eine Maßnahme, die nur bei Großbränden erforderlich ist
       - Freiwillige Helfer, die den Einsatzort bewachen
-      - Vom Einsatzleiter bestimmte Einsatzkräfte der Feuerwehr, die an einer Brandstelle verbleiben, um wiederaufflammende Brandnester zu löschen.

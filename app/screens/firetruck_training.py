@@ -103,7 +103,7 @@ class Fahrzeugkunde_Training(Screen):
         self.firetruck_rooms_layout.clear_widgets()  # type: ignore
 
         for storage in self.firetruck_rooms:
-            btn = Button(text=storage, font_size="28sp")
+            btn = Button(text=storage, font_size="28sp", disabled=storage=="")
             btn.bind(on_press=self.on_answer)  # type: ignore
             self.firetruck_rooms_layout.add_widget(btn)  # type: ignore
 

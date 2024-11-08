@@ -998,7 +998,7 @@ Rüst:
 
   "": []
 
-  G1 Drehfach\nlinks:
+  "G1 Drehfach\nlinks":
     - Umlenkrolle 140 kN
     - Umlenkrolle 200 kN
     - Klappkolben 60 kN
@@ -1032,7 +1032,7 @@ Rüst:
     - Eisensäge
     - Stange f. Rangierwagenheber
 
-  G2 Drehfach\nrechts:
+  "G2 Drehfach\nrechts":
     - Hydraulischer Rettungssatz
     - Teleskoprettunszylinder
     - Pedalschneider
@@ -1096,7 +1096,7 @@ Rüst:
     - Strickleiter 20 m
     - Erdungskabel
 
-  G1 Drehfach\nrechts:
+  "G1 Drehfach\nrechts":
     - Tauchpumpe 2400 l/min
     - Tauchpumpe 850 l/min
     - Radklammer
@@ -1118,7 +1118,7 @@ Rüst:
     - Aufsatz f. Rodator
     - Schlüssel f. Hauswasserabsperrung
 
-  G2 Drehfach\nlinks:
+  "G2 Drehfach\nlinks":
     - Stromerzeuger 30 kVA
     - Stromerzeuger 10 kVA
     - Kabeltrommel 230 V
@@ -1217,7 +1217,7 @@ Rüst:
     - Kranabstützunterlagen
     - Schäkel 12 t
 
-  Dach\noben:
+  Dach:
     - Steckleiter 4-teilig
     - Schleifkorbtrage m. Gehänge
     - Hebebaum
