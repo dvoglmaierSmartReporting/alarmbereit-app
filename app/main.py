@@ -64,7 +64,11 @@ from screens.competition_menu import Bewerb_Menu
 from screens.competition_training import Bewerb_Training
 from screens.competition_game import Bewerb_Game
 
-from helper.functions import mode_str2bool, mode_bool2str
+from helper.functions import (
+    mode_str2bool,
+    mode_bool2str,
+    place_scores_file_to_writable_dir,
+)
 from helper.settings import Strings
 
 
@@ -153,6 +157,8 @@ class CustomToggleButton(ToggleButton):  # used in feuerwehr.kv
 
 class FeuerwehrApp(App):
     def build(self):
+
+        place_scores_file_to_writable_dir()
 
         sm = ScreenManager()
         sm.add_widget(Start_Menu())

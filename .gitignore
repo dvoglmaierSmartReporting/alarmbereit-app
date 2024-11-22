@@ -12,6 +12,7 @@ __pycache__
 # buildozer
 /app/.buildozer
 /app/.DS_Store
+.prepare-env
 
 # built .apk files
 /app/bin
