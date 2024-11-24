@@ -90,9 +90,9 @@ class Fahrzeugkunde_Game(Screen):
         if self.game.score > self.current_high_score:
             save_to_scores_file(self.selected_firetruck, "high_score", self.game.score)
 
-        # app = App.get_running_app()
-        # app.root.current = "fahrzeugkunde_menu"  # type: ignore
-        # app.root.transition.direction = "right"  # type: ignore
+        app = App.get_running_app()
+        app.root.current = "fahrzeugkunde_menu"  # type: ignore
+        app.root.transition.direction = "right"  # type: ignore
 
     def reset_tool_list(self):
         (self.firetruck_rooms, self.tools, self.tools_locations) = (

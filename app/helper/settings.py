@@ -7,7 +7,7 @@ class Settings:
         self.INTERVAL_GAME_SEC = 0.1
         self.DISPLAY_EXTRA_TIME_LABEL_SEC = 2
         ## firetruck
-        self.FIRETRUCK_START_TIME_SEC = 5.0
+        self.FIRETRUCK_START_TIME_SEC = 15.0
         self.FIRETRUCK_EXTRA_TIME_SEC = 10.0
         self.FIRETRUCK_CORRECT_FOR_EXTRA_TIME = 5
         ## competition
