@@ -250,14 +250,19 @@
     BoxLayout:
         orientation: 'vertical'
 
+        Label:  # placeholder
+            size_hint: 1, 0.15
+
         Label:
             id: tool_label
-            size_hint: 1, 0.15
+            # size_hint: 1, 0.3
+            size_hint: 1, 1.1
             font_size: "28sp"
 
         GridLayout:
             id: firetruck_rooms_layout
-            size_hint: 1, 0.797
+            # size_hint: 1, 0.7
+            size_hint: 1, 2
             spacing: "3dp"
             cols: 2
 
@@ -343,7 +348,7 @@
         orientation: 'vertical'
 
         Label:  # placeholder
-            size_hint: 1, 0.2
+            size_hint: 1, 0.15
 
         Label:
             id: tool_label
@@ -357,7 +362,7 @@
         
         GridLayout:
             id: firetruck_rooms_layout
-            size_hint: 1, 4
+            size_hint: 1, 2
             spacing: "3dp"
             cols: 2
 
