@@ -72,7 +72,7 @@ class Fahrzeugkunde_Game(Screen):
                 self.timer_label.text = "Ende  "  # type: ignore
                 # todo: disable buttons between game end and menu screen animation
         else:
-            Clock.unschedule(self.update_timer)  # Stop the timer when it reaches 0
+            # Clock.unschedule(self.update_timer)  # Stop the timer when it reaches 0
             self.end_game()
             pass
 
@@ -85,6 +85,8 @@ class Fahrzeugkunde_Game(Screen):
         self.high_score_label.text = f"Best: {str(self.current_high_score)}  "  # type: ignore
 
     def end_game(self):
+        Clock.unschedule(self.update_timer)
+
         if self.game.score > self.current_high_score:
             save_to_scores_file(self.selected_firetruck, "high_score", self.game.score)
 

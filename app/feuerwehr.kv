@@ -281,8 +281,8 @@
         font_size: "32sp"
         on_release:
             root.manager.get_screen('fahrzeugkunde_game').end_game()
-            app.root.current = "fahrzeugkunde_menu"
-            root.manager.transition.direction = "right"
+            # app.root.current = "fahrzeugkunde_menu" # not needed
+            # root.manager.transition.direction = "right"
 
     Label:
         id: firetruck_label
@@ -616,8 +616,8 @@
         pos_hint: {'left': 1, 'top': 1}
         on_release:
             root.manager.get_screen('bewerb_game').end_game()
-            app.root.current = "bewerb_menu"
-            root.manager.transition.direction = "right"
+            # app.root.current = "bewerb_menu" # probably not needed
+            # root.manager.transition.direction = "right"
 
     Label:
         id: competition_label
