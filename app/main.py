@@ -55,6 +55,8 @@ from kivy.uix.screenmanager import ScreenManager, Screen
 
 from inspect import currentframe
 
+from screens.info_screen import Info_Screen
+from screens.settings_screen import Settings_Screen
 from screens.firetruck_menu import Fahrzeugkunde_Menu
 from screens.firetruck_training import Fahrzeugkunde_Training
 from screens.firetruck_game import Fahrzeugkunde_Game
@@ -95,6 +97,8 @@ class Start_Menu(Screen):
         Logger.info(f"Start_Menu: {this_function_name = }")
 
         # update button strings
+        self.info_button.text = strings.BUTTON_STR_INFO  # type: ignore
+        self.settings_button.text = strings.BUTTON_STR_SETTINGS  # type: ignore
         self.training_button.text = strings.BUTTON_STR_TRAINING  # type: ignore
         self.game_button.text = strings.BUTTON_STR_GAME  # type: ignore
         self.browse_button.text = strings.BUTTON_STR_BROWSE  # type: ignore
@@ -162,6 +166,8 @@ class FeuerwehrApp(App):
 
         sm = ScreenManager()
         sm.add_widget(Start_Menu())
+        sm.add_widget(Info_Screen())
+        sm.add_widget(Settings_Screen())
         sm.add_widget(Fahrzeugkunde_Menu())
         sm.add_widget(Bewerb_Menu())
         sm.add_widget(Fahrzeugkunde_Training())

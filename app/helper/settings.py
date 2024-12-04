@@ -24,6 +24,8 @@ class Strings:
         self.LABEL_STR_QUESTIONS = "Inhalt"
 
         # Start_Menu button names
+        self.BUTTON_STR_INFO = "Info"
+        self.BUTTON_STR_SETTINGS = "Einst."
         self.BUTTON_STR_TRAINING = "Übung"
         self.BUTTON_STR_GAME = "Zeitdruck"
         self.BUTTON_STR_BROWSE = "Stöbern"
@@ -49,3 +51,14 @@ class Strings:
             "TankDürrnberg": "TLFA 3000",
             "PumpeDürrnberg": "LFA",
         }
+
+
+class Info_Screen_Text:
+    def __init__(self) -> None:
+        self.TEXT = """
+        © 2024 Freiwillige Feuerwehr der Stadt Hallein
+
+        Idee und Entwicklung: Dominik Voglmaier
+        
+        Support: d.voglmaier@feuerwehr-hallein.at"
+        """

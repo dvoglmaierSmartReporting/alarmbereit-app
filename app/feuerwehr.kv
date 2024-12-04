@@ -20,15 +20,42 @@
     competitions_button: competitions_button
     # standards_button: standards_button
 
+    info_button: info_button
+    settings_button: settings_button
+    
+    Button:
+        id: info_button
+        font_size: "32sp"
+        size_hint: None, None
+        size: "150dp", "50dp"
+        pos_hint: {'left': 1, 'top': 1}
+        on_release:
+            app.root.current = "info_screen"
+            root.manager.transition.direction = "left"
+
+    Button:
+        id: settings_button
+        font_size: "32sp"
+        size_hint: None, None
+        size: "150dp", "50dp"
+        pos_hint: {'right': 1, 'top': 1}
+        on_release:
+            app.root.current = "settings_screen"
+            root.manager.transition.direction = "left"
+
     BoxLayout:
         orientation: "vertical"
         spacing: "3dp"
+
+        Label:  # placeholder
+            size_hint: 1, 0.5
+            text: ""
 
         Label:
             id: mode_label
             bold: True
             font_size: "32sp"
-            size_hint: 1, 0.5
+            size_hint: 0.5, 0.5
         
         ##-- Removed before testing release as images is not working yet
         #GridLayout:
@@ -75,7 +102,7 @@
             id: questions_label
             bold: True
             font_size: "32sp"
-            size_hint: 1, 0.5
+            size_hint: 0.4, 0.5
         
         Button:
             id: firetrucks_button
@@ -102,6 +129,47 @@
         #        root.manager.transition.direction = "left"
         #        root.forward_mode2menu("standardsmenu")
         ###-
+
+
+<Info_Screen>:
+    name: "info_screen"
+
+    info_label: info_label
+
+    Button:
+        text: "<"
+        font_size: "32sp"
+        size_hint: None, None
+        size: "50dp", "50dp"
+        pos_hint: {'left': 1, 'top': 1}
+        on_release:
+            app.root.current = "start_menu"
+            root.manager.transition.direction = "right"
+    
+    BoxLayout:
+        orientation: 'vertical'
+
+        Label:
+            id: info_label
+            font_size: "15sp"
+            halign: "center"
+        
+
+<Settings_Screen>:
+    name: "settings_screen"
+
+    Button:
+        text: "<"
+        font_size: "32sp"
+        size_hint: None, None
+        size: "50dp", "50dp"
+        pos_hint: {'left': 1, 'top': 1}
+        on_release:
+            app.root.current = "start_menu"
+            root.manager.transition.direction = "right"
+    
+    BoxLayout:
+        orientation: 'vertical'
 
 
 <Fahrzeugkunde_Menu>:
