@@ -5,10 +5,10 @@ from kivy.clock import Clock
 
 from random import shuffle
 
-from helper.functions import (
+from helper.file_handling import (
     load_total_competition_questions,
-    read_scores_file_key,
     save_to_scores_file,
+    get_scores_file_key,
 )
 from helper.settings import Settings
 from helper.game_class import GameCore, CompetitionQuestion
@@ -120,7 +120,7 @@ class Bewerb_Game(Screen):
         #     answers=["dummy answers"],
         # )
 
-        self.current_high_score = read_scores_file_key(
+        self.current_high_score = get_scores_file_key(
             firetruck=self.selected_competition,
             key="high_score",
             questions="competitions",

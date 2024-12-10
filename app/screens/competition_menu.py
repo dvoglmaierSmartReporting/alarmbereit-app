@@ -4,8 +4,8 @@ from kivy.uix.screenmanager import Screen
 
 from random import shuffle
 
-from helper.functions import mode_str2bool, load_total_competition_questions
 from helper.functions import mode_str2bool
+from helper.file_handling import load_total_competition_questions
 from helper.settings import Strings
 
 strings = Strings()

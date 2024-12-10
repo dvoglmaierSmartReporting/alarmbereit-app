@@ -56,9 +56,9 @@ class Strings:
 class Info_Screen_Text:
     def __init__(self) -> None:
         self.TEXT = """
-        © 2024 Freiwillige Feuerwehr der Stadt Hallein
+        © 2025 Freiwillige Feuerwehr der Stadt Hallein
 
         Idee und Entwicklung: Dominik Voglmaier
         
-        Support: d.voglmaier@feuerwehr-hallein.at"
+        Support: d.voglmaier@feuerwehr-hallein.at
         """

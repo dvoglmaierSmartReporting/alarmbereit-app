@@ -69,8 +69,8 @@ from screens.competition_game import Bewerb_Game
 from helper.functions import (
     mode_str2bool,
     mode_bool2str,
-    place_scores_file_to_writable_dir,
 )
+from helper.file_handling import copy_file_to_writable_dir
 from helper.settings import Strings
 
 
@@ -162,7 +162,10 @@ class CustomToggleButton(ToggleButton):  # used in feuerwehr.kv
 class FeuerwehrApp(App):
     def build(self):
 
-        place_scores_file_to_writable_dir()
+        copy_file_to_writable_dir("storage", "scores.yaml")
+
+        # lookup_firetruck_files_at_writable_dir()
+        # validate_firetruck_files()
 
         sm = ScreenManager()
         sm.add_widget(Start_Menu())

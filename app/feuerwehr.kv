@@ -134,7 +134,8 @@
 <Info_Screen>:
     name: "info_screen"
 
-    info_label: info_label
+    about_label: about_label
+    scores_label: scores_label
 
     Button:
         text: "<"
@@ -150,9 +151,23 @@
         orientation: 'vertical'
 
         Label:
-            id: info_label
+            id: about_label
             font_size: "15sp"
             halign: "center"
+            size_hint: 1, 1
+        
+        #Label: 
+        #    # separator
+        #    text: "----------------------------------------------------------"
+        #    size_hint: 1, 0.1
+        
+        Label:
+            id: scores_label
+            font: "Courier New"
+            font_size: "15sp"
+            halign: "left"
+            markup: True
+            size_hint: 1, 4
         
 
 <Settings_Screen>:

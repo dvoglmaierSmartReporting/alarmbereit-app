@@ -6,12 +6,8 @@ from kivy.clock import Clock
 
 from random import shuffle
 
-from helper.functions import (
-    load_firetruck_storage,
-    break_tool_name,
-    read_scores_file_key,
-    save_to_scores_file,
-)
+from helper.functions import get_firetruck_storage, break_tool_name
+from helper.file_handling import save_to_scores_file, get_scores_file_key
 from helper.settings import Settings
 from helper.game_class import GameCore, ToolQuestion
 
@@ -57,7 +53,7 @@ class Fahrzeugkunde_Training(Screen):
 
     def reset_tool_list(self):
         (self.firetruck_rooms, self.tools, self.tools_locations) = (
-            load_firetruck_storage(self.selected_firetruck)
+            get_firetruck_storage(self.selected_firetruck)
         )
 
         shuffle(self.tools)
@@ -71,7 +67,7 @@ class Fahrzeugkunde_Training(Screen):
 
         self.reset_strike()
 
-        self.current_high_strike = read_scores_file_key(
+        self.current_high_strike = get_scores_file_key(
             self.selected_firetruck, "high_strike"
         )
 
@@ -103,7 +99,7 @@ class Fahrzeugkunde_Training(Screen):
         self.firetruck_rooms_layout.clear_widgets()  # type: ignore
 
         for storage in self.firetruck_rooms:
-            btn = Button(text=storage, font_size="28sp", disabled=storage=="")
+            btn = Button(text=storage, font_size="28sp", disabled=storage == "")
             btn.bind(on_press=self.on_answer)  # type: ignore
             self.firetruck_rooms_layout.add_widget(btn)  # type: ignore
 

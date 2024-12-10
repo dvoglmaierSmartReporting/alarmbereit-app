@@ -1,39 +1,9 @@
-from kivy.app import App
-
 from helper.settings import Strings
+from helper.file_handling import load_total_storage, read_scores_file
 
 import yaml
-from shutil import copyfile
-import os
 
 strings = Strings()
-
-
-def load_total_storage() -> dict:
-    with open(
-        "/".join(__file__.split("/")[:-2]) + "/content/feuerwehr_tools_storage.yaml",
-        "r",
-    ) as file:
-        try:
-            return yaml.safe_load(file)
-        except yaml.YAMLError as exc:
-            print(exc)
-            return dict()
-
-
-def load_total_competition_questions() -> dict:
-    # with open("./app/content/feuerwehr_competition_questions_mc.yaml", "r") as file:
-    # with open("./app/content/feuerwehr_competition_questions.yaml", "r") as file:
-    with open(
-        "/".join(__file__.split("/")[:-2])
-        + "/content/feuerwehr_competition_questions_multiple_choice.yaml",
-        "r",
-    ) as file:
-        try:
-            return yaml.safe_load(file)
-        except yaml.YAMLError as exc:
-            print(exc)
-            return dict()
 
 
 def invert_firetruck_equipment(firetruck: dict) -> dict:
@@ -47,7 +17,7 @@ def invert_firetruck_equipment(firetruck: dict) -> dict:
     return tools_locations
 
 
-def load_firetruck_storage(selected_firetruck: str) -> tuple[list, list, dict]:
+def get_firetruck_storage(selected_firetruck: str) -> tuple[list, list, dict]:
     total_storage = load_total_storage()
     firetruck: dict = total_storage[selected_firetruck]
     rooms: list = list(firetruck.keys())
@@ -92,64 +62,33 @@ def break_tool_name(tool_name: str) -> str:
     return tool_name
 
 
-def place_scores_file_to_writable_dir():
-    src = os.path.join(os.path.dirname(__file__), "storage/scores.yaml")
-    dst = os.path.join(
-        App.get_running_app().user_data_dir, "scores.yaml"  # type:ignore
-    )
+def create_scores_text(scores: dict) -> str:
+    output = ""
+    spacing, separator, divider = "    ", "  -  ", "  |  "
+    factor, total = 25, 0
 
-    if not os.path.exists(dst):
-        copyfile(src, dst)
+    for category in scores:
+        if category == "competitions":
+            output += f"{strings.BUTTON_STR_COMPETITIONS}:\n"
 
+            for comp in scores.get(category):  # type: ignore
+                score = scores.get(category).get(comp).get("high_score")  # type: ignore
+                total += score
+                output += f"{spacing}Best:{spacing}{score}{separator}{comp}\n"
 
-def read_scores_file():
-    try:
-        with open(
-            # "/".join(__file__.split("/")[:-2]) + "/storage/scores.yaml", "r"
-            os.path.join(
-                App.get_running_app().user_data_dir, "scores.yaml"  # type:ignore
-            ),
-            "r",
-        ) as file:
-            return yaml.safe_load(file)
+            output += "\n"
 
-    except Exception as e:
-        print(f"Error reading file: {e}")
-        return dict()
+        elif category == "firetrucks":
+            output += f"{strings.BUTTON_STR_FIRETRUCKS}:\n"
 
+            for comp in scores.get(category):  # type: ignore
+                score = scores.get(category).get(comp).get("high_score")  # type: ignore
+                total += score
+                output += f"{spacing}Best:{spacing}{score}"
+                strike = scores.get(category).get(comp).get("high_strike")  # type: ignore
+                total += strike * factor
+                output += f"{divider}Strike:{spacing}{strike} x {str(factor)}{separator}{comp}\n"
 
-def read_scores_file_key(firetruck: str, key: str, questions: str = "firetrucks"):
-    return read_scores_file().get(questions).get(firetruck).get(key)  # type:ignore
-
-
-def save_to_scores_file(
-    firetruck: str, key: str, value: int, questions: str = "firetrucks"
-):
-    content = read_scores_file()
-
-    if not questions in content.keys():
-        raise ValueError(f"Questions {questions} not found in scores.yaml")
-
-    if not firetruck in content.get(questions).keys():  # type:ignore
-        raise ValueError(
-            f"Firetruck {firetruck} not found in scores.yaml > {questions}"
-        )
-
-    if not key in content.get(questions).get(firetruck).keys():  # type:ignore
-        raise ValueError(
-            f"Key {key} not found in scores.yaml > {questions} > {firetruck}"
-        )
-
-    content[questions][firetruck][key] = value
-
-    try:
-        with open(
-            # "/".join(__file__.split("/")[:-2]) + "/storage/scores.yaml", "w"
-            os.path.join(
-                App.get_running_app().user_data_dir, "scores.yaml"  # type:ignore
-            ),
-            "w",
-        ) as file:
-            yaml.dump(content, file)
-    except Exception as e:
-        print(f"Error writing to file: {e}")
+    output += "________________________________________\n"
+    output += f"Gesamtpunktzahl{separator}{str(total)}"
+    return output

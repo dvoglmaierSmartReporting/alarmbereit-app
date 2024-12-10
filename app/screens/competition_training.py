@@ -2,9 +2,9 @@ from kivy.uix.screenmanager import Screen
 
 from random import shuffle
 
-from helper.functions import load_total_competition_questions
+from helper.file_handling import load_total_competition_questions
 from helper.settings import Strings
-from helper.game_class import GameCore, CompetitionQuestion
+from helper.game_class import CompetitionQuestion
 
 strings = Strings()
 
