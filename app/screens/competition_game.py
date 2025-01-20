@@ -71,7 +71,7 @@ class Bewerb_Game(Screen):
             self.end_game()
             pass
 
-    def increment_score(self, add: int = 100):
+    def increment_score(self, add: int = settings.COMPETITION_CORRECT_POINTS):
         self.game.score += add
         self.score_label.text = f"{str(self.game.score)}  "  # type: ignore
 

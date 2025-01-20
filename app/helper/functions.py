@@ -1,9 +1,8 @@
-from helper.settings import Strings
-from helper.file_handling import load_total_storage, read_scores_file
-
-import yaml
+from helper.settings import Strings, Settings
+from helper.file_handling import load_total_storage, load_total_competition_questions
 
 strings = Strings()
+settings = Settings()
 
 
 def invert_firetruck_equipment(firetruck: dict) -> dict:
@@ -62,10 +61,31 @@ def break_tool_name(tool_name: str) -> str:
     return tool_name
 
 
+def create_scores_content():
+    scores = dict()
+
+    total_storage = load_total_storage()
+
+    for truck in total_storage.keys():
+        scores.update({truck: {"high_score": 0, "high_strike": 0}})
+
+    total_questions = load_total_competition_questions()
+
+    for question in total_questions.keys():
+        scores.update({question: {"high_score": 0}})
+
+    return scores
+
+
 def create_scores_text(scores: dict) -> str:
     output = ""
-    spacing, separator, divider = "    ", "  -  ", "  |  "
-    factor, total = 25, 0
+    spacing = "    "
+    separator = "  -  "
+    # divider = "  |  "
+    total_score = 0
+    total_strike = 0
+    total = 0
+    factor = settings.FIRETRUCK_STRIKE_FACTOR
 
     for category in scores:
         if category == "competitions":
@@ -73,7 +93,7 @@ def create_scores_text(scores: dict) -> str:
 
             for comp in scores.get(category):  # type: ignore
                 score = scores.get(category).get(comp).get("high_score")  # type: ignore
-                total += score
+                total_score += score
                 output += f"{spacing}Best:{spacing}{score}{separator}{comp}\n"
 
             output += "\n"
@@ -83,12 +103,18 @@ def create_scores_text(scores: dict) -> str:
 
             for comp in scores.get(category):  # type: ignore
                 score = scores.get(category).get(comp).get("high_score")  # type: ignore
-                total += score
+                total_score += score
                 output += f"{spacing}Best:{spacing}{score}"
                 strike = scores.get(category).get(comp).get("high_strike")  # type: ignore
-                total += strike * factor
-                output += f"{divider}Strike:{spacing}{strike} x {str(factor)}{separator}{comp}\n"
+                total_strike += strike
+                # output += f"{divider}Best Strike:{spacing}{strike} x {str(factor)}{separator}{comp}\n"
+                output += f"{spacing}Best Strike:{spacing}{strike}{separator}{comp}\n"
 
     output += "________________________________________\n"
-    output += f"Gesamtpunktzahl{separator}{str(total)}"
+    output += f"Gesamt Best{separator}{str(total_score)} Punkte\n"
+    output += f"Gesamt Best Strikes{separator}{str(total_strike)} x {factor} Punkte\n"
+    output += f"\n"
+
+    total = total_score + total_strike * factor
+    output += f"Gesamtpunktzahl{separator}{str(total)} Punkte"
     return output

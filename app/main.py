@@ -69,8 +69,9 @@ from screens.competition_game import Bewerb_Game
 from helper.functions import (
     mode_str2bool,
     mode_bool2str,
+    create_scores_text,
 )
-from helper.file_handling import copy_file_to_writable_dir
+from helper.file_handling import copy_file_to_writable_dir, read_scores_file
 from helper.settings import Strings
 
 
@@ -147,6 +148,13 @@ class Start_Menu(Screen):
                 return result
         return None  # if no 'down' ToggleButton is found
 
+    def update_info_scores(self):
+        scores = read_scores_file()
+        # self.ids.scores_label.text = create_scores_text(scores)
+        self.manager.get_screen("info_screen").ids.scores_label.text = (
+            create_scores_text(scores)
+        )
+
 
 class CustomToggleButton(ToggleButton):  # used in feuerwehr.kv
     def on_touch_up(self, touch):
@@ -162,7 +170,9 @@ class CustomToggleButton(ToggleButton):  # used in feuerwehr.kv
 class FeuerwehrApp(App):
     def build(self):
 
-        copy_file_to_writable_dir("storage", "scores.yaml")
+        # path relative to app/helper/file_handling.py
+        copy_file_to_writable_dir("../storage", "scores.yaml")
+        copy_file_to_writable_dir("../storage", "main.cfg")
 
         # lookup_firetruck_files_at_writable_dir()
         # validate_firetruck_files()

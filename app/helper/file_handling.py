@@ -9,9 +9,12 @@ import os
 strings = Strings()
 
 
-def load_total_storage() -> dict:
+def load_total_storage(
+    file_path: str = "/".join(__file__.split("/")[:-2])
+    + "/content/feuerwehr_tools_storage.yaml",
+) -> dict:
     with open(
-        "/".join(__file__.split("/")[:-2]) + "/content/feuerwehr_tools_storage.yaml",
+        file_path,
         "r",
     ) as file:
         try:
@@ -27,11 +30,13 @@ def load_total_storage() -> dict:
         #     print(f"An unexpected error occurred: {e}")
 
 
-def load_total_competition_questions() -> dict:
+def load_total_competition_questions(
+    file_path: str = "/".join(__file__.split("/")[:-2])
+    + "/content/feuerwehr_competition_questions_multiple_choice.yaml",
+) -> dict:
     # with open("./app/content/feuerwehr_competition_questions.yaml", "r") as file:
     with open(
-        "/".join(__file__.split("/")[:-2])
-        + "/content/feuerwehr_competition_questions_multiple_choice.yaml",
+        file_path,
         "r",
     ) as file:
         try:
@@ -48,21 +53,27 @@ def load_total_competition_questions() -> dict:
 
 
 def copy_file_to_writable_dir(file_path: str, file_name: str):
-    src = os.path.join(os.path.dirname(__file__), file_path, file_name)
+    file_current_dir = os.path.dirname(os.path.abspath(__file__))
+    file_relative_path = os.path.join(file_current_dir, file_path, file_name)
+    src = os.path.normpath(file_relative_path)
     dst = os.path.join(
         App.get_running_app().user_data_dir, file_name  # type:ignore
     )
 
-    if not os.path.exists(dst):
-        copyfile(src, dst)
+    # if not os.path.exists(dst):
+    #     copyfile(src, dst)
+    print(f"{dst = }")
+    copyfile(src, dst)
 
 
-def read_scores_file():
+def read_scores_file(
+    file_path: str = os.path.join(
+        App.get_running_app().user_data_dir, "scores.yaml"  # type:ignore
+    )
+):
     try:
         with open(
-            os.path.join(
-                App.get_running_app().user_data_dir, "scores.yaml"  # type:ignore
-            ),
+            file_path,
             "r",
         ) as file:
             return yaml.safe_load(file)

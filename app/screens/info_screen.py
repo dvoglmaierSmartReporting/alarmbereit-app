@@ -13,8 +13,7 @@ class Info_Screen(Screen):
     def __init__(self, **kwargs):
         super(Info_Screen, self).__init__(**kwargs)
 
+        # init screen with about text
         self.ids.about_label.text = info_content.TEXT
 
-        scores = read_scores_file()
-
-        self.ids.scores_label.text = create_scores_text(scores)
+        # update scores text at every call; done in main.py Start_Menu screen

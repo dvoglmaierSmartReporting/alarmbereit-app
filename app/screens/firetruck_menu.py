@@ -50,7 +50,7 @@ class Fahrzeugkunde_Menu(Screen):
             app.root.transition.direction = "left"  # type: ignore
             # continue game with selected firetruck
             fahrzeugkunde_tg_screen = app.root.get_screen("fahrzeugkunde_training")  # type: ignore
-            fahrzeugkunde_tg_screen.select_firetruck(instance.text.split(' ')[0])
+            fahrzeugkunde_tg_screen.select_firetruck(instance.text.split(" ")[0])
             # fahrzeugkunde_tg_screen.forward_mode_2_fk_training(mode)
             fahrzeugkunde_tg_screen.play()
 
@@ -59,7 +59,7 @@ class Fahrzeugkunde_Menu(Screen):
             app.root.transition.direction = "left"  # type: ignore
             # continue game with selected firetruck  # type: ignore
             fahrzeugkunde_tg_screen = app.root.get_screen("fahrzeugkunde_game")  # type: ignore
-            fahrzeugkunde_tg_screen.select_firetruck(instance.text.split(' ')[0])
+            fahrzeugkunde_tg_screen.select_firetruck(instance.text.split(" ")[0])
             # fahrzeugkunde_tg_screen.forward_mode_2_fk_game(mode)
             fahrzeugkunde_tg_screen.play()
 
@@ -69,7 +69,7 @@ class Fahrzeugkunde_Menu(Screen):
             app.root.transition.direction = "left"  # type: ignore
             # continue game with selected firetruck
             fahrzeugkunde_browse_screen = app.root.get_screen("fahrzeugkunde_browse")  # type: ignore
-            fahrzeugkunde_browse_screen.select_firetruck(instance.text.split(' ')[0])
+            fahrzeugkunde_browse_screen.select_firetruck(instance.text.split(" ")[0])
             fahrzeugkunde_browse_screen.display_all_tools()
 
         elif mode_images:
@@ -77,5 +77,5 @@ class Fahrzeugkunde_Menu(Screen):
             app.root.transition.direction = "left"  # type: ignore
 
             fahrzeugkunde_images_screen = app.root.get_screen("fahrzeugkunde_images")  # type: ignore
-            fahrzeugkunde_images_screen.select_firetruck(instance.text.split(' ')[0])
+            fahrzeugkunde_images_screen.select_firetruck(instance.text.split(" ")[0])
             fahrzeugkunde_images_screen.load_image()

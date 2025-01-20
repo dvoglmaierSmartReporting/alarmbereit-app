@@ -10,10 +10,14 @@ class Settings:
         self.FIRETRUCK_START_TIME_SEC = 15.0
         self.FIRETRUCK_EXTRA_TIME_SEC = 10.0
         self.FIRETRUCK_CORRECT_FOR_EXTRA_TIME = 5
+        self.FIRETRUCK_CORRECT_POINTS = 100
+        self.FIRETRUCK_STRIKE_POINTS = 1
+        self.FIRETRUCK_STRIKE_FACTOR = 25
         ## competition
         self.COMPETITION_START_TIME_SEC = 90.0
         self.COMPETITION_EXTRA_TIME_SEC = 60.0
         self.COMPETITION_CORRECT_FOR_EXTRA_TIME = 4
+        self.COMPETITION_CORRECT_POINTS = 100
 
 
 class Strings:

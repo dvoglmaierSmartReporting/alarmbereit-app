@@ -27,8 +27,8 @@ competitions:
     high_score: 0
   TechnLP Stufe II:
     high_score: 0
-  Test:
-    high_score: 0
+  # Test:
+  #   high_score: 0
 firetrucks:
   Leiter:
     high_score: 0
@@ -51,9 +51,9 @@ firetrucks:
   "TankD\xFCrrnberg":
     high_score: 0
     high_strike: 0
-  TestTruck:
-    high_score: 0
-    high_strike: 0
+  # TestTruck:
+  #   high_score: 0
+  #   high_strike: 0
   Voraus:
     high_score: 0
     high_strike: 0
