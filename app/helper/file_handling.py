@@ -66,11 +66,13 @@ def copy_file_to_writable_dir(file_path: str, file_name: str):
     copyfile(src, dst)
 
 
-def read_scores_file(
-    file_path: str = os.path.join(
-        App.get_running_app().user_data_dir, "scores.yaml"  # type:ignore
-    )
-):
+def read_scores_file(file_path: str = ""):
+    # avoiding .user_data_dir in default
+    if file_path == "":
+        file_path = os.path.join(
+            App.get_running_app().user_data_dir, "scores.yaml"  # type:ignore
+        )
+
     try:
         with open(
             file_path,
@@ -120,6 +122,39 @@ def save_to_scores_file(
             ),
             "w",
         ) as file:
+            yaml.dump(content, file)
+    except Exception as e:
+        print(f"Error writing to file: {e}")
+    # except FileNotFoundError:
+    #     print(f"Error: File at {file_path} not found.")
+    # except yaml.YAMLError as e:
+    #     print(f"Error: Failed to parse YAML file at {file_path}. Details: {e}")
+    # except Exception as e:
+    #     print(f"An unexpected error occurred: {e}")
+
+
+def update_main_cfg(to_update: dict, file_path: str = ""):
+    if file_path == "":
+        file_path = os.path.join(
+            App.get_running_app().user_data_dir, "main.cfg"  # type:ignore
+        )
+
+    try:
+        with open(file_path, "r") as file:
+            content = yaml.safe_load(file)
+    except Exception as e:
+        print(f"Error reading file: {e}")
+    # except FileNotFoundError:
+    #     print(f"Error: File at {file_path} not found.")
+    # except yaml.YAMLError as e:
+    #     print(f"Error: Failed to parse YAML file at {file_path}. Details: {e}")
+    # except Exception as e:
+    #     print(f"An unexpected error occurred: {e}")
+
+    content.update(to_update)
+
+    try:
+        with open(file_path, "w") as file:
             yaml.dump(content, file)
     except Exception as e:
         print(f"Error writing to file: {e}")
