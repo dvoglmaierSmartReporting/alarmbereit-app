@@ -7,7 +7,8 @@ from kivy.uix.popup import Popup
 import os
 import yaml
 
-from helper.file_handling import update_main_cfg
+from helper.file_handling import update_main_cfg, copy_file_to_writable_dir
+from helper.functions import create_scores_content
 
 
 class LoadDialog(FloatLayout):
@@ -103,6 +104,8 @@ class Settings_Screen(Screen):
         self.ids.text_output = ""
 
     def load(self, path, filename):
+        self.custom_tools_file_path = path
+        self.custom_tools_file_name = filename[0]
         with open(os.path.join(path, filename[0])) as file:
             self.file_content = yaml.safe_load(file)
 
@@ -123,14 +126,25 @@ class Settings_Screen(Screen):
         self.dismiss_popup()
 
     def confirm_upload(self):
-        # upload custom firetrucks
-        # upload custom scores yaml
-        #
 
         self.enable_default_content_switch()
         self.deactivate_default_content_switch()
 
         update_main_cfg({"content": {"use_default": False}})
+
+        # main.cfg is source-of-truth for custom firetruck and scores
+        # custom-scores.yaml creation must be after update_main_cfg()
+
+        # upload custom firetrucks
+        copy_file_to_writable_dir(
+            self.custom_tools_file_path,
+            self.custom_tools_file_name,
+            "custom_firetruck_tools.yaml",
+        )
+        # upload custom scores yaml
+        # todo
+        # create_scores_content()
+        # copy_file_to_writable_dir()
 
         self.disable_upload_confirm_button()
         self.clear_text_output()

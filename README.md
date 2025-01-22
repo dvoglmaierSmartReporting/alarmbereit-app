@@ -33,10 +33,10 @@ Contains all necessary files to generate the Android package (.apk) via
 
 ### /
 Contains source-of-truth for competition questions:
-`feuerwehr_competition_questions.yaml` (not complete)
+`competition_questions_multiple_choice.yaml` (not complete)
 
 Contains source-of-truth for tool storage locations:
-`feuerwehr_tools_storage.yaml` (not complete)
+`firetruck_tools.yaml` (not complete)
 
 ~~As some python packages caused issues in the apk creation, for now its avoided to use imported packages (e.g. PyYAML). Workaround is to manually convert yaml into dict and import as function variable (e.g. `firetrucks.py`). Run~~
 ~~`/> ./yaml2json.py`~~
