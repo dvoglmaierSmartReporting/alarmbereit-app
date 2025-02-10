@@ -61,18 +61,20 @@ def break_tool_name(tool_name: str) -> str:
     return tool_name
 
 
-def create_scores_content():
-    scores = dict()
+def create_scores_content() -> dict:
+    scores = {"firetrucks": {}, "competitions": {}}
 
     total_storage = load_total_storage()
 
     for truck in total_storage.keys():
-        scores.update({truck: {"high_score": 0, "high_strike": 0}})
+        scores.get("firetrucks").update(  # type:ignore
+            {truck: {"high_score": 0, "high_strike": 0}}
+        )
 
     total_questions = load_total_competition_questions()
 
     for question in total_questions.keys():
-        scores.update({question: {"high_score": 0}})
+        scores.get("competitions").update({question: {"high_score": 0}})  # type:ignore
 
     return scores
 

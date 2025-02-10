@@ -9,54 +9,68 @@ import os
 strings = Strings()
 
 
+def load_yaml_and_handle_error(file_path: str) -> dict:
+    try:
+        with open(file_path, "r") as file:
+            return yaml.safe_load(file)
+    except Exception as e:
+        print(f"Error reading file: {e}")
+        print(f"{file_path = }")
+        return dict()
+    # except FileNotFoundError:
+    #     print(f"Error: File at {file_path} not found.")
+    # except yaml.YAMLError as e:
+    #     print(f"Error: Failed to parse YAML file at {file_path}. Details: {e}")
+    # except Exception as e:
+    #     print(f"An unexpected error occurred: {e}")
+
+
+def save_to_yaml_and_handle_error(file_path: str, content: dict) -> None:
+    try:
+        with open(file_path, "w") as file:
+            yaml.dump(content, file)
+    except Exception as e:
+        print(f"Error writing to file: {e}")
+        print(f"{file_path = }")
+    # except FileNotFoundError:
+    #     print(f"Error: File at {file_path} not found.")
+    # except yaml.YAMLError as e:
+    #     print(f"Error: Failed to parse YAML file at {file_path}. Details: {e}")
+    # except Exception as e:
+    #     print(f"An unexpected error occurred: {e}")
+
+
 def load_total_storage() -> dict:
+    default_file_path = (
+        "/".join(__file__.split("/")[:-2]) + "/content/firetruck_tools.yaml"
+    )
+    file_path = default_file_path
+
+    custom_file_path = os.path.join(
+        App.get_running_app().user_data_dir,  # type:ignore
+        "custom_firetruck_tools.yaml",
+    )
+    custom_file_exists = os.path.exists(custom_file_path)
+
     # main.cfg is source-of-truth for firetruck content and scores
     config = read_main_cfg()
-    if config.get("content").get("use_default"):  # type:ignore
-        file_path = "/".join(__file__.split("/")[:-2]) + "/content/firetruck_tools.yaml"
-    else:
-        file_path = os.path.join(
-            App.get_running_app().user_data_dir,  # type:ignore
-            "custom_firetruck_tools.yaml",
-        )
+    if (
+        not config.get("content").get("use_default")  # type:ignore
+        and custom_file_exists
+    ):
 
-    with open(
-        file_path,
-        "r",
-    ) as file:
-        try:
-            return yaml.safe_load(file)
-        except yaml.YAMLError as exc:
-            print(exc)
-            return dict()
-        # except FileNotFoundError:
-        #     print(f"Error: File at {file_path} not found.")
-        # except yaml.YAMLError as e:
-        #     print(f"Error: Failed to parse YAML file at {file_path}. Details: {e}")
-        # except Exception as e:
-        #     print(f"An unexpected error occurred: {e}")
+        file_path = custom_file_path
+
+    return load_yaml_and_handle_error(file_path)
 
 
-def load_total_competition_questions(
-    file_path: str = "/".join(__file__.split("/")[:-2])
-    + "/content/competition_questions_multiple_choice.yaml",
-) -> dict:
-    # with open("./app/content/competition_questions.yaml", "r") as file:
-    with open(
-        file_path,
-        "r",
-    ) as file:
-        try:
-            return yaml.safe_load(file)
-        except yaml.YAMLError as exc:
-            print(exc)
-            return dict()
-        # except FileNotFoundError:
-        #     print(f"Error: File at {file_path} not found.")
-        # except yaml.YAMLError as e:
-        #     print(f"Error: Failed to parse YAML file at {file_path}. Details: {e}")
-        # except Exception as e:
-        #     print(f"An unexpected error occurred: {e}")
+def load_total_competition_questions() -> dict:
+    file_path = (
+        "/".join(__file__.split("/")[:-2])
+        + "/content/competition_questions_multiple_choice.yaml"
+    )
+
+    return load_yaml_and_handle_error(file_path)
 
 
 def copy_file_to_writable_dir(file_path: str, file_name: str, new_file_name: str = ""):
@@ -79,98 +93,31 @@ def copy_file_to_writable_dir(file_path: str, file_name: str, new_file_name: str
     copyfile(src, dst)
 
 
-# # def read_scores_file(file_path: str = ""):
-# def read_scores_file():
-#     # main.cfg is source-of-truth for firetruck content and scores
-#     config = read_main_cfg()
-#     if config.get("content").get("use_default"):  # type:ignore
-#         file_path = os.path.join(
-#             App.get_running_app().user_data_dir,  # type:ignore
-#             "scores.yaml",
-#         )
-#     else:
-#         file_path = os.path.join(
-#             App.get_running_app().user_data_dir,  # type:ignore
-#             "custom_scores.yaml",
-#         )
-
-#     # # avoiding .user_data_dir in default
-#     # if file_path == "":
-#     #     file_path = os.path.join(
-#     #         App.get_running_app().user_data_dir, "scores.yaml"  # type:ignore
-#     #     )
-
-#     try:
-#         with open(
-#             file_path,
-#             "r",
-#         ) as file:
-#             return yaml.safe_load(file)
-
-#     except Exception as e:
-#         print(f"Error reading file: {e}")
-#         return dict()
-#     # except FileNotFoundError:
-#     #     print(f"Error: File at {file_path} not found.")
-#     # except yaml.YAMLError as e:
-#     #     print(f"Error: Failed to parse YAML file at {file_path}. Details: {e}")
-#     # except Exception as e:
-#     #     print(f"An unexpected error occurred: {e}")
-
-
 def read_scores_file():
-    config = read_main_cfg()
-    file_path_default = os.path.join(
+    scores_file_path = os.path.join(
         App.get_running_app().user_data_dir,  # type:ignore
         "scores.yaml",
     )
-    file_path_custom = os.path.join(
+    file_path = scores_file_path
+
+    custom_scores_file_path = os.path.join(
         App.get_running_app().user_data_dir,  # type:ignore
         "custom_scores.yaml",
     )
+    custom_scores_exists = os.path.exists(custom_scores_file_path)
 
-    if config.get("content").get("use_default"):  # type:ignore
-        try:
-            with open(
-                file_path_default,
-                "r",
-            ) as file:
-                # return default scores.yaml
-                return yaml.safe_load(file)
+    config = read_main_cfg()
 
-        except Exception as e:
-            print(f"Error reading file: {e}")
-            return dict()
+    if (
+        not config.get("content").get("use_default")  # type:ignore
+        and custom_scores_exists
+    ):
+        file_path = custom_scores_file_path
 
-    else:
-        try:
-            with open(
-                file_path_default,
-                "r",
-            ) as file:
-                default = yaml.safe_load(file)
-
-        except Exception as e:
-            print(f"Error reading file: {e}")
-            return dict()
-
-        try:
-            with open(
-                file_path_custom,
-                "r",
-            ) as file:
-                custom = yaml.safe_load(file)
-
-        except Exception as e:
-            print(f"Error reading file: {e}")
-            return dict()
-
-        competitions = default.get("competitions")
-        custom.update(competitions)
-        return custom
+    return load_yaml_and_handle_error(file_path)
 
 
-def get_scores_file_key(firetruck: str, key: str, questions: str = "firetrucks"):
+def get_scores_key(firetruck: str, key: str, questions: str = "firetrucks"):
     return read_scores_file().get(questions).get(firetruck).get(key)  # type:ignore
 
 
@@ -194,66 +141,67 @@ def save_to_scores_file(
 
     content[questions][firetruck][key] = value
 
+    #
+    # competition scores are to be added in both scores files (if custom exists)
+    # because this allows to have 2 scores files instead of 4
+    #
+    # for saving firetruck scores and strikes,
     # main.cfg is source-of-truth for firetruck content and scores
+    #
+    scores_file_path = os.path.join(
+        App.get_running_app().user_data_dir,  # type:ignore
+        "scores.yaml",
+    )
+    custom_scores_file_path = os.path.join(
+        App.get_running_app().user_data_dir,  # type:ignore
+        "custom_scores.yaml",
+    )
+    custom_scores_exists = os.path.exists(custom_scores_file_path)
+    print(f'{custom_scores_exists = }')
+
+    file_paths = [scores_file_path]
+
     config = read_main_cfg()
-    if config.get("content").get("use_default"):  # type:ignore
-        file_path = os.path.join(
-            App.get_running_app().user_data_dir,  # type:ignore
-            "scores.yaml",
+
+    # overwrite and only update custom firetruck scores
+    # it's assumed the file was already created
+    if (
+        questions == "firetrucks"
+        and not config.get("content").get(  # type:ignore
+            "use_default"
         )
-    else:
-        file_path = os.path.join(
-            App.get_running_app().user_data_dir,  # type:ignore
-            "custom_scores.yaml",
-        )
+        and custom_scores_exists
+    ):
+        file_paths = [custom_scores_file_path]
 
-    try:
-        with open(file_path, "w") as file:
-            yaml.dump(content, file)
-    except Exception as e:
-        print(f"Error writing to file: {e}")
-    # except FileNotFoundError:
-    #     print(f"Error: File at {file_path} not found.")
-    # except yaml.YAMLError as e:
-    #     print(f"Error: Failed to parse YAML file at {file_path}. Details: {e}")
-    # except Exception as e:
-    #     print(f"An unexpected error occurred: {e}")
+    # update both scores files' competitions high scores
+    elif questions == "competitions" and custom_scores_exists:
+        file_paths.append(custom_scores_file_path)
+    
+    print(f'save-to-scores-file {file_paths = }')
+    print(f'{content = }')
+
+    for file_path in file_paths:
+        save_to_yaml_and_handle_error(file_path, content)
 
 
-def read_main_cfg(file_path: str = "") -> dict:
-    if file_path == "":
-        file_path = os.path.join(
-            App.get_running_app().user_data_dir,  # type:ignore
-            "main.cfg",
-        )
+def read_main_cfg() -> dict:
+    file_path = os.path.join(
+        App.get_running_app().user_data_dir,  # type:ignore
+        "main.cfg",
+    )
 
-    try:
-        with open(file_path, "r") as file:
-            return yaml.safe_load(file)
-    except Exception as e:
-        print(f"Error reading file: {e}")
-        return dict()
-    # except FileNotFoundError:
-    #     print(f"Error: File at {file_path} not found.")
-    # except yaml.YAMLError as e:
-    #     print(f"Error: Failed to parse YAML file at {file_path}. Details: {e}")
-    # except Exception as e:
-    #     print(f"An unexpected error occurred: {e}")
+    return load_yaml_and_handle_error(file_path)
 
 
-def update_main_cfg(to_update: dict, file_path: str = ""):
+def update_main_cfg(to_update: dict):
     content = read_main_cfg()
 
     content.update(to_update)
 
-    try:
-        with open(file_path, "w") as file:
-            yaml.dump(content, file)
-    except Exception as e:
-        print(f"Error writing to file: {e}")
-    # except FileNotFoundError:
-    #     print(f"Error: File at {file_path} not found.")
-    # except yaml.YAMLError as e:
-    #     print(f"Error: Failed to parse YAML file at {file_path}. Details: {e}")
-    # except Exception as e:
-    #     print(f"An unexpected error occurred: {e}")
+    file_path = os.path.join(
+        App.get_running_app().user_data_dir,  # type:ignore
+        "main.cfg",
+    )
+
+    save_to_yaml_and_handle_error(file_path, content)

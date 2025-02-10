@@ -1,10 +1,6 @@
 from kivy.app import App
 from kivy.uix.button import Button
 from kivy.uix.screenmanager import Screen
-from kivy.clock import Clock
-
-
-from random import shuffle
 
 from helper.functions import load_total_storage, mode_str2bool
 from helper.settings import Strings

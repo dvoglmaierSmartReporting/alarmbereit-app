@@ -7,7 +7,7 @@ from kivy.clock import Clock
 from random import shuffle
 
 from helper.functions import get_firetruck_storage, break_tool_name
-from helper.file_handling import save_to_scores_file, get_scores_file_key
+from helper.file_handling import save_to_scores_file, get_scores_key
 from helper.settings import Settings
 from helper.game_class import GameCore, ToolQuestion
 
@@ -67,7 +67,7 @@ class Fahrzeugkunde_Training(Screen):
 
         self.reset_strike()
 
-        self.current_high_strike = get_scores_file_key(
+        self.current_high_strike = get_scores_key(
             self.selected_firetruck, "high_strike"
         )
 

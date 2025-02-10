@@ -1,3 +1,4 @@
+from kivy.app import App
 from kivy.uix.screenmanager import Screen
 from kivy.uix.floatlayout import FloatLayout
 from kivy.factory import Factory
@@ -7,7 +8,11 @@ from kivy.uix.popup import Popup
 import os
 import yaml
 
-from helper.file_handling import update_main_cfg, copy_file_to_writable_dir
+from helper.file_handling import (
+    update_main_cfg,
+    copy_file_to_writable_dir,
+    save_to_yaml_and_handle_error,
+)
 from helper.functions import create_scores_content
 
 
@@ -141,16 +146,27 @@ class Settings_Screen(Screen):
             self.custom_tools_file_name,
             "custom_firetruck_tools.yaml",
         )
-        # upload custom scores yaml
-        # todo
-        # create_scores_content()
-        # copy_file_to_writable_dir()
+
+        # init custom scores yaml
+        content = create_scores_content()
+        file_path = os.path.join(
+            App.get_running_app().user_data_dir,  # type:ignore
+            "custom_scores.yaml",
+        )
+        save_to_yaml_and_handle_error(file_path, content)
 
         self.disable_upload_confirm_button()
         self.clear_text_output()
 
-    # def default_content_switch
+    def default_content_switch2(self, switch, value):
+        if value:
+            update_main_cfg({"content": {"use_default": True}})
 
+        else:
+            update_main_cfg({"content": {"use_default": False}})
+
+
+# TODO: Testing!
 
 Factory.register("Settings_Screen", cls=Settings_Screen)
 Factory.register("LoadDialog", cls=LoadDialog)

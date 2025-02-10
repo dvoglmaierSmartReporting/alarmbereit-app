@@ -84,15 +84,15 @@
         CustomToggleButton:
             id: training_button
             state: "down"
-            on_release: root.on_button_release()
+            on_release: root.on_button_release2()
     
         CustomToggleButton:
             id: game_button
-            on_release: root.on_button_release()
+            on_release: root.on_button_release2()
         
         CustomToggleButton:
             id: browse_button
-            on_release: root.on_button_release()
+            on_release: root.on_button_release2()
         ##--
 
         Label:  # placeholder
@@ -112,6 +112,7 @@
                 app.root.current = "fahrzeugkunde_menu"
                 root.manager.transition.direction = "left"
                 root.forward_mode2menu("fahrzeugkunde_menu")
+                root.update_firetruck_buttons()
 
         Button:
             id: competitions_button
@@ -202,6 +203,7 @@
                 id: default_content_switch
                 active: True
                 disabled: True
+                on_active: root.default_content_switch2(self, self.active)
 
         Button:
             text: 'Datei auswählen'

@@ -50,6 +50,7 @@ from kivy.logger import Logger
 ###
 
 from kivy.app import App
+from kivy.uix.button import Button
 from kivy.uix.togglebutton import ToggleButton
 from kivy.uix.screenmanager import ScreenManager, Screen
 
@@ -67,6 +68,7 @@ from screens.competition_training import Bewerb_Training
 from screens.competition_game import Bewerb_Game
 
 from helper.functions import (
+    load_total_storage,
     mode_str2bool,
     mode_bool2str,
     create_scores_text,
@@ -114,7 +116,7 @@ class Start_Menu(Screen):
 
         # self.standards_button.disabled = True  # type: ignore
 
-    def on_button_release(self):
+    def on_button_release2(self):
         # if mode change, read mode label from current selection
         self.mode = mode_str2bool(self.find_down_toggle_button(self))  # type: ignore
 
@@ -154,6 +156,40 @@ class Start_Menu(Screen):
         self.manager.get_screen("info_screen").ids.scores_label.text = (
             create_scores_text(scores)
         )
+
+    def update_firetruck_buttons(self):
+        # load available firetrucks
+        total_storage = load_total_storage()
+        self.total_firetrucks = list(total_storage.keys())
+
+        # create button for all firetrucks
+        self.manager.get_screen(
+            "fahrzeugkunde_menu"
+        ).ids.firetrucks_layout.clear_widgets()
+        for firetruck in self.total_firetrucks:
+
+            abbreviation = strings.trucks.get(firetruck)
+            # Create a button with two strings, one centered and one at the bottom right
+            btn = Button(
+                text=f"{firetruck}{' '*3}[size=30]{abbreviation}[/size]",
+                font_size="32sp",
+                markup=True,  # Enable markup for custom text positioning
+                size_hint_y=None,
+                height=150,
+                size_hint_x=1,
+            )
+            btn.bind(
+                on_release=self.manager.get_screen(
+                    "fahrzeugkunde_menu"
+                ).on_button_release
+            )  # type: ignore
+
+            # Add the button to the layout
+            self.manager.get_screen(
+                "fahrzeugkunde_menu"
+            ).ids.firetrucks_layout.add_widget(
+                btn
+            )  # type: ignore
 
 
 class CustomToggleButton(ToggleButton):  # used in feuerwehr.kv
