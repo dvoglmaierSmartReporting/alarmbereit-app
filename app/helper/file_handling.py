@@ -9,7 +9,7 @@ import os
 strings = Strings()
 
 
-def load_yaml_and_handle_error(file_path: str) -> dict:
+def load_from_yaml(file_path: str) -> dict:
     try:
         with open(file_path, "r") as file:
             return yaml.safe_load(file)
@@ -25,7 +25,7 @@ def load_yaml_and_handle_error(file_path: str) -> dict:
     #     print(f"An unexpected error occurred: {e}")
 
 
-def save_to_yaml_and_handle_error(file_path: str, content: dict) -> None:
+def save_to_yaml(file_path: str, content: dict) -> None:
     try:
         with open(file_path, "w") as file:
             yaml.dump(content, file)
@@ -61,16 +61,16 @@ def load_total_storage() -> dict:
 
         file_path = custom_file_path
 
-    return load_yaml_and_handle_error(file_path)
+    return load_from_yaml(file_path)
 
 
 def load_total_competition_questions() -> dict:
-    file_path = (
+    default_file_path = (
         "/".join(__file__.split("/")[:-2])
         + "/content/competition_questions_multiple_choice.yaml"
     )
 
-    return load_yaml_and_handle_error(file_path)
+    return load_from_yaml(default_file_path)
 
 
 def copy_file_to_writable_dir(file_path: str, file_name: str, new_file_name: str = ""):
@@ -114,7 +114,7 @@ def read_scores_file():
     ):
         file_path = custom_scores_file_path
 
-    return load_yaml_and_handle_error(file_path)
+    return load_from_yaml(file_path)
 
 
 def get_scores_key(firetruck: str, key: str, questions: str = "firetrucks"):
@@ -157,7 +157,6 @@ def save_to_scores_file(
         "custom_scores.yaml",
     )
     custom_scores_exists = os.path.exists(custom_scores_file_path)
-    print(f'{custom_scores_exists = }')
 
     file_paths = [scores_file_path]
 
@@ -177,12 +176,9 @@ def save_to_scores_file(
     # update both scores files' competitions high scores
     elif questions == "competitions" and custom_scores_exists:
         file_paths.append(custom_scores_file_path)
-    
-    print(f'save-to-scores-file {file_paths = }')
-    print(f'{content = }')
 
     for file_path in file_paths:
-        save_to_yaml_and_handle_error(file_path, content)
+        save_to_yaml(file_path, content)
 
 
 def read_main_cfg() -> dict:
@@ -191,7 +187,7 @@ def read_main_cfg() -> dict:
         "main.cfg",
     )
 
-    return load_yaml_and_handle_error(file_path)
+    return load_from_yaml(file_path)
 
 
 def update_main_cfg(to_update: dict):
@@ -204,4 +200,44 @@ def update_main_cfg(to_update: dict):
         "main.cfg",
     )
 
-    save_to_yaml_and_handle_error(file_path, content)
+    save_to_yaml(file_path, content)
+
+
+def transfer_file(file_path: str, file_name: str, new_file_name: str = "") -> None:
+    file_current_dir = os.path.dirname(os.path.abspath(__file__))
+    file_relative_path = os.path.join(file_current_dir, file_path, file_name)
+    src = os.path.normpath(file_relative_path)
+
+    if new_file_name == "":
+        new_file_name = file_name
+
+    dst = os.path.join(
+        App.get_running_app().user_data_dir,  # type:ignore
+        new_file_name,
+    )
+    dst_file_exists = os.path.exists(dst)
+
+    if not dst_file_exists:
+        copy_file_to_writable_dir(file_path, file_name, new_file_name)
+
+    else:
+        existing_content = load_from_yaml(dst)
+        new_content = load_from_yaml(src)
+
+        updated_content = update_yaml_values(existing_content, new_content)
+
+        save_to_yaml(dst, updated_content)
+
+
+def update_yaml_values(source_yaml: dict, target_yaml: dict) -> dict:
+    if not isinstance(source_yaml, dict) or not isinstance(target_yaml, dict):
+        return target_yaml
+
+    for key, value in source_yaml.items():
+        if key in target_yaml:
+            if isinstance(value, dict) and isinstance(target_yaml[key], dict):
+                update_yaml_values(value, target_yaml[key])
+            else:
+                target_yaml[key] = value
+
+    return target_yaml

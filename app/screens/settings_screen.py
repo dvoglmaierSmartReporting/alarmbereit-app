@@ -11,7 +11,7 @@ import yaml
 from helper.file_handling import (
     update_main_cfg,
     copy_file_to_writable_dir,
-    save_to_yaml_and_handle_error,
+    save_to_yaml,
 )
 from helper.functions import create_scores_content
 
@@ -23,6 +23,16 @@ class LoadDialog(FloatLayout):
 
 class Settings_Screen(Screen):
     text_output = ObjectProperty(None)
+
+    def __init__(self, **kwargs):
+        super(Settings_Screen, self).__init__(**kwargs)
+        # TODO
+        # init switch according to main.cfg file content
+        # default: active=True, disabled=True
+        self.default_content_switch.active = True  # type: ignore
+        self.default_content_switch.disabled = True  # type: ignore
+        # if exists main.cfg
+        #   ...
 
     def dismiss_popup(self):
         self._popup.dismiss()
@@ -153,7 +163,7 @@ class Settings_Screen(Screen):
             App.get_running_app().user_data_dir,  # type:ignore
             "custom_scores.yaml",
         )
-        save_to_yaml_and_handle_error(file_path, content)
+        save_to_yaml(file_path, content)
 
         self.disable_upload_confirm_button()
         self.clear_text_output()
@@ -172,46 +182,4 @@ Factory.register("Settings_Screen", cls=Settings_Screen)
 Factory.register("LoadDialog", cls=LoadDialog)
 
 # TODO
-
-# introduce:
-#   - settings_screen.py + .kv
-#   - main.cfg
-#   - custom_scores.yaml and default_scores.yaml
-#   - custom firetrucks and default firetrucks
-
-# general logic:
-# default files in read-only at app dir
-# custom files in writeable dir
-# update content according to main.cfg
-
-# at start-up, if not exist, move main.cfg to writeable dir
-# save current config in main.cfg at storeable location
-
-# use default switch:
-#   if true:
-#       read default firetrucks
-#       use default_scores.yaml
-#   if false:
-#       check if custom firetrucks are available
-#       check if custom_scores.yaml is available, if not: create
-
-# custom firetrucks:
-# select file
-# validate content
-#   if false: display errors
-#   if okay:
-#       check if custom content already exists: -> overwrite custom firetruck...
-#   with user confirmation:
-#       upload file,
-#       store at writeable dir, (overwrite if exist)
-#       disable default_switch,
-#       use custom firetrucks,
-#       create custom_scores.yaml,
-#       use custom_scores.yaml
-
-# overwrite custom firetruck:
-# selected, validated, uploaded
-# warn user about irreversible steps
-# if accepted:
-#   replace custom firetruck file
-#   replace custom_scores.yaml
+# warn user about irreversible changes!

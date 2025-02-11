@@ -120,3 +120,4 @@ def create_scores_text(scores: dict) -> str:
     total = total_score + total_strike * factor
     output += f"Gesamtpunktzahl{separator}{str(total)} Punkte"
     return output
+

@@ -73,7 +73,11 @@ from helper.functions import (
     mode_bool2str,
     create_scores_text,
 )
-from helper.file_handling import copy_file_to_writable_dir, read_scores_file
+from helper.file_handling import (
+    copy_file_to_writable_dir,
+    read_scores_file,
+    transfer_file,
+)
 from helper.settings import Strings
 
 
@@ -178,11 +182,11 @@ class Start_Menu(Screen):
                 height=150,
                 size_hint_x=1,
             )
-            btn.bind(
+            btn.bind(  # type: ignore
                 on_release=self.manager.get_screen(
                     "fahrzeugkunde_menu"
                 ).on_button_release
-            )  # type: ignore
+            )
 
             # Add the button to the layout
             self.manager.get_screen(
@@ -207,8 +211,10 @@ class FeuerwehrApp(App):
     def build(self):
 
         # path relative to app/helper/file_handling.py
-        copy_file_to_writable_dir("../storage", "scores.yaml")
-        copy_file_to_writable_dir("../storage", "main.cfg")
+        # copy_file_to_writable_dir("../storage", "scores.yaml")
+        # copy_file_to_writable_dir("../storage", "main.cfg")
+        transfer_file("../storage", "scores.yaml")
+        transfer_file("../storage", "main.cfg")
 
         # lookup_firetruck_files_at_writable_dir()
         # validate_firetruck_files()
