@@ -3,12 +3,12 @@ class Settings:
         # training
         self.FEEDBACK_TRAINING_SEC = 2.0
         # game
-        self.FEEDBACK_GAME_SEC = 0.5
         self.INTERVAL_GAME_SEC = 0.1
         self.DISPLAY_EXTRA_TIME_LABEL_SEC = 2
         ## firetruck
         self.FIRETRUCK_START_TIME_SEC = 15.0
         self.FIRETRUCK_EXTRA_TIME_SEC = 10.0
+        self.FIRETRUCK_FEEDBACK_GAME_SEC = 0.5
         self.FIRETRUCK_CORRECT_FOR_EXTRA_TIME = 5
         self.FIRETRUCK_CORRECT_POINTS = 100
         self.FIRETRUCK_STRIKE_POINTS = 1
@@ -16,6 +16,7 @@ class Settings:
         ## competition
         self.COMPETITION_START_TIME_SEC = 90.0
         self.COMPETITION_EXTRA_TIME_SEC = 60.0
+        self.COMPETITION_FEEDBACK_GAME_SEC = 1.5
         self.COMPETITION_CORRECT_FOR_EXTRA_TIME = 4
         self.COMPETITION_CORRECT_POINTS = 100
 
@@ -37,10 +38,22 @@ class Strings:
         self.BUTTON_STR_FIRETRUCKS = "Fahrzeugkunde"
         self.BUTTON_STR_COMPETITIONS = "Bewerbsfragen"
         self.BUTTON_STR_STANDARDS = "Standardeinsätze\n(coming soon)"  # Standardeinsatz
+        self.BUTTON_STR_YOUTH = "Jugend\n(coming soon)"  # Wissenstest/-spiel
+
+        # settings screen
+        self.SWITCH_STR_DEFAULT_CONTENT = "Standardinhalte"
+        self.BUTTON_STR_SELECT_FILE = "Eigene Fahrzeuge laden"
+        self.BUTTON_STR_CONFIRM_UPLOAD = "Bestätigen"
+        self.TITLE_DIALOG_POPUP = "Datei auswählen"
+        self.BUTTON_DIALOG_POPUP_CANCEL = "Abbrechen"
+        self.BUTTON_DIALOG_POPUP_CONFIRM = "Auswählen"
 
         # competition training
         self.BUTTON_STR_SOLUTION = "Lösung"
         self.BUTTON_STR_RANDOM_QUESTION = "Zufällig"
+
+        # browse screen
+        self.BUTTON_STR_FILTER = "Filtern"
 
         self.trucks = {
             "TestTruck": "testing",

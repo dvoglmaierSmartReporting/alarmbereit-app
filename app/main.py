@@ -74,7 +74,6 @@ from helper.functions import (
     create_scores_text,
 )
 from helper.file_handling import (
-    copy_file_to_writable_dir,
     read_scores_file,
     transfer_file,
 )
@@ -211,13 +210,8 @@ class FeuerwehrApp(App):
     def build(self):
 
         # path relative to app/helper/file_handling.py
-        # copy_file_to_writable_dir("../storage", "scores.yaml")
-        # copy_file_to_writable_dir("../storage", "main.cfg")
         transfer_file("../storage", "scores.yaml")
         transfer_file("../storage", "main.cfg")
-
-        # lookup_firetruck_files_at_writable_dir()
-        # validate_firetruck_files()
 
         sm = ScreenManager()
         sm.add_widget(Start_Menu())

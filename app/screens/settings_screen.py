@@ -12,13 +12,26 @@ from helper.file_handling import (
     update_main_cfg,
     copy_file_to_writable_dir,
     save_to_yaml,
+    load_from_yaml,
+    update_yaml_values,
 )
 from helper.functions import create_scores_content
+from helper.settings import Strings
+
+
+strings = Strings()
 
 
 class LoadDialog(FloatLayout):
     load = ObjectProperty(None)
     cancel = ObjectProperty(None)
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.load_button.disabled = True  # type: ignore
+
+    def on_selection(self, instance, value):
+        self.load_button.disabled = not bool(value)  # type: ignore
 
 
 class Settings_Screen(Screen):
@@ -26,20 +39,57 @@ class Settings_Screen(Screen):
 
     def __init__(self, **kwargs):
         super(Settings_Screen, self).__init__(**kwargs)
-        # TODO
-        # init switch according to main.cfg file content
-        # default: active=True, disabled=True
-        self.default_content_switch.active = True  # type: ignore
-        self.default_content_switch.disabled = True  # type: ignore
-        # if exists main.cfg
-        #   ...
+
+        self.ids.default_content_label.text = strings.SWITCH_STR_DEFAULT_CONTENT
+        self.ids.select_file_button.text = strings.BUTTON_STR_SELECT_FILE
+        self.ids.upload_confirm_button.text = strings.BUTTON_STR_CONFIRM_UPLOAD
+
+        custom_file_path = os.path.join(
+            App.get_running_app().user_data_dir,  # type: ignore
+            "custom_firetruck_tools.yaml",
+        )
+        custom_file_exists = os.path.exists(custom_file_path)
+
+        main_cfg_file_path = os.path.join(
+            App.get_running_app().user_data_dir,  # type: ignore
+            "main.cfg",
+        )
+
+        use_default = load_from_yaml(main_cfg_file_path).get("content").get("use_default")  # type: ignore
+
+        if not custom_file_exists and use_default:
+            # keep at using default and disable switch as file is missing
+            self.default_content_switch.active = True  # type: ignore
+            self.default_content_switch.disabled = True  # type: ignore
+
+        elif not custom_file_exists and not use_default:
+            print(
+                "Error: Custom firetruck file not found. Switch back to default instead."
+            )
+            # Change to using default and disable switch as file is missing
+            self.default_content_switch.active = True  # type: ignore
+            self.default_content_switch.disabled = True  # type: ignore
+
+        elif custom_file_exists and use_default:
+            # keep at using default and enable switch to allow user choice
+            self.default_content_switch.active = True  # type: ignore
+            self.default_content_switch.disabled = False  # type: ignore
+
+        elif custom_file_exists and not use_default:
+            # keep at using custom and enable switch to allow user choice
+            self.default_content_switch.active = False  # type: ignore
+            self.default_content_switch.disabled = False  # type: ignore
 
     def dismiss_popup(self):
         self._popup.dismiss()
 
     def show_load(self):
         content = LoadDialog(load=self.load, cancel=self.dismiss_popup)
-        self._popup = Popup(title="Load file", content=content, size_hint=(0.9, 0.9))
+        content.cancel_button.text = strings.BUTTON_DIALOG_POPUP_CANCEL  # type: ignore
+        content.load_button.text = strings.BUTTON_DIALOG_POPUP_CONFIRM  # type: ignore
+        self._popup = Popup(
+            title=strings.TITLE_DIALOG_POPUP, content=content, size_hint=(0.9, 0.9)
+        )
         self._popup.open()
 
     def preview_load(self) -> str:
@@ -158,17 +208,30 @@ class Settings_Screen(Screen):
         )
 
         # init custom scores yaml
-        content = create_scores_content()
         file_path = os.path.join(
+            App.get_running_app().user_data_dir,  # type:ignore
+            "scores.yaml",
+        )
+
+        existing_content = load_from_yaml(file_path)
+        new_content = create_scores_content()
+
+        updated_comp_content = update_yaml_values(
+            existing_content.get("competitions"),  # type:ignore
+            new_content.get("competitions"),  # type:ignore
+        )
+        new_content["competitions"] = updated_comp_content
+
+        custom_file_path = os.path.join(
             App.get_running_app().user_data_dir,  # type:ignore
             "custom_scores.yaml",
         )
-        save_to_yaml(file_path, content)
+        save_to_yaml(custom_file_path, new_content)
 
         self.disable_upload_confirm_button()
         self.clear_text_output()
 
-    def default_content_switch2(self, switch, value):
+    def update_default_content_switch(self, switch, value):
         if value:
             update_main_cfg({"content": {"use_default": True}})
 

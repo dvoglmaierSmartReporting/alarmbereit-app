@@ -1,14 +1,20 @@
 from kivy.uix.label import Label
 from kivy.uix.screenmanager import Screen
-from kivy.clock import Clock
 
-
-from random import shuffle
 
 from helper.functions import load_total_storage
+from helper.settings import Strings
+
+
+strings = Strings()
 
 
 class Fahrzeugkunde_Browse(Screen):
+    def __init__(self, **kwargs):
+        super(Fahrzeugkunde_Browse, self).__init__(**kwargs)
+
+        self.ids.filter_button.text = strings.BUTTON_STR_FILTER
+
     def select_firetruck(self, selected_firetruck: str):
         # troubleshooting: fix firetruck
         # self.selected_firetruck = "Tank1" "Rüst+Lösch"

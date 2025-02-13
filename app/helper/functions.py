@@ -98,7 +98,7 @@ def create_scores_text(scores: dict) -> str:
                 total_score += score
                 output += f"{spacing}Best:{spacing}{score}{separator}{comp}\n"
 
-            output += "\n"
+            # output += "\n"
 
         elif category == "firetrucks":
             output += f"{strings.BUTTON_STR_FIRETRUCKS}:\n"
@@ -112,10 +112,10 @@ def create_scores_text(scores: dict) -> str:
                 # output += f"{divider}Best Strike:{spacing}{strike} x {str(factor)}{separator}{comp}\n"
                 output += f"{spacing}Best Strike:{spacing}{strike}{separator}{comp}\n"
 
-    output += "________________________________________\n"
+    output += "________________________________________________\n"
     output += f"Gesamt Best{separator}{str(total_score)} Punkte\n"
-    output += f"Gesamt Best Strikes{separator}{str(total_strike)} x {factor} Punkte\n"
-    output += f"\n"
+    output += f"Gesamt Best Strikes{separator}{str(total_strike)} x {factor} Punkte\n+\n"
+    output += "========================================\n"
 
     total = total_score + total_strike * factor
     output += f"Gesamtpunktzahl{separator}{str(total)} Punkte"

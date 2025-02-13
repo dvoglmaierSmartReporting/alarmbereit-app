@@ -241,4 +241,4 @@ class Bewerb_Game(Screen):
         # tool ends here. document tool and given answers in question history
         self.game.questions.append(self.current_question)
 
-        Clock.schedule_once(self.next_question, settings.FEEDBACK_GAME_SEC)
+        Clock.schedule_once(self.next_question, settings.FIRETRUCK_FEEDBACK_GAME_SEC)

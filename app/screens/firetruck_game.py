@@ -219,4 +219,4 @@ class Fahrzeugkunde_Game(Screen):
         # tool ends here. document tool and given answers in question history
         self.game.questions.append(self.current_question)
 
-        Clock.schedule_once(self.next_tool, settings.FEEDBACK_GAME_SEC)
+        Clock.schedule_once(self.next_tool, settings.COMPETITION_FEEDBACK_GAME_SEC)
