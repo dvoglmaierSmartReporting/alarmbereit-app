@@ -70,7 +70,7 @@ class Strings:
         }
 
 
-class Info_Screen_Text:
+class About_Text:
     def __init__(self) -> None:
         self.TEXT = """
         © 2025 Freiwillige Feuerwehr der Stadt Hallein

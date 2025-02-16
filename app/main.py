@@ -77,10 +77,11 @@ from helper.file_handling import (
     read_scores_file,
     transfer_file,
 )
-from helper.settings import Strings
+from helper.settings import Strings, About_Text
 
 
 strings = Strings()
+about_text = About_Text().TEXT
 
 # from helper.logging import log_and_call
 
@@ -153,12 +154,16 @@ class Start_Menu(Screen):
                 return result
         return None  # if no 'down' ToggleButton is found
 
-    def update_info_scores(self):
-        scores = read_scores_file()
-        # self.ids.scores_label.text = create_scores_text(scores)
-        self.manager.get_screen("info_screen").ids.scores_label.text = (
-            create_scores_text(scores)
-        )
+    def update_info_text(self):
+        info_text = about_text
+
+        info_text += f"\n{'_'*50}\n\n"
+
+        info_text += create_scores_text(read_scores_file())
+
+        info_text += f"{'\n'*4}"
+
+        self.manager.get_screen("info_screen").ids.info_text_label.text = info_text
 
     def update_firetruck_buttons(self):
         # load available firetrucks

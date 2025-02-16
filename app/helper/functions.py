@@ -115,7 +115,7 @@ def create_scores_text(scores: dict) -> str:
     output += "________________________________________________\n"
     output += f"Gesamt Best{separator}{str(total_score)} Punkte\n"
     output += f"Gesamt Best Strikes{separator}{str(total_strike)} x {factor} Punkte\n+\n"
-    output += "========================================\n"
+    output += "==========================================\n"
 
     total = total_score + total_strike * factor
     output += f"Gesamtpunktzahl{separator}{str(total)} Punkte"

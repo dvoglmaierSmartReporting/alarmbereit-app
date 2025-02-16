@@ -32,7 +32,7 @@
         on_release:
             app.root.current = "info_screen"
             root.manager.transition.direction = "left"
-            root.update_info_scores()
+            root.update_info_text()
 
     Button:
         id: settings_button
@@ -137,8 +137,7 @@
 <Info_Screen>:
     name: "info_screen"
 
-    about_label: about_label
-    scores_label: scores_label
+    info_text_label: info_text_label
 
     Button:
         text: "<"
@@ -153,25 +152,21 @@
     BoxLayout:
         orientation: 'vertical'
 
-        Label:
-            id: about_label
-            font_size: "18sp"
-            halign: "center"
-            size_hint: 1, 1
-        
-        #Label: 
-        #    # separator
-        #    text: "----------------------------------------------------------"
-        #    size_hint: 1, 0.1
-        
-        Label:
-            id: scores_label
-            font: "Courier New"
-            font_size: "15sp"
-            halign: "left"
-            markup: True
-            size_hint: 1, 4
-        
+        ScrollView:
+            id: question_scrollview
+            size_hint: 0.8, 0.8
+            pos_hint: {'center_x': 0.5}
+
+            Label:
+                id: info_text_label
+                font_size: "15sp"
+                halign: "left"
+                valign: "top"
+                size_hint_y: None
+                text_size: self.width, None
+                height: self.texture_size[1]
+                markup: True
+
 
 <Settings_Screen>:
     name: "settings_screen"
