@@ -161,7 +161,7 @@ class Start_Menu(Screen):
 
         info_text += create_scores_text(read_scores_file())
 
-        info_text += f"{'\n'*4}"
+        info_text += "\n\n\n\n"
 
         self.manager.get_screen("info_screen").ids.info_text_label.text = info_text
 

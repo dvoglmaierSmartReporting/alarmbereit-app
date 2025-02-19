@@ -1,10 +1,10 @@
 from kivy.app import App
 
-from helper.settings import Strings
-
 import yaml
 from shutil import copyfile
 import os
+
+from helper.settings import Strings
 
 strings = Strings()
 
