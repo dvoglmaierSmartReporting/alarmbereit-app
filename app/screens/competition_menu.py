@@ -24,30 +24,30 @@ class Bewerb_Menu(Screen):
                 height=150,
                 size_hint_x=1,
             )
-            btn.bind(on_release=self.on_button_release)  # type: ignore
-            self.bewerbe_layout.add_widget(btn)  # type: ignore
+            btn.bind(on_release=self.on_button_release)
+            self.bewerbe_layout.add_widget(btn)
 
     def on_button_release(self, instance):
         # on question selection, read mode label text from current screen
-        mode = mode_str2bool(self.mode_label.text.strip())  # type: ignore
+        mode = mode_str2bool(self.mode_label.text.strip())
         mode_training, mode_game, mode_browse, mode_images = mode
 
         # bind competition selection
         app = App.get_running_app()
 
         if mode_training:
-            app.root.current = "bewerb_training"  # type: ignore
-            app.root.transition.direction = "left"  # type: ignore
+            app.root.current = "bewerb_training"
+            app.root.transition.direction = "left"
             # continue game with selected competition
-            bewerb_training_screen = app.root.get_screen("bewerb_training")  # type: ignore
+            bewerb_training_screen = app.root.get_screen("bewerb_training")
             bewerb_training_screen.select_competition(instance.text)
             bewerb_training_screen.play()
 
         if mode_game:
-            app.root.current = "bewerb_game"  # type: ignore
-            app.root.transition.direction = "left"  # type: ignore
+            app.root.current = "bewerb_game"
+            app.root.transition.direction = "left"
             # continue game with selected competition
-            bewerb_game_screen = app.root.get_screen("bewerb_game")  # type: ignore
+            bewerb_game_screen = app.root.get_screen("bewerb_game")
             bewerb_game_screen.select_competition(instance.text)
             bewerb_game_screen.play()
 

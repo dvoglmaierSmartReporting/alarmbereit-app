@@ -13,8 +13,8 @@ class Bewerb_Training(Screen):
     def __init__(self, **kwargs):
         super(Bewerb_Training, self).__init__(**kwargs)
         # update button strings
-        self.solution_button.text = strings.BUTTON_STR_SOLUTION  # type: ignore
-        self.random_question_button.text = strings.BUTTON_STR_RANDOM_QUESTION  # type: ignore
+        self.solution_button.text = strings.BUTTON_STR_SOLUTION
+        self.random_question_button.text = strings.BUTTON_STR_RANDOM_QUESTION
 
     def select_competition(self, selected_competition):
         # troubleshooting: fix competition
@@ -29,22 +29,22 @@ class Bewerb_Training(Screen):
             self.selected_competition
         )
 
-        self.question_ids = list(self.competition_dict.keys())  # type: ignore
-        self.question_ids_bak = list(self.competition_dict.keys())  # type: ignore
+        self.question_ids = list(self.competition_dict.keys())
+        self.question_ids_bak = list(self.competition_dict.keys())
 
         self.question_ids_min = min([int(x) for x in self.question_ids])
         self.question_ids_max = max([int(x) for x in self.question_ids])
 
     def check_arrow_buttons(self):
         if self.current_question.question_id == self.question_ids_min:
-            self.previous_question_button.disabled = True  # type: ignore
+            self.previous_question_button.disabled = True
         else:
-            self.previous_question_button.disabled = False  # type: ignore
+            self.previous_question_button.disabled = False
 
         if self.current_question.question_id == self.question_ids_max:
-            self.next_question_button.disabled = True  # type: ignore
+            self.next_question_button.disabled = True
         else:
-            self.next_question_button.disabled = False  # type: ignore
+            self.next_question_button.disabled = False
 
     def play(self):
         # init GameCore class instance
@@ -63,19 +63,19 @@ class Bewerb_Training(Screen):
         self.next_question()
 
     def display_question(self):
-        self.question_id_label.text = (  # type: ignore
+        self.question_id_label.text = (
             f"{self.current_question.question_id} von {self.question_ids_max}   "
         )
-        self.question_label.text = self.current_question.question  # type: ignore
+        self.question_label.text = self.current_question.question
 
     def random_question(self):
         # move scrollview back to top
         self.ids.question_scrollview.scroll_y = 1
 
-        self.solution_button.disabled = False  # type: ignore
+        self.solution_button.disabled = False
 
-        self.previous_question_button.disabled = False  # type: ignore
-        self.next_question_button.disabled = False  # type: ignore
+        self.previous_question_button.disabled = False
+        self.next_question_button.disabled = False
 
         if len(self.question_ids) == 0:
             self.question_ids = list(set(self.question_ids_bak))
@@ -89,8 +89,8 @@ class Bewerb_Training(Screen):
         self.current_question = CompetitionQuestion(
             competition=self.selected_competition,
             question_id=upcoming_question_id,
-            question=self.competition_dict.get(upcoming_question_id).get("Q"),  # type: ignore
-            answers=self.competition_dict.get(upcoming_question_id).get("A"),  # type: ignore
+            question=self.competition_dict.get(upcoming_question_id).get("Q"),
+            answers=self.competition_dict.get(upcoming_question_id).get("A"),
         )
 
         self.display_question()
@@ -99,7 +99,7 @@ class Bewerb_Training(Screen):
         # move scrollview to top
         self.ids.question_scrollview.scroll_y = 1
 
-        self.solution_button.disabled = False  # type: ignore
+        self.solution_button.disabled = False
 
         if not previous:
             upcoming_question_id = int(self.current_question.question_id) + 1
@@ -109,8 +109,8 @@ class Bewerb_Training(Screen):
         self.current_question = CompetitionQuestion(
             competition=self.selected_competition,
             question_id=upcoming_question_id,
-            question=self.competition_dict.get(upcoming_question_id).get("Q"),  # type: ignore
-            answers=self.competition_dict.get(upcoming_question_id).get("A"),  # type: ignore
+            question=self.competition_dict.get(upcoming_question_id).get("Q"),
+            answers=self.competition_dict.get(upcoming_question_id).get("A"),
         )
 
         # remove viewed question from list
@@ -122,7 +122,7 @@ class Bewerb_Training(Screen):
         self.display_question()
 
     def reveal_answer(self):
-        self.solution_button.disabled = True  # type: ignore
+        self.solution_button.disabled = True
 
-        self.question_label.text += "\n\n" + self.current_question.correct_answer  # type: ignore
+        self.question_label.text += "\n\n" + self.current_question.correct_answer
         self.ids.question_label.height = self.ids.question_label.texture_size[1]

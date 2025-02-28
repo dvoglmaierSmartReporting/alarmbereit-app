@@ -89,7 +89,6 @@ def copy_file_to_writable_dir(file_path: str, file_name: str, new_file_name: str
 
     # if not os.path.exists(dst):
     #     copyfile(src, dst)
-    print(f"{dst = }")
     copyfile(src, dst)
 
 

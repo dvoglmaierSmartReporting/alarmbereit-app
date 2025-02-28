@@ -55,6 +55,10 @@ class Strings:
         # browse screen
         self.BUTTON_STR_FILTER = "Filtern"
 
+        # error popup
+        self.TITLE_ERROR_POPUP = "Fehlermeldung"
+        self.BUTTON_CLOSE_POPUP = "Schließen"
+
         self.trucks = {
             "TestTruck": "testing",
             "RüstLösch": "RLFA 2000",

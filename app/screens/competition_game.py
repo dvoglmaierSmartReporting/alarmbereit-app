@@ -23,26 +23,26 @@ class Bewerb_Game(Screen):
         # troubleshooting: fix competition
         # self.selected_competition = "Funk"
         self.selected_competition = selected_competition
-        self.competition_label.text = f"   {selected_competition}"  # type: ignore
+        self.competition_label.text = f"   {selected_competition}"
 
     def hide_label(self, *args):
-        self.extra_time_label.opacity = 0  # type: ignore
+        self.extra_time_label.opacity = 0
 
     def reset_timer(self):
         self.time_left = settings.COMPETITION_START_TIME_SEC
 
         # self.timer_label.text = f"{str(self.time_left)} s  "
-        self.timer_label.text = f""  # type: ignore
+        self.timer_label.text = f""
 
         # self.set_progress_bar()
-        self.progress_bar.max = settings.COMPETITION_START_TIME_SEC  # type: ignore
+        self.progress_bar.max = settings.COMPETITION_START_TIME_SEC
 
     def add_time(self):
         self.time_left = round(self.time_left + settings.COMPETITION_EXTRA_TIME_SEC, 1)
 
-        self.extra_time_label.text = f"+ {settings.COMPETITION_EXTRA_TIME_SEC} s  "  # type: ignore
+        self.extra_time_label.text = f"+ {settings.COMPETITION_EXTRA_TIME_SEC} s  "
 
-        self.extra_time_label.opacity = 1  # type: ignore
+        self.extra_time_label.opacity = 1
 
         Clock.schedule_once(
             self.hide_label,
@@ -50,7 +50,7 @@ class Bewerb_Game(Screen):
         )
 
     def update_progress_bar(self):
-        self.progress_bar.value = self.time_left  # type: ignore
+        self.progress_bar.value = self.time_left
 
     def update_timer(self, *args):
         # update game time
@@ -61,10 +61,10 @@ class Bewerb_Game(Screen):
 
             if not self.time_left == 0.0:
                 # self.timer_label.text = f"{str(self.time_left)} s  "
-                self.timer_label.text = f""  # hide label for UI testing  # type: ignore
+                self.timer_label.text = f""  # hide label for UI testing
 
             else:
-                self.timer_label.text = "Ende  "  # type: ignore
+                self.timer_label.text = "Ende  "
                 # todo: disable buttons between game end and menu screen animation
         else:
             # Clock.unschedule(self.update_timer)  # Stop the timer when it reaches 0
@@ -73,11 +73,11 @@ class Bewerb_Game(Screen):
 
     def increment_score(self, add: int = settings.COMPETITION_CORRECT_POINTS):
         self.game.score += add
-        self.score_label.text = f"{str(self.game.score)}  "  # type: ignore
+        self.score_label.text = f"{str(self.game.score)}  "
 
     def update_score_labels(self):
-        self.score_label.text = f"{str(self.game.score)}  "  # type: ignore
-        self.high_score_label.text = f"Best: {str(self.current_high_score)}  "  # type: ignore
+        self.score_label.text = f"{str(self.game.score)}  "
+        self.high_score_label.text = f"Best: {str(self.current_high_score)}  "
 
     def end_game(self):
         Clock.unschedule(self.update_timer)  # Stop the timer when it reaches 0
@@ -88,16 +88,16 @@ class Bewerb_Game(Screen):
             )
 
         app = App.get_running_app()
-        app.root.current = "bewerb_menu"  # type: ignore
-        app.root.transition.direction = "right"  # type: ignore
+        app.root.current = "bewerb_menu"
+        app.root.transition.direction = "right"
 
     def reset_competition_questions(self):
         self.competition_dict = load_total_competition_questions().get(
             self.selected_competition
         )
 
-        self.question_ids = list(self.competition_dict.keys())  # type: ignore
-        self.question_ids_bak = list(self.competition_dict.keys())  # type: ignore
+        self.question_ids = list(self.competition_dict.keys())
+        self.question_ids_bak = list(self.competition_dict.keys())
 
         self.question_ids_min = min([int(x) for x in self.question_ids])
         self.question_ids_max = max([int(x) for x in self.question_ids])
@@ -150,8 +150,8 @@ class Bewerb_Game(Screen):
             self.current_question = CompetitionQuestion(
                 competition=self.selected_competition,
                 question_id=current_question,
-                question=self.competition_dict.get(current_question).get("Q"),  # type: ignore
-                answers=self.competition_dict.get(current_question).get("A"),  # type: ignore
+                question=self.competition_dict.get(current_question).get("Q"),
+                answers=self.competition_dict.get(current_question).get("A"),
             )
 
             # avoid missing question content
@@ -160,15 +160,15 @@ class Bewerb_Game(Screen):
 
         self.display_question()
 
-        self.answer_buttons_layout.clear_widgets()  # type: ignore
+        self.answer_buttons_layout.clear_widgets()
 
         for letter in answer_idx.values():
             btn = Button(text=letter, font_size="45sp")
-            btn.bind(on_press=self.on_answer)  # type: ignore
-            self.answer_buttons_layout.add_widget(btn)  # type: ignore
+            btn.bind(on_press=self.on_answer)
+            self.answer_buttons_layout.add_widget(btn)
 
     def display_question(self):
-        self.question_id_label.text = (  # type: ignore
+        self.question_id_label.text = (
             f"{self.current_question.question_id} von {self.question_ids_max}   "
         )
 
@@ -179,7 +179,7 @@ class Bewerb_Game(Screen):
         ):
             text += f"[b]{letter}:[/b]  {answer}\n\n"
 
-        self.question_label.text = text  # type: ignore
+        self.question_label.text = text
 
     def correct_answer(self):
         self.increment_score()
@@ -210,7 +210,7 @@ class Bewerb_Game(Screen):
         else:
             self.incorrect_answer()
 
-        children = self.answer_buttons_layout.children  # type: ignore
+        children = self.answer_buttons_layout.children
 
         # always identify and indicate the correct answer
         for child in children:
@@ -230,7 +230,7 @@ class Bewerb_Game(Screen):
             (
                 instance.text == correct_answer_button,  # was the answer correct?
                 instance.text,  # given answer by user, button and text
-                self.current_question.shuffled_answers[given_answer_idx],  # type: ignore
+                self.current_question.shuffled_answers[given_answer_idx],
             )
         )
 
@@ -241,4 +241,4 @@ class Bewerb_Game(Screen):
         # tool ends here. document tool and given answers in question history
         self.game.questions.append(self.current_question)
 
-        Clock.schedule_once(self.next_question, settings.FIRETRUCK_FEEDBACK_GAME_SEC)
+        Clock.schedule_once(self.next_question, settings.COMPETITION_FEEDBACK_GAME_SEC)

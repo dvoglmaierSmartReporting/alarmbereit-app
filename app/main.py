@@ -1,4 +1,4 @@
-from kivy.logger import Logger
+# from kivy.logger import Logger
 
 # from kivy.config import Config
 
@@ -51,10 +51,12 @@ from kivy.logger import Logger
 
 from kivy.app import App
 from kivy.uix.button import Button
+from kivy.uix.label import Label
 from kivy.uix.togglebutton import ToggleButton
 from kivy.uix.screenmanager import ScreenManager, Screen
 
-from inspect import currentframe
+# from inspect import currentframe
+import traceback
 
 from screens.info_screen import Info_Screen
 from screens.settings_screen import Settings_Screen
@@ -66,6 +68,7 @@ from screens.firetruck_images import Fahrzeugkunde_Images
 from screens.competition_menu import Bewerb_Menu
 from screens.competition_training import Bewerb_Training
 from screens.competition_game import Bewerb_Game
+from screens.error_popup import ErrorPopup
 
 from helper.functions import (
     load_total_storage,
@@ -77,11 +80,11 @@ from helper.file_handling import (
     read_scores_file,
     transfer_file,
 )
-from helper.settings import Strings, About_Text
+from helper.settings import Strings
 
+from typing import cast
 
 strings = Strings()
-about_text = About_Text().TEXT
 
 # from helper.logging import log_and_call
 
@@ -97,46 +100,59 @@ class Start_Menu(Screen):
     # @log_and_call("test")
     def __init__(self, **kwargs):
         super(Start_Menu, self).__init__(**kwargs)
-        Logger.info("Start_Menu: __init__")
-        Logger.info(f"Start_Menu: {__name__ = }")
+        # Logger.info("Start_Menu: __init__")
+        # Logger.info(f"Start_Menu: {__name__ = }")
 
-        this_function_name = currentframe().f_code.co_name  # type: ignore
-        Logger.info(f"Start_Menu: {this_function_name = }")
+        # this_function_name = currentframe().f_code.co_name
+        # Logger.info(f"Start_Menu: {this_function_name = }")
+
+        # type annotations
+        self.info_button = cast(Button, self.info_button)
+        # self.settings_button = cast(Button, self.settings_button)
+        self.training_button = cast(Button, self.training_button)
+        self.game_button = cast(Button, self.game_button)
+        self.browse_button = cast(Button, self.browse_button)
+        # self.images_button = cast(Button, self.images_button)
+        self.firetrucks_button = cast(Button, self.firetrucks_button)
+        self.competitions_button = cast(Button, self.competitions_button)
+        # self.standards_button = cast(Button, self.standards_button)
+        self.mode_label = cast(Label, self.mode_label)
+        self.questions_label = cast(Label, self.questions_label)
 
         # update button strings
-        self.info_button.text = strings.BUTTON_STR_INFO  # type: ignore
-        self.settings_button.text = strings.BUTTON_STR_SETTINGS  # type: ignore
-        self.training_button.text = strings.BUTTON_STR_TRAINING  # type: ignore
-        self.game_button.text = strings.BUTTON_STR_GAME  # type: ignore
-        self.browse_button.text = strings.BUTTON_STR_BROWSE  # type: ignore
-        # self.images_button.text = strings.BUTTON_STR_IMAGES  # type: ignore
-        self.firetrucks_button.text = strings.BUTTON_STR_FIRETRUCKS  # type: ignore
-        self.competitions_button.text = strings.BUTTON_STR_COMPETITIONS  # type: ignore
-        # self.standards_button.text = strings.BUTTON_STR_STANDARDS  # type: ignore
+        self.info_button.text = strings.BUTTON_STR_INFO
+        # self.settings_button.text = strings.BUTTON_STR_SETTINGS
+        self.training_button.text = strings.BUTTON_STR_TRAINING
+        self.game_button.text = strings.BUTTON_STR_GAME
+        self.browse_button.text = strings.BUTTON_STR_BROWSE
+        # self.images_button.text = strings.BUTTON_STR_IMAGES
+        self.firetrucks_button.text = strings.BUTTON_STR_FIRETRUCKS
+        self.competitions_button.text = strings.BUTTON_STR_COMPETITIONS
+        # self.standards_button.text = strings.BUTTON_STR_STANDARDS
 
         # update label strings
-        self.mode_label.text = strings.LABEL_STR_MODE  # type: ignore
-        self.questions_label.text = strings.LABEL_STR_QUESTIONS  # type: ignore
+        self.mode_label.text = strings.LABEL_STR_MODE
+        self.questions_label.text = strings.LABEL_STR_QUESTIONS
 
-        # self.standards_button.disabled = True  # type: ignore
+        # self.standards_button.disabled = True
 
     def on_button_release2(self):
         # if mode change, read mode label from current selection
-        self.mode = mode_str2bool(self.find_down_toggle_button(self))  # type: ignore
+        self.mode = mode_str2bool(self.find_down_toggle_button(self))
 
         # disable not existing combinations
-        self.firetrucks_button.disabled = False  # type: ignore
-        self.competitions_button.disabled = False  # type: ignore
-        # self.standards_button.disabled = False  # type: ignore
+        self.firetrucks_button.disabled = False
+        self.competitions_button.disabled = False
+        # self.standards_button.disabled = False
         mode_training, mode_game, mode_browse, mode_images = self.mode
         if mode_images:
-            self.firetrucks_button.disabled = True  # type: ignore
+            self.firetrucks_button.disabled = True
         # if mode_game or mode_images or mode_browse:
         if mode_images or mode_browse:
             # if mode_game or mode_images:
-            self.competitions_button.disabled = True  # type: ignore
+            self.competitions_button.disabled = True
         # if mode_training or mode_game or mode_images or mode_browse:
-        #     self.standards_button.disabled = True  # type: ignore
+        #     self.standards_button.disabled = True
 
     def forward_mode2menu(self, menu_screen: str):
         selected_mode = mode_bool2str(self.mode)
@@ -144,7 +160,7 @@ class Start_Menu(Screen):
         self.manager.get_screen(menu_screen).ids.mode_label.text = f"{selected_mode}   "
 
     # def find_down_toggle_button(self, widget, selected_mode=None):
-    def find_down_toggle_button(self, widget):
+    def find_down_toggle_button(self, widget) -> str:
         # Recursively search for a ToggleButton in the 'down' state.
         if isinstance(widget, ToggleButton) and widget.state == "down":
             return widget.text
@@ -152,14 +168,10 @@ class Start_Menu(Screen):
             result = self.find_down_toggle_button(child)
             if result:  # If a 'down' ToggleButton is found, return its text
                 return result
-        return None  # if no 'down' ToggleButton is found
+        return ""  # if no 'down' ToggleButton is found
 
     def update_info_text(self):
-        info_text = about_text
-
-        info_text += f"\n{'_'*50}\n\n"
-
-        info_text += create_scores_text(read_scores_file())
+        info_text = create_scores_text(read_scores_file())
 
         info_text += "\n\n\n\n"
 
@@ -186,7 +198,7 @@ class Start_Menu(Screen):
                 height=150,
                 size_hint_x=1,
             )
-            btn.bind(  # type: ignore
+            btn.bind(
                 on_release=self.manager.get_screen(
                     "fahrzeugkunde_menu"
                 ).on_button_release
@@ -195,9 +207,7 @@ class Start_Menu(Screen):
             # Add the button to the layout
             self.manager.get_screen(
                 "fahrzeugkunde_menu"
-            ).ids.firetrucks_layout.add_widget(
-                btn
-            )  # type: ignore
+            ).ids.firetrucks_layout.add_widget(btn)
 
 
 class CustomToggleButton(ToggleButton):  # used in feuerwehr.kv
@@ -214,24 +224,35 @@ class CustomToggleButton(ToggleButton):  # used in feuerwehr.kv
 class FeuerwehrApp(App):
     def build(self):
 
-        # path relative to app/helper/file_handling.py
-        transfer_file("../storage", "scores.yaml")
-        transfer_file("../storage", "main.cfg")
+        try:
+            # path relative to app/helper/file_handling.py
+            transfer_file("../storage", "scores.yaml")
+            transfer_file("../storage", "main.cfg")
 
-        sm = ScreenManager()
-        sm.add_widget(Start_Menu())
-        sm.add_widget(Info_Screen())
-        sm.add_widget(Settings_Screen())
-        sm.add_widget(Fahrzeugkunde_Menu())
-        sm.add_widget(Bewerb_Menu())
-        sm.add_widget(Fahrzeugkunde_Training())
-        sm.add_widget(Fahrzeugkunde_Game())
-        sm.add_widget(Fahrzeugkunde_Browse())
-        sm.add_widget(Fahrzeugkunde_Images())
-        sm.add_widget(Bewerb_Training())
-        sm.add_widget(Bewerb_Game())
+            sm = ScreenManager()
+            sm.add_widget(Start_Menu())
+            sm.add_widget(Info_Screen())
+            sm.add_widget(Settings_Screen())
+            sm.add_widget(Fahrzeugkunde_Menu())
+            sm.add_widget(Bewerb_Menu())
+            sm.add_widget(Fahrzeugkunde_Training())
+            sm.add_widget(Fahrzeugkunde_Game())
+            sm.add_widget(Fahrzeugkunde_Browse())
+            sm.add_widget(Fahrzeugkunde_Images())
+            sm.add_widget(Bewerb_Training())
+            sm.add_widget(Bewerb_Game())
 
-        return sm
+            return sm
+
+        except Exception as e:
+            error_message = f"An error occurred:\n{str(e)}\n{traceback.format_exc()}"
+            self.show_error_popup(error_message)
+            return None  # Return None to prevent further crashes
+
+    # test
+    def show_error_popup(self, message="An unknown error occurred!"):
+        popup = ErrorPopup(message)
+        popup.open()
 
 
 if __name__ == "__main__":

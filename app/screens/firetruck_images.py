@@ -8,7 +8,7 @@ class Fahrzeugkunde_Images(Screen):
     #     super(Fahrzeugkunde_Images, self).__init__(**kwargs)
 
     def load_image(self):
-        self.scatter.clear_widgets()  # type: ignore
+        self.scatter.clear_widgets()
 
         image = Image(
             source="assets/Rüst_G1_default-min.jpg",
@@ -16,11 +16,11 @@ class Fahrzeugkunde_Images(Screen):
             # keep_ratio=True,
             fit_mode="contain",
         )
-        self.scatter.add_widget(image)  # type: ignore
+        self.scatter.add_widget(image)
 
         # Bind the size and position of the image to the scatter
-        self.scatter.bind(size=self.update_image_size)  # type: ignore
-        self.scatter.bind(pos=self.update_image_pos)  # type: ignore
+        self.scatter.bind(size=self.update_image_size)
+        self.scatter.bind(pos=self.update_image_pos)
 
     def update_image_size(self, instance, value):
         instance.children[0].size = instance.size
@@ -32,4 +32,4 @@ class Fahrzeugkunde_Images(Screen):
         # troubleshooting: fix firetruck
         # self.selected_firetruck = "Tank1" "Rüst+Lösch"
         self.selected_firetruck = selected_firetruck
-        self.firetruck_label.text = f"   {selected_firetruck}"  # type: ignore
+        self.firetruck_label.text = f"   {selected_firetruck}"

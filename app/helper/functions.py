@@ -79,9 +79,12 @@ def create_scores_content() -> dict:
     return scores
 
 
-def create_scores_text(scores: dict) -> str:
+from typing import cast
+
+
+def create_scores_text(scores: dict[str, dict[str, dict[str, int]]]) -> str:
     output = ""
-    spacing = "    "
+    spacing = "      "
     separator = "  -  "
     # divider = "  |  "
     total_score = 0
@@ -89,35 +92,36 @@ def create_scores_text(scores: dict) -> str:
     total = 0
     factor = settings.FIRETRUCK_STRIKE_FACTOR
 
-    for category in scores:
+    for category, competitions in scores.items():
         if category == "competitions":
             output += f"{strings.BUTTON_STR_COMPETITIONS}:\n"
 
-            for comp in scores.get(category):  # type: ignore
-                score = scores.get(category).get(comp).get("high_score")  # type: ignore
+            for comp, data in competitions.items():
+                score = data.get("high_score", 0)
                 total_score += score
-                output += f"{spacing}Best:{spacing}{score}{separator}{comp}\n"
-
-            # output += "\n"
+                dynamic_spacing = " " * (14 - len(str(score)) * 2)
+                output += f"{spacing}{spacing}Best:{dynamic_spacing}{score}{separator}{comp}\n"
 
         elif category == "firetrucks":
             output += f"{strings.BUTTON_STR_FIRETRUCKS}:\n"
 
-            for comp in scores.get(category):  # type: ignore
-                score = scores.get(category).get(comp).get("high_score")  # type: ignore
+            for comp, data in competitions.items():
+                score = data.get("high_score", 0)
                 total_score += score
-                output += f"{spacing}Best:{spacing}{score}"
-                strike = scores.get(category).get(comp).get("high_strike")  # type: ignore
+                dynamic_spacing = " " * (14 - len(str(score)) * 2)
+                output += f"{spacing}{spacing}Best:{dynamic_spacing}{score}"
+                strike = data.get("high_strike", 0)
                 total_strike += strike
-                # output += f"{divider}Best Strike:{spacing}{strike} x {str(factor)}{separator}{comp}\n"
+                dynamic_spacing = " " * (10 - len(str(strike)))
                 output += f"{spacing}Best Strike:{spacing}{strike}{separator}{comp}\n"
 
-    output += "________________________________________________\n"
+    output += "________________________________________\n"
     output += f"Gesamt Best{separator}{str(total_score)} Punkte\n"
-    output += f"Gesamt Best Strikes{separator}{str(total_strike)} x {factor} Punkte\n+\n"
-    output += "==========================================\n"
+    output += (
+        f"Gesamt Best Strikes{separator}{str(total_strike)} x {factor} Punkte\n+\n"
+    )
+    output += "========================================\n"
 
     total = total_score + total_strike * factor
     output += f"Gesamtpunktzahl{separator}{str(total)} Punkte"
     return output
-

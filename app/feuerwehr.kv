@@ -21,7 +21,7 @@
     # standards_button: standards_button
 
     info_button: info_button
-    settings_button: settings_button
+    # settings_button: settings_button
     
     Button:
         id: info_button
@@ -34,15 +34,15 @@
             root.manager.transition.direction = "left"
             root.update_info_text()
 
-    Button:
-        id: settings_button
-        font_size: "32sp"
-        size_hint: None, None
-        size: "150dp", "100dp"
-        pos_hint: {'right': 1, 'top': 1}
-        on_release:
-            app.root.current = "settings_screen"
-            root.manager.transition.direction = "left"
+    #Button:
+    #    id: settings_button
+    #    font_size: "32sp"
+    #    size_hint: None, None
+    #    size: "150dp", "100dp"
+    #    pos_hint: {'right': 1, 'top': 1}
+    #    on_release:
+    #        app.root.current = "settings_screen"
+    #        root.manager.transition.direction = "left"
 
     BoxLayout:
         orientation: "vertical"
@@ -137,6 +137,7 @@
 <Info_Screen>:
     name: "info_screen"
 
+    about_label: about_label
     info_text_label: info_text_label
 
     Button:
@@ -152,9 +153,26 @@
     BoxLayout:
         orientation: 'vertical'
 
+        Label: # placeholder
+            size_hint: 1, 1
+
+        Label:
+            id: about_label
+            size_hint: 1, 2
+
+        BoxLayout:
+            size_hint_y: None
+            height: 2
+            canvas.before:
+                Color:
+                    rgba: 0.5, 0.5, 0.5, 1
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+
         ScrollView:
             id: question_scrollview
-            size_hint: 0.8, 0.8
+            size_hint: 1, 7
             pos_hint: {'center_x': 0.5}
 
             Label:

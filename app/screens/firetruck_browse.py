@@ -19,7 +19,7 @@ class Fahrzeugkunde_Browse(Screen):
         # troubleshooting: fix firetruck
         # self.selected_firetruck = "Tank1" "Rüst+Lösch"
         self.selected_firetruck = selected_firetruck
-        self.firetruck_label.text = f"{selected_firetruck}   "  # type: ignore
+        self.firetruck_label.text = f"{selected_firetruck}   "
 
     def load_firetruck(self):
         total_storage = load_total_storage()
@@ -36,8 +36,8 @@ class Fahrzeugkunde_Browse(Screen):
             halign="left",
             text_size=(self.width, None),
         )
-        label.bind(  # type: ignore
-            size=label.setter("text_size")  # type: ignore
+        label.bind(
+            size=label.setter("text_size")
         )  # Update text_size on label size change
         return label
 
@@ -55,7 +55,7 @@ class Fahrzeugkunde_Browse(Screen):
             valign="middle",
         )
         label.text_size = (label.width, None)
-        label.bind(  # type: ignore
+        label.bind(
             width=lambda instance, value: setattr(instance, "text_size", (value, None))
         )
         return label
@@ -68,7 +68,7 @@ class Fahrzeugkunde_Browse(Screen):
         for room in truck.keys():
             label_container.add_widget(self.give_room_label(room))
 
-            for tool in truck.get(room):  # type: ignore
+            for tool in truck.get(room):
                 label_container.add_widget(self.give_item_label(tool))
 
         # exceed list by empty entry
@@ -79,7 +79,7 @@ class Fahrzeugkunde_Browse(Screen):
         self.add_items(self.firetruck)
 
     def filter_list(self):
-        filter_text = self.filter_text.text # type: ignore
+        filter_text = self.filter_text.text  # type: ignore
 
         # Dictionary comprehension with case-insensitive filtering
         filtered_dict = {

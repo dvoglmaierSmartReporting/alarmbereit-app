@@ -24,26 +24,26 @@ class Fahrzeugkunde_Game(Screen):
         # troubleshooting: fix firetruck
         # self.selected_firetruck = "Tank1" "Rüst+Lösch"
         self.selected_firetruck = selected_firetruck
-        self.firetruck_label.text = f"   {selected_firetruck}"  # type: ignore
+        self.firetruck_label.text = f"   {selected_firetruck}"
 
     def hide_label(self, *args):
-        self.extra_time_label.opacity = 0  # type: ignore
+        self.extra_time_label.opacity = 0
 
     def reset_timer(self):
         self.time_left = settings.FIRETRUCK_START_TIME_SEC
 
         # self.timer_label.text = f"{str(self.time_left)} s  "
-        self.timer_label.text = f""  # type: ignore
+        self.timer_label.text = f""
 
         # self.set_progress_bar()
-        self.progress_bar.max = settings.FIRETRUCK_START_TIME_SEC  # type: ignore
+        self.progress_bar.max = settings.FIRETRUCK_START_TIME_SEC
 
     def add_time(self):
         self.time_left = round(self.time_left + settings.FIRETRUCK_EXTRA_TIME_SEC, 1)
 
-        self.extra_time_label.text = f"+ {settings.FIRETRUCK_EXTRA_TIME_SEC} s  "  # type: ignore
+        self.extra_time_label.text = f"+ {settings.FIRETRUCK_EXTRA_TIME_SEC} s  "
 
-        self.extra_time_label.opacity = 1  # type: ignore
+        self.extra_time_label.opacity = 1
 
         Clock.schedule_once(
             self.hide_label,
@@ -51,7 +51,7 @@ class Fahrzeugkunde_Game(Screen):
         )
 
     def update_progress_bar(self):
-        self.progress_bar.value = self.time_left  # type: ignore
+        self.progress_bar.value = self.time_left
 
     def update_timer(self, *args):
         # update game time
@@ -62,10 +62,10 @@ class Fahrzeugkunde_Game(Screen):
 
             if not self.time_left == 0.0:
                 # self.timer_label.text = f"{str(self.time_left)} s  "
-                self.timer_label.text = f""  # hide label for UI testing  # type: ignore
+                self.timer_label.text = f""  # hide label for UI testing
 
             else:
-                self.timer_label.text = "Ende  "  # type: ignore
+                self.timer_label.text = "Ende  "
                 # todo: disable buttons between game end and menu screen animation
         else:
             # Clock.unschedule(self.update_timer)  # Stop the timer when it reaches 0
@@ -74,11 +74,11 @@ class Fahrzeugkunde_Game(Screen):
 
     def increment_score(self, add: int = settings.FIRETRUCK_CORRECT_POINTS):
         self.game.score += add
-        self.score_label.text = f"{str(self.game.score)}  "  # type: ignore
+        self.score_label.text = f"{str(self.game.score)}  "
 
     def update_score_labels(self):
-        self.score_label.text = f"{str(self.game.score)}  "  # type: ignore
-        self.high_score_label.text = f"Best: {str(self.current_high_score)}  "  # type: ignore
+        self.score_label.text = f"{str(self.game.score)}  "
+        self.high_score_label.text = f"Best: {str(self.current_high_score)}  "
 
     def end_game(self):
         Clock.unschedule(self.update_timer)
@@ -87,8 +87,8 @@ class Fahrzeugkunde_Game(Screen):
             save_to_scores_file(self.selected_firetruck, "high_score", self.game.score)
 
         app = App.get_running_app()
-        app.root.current = "fahrzeugkunde_menu"  # type: ignore
-        app.root.transition.direction = "right"  # type: ignore
+        app.root.current = "fahrzeugkunde_menu"
+        app.root.transition.direction = "right"
 
     def reset_tool_list(self):
         (self.firetruck_rooms, self.tools, self.tools_locations) = (
@@ -129,17 +129,17 @@ class Fahrzeugkunde_Game(Screen):
         self.current_question = ToolQuestion(
             firetruck=self.selected_firetruck,
             tool=current_tool,
-            rooms=list(set(self.tools_locations.get(current_tool))),  # type: ignore
+            rooms=list(set(self.tools_locations.get(current_tool))),
         )
 
-        self.tool_label.text = break_tool_name(self.current_question.tool)  # type: ignore
+        self.tool_label.text = break_tool_name(self.current_question.tool)
 
-        self.firetruck_rooms_layout.clear_widgets()  # type: ignore
+        self.firetruck_rooms_layout.clear_widgets()
 
         for storage in self.firetruck_rooms:
             btn = Button(text=storage, font_size="28sp")
-            btn.bind(on_press=self.on_answer)  # type: ignore
-            self.firetruck_rooms_layout.add_widget(btn)  # type: ignore
+            btn.bind(on_press=self.on_answer)
+            self.firetruck_rooms_layout.add_widget(btn)
 
     def correct_answer(self):
         self.increment_score()
@@ -170,7 +170,7 @@ class Fahrzeugkunde_Game(Screen):
         else:
             self.incorrect_answer()
 
-        children = self.firetruck_rooms_layout.children  # type: ignore
+        children = self.firetruck_rooms_layout.children
 
         # indicate if correct or incorrect answer
         # for single correct answer
@@ -202,11 +202,11 @@ class Fahrzeugkunde_Game(Screen):
                 instance.background_color = (0, 1, 0, 1)
 
                 # display string "weitere"
-                if self.tool_label.text[-7:] == "weitere":  # type: ignore
-                    self.tool_label.text += " "  # type: ignore
+                if self.tool_label.text[-7:] == "weitere":
+                    self.tool_label.text += " "
                 else:
-                    self.tool_label.text += "\n"  # type: ignore
-                self.tool_label.text += "weitere"  # type: ignore
+                    self.tool_label.text += "\n"
+                self.tool_label.text += "weitere"
                 return
 
         # document given answers in class instance
@@ -219,4 +219,4 @@ class Fahrzeugkunde_Game(Screen):
         # tool ends here. document tool and given answers in question history
         self.game.questions.append(self.current_question)
 
-        Clock.schedule_once(self.next_tool, settings.COMPETITION_FEEDBACK_GAME_SEC)
+        Clock.schedule_once(self.next_tool, settings.FIRETRUCK_FEEDBACK_GAME_SEC)

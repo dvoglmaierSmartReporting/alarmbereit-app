@@ -28,10 +28,10 @@ class LoadDialog(FloatLayout):
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        self.load_button.disabled = True  # type: ignore
+        self.load_button.disabled = True
 
     def on_selection(self, instance, value):
-        self.load_button.disabled = not bool(value)  # type: ignore
+        self.load_button.disabled = not bool(value)
 
 
 class Settings_Screen(Screen):
@@ -45,48 +45,50 @@ class Settings_Screen(Screen):
         self.ids.upload_confirm_button.text = strings.BUTTON_STR_CONFIRM_UPLOAD
 
         custom_file_path = os.path.join(
-            App.get_running_app().user_data_dir,  # type: ignore
+            App.get_running_app().user_data_dir,
             "custom_firetruck_tools.yaml",
         )
         custom_file_exists = os.path.exists(custom_file_path)
 
         main_cfg_file_path = os.path.join(
-            App.get_running_app().user_data_dir,  # type: ignore
+            App.get_running_app().user_data_dir,
             "main.cfg",
         )
 
-        use_default = load_from_yaml(main_cfg_file_path).get("content").get("use_default")  # type: ignore
+        use_default = (
+            load_from_yaml(main_cfg_file_path).get("content").get("use_default")
+        )
 
         if not custom_file_exists and use_default:
             # keep at using default and disable switch as file is missing
-            self.default_content_switch.active = True  # type: ignore
-            self.default_content_switch.disabled = True  # type: ignore
+            self.default_content_switch.active = True
+            self.default_content_switch.disabled = True
 
         elif not custom_file_exists and not use_default:
             print(
                 "Error: Custom firetruck file not found. Switch back to default instead."
             )
             # Change to using default and disable switch as file is missing
-            self.default_content_switch.active = True  # type: ignore
-            self.default_content_switch.disabled = True  # type: ignore
+            self.default_content_switch.active = True
+            self.default_content_switch.disabled = True
 
         elif custom_file_exists and use_default:
             # keep at using default and enable switch to allow user choice
-            self.default_content_switch.active = True  # type: ignore
-            self.default_content_switch.disabled = False  # type: ignore
+            self.default_content_switch.active = True
+            self.default_content_switch.disabled = False
 
         elif custom_file_exists and not use_default:
             # keep at using custom and enable switch to allow user choice
-            self.default_content_switch.active = False  # type: ignore
-            self.default_content_switch.disabled = False  # type: ignore
+            self.default_content_switch.active = False
+            self.default_content_switch.disabled = False
 
     def dismiss_popup(self):
         self._popup.dismiss()
 
     def show_load(self):
         content = LoadDialog(load=self.load, cancel=self.dismiss_popup)
-        content.cancel_button.text = strings.BUTTON_DIALOG_POPUP_CANCEL  # type: ignore
-        content.load_button.text = strings.BUTTON_DIALOG_POPUP_CONFIRM  # type: ignore
+        content.cancel_button.text = strings.BUTTON_DIALOG_POPUP_CANCEL
+        content.load_button.text = strings.BUTTON_DIALOG_POPUP_CONFIRM
         self._popup = Popup(
             title=strings.TITLE_DIALOG_POPUP, content=content, size_hint=(0.9, 0.9)
         )
@@ -102,8 +104,8 @@ class Settings_Screen(Screen):
         preview += "\nNeue Fahrzeuge und deren Geräteräume:"
         for truck in self.file_content.keys():
             preview += f"\n> {truck}\n"
-            for room in self.file_content.get(truck).keys():  # type: ignore
-                preview += f" ---> {room}: {len(self.file_content.get(truck).get(room))} Werkzeuge\n"  # type: ignore
+            for room in self.file_content.get(truck).keys():
+                preview += f" ---> {room}: {len(self.file_content.get(truck).get(room))} Werkzeuge\n"
 
         return preview
 
@@ -239,10 +241,5 @@ class Settings_Screen(Screen):
             update_main_cfg({"content": {"use_default": False}})
 
 
-# TODO: Testing!
-
 Factory.register("Settings_Screen", cls=Settings_Screen)
 Factory.register("LoadDialog", cls=LoadDialog)
-
-# TODO
-# warn user about irreversible changes!
