@@ -227,7 +227,7 @@ class FeuerwehrApp(App):
         try:
             # path relative to app/helper/file_handling.py
             transfer_file("../storage", "scores.yaml")
-            transfer_file("../storage", "main.cfg")
+            # transfer_file("../storage", "main.cfg")
 
             sm = ScreenManager()
             sm.add_widget(Start_Menu())
