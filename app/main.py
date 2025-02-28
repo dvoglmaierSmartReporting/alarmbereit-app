@@ -59,7 +59,7 @@ from kivy.uix.screenmanager import ScreenManager, Screen
 import traceback
 
 from screens.info_screen import Info_Screen
-from screens.settings_screen import Settings_Screen
+# from screens.settings_screen import Settings_Screen
 from screens.firetruck_menu import Fahrzeugkunde_Menu
 from screens.firetruck_training import Fahrzeugkunde_Training
 from screens.firetruck_game import Fahrzeugkunde_Game
@@ -227,12 +227,12 @@ class FeuerwehrApp(App):
         try:
             # path relative to app/helper/file_handling.py
             transfer_file("../storage", "scores.yaml")
-            # transfer_file("../storage", "main.cfg")
+            transfer_file("../storage", "main.cfg")
 
             sm = ScreenManager()
             sm.add_widget(Start_Menu())
             sm.add_widget(Info_Screen())
-            sm.add_widget(Settings_Screen())
+            # sm.add_widget(Settings_Screen())
             sm.add_widget(Fahrzeugkunde_Menu())
             sm.add_widget(Bewerb_Menu())
             sm.add_widget(Fahrzeugkunde_Training())
