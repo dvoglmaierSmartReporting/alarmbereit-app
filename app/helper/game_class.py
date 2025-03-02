@@ -23,7 +23,7 @@ class GameCore:
 class ToolQuestion:
     firetruck: str
     tool: str
-    rooms: list  # correct locations
+    rooms: list[str]  # correct locations
 
     # list to document given answers
     room_answered: list = field(default_factory=list, init=False, repr=False)
@@ -52,7 +52,7 @@ class CompetitionQuestion:
         # shuffle the answers only once and store them in _shuffled_answers
         self._shuffled_answers = self.answers[:]
         shuffle(self._shuffled_answers)
-        
+
         # find the position of the correct answer in the shuffled list
         self._correct_answer_position = self._shuffled_answers.index(
             self.correct_answer

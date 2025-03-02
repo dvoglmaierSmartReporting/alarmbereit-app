@@ -1,8 +1,10 @@
 from kivy.app import App
 from kivy.uix.button import Button
+from kivy.uix.label import Label
 from kivy.uix.screenmanager import Screen
 
-from helper.functions import load_total_storage, mode_str2bool
+from helper.functions import mode_str2bool
+from helper.file_handling import load_total_storage
 from helper.settings import Strings
 
 
@@ -18,6 +20,10 @@ class Fahrzeugkunde_Menu(Screen):
         # create button for all firetrucks
         for firetruck in self.total_firetrucks:
 
+            if firetruck == "BDLP-Tank1":
+                # skip BDLP and always add at the bottom of the list
+                continue
+
             abbreviation = strings.trucks.get(firetruck)
             # Create a button with two strings, one centered and one at the bottom right
             btn = Button(
@@ -32,6 +38,24 @@ class Fahrzeugkunde_Menu(Screen):
 
             # Add the button to the layout
             self.firetrucks_layout.add_widget(btn)
+
+        # add placeholder
+        btn = Label(font_size="32sp", size_hint_y=None, height=30, size_hint_x=1)
+        self.firetrucks_layout.add_widget(btn)
+
+        # create button for BDLP-Tank1
+        btn = Button(
+            text=f"BDLP-Tank1",
+            font_size="32sp",
+            markup=True,  # Enable markup for custom text positioning
+            size_hint_y=None,
+            height=150,
+            size_hint_x=1,
+        )
+        btn.bind(on_release=self.on_button_release)
+
+        # Add the button to the layout
+        self.firetrucks_layout.add_widget(btn)
 
     def on_button_release(self, instance):
         # on question selection, read mode label text from current screen

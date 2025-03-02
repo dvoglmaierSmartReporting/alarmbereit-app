@@ -40,7 +40,7 @@ def save_to_yaml(file_path: str, content: dict) -> None:
     #     print(f"An unexpected error occurred: {e}")
 
 
-def load_total_storage() -> dict:
+def load_total_firetruck_storage() -> dict[str, dict[str, list[str]]]:
     default_file_path = (
         "/".join(__file__.split("/")[:-2]) + "/content/firetruck_tools.yaml"
     )
@@ -62,6 +62,19 @@ def load_total_storage() -> dict:
         file_path = custom_file_path
 
     return load_from_yaml(file_path)
+
+
+def load_bdlp_storage() -> dict[str, dict[str, list[str]]]:
+    default_file_path = "/".join(__file__.split("/")[:-2]) + "/content/bdlp_tools.yaml"
+    return load_from_yaml(default_file_path)
+
+
+def load_total_storage() -> dict[str, dict[str, list[str]]]:
+    output = load_total_firetruck_storage()
+
+    # add BDLP content for default and custom firetruck contents
+    output.update(load_bdlp_storage())
+    return output
 
 
 def load_total_competition_questions() -> dict:

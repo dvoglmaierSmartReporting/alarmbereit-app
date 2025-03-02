@@ -1,10 +1,12 @@
 from kivy.uix.button import Button
+from kivy.uix.label import Label
 from kivy.properties import BooleanProperty
 from kivy.uix.screenmanager import Screen
 from kivy.clock import Clock
 
 
 from random import shuffle
+from typing import cast
 
 from helper.functions import get_firetruck_storage, break_tool_name
 from helper.file_handling import save_to_scores_file, get_scores_key
@@ -22,6 +24,8 @@ class Fahrzeugkunde_Training(Screen):
         # troubleshooting: fix firetruck
         # self.selected_firetruck = "Tank1" "Rüst+Lösch"
         self.selected_firetruck = selected_firetruck
+
+        self.firetruck_label = cast(Label, self.firetruck_label)
         self.firetruck_label.text = f"   {selected_firetruck}"
 
     # def forward_mode_2_fk_training(self, mode: tuple):
@@ -31,9 +35,11 @@ class Fahrzeugkunde_Training(Screen):
     #     self.mode_images: bool = mode[3]
 
     def update_strike_label(self):
+        self.strike_label = cast(Label, self.strike_label)
         self.strike_label.text = f"{str(self.game.answers_correct_strike)}  "
 
     def update_high_strike_label(self):
+        self.high_strike_label = cast(Label, self.high_strike_label)
         self.high_strike_label.text = f"Best: {str(self.current_high_strike)}  "
 
     def reset_strike(self, *arg):
@@ -91,9 +97,10 @@ class Fahrzeugkunde_Training(Screen):
         self.current_question = ToolQuestion(
             firetruck=self.selected_firetruck,
             tool=current_tool,
-            rooms=list(set(self.tools_locations.get(current_tool))),
+            rooms=list(set(self.tools_locations.get(current_tool, []))),
         )
 
+        self.tool_label = cast(Label, self.tool_label)
         self.tool_label.text = break_tool_name(current_tool)
 
         self.firetruck_rooms_layout.clear_widgets()

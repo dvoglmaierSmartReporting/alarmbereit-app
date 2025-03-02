@@ -5,7 +5,7 @@ strings = Strings()
 settings = Settings()
 
 
-def invert_firetruck_equipment(firetruck: dict) -> dict:
+def invert_firetruck_equipment(firetruck: dict[str, list[str]]) -> dict[str, list[str]]:
     tools_locations = {}
     for location, tools in firetruck.items():
         for tool in tools:
@@ -16,7 +16,9 @@ def invert_firetruck_equipment(firetruck: dict) -> dict:
     return tools_locations
 
 
-def get_firetruck_storage(selected_firetruck: str) -> tuple[list, list, dict]:
+def get_firetruck_storage(
+    selected_firetruck: str,
+) -> tuple[list[str], list[str], dict[str, list[str]]]:
     total_storage = load_total_storage()
     firetruck: dict = total_storage[selected_firetruck]
     rooms: list = list(firetruck.keys())

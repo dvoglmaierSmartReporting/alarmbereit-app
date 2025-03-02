@@ -63,6 +63,7 @@ class Strings:
             "TestTruck": "testing",
             "RüstLösch": "RLFA 2000",
             "Tank1": "TLF-A 3000",
+            "BDLP-Tank1": "TLF-A 3000",
             "Leiter": "DLA(K) 23-12",
             "Tank2": "TLF-A 4000",
             "Voraus": "VRFA-Tunnel",

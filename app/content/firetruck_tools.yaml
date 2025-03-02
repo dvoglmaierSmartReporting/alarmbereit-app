@@ -705,18 +705,14 @@ Voraus: &tunnel
     - Müllsack
     - Schutzdecke
     - Stabfast
-
-    - Schwelleraufsatz
-
     - Unterleghölzer
     - Notfallwanne
     - Glasmanagement Set
     - Airbag Sicherung
-    - Verlängerungskabel 10 m
     - Werkzeugkiste
     - StabPacks
-    - NATO-Kabel
   G2:
+    - Verlängerungskabel 10 m
     - Sichtschutz
     - Druckschlauch C
     - Ölbindemittelkanister
@@ -745,6 +741,7 @@ Voraus: &tunnel
     - Löschdecke
     - Stromgenerator
   G3:
+    - NATO-Kabel
     - Schleifkorbtrage
     - Schaufeltrage
     - Akku Kombigerät
@@ -766,9 +763,7 @@ Voraus: &tunnel
     - Türbrecheisen
     - Rettungswerkzeug
     - Schneekette
-
     - Schwelleraufsatz
-
     - Zubehör Schere/Spreizer
     - Anhängekupplung Kugelkopf
     - Anhängekupplung Maulkupplung
