@@ -52,9 +52,10 @@
 from kivy.app import App
 from kivy.uix.button import Button
 from kivy.uix.label import Label
+from kivy.uix.layout import Layout
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.togglebutton import ToggleButton
-from kivy.uix.screenmanager import ScreenManager, Screen
+from kivy.uix.screenmanager import ScreenManager, Screen, SlideTransition
 from kivy.clock import Clock
 
 # from inspect import currentframe
@@ -111,66 +112,161 @@ class Start_Menu(Screen):
 
         # type annotations
         self.info_button = cast(Button, self.info_button)
-        # self.settings_button = cast(Button, self.settings_button)
-        ###self.training_button = cast(Button, self.training_button)
-        ###self.game_button = cast(Button, self.game_button)
-        ###self.browse_button = cast(Button, self.browse_button)
-        # self.images_button = cast(Button, self.images_button)
-        # self.firetrucks_button = cast(Button, self.firetrucks_button)
-        # self.competitions_button = cast(Button, self.competitions_button)
-        # self.standards_button = cast(Button, self.standards_button)
-        ###self.mode_label = cast(Label, self.mode_label)
-        self.questions_label = cast(Label, self.questions_label)
+        self.content_layout = cast(Layout, self.content_layout)
 
         # update button strings
         self.info_button.text = strings.BUTTON_STR_INFO
-        # self.settings_button.text = strings.BUTTON_STR_SETTINGS
-        ###self.training_button.text = strings.BUTTON_STR_TRAINING
-        ###self.game_button.text = strings.BUTTON_STR_GAME
-        ###self.browse_button.text = strings.BUTTON_STR_BROWSE
-        # self.images_button.text = strings.BUTTON_STR_IMAGES
-        # self.firetrucks_button.text = strings.BUTTON_STR_FIRETRUCKS
-        # self.competitions_button.text = strings.BUTTON_STR_COMPETITIONS
-        # self.standards_button.text = strings.BUTTON_STR_STANDARDS
 
-        # update label strings
-        ###self.mode_label.text = strings.LABEL_STR_MODE
-        self.questions_label.text = strings.LABEL_STR_QUESTIONS
-
-        # self.standards_button.disabled = True
-
-        ###
         # Container where the additional widget will be displayed
-        # self.display_container = BoxLayout(size_hint_y=None, height=100)  # Adjust height as needed
-        self.display_container = BoxLayout(size_hint=(1, 1), orientation="vertical", spacing="3dp")
-
-        # Create different widgets to be displayed
-        widget1 = BoxLayout(orientation="vertical")
-        widget1.add_widget(Label(text="Modus"))
-        widget1.add_widget(Button(text="This is the content for Option 1", font_size="20sp"))
-
-        widget2 = Button(text="This is the content for Option 2", font_size="20sp")
-
-        # Create buttons with different texts for the label
-        btn1 = CustomContentToggleButton(
-            font_size="32sp",
-            text="Option 1",
-            group="content_button",
-            container=self.display_container,
-            display_widget=widget1,
+        # Part of content_layout
+        self.display_container = BoxLayout(
+            size_hint=(1, 3.5),
+            orientation="vertical",
+            spacing="3dp",
         )
-        btn2 = CustomContentToggleButton(
+
+        # Widget with firetrucks modi available
+        firetrucks_modi_widget = BoxLayout(
+            orientation="vertical",
+            spacing="3dp",
+        )
+        firetrucks_modi_widget.add_widget(
+            Label(
+                size_hint=(1, 0.5),
+                text=strings.LABEL_STR_MODE,
+                font_size="32sp",
+                bold=True,
+            ),
+        )
+        ##
+        firetruck_btn1 = Button(
+            size_hint=(1, 1),
+            text=strings.BUTTON_STR_TRAINING,
             font_size="32sp",
-            text="Option 2",
+        )
+        firetruck_btn1.bind(
+            on_release=lambda instance: self.change_screen(
+                instance=instance, screen="fahrzeugkunde_menu"
+            )
+        )
+        firetruck_btn1.bind(
+            on_release=lambda instance: self.forward_mode2menu_manually(
+                "fahrzeugkunde_menu", strings.BUTTON_STR_TRAINING
+            )
+        )
+        firetruck_btn1.bind(on_release=lambda instance: self.update_firetruck_buttons())
+        firetrucks_modi_widget.add_widget(firetruck_btn1)
+        firetrucks_modi_widget.add_widget(
+            Button(
+                size_hint=(1, 1),
+                text=strings.BUTTON_STR_GAME,
+                font_size="32sp",
+            )
+        )
+        firetrucks_modi_widget.add_widget(
+            Button(
+                size_hint=(1, 1),
+                text=strings.BUTTON_STR_BROWSE,
+                font_size="32sp",
+            )
+        )
+
+        # Widget with competitions modi available
+        competitions_modi_widget = BoxLayout(
+            orientation="vertical",
+            spacing="3dp",
+        )
+        competitions_modi_widget.add_widget(
+            Label(
+                size_hint=(1, 0.5),
+                text=strings.LABEL_STR_MODE,
+                font_size="32sp",
+                bold=True,
+            ),
+        )
+        ##
+        competition_btn1 = Button(
+            size_hint=(1, 1),
+            text=strings.BUTTON_STR_TRAINING,
+            font_size="32sp",
+        )
+
+        competition_btn1.bind(
+            on_release=lambda instance: self.change_screen(
+                instance=instance, screen="bewerb_menu"
+            )
+        )
+        competition_btn1.bind(
+            on_release=lambda instance: self.forward_mode2menu_manually(
+                "bewerb_menu", strings.BUTTON_STR_TRAINING
+            )
+        )
+        competition_btn1.bind(
+            on_release=lambda instance: self.update_firetruck_buttons()
+        )
+
+        competitions_modi_widget.add_widget(competition_btn1)
+        ##
+
+        competitions_modi_widget.add_widget(
+            Button(
+                size_hint=(1, 1),
+                text=strings.BUTTON_STR_GAME,
+                font_size="32sp",
+            )
+        )
+        competitions_modi_widget.add_widget(
+            Label(  # placeholder
+                size_hint=(1, 1),
+                font_size="32sp",
+            )
+        )
+
+        # Part of content_layout
+        questions_label = Label(
+            size_hint=(1, 0.5),
+            text=strings.LABEL_STR_QUESTIONS,
+            font_size="32sp",
+            bold=True,
+        )
+        firetrucks_button = CustomContentToggleButton(
+            size_hint=(1, 1),
             group="content_button",
+            text=strings.BUTTON_STR_FIRETRUCKS,
+            font_size="32sp",
             container=self.display_container,
-            display_widget=widget2,
+            display_widget=firetrucks_modi_widget,
+        )
+
+        competitions_button = CustomContentToggleButton(
+            size_hint=(1, 1),
+            group="content_button",
+            text=strings.BUTTON_STR_COMPETITIONS,
+            font_size="32sp",
+            container=self.display_container,
+            display_widget=competitions_modi_widget,
         )
 
         # Add widgets to layout
-        self.content_layout.add_widget(btn1)
-        self.content_layout.add_widget(btn2)
+        self.content_layout.add_widget(questions_label)
+        self.content_layout.add_widget(firetrucks_button)
+        self.content_layout.add_widget(competitions_button)
         self.content_layout.add_widget(self.display_container)
+
+    def change_screen(self, instance, screen: str):
+        self.manager.transition = SlideTransition(
+            direction="right"
+        )  # Set transition direction
+        self.manager.current = screen  # Switch screen
+
+    def change_screen2(self, instance, screen: str):
+        if self.manager:  # Check if the screen is inside a ScreenManager
+            self.manager.transition = SlideTransition(
+                direction="left"
+            )  # Set transition direction
+            self.manager.current = screen  # Switch screen
+        else:
+            print("Error: ScreenManager not found!")
 
     def on_button_release2(self):
         # if mode change, read mode label from current selection
@@ -194,6 +290,10 @@ class Start_Menu(Screen):
         selected_mode = mode_bool2str(self.mode)
         self.manager.current = menu_screen
         self.manager.get_screen(menu_screen).ids.mode_label.text = f"{selected_mode}   "
+
+    def forward_mode2menu_manually(self, menu_screen: str, mode: str):
+        self.manager.current = menu_screen
+        self.manager.get_screen(menu_screen).ids.mode_label.text = f"{mode}   "
 
     # def find_down_toggle_button(self, widget, selected_mode=None):
     def find_down_toggle_button(self, widget) -> str:
@@ -278,21 +378,31 @@ class CustomContentToggleButton(ToggleButton):
             container  # Reference to the container for displaying the widget
         )
         self.display_widget = display_widget  # The widget to show when selected
+        self.scheduled_event = None  # To store the scheduled event for cancellation
 
     def on_touch_up(self, touch):
         super_result = super(CustomContentToggleButton, self).on_touch_up(touch)
 
         if self.collide_point(*touch.pos):  # Ensure the button was actually clicked
             if self.state == "down":
-                # Remove any existing widget first
-                self.container.clear_widgets()
-                # Add the new widget
-                self.container.add_widget(self.display_widget)
+                # If there's a scheduled event, cancel it to avoid duplicate scheduling
+                if self.scheduled_event:
+                    Clock.unschedule(self.scheduled_event)
+
+                self.container.clear_widgets()  # Remove any previous content
+
+                # Schedule the widget appearance with a 0.5-second delay
+                self.scheduled_event = Clock.schedule_once(self.show_widget, 0.3)
             else:
-                # Remove the widget when unselected
+                # If button is deselected, cancel any scheduled event and remove the widget immediately
+                if self.scheduled_event:
+                    Clock.unschedule(self.scheduled_event)
                 self.container.clear_widgets()
 
         return super_result
+
+    def show_widget(self, dt):
+        self.container.add_widget(self.display_widget)  # Add the new content
 
 
 class FeuerwehrApp(App):

@@ -14,19 +14,7 @@
     
     main_layout: main_layout
     content_layout: content_layout
-    #modi_layout: modi_layout
     
-    #mode_label: mode_label
-    #training_button: training_button
-    #game_button: game_button
-    #browse_button: browse_button
-    # images_button: images_button
-
-    questions_label: questions_label
-    #firetrucks_button: firetrucks_button
-    #competitions_button: competitions_button
-    # standards_button: standards_button
-
     info_button: info_button
     # settings_button: settings_button
     
@@ -57,110 +45,14 @@
         spacing: "3dp"
 
         Label:  # placeholder
-            ###size_hint: 1, 1.2
-            size_hint: 1, 0.3
-
-        ###Label:
-        ###    id: mode_label
-        ###    bold: True
-        ###    font_size: "32sp"
-        ###    size_hint: 1, 0.5
-        
-        ##-- Removed before testing release as images is not working yet
-        #GridLayout:
-        #    size_hint: 1, 2
-        #    cols: 2
-        #    spacing: "3dp"
-        #
-        #    CustomModiToggleButton:
-        #        id: training_button
-        #        state: "down"
-        #        on_release: root.on_button_release()
-        #
-        #    CustomModiToggleButton:
-        #        id: game_button
-        #        on_release: root.on_button_release()
-        #    
-        #    CustomModiToggleButton:
-        #        id: browse_button
-        #        on_release: root.on_button_release()
-        #
-        #    CustomModiToggleButton:
-        #        id: images_button
-        #        on_release: root.on_button_release()
-        #####-- 
-        ###CustomModiToggleButton:
-        ###    id: training_button
-        ###    state: "down"
-        ###    on_release: root.on_button_release2()
-        ###
-        ###CustomModiToggleButton:
-        ###    id: game_button
-        ###    on_release: root.on_button_release2()
-        ###
-        ###CustomModiToggleButton:
-        ###    id: browse_button
-        ###    on_release: root.on_button_release2()
-        #####--
+            size_hint: 1, 1
 
         BoxLayout:
             id: content_layout
-            size_hint: 1, 1
+            size_hint: 1, 8
             orientation: "vertical"
             spacing: "3dp"
         
-            Label:
-                id: questions_label
-                bold: True
-                font_size: "32sp"
-                size_hint: 1, 0.5
-            
-            ### ###Button:
-            ### CustomContentToggleButton:
-            ###     id: firetrucks_button
-            ###     font_size: "32sp"
-            ###     on_release:
-            ### ###        app.root.current = "fahrzeugkunde_menu"
-            ### ###        root.manager.transition.direction = "left"
-            ### ###        root.forward_mode2menu("fahrzeugkunde_menu")
-            ### ###        root.update_firetruck_buttons()
-            ###         root.display_mode_buttons_firetrucks()
-            ### 
-            ### ###Button:
-            ### CustomContentToggleButton:
-            ###     id: competitions_button
-            ###     font_size: "32sp"
-            ###     on_release:
-            ### ###        app.root.current = "bewerb_menu"
-            ### ###        root.manager.transition.direction = "left"
-            ### ###        root.forward_mode2menu("bewerb_menu")
-            ###         root.display_mode_buttons_competitions()
-            ### 
-            ### CustomContentToggleButton: # to catch the "unselected" state
-            ###     size_hint: 1, 0.01
-            ###     font_size: "32sp"
-            ###     disabled: True
-            
-        
-        
-        ###- Removed before 'testing release' as no content yet
-        #Button:
-        #    id: standards_button
-        #    font_size: "32sp"
-        #    on_release:
-        #        app.root.current = "standardsmenu"
-        #        root.manager.transition.direction = "left"
-        #        root.forward_mode2menu("standardsmenu")
-        ###-
-
-
-        ### BoxLayout:
-        ###     id: modi_layout
-        ###     orientation: "vertical"
-        ###     spacing: "3dp"
-        ###     size_hint: 1, 1
-
-
         Label:  # placeholder
             size_hint: 1, 0.15
 
