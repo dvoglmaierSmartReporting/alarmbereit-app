@@ -211,7 +211,7 @@ class Settings_Screen(Screen):
 
         # init custom scores yaml
         file_path = os.path.join(
-            App.get_running_app().user_data_dir,  # type:ignore
+            App.get_running_app().user_data_dir,
             "scores.yaml",
         )
 
@@ -219,13 +219,13 @@ class Settings_Screen(Screen):
         new_content = create_scores_content()
 
         updated_comp_content = update_yaml_values(
-            existing_content.get("competitions"),  # type:ignore
-            new_content.get("competitions"),  # type:ignore
+            existing_content.get("competitions"),
+            new_content.get("competitions"),
         )
         new_content["competitions"] = updated_comp_content
 
         custom_file_path = os.path.join(
-            App.get_running_app().user_data_dir,  # type:ignore
+            App.get_running_app().user_data_dir,
             "custom_scores.yaml",
         )
         save_to_yaml(custom_file_path, new_content)

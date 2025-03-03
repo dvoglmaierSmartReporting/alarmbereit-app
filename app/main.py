@@ -52,13 +52,16 @@
 from kivy.app import App
 from kivy.uix.button import Button
 from kivy.uix.label import Label
+from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.togglebutton import ToggleButton
 from kivy.uix.screenmanager import ScreenManager, Screen
+from kivy.clock import Clock
 
 # from inspect import currentframe
 import traceback
 
 from screens.info_screen import Info_Screen
+
 # from screens.settings_screen import Settings_Screen
 from screens.firetruck_menu import Fahrzeugkunde_Menu
 from screens.firetruck_training import Fahrzeugkunde_Training
@@ -109,32 +112,65 @@ class Start_Menu(Screen):
         # type annotations
         self.info_button = cast(Button, self.info_button)
         # self.settings_button = cast(Button, self.settings_button)
-        self.training_button = cast(Button, self.training_button)
-        self.game_button = cast(Button, self.game_button)
-        self.browse_button = cast(Button, self.browse_button)
+        ###self.training_button = cast(Button, self.training_button)
+        ###self.game_button = cast(Button, self.game_button)
+        ###self.browse_button = cast(Button, self.browse_button)
         # self.images_button = cast(Button, self.images_button)
-        self.firetrucks_button = cast(Button, self.firetrucks_button)
-        self.competitions_button = cast(Button, self.competitions_button)
+        # self.firetrucks_button = cast(Button, self.firetrucks_button)
+        # self.competitions_button = cast(Button, self.competitions_button)
         # self.standards_button = cast(Button, self.standards_button)
-        self.mode_label = cast(Label, self.mode_label)
+        ###self.mode_label = cast(Label, self.mode_label)
         self.questions_label = cast(Label, self.questions_label)
 
         # update button strings
         self.info_button.text = strings.BUTTON_STR_INFO
         # self.settings_button.text = strings.BUTTON_STR_SETTINGS
-        self.training_button.text = strings.BUTTON_STR_TRAINING
-        self.game_button.text = strings.BUTTON_STR_GAME
-        self.browse_button.text = strings.BUTTON_STR_BROWSE
+        ###self.training_button.text = strings.BUTTON_STR_TRAINING
+        ###self.game_button.text = strings.BUTTON_STR_GAME
+        ###self.browse_button.text = strings.BUTTON_STR_BROWSE
         # self.images_button.text = strings.BUTTON_STR_IMAGES
-        self.firetrucks_button.text = strings.BUTTON_STR_FIRETRUCKS
-        self.competitions_button.text = strings.BUTTON_STR_COMPETITIONS
+        # self.firetrucks_button.text = strings.BUTTON_STR_FIRETRUCKS
+        # self.competitions_button.text = strings.BUTTON_STR_COMPETITIONS
         # self.standards_button.text = strings.BUTTON_STR_STANDARDS
 
         # update label strings
-        self.mode_label.text = strings.LABEL_STR_MODE
+        ###self.mode_label.text = strings.LABEL_STR_MODE
         self.questions_label.text = strings.LABEL_STR_QUESTIONS
 
         # self.standards_button.disabled = True
+
+        ###
+        # Container where the additional widget will be displayed
+        # self.display_container = BoxLayout(size_hint_y=None, height=100)  # Adjust height as needed
+        self.display_container = BoxLayout(size_hint=(1, 1), orientation="vertical", spacing="3dp")
+
+        # Create different widgets to be displayed
+        widget1 = BoxLayout(orientation="vertical")
+        widget1.add_widget(Label(text="Modus"))
+        widget1.add_widget(Button(text="This is the content for Option 1", font_size="20sp"))
+
+        widget2 = Button(text="This is the content for Option 2", font_size="20sp")
+
+        # Create buttons with different texts for the label
+        btn1 = CustomContentToggleButton(
+            font_size="32sp",
+            text="Option 1",
+            group="content_button",
+            container=self.display_container,
+            display_widget=widget1,
+        )
+        btn2 = CustomContentToggleButton(
+            font_size="32sp",
+            text="Option 2",
+            group="content_button",
+            container=self.display_container,
+            display_widget=widget2,
+        )
+
+        # Add widgets to layout
+        self.content_layout.add_widget(btn1)
+        self.content_layout.add_widget(btn2)
+        self.content_layout.add_widget(self.display_container)
 
     def on_button_release2(self):
         # if mode change, read mode label from current selection
@@ -177,6 +213,20 @@ class Start_Menu(Screen):
 
         self.manager.get_screen("info_screen").ids.info_text_label.text = info_text
 
+    def display_mode_buttons_firetrucks(self):
+        self.modi_layout.clear_widgets()
+
+        label = Label(text=f"firetruck")
+
+        self.modi_layout.add_widget(label)
+
+    def display_mode_buttons_competitions(self):
+        self.modi_layout.clear_widgets()
+
+        label = Label(text="competition")
+
+        self.modi_layout.add_widget(label)
+
     def update_firetruck_buttons(self):
         # load available firetrucks
         total_storage = load_total_storage()
@@ -210,14 +260,38 @@ class Start_Menu(Screen):
             ).ids.firetrucks_layout.add_widget(btn)
 
 
-class CustomToggleButton(ToggleButton):  # used in feuerwehr.kv
+class CustomModiToggleButton(ToggleButton):  # used in feuerwehr.kv
     def on_touch_up(self, touch):
         # Call the superclass method to ensure standard behavior is preserved
-        super_result = super(CustomToggleButton, self).on_touch_up(touch)
+        super_result = super(CustomModiToggleButton, self).on_touch_up(touch)
         if self.state == "normal":  # Check if the button was just released
             # Force it back to 'down' state if no other buttons are down
             if not any(btn.state == "down" for btn in self.get_widgets(self.group)):
                 self.state = "down"
+        return super_result
+
+
+class CustomContentToggleButton(ToggleButton):
+    def __init__(self, container, display_widget, **kwargs):
+        super().__init__(**kwargs)
+        self.container = (
+            container  # Reference to the container for displaying the widget
+        )
+        self.display_widget = display_widget  # The widget to show when selected
+
+    def on_touch_up(self, touch):
+        super_result = super(CustomContentToggleButton, self).on_touch_up(touch)
+
+        if self.collide_point(*touch.pos):  # Ensure the button was actually clicked
+            if self.state == "down":
+                # Remove any existing widget first
+                self.container.clear_widgets()
+                # Add the new widget
+                self.container.add_widget(self.display_widget)
+            else:
+                # Remove the widget when unselected
+                self.container.clear_widgets()
+
         return super_result
 
 

@@ -47,17 +47,14 @@ def load_total_firetruck_storage() -> dict[str, dict[str, list[str]]]:
     file_path = default_file_path
 
     custom_file_path = os.path.join(
-        App.get_running_app().user_data_dir,  # type:ignore
+        App.get_running_app().user_data_dir,
         "custom_firetruck_tools.yaml",
     )
     custom_file_exists = os.path.exists(custom_file_path)
 
     # main.cfg is source-of-truth for firetruck content and scores
     config = read_main_cfg()
-    if (
-        not config.get("content").get("use_default")  # type:ignore
-        and custom_file_exists
-    ):
+    if not config.get("content").get("use_default") and custom_file_exists:
 
         file_path = custom_file_path
 
@@ -96,7 +93,7 @@ def copy_file_to_writable_dir(file_path: str, file_name: str, new_file_name: str
         new_file_name = file_name
 
     dst = os.path.join(
-        App.get_running_app().user_data_dir,  # type:ignore
+        App.get_running_app().user_data_dir,
         new_file_name,
     )
 
@@ -107,30 +104,27 @@ def copy_file_to_writable_dir(file_path: str, file_name: str, new_file_name: str
 
 def read_scores_file():
     scores_file_path = os.path.join(
-        App.get_running_app().user_data_dir,  # type:ignore
+        App.get_running_app().user_data_dir,
         "scores.yaml",
     )
     file_path = scores_file_path
 
     custom_scores_file_path = os.path.join(
-        App.get_running_app().user_data_dir,  # type:ignore
+        App.get_running_app().user_data_dir,
         "custom_scores.yaml",
     )
     custom_scores_exists = os.path.exists(custom_scores_file_path)
 
     config = read_main_cfg()
 
-    if (
-        not config.get("content").get("use_default")  # type:ignore
-        and custom_scores_exists
-    ):
+    if not config.get("content").get("use_default") and custom_scores_exists:
         file_path = custom_scores_file_path
 
     return load_from_yaml(file_path)
 
 
 def get_scores_key(firetruck: str, key: str, questions: str = "firetrucks"):
-    return read_scores_file().get(questions).get(firetruck).get(key)  # type:ignore
+    return read_scores_file().get(questions).get(firetruck).get(key)
 
 
 def save_to_scores_file(
@@ -141,12 +135,12 @@ def save_to_scores_file(
     if not questions in content.keys():
         raise ValueError(f"Questions {questions} not found in scores.yaml")
 
-    if not firetruck in content.get(questions).keys():  # type:ignore
+    if not firetruck in content.get(questions).keys():
         raise ValueError(
             f"Firetruck {firetruck} not found in scores.yaml > {questions}"
         )
 
-    if not key in content.get(questions).get(firetruck).keys():  # type:ignore
+    if not key in content.get(questions).get(firetruck).keys():
         raise ValueError(
             f"Key {key} not found in scores.yaml > {questions} > {firetruck}"
         )
@@ -161,11 +155,11 @@ def save_to_scores_file(
     # main.cfg is source-of-truth for firetruck content and scores
     #
     scores_file_path = os.path.join(
-        App.get_running_app().user_data_dir,  # type:ignore
+        App.get_running_app().user_data_dir,
         "scores.yaml",
     )
     custom_scores_file_path = os.path.join(
-        App.get_running_app().user_data_dir,  # type:ignore
+        App.get_running_app().user_data_dir,
         "custom_scores.yaml",
     )
     custom_scores_exists = os.path.exists(custom_scores_file_path)
@@ -178,9 +172,7 @@ def save_to_scores_file(
     # it's assumed the file was already created
     if (
         questions == "firetrucks"
-        and not config.get("content").get(  # type:ignore
-            "use_default"
-        )
+        and not config.get("content").get("use_default")
         and custom_scores_exists
     ):
         file_paths = [custom_scores_file_path]
@@ -195,7 +187,7 @@ def save_to_scores_file(
 
 def read_main_cfg() -> dict:
     file_path = os.path.join(
-        App.get_running_app().user_data_dir,  # type:ignore
+        App.get_running_app().user_data_dir,
         "main.cfg",
     )
 
@@ -208,7 +200,7 @@ def update_main_cfg(to_update: dict):
     content.update(to_update)
 
     file_path = os.path.join(
-        App.get_running_app().user_data_dir,  # type:ignore
+        App.get_running_app().user_data_dir,
         "main.cfg",
     )
 
@@ -224,7 +216,7 @@ def transfer_file(file_path: str, file_name: str, new_file_name: str = "") -> No
         new_file_name = file_name
 
     dst = os.path.join(
-        App.get_running_app().user_data_dir,  # type:ignore
+        App.get_running_app().user_data_dir,
         new_file_name,
     )
     dst_file_exists = os.path.exists(dst)
