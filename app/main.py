@@ -74,16 +74,8 @@ from screens.competition_training import Bewerb_Training
 from screens.competition_game import Bewerb_Game
 from screens.error_popup import ErrorPopup
 
-from helper.functions import (
-    load_total_storage,
-    mode_str2bool,
-    mode_bool2str,
-    create_scores_text,
-)
-from helper.file_handling import (
-    read_scores_file,
-    transfer_file,
-)
+from helper.functions import load_total_storage, create_scores_text
+from helper.file_handling import read_scores_file, transfer_file
 from helper.settings import Strings
 
 from typing import cast
@@ -94,12 +86,12 @@ strings = Strings()
 
 
 class Start_Menu(Screen):
-    mode: tuple[bool, bool, bool, bool] = (
-        True,  # training | default
-        False,  # game
-        False,  # browse
-        False,  # images
-    )
+    # mode: tuple[bool, bool, bool, bool] = (
+    #     True,  # training | default
+    #     False,  # game
+    #     False,  # browse
+    #     False,  # images
+    # )
 
     # @log_and_call("test")
     def __init__(self, **kwargs):
@@ -125,102 +117,9 @@ class Start_Menu(Screen):
             spacing="3dp",
         )
 
-        # Widget with firetrucks modi available
-        firetrucks_modi_widget = BoxLayout(
-            orientation="vertical",
-            spacing="3dp",
-        )
-        firetrucks_modi_widget.add_widget(
-            Label(
-                size_hint=(1, 0.5),
-                text=strings.LABEL_STR_MODE,
-                font_size="32sp",
-                bold=True,
-            ),
-        )
-        ##
-        firetruck_btn1 = Button(
-            size_hint=(1, 1),
-            text=strings.BUTTON_STR_TRAINING,
-            font_size="32sp",
-        )
-        firetruck_btn1.bind(
-            on_release=lambda instance: self.change_screen(
-                instance=instance, screen="fahrzeugkunde_menu"
-            )
-        )
-        firetruck_btn1.bind(
-            on_release=lambda instance: self.forward_mode2menu_manually(
-                "fahrzeugkunde_menu", strings.BUTTON_STR_TRAINING
-            )
-        )
-        firetruck_btn1.bind(on_release=lambda instance: self.update_firetruck_buttons())
-        firetrucks_modi_widget.add_widget(firetruck_btn1)
-        firetrucks_modi_widget.add_widget(
-            Button(
-                size_hint=(1, 1),
-                text=strings.BUTTON_STR_GAME,
-                font_size="32sp",
-            )
-        )
-        firetrucks_modi_widget.add_widget(
-            Button(
-                size_hint=(1, 1),
-                text=strings.BUTTON_STR_BROWSE,
-                font_size="32sp",
-            )
-        )
+        firetrucks_modi_widget = self.add_firetruck_modi_widget()
 
-        # Widget with competitions modi available
-        competitions_modi_widget = BoxLayout(
-            orientation="vertical",
-            spacing="3dp",
-        )
-        competitions_modi_widget.add_widget(
-            Label(
-                size_hint=(1, 0.5),
-                text=strings.LABEL_STR_MODE,
-                font_size="32sp",
-                bold=True,
-            ),
-        )
-        ##
-        competition_btn1 = Button(
-            size_hint=(1, 1),
-            text=strings.BUTTON_STR_TRAINING,
-            font_size="32sp",
-        )
-
-        competition_btn1.bind(
-            on_release=lambda instance: self.change_screen(
-                instance=instance, screen="bewerb_menu"
-            )
-        )
-        competition_btn1.bind(
-            on_release=lambda instance: self.forward_mode2menu_manually(
-                "bewerb_menu", strings.BUTTON_STR_TRAINING
-            )
-        )
-        competition_btn1.bind(
-            on_release=lambda instance: self.update_firetruck_buttons()
-        )
-
-        competitions_modi_widget.add_widget(competition_btn1)
-        ##
-
-        competitions_modi_widget.add_widget(
-            Button(
-                size_hint=(1, 1),
-                text=strings.BUTTON_STR_GAME,
-                font_size="32sp",
-            )
-        )
-        competitions_modi_widget.add_widget(
-            Label(  # placeholder
-                size_hint=(1, 1),
-                font_size="32sp",
-            )
-        )
+        competitions_modi_widget = self.add_competition_modi_widget()
 
         # Part of content_layout
         questions_label = Label(
@@ -253,9 +152,177 @@ class Start_Menu(Screen):
         self.content_layout.add_widget(competitions_button)
         self.content_layout.add_widget(self.display_container)
 
+    def add_firetruck_modi_widget(self):
+        ### WIDGET ###
+        firetrucks_modi_widget = BoxLayout(
+            orientation="vertical",
+            spacing="3dp",
+        )
+
+        firetrucks_modi_widget.add_widget(
+            Label(
+                size_hint=(1, 0.5),
+                text=strings.LABEL_STR_MODE,
+                font_size="32sp",
+                bold=True,
+            )
+        )
+
+        ### BUTTON 1 ###
+        firetruck_btn1 = Button(
+            size_hint=(0.9, 1),
+            pos_hint={"center_x": 0.5},
+            text=f"{strings.BUTTON_STR_TRAINING} --->",
+            font_size="32sp",
+        )
+
+        # firetruck_btn1.bind(
+        #     on_release=lambda instance: self.change_screen(
+        #         instance=instance, screen="fahrzeugkunde_menu"
+        #     )
+        # )
+
+        firetruck_btn1.bind(
+            on_release=lambda instance: self.forward_mode2menu_manually(
+                "fahrzeugkunde_menu", strings.BUTTON_STR_TRAINING
+            )
+        )
+
+        firetruck_btn1.bind(on_release=lambda instance: self.update_firetruck_buttons())
+
+        firetrucks_modi_widget.add_widget(firetruck_btn1)
+
+        ### BUTTON 2 ###
+        firetruck_btn2 = Button(
+            size_hint=(0.9, 1),
+            pos_hint={"center_x": 0.5},
+            text=f"{strings.BUTTON_STR_GAME} --->",
+            font_size="32sp",
+        )
+
+        # firetruck_btn2.bind(
+        #     on_release=lambda instance: self.change_screen(
+        #         instance=instance, screen="fahrzeugkunde_menu"
+        #     )
+        # )
+
+        firetruck_btn2.bind(
+            on_release=lambda instance: self.forward_mode2menu_manually(
+                "fahrzeugkunde_menu", strings.BUTTON_STR_TRAINING
+            )
+        )
+
+        firetruck_btn2.bind(on_release=lambda instance: self.update_firetruck_buttons())
+
+        firetrucks_modi_widget.add_widget(firetruck_btn2)
+
+        ### BUTTON 3 ###
+        firetruck_btn3 = Button(
+            size_hint=(0.9, 1),
+            pos_hint={"center_x": 0.5},
+            text=f"{strings.BUTTON_STR_BROWSE} --->",
+            font_size="32sp",
+        )
+
+        # firetruck_btn3.bind(
+        #     on_release=lambda instance: self.change_screen(
+        #         instance=instance, screen="fahrzeugkunde_menu"
+        #     )
+        # )
+
+        firetruck_btn3.bind(
+            on_release=lambda instance: self.forward_mode2menu_manually(
+                "fahrzeugkunde_menu", strings.BUTTON_STR_TRAINING
+            )
+        )
+
+        firetruck_btn3.bind(on_release=lambda instance: self.update_firetruck_buttons())
+
+        firetrucks_modi_widget.add_widget(firetruck_btn3)
+
+        return firetrucks_modi_widget
+
+    def add_competition_modi_widget(self):
+        ### WIDGET ###
+        competitions_modi_widget = BoxLayout(
+            orientation="vertical",
+            spacing="3dp",
+        )
+
+        competitions_modi_widget.add_widget(
+            Label(
+                size_hint=(1, 0.5),
+                text=strings.LABEL_STR_MODE,
+                font_size="32sp",
+                bold=True,
+            )
+        )
+
+        ### BUTTON 1 ###
+        competition_btn1 = Button(
+            size_hint=(0.9, 1),
+            pos_hint={"center_x": 0.5},
+            text=f"{strings.BUTTON_STR_TRAINING} --->",
+            font_size="32sp",
+        )
+
+        # competition_btn1.bind(
+        #     on_release=lambda instance: self.change_screen(
+        #         instance=instance, screen="bewerb_menu"
+        #     )
+        # )
+
+        competition_btn1.bind(
+            on_release=lambda instance: self.forward_mode2menu_manually(
+                "bewerb_menu", strings.BUTTON_STR_TRAINING
+            )
+        )
+
+        competition_btn1.bind(
+            on_release=lambda instance: self.update_firetruck_buttons()
+        )
+
+        competitions_modi_widget.add_widget(competition_btn1)
+
+        ### BUTTON 2 ###
+        competition_btn2 = Button(
+            size_hint=(0.9, 1),
+            pos_hint={"center_x": 0.5},
+            text=f"{strings.BUTTON_STR_GAME} --->",
+            font_size="32sp",
+        )
+
+        # competition_btn2.bind(
+        #     on_release=lambda instance: self.change_screen(
+        #         instance=instance, screen="bewerb_menu"
+        #     )
+        # )
+
+        competition_btn2.bind(
+            on_release=lambda instance: self.forward_mode2menu_manually(
+                "bewerb_menu", strings.BUTTON_STR_TRAINING
+            )
+        )
+
+        competition_btn2.bind(
+            on_release=lambda instance: self.update_firetruck_buttons()
+        )
+
+        competitions_modi_widget.add_widget(competition_btn2)
+
+        ### BUTTON 3 ###
+        competitions_modi_widget.add_widget(
+            Label(  # placeholder
+                size_hint=(1, 1),
+                font_size="32sp",
+            )
+        )
+
+        return competitions_modi_widget
+
     def change_screen(self, instance, screen: str):
         self.manager.transition = SlideTransition(
-            direction="right"
+            direction="left"
         )  # Set transition direction
         self.manager.current = screen  # Switch screen
 
@@ -268,43 +335,9 @@ class Start_Menu(Screen):
         else:
             print("Error: ScreenManager not found!")
 
-    def on_button_release2(self):
-        # if mode change, read mode label from current selection
-        self.mode = mode_str2bool(self.find_down_toggle_button(self))
-
-        # disable not existing combinations
-        self.firetrucks_button.disabled = False
-        self.competitions_button.disabled = False
-        # self.standards_button.disabled = False
-        mode_training, mode_game, mode_browse, mode_images = self.mode
-        if mode_images:
-            self.firetrucks_button.disabled = True
-        # if mode_game or mode_images or mode_browse:
-        if mode_images or mode_browse:
-            # if mode_game or mode_images:
-            self.competitions_button.disabled = True
-        # if mode_training or mode_game or mode_images or mode_browse:
-        #     self.standards_button.disabled = True
-
-    def forward_mode2menu(self, menu_screen: str):
-        selected_mode = mode_bool2str(self.mode)
-        self.manager.current = menu_screen
-        self.manager.get_screen(menu_screen).ids.mode_label.text = f"{selected_mode}   "
-
     def forward_mode2menu_manually(self, menu_screen: str, mode: str):
         self.manager.current = menu_screen
         self.manager.get_screen(menu_screen).ids.mode_label.text = f"{mode}   "
-
-    # def find_down_toggle_button(self, widget, selected_mode=None):
-    def find_down_toggle_button(self, widget) -> str:
-        # Recursively search for a ToggleButton in the 'down' state.
-        if isinstance(widget, ToggleButton) and widget.state == "down":
-            return widget.text
-        for child in widget.children:
-            result = self.find_down_toggle_button(child)
-            if result:  # If a 'down' ToggleButton is found, return its text
-                return result
-        return ""  # if no 'down' ToggleButton is found
 
     def update_info_text(self):
         info_text = create_scores_text(read_scores_file())
@@ -312,20 +345,6 @@ class Start_Menu(Screen):
         info_text += "\n\n\n\n"
 
         self.manager.get_screen("info_screen").ids.info_text_label.text = info_text
-
-    def display_mode_buttons_firetrucks(self):
-        self.modi_layout.clear_widgets()
-
-        label = Label(text=f"firetruck")
-
-        self.modi_layout.add_widget(label)
-
-    def display_mode_buttons_competitions(self):
-        self.modi_layout.clear_widgets()
-
-        label = Label(text="competition")
-
-        self.modi_layout.add_widget(label)
 
     def update_firetruck_buttons(self):
         # load available firetrucks
