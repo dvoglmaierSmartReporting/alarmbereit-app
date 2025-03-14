@@ -1,5 +1,6 @@
 from kivy.uix.button import Button
 from kivy.uix.label import Label
+from kivy.uix.image import Image
 from kivy.properties import BooleanProperty
 from kivy.uix.screenmanager import Screen
 from kivy.clock import Clock
@@ -7,6 +8,7 @@ from kivy.clock import Clock
 
 from random import shuffle
 from typing import cast
+import os
 
 from helper.functions import get_firetruck_storage, break_tool_name
 from helper.file_handling import save_to_scores_file, get_scores_key
@@ -101,7 +103,41 @@ class Fahrzeugkunde_Training(Screen):
         )
 
         self.tool_label = cast(Label, self.tool_label)
-        self.tool_label.text = break_tool_name(current_tool)
+
+        ###
+
+        # Reset image boxes
+        self.ids.image_box.clear_widgets()
+        self.ids.cooldown_image_box.clear_widgets()
+
+        # Prepare: extract image tags
+        tool_clean = current_tool.split("<Bild:")[0].split("<Location:")[0].strip()
+        self.tool_label.text = break_tool_name(tool_clean)
+
+        # Load tool image (normal image shown during question)
+        if "<Bild:" in current_tool:
+            try:
+                start = current_tool.index("<Bild:") + len("<Bild:")
+                end = current_tool.index(">", start)
+                bild_filename = current_tool[start:end]
+                bild_path = os.path.join("assets", bild_filename)
+                self.tool_image = Image(source=bild_path, size_hint=(1, 1))
+                self.ids.image_box.add_widget(self.tool_image)
+            except Exception as e:
+                print(f"Tool image load failed: {e}")
+
+        # Store location image filename for later (but don't display yet)
+        self.location_image_path = None
+        if "<Location:" in current_tool:
+            try:
+                start = current_tool.index("<Location:") + len("<Location:")
+                end = current_tool.index(">", start)
+                location_filename = current_tool[start:end]
+                self.location_image_path = os.path.join("assets", location_filename)
+            except Exception as e:
+                print(f"Location image parse failed: {e}")
+
+        ###
 
         self.firetruck_rooms_layout.clear_widgets()
 
@@ -190,5 +226,19 @@ class Fahrzeugkunde_Training(Screen):
 
         # tool ends here. document tool and given answers in question history
         self.game.questions.append(self.current_question)
+
+        ###
+
+        # Show location image during cooldown if available
+        self.ids.cooldown_image_box.clear_widgets()
+        if self.location_image_path:
+            try:
+                self.cooldown_image = Image(source=self.location_image_path, size_hint=(1, 1))
+                self.ids.cooldown_image_box.add_widget(self.cooldown_image)
+            except Exception as e:
+                print(f"Cooldown image load failed: {e}")
+
+
+        ###
 
         Clock.schedule_once(self.next_tool, settings.FEEDBACK_TRAINING_SEC)

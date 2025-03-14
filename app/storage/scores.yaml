@@ -28,6 +28,9 @@ competitions:
   TechnLP Stufe II:
     high_score: 0
 firetrucks:
+  TestTruck:
+    high_score: 0
+    high_strike: 0
   BDLP-Tank1:
     high_score: 0
     high_strike: 0

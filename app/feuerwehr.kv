@@ -280,6 +280,8 @@
     strike_label: strike_label
     high_strike_label: high_strike_label
     tool_label: tool_label
+    image_box: image_box
+    cooldown_image_box: cooldown_image_box
     firetruck_rooms_layout: firetruck_rooms_layout
 
     Button:
@@ -334,6 +336,25 @@
             id: tool_label
             size_hint: 1, 1.5
             font_size: "28sp"
+
+        ###
+        BoxLayout:
+            id: image_box
+            size_hint: 1, 1.2
+            padding: [0, "20dp", 0, 0]
+            canvas.before:
+                Color:
+                    rgba: 0, 0, 0, 0  # transparent, or change as needed
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+        BoxLayout:
+            id: cooldown_image_box
+            size_hint: 1, 1.2
+            padding: [0, "10dp", 0, 0]
+            
+        ###
 
         GridLayout:
             id: firetruck_rooms_layout

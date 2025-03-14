@@ -1,25 +1,25 @@
 TestTruck:
   Fahrer/GK:
-    - Handfunkgerät <Bild>
+    - Handfunkgerät <Bild:hacke_kurz.png> <Location:output.png>
   Mannschaft:
-    - Anhaltekelle <Bild>
-    - Handfunkgerät <Bild>
+    - Anhaltekelle <Bild:hacke_lang.png>
+    - Handfunkgerät <Bild:hacke_kurz.png> <Location:output.png>
   G1:
-    - Spinboard <Bild>
+    - Spinboard <Bild:hacke_kurz.png>
   G2:
-    - Schlagbohrmaschine mit Bohrersatz <Bild>
+    - Schlagbohrmaschine mit Bohrersatz <Bild:hacke_lang.png>
   G3:
-    - Türöffnungsset <Bild>
+    - Türöffnungsset <Bild:krampe.png>
   G4:
-    - Werkzeugsatz <Bild>
+    - Werkzeugsatz <Bild:krampe.png> <Location:output.png>
   G5:
-    - Druckschlauch B <Bild>
+    - Druckschlauch B
   G6:
-    - Druckschlauch B <Bild>
+    - Druckschlauch B
   G7 / Heck:
-    - Handfunkgerät <Bild>
+    - Handfunkgerät <Bild:hacke_kurz.png> <Location:output.png>
   Dach:
-    - Moosgummiplatte <Bild>
+    - Moosgummiplatte <Location:output.png>
 
 RüstLösch:
   Fahrer/GK:
