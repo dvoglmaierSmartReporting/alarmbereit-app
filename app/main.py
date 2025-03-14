@@ -176,12 +176,6 @@ class Start_Menu(Screen):
             font_size="32sp",
         )
 
-        # firetruck_btn1.bind(
-        #     on_release=lambda instance: self.change_screen(
-        #         instance=instance, screen="fahrzeugkunde_menu"
-        #     )
-        # )
-
         firetruck_btn1.bind(
             on_release=lambda instance: self.forward_mode2menu_manually(
                 "fahrzeugkunde_menu", strings.BUTTON_STR_TRAINING
@@ -200,15 +194,9 @@ class Start_Menu(Screen):
             font_size="32sp",
         )
 
-        # firetruck_btn2.bind(
-        #     on_release=lambda instance: self.change_screen(
-        #         instance=instance, screen="fahrzeugkunde_menu"
-        #     )
-        # )
-
         firetruck_btn2.bind(
             on_release=lambda instance: self.forward_mode2menu_manually(
-                "fahrzeugkunde_menu", strings.BUTTON_STR_TRAINING
+                "fahrzeugkunde_menu", strings.BUTTON_STR_GAME
             )
         )
 
@@ -224,15 +212,9 @@ class Start_Menu(Screen):
             font_size="32sp",
         )
 
-        # firetruck_btn3.bind(
-        #     on_release=lambda instance: self.change_screen(
-        #         instance=instance, screen="fahrzeugkunde_menu"
-        #     )
-        # )
-
         firetruck_btn3.bind(
             on_release=lambda instance: self.forward_mode2menu_manually(
-                "fahrzeugkunde_menu", strings.BUTTON_STR_TRAINING
+                "fahrzeugkunde_menu", strings.BUTTON_STR_BROWSE
             )
         )
 
@@ -266,12 +248,6 @@ class Start_Menu(Screen):
             font_size="32sp",
         )
 
-        # competition_btn1.bind(
-        #     on_release=lambda instance: self.change_screen(
-        #         instance=instance, screen="bewerb_menu"
-        #     )
-        # )
-
         competition_btn1.bind(
             on_release=lambda instance: self.forward_mode2menu_manually(
                 "bewerb_menu", strings.BUTTON_STR_TRAINING
@@ -292,15 +268,9 @@ class Start_Menu(Screen):
             font_size="32sp",
         )
 
-        # competition_btn2.bind(
-        #     on_release=lambda instance: self.change_screen(
-        #         instance=instance, screen="bewerb_menu"
-        #     )
-        # )
-
         competition_btn2.bind(
             on_release=lambda instance: self.forward_mode2menu_manually(
-                "bewerb_menu", strings.BUTTON_STR_TRAINING
+                "bewerb_menu", strings.BUTTON_STR_GAME
             )
         )
 
@@ -320,22 +290,8 @@ class Start_Menu(Screen):
 
         return competitions_modi_widget
 
-    def change_screen(self, instance, screen: str):
-        self.manager.transition = SlideTransition(
-            direction="left"
-        )  # Set transition direction
-        self.manager.current = screen  # Switch screen
-
-    def change_screen2(self, instance, screen: str):
-        if self.manager:  # Check if the screen is inside a ScreenManager
-            self.manager.transition = SlideTransition(
-                direction="left"
-            )  # Set transition direction
-            self.manager.current = screen  # Switch screen
-        else:
-            print("Error: ScreenManager not found!")
-
     def forward_mode2menu_manually(self, menu_screen: str, mode: str):
+        self.manager.transition = SlideTransition(direction="left")
         self.manager.current = menu_screen
         self.manager.get_screen(menu_screen).ids.mode_label.text = f"{mode}   "
 
@@ -377,17 +333,6 @@ class Start_Menu(Screen):
             self.manager.get_screen(
                 "fahrzeugkunde_menu"
             ).ids.firetrucks_layout.add_widget(btn)
-
-
-class CustomModiToggleButton(ToggleButton):  # used in feuerwehr.kv
-    def on_touch_up(self, touch):
-        # Call the superclass method to ensure standard behavior is preserved
-        super_result = super(CustomModiToggleButton, self).on_touch_up(touch)
-        if self.state == "normal":  # Check if the button was just released
-            # Force it back to 'down' state if no other buttons are down
-            if not any(btn.state == "down" for btn in self.get_widgets(self.group)):
-                self.state = "down"
-        return super_result
 
 
 class CustomContentToggleButton(ToggleButton):

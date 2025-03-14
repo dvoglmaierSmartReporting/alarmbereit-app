@@ -6,6 +6,10 @@ app/assets/.DS_Store
 ideen_backlog.md
 create_default_score_yaml.py
 
+# sandbox
+screen.py
+screen.kv
+
 # cache
 *.pyc
 __pycache__
