@@ -52,9 +52,9 @@ firetrucks:
   Tank1:
     high_score: 0
     high_strike: 0
-  Tank2:
-    high_score: 0
-    high_strike: 0
+  # Tank2:
+  #   high_score: 0
+  #   high_strike: 0
   "TankD\xFCrrnberg":
     high_score: 0
     high_strike: 0

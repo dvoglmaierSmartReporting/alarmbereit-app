@@ -524,140 +524,140 @@ Leiter:
     - Wenderohr
     - Aufnahme f. Korbtrage
 
-Tank2:
-  Fahrer/GK:
-    - Pressluftatmer
-    - Vollmaske f. Pressluftatmer
-    - Wärmebildkamera
-    - Handlampe
-    - Personen-Sicherungsset
-    - Handfunkgerät
-    - Gasmessgerät
-  Mannschaft:
-    - Handfunkterät
+# Tank2:
+#   Fahrer/GK:
+#     - Pressluftatmer
+#     - Vollmaske f. Pressluftatmer
+#     - Wärmebildkamera
+#     - Handlampe
+#     - Personen-Sicherungsset
+#     - Handfunkgerät
+#     - Gasmessgerät
+#   Mannschaft:
+#     - Handfunkterät
 
-    - Atemschutz Überwachungstafel
-    - Nothammer
-    - Pannendreieck
-    - Fahrzeugwerkzeug
-    - Pressluftatmer
-    - Vollmaske f. Pressluftatmer
-    - Reserveflasche
-    - Schutzhandschuhe
-    - Arbeitsmesser
-    - Verbandskaste
-    - Bergetuch
-    - Rettungsleine
-    - Steigergurt
-    - Meldertasche
-    - Handlampe
-    - Anhaltekelle
-    - Signaltaschenlampe
-    - Suchscheinwerfer
-    - Warndreieck "Feuerwehr"
-    - Absperrband
-    - Einweghandschuhe
-  G1:
-    - Faltbehälter 3000 l
-    - Spiralluton
-    - Wasserwerfer
-    - Hydrofix
-    - Tauchpumpe
-    - Verlängerungskabel
-    - Be- u. Entlüftungsgerät
-  G2:
-    - Hacke langstielig
-    - Hacke kurzstielig
-    - Hammer 2 kg
-    - Rauchfangschlüsselsatz
-    - Schachthakensatz
-    - Bogensäge
-    - Schnittschutzhose
-    - Motorkettensäge
-    - Treibstoff-Ölkanister
-    - Werkzeugkiste
-    - Lichtfluter 1000 W
-    - Flutbrücke
-    - KSA 20 m. Stromverteiler
-    - E-Werkzeug
-    - Kabeltrommel 230 V
-    - Generator 8 kVA
-    - Lichtmastbetätigung
-    - Haue
-    - Stativ
-    - Abgasschlauch
-    - Hammer 5 kg
-    - Brechstange
-    - Sappie
-    - Mistgabel
-    - Heugabel
-    - Ausräumhaken
-    - Piassava-Besen
-    - Flachschaufel
-    - Stichschaufel
-    - Trassenband
-    - Bolzenschneider
-    - Krampen
-    - Feuerwehraxt
-  G3:
-    - Feuerlöscher
-    - Kaminkehrerwerkzeug
-    - Sammelstück BBB-A
-    - Hitzeschutzanzug
-    - Schutzanzug Schutzstufe 2
-    - Robisrohr m. Schlauch
-    - Hydroschild C
-    - Hydroschild B
-  G4:
-    - Druckschlauch B
-    - Ölbindemittel
-    - Gummistiefel m. Stiefelsocken
-    - Seilstropp verz.
-    - Abschleppseil
-    - E-Gummimatte
-    - Plastikfolie
-    - Arbeitsleine
-    - Schnürleine
-  G5:
-    - Druckschlauch C42
-    - Hohlstrahlrohr
-    - Verteiler B-CBC
-    - ABC-Kupplungsschlüssel
-    - Übergangsstück B-C
-    - Strahlrohr B m. Stützkrümmer
-    - Stützkrümmer
-    - Strahlrohr B
-    - Einlaufkrümmer B
-    - Druckbegrenzungsventil
-    - Flankierer
-    - Sammelstück BB-A
-    - Schlauchtragekorb
-    - Schaumrohr
-    - Zumischer Z2/Z4
-  G6:
-    - Benzinkanister
-    - Dieselkanister
-    - Einfüllstutzen
-    - Hochdruckhaspel m. Pistole
-    - Druckschlauch HD
-    - Druckschlauch B
-    - Schlauchbrücke
-    - Fahrzeug Unterlegkeile
-  G7 / Heck:
-    - Übergangsstück B-C
-    - Hydrantenschlüssel
-    - Handfunkgerät
-    - ABC-Kupplungsschlüssel
-    - Übergangsstück A110-B75
-    - Übergangsstück A125-A110
-    - Kupplungsschlüssel 125
-  Dach:
-    - Schaumausrüstung
-    - Steckleiter 4-teilig
-    - Wasserwerfer
-    - Löschlanze
-    - Monsunrohr
-    - Einreißhaken
+#     - Atemschutz Überwachungstafel
+#     - Nothammer
+#     - Pannendreieck
+#     - Fahrzeugwerkzeug
+#     - Pressluftatmer
+#     - Vollmaske f. Pressluftatmer
+#     - Reserveflasche
+#     - Schutzhandschuhe
+#     - Arbeitsmesser
+#     - Verbandskaste
+#     - Bergetuch
+#     - Rettungsleine
+#     - Steigergurt
+#     - Meldertasche
+#     - Handlampe
+#     - Anhaltekelle
+#     - Signaltaschenlampe
+#     - Suchscheinwerfer
+#     - Warndreieck "Feuerwehr"
+#     - Absperrband
+#     - Einweghandschuhe
+#   G1:
+#     - Faltbehälter 3000 l
+#     - Spiralluton
+#     - Wasserwerfer
+#     - Hydrofix
+#     - Tauchpumpe
+#     - Verlängerungskabel
+#     - Be- u. Entlüftungsgerät
+#   G2:
+#     - Hacke langstielig
+#     - Hacke kurzstielig
+#     - Hammer 2 kg
+#     - Rauchfangschlüsselsatz
+#     - Schachthakensatz
+#     - Bogensäge
+#     - Schnittschutzhose
+#     - Motorkettensäge
+#     - Treibstoff-Ölkanister
+#     - Werkzeugkiste
+#     - Lichtfluter 1000 W
+#     - Flutbrücke
+#     - KSA 20 m. Stromverteiler
+#     - E-Werkzeug
+#     - Kabeltrommel 230 V
+#     - Generator 8 kVA
+#     - Lichtmastbetätigung
+#     - Haue
+#     - Stativ
+#     - Abgasschlauch
+#     - Hammer 5 kg
+#     - Brechstange
+#     - Sappie
+#     - Mistgabel
+#     - Heugabel
+#     - Ausräumhaken
+#     - Piassava-Besen
+#     - Flachschaufel
+#     - Stichschaufel
+#     - Trassenband
+#     - Bolzenschneider
+#     - Krampen
+#     - Feuerwehraxt
+#   G3:
+#     - Feuerlöscher
+#     - Kaminkehrerwerkzeug
+#     - Sammelstück BBB-A
+#     - Hitzeschutzanzug
+#     - Schutzanzug Schutzstufe 2
+#     - Robisrohr m. Schlauch
+#     - Hydroschild C
+#     - Hydroschild B
+#   G4:
+#     - Druckschlauch B
+#     - Ölbindemittel
+#     - Gummistiefel m. Stiefelsocken
+#     - Seilstropp verz.
+#     - Abschleppseil
+#     - E-Gummimatte
+#     - Plastikfolie
+#     - Arbeitsleine
+#     - Schnürleine
+#   G5:
+#     - Druckschlauch C42
+#     - Hohlstrahlrohr
+#     - Verteiler B-CBC
+#     - ABC-Kupplungsschlüssel
+#     - Übergangsstück B-C
+#     - Strahlrohr B m. Stützkrümmer
+#     - Stützkrümmer
+#     - Strahlrohr B
+#     - Einlaufkrümmer B
+#     - Druckbegrenzungsventil
+#     - Flankierer
+#     - Sammelstück BB-A
+#     - Schlauchtragekorb
+#     - Schaumrohr
+#     - Zumischer Z2/Z4
+#   G6:
+#     - Benzinkanister
+#     - Dieselkanister
+#     - Einfüllstutzen
+#     - Hochdruckhaspel m. Pistole
+#     - Druckschlauch HD
+#     - Druckschlauch B
+#     - Schlauchbrücke
+#     - Fahrzeug Unterlegkeile
+#   G7 / Heck:
+#     - Übergangsstück B-C
+#     - Hydrantenschlüssel
+#     - Handfunkgerät
+#     - ABC-Kupplungsschlüssel
+#     - Übergangsstück A110-B75
+#     - Übergangsstück A125-A110
+#     - Kupplungsschlüssel 125
+#   Dach:
+#     - Schaumausrüstung
+#     - Steckleiter 4-teilig
+#     - Wasserwerfer
+#     - Löschlanze
+#     - Monsunrohr
+#     - Einreißhaken
 
 Voraus: &tunnel
   Fahrer/GK:

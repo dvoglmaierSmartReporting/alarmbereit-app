@@ -49,7 +49,7 @@ class Fahrzeugkunde_Training(Screen):
         self.update_strike_label()
 
     def increment_strike(self):
-        self.game.answers_correct_strike += 1
+        self.game.answers_correct_strike += settings.FIRETRUCK_TRAINING_CORRECT_POINTS
         self.update_strike_label()
 
     # def end_game(self):
@@ -149,7 +149,7 @@ class Fahrzeugkunde_Training(Screen):
     def correct_answer(self):
         self.increment_strike()
 
-        self.game.answers_correct_total += 1
+        self.game.answers_correct_total += settings.FIRETRUCK_TRAINING_CORRECT_POINTS
 
         if self.game.answers_correct_strike > self.current_high_strike:
             self.current_high_strike = self.game.answers_correct_strike
@@ -160,7 +160,7 @@ class Fahrzeugkunde_Training(Screen):
 
     def incorrect_answer(self):
         # self.reset_strike()
-        Clock.schedule_once(self.reset_strike, settings.FEEDBACK_TRAINING_SEC)
+        Clock.schedule_once(self.reset_strike, settings.FIRETRUCK_TRAINING_FEEDBACK_SEC)
 
         # todo: check for PB score!
 
@@ -233,12 +233,13 @@ class Fahrzeugkunde_Training(Screen):
         self.ids.cooldown_image_box.clear_widgets()
         if self.location_image_path:
             try:
-                self.cooldown_image = Image(source=self.location_image_path, size_hint=(1, 1))
+                self.cooldown_image = Image(
+                    source=self.location_image_path, size_hint=(1, 1)
+                )
                 self.ids.cooldown_image_box.add_widget(self.cooldown_image)
             except Exception as e:
                 print(f"Cooldown image load failed: {e}")
 
-
         ###
 
-        Clock.schedule_once(self.next_tool, settings.FEEDBACK_TRAINING_SEC)
+        Clock.schedule_once(self.next_tool, settings.FIRETRUCK_TRAINING_FEEDBACK_SEC)

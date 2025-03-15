@@ -29,24 +29,26 @@ class Bewerb_Game(Screen):
         self.extra_time_label.opacity = 0
 
     def reset_timer(self):
-        self.time_left = settings.COMPETITION_START_TIME_SEC
+        self.time_left = settings.COMPETITION_GAME_START_TIME_SEC
 
         # self.timer_label.text = f"{str(self.time_left)} s  "
         self.timer_label.text = f""
 
         # self.set_progress_bar()
-        self.progress_bar.max = settings.COMPETITION_START_TIME_SEC
+        self.progress_bar.max = settings.COMPETITION_GAME_START_TIME_SEC
 
     def add_time(self):
-        self.time_left = round(self.time_left + settings.COMPETITION_EXTRA_TIME_SEC, 1)
+        self.time_left = round(
+            self.time_left + settings.COMPETITION_GAME_EXTRA_TIME_SEC, 1
+        )
 
-        self.extra_time_label.text = f"+ {settings.COMPETITION_EXTRA_TIME_SEC} s  "
+        self.extra_time_label.text = f"+ {settings.COMPETITION_GAME_EXTRA_TIME_SEC} s  "
 
         self.extra_time_label.opacity = 1
 
         Clock.schedule_once(
             self.hide_label,
-            settings.DISPLAY_EXTRA_TIME_LABEL_SEC,
+            settings.COMPETITION_GAME_DISPLAY_EXTRA_TIME_SEC,
         )
 
     def update_progress_bar(self):
@@ -57,7 +59,9 @@ class Bewerb_Game(Screen):
         self.update_progress_bar()
 
         if self.time_left > 0.0:
-            self.time_left = round(self.time_left - settings.INTERVAL_GAME_SEC, 1)
+            self.time_left = round(
+                self.time_left - settings.COMPETITION_GAME_INTERVAL_SEC, 1
+            )
 
             if not self.time_left == 0.0:
                 # self.timer_label.text = f"{str(self.time_left)} s  "
@@ -71,7 +75,7 @@ class Bewerb_Game(Screen):
             self.end_game()
             pass
 
-    def increment_score(self, add: int = settings.COMPETITION_CORRECT_POINTS):
+    def increment_score(self, add: int = settings.COMPETITION_GAME_CORRECT_POINTS):
         self.game.score += add
         self.score_label.text = f"{str(self.game.score)}  "
 
@@ -128,7 +132,9 @@ class Bewerb_Game(Screen):
 
         self.update_score_labels()
 
-        Clock.schedule_interval(self.update_timer, settings.INTERVAL_GAME_SEC)
+        Clock.schedule_interval(
+            self.update_timer, settings.COMPETITION_GAME_INTERVAL_SEC
+        )
 
         # start game
         self.next_question()
@@ -188,7 +194,7 @@ class Bewerb_Game(Screen):
 
         if (
             self.game.answers_correct_total
-            % settings.COMPETITION_CORRECT_FOR_EXTRA_TIME
+            % settings.COMPETITION_GAME_CORRECT_FOR_EXTRA_TIME
             == 0
         ):
             self.add_time()
@@ -241,4 +247,4 @@ class Bewerb_Game(Screen):
         # tool ends here. document tool and given answers in question history
         self.game.questions.append(self.current_question)
 
-        Clock.schedule_once(self.next_question, settings.COMPETITION_FEEDBACK_GAME_SEC)
+        Clock.schedule_once(self.next_question, settings.COMPETITION_GAME_FEEDBACK_SEC)

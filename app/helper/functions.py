@@ -90,7 +90,7 @@ def create_scores_text(scores: dict[str, dict[str, dict[str, int]]]) -> str:
     total_score = 0
     total_strike = 0
     total = 0
-    factor = settings.FIRETRUCK_STRIKE_FACTOR
+    factor = settings.FIRETRUCK_TRAINING_STRIKE_FACTOR
 
     for category, competitions in scores.items():
         if category == "competitions":

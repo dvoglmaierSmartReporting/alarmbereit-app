@@ -30,24 +30,26 @@ class Fahrzeugkunde_Game(Screen):
         self.extra_time_label.opacity = 0
 
     def reset_timer(self):
-        self.time_left = settings.FIRETRUCK_START_TIME_SEC
+        self.time_left = settings.FIRETRUCK_GAME_START_TIME_SEC
 
         # self.timer_label.text = f"{str(self.time_left)} s  "
         self.timer_label.text = f""
 
         # self.set_progress_bar()
-        self.progress_bar.max = settings.FIRETRUCK_START_TIME_SEC
+        self.progress_bar.max = settings.FIRETRUCK_GAME_START_TIME_SEC
 
     def add_time(self):
-        self.time_left = round(self.time_left + settings.FIRETRUCK_EXTRA_TIME_SEC, 1)
+        self.time_left = round(
+            self.time_left + settings.FIRETRUCK_GAME_EXTRA_TIME_SEC, 1
+        )
 
-        self.extra_time_label.text = f"+ {settings.FIRETRUCK_EXTRA_TIME_SEC} s  "
+        self.extra_time_label.text = f"+ {settings.FIRETRUCK_GAME_EXTRA_TIME_SEC} s  "
 
         self.extra_time_label.opacity = 1
 
         Clock.schedule_once(
             self.hide_label,
-            settings.DISPLAY_EXTRA_TIME_LABEL_SEC,
+            settings.FIRETRUCK_GAME_DISPLAY_EXTRA_TIME_SEC,
         )
 
     def update_progress_bar(self):
@@ -58,7 +60,9 @@ class Fahrzeugkunde_Game(Screen):
         self.update_progress_bar()
 
         if self.time_left > 0.0:
-            self.time_left = round(self.time_left - settings.INTERVAL_GAME_SEC, 1)
+            self.time_left = round(
+                self.time_left - settings.FIRETRUCK_GAME_INTERVAL_SEC, 1
+            )
 
             if not self.time_left == 0.0:
                 # self.timer_label.text = f"{str(self.time_left)} s  "
@@ -72,7 +76,7 @@ class Fahrzeugkunde_Game(Screen):
             self.end_game()
             pass
 
-    def increment_score(self, add: int = settings.FIRETRUCK_CORRECT_POINTS):
+    def increment_score(self, add: int = settings.FIRETRUCK_GAME_CORRECT_POINTS):
         self.game.score += add
         self.score_label.text = f"{str(self.game.score)}  "
 
@@ -113,7 +117,7 @@ class Fahrzeugkunde_Game(Screen):
 
         self.update_score_labels()
 
-        Clock.schedule_interval(self.update_timer, settings.INTERVAL_GAME_SEC)
+        Clock.schedule_interval(self.update_timer, settings.FIRETRUCK_GAME_INTERVAL_SEC)
 
         # start game
         self.next_tool()
@@ -147,7 +151,8 @@ class Fahrzeugkunde_Game(Screen):
         self.game.answers_correct_total += 1
 
         if (
-            self.game.answers_correct_total % settings.FIRETRUCK_CORRECT_FOR_EXTRA_TIME
+            self.game.answers_correct_total
+            % settings.FIRETRUCK_GAME_CORRECT_FOR_EXTRA_TIME
             == 0
         ):
             self.add_time()
@@ -219,4 +224,4 @@ class Fahrzeugkunde_Game(Screen):
         # tool ends here. document tool and given answers in question history
         self.game.questions.append(self.current_question)
 
-        Clock.schedule_once(self.next_tool, settings.FIRETRUCK_FEEDBACK_GAME_SEC)
+        Clock.schedule_once(self.next_tool, settings.FIRETRUCK_GAME_FEEDBACK_SEC)
