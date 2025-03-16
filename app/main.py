@@ -112,9 +112,7 @@ class Start_Menu(Screen):
         # Container where the additional widget will be displayed
         # Part of content_layout
         self.display_container = BoxLayout(
-            size_hint=(1, 3.5),
-            orientation="vertical",
-            spacing="3dp",
+            size_hint=(1, 3.5), orientation="vertical", spacing="5dp", padding="20dp"
         )
 
         firetrucks_modi_widget = self.add_firetruck_modi_widget()
@@ -153,7 +151,6 @@ class Start_Menu(Screen):
         self.content_layout.add_widget(self.display_container)
 
     def add_firetruck_modi_widget(self):
-        ### WIDGET ###
         firetrucks_modi_widget = BoxLayout(
             orientation="vertical",
             spacing="3dp",
@@ -170,7 +167,6 @@ class Start_Menu(Screen):
 
         ### BUTTON 1 ###
         firetruck_btn1 = Button(
-            size_hint=(0.9, 1),
             pos_hint={"center_x": 0.5},
             text=f"{strings.BUTTON_STR_TRAINING} --->",
             font_size="32sp",
@@ -188,7 +184,6 @@ class Start_Menu(Screen):
 
         ### BUTTON 2 ###
         firetruck_btn2 = Button(
-            size_hint=(0.9, 1),
             pos_hint={"center_x": 0.5},
             text=f"{strings.BUTTON_STR_GAME} --->",
             font_size="32sp",
@@ -206,7 +201,6 @@ class Start_Menu(Screen):
 
         ### BUTTON 3 ###
         firetruck_btn3 = Button(
-            size_hint=(0.9, 1),
             pos_hint={"center_x": 0.5},
             text=f"{strings.BUTTON_STR_BROWSE} --->",
             font_size="32sp",
@@ -242,7 +236,6 @@ class Start_Menu(Screen):
 
         ### BUTTON 1 ###
         competition_btn1 = Button(
-            size_hint=(0.9, 1),
             pos_hint={"center_x": 0.5},
             text=f"{strings.BUTTON_STR_TRAINING} --->",
             font_size="32sp",
@@ -262,7 +255,6 @@ class Start_Menu(Screen):
 
         ### BUTTON 2 ###
         competition_btn2 = Button(
-            size_hint=(0.9, 1),
             pos_hint={"center_x": 0.5},
             text=f"{strings.BUTTON_STR_GAME} --->",
             font_size="32sp",

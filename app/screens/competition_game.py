@@ -31,9 +31,6 @@ class Bewerb_Game(Screen):
     def reset_timer(self):
         self.time_left = settings.COMPETITION_GAME_START_TIME_SEC
 
-        # self.timer_label.text = f"{str(self.time_left)} s  "
-        self.timer_label.text = f""
-
         # self.set_progress_bar()
         self.progress_bar.max = settings.COMPETITION_GAME_START_TIME_SEC
 
@@ -63,13 +60,6 @@ class Bewerb_Game(Screen):
                 self.time_left - settings.COMPETITION_GAME_INTERVAL_SEC, 1
             )
 
-            if not self.time_left == 0.0:
-                # self.timer_label.text = f"{str(self.time_left)} s  "
-                self.timer_label.text = f""  # hide label for UI testing
-
-            else:
-                self.timer_label.text = "Ende  "
-                # todo: disable buttons between game end and menu screen animation
         else:
             # Clock.unschedule(self.update_timer)  # Stop the timer when it reaches 0
             self.end_game()

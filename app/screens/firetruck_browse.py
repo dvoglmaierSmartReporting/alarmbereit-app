@@ -79,7 +79,7 @@ class Fahrzeugkunde_Browse(Screen):
         self.add_items(self.firetruck)
 
     def filter_list(self):
-        filter_text = self.filter_text.text  # type: ignore
+        filter_text = self.filter_text.text
 
         # Dictionary comprehension with case-insensitive filtering
         filtered_dict = {
@@ -88,3 +88,6 @@ class Fahrzeugkunde_Browse(Screen):
         }
 
         self.add_items(filtered_dict)
+
+    def remove_filter_text(self):
+        self.filter_text.text = ""
