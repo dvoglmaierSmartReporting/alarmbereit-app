@@ -20,8 +20,6 @@ settings = Settings()
 
 
 class Fahrzeugkunde_Training(Screen):
-    strike_label_visible = BooleanProperty(False)
-
     def select_firetruck(self, selected_firetruck: str):
         # troubleshooting: fix firetruck
         # self.selected_firetruck = "Tank1" "Rüst+Lösch"
@@ -107,8 +105,8 @@ class Fahrzeugkunde_Training(Screen):
         ###
 
         # Reset image boxes
-        self.ids.image_box.clear_widgets()
-        self.ids.cooldown_image_box.clear_widgets()
+        self.ids.image_box_question.clear_widgets()
+        self.ids.image_box_answer.clear_widgets()
 
         # Prepare: extract image tags
         tool_clean = current_tool.split("<Bild:")[0].split("<Location:")[0].strip()
@@ -121,8 +119,10 @@ class Fahrzeugkunde_Training(Screen):
                 end = current_tool.index(">", start)
                 bild_filename = current_tool[start:end]
                 bild_path = os.path.join("assets", bild_filename)
-                self.tool_image = Image(source=bild_path, size_hint=(1, 1))
-                self.ids.image_box.add_widget(self.tool_image)
+                self.tool_image = Image(
+                    source=bild_path, fit_mode="contain", size_hint=(1, 1)
+                )
+                self.ids.image_box_question.add_widget(self.tool_image)
             except Exception as e:
                 print(f"Tool image load failed: {e}")
 
@@ -230,13 +230,13 @@ class Fahrzeugkunde_Training(Screen):
         ###
 
         # Show location image during cooldown if available
-        self.ids.cooldown_image_box.clear_widgets()
+        self.ids.image_box_answer.clear_widgets()
         if self.location_image_path:
             try:
                 self.cooldown_image = Image(
                     source=self.location_image_path, size_hint=(1, 1)
                 )
-                self.ids.cooldown_image_box.add_widget(self.cooldown_image)
+                self.ids.image_box_answer.add_widget(self.cooldown_image)
             except Exception as e:
                 print(f"Cooldown image load failed: {e}")
 

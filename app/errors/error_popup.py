@@ -6,9 +6,8 @@ from kivy.uix.scrollview import ScrollView
 
 from helper.settings import Strings
 
-strings = Strings()
 
-from typing import cast
+strings = Strings()
 
 
 class ErrorPopup(Popup):

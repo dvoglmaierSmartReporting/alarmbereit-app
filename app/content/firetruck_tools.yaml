@@ -2,20 +2,20 @@ TestTruck:
   Fahrer/GK:
     - Handfunkgerät <Bild:hacke_kurz.png> <Location:output.png>
   Mannschaft:
-    - Anhaltekelle <Bild:hacke_lang.png>
+    - Anhaltekelle <Bild:hacke_lang.png> <Location:truck_RL/g1_front.jpg>
     - Handfunkgerät <Bild:hacke_kurz.png> <Location:output.png>
   G1:
-    - Spinboard <Bild:hacke_kurz.png>
+    - Spinboard <Bild:hacke_kurz.png> <Location:truck_RL/g1_front.jpg>
   G2:
-    - Schlagbohrmaschine mit Bohrersatz <Bild:hacke_lang.png>
+    - Schlagbohrmaschine mit Bohrersatz <Bild:hacke_lang.png> <Location:truck_RL/g1_front.jpg>
   G3:
-    - Türöffnungsset <Bild:krampe.png>
+    - Türöffnungsset <Bild:krampe.png> <Location:truck_RL/g1_front.jpg>
   G4:
-    - Werkzeugsatz <Bild:krampe.png> <Location:output.png>
+    - Werkzeugsatz <Bild:krampe.png> <Location:output.png> <Location:truck_RL/g1_front.jpg>
   G5:
-    - Druckschlauch B
+    - Druckschlauch B <Location:truck_RL/g1_front.jpg>
   G6:
-    - Druckschlauch B
+    - Druckschlauch B <Location:truck_RL/g1_front.jpg>
   G7 / Heck:
     - Handfunkgerät <Bild:hacke_kurz.png> <Location:output.png>
   Dach:
@@ -940,7 +940,6 @@ Pumpe:
     - Segeltucheimer
   G4:
     - KSA 20
-
     - Druckschlauch B
     - Stromerzeuger MAG
     - Stromerzeuger klein
@@ -990,9 +989,7 @@ Rüst:
     - Wolldecke
     - Meldertasche
     - KFZ Bordwerkzeug
-
   "": []
-
   "G1 Drehfach\nlinks":
     - Umlenkrolle 140 kN
     - Umlenkrolle 200 kN
@@ -1026,7 +1023,6 @@ Rüst:
     - Bogensäge
     - Eisensäge
     - Stange f. Rangierwagenheber
-
   "G2 Drehfach\nrechts":
     - Hydraulischer Rettungssatz
     - Teleskoprettunszylinder
@@ -1046,7 +1042,6 @@ Rüst:
     - Blitzleuchten
     - Absperrband
     - Flatterleine 5 m
-
   G1 innen:
     - Radkreuz f. LKW
     - Radkreuz f. PKW
@@ -1064,7 +1059,6 @@ Rüst:
     - Übergangsstück B-C
     - Grabenstütze
     - Rüstholz
-
   G2 innen:
     - Hydraulikverlängerung 10 m
     - Kurbel f. Hydraulikhaspel
@@ -1090,7 +1084,6 @@ Rüst:
     - Bohrhammer
     - Strickleiter 20 m
     - Erdungskabel
-
   "G1 Drehfach\nrechts":
     - Tauchpumpe 2400 l/min
     - Tauchpumpe 850 l/min
@@ -1112,7 +1105,6 @@ Rüst:
     - Seilführungsrolle f. Kranseilwinde
     - Aufsatz f. Rodator
     - Schlüssel f. Hauswasserabsperrung
-
   "G2 Drehfach\nlinks":
     - Stromerzeuger 30 kVA
     - Stromerzeuger 10 kVA
@@ -1133,7 +1125,6 @@ Rüst:
     - Übergangsstück 400 V
     - Übergangsstück 400 V m. Polwender
     - Abgasschlauch
-
   G3:
     - Abschleppseil 12 mm 5 m
     - Abschleppseil 16 mm 5 m
@@ -1171,7 +1162,6 @@ Rüst:
     - Einhängefolie f. Faltbehälter
     - Dreibeinstativ
     - Rollgliss
-
   G4:
     - Sanitätskasten m. Beatmungsbeutel
     - Elektrowerkzeug
@@ -1201,7 +1191,6 @@ Rüst:
     - Unterlegmatten Gummi
     - Krankentrage
     - Schwelleraufsatz
-
   G5 / Heck:
     - Schneekette
     - Kanister Diesel 10 l
@@ -1211,7 +1200,6 @@ Rüst:
     - Einfüllstutzen
     - Kranabstützunterlagen
     - Schäkel 12 t
-
   Dach:
     - Steckleiter 4-teilig
     - Schleifkorbtrage m. Gehänge

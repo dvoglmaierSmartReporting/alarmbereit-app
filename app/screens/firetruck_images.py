@@ -4,9 +4,6 @@ from kivy.uix.image import Image
 
 
 class Fahrzeugkunde_Images(Screen):
-    # def __init__(self, **kwargs):
-    #     super(Fahrzeugkunde_Images, self).__init__(**kwargs)
-
     def load_image(self):
         self.scatter.clear_widgets()
 

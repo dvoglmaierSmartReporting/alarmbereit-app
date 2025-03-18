@@ -366,8 +366,8 @@
     strike_label: strike_label
     high_strike_label: high_strike_label
     tool_label: tool_label
-    image_box: image_box
-    cooldown_image_box: cooldown_image_box
+    image_box_question: image_box_question
+    image_box_answer: image_box_answer
     firetruck_rooms_layout: firetruck_rooms_layout
 
     # SCREEN
@@ -437,32 +437,21 @@
             id: tool_label
             font_size: "28sp"
 
-
-        ###
-        # IMAGE
+        # IMAGES
         BoxLayout:
-            size_hint_y: 1
-            id: image_box
-            #padding: [0, "20dp", 0, 0]
-            canvas.before:
-                Color:
-                    rgba: 0, 0, 0, 0  # transparent, or change as needed
-                Rectangle:
-                    pos: self.pos
-                    size: self.size
+            size_hint_y: 3
 
-        BoxLayout:
-            size_hint_y: 1
-            id: cooldown_image_box
-            size_hint: 1, 1.2
-            #padding: [0, "10dp", 0, 0]
+            BoxLayout:
+                size_hint_x: 1
+                id: image_box_question
+
+            BoxLayout:
+                size_hint_x: 1
+                id: image_box_answer
             
-        ###
-
-
         # FIRETRUCK ROOMS
         GridLayout:
-            size_hint_y: 6
+            size_hint_y: 4
             id: firetruck_rooms_layout
             spacing: "3dp"
             cols: 2
@@ -552,7 +541,7 @@
         # IMAGE
         BoxLayout:
             size_hint_y: 1
-            id: image_box
+            id: image_box_question
             #padding: [0, "20dp", 0, 0]
             canvas.before:
                 Color:

@@ -72,7 +72,7 @@ from screens.firetruck_images import Fahrzeugkunde_Images
 from screens.competition_menu import Bewerb_Menu
 from screens.competition_training import Bewerb_Training
 from screens.competition_game import Bewerb_Game
-from screens.error_popup import ErrorPopup
+from errors.error_popup import ErrorPopup
 
 from helper.functions import load_total_storage, create_scores_text
 from helper.file_handling import read_scores_file, transfer_file
@@ -285,7 +285,7 @@ class Start_Menu(Screen):
     def forward_mode2menu_manually(self, menu_screen: str, mode: str):
         self.manager.transition = SlideTransition(direction="left")
         self.manager.current = menu_screen
-        self.manager.get_screen(menu_screen).ids.mode_label.text = f"{mode}   "
+        self.manager.get_screen(menu_screen).ids.mode_label.text = mode
 
     def update_info_text(self):
         info_text = create_scores_text(read_scores_file())
@@ -305,7 +305,11 @@ class Start_Menu(Screen):
         ).ids.firetrucks_layout.clear_widgets()
         for firetruck in self.total_firetrucks:
 
-            abbreviation = strings.trucks.get(firetruck)
+            if firetruck == "BDLP-Tank1":
+                # skip BDLP and always add at the bottom of the list
+                continue
+
+            abbreviation = strings.trucks_hallein.get(firetruck)
             # Create a button with two strings, one centered and one at the bottom right
             btn = Button(
                 text=f"{firetruck}{' '*3}[size=30]{abbreviation}[/size]",
@@ -325,6 +329,30 @@ class Start_Menu(Screen):
             self.manager.get_screen(
                 "fahrzeugkunde_menu"
             ).ids.firetrucks_layout.add_widget(btn)
+
+        # add placeholder
+        lbl = Label(font_size="32sp", size_hint_y=None, height=30, size_hint_x=1)
+        self.manager.get_screen("fahrzeugkunde_menu").ids.firetrucks_layout.add_widget(
+            lbl
+        )
+
+        # create button for BDLP-Tank1
+        btn = Button(
+            text=f"BDLP-Tank1",
+            font_size="32sp",
+            markup=True,  # Enable markup for custom text positioning
+            size_hint_y=None,
+            height=150,
+            size_hint_x=1,
+        )
+        btn.bind(
+            on_release=self.manager.get_screen("fahrzeugkunde_menu").on_button_release
+        )
+
+        # Add the button to the layout
+        self.manager.get_screen("fahrzeugkunde_menu").ids.firetrucks_layout.add_widget(
+            btn
+        )
 
 
 class CustomContentToggleButton(ToggleButton):
