@@ -24,7 +24,7 @@ class Fahrzeugkunde_Game(Screen):
         # troubleshooting: fix firetruck
         # self.selected_firetruck = "Tank1" "Rüst+Lösch"
         self.selected_firetruck = selected_firetruck
-        self.firetruck_label.text = f"   {selected_firetruck}"
+        self.firetruck_label.text = selected_firetruck
 
     def hide_label(self, *args):
         self.extra_time_label.opacity = 0
@@ -40,7 +40,7 @@ class Fahrzeugkunde_Game(Screen):
             self.time_left + settings.FIRETRUCK_GAME_EXTRA_TIME_SEC, 1
         )
 
-        self.extra_time_label.text = f"+ {settings.FIRETRUCK_GAME_EXTRA_TIME_SEC} s  "
+        self.extra_time_label.text = f"+ {settings.FIRETRUCK_GAME_EXTRA_TIME_SEC} s"
 
         self.extra_time_label.opacity = 1
 
@@ -68,11 +68,11 @@ class Fahrzeugkunde_Game(Screen):
 
     def increment_score(self, add: int = settings.FIRETRUCK_GAME_CORRECT_POINTS):
         self.game.score += add
-        self.score_label.text = f"{str(self.game.score)}  "
+        self.score_label.text = str(self.game.score)
 
     def update_score_labels(self):
-        self.score_label.text = f"{str(self.game.score)}  "
-        self.high_score_label.text = f"Best: {str(self.current_high_score)}  "
+        self.score_label.text = str(self.game.score)
+        self.high_score_label.text = f"Best: {str(self.current_high_score)}"
 
     def end_game(self):
         Clock.unschedule(self.update_timer)

@@ -26,7 +26,7 @@ class Fahrzeugkunde_Training(Screen):
         self.selected_firetruck = selected_firetruck
 
         self.firetruck_label = cast(Label, self.firetruck_label)
-        self.firetruck_label.text = f"   {selected_firetruck}"
+        self.firetruck_label.text = selected_firetruck
 
     # def forward_mode_2_fk_training(self, mode: tuple):
     #     self.mode_training: bool = mode[0]
@@ -36,11 +36,11 @@ class Fahrzeugkunde_Training(Screen):
 
     def update_strike_label(self):
         self.strike_label = cast(Label, self.strike_label)
-        self.strike_label.text = f"{str(self.game.answers_correct_strike)}  "
+        self.strike_label.text = str(self.game.answers_correct_strike)
 
     def update_high_strike_label(self):
         self.high_strike_label = cast(Label, self.high_strike_label)
-        self.high_strike_label.text = f"Best: {str(self.current_high_strike)}  "
+        self.high_strike_label.text = f"Best: {str(self.current_high_strike)}"
 
     def reset_strike(self, *arg):
         self.game.answers_correct_strike = 0

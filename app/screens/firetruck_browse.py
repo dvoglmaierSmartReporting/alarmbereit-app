@@ -19,7 +19,7 @@ class Fahrzeugkunde_Browse(Screen):
         # troubleshooting: fix firetruck
         # self.selected_firetruck = "Tank1" "Rüst+Lösch"
         self.selected_firetruck = selected_firetruck
-        self.firetruck_label.text = f"{selected_firetruck}   "
+        self.firetruck_label.text = selected_firetruck
 
     def load_firetruck(self):
         total_storage = load_total_storage()

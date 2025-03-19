@@ -23,7 +23,7 @@ class Bewerb_Game(Screen):
         # troubleshooting: fix competition
         # self.selected_competition = "Funk"
         self.selected_competition = selected_competition
-        self.competition_label.text = f"   {selected_competition}"
+        self.competition_label.text = selected_competition
 
     def hide_label(self, *args):
         self.extra_time_label.opacity = 0
@@ -39,7 +39,7 @@ class Bewerb_Game(Screen):
             self.time_left + settings.COMPETITION_GAME_EXTRA_TIME_SEC, 1
         )
 
-        self.extra_time_label.text = f"+ {settings.COMPETITION_GAME_EXTRA_TIME_SEC} s  "
+        self.extra_time_label.text = f"+ {settings.COMPETITION_GAME_EXTRA_TIME_SEC} s"
 
         self.extra_time_label.opacity = 1
 
@@ -67,11 +67,11 @@ class Bewerb_Game(Screen):
 
     def increment_score(self, add: int = settings.COMPETITION_GAME_CORRECT_POINTS):
         self.game.score += add
-        self.score_label.text = f"{str(self.game.score)}  "
+        self.score_label.text = str(self.game.score)
 
     def update_score_labels(self):
-        self.score_label.text = f"{str(self.game.score)}  "
-        self.high_score_label.text = f"Best: {str(self.current_high_score)}  "
+        self.score_label.text = str(self.game.score)
+        self.high_score_label.text = f"Best: {str(self.current_high_score)}"
 
     def end_game(self):
         Clock.unschedule(self.update_timer)  # Stop the timer when it reaches 0
@@ -165,7 +165,7 @@ class Bewerb_Game(Screen):
 
     def display_question(self):
         self.question_id_label.text = (
-            f"{self.current_question.question_id} von {self.question_ids_max}   "
+            f"{self.current_question.question_id} von {self.question_ids_max}"
         )
 
         text = self.current_question.question + "\n\n"
