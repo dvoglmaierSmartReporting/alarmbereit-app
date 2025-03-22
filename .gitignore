@@ -4,7 +4,10 @@ app/assets/.DS_Store
 
 *.ipynb
 ideen_backlog.md
+
+# helper scripts
 create_default_score_yaml.py
+compress_images.py
 
 # sandbox
 screen.py

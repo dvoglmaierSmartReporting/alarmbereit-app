@@ -1,3 +1,13 @@
+from kivy.config import Config
+
+# Set width and height
+Config.set("graphics", "width", "600")
+Config.set("graphics", "height", "1000")
+
+# Optional: Make the window non-resizable
+Config.set("graphics", "resizable", "1")  # or '1' to allow resizing
+
+
 # from kivy.logger import Logger
 
 # from kivy.config import Config

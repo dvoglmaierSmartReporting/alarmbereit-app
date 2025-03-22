@@ -1,25 +1,54 @@
 TestTruck:
   Fahrer/GK:
-    - Handfunkgerät <Bild:hacke_kurz.png> <Location:output.png>
+    - Handfunkgerät <Bild:tools_RL/handfunkgeraet>
+    - Vollmaske f. Pressluftatmer <Bild:tools_RL/vollmaske>
+    - Pressluftatmer
   Mannschaft:
-    - Anhaltekelle <Bild:hacke_lang.png> <Location:truck_RL/g1_front.jpg>
-    - Handfunkgerät <Bild:hacke_kurz.png> <Location:output.png>
+    - Anhaltekelle <Bild:tools_RL/anhaltekelle> <Raumbild:truck_RL/in_right_backward>
+    - Handfunkgerät <Bild:tools_RL/handfunkgeraet> <Raumbild:truck_RL/in_right_forward>
+    - Rettungsleine <Bild:tools_RL/rettungsleine> <Raumbild:truck_RL/in_core>
+    - Totmannwarner <Raumbild:truck_RL/in_core>
   G1:
-    - Spinboard <Bild:hacke_kurz.png> <Location:truck_RL/g1_front.jpg>
+    - Spinboard <Bild:tools_RL/spineboard> <Raumbild:truck_RL/g1_core>
+    - Hacke langstielig <Bild:tools_RL/hacke_langstielig> <Raumbild:truck_RL/g1_front>
+    - Schnittschutzhose <Bild:tools_RL/schnittschutzbeinlinge> <Raumbild:truck_RL/g1_door>
+    - Aggregat f. hydr. Rettungssatz <Bild:tools_RL/rettungssatz> <Raumbild:truck_RL/g1_front>
+    - Rettungssäge Stihl <Bild:tools_RL/rettungssaege> <Raumbild:truck_RL/g1_door>
+    - Bogensäge <Raumbild:truck_RL/g1_core>
   G2:
-    - Schlagbohrmaschine mit Bohrersatz <Bild:hacke_lang.png> <Location:truck_RL/g1_front.jpg>
+    - Stromerzeuger <Bild:tools_RL/stromerzeuger> <Raumbild:truck_RL/g2_front>
+    - Kabeltrommel 230 V <Bild:tools_RL/kabeltrommel> <Raumbild:truck_RL/g2_door>
+    - Blitzer LED <Raumbild:truck_RL/g2_core>
   G3:
-    - Türöffnungsset <Bild:krampe.png> <Location:truck_RL/g1_front.jpg>
+    - Türöffnungsset <Bild:tools_RL/tueroeffnungsset> <Raumbild:truck_RL/g3>
+    - Kombischaumrohr K2 <Bild:tools_RL/schaumrohr> <Raumbild:truck_RL/g3>
+    - Schaummittelkanister <Bild:tools_RL/schaummittel> <Raumbild:truck_RL/g3>
+    - Rauchvorhang <Raumbild:truck_RL/g3>
   G4:
-    - Werkzeugsatz <Bild:krampe.png> <Location:output.png> <Location:truck_RL/g1_front.jpg>
+    - Werkzeugsatz <Bild:tools_RL/handwerkzeug> <Raumbild:truck_RL/g4>
+    - Schuttwanne <Bild:tools_RL/schuttwanne> <Raumbild:truck_RL/g4>
+    - Schutzbrille <Raumbild:truck_RL/g4>
   G5:
-    - Druckschlauch B <Location:truck_RL/g1_front.jpg>
+    - Druckschlauch B <Bild:tools_RL/druckschlauch_b> <Raumbild:truck_RL/g5_front>
+    - Hohlstrahlrohr <Bild:tools_RL/hohlstrahlrohr> <Raumbild:truck_RL/g5_front>
+    - Druckbegrenzungsventil B <Bild:tools_RL/druckbegrenzer> <Raumbild:truck_RL/g5_front>
+    - Stützkrümmer B <Bild:tools_RL/stuetzkruemmer> <Raumbild:truck_RL/g5_door>
+    - Verbindungsschlauch B <Bild:tools_RL/flankierer> <Raumbild:truck_RL/g5_core>
+    - Schlauchhalter <Raumbild:truck_RL/g5_front>
   G6:
-    - Druckschlauch B <Location:truck_RL/g1_front.jpg>
+    - Druckschlauch B <Bild:tools_RL/druckschlauch_b> <Raumbild:truck_RL/g6>
+    - Schneeketten <Bild:tools_RL/schneekette> <Raumbild:truck_RL/g6>
+    - Trockenlöscher 12 kg <Bild:tools_RL/trockenloescher> <Raumbild:truck_RL/g6>
+    - HD-Kupplungsschlüssel <Raumbild:truck_RL/g6>
   G7 / Heck:
-    - Handfunkgerät <Bild:hacke_kurz.png> <Location:output.png>
+    - Handfunkgerät <Bild:tools_RL/handfunkgeraet> <Raumbild:truck_RL/g7>
+    - Schlauchhaspel <Bild:tools_RL/haspel> <Raumbild:truck_RL/g7>
+    - Atemschutz Überwachungstafel <Raumbild:truck_RL/g7>
   Dach:
-    - Moosgummiplatte <Location:output.png>
+    - Schlauchbrücke Paar Alu <Bild:tools_RL/schlauchbruecke> <Raumbild:truck_RL/roof_back>
+    - Steckleiter Verbindungsteil <Bild:tools_RL/verbindungsstueck> <Raumbild:truck_RL/roof_left>
+    - Ausräumhaken <Bild:tools_RL/ausraeumhaken> <Raumbild:truck_RL/roof_right>
+    - Moosgummiplatte <Raumbild:truck_RL/roof_right>
 
 RüstLösch:
   Fahrer/GK:

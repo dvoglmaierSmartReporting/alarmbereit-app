@@ -365,9 +365,10 @@
     firetruck_label: firetruck_label
     strike_label: strike_label
     high_strike_label: high_strike_label
-    tool_label: tool_label
-    image_box_question: image_box_question
-    image_box_answer: image_box_answer
+    #tool_label: tool_label
+    tool_image_layout: tool_image_layout
+    #image_box_question: image_box_question
+    #image_box_answer: image_box_answer
     firetruck_rooms_layout: firetruck_rooms_layout
 
     # SCREEN
@@ -431,31 +432,26 @@
                     size: self.size
                     pos: self.pos
 
-        # TOOL
-        Label:
-            size_hint_y: 1
-            id: tool_label
-            font_size: "28sp"
-
-        # IMAGES
+        # TOOL / IMAGE / ANSWER
         BoxLayout:
-            size_hint_y: 3
+            size_hint_y: 4
+            orientation: 'vertical'
+            id: tool_image_layout
 
-            BoxLayout:
-                size_hint_x: 1
-                id: image_box_question
-
-            BoxLayout:
-                size_hint_x: 1
-                id: image_box_answer
-            
+            # either tool-label + tool-image
+            # or answer image
+                
         # FIRETRUCK ROOMS
-        GridLayout:
+        #GridLayout:
+        #    size_hint_y: 4
+        #    id: firetruck_rooms_layout
+        #    spacing: "3dp"
+        #    cols: 2
+        BoxLayout:
             size_hint_y: 4
             id: firetruck_rooms_layout
-            spacing: "3dp"
-            cols: 2
-
+            # either GridLayout or FloatLayout
+            
 
 <Fahrzeugkunde_Game>:
     name: "fahrzeugkunde_game"
