@@ -34,7 +34,7 @@ class Strings:
         self.BUTTON_STR_TRAINING = "Übung"
         self.BUTTON_STR_GAME = "Zeitdruck"
         self.BUTTON_STR_BROWSE = "Stöbern"
-        self.BUTTON_STR_IMAGES = "Bilder\n(coming soon)"
+        self.BUTTON_STR_IMAGES = "Bilder"
         self.BUTTON_STR_FIRETRUCKS = "Fahrzeugkunde"
         self.BUTTON_STR_COMPETITIONS = "Bewerbsfragen"
         self.BUTTON_STR_STANDARDS = "Standardeinsätze\n(coming soon)"  # Standardeinsatz

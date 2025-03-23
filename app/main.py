@@ -226,6 +226,23 @@ class Start_Menu(Screen):
 
         firetrucks_modi_widget.add_widget(firetruck_btn3)
 
+        ### BUTTON 4 ###
+        firetruck_btn4 = Button(
+            pos_hint={"center_x": 0.5},
+            text=f"{strings.BUTTON_STR_IMAGES} --->",
+            font_size="32sp",
+        )
+
+        firetruck_btn4.bind(
+            on_release=lambda instance: self.forward_mode2menu_manually(
+                "fahrzeugkunde_menu", strings.BUTTON_STR_IMAGES
+            )
+        )
+
+        firetruck_btn4.bind(on_release=lambda instance: self.update_firetruck_buttons())
+
+        firetrucks_modi_widget.add_widget(firetruck_btn4)
+
         return firetrucks_modi_widget
 
     def add_competition_modi_widget(self):
