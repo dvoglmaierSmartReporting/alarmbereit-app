@@ -193,7 +193,7 @@ class Fahrzeugkunde_Training(Screen):
             float = FloatLayout(size_hint=(1, 1))
 
             background = Image(
-                source="app/assets/truck_RL/top_down.jpg",
+                source="./assets/truck_RL/top_down.jpg",
                 fit_mode="fill",
                 size_hint=(1, 1),
                 pos_hint={"center_x": 0.5, "center_y": 0.5},
