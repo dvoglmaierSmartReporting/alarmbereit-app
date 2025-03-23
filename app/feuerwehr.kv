@@ -668,59 +668,60 @@
 
 <Fahrzeugkunde_Images>:
     name: "fahrzeugkunde_images"
-    firetruck_label: firetruck_label
-    # firetruck_rooms_layout: firetruck_rooms_layout
-    scatter: scatter
 
-    Button:
-        text: "<"
-        font_size: "32sp"
-        size_hint: None, None
-        size: "75dp", "75dp"
-        pos_hint: {'left': 1, 'top': 1}
-        on_release:
-            app.root.current = "fahrzeugkunde_menu"
-            root.manager.transition.direction = "right"
-    
+    # IDs
+    firetruck_label: firetruck_label
+    scroll_container: scroll_container
+
+    # SCREEN
     BoxLayout:
         orientation: 'vertical'
-        
-        Label:
-            id: firetruck_label
-            text: "Bilder"
-            font_size: "20sp"
-            # pos_hint: {'center': 1, 'top': 1}
-            text_size: self.width, None
-            # halign: "left"
-            # size_hint: 0.5, 0.1
+        spacing: "10dp"
+        padding: "5dp"
 
-        FloatLayout:
-            # size_hint: 1, 0.8
-
-            Scatter:
-                id: scatter
-                # size_hint: 1, 0.8
-                do_rotation: False
-
-        GridLayout:
-            # size_hint: 1, 0.1
+        # HEADER
+        BoxLayout:
+            size_hint_y: 1
             spacing: "3dp"
-            cols: 2
-    
-            Button:
-                text: "<"
-                id: previous_image_button
-                font_size: "45sp"
-                disabled: True
-                # on_release:
-                #     root.manager.get_screen('fahrzeugkunde_images').load_image()
 
             Button:
-                text: ">"
-                id: next_image_button
-                font_size: "45sp"
+                size_hint_x: 1
+                text: "<"
+                font_size: "32sp"
                 on_release:
-                    root.manager.get_screen('fahrzeugkunde_images').load_image()
+                    app.root.current = "fahrzeugkunde_menu"
+                    root.manager.transition.direction = "right"
+            
+            Label:
+                size_hint_x: 5
+                id: firetruck_label
+                font_size: "20sp"
+                halign: "left"
+                valign: "middle"
+                text_size: self.size
+    
+        # SEPARATOR
+        BoxLayout:
+            size_hint_y: None
+            height: 2
+            canvas.before:
+                Color:
+                    rgba: 0.5, 0.5, 0.5, 1
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+
+        # IMAGES
+        ScrollView:
+            size_hint_y: 9
+            
+            BoxLayout:
+                id: scroll_container
+                orientation: 'vertical'
+                size_hint_y: None
+                height: self.minimum_height
+                padding: "15dp"
+                spacing: "5dp"
 
 
 <Bewerb_Training>:
