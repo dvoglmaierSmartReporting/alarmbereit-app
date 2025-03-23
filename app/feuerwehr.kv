@@ -15,6 +15,15 @@
     info_button: info_button
     #settings_button: settings_button
 
+    # LOGO
+    FloatLayout:
+        Image:
+            source: "assets/FFH_Logohalter_negativ.png"
+            fit_mode: "fill"  # or "contain" if preserving aspect is needed
+            size_hint: 0.4, 0.2  # 40% width, 20% height of screen
+            pos_hint: {"x": 0, "y": 0.8}  # Stick to top-left
+
+
     # SCREEN
     BoxLayout:
         orientation: 'vertical'
@@ -23,20 +32,27 @@
 
         # HEADER
         BoxLayout:
-            size_hint_y: 1
+            size_hint_y: 2
             spacing: "3dp"
     
-            Button:
-                size_hint_x: 1
-                id: info_button
-                font_size: "32sp"
-                on_release:
-                    app.root.current = "info_screen"
-                    root.manager.transition.direction = "left"
-                    root.update_info_text()
-
             Label:  # placeholder
                 size_hint_x: 5
+            
+            BoxLayout:
+                size_hint_x: 1
+                orientation: 'vertical'
+
+                Button:
+                    size_hint_y: 1
+                    id: info_button
+                    font_size: "32sp"
+                    on_release:
+                        app.root.current = "info_screen"
+                        root.manager.transition.direction = "left"
+                        root.update_info_text()
+
+                Label:  # placeholder
+                    size_hint_y: 1
 
             #Button:
             #    id: settings_button
@@ -61,7 +77,7 @@
         
         # CONTENT
         BoxLayout:
-            size_hint_y: 9
+            size_hint_y: 8
             id: main_layout
             orientation: "vertical"
             spacing: "3dp"
@@ -434,7 +450,7 @@
 
         # TOOL / IMAGE / ANSWER
         BoxLayout:
-            size_hint_y: 4
+            size_hint_y: 4.5
             orientation: 'vertical'
             id: tool_image_layout
 
@@ -448,7 +464,7 @@
         #    spacing: "3dp"
         #    cols: 2
         BoxLayout:
-            size_hint_y: 4
+            size_hint_y: 4.5
             id: firetruck_rooms_layout
             # either GridLayout or FloatLayout
             
@@ -549,7 +565,7 @@
 
         # FIRETRUCK ROOMS
         GridLayout:
-            size_hint_y: 6
+            size_hint_y: 7
             id: firetruck_rooms_layout
             spacing: "3dp"
             cols: 2
