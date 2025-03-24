@@ -30,7 +30,14 @@ class Bewerb_Menu(Screen):
     def on_button_release(self, instance):
         # on question selection, read mode label text from current screen
         mode = mode_str2bool(self.mode_label.text.strip())
-        mode_training, mode_game, mode_browse, mode_images = mode
+        (
+            mode_training,
+            mode_training_new,
+            mode_game,
+            mode_browse,
+            mode_images,
+            mode_exam,
+        ) = mode
 
         # bind competition selection
         app = App.get_running_app()

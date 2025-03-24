@@ -2,6 +2,7 @@ class Settings:
     def __init__(self) -> None:
         ## firetruck
         self.FIRETRUCK_TRAINING_FEEDBACK_SEC = 2.0
+        self.FIRETRUCK_TRAINING_NEW_FEEDBACK_SEC = 2.5
         self.FIRETRUCK_TRAINING_CORRECT_POINTS = 1
         self.FIRETRUCK_TRAINING_STRIKE_FACTOR = 50
         self.FIRETRUCK_GAME_INTERVAL_SEC = 0.1
@@ -9,7 +10,7 @@ class Settings:
         self.FIRETRUCK_GAME_START_TIME_SEC = 15.0
         self.FIRETRUCK_GAME_EXTRA_TIME_SEC = 10.0
         self.FIRETRUCK_GAME_FEEDBACK_SEC = 0.5
-        self.FIRETRUCK_GAME_CORRECT_FOR_EXTRA_TIME = 1
+        self.FIRETRUCK_GAME_CORRECT_FOR_EXTRA_TIME = 5
         self.FIRETRUCK_GAME_CORRECT_POINTS = 100
         ## competition
         self.COMPETITION_GAME_INTERVAL_SEC = 0.1
@@ -32,9 +33,11 @@ class Strings:
         self.BUTTON_STR_INFO = "Info"
         self.BUTTON_STR_SETTINGS = "Einst."
         self.BUTTON_STR_TRAINING = "Übung"
+        self.BUTTON_STR_TRAINING_NEW = f"{self.BUTTON_STR_TRAINING} mit Bildern"
         self.BUTTON_STR_GAME = "Zeitdruck"
         self.BUTTON_STR_BROWSE = "Stöbern"
         self.BUTTON_STR_IMAGES = "Bilder"
+        self.BUTTON_STR_EXAM = "Leistungsprüfung"
         self.BUTTON_STR_FIRETRUCKS = "Fahrzeugkunde"
         self.BUTTON_STR_COMPETITIONS = "Bewerbsfragen"
         self.BUTTON_STR_STANDARDS = "Standardeinsätze\n(coming soon)"  # Standardeinsatz

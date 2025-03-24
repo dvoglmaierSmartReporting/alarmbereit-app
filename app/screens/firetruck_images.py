@@ -47,7 +47,6 @@ class Fahrzeugkunde_Images(Screen):
 
     def populate_scroll(self):
         container = self.ids.scroll_container
-        container_width = container.width
 
         container.clear_widgets()
 
@@ -109,15 +108,13 @@ class Fahrzeugkunde_Images(Screen):
                 container = self.ids.scroll_container
                 img_widget = self.create_dynamic_image(item.get("source"), container)
                 container.add_widget(img_widget)
-                # img = self.create_dynamic_image(item.get("source"), container_width)
-                # container.add_widget(img)
 
     def create_dynamic_image(self, source_path, container):
 
         img = Image(
             source=source_path,
             size_hint=(1, None),  # Full width, dynamic height
-            fit_mode="contain"
+            fit_mode="contain",
         )
 
         def set_height(*args):

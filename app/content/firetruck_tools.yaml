@@ -1,5 +1,5 @@
 TestTruck:
-  Fahrer/GK:
+  Fahrer / GK:
     - Handfunkgerät <Bild:tools_RL/handfunkgeraet>
     - Vollmaske f. Pressluftatmer <Bild:tools_RL/vollmaske>
     - Pressluftatmer
@@ -51,7 +51,7 @@ TestTruck:
     - Moosgummiplatte <Raumbild:truck_RL/roof_right>
 
 RüstLösch:
-  Fahrer/GK:
+  Fahrer / GK:
     - Handfunkgerät
     - Gasmessgerät
     - Nüssler Gefahrguthelfer
@@ -253,7 +253,7 @@ RüstLösch:
     - Schachtabdeckung
 
 Tank1:
-  Fahrer/GK:
+  Fahrer / GK:
     - Handfunkgerät
     - Gasmessgerät
     - Reserveakku f. Akkugeräte
@@ -554,7 +554,7 @@ Leiter:
     - Aufnahme f. Korbtrage
 
 # Tank2:
-#   Fahrer/GK:
+#   Fahrer / GK:
 #     - Pressluftatmer
 #     - Vollmaske f. Pressluftatmer
 #     - Wärmebildkamera
@@ -689,7 +689,7 @@ Leiter:
 #     - Einreißhaken
 
 Voraus: &tunnel
-  Fahrer/GK:
+  Fahrer / GK:
     - Handfunkgerät
     - Handlampe
     - Pressluftatmer
@@ -832,7 +832,7 @@ Voraus+Ölanh.:
     - Plane 3x4 m
 
 Pumpe:
-  Fahrer/GK:
+  Fahrer / GK:
     - Handfunkgerät
     - Anhaltekelle
     - Meldertasche m. Zubehör
@@ -999,7 +999,7 @@ Pumpe:
     - Flachansauger
 
 Rüst:
-  Fahrer/GK:
+  Fahrer / GK:
     - Handfunkgerät
     - Helm mit Funkgarnitur
     - Helmlampe
@@ -1248,7 +1248,7 @@ Rüst:
 
 # "Tank Dürrnberg\nTLFA 3000":
 TankDürrnberg:
-  Fahrer/GK:
+  Fahrer / GK:
     - Gasmessgerät
     - Handfunkgerät
     - Kartentasche
@@ -1436,7 +1436,7 @@ TankDürrnberg:
     - Feuerpatsche
 
 PumpeDürrnberg:
-  Fahrer/GK:
+  Fahrer / GK:
     - Handfunkgerät
     - Handlampe
     - Handscheinwerfer

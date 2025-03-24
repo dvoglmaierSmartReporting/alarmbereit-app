@@ -79,14 +79,20 @@ def mode_str2bool(selected_mode: str) -> tuple:
     mode_training: bool = (
         True if selected_mode == strings.BUTTON_STR_TRAINING else False
     )
+    mode_training_new: bool = (
+        True if selected_mode == strings.BUTTON_STR_TRAINING_NEW else False
+    )
     mode_game: bool = True if selected_mode == strings.BUTTON_STR_GAME else False
     mode_browse: bool = True if selected_mode == strings.BUTTON_STR_BROWSE else False
     mode_images: bool = True if selected_mode == strings.BUTTON_STR_IMAGES else False
+    mode_exam: bool = True if selected_mode == strings.BUTTON_STR_EXAM else False
     return (
         mode_training,
+        mode_training_new,
         mode_game,
         mode_browse,
         mode_images,
+        mode_exam,
     )
 
 
