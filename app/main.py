@@ -4,60 +4,6 @@ from kivy.config import Config
 Config.set("graphics", "width", "600")
 Config.set("graphics", "height", "1000")
 
-# Optional: Make the window non-resizable
-Config.set("graphics", "resizable", "1")  # or '1' to allow resizing
-
-
-# from kivy.logger import Logger
-
-# from kivy.config import Config
-
-# Config.read("/".join(__file__.split("/")[:-1]) + "/kivy.config")
-# Config.set("kivy", "log_dir", "/".join(__file__.split("/")[:-1]) + "/logs")
-# Config.set("kivy", "log_level", "info")
-# # Config.set("kivy", "log_name", "fa1006_%y-%m-%d_%_.log")
-# # Config.set("kivy", "log_enable", 1)
-# # Config.write()
-
-# # from kivy.logger import Logger
-# import logging
-# from kivy.logger import FileHandler
-
-
-# # Define a custom FileHandler
-# class CustomFileHandler(FileHandler):
-#     def _write_message(self, record):
-#         # Custom behavior for writing message
-#         record.msg = f"Custom log message: {record.msg}"
-#         super()._write_message(record)
-
-
-# # Function to replace the existing FileHandler
-# def replace_file_handler(logger, new_handler):
-#     # Remove existing FileHandlers
-#     for handler in logger.handlers:
-#         if isinstance(handler, FileHandler):
-#             logger.removeHandler(handler)
-
-#     # Add the new custom FileHandler
-#     logger.addHandler(new_handler)
-
-
-# # Create and configure the custom file handler
-# custom_file_handler = CustomFileHandler(level=logging.INFO)
-# formatter = logging.Formatter("teeest - %(asctime)s - %(name)s - %(levelname)s - %(message)s")
-# custom_file_handler.setFormatter(formatter)
-
-# # Replace the existing file handler in the Kivy logger
-# replace_file_handler(Logger, custom_file_handler)
-
-# # Test logging
-# Logger.info("This is an info message")
-# Logger.debug("This is a debug message")
-# Logger.error("This is an error message")
-
-
-###
 
 from kivy.app import App
 from kivy.uix.button import Button
@@ -93,26 +39,10 @@ from typing import cast
 
 strings = Strings()
 
-# from helper.logging import log_and_call
-
 
 class Start_Menu(Screen):
-    # mode: tuple[bool, bool, bool, bool] = (
-    #     True,  # training | default
-    #     False,  # game
-    #     False,  # browse
-    #     False,  # images
-    # )
-
-    # @log_and_call("test")
     def __init__(self, **kwargs):
         super(Start_Menu, self).__init__(**kwargs)
-        # Logger.info("Start_Menu: __init__")
-        # Logger.info(f"Start_Menu: {__name__ = }")
-
-        # this_function_name = currentframe().f_code.co_name
-        # Logger.info(f"Start_Menu: {this_function_name = }")
-
         # type annotations
         self.info_button = cast(Button, self.info_button)
         self.content_layout = cast(Layout, self.content_layout)
@@ -123,7 +53,7 @@ class Start_Menu(Screen):
         # Container where the additional widget will be displayed
         # Part of content_layout
         self.display_container = BoxLayout(
-            size_hint=(1, 5), orientation="vertical", spacing="5dp", padding="20dp"
+            size_hint=(1, 3), orientation="vertical", spacing="5dp", padding="20dp"
         )
 
         firetrucks_modi_widget = self.add_firetruck_modi_widget()
@@ -176,7 +106,7 @@ class Start_Menu(Screen):
             )
         )
 
-        ### BUTTON 1 ###
+        ### BUTTON Übung ###
         firetruck_btn1 = Button(
             pos_hint={"center_x": 0.5},
             text=f"{strings.BUTTON_STR_TRAINING} --->",
@@ -197,7 +127,7 @@ class Start_Menu(Screen):
 
         firetrucks_modi_widget.add_widget(firetruck_btn1)
 
-        ### BUTTON 2 ###
+        ### BUTTON Zeitdruck ###
         firetruck_btn2 = Button(
             pos_hint={"center_x": 0.5},
             text=f"{strings.BUTTON_STR_GAME} --->",
@@ -218,68 +148,68 @@ class Start_Menu(Screen):
 
         firetrucks_modi_widget.add_widget(firetruck_btn2)
 
-        ### BUTTON 3 ###
-        firetruck_btn3 = Button(
-            pos_hint={"center_x": 0.5},
-            text=f"{strings.BUTTON_STR_BROWSE} --->",
-            font_size="32sp",
-        )
+        # ### BUTTON Stöbern ###
+        # firetruck_btn3 = Button(
+        #     pos_hint={"center_x": 0.5},
+        #     text=f"{strings.BUTTON_STR_BROWSE} --->",
+        #     font_size="32sp",
+        # )
 
-        firetruck_btn3.bind(
-            on_release=lambda instance: self.forward_mode2menu_manually(
-                "fahrzeugkunde_menu", strings.BUTTON_STR_BROWSE
-            )
-        )
+        # firetruck_btn3.bind(
+        #     on_release=lambda instance: self.forward_mode2menu_manually(
+        #         "fahrzeugkunde_menu", strings.BUTTON_STR_BROWSE
+        #     )
+        # )
 
-        firetruck_btn3.bind(
-            on_release=lambda instance: self.update_firetruck_buttons(
-                strings.BUTTON_STR_BROWSE
-            )
-        )
+        # firetruck_btn3.bind(
+        #     on_release=lambda instance: self.update_firetruck_buttons(
+        #         strings.BUTTON_STR_BROWSE
+        #     )
+        # )
 
-        firetrucks_modi_widget.add_widget(firetruck_btn3)
+        # firetrucks_modi_widget.add_widget(firetruck_btn3)
 
-        ### BUTTON 4 ###
-        firetruck_btn4 = Button(
-            pos_hint={"center_x": 0.5},
-            text=f"{strings.BUTTON_STR_IMAGES} --->",
-            font_size="32sp",
-        )
+        # ### BUTTON Bilder ###
+        # firetruck_btn4 = Button(
+        #     pos_hint={"center_x": 0.5},
+        #     text=f"{strings.BUTTON_STR_IMAGES} --->",
+        #     font_size="32sp",
+        # )
 
-        firetruck_btn4.bind(
-            on_release=lambda instance: self.forward_mode2menu_manually(
-                "fahrzeugkunde_menu", strings.BUTTON_STR_IMAGES
-            )
-        )
+        # firetruck_btn4.bind(
+        #     on_release=lambda instance: self.forward_mode2menu_manually(
+        #         "fahrzeugkunde_menu", strings.BUTTON_STR_IMAGES
+        #     )
+        # )
 
-        firetruck_btn4.bind(
-            on_release=lambda instance: self.update_firetruck_buttons(
-                strings.BUTTON_STR_IMAGES
-            )
-        )
+        # firetruck_btn4.bind(
+        #     on_release=lambda instance: self.update_firetruck_buttons(
+        #         strings.BUTTON_STR_IMAGES
+        #     )
+        # )
 
-        firetrucks_modi_widget.add_widget(firetruck_btn4)
+        # firetrucks_modi_widget.add_widget(firetruck_btn4)
 
-        ### BUTTON 5 ###
-        firetruck_btn5 = Button(
-            pos_hint={"center_x": 0.5},
-            text=f"{strings.BUTTON_STR_EXAM} --->",
-            font_size="32sp",
-        )
+        # ### BUTTON Leistungsprüfung ###
+        # firetruck_btn5 = Button(
+        #     pos_hint={"center_x": 0.5},
+        #     text=f"{strings.BUTTON_STR_EXAM} --->",
+        #     font_size="32sp",
+        # )
 
-        firetruck_btn5.bind(
-            on_release=lambda instance: self.forward_mode2menu_manually(
-                "fahrzeugkunde_menu", strings.BUTTON_STR_EXAM
-            )
-        )
+        # firetruck_btn5.bind(
+        #     on_release=lambda instance: self.forward_mode2menu_manually(
+        #         "fahrzeugkunde_menu", strings.BUTTON_STR_EXAM
+        #     )
+        # )
 
-        firetruck_btn5.bind(
-            on_release=lambda instance: self.update_firetruck_buttons(
-                strings.BUTTON_STR_EXAM
-            )
-        )
+        # firetruck_btn5.bind(
+        #     on_release=lambda instance: self.update_firetruck_buttons(
+        #         strings.BUTTON_STR_EXAM
+        #     )
+        # )
 
-        firetrucks_modi_widget.add_widget(firetruck_btn5)
+        # firetrucks_modi_widget.add_widget(firetruck_btn5)
 
         ### BUTTON 6 ###
         firetruck_btn6 = Button(

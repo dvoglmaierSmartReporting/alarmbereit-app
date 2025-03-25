@@ -89,6 +89,7 @@
     name: "info_screen"
 
     # IDs
+    header_label:header_label
     about_label: about_label
     info_text_label: info_text_label
 
@@ -111,8 +112,16 @@
                     app.root.current = "start_menu"
                     root.manager.transition.direction = "right"
             
-            Label:  # placeholder
-                size_hint_x: 5
+            Label: # placeholder
+                size_hint_x: 2
+
+            Label:
+                size_hint_x: 3
+                id: header_label
+                font_size: "25sp"
+                halign: "center"
+                valign: "middle"
+                text_size: self.size
     
         # SEPARATOR
         BoxLayout:
@@ -283,10 +292,13 @@
                     app.root.current = "start_menu"
                     root.manager.transition.direction = "right"
             
+            Label: # placeholder
+                size_hint_x: 2
+
             Label:
-                size_hint_x: 5
+                size_hint_x: 3
                 id: mode_label
-                font_size: "20sp"
+                font_size: "25sp"
                 halign: "center"
                 valign: "middle"
                 text_size: self.size
@@ -341,10 +353,13 @@
                     app.root.current = "start_menu"
                     root.manager.transition.direction = "right"
 
+            Label: # placeholder
+                size_hint_x: 2
+
             Label:
-                size_hint_x: 5
+                size_hint_x: 3
                 id: mode_label
-                font_size: "20sp"
+                font_size: "25sp"
                 halign: "center"
                 valign: "middle"
                 text_size: self.size
@@ -456,6 +471,7 @@
             spacing: "3dp"
             cols: 2
 
+
 <Fahrzeugkunde_Training_New>:
     name: "fahrzeugkunde_training_new"
 
@@ -547,6 +563,7 @@
             id: firetruck_rooms_layout
             # either GridLayout or FloatLayout
 
+
 <Fahrzeugkunde_Game>:
     name: "fahrzeugkunde_game"
 
@@ -626,7 +643,6 @@
             id: tool_label
             font_size: "28sp"
 
-
         # FIRETRUCK ROOMS
         GridLayout:
             size_hint_y: 7
@@ -670,10 +686,13 @@
                     app.root.current = "fahrzeugkunde_menu"
                     root.manager.transition.direction = "right"
     
+            Label: # placeholder
+                size_hint_x: 2
+
             Label:
-                size_hint_x: 5
+                size_hint_x: 3
                 id: firetruck_label
-                font_size: "20sp"
+                font_size: "25sp"
                 halign: "left"
                 valign: "middle"
                 text_size: self.size
@@ -756,10 +775,13 @@
                     app.root.current = "fahrzeugkunde_menu"
                     root.manager.transition.direction = "right"
             
+            Label: # placeholder
+                size_hint_x: 2
+            
             Label:
-                size_hint_x: 5
+                size_hint_x: 3
                 id: firetruck_label
-                font_size: "20sp"
+                font_size: "25sp"
                 halign: "left"
                 valign: "middle"
                 text_size: self.size
