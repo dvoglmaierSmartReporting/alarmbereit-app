@@ -120,7 +120,7 @@ class Fahrzeugkunde_Training_New(Screen):
 
         # room setup for RüstLösch == TestTruck
         buttons = [
-            ("Fahrer/GK", 0.5, 0.15, 0.25, 1),
+            ("Fahrer / GK", 0.5, 0.15, 0.25, 1),
             ("Mannschaft", 0.5, 0.15, 0.25, 0.85),
             ("G1", 0.25, 0.185, 0.1, 0.70),
             ("G3", 0.25, 0.185, 0.1, 0.515),
