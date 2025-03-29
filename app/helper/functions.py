@@ -122,12 +122,12 @@ def create_scores_content() -> dict:
     total_storage = load_total_storage()
 
     for truck in total_storage.keys():
-        scores.get("firetrucks").update({truck: {"high_score": 0, "high_strike": 0}})
+        scores.get("firetrucks", {}).update({truck: {"high_score": 0, "high_strike": 0}})
 
     total_questions = load_total_competition_questions()
 
     for question in total_questions.keys():
-        scores.get("competitions").update({question: {"high_score": 0}})
+        scores.get("competitions", {}).update({question: {"high_score": 0}})
 
     return scores
 

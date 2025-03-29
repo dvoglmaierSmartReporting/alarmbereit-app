@@ -113,13 +113,13 @@ class Start_Menu(Screen):
             font_size="32sp",
         )
 
-        firetruck_btn1.bind(
+        firetruck_btn1.bind(  # type: ignore[attr-defined]
             on_release=lambda instance: self.forward_mode2menu_manually(
                 "fahrzeugkunde_menu", strings.BUTTON_STR_TRAINING
             )
         )
 
-        firetruck_btn1.bind(
+        firetruck_btn1.bind(  # type: ignore[attr-defined]
             on_release=lambda instance: self.update_firetruck_buttons(
                 strings.BUTTON_STR_TRAINING
             )
@@ -134,13 +134,13 @@ class Start_Menu(Screen):
             font_size="32sp",
         )
 
-        firetruck_btn2.bind(
+        firetruck_btn2.bind(  # type: ignore[attr-defined]
             on_release=lambda instance: self.forward_mode2menu_manually(
                 "fahrzeugkunde_menu", strings.BUTTON_STR_GAME
             )
         )
 
-        firetruck_btn2.bind(
+        firetruck_btn2.bind(  # type: ignore[attr-defined]
             on_release=lambda instance: self.update_firetruck_buttons(
                 strings.BUTTON_STR_GAME
             )
@@ -155,13 +155,13 @@ class Start_Menu(Screen):
         #     font_size="32sp",
         # )
 
-        # firetruck_btn3.bind(
+        # firetruck_btn3.bind(   # type: ignore[attr-defined]
         #     on_release=lambda instance: self.forward_mode2menu_manually(
         #         "fahrzeugkunde_menu", strings.BUTTON_STR_BROWSE
         #     )
         # )
 
-        # firetruck_btn3.bind(
+        # firetruck_btn3.bind(   # type: ignore[attr-defined]
         #     on_release=lambda instance: self.update_firetruck_buttons(
         #         strings.BUTTON_STR_BROWSE
         #     )
@@ -176,13 +176,13 @@ class Start_Menu(Screen):
         #     font_size="32sp",
         # )
 
-        # firetruck_btn4.bind(
+        # firetruck_btn4.bind(   # type: ignore[attr-defined]
         #     on_release=lambda instance: self.forward_mode2menu_manually(
         #         "fahrzeugkunde_menu", strings.BUTTON_STR_IMAGES
         #     )
         # )
 
-        # firetruck_btn4.bind(
+        # firetruck_btn4.bind(   # type: ignore[attr-defined]
         #     on_release=lambda instance: self.update_firetruck_buttons(
         #         strings.BUTTON_STR_IMAGES
         #     )
@@ -197,13 +197,13 @@ class Start_Menu(Screen):
         #     font_size="32sp",
         # )
 
-        # firetruck_btn5.bind(
+        # firetruck_btn5.bind(   # type: ignore[attr-defined]
         #     on_release=lambda instance: self.forward_mode2menu_manually(
         #         "fahrzeugkunde_menu", strings.BUTTON_STR_EXAM
         #     )
         # )
 
-        # firetruck_btn5.bind(
+        # firetruck_btn5.bind(   # type: ignore[attr-defined]
         #     on_release=lambda instance: self.update_firetruck_buttons(
         #         strings.BUTTON_STR_EXAM
         #     )
@@ -218,13 +218,13 @@ class Start_Menu(Screen):
             font_size="32sp",
         )
 
-        firetruck_btn6.bind(
+        firetruck_btn6.bind(  # type: ignore[attr-defined]
             on_release=lambda instance: self.forward_mode2menu_manually(
                 "fahrzeugkunde_menu", strings.BUTTON_STR_TRAINING_NEW
             )
         )
 
-        firetruck_btn6.bind(
+        firetruck_btn6.bind(  # type: ignore[attr-defined]
             on_release=lambda instance: self.update_firetruck_buttons(
                 strings.BUTTON_STR_TRAINING_NEW
             )
@@ -257,13 +257,13 @@ class Start_Menu(Screen):
             font_size="32sp",
         )
 
-        competition_btn1.bind(
+        competition_btn1.bind(  # type: ignore[attr-defined]
             on_release=lambda instance: self.forward_mode2menu_manually(
                 "bewerb_menu", strings.BUTTON_STR_TRAINING
             )
         )
 
-        competition_btn1.bind(
+        competition_btn1.bind(  # type: ignore[attr-defined]
             on_release=lambda instance: self.update_firetruck_buttons(
                 strings.BUTTON_STR_TRAINING
             )
@@ -278,13 +278,13 @@ class Start_Menu(Screen):
             font_size="32sp",
         )
 
-        competition_btn2.bind(
+        competition_btn2.bind(  # type: ignore[attr-defined]
             on_release=lambda instance: self.forward_mode2menu_manually(
                 "bewerb_menu", strings.BUTTON_STR_GAME
             )
         )
 
-        competition_btn2.bind(
+        competition_btn2.bind(  # type: ignore[attr-defined]
             on_release=lambda instance: self.update_firetruck_buttons(
                 strings.BUTTON_STR_GAME
             )
@@ -325,7 +325,7 @@ class Start_Menu(Screen):
             height=150,
             size_hint_x=1,
         )
-        btn.bind(
+        btn.bind(  # type: ignore[attr-defined]
             on_release=self.manager.get_screen("fahrzeugkunde_menu").on_button_release
         )
 

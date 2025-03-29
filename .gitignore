@@ -8,6 +8,8 @@ ideen_backlog.md
 # helper scripts
 create_default_score_yaml.py
 compress_images.py
+images_compress.py
+images_size.py
 
 # sandbox
 screen.py

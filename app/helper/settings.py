@@ -26,15 +26,15 @@ class Strings:
     def __init__(self) -> None:
 
         # Start_Menu mode names
-        self.LABEL_STR_MODE = "Modus"
-        self.LABEL_STR_QUESTIONS = "Inhalt"
+        self.LABEL_STR_QUESTIONS = "Mission"
+        self.LABEL_STR_MODE = "Lernpfad"
 
         # Start_Menu button names
         self.BUTTON_STR_INFO = "Info"
         self.BUTTON_STR_SETTINGS = "Einst."
-        self.BUTTON_STR_TRAINING = "Übung"
+        self.BUTTON_STR_TRAINING = "Übung" # "Lernen" # "Erkunden"
         self.BUTTON_STR_TRAINING_NEW = f"{self.BUTTON_STR_TRAINING} mit Bildern"
-        self.BUTTON_STR_GAME = "Zeitdruck"
+        self.BUTTON_STR_GAME = "Zeitdruck" # "Herausfordern" # "Testen" # "Challengen"
         self.BUTTON_STR_BROWSE = "Stöbern"
         self.BUTTON_STR_IMAGES = "Bilder"
         self.BUTTON_STR_EXAM = "Leistungsprüfung"
@@ -86,4 +86,23 @@ class About_Text:
         Idee und Entwicklung: Dominik Voglmaier
         
         Support: d.voglmaier@feuerwehr-hallein.at
+
+        """
+
+
+class Acknowledgements_Text:
+    def __init__(self) -> None:
+        self.TEXT = """
+        Vielen Dank an alle Unterstützer dieses Projects!
+
+        Konstruktive Diskussionen:
+        Liora Feicht
+        OFK Sebastian Wass
+
+        Tester:
+        Kilian Brüderl
+        Martin Reisaus
+        Thomas Herbst
+        Manuel Promock
+        Bereitschaft 5
         """

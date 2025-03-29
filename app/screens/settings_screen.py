@@ -1,4 +1,5 @@
 from kivy.app import App
+from kivy.uix.button import Button
 from kivy.uix.screenmanager import Screen
 from kivy.uix.floatlayout import FloatLayout
 from kivy.factory import Factory
@@ -7,6 +8,7 @@ from kivy.uix.popup import Popup
 
 import os
 import yaml
+from typing import cast
 
 from helper.file_handling import (
     update_main_cfg,
@@ -28,6 +30,7 @@ class LoadDialog(FloatLayout):
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
+        self.load_button = cast(Button, self.load_button)
         self.load_button.disabled = True
 
     def on_selection(self, instance, value):

@@ -20,7 +20,7 @@ class ErrorPopup(Popup):
         # layout.add_widget(Label(text=message))
 
         # close_button = Button(text=strings.BUTTON_CLOSE_POPUP, size_hint=(1, 0.3))
-        # close_button.bind(on_press=self.dismiss)
+        # close_button.bind(on_press=self.dismiss)  # type: ignore[attr-defined]
 
         # layout.add_widget(close_button)
         # self.content = layout
@@ -38,7 +38,7 @@ class ErrorPopup(Popup):
             halign="left",
             valign="top",
         )
-        self.error_label.bind(
+        self.error_label.bind(  # type: ignore[attr-defined]
             size=self._update_text_size, texture_size=self._adjust_label_height
         )
 
@@ -49,7 +49,7 @@ class ErrorPopup(Popup):
         close_button = Button(
             text=strings.BUTTON_CLOSE_POPUP, size_hint=(1, None), height=100
         )
-        close_button.bind(on_press=self.dismiss)
+        close_button.bind(on_press=self.dismiss)  # type: ignore[attr-defined]
 
         layout.add_widget(scroll_view)
         layout.add_widget(close_button)

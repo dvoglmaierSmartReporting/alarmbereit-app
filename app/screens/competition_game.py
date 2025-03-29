@@ -1,9 +1,14 @@
 from kivy.app import App
 from kivy.uix.button import Button
+from kivy.uix.label import Label
+from kivy.uix.layout import Layout
+from kivy.uix.widget import Widget
+from kivy.uix.progressbar import ProgressBar
 from kivy.uix.screenmanager import Screen
 from kivy.clock import Clock
 
 from random import shuffle
+from typing import cast
 
 from helper.file_handling import (
     load_total_competition_questions,
@@ -23,15 +28,19 @@ class Bewerb_Game(Screen):
         # troubleshooting: fix competition
         # self.selected_competition = "Funk"
         self.selected_competition = selected_competition
+
+        self.competition_label = cast(Label, self.competition_label)
         self.competition_label.text = selected_competition
 
     def hide_label(self, *args):
+        self.extra_time_label = cast(Label, self.extra_time_label)
         self.extra_time_label.opacity = 0
 
     def reset_timer(self):
         self.time_left = settings.COMPETITION_GAME_START_TIME_SEC
 
         # self.set_progress_bar()
+        self.progress_bar = cast(ProgressBar, self.progress_bar)
         self.progress_bar.max = settings.COMPETITION_GAME_START_TIME_SEC
 
     def add_time(self):
@@ -66,10 +75,14 @@ class Bewerb_Game(Screen):
             pass
 
     def increment_score(self, add: int = settings.COMPETITION_GAME_CORRECT_POINTS):
+        self.score_label = cast(Label, self.score_label)
+
         self.game.score += add
         self.score_label.text = str(self.game.score)
 
     def update_score_labels(self):
+        self.high_score_label = cast(Label, self.high_score_label)
+
         self.score_label.text = str(self.game.score)
         self.high_score_label.text = f"Best: {str(self.current_high_score)}"
 
@@ -87,7 +100,7 @@ class Bewerb_Game(Screen):
 
     def reset_competition_questions(self):
         self.competition_dict = load_total_competition_questions().get(
-            self.selected_competition
+            self.selected_competition, {}
         )
 
         self.question_ids = list(self.competition_dict.keys())
@@ -141,13 +154,21 @@ class Bewerb_Game(Screen):
                 self.reset_competition_questions()
 
             # select question
-            current_question = self.question_ids.pop()
+            current_question_id = self.question_ids.pop()
+            current_question_q = self.competition_dict.get(current_question_id, {}).get(
+                "Q"
+            )
+            current_question_q = cast(str, current_question_q)
+            current_question_a = self.competition_dict.get(current_question_id, {}).get(
+                "A"
+            )
+            current_question_a = cast(list[str], current_question_a)
 
             self.current_question = CompetitionQuestion(
                 competition=self.selected_competition,
-                question_id=current_question,
-                question=self.competition_dict.get(current_question).get("Q"),
-                answers=self.competition_dict.get(current_question).get("A"),
+                question_id=current_question_id,
+                question=current_question_q,
+                answers=current_question_a,
             )
 
             # avoid missing question content
@@ -156,14 +177,18 @@ class Bewerb_Game(Screen):
 
         self.display_question()
 
+        self.answer_buttons_layout = cast(Layout, self.answer_buttons_layout)
         self.answer_buttons_layout.clear_widgets()
 
         for letter in answer_idx.values():
             btn = Button(text=letter, font_size="45sp")
-            btn.bind(on_press=self.on_answer)
+            btn.bind(on_press=self.on_answer)  # type: ignore[attr-defined]
             self.answer_buttons_layout.add_widget(btn)
 
     def display_question(self):
+        self.question_id_label = cast(Label, self.question_id_label)
+        self.question_label = cast(Label, self.question_label)
+
         self.question_id_label.text = (
             f"{self.current_question.question_id} von {self.question_ids_max}"
         )
