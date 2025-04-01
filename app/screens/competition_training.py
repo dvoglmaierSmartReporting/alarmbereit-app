@@ -127,6 +127,10 @@ class Bewerb_Training(Screen):
         else:
             upcoming_question_id = int(self.current_question.question_id) - 1
 
+        # some competition questions do not start from id 1 but 31 for example
+        if upcoming_question_id < self.question_ids_min:
+            upcoming_question_id = self.question_ids_min
+
         current_question_q = self.competition_dict.get(upcoming_question_id, {}).get(
             "Q"
         )
