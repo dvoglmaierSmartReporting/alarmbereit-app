@@ -1,10 +1,14 @@
 from kivy.app import App
 from kivy.uix.button import Button
+from kivy.uix.label import Label
+from kivy.uix.layout import Layout
 from kivy.uix.screenmanager import Screen
 
 from helper.functions import mode_str2bool
 from helper.file_handling import load_total_competition_questions
 from helper.settings import Strings
+
+from typing import cast
 
 strings = Strings()
 
@@ -15,6 +19,9 @@ class Bewerb_Menu(Screen):
         # load available competitions
         total_competition_questions = load_total_competition_questions()
         self.total_competitions = list(total_competition_questions.keys())
+
+        self.bewerbe_layout = cast(Layout, self.bewerbe_layout)
+
         # create button for all competitions
         for competitions in self.total_competitions:
             btn = Button(
@@ -28,9 +35,17 @@ class Bewerb_Menu(Screen):
             self.bewerbe_layout.add_widget(btn)
 
     def on_button_release(self, instance):
+        self.mode_label = cast(Label, self.mode_label)
         # on question selection, read mode label text from current screen
         mode = mode_str2bool(self.mode_label.text.strip())
-        mode_training, mode_game, mode_browse, mode_images = mode
+        (
+            mode_training,
+            mode_training_new,
+            mode_game,
+            mode_browse,
+            mode_images,
+            mode_exam,
+        ) = mode
 
         # bind competition selection
         app = App.get_running_app()

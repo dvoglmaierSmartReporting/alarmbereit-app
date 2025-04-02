@@ -1093,7 +1093,7 @@ FLA Gold - Organisation:
       - Der Landesfeuerwehrkommandant.
       - Der Bürgermeister.
       - Der Bezirksfeuerwehrkommandant.
-
+      - Der Ortsfeuerwehrkommandant.
   29:
     Q: Wer ist der Leiter eines Feuerwehreinsatzes (Einsatzleiter)?
     A:
@@ -1181,6 +1181,7 @@ FLA Gold - Organisation:
       - Anhalten des Fahrzeuges, Absichern der Unfallstelle, im Falle einer verletzten Person Versorgung des Verletzten, Verständigung der Rettung, Verständigung der Polizei, Mitwirkung an der Feststellung des Sachverhaltes.
       - Sofortiges Verlassen des Unfallortes.
       - Benachrichtigung
+      - Bilder machen
   40:
   41:
     Q: Nach welchen didaktischen Grundsätzen ist die Ausbildung zu gestalten?
@@ -1730,6 +1731,9 @@ FLA Gold - Taktik:
       - "1 = Wasserverschmutzung
         2 = Entzündlichkeit
         3 = Druckbehälter"
+      - "1 = Wasserverschmutzung
+        2 = Korrosionsgefahr
+        3 = Giftstoff"
   129:
     Q: Was bedeutet es, wenn die beiden ersten Ziffern der Nummer zur Kennzeichnung der Gefahr auf Warntafeln an Fahrzeugen zum Transport gefährlicher Güter gleich sind? (Nenne 2 Beispiele)
     A:
@@ -1813,7 +1817,13 @@ FLA Gold - Taktik:
       - Nur, wie lange das Feuer schon brennt.
       - Nur, ob genug Feuerwehrkräfte vor Ort sind.
   139:
-
+    Q: "-- fehlt --"
+    A:
+      - "-- fehlt --"
+  140:
+    Q: "-- fehlt --"
+    A:
+      - "-- fehlt --"
   141:
     Q: Wofür ist die Gateway- und Repeater-Funktion?
     A:
@@ -2027,6 +2037,10 @@ FLA Gold - Taktik:
         A ngreifen
         M aterial retten
         S upervision anfordern"
+      - "G efahr erkennen
+        A ngreifen
+        M aterial retten
+        S pezialkräfte anfordern"
   166:
     Q: Nennen Sie einige Maßnahmen des baulichen Brandschutzes?
     A:
@@ -2783,7 +2797,6 @@ FLA Gold - Technik:
       - Es ist immer verfügbar.
       - Es kann nicht transportiert werden.
       - Wasser hat keine mechanische Wirkung.
-      - Nur in bestimmten Ländern zugelassen.
   277:
     Q: Was sind die Nachteile des Leichtschaums?
     A:
@@ -3242,6 +3255,7 @@ TechnLP Stufe II:
       - Ätzender oder schwach ätzender Stoff
       - Entzündlicher Stoff
       - Strahlenbelasteter
+      - Abfall
   41:
     A:
       - Der Stoff reagiert in gefährlicher Weise mit Wasser
@@ -3941,6 +3955,9 @@ ASLP Stufe III:
       - Bis zu 15 Bar
       - 0,5 % des Gesamtdrucks
   20:
+    Q: "-- fehlt --"
+    A:
+      - "-- fehlt --"
   21:
     Q: Darf mit einem Pressluftatmer getaucht werden?
     A:
@@ -4868,11 +4885,9 @@ BDLP MA Stufe II:
     Q: Wie viel Druckverlust entsteht bei 10 m Höhenunterschied (Steigung)?
     A:
       - 1 bar
-    choices:
       - 0.5 bar
       - 1.5 bar
       - 0.2 bar
-      - 1 bar
   2:
     Q: Wann dürfen Blaulicht und Folgetonhorn bei einem Feuerwehrfahrzeug verwendet werden?
     A:

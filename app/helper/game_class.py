@@ -19,11 +19,14 @@ class GameCore:
         return len(self.questions)
 
 
+# enhance toolQuestion class to handle images
 @dataclass
 class ToolQuestion:
     firetruck: str
     tool: str
     rooms: list[str]  # correct locations
+    tool_image_name: str = ""
+    room_image_name: str = ""
 
     # list to document given answers
     room_answered: list = field(default_factory=list, init=False, repr=False)

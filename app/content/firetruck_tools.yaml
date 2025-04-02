@@ -1,28 +1,57 @@
 TestTruck:
-  Fahrer/GK:
-    - Handfunkgerät <Bild>
+  Fahrer / GK:
+    - Handfunkgerät <Bild:tools_RL/handfunkgeraet>
+    - Vollmaske f. Pressluftatmer <Bild:tools_RL/vollmaske>
+    - Pressluftatmer
   Mannschaft:
-    - Anhaltekelle <Bild>
-    - Handfunkgerät <Bild>
+    - Anhaltekelle <Bild:tools_RL/anhaltekelle> <Raumbild:truck_RL/in_right_backward>
+    - Handfunkgerät <Bild:tools_RL/handfunkgeraet> <Raumbild:truck_RL/in_right_forward>
+    - Rettungsleine <Bild:tools_RL/rettungsleine> <Raumbild:truck_RL/in_core>
+    - Totmannwarner <Raumbild:truck_RL/in_core>
   G1:
-    - Spinboard <Bild>
+    - Spinboard <Bild:tools_RL/spineboard> <Raumbild:truck_RL/g1_core>
+    - Hacke langstielig <Bild:tools_RL/hacke_langstielig> <Raumbild:truck_RL/g1_front>
+    - Schnittschutzhose <Bild:tools_RL/schnittschutzbeinlinge> <Raumbild:truck_RL/g1_door>
+    - Aggregat f. hydr. Rettungssatz <Bild:tools_RL/rettungssatz> <Raumbild:truck_RL/g1_front>
+    - Rettungssäge <Bild:tools_RL/rettungssaege> <Raumbild:truck_RL/g1_door>
+    - Bogensäge <Raumbild:truck_RL/g1_core>
   G2:
-    - Schlagbohrmaschine mit Bohrersatz <Bild>
+    - Stromerzeuger <Bild:tools_RL/stromerzeuger> <Raumbild:truck_RL/g2_front>
+    - Kabeltrommel 230 V <Bild:tools_RL/kabeltrommel> <Raumbild:truck_RL/g2_door>
+    - Blitzer LED <Raumbild:truck_RL/g2_core>
   G3:
-    - Türöffnungsset <Bild>
+    - Türöffnungsset <Bild:tools_RL/tueroeffnungsset> <Raumbild:truck_RL/g3>
+    - Kombischaumrohr K2 <Bild:tools_RL/schaumrohr> <Raumbild:truck_RL/g3>
+    - Schaummittelkanister <Bild:tools_RL/schaummittel> <Raumbild:truck_RL/g3>
+    - Rauchvorhang <Raumbild:truck_RL/g3>
   G4:
-    - Werkzeugsatz <Bild>
+    - Werkzeugsatz <Bild:tools_RL/handwerkzeug> <Raumbild:truck_RL/g4>
+    - Schuttwanne <Bild:tools_RL/schuttwanne> <Raumbild:truck_RL/g4>
+    - Schutzbrille <Raumbild:truck_RL/g4>
   G5:
-    - Druckschlauch B <Bild>
+    - Druckschlauch B <Bild:tools_RL/druckschlauch_b> <Raumbild:truck_RL/g5_front>
+    - Hohlstrahlrohr <Bild:tools_RL/hohlstrahlrohr> <Raumbild:truck_RL/g5_front>
+    - Druckbegrenzungsventil <Bild:tools_RL/druckbegrenzer> <Raumbild:truck_RL/g5_front>
+    - Stützkrümmer <Bild:tools_RL/stuetzkruemmer> <Raumbild:truck_RL/g5_door>
+    - Verbindungsschlauch B <Bild:tools_RL/flankierer> <Raumbild:truck_RL/g5_core>
+    - Schlauchhalter <Raumbild:truck_RL/g5_front>
   G6:
-    - Druckschlauch B <Bild>
+    - Druckschlauch B <Bild:tools_RL/druckschlauch_b> <Raumbild:truck_RL/g6>
+    - Schneeketten <Bild:tools_RL/schneekette> <Raumbild:truck_RL/g6>
+    - Trockenlöscher 12 kg <Bild:tools_RL/trockenloescher> <Raumbild:truck_RL/g6>
+    - HD-Kupplungsschlüssel <Raumbild:truck_RL/g6>
   G7 / Heck:
-    - Handfunkgerät <Bild>
+    - Handfunkgerät <Bild:tools_RL/handfunkgeraet> <Raumbild:truck_RL/g7>
+    - Schlauchhaspel <Bild:tools_RL/haspel> <Raumbild:truck_RL/g7>
+    - Atemschutz Überwachungstafel <Raumbild:truck_RL/g7>
   Dach:
-    - Moosgummiplatte <Bild>
+    - Schlauchbrücken Alu <Bild:tools_RL/schlauchbruecke> <Raumbild:truck_RL/roof_back>
+    - Steckleiter Verbindungsteil <Bild:tools_RL/verbindungsstueck> <Raumbild:truck_RL/roof_left>
+    - Ausräumhaken <Bild:tools_RL/ausraeumhaken> <Raumbild:truck_RL/roof_right>
+    - Moosgummiplatte <Raumbild:truck_RL/roof_right>
 
 RüstLösch:
-  Fahrer/GK:
+  Fahrer / GK:
     - Handfunkgerät
     - Gasmessgerät
     - Nüssler Gefahrguthelfer
@@ -81,7 +110,7 @@ RüstLösch:
     - Gerüstklammern verzinkt
     - Nägel
     - Schachthaken
-    - Drahtseilkemmen
+    - Drahtseilklemmen
     - Drahtseil verzinkt 5 m
     - Drahtseil verzinkt 10 m
     - Reservekette f. Motorsäge
@@ -97,7 +126,7 @@ RüstLösch:
     - Doppelwirkender Rettungszylinder
     - Pedalschneider
     - Akku Kombigerät
-    - Schwellenaufsatz
+    - Schwelleraufsatz
     - Werkzeugsatz VU
     - Schutzdeckenset
     - Unterbauschiebeblock
@@ -110,15 +139,15 @@ RüstLösch:
     - Umlenkrolle 140 kN
     - Winde 10 t
     - Motorsäge
-    - Rettungssäge Stihl
+    - Rettungssäge
     - Kombikanister f. Motorsäge
     - Ersatzkette Rettungssäge
     - Rauchfangtürschlüssel
   G2:
-    - Schlagbohrmaschine mit Bohrersatz
+    - Schlagbohrmaschine m. Bohrersatz
     - Absperrband
-    - Absperrständer
-    - Bodenteller f. Absperrständer
+    - Absperrstangen
+    - Bodenteller f. Absperrstangen
     - Verkehrsleitkegel
     - Blitzer LED
     - Erdungsspieß
@@ -130,7 +159,6 @@ RüstLösch:
     - Aufnahmebrücke f. Fluter
     - Stromerzeuger
     - Abgasschlauch
-    - Kraftstoffkanister f. Stromerz.
     - Einfüllstutzen
     - Verteilerkabeltrommel 30 m 400 V
     - Fixeingebaute Kabeltrommel
@@ -139,7 +167,7 @@ RüstLösch:
     - Druckluftflasche f. Hebekissen
     - Hebekissensatz 8 bar
     - Druckbelüfter
-    - Kraftstoffkanister
+    - Dieselkanister
     - Ausgießstutzen
     - Markierleuchtenset
   G3:
@@ -147,7 +175,7 @@ RüstLösch:
     - Schlauchtragekorb
     - Druckschlauch C
     - Hohlstrahlrohr
-    - Saugschlauch D f. Zumischer
+    - D-Saugschlauch f. Zumischer
     - Schaummittelkanister
     - Zumischer Z2
     - Kombischaumrohr K2
@@ -176,14 +204,14 @@ RüstLösch:
     - ABC-Kupplungsschlüssel
     - Druckschlauch B
     - Verbindungsschlauch B
-    - Satz Schlauchbinden
+    - Schlauchbinden
     - Schlauchhalter
     - Hohlstrahlrohr
     - Mehrzweckstrahlrohr B
-    - Stützkrümmer B
-    - Druckbegrenzungsventil B
+    - Stützkrümmer
+    - Druckbegrenzungsventil
     - Verteiler B-CBC
-    - Sammelstück 2B-A
+    - Sammelstück BB-A
     - Übergangsstück A-B
     - Übergangsstück A125-A
     - Übergangsstück B-C
@@ -195,7 +223,7 @@ RüstLösch:
   G6:
     - Schneeketten
     - Kunststoffeimer
-    - Löschdecke inkl. Beutel
+    - Löschdecke
     - CAFS Löscher 10 l
     - Trockenlöscher 12 kg
     - Kohlendioxidlöscher 5 kg
@@ -210,7 +238,7 @@ RüstLösch:
     - Abschleppstange
   Dach:
     - Moosgummiplatte
-    - Schlauchbrücke Paar Alu
+    - Schlauchbrücken Alu
     - Schiebeleiter 3-teilig
     - Steckleiter 4-teilig
     - Steckleiter Verbindungsteil
@@ -224,7 +252,7 @@ RüstLösch:
     - Schachtabdeckung
 
 Tank1:
-  Fahrer/GK:
+  Fahrer / GK:
     - Handfunkgerät
     - Gasmessgerät
     - Reserveakku f. Akkugeräte
@@ -326,10 +354,10 @@ Tank1:
     - Elektrorettungshaken
   G3:
     - Schaumrohr
-    - Schaummittel
+    - Schaummittelkanister
     - Netzmittel
     - Zumischer
-    - Saugschlauch D
+    - D-Saugschlauch
     - Flammschutzbekleidung
     - Hitzeschutzhaube
     - Schaum-Pumpenvormischer
@@ -368,7 +396,7 @@ Tank1:
     - Übergangsstück B-C
     - Hydroschild C
     - Druckbegrenzungsventil
-    - Sammelstück
+    - Sammelstück BB-A
     - Schlauchtragekorb
     - Rauchvorhang
     - Schlauchhalter
@@ -389,7 +417,7 @@ Tank1:
     - CO2 Löscher
     - Metallbrand Pulverlöscher
     - HD Kupplungsschlüssel
-    - Notkurbel f. Haspel
+    - Notkurbel f. Schlauchhaspel
     - HD Pistolenstrahlrohr
     - Fahrzeug Unterlegkeile
   G7 / Heck:
@@ -411,7 +439,7 @@ Tank1:
     - Dunggabel
     - Breithaue
     - Feuerpatsche
-    - Schlauchbrücke
+    - Schlauchbrücken
     - Krampen
     - Fassschaufel
     - Randschaufel
@@ -475,7 +503,7 @@ Leiter:
     - Vollmaske f. Pressluftatmer
     - Reserveflasche
     - Brandfluchthaube
-    - Safty Peak
+    - Safety Peak
   G3:
     - ABC-Kupplungsschlüssel
     - Druckschlauch B75 25 m orange
@@ -490,7 +518,7 @@ Leiter:
     - Verteiler B-CBC
     - Flankierer
     - Schlauchträger
-    - Schlauchbrücke
+    - Schlauchbrücken
   G4:
     - Flutlichtscheinwerfer 1000 W
     - Dreibeinstativ
@@ -512,7 +540,7 @@ Leiter:
     - Abschleppseil
     - Wagenheber 10 t
     - Schneeketten
-    - Kanister
+    - Dieselkanister
     - Einfüllstutzen
   Dach:
     - Stromerzeuger
@@ -520,147 +548,147 @@ Leiter:
     - Benzinkanister 10 l
     - Überdruckentlüfter
     - Rollgliss Bügel
-    - Safety Peak Bügel
+    - Safety Peak
     - Wenderohr
     - Aufnahme f. Korbtrage
 
-Tank2:
-  Fahrer/GK:
-    - Pressluftatmer
-    - Vollmaske f. Pressluftatmer
-    - Wärmebildkamera
-    - Handlampe
-    - Personen-Sicherungsset
-    - Handfunkgerät
-    - Gasmessgerät
-  Mannschaft:
-    - Handfunkterät
+# Tank2:
+#   Fahrer / GK:
+#     - Pressluftatmer
+#     - Vollmaske f. Pressluftatmer
+#     - Wärmebildkamera
+#     - Handlampe
+#     - Personen-Sicherungsset
+#     - Handfunkgerät
+#     - Gasmessgerät
+#   Mannschaft:
+#     - Handfunkterät
 
-    - Atemschutz Überwachungstafel
-    - Nothammer
-    - Pannendreieck
-    - Fahrzeugwerkzeug
-    - Pressluftatmer
-    - Vollmaske f. Pressluftatmer
-    - Reserveflasche
-    - Schutzhandschuhe
-    - Arbeitsmesser
-    - Verbandskaste
-    - Bergetuch
-    - Rettungsleine
-    - Steigergurt
-    - Meldertasche
-    - Handlampe
-    - Anhaltekelle
-    - Signaltaschenlampe
-    - Suchscheinwerfer
-    - Warndreieck "Feuerwehr"
-    - Absperrband
-    - Einweghandschuhe
-  G1:
-    - Faltbehälter 3000 l
-    - Spiralluton
-    - Wasserwerfer
-    - Hydrofix
-    - Tauchpumpe
-    - Verlängerungskabel
-    - Be- u. Entlüftungsgerät
-  G2:
-    - Hacke langstielig
-    - Hacke kurzstielig
-    - Hammer 2 kg
-    - Rauchfangschlüsselsatz
-    - Schachthakensatz
-    - Bogensäge
-    - Schnittschutzhose
-    - Motorkettensäge
-    - Treibstoff-Ölkanister
-    - Werkzeugkiste
-    - Lichtfluter 1000 W
-    - Flutbrücke
-    - KSA 20 m. Stromverteiler
-    - E-Werkzeug
-    - Kabeltrommel 230 V
-    - Generator 8 kVA
-    - Lichtmastbetätigung
-    - Haue
-    - Stativ
-    - Abgasschlauch
-    - Hammer 5 kg
-    - Brechstange
-    - Sappie
-    - Mistgabel
-    - Heugabel
-    - Ausräumhaken
-    - Piassava-Besen
-    - Flachschaufel
-    - Stichschaufel
-    - Trassenband
-    - Bolzenschneider
-    - Krampen
-    - Feuerwehraxt
-  G3:
-    - Feuerlöscher
-    - Kaminkehrerwerkzeug
-    - Sammelstück BBB-A
-    - Hitzeschutzanzug
-    - Schutzanzug Schutzstufe 2
-    - Robisrohr m. Schlauch
-    - Hydroschild C
-    - Hydroschild B
-  G4:
-    - Druckschlauch B
-    - Ölbindemittel
-    - Gummistiefel m. Stiefelsocken
-    - Seilstropp verz.
-    - Abschleppseil
-    - E-Gummimatte
-    - Plastikfolie
-    - Arbeitsleine
-    - Schnürleine
-  G5:
-    - Druckschlauch C42
-    - Hohlstrahlrohr
-    - Verteiler B-CBC
-    - ABC-Kupplungsschlüssel
-    - Übergangsstück B-C
-    - Strahlrohr B m. Stützkrümmer
-    - Stützkrümmer
-    - Strahlrohr B
-    - Einlaufkrümmer B
-    - Druckbegrenzungsventil
-    - Flankierer
-    - Sammelstück BB-A
-    - Schlauchtragekorb
-    - Schaumrohr
-    - Zumischer Z2/Z4
-  G6:
-    - Benzinkanister
-    - Dieselkanister
-    - Einfüllstutzen
-    - Hochdruckhaspel m. Pistole
-    - Druckschlauch HD
-    - Druckschlauch B
-    - Schlauchbrücke
-    - Fahrzeug Unterlegkeile
-  G7 / Heck:
-    - Übergangsstück B-C
-    - Hydrantenschlüssel
-    - Handfunkgerät
-    - ABC-Kupplungsschlüssel
-    - Übergangsstück A110-B75
-    - Übergangsstück A125-A110
-    - Kupplungsschlüssel 125
-  Dach:
-    - Schaumausrüstung
-    - Steckleiter 4-teilig
-    - Wasserwerfer
-    - Löschlanze
-    - Monsunrohr
-    - Einreißhaken
+#     - Atemschutz Überwachungstafel
+#     - Nothammer
+#     - Pannendreieck
+#     - Fahrzeugwerkzeug
+#     - Pressluftatmer
+#     - Vollmaske f. Pressluftatmer
+#     - Reserveflasche
+#     - Schutzhandschuhe
+#     - Arbeitsmesser
+#     - Verbandskaste
+#     - Bergetuch
+#     - Rettungsleine
+#     - Steigergurt
+#     - Meldertasche
+#     - Handlampe
+#     - Anhaltekelle
+#     - Signaltaschenlampe
+#     - Suchscheinwerfer
+#     - Warndreieck "Feuerwehr"
+#     - Absperrband
+#     - Einweghandschuhe
+#   G1:
+#     - Faltbehälter 3000 l
+#     - Spiralluton
+#     - Wasserwerfer
+#     - Hydrofix
+#     - Tauchpumpe
+#     - Verlängerungskabel
+#     - Be- u. Entlüftungsgerät
+#   G2:
+#     - Hacke langstielig
+#     - Hacke kurzstielig
+#     - Hammer 2 kg
+#     - Rauchfangschlüsselsatz
+#     - Schachthaken
+#     - Bogensäge
+#     - Schnittschutzhose
+#     - Motorkettensäge
+#     - Treibstoff-Ölkanister
+#     - Werkzeugkiste
+#     - Lichtfluter 1000 W
+#     - Flutbrücke
+#     - KSA 20 m. Stromverteiler
+#     - E-Werkzeug
+#     - Kabeltrommel 230 V
+#     - Generator 8 kVA
+#     - Lichtmastbetätigung
+#     - Haue
+#     - Stativ
+#     - Abgasschlauch
+#     - Hammer 5 kg
+#     - Brechstange
+#     - Sappie
+#     - Mistgabel
+#     - Heugabel
+#     - Ausräumhaken
+#     - Piassava-Besen
+#     - Flachschaufel
+#     - Stichschaufel
+#     - Trassenband
+#     - Bolzenschneider
+#     - Krampen
+#     - Feuerwehraxt
+#   G3:
+#     - Feuerlöscher
+#     - Kaminkehrerwerkzeug
+#     - Sammelstück BBB-A
+#     - Hitzeschutzanzug
+#     - Schutzanzug Schutzstufe 2
+#     - Robisrohr m. Schlauch
+#     - Hydroschild C
+#     - Hydroschild B
+#   G4:
+#     - Druckschlauch B
+#     - Ölbindemittel
+#     - Gummistiefel m. Stiefelsocken
+#     - Seilstropp verz.
+#     - Abschleppseil
+#     - E-Gummimatte
+#     - Plastikfolie
+#     - Arbeitsleine
+#     - Schnürleine
+#   G5:
+#     - Druckschlauch C42
+#     - Hohlstrahlrohr
+#     - Verteiler B-CBC
+#     - ABC-Kupplungsschlüssel
+#     - Übergangsstück B-C
+#     - Strahlrohr B m. Stützkrümmer
+#     - Stützkrümmer
+#     - Strahlrohr B
+#     - Einlaufkrümmer B
+#     - Druckbegrenzungsventil
+#     - Flankierer
+#     - Sammelstück BB-A
+#     - Schlauchtragekorb
+#     - Schaumrohr
+#     - Zumischer Z2/Z4
+#   G6:
+#     - Benzinkanister
+#     - Dieselkanister
+#     - Einfüllstutzen
+#     - Hochdruckhaspel m. Pistole
+#     - Druckschlauch HD
+#     - Druckschlauch B
+#     - Schlauchbrücken
+#     - Fahrzeug Unterlegkeile
+#   G7 / Heck:
+#     - Übergangsstück B-C
+#     - Hydrantenschlüssel
+#     - Handfunkgerät
+#     - ABC-Kupplungsschlüssel
+#     - Übergangsstück A110-B75
+#     - Übergangsstück A125-A110
+#     - Kupplungsschlüssel 125
+#   Dach:
+#     - Schaumausrüstung
+#     - Steckleiter 4-teilig
+#     - Wasserwerfer
+#     - Löschlanze
+#     - Monsunrohr
+#     - Einreißhaken
 
 Voraus: &tunnel
-  Fahrer/GK:
+  Fahrer / GK:
     - Handfunkgerät
     - Handlampe
     - Pressluftatmer
@@ -693,7 +721,7 @@ Voraus: &tunnel
     - Schutzhandschuhe
     - Hochsichtbare Überwurfweste
     - Anhaltekelle
-    - Set Powerflares
+    - Powerflares
   G1:
     - Teleskopleiter
     - Arbeitsleine
@@ -733,7 +761,7 @@ Voraus: &tunnel
     - Löschanlage
   Tiefraum1:
     - Abschleppseil
-    - Schäckel 65 kN
+    - Schäkel 65 kN
     - Dieselkanister 20 l
     - Einfüllstutzen
   Tiefraum2:
@@ -762,7 +790,7 @@ Voraus: &tunnel
     - Doppelaxt
     - Türbrecheisen
     - Rettungswerkzeug
-    - Schneekette
+    - Schneeketten
     - Schwelleraufsatz
     - Zubehör Schere/Spreizer
     - Anhängekupplung Kugelkopf
@@ -803,10 +831,10 @@ Voraus+Ölanh.:
     - Plane 3x4 m
 
 Pumpe:
-  Fahrer/GK:
+  Fahrer / GK:
     - Handfunkgerät
     - Anhaltekelle
-    - Meldertasche m. Zubehör
+    - Meldertasche
     - Schlüsselkasten
     - Suchscheinwerfer
   Mannschaft:
@@ -842,9 +870,9 @@ Pumpe:
     - Schutzkorb f. Saugkorb
     - ABC-Kupplungsschlüssel
     - Leinensatz
-    - Sammelstück
-    - Übergnagsstück B-C
-    - Übergnagsstück A-B
+    - Sammelstück BB-A
+    - Übergangsstück B-C
+    - Übergangsstück A-B
     - Druckbegrenzungsventil
     - Werkzeug f. TS
     - Motorkettensäge
@@ -863,8 +891,8 @@ Pumpe:
     - Rundschlinge
     - Schäkel
     - Standrohr
-    - Unterflurhydrantenschlüssel
-    - Saugschlauch A
+    - Unterflur-Hydrantenschlüssel
+    - A-Saugschlauch
   G2:
     - Bolzenschneider
     - Hacke langstielig
@@ -872,7 +900,7 @@ Pumpe:
     - Handhammer 2 kg
     - Vorschlaghammer 5 kg
     - Zimmermannshammer
-    - Schachthakensatz
+    - Schachthaken
     - Rauchfangschlüsselsatz
     - Tragkraftspritze
     - Werkzeugkiste
@@ -898,7 +926,7 @@ Pumpe:
     - Saugkorb
     - Schutzkorb f. Saugkorb
     - Leinensatz
-    - Sammelstück
+    - Sammelstück BB-A
     - Übergangsstück B-C
     - Übergangsstück A-B
     - Druckbegrenzungsventil
@@ -908,7 +936,7 @@ Pumpe:
     - Druckschlauch C
     - Schlauchtragekorb
     - Hohlstrahlrohr
-    - Stützkrümmer B
+    - Stützkrümmer
     - Überflurhydrantenschlüssel
     - Übergangsstück 110-125
     - Kupplungsschlüssel 125
@@ -923,24 +951,23 @@ Pumpe:
     - Homelite-Pumpe
     - Dieselkanister 20 l
     - Benzinkanister 20 l
-    - Saugschlauch B
+    - B-Saugschlauch
     - Einfüllstutzen
-    - Unterflurhydrantenschlüssel
+    - Unterflur-Hydrantenschlüssel
     - Arbeitsleine
     - Schnürleine
     - Schlauchknickschutz
     - Rohrkrümmer
     - Flankierer
     - KFZ Unterlegkeile
-    - Saugschlauch A
-    - Saugkopf B
+    - A-Saugschlauch
+    - Saugkorb B
     - Kupplungsschlüssel B-C
     - Trichter
     - CO2 Löscher
     - Segeltucheimer
   G4:
     - KSA 20
-
     - Druckschlauch B
     - Stromerzeuger MAG
     - Stromerzeuger klein
@@ -971,7 +998,7 @@ Pumpe:
     - Flachansauger
 
 Rüst:
-  Fahrer/GK:
+  Fahrer / GK:
     - Handfunkgerät
     - Helm mit Funkgarnitur
     - Helmlampe
@@ -990,9 +1017,7 @@ Rüst:
     - Wolldecke
     - Meldertasche
     - KFZ Bordwerkzeug
-
   "": []
-
   "G1 Drehfach\nlinks":
     - Umlenkrolle 140 kN
     - Umlenkrolle 200 kN
@@ -1012,7 +1037,7 @@ Rüst:
     - Freilandverankerung
     - Vorschlaghammer 5 kg
     - Brecheisen 70 cm
-    - Schäckel
+    - Schäkel
     - Erdspieße f. Freilandverankerung
     - Greifzug HIT/32
     - Greifzug T35
@@ -1026,7 +1051,6 @@ Rüst:
     - Bogensäge
     - Eisensäge
     - Stange f. Rangierwagenheber
-
   "G2 Drehfach\nrechts":
     - Hydraulischer Rettungssatz
     - Teleskoprettunszylinder
@@ -1046,7 +1070,6 @@ Rüst:
     - Blitzleuchten
     - Absperrband
     - Flatterleine 5 m
-
   G1 innen:
     - Radkreuz f. LKW
     - Radkreuz f. PKW
@@ -1064,7 +1087,6 @@ Rüst:
     - Übergangsstück B-C
     - Grabenstütze
     - Rüstholz
-
   G2 innen:
     - Hydraulikverlängerung 10 m
     - Kurbel f. Hydraulikhaspel
@@ -1090,7 +1112,6 @@ Rüst:
     - Bohrhammer
     - Strickleiter 20 m
     - Erdungskabel
-
   "G1 Drehfach\nrechts":
     - Tauchpumpe 2400 l/min
     - Tauchpumpe 850 l/min
@@ -1112,7 +1133,6 @@ Rüst:
     - Seilführungsrolle f. Kranseilwinde
     - Aufsatz f. Rodator
     - Schlüssel f. Hauswasserabsperrung
-
   "G2 Drehfach\nlinks":
     - Stromerzeuger 30 kVA
     - Stromerzeuger 10 kVA
@@ -1133,7 +1153,6 @@ Rüst:
     - Übergangsstück 400 V
     - Übergangsstück 400 V m. Polwender
     - Abgasschlauch
-
   G3:
     - Abschleppseil 12 mm 5 m
     - Abschleppseil 16 mm 5 m
@@ -1171,7 +1190,6 @@ Rüst:
     - Einhängefolie f. Faltbehälter
     - Dreibeinstativ
     - Rollgliss
-
   G4:
     - Sanitätskasten m. Beatmungsbeutel
     - Elektrowerkzeug
@@ -1201,17 +1219,15 @@ Rüst:
     - Unterlegmatten Gummi
     - Krankentrage
     - Schwelleraufsatz
-
   G5 / Heck:
-    - Schneekette
-    - Kanister Diesel 10 l
-    - Kanister Benzin 10 l
+    - Schneeketten
+    - Dieselkanister 10 l
+    - Benzinkanister 10 l
     - Kombikanister Motorsäge 5 l
     - Ölbindemittel
     - Einfüllstutzen
     - Kranabstützunterlagen
     - Schäkel 12 t
-
   Dach:
     - Steckleiter 4-teilig
     - Schleifkorbtrage m. Gehänge
@@ -1220,7 +1236,7 @@ Rüst:
     - Hohlschaufel
     - Rundschaufel
     - Spitzschaufel
-    - Piasava Besen
+    - Piassava-Besen
     - Ausräumhaken
     - Dunggabel
     - Heugabel
@@ -1231,7 +1247,7 @@ Rüst:
 
 # "Tank Dürrnberg\nTLFA 3000":
 TankDürrnberg:
-  Fahrer/GK:
+  Fahrer / GK:
     - Gasmessgerät
     - Handfunkgerät
     - Kartentasche
@@ -1252,7 +1268,7 @@ TankDürrnberg:
     - Feuerwehrhandschuhe
     - Starthilfekabel
     - Adalitlampe
-    - TNT Tool
+    - TNT-Tool
     - Tragetuch
     - Sicherungsleine 2m
     - Wärmebildkamera
@@ -1265,7 +1281,7 @@ TankDürrnberg:
   G1:
     - Abschleppseil
     - Brechstange
-    - Druckbelüftungsgerät
+    - Druckbelüfter
     - Druckluftschlauch 20m
     - Luftschnellangriff 20m
     - Handluftpumpe
@@ -1306,18 +1322,18 @@ TankDürrnberg:
     - Fluterbrücke
     - Stromschnellangriff
     - Einbaugenerator 10 kVA
-    - Übergangsstück 400 V mit Polwender
+    - Übergangsstück 400 V m. Polwender
     - Verlängerungskabel 10 m
     - Verteilerkabeltrommel 230 V 30 m
-    - Rollgliss mit Abseilachter
+    - Rollgliss m. Abseilachter
     - Absperrband
     - Dreibeinstativ
     - Schaufeltrage
     - Schlagbohrmaschine
     - Schleiferbrille
     - Schmutzwasserpumpe
-    - Absperrstange
-    - Bodenteller
+    - Absperrstangen
+    - Bodenteller f. Absperrstangen
     - Kabelfernbedienung Lichtmast
     - Minihebekissensatz
     - Verkehrsunfall- Schnellangriffskoffer
@@ -1330,30 +1346,30 @@ TankDürrnberg:
     - Hitzeschutzhandschuhe
     - Hitzeschutzhaube
     - Rundschlinge
-    - D-Saugschlauch für Pumpenvormischer
-    - Schaumaufsatz für Pistolenstrahlrohr
+    - D-Saugschlauch f. Pumpenvormischer
+    - Schaumaufsatz f. Pistolenstrahlrohr
     - Mehrbereichsschaummittel
     - Präzisionszumischer
     - Zurrgurt mit Ratsche
   G4:
     - Arbeitsleine
     - Bogensäge
-    - Benzin-Kanister 20 l
-    - Diesel-Kanister 20 l
+    - Benzinkanister 20 l
+    - Dieselkanister 20 l
     - Dekontaminationswanne
     - Ölbindemittel
     - Schachtabdeckung
-    - Schlauchbrücke
+    - Schlauchbrücken
     - Schnürleine 6 m
     - Einfüllstutzen
     - Abdeckplane
     - Kunststoffplane 4x4m
     - Müllsäcke
-    - Chemieschutzanzug mit Stiefel
+    - Chemieschutzanzug m. Stiefel
   G5:
     - Druckbegrenzungsventil
     - Kanalspülratte
-    - Sammelstück A - 2B
+    - Sammelstück BB-A
     - Schlauchtragekorb
     - Verteiler B-CBC
     - B-Mehrzweckstrahlrohr
@@ -1363,13 +1379,13 @@ TankDürrnberg:
     - Stützkrümmer
     - Überflurhydrantenschlüssel
     - Übergangsstück A 125/110
-    - Übergangsstück A/B
-    - Übergangsstück B/C
+    - Übergangsstück A-B
+    - Übergangsstück B-C
     - Verbindungsschlauch B 5m
     - Druckschlauch B
     - Druckschlauch C
     - Säureschutzhandschuhe
-    - Schlauchbindensatz
+    - Schlauchbinden
     - Schlauchhalter
     - Absperrschieber B
     - Rauchabschluss
@@ -1380,13 +1396,13 @@ TankDürrnberg:
     - Kaminkehrwerkzeug
     - Löschdecke
     - Wasserwerfer
-    - Hydrofix 10l
-    - Kohlendioxydlöscher 6kg
+    - Hydrofix 10 l
+    - Kohlendioxydlöscher 6 kg
     - ABC-Pulverlöscher
     - HD-Strahlrohr
     - HD Kupplungsschlüssel
     - Schneeketten
-    - Notkurbel für Schlauchhaspel
+    - Notkurbel f. Schlauchhaspel
     - Unterlegkeil
   G7 / Heck:
     - HD Schlauch 60 m
@@ -1406,20 +1422,20 @@ TankDürrnberg:
     - Ausräumhaken
     - Dunggabel
     - Stahlblecheimer
-    - Sappine
+    - Sappie
     - Heugabel
-    - Piasavabesen
+    - Piassava-Besen
     - Randschaufel
     - Rohrdichtkissen
     - Kunststoffeimer
     - Spitzschaufel
     - Krampen
     - Standrohr
-    - Unterflurhydrantenschlüssel
+    - Unterflur-Hydrantenschlüssel
     - Feuerpatsche
 
 PumpeDürrnberg:
-  Fahrer/GK:
+  Fahrer / GK:
     - Handfunkgerät
     - Handlampe
     - Handscheinwerfer
@@ -1445,7 +1461,7 @@ PumpeDürrnberg:
     - Atemschutzmaske m. Filter
     - Handlampe Adalit
   G1:
-    - Bolzenschneider 75 cm
+    - Bolzenschneider
     - Brechstange 1,5 m
     - Feuerwehraxt
     - Hacke langstielig
@@ -1454,7 +1470,7 @@ PumpeDürrnberg:
     - Zimmermannshammer
     - Nageleisen
     - Vorschlaghammer 5 kg
-    - TNT Tool
+    - TNT-Tool
     - Straßenbesen
     - Flachschaufel
     - Randschaufel
@@ -1463,10 +1479,10 @@ PumpeDürrnberg:
     - Spitzschneidekrampen 2,5 kg
     - Feuerwehrsappel
     - Hubwinde 100 kN
-    - Motorkettensäge
+    - Motorsäge
     - Elektrokettensäge
     - Forstkeil
-    - Ersatzkette f. Motorkettensäge
+    - Ersatzkette f. Motorsäge
     - Kombikanister
     - Tauchpumpe
     - Werkzeugkoffer
@@ -1489,9 +1505,9 @@ PumpeDürrnberg:
     - Verlängerungskabel 230 V
     - Einfüllstutzen
     - Fremdbetankungs-Garnitur
-    - Benzin-Kanister 10 l
-    - Benzin-Kanister 20 l
-    - Diesel-Kanister 20 l
+    - Benzinkanister 10 l
+    - Benzinkanister 20 l
+    - Dieselkanister 20 l
     - Verkehrsleitkegel faltbar
     - Beleuchtungssystem RLS2000
     - Abdeckplane
@@ -1503,7 +1519,7 @@ PumpeDürrnberg:
     - Stromverteiler
   G3:
     - ABC-Kupplungsschlüssel
-    - A-Saugkorb m. Rückschlagventil
+    - Saugkorb m. Rückschlagventil
     - Ventilhalteleine
     - Drahtschutzkorb
     - Schwimmsauger
@@ -1512,13 +1528,13 @@ PumpeDürrnberg:
     - C-Druckschlauch
     - Schlauchtragekorb
     - Segeltuchbeutel f. Schlauchbinden
-    - Schlauchbrücke
+    - Schlauchbrücken
     - Schlauchhalter
     - B-Mehrzweckstrahlrohr
-    - B-Stützkrümmer
+    - Stützkrümmer
     - C-Hohlstrahlrohr
     - Druckbegrenzungsventil
-    - Sammelstück A-BB
+    - Sammelstück BB-A
     - Überflurhydrantenschlüssel
     - Überflurhydrantenschlüssel m. Ratsche
     - Übergangsstück 125-110
@@ -1532,7 +1548,7 @@ PumpeDürrnberg:
     - Schnürleine
     - Wassersauger m. Zubehör
     - Koffer Abschleppösen
-    - ABC Pulverlöscher
+    - ABC-Pulverlöscher
     - Löschdecke
     - Umlenkrolle 140 kN
     - Seilrolle 60 kN
@@ -1542,7 +1558,7 @@ PumpeDürrnberg:
     - Kantenreiter
     - Windenkeil
     - Zurrgurt m. Ratsche 8m 2-teilig
-    - Zurrgurt 7m 1-teilig
+    - Zurrgurt 7 m
     - Gerüstklammern
     - Schäkel 65 kN
     - Schäkel 120 kN
@@ -1564,7 +1580,7 @@ PumpeDürrnberg:
     - A-Saugschlauch
     - Tragkraftspritze
     - Radkeil
-    - Schlauchrollwagen
+    - Schlauchhaspel
     - Werkzeugsatz Tragkraftspritze
     - Unterflur-Hydrantenstandrohr
     - Unterflur-Hydrantenschlüssel

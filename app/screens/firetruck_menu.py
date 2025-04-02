@@ -1,10 +1,10 @@
 from kivy.app import App
-from kivy.uix.button import Button
 from kivy.uix.label import Label
 from kivy.uix.screenmanager import Screen
 
+from typing import cast
+
 from helper.functions import mode_str2bool
-from helper.file_handling import load_total_storage
 from helper.settings import Strings
 
 
@@ -12,55 +12,18 @@ strings = Strings()
 
 
 class Fahrzeugkunde_Menu(Screen):
-    def __init__(self, **kwargs):
-        super(Fahrzeugkunde_Menu, self).__init__(**kwargs)
-        # load available firetrucks
-        total_storage = load_total_storage()
-        self.total_firetrucks = list(total_storage.keys())
-        # create button for all firetrucks
-        for firetruck in self.total_firetrucks:
-
-            if firetruck == "BDLP-Tank1":
-                # skip BDLP and always add at the bottom of the list
-                continue
-
-            abbreviation = strings.trucks.get(firetruck)
-            # Create a button with two strings, one centered and one at the bottom right
-            btn = Button(
-                text=f"{firetruck}{' '*3}[size=30]{abbreviation}[/size]",
-                font_size="32sp",
-                markup=True,  # Enable markup for custom text positioning
-                size_hint_y=None,
-                height=150,
-                size_hint_x=1,
-            )
-            btn.bind(on_release=self.on_button_release)
-
-            # Add the button to the layout
-            self.firetrucks_layout.add_widget(btn)
-
-        # add placeholder
-        btn = Label(font_size="32sp", size_hint_y=None, height=30, size_hint_x=1)
-        self.firetrucks_layout.add_widget(btn)
-
-        # create button for BDLP-Tank1
-        btn = Button(
-            text=f"BDLP-Tank1",
-            font_size="32sp",
-            markup=True,  # Enable markup for custom text positioning
-            size_hint_y=None,
-            height=150,
-            size_hint_x=1,
-        )
-        btn.bind(on_release=self.on_button_release)
-
-        # Add the button to the layout
-        self.firetrucks_layout.add_widget(btn)
-
     def on_button_release(self, instance):
+        self.mode_label = cast(Label, self.mode_label)
         # on question selection, read mode label text from current screen
         mode = mode_str2bool(self.mode_label.text.strip())
-        mode_training, mode_game, mode_browse, mode_images = mode
+        (
+            mode_training,
+            mode_training_new,
+            mode_game,
+            mode_browse,
+            mode_images,
+            mode_exam,
+        ) = mode
 
         # bind firetruck selection
         app = App.get_running_app()
@@ -69,33 +32,49 @@ class Fahrzeugkunde_Menu(Screen):
             app.root.current = "fahrzeugkunde_training"
             app.root.transition.direction = "left"
             # continue game with selected firetruck
-            fahrzeugkunde_tg_screen = app.root.get_screen("fahrzeugkunde_training")
-            fahrzeugkunde_tg_screen.select_firetruck(instance.text.split(" ")[0])
-            # fahrzeugkunde_tg_screen.forward_mode_2_fk_training(mode)
-            fahrzeugkunde_tg_screen.play()
+            screen = app.root.get_screen("fahrzeugkunde_training")
+            screen.select_firetruck(instance.text.split(" ")[0])
+            # screen.forward_mode_2_fk_training(mode)
+            screen.play()
+
+        elif mode_training_new:
+            app.root.current = "fahrzeugkunde_training_new"
+            app.root.transition.direction = "left"
+
+            screen = app.root.get_screen("fahrzeugkunde_training_new")
+            screen.select_firetruck(instance.text.split(" ")[0])
+            screen.play()
 
         if mode_game:
             app.root.current = "fahrzeugkunde_game"
             app.root.transition.direction = "left"
             # continue game with selected firetruck
-            fahrzeugkunde_tg_screen = app.root.get_screen("fahrzeugkunde_game")
-            fahrzeugkunde_tg_screen.select_firetruck(instance.text.split(" ")[0])
-            # fahrzeugkunde_tg_screen.forward_mode_2_fk_game(mode)
-            fahrzeugkunde_tg_screen.play()
+            screen = app.root.get_screen("fahrzeugkunde_game")
+            screen.select_firetruck(instance.text.split(" ")[0])
+            # screen.forward_mode_2_fk_game(mode)
+            screen.play()
 
         elif mode_browse:
             # change screen
             app.root.current = "fahrzeugkunde_browse"
             app.root.transition.direction = "left"
             # continue game with selected firetruck
-            fahrzeugkunde_browse_screen = app.root.get_screen("fahrzeugkunde_browse")
-            fahrzeugkunde_browse_screen.select_firetruck(instance.text.split(" ")[0])
-            fahrzeugkunde_browse_screen.display_all_tools()
+            screen = app.root.get_screen("fahrzeugkunde_browse")
+            screen.select_firetruck(instance.text.split(" ")[0])
+            screen.display_all_tools()
 
         elif mode_images:
             app.root.current = "fahrzeugkunde_images"
             app.root.transition.direction = "left"
 
-            fahrzeugkunde_images_screen = app.root.get_screen("fahrzeugkunde_images")
-            fahrzeugkunde_images_screen.select_firetruck(instance.text.split(" ")[0])
-            fahrzeugkunde_images_screen.load_image()
+            screen = app.root.get_screen("fahrzeugkunde_images")
+            screen.select_firetruck(instance.text.split(" ")[0])
+            screen.load_image()
+
+        # elif mode_exam:
+        #     app.root.current = "fahrzeugkunde_exam"
+        #     app.root.transition.direction = "left"
+
+        #     screen = app.root.get_screen("fahrzeugkunde_exam")
+        #     screen.select_firetruck(instance.text.split(" ")[0])
+        #     screen.load_image()

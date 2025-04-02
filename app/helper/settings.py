@@ -1,40 +1,43 @@
 class Settings:
     def __init__(self) -> None:
-        # training
-        self.FEEDBACK_TRAINING_SEC = 2.0
-        # game
-        self.INTERVAL_GAME_SEC = 0.1
-        self.DISPLAY_EXTRA_TIME_LABEL_SEC = 2
         ## firetruck
-        self.FIRETRUCK_START_TIME_SEC = 15.0
-        self.FIRETRUCK_EXTRA_TIME_SEC = 10.0
-        self.FIRETRUCK_FEEDBACK_GAME_SEC = 0.5
-        self.FIRETRUCK_CORRECT_FOR_EXTRA_TIME = 5
-        self.FIRETRUCK_CORRECT_POINTS = 100
-        self.FIRETRUCK_STRIKE_POINTS = 1
-        self.FIRETRUCK_STRIKE_FACTOR = 50
+        self.FIRETRUCK_TRAINING_FEEDBACK_SEC = 2.0
+        self.FIRETRUCK_TRAINING_NEW_FEEDBACK_SEC = 2.5
+        self.FIRETRUCK_TRAINING_CORRECT_POINTS = 1
+        self.FIRETRUCK_TRAINING_STRIKE_FACTOR = 50
+        self.FIRETRUCK_GAME_INTERVAL_SEC = 0.1
+        self.FIRETRUCK_GAME_DISPLAY_EXTRA_TIME_SEC = 2
+        self.FIRETRUCK_GAME_START_TIME_SEC = 15.0
+        self.FIRETRUCK_GAME_EXTRA_TIME_SEC = 10.0
+        self.FIRETRUCK_GAME_FEEDBACK_SEC = 0.5
+        self.FIRETRUCK_GAME_CORRECT_FOR_EXTRA_TIME = 5
+        self.FIRETRUCK_GAME_CORRECT_POINTS = 100
         ## competition
-        self.COMPETITION_START_TIME_SEC = 90.0
-        self.COMPETITION_EXTRA_TIME_SEC = 60.0
-        self.COMPETITION_FEEDBACK_GAME_SEC = 1.5
-        self.COMPETITION_CORRECT_FOR_EXTRA_TIME = 4
-        self.COMPETITION_CORRECT_POINTS = 100
+        self.COMPETITION_GAME_INTERVAL_SEC = 0.1
+        self.COMPETITION_GAME_DISPLAY_EXTRA_TIME_SEC = 2
+        self.COMPETITION_GAME_START_TIME_SEC = 90.0
+        self.COMPETITION_GAME_EXTRA_TIME_SEC = 60.0
+        self.COMPETITION_GAME_FEEDBACK_SEC = 1.5
+        self.COMPETITION_GAME_CORRECT_FOR_EXTRA_TIME = 4
+        self.COMPETITION_GAME_CORRECT_POINTS = 100
 
 
 class Strings:
     def __init__(self) -> None:
 
         # Start_Menu mode names
-        self.LABEL_STR_MODE = "Modus"
-        self.LABEL_STR_QUESTIONS = "Inhalt"
+        self.LABEL_STR_QUESTIONS = "Mission"
+        self.LABEL_STR_MODE = "Lernpfad"
 
         # Start_Menu button names
         self.BUTTON_STR_INFO = "Info"
         self.BUTTON_STR_SETTINGS = "Einst."
-        self.BUTTON_STR_TRAINING = "Übung"
-        self.BUTTON_STR_GAME = "Zeitdruck"
+        self.BUTTON_STR_TRAINING = "Übung" # "Lernen" # "Erkunden"
+        self.BUTTON_STR_TRAINING_NEW = f"{self.BUTTON_STR_TRAINING} mit Bildern"
+        self.BUTTON_STR_GAME = "Zeitdruck" # "Herausfordern" # "Testen" # "Challengen"
         self.BUTTON_STR_BROWSE = "Stöbern"
-        self.BUTTON_STR_IMAGES = "Bilder\n(coming soon)"
+        self.BUTTON_STR_IMAGES = "Bilder"
+        self.BUTTON_STR_EXAM = "Leistungsprüfung"
         self.BUTTON_STR_FIRETRUCKS = "Fahrzeugkunde"
         self.BUTTON_STR_COMPETITIONS = "Bewerbsfragen"
         self.BUTTON_STR_STANDARDS = "Standardeinsätze\n(coming soon)"  # Standardeinsatz
@@ -59,7 +62,7 @@ class Strings:
         self.TITLE_ERROR_POPUP = "Fehlermeldung"
         self.BUTTON_CLOSE_POPUP = "Schließen"
 
-        self.trucks = {
+        self.trucks_hallein = {
             "TestTruck": "testing",
             "RüstLösch": "RLFA 2000",
             "Tank1": "TLF-A 3000",
@@ -83,4 +86,23 @@ class About_Text:
         Idee und Entwicklung: Dominik Voglmaier
         
         Support: d.voglmaier@feuerwehr-hallein.at
+
+        """
+
+
+class Acknowledgements_Text:
+    def __init__(self) -> None:
+        self.TEXT = """
+        Vielen Dank an alle Unterstützer dieses Projects!
+
+        Konstruktive Diskussionen:
+        Liora Feicht
+        OFK Sebastian Wass
+
+        Tester:
+        Kilian Brüderl
+        Martin Reisaus
+        Thomas Herbst
+        Manuel Promock
+        Bereitschaft 5
         """

@@ -1,3 +1,20 @@
+# version 2.1.2:
+Go live in Google Play Store!
+
+Used this version for app testing with peer group:
+ (results...)
+
+
+# version 2.1.1:
+Go live in Apple App Store!
+
+
+------------------------
+
+# some lazyness
+
+------------------------
+
 # version 1.1:
 1. browse modus with search text
 2. use classes in truck game&training and competition game&training
