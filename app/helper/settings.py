@@ -1,7 +1,7 @@
 class Settings:
     def __init__(self) -> None:
         ## firetruck
-        self.FIRETRUCK_TRAINING_FEEDBACK_SEC = 2.0
+        self.FIRETRUCK_TRAINING_FEEDBACK_SEC = 0.3  # 2.0
         self.FIRETRUCK_TRAINING_NEW_FEEDBACK_SEC = 2.5
         self.FIRETRUCK_TRAINING_CORRECT_POINTS = 1
         self.FIRETRUCK_TRAINING_STRIKE_FACTOR = 50
@@ -32,9 +32,9 @@ class Strings:
         # Start_Menu button names
         self.BUTTON_STR_INFO = "Info"
         self.BUTTON_STR_SETTINGS = "Einst."
-        self.BUTTON_STR_TRAINING = "Übung" # "Lernen" # "Erkunden"
+        self.BUTTON_STR_TRAINING = "Übung"  # "Lernen" # "Erkunden"
         self.BUTTON_STR_TRAINING_NEW = f"{self.BUTTON_STR_TRAINING} mit Bildern"
-        self.BUTTON_STR_GAME = "Zeitdruck" # "Herausfordern" # "Testen" # "Challengen"
+        self.BUTTON_STR_GAME = "Zeitdruck"  # "Herausfordern" # "Testen" # "Challengen"
         self.BUTTON_STR_BROWSE = "Stöbern"
         self.BUTTON_STR_IMAGES = "Bilder"
         self.BUTTON_STR_EXAM = "Leistungsprüfung"
@@ -50,6 +50,9 @@ class Strings:
         self.TITLE_DIALOG_POPUP = "Datei auswählen"
         self.BUTTON_DIALOG_POPUP_CANCEL = "Abbrechen"
         self.BUTTON_DIALOG_POPUP_CONFIRM = "Auswählen"
+
+        # firetruck training
+        self.HINT_STR_MULTIPLE_ANSWERS = "Wo noch?"
 
         # competition training
         self.BUTTON_STR_SOLUTION = "Lösung"

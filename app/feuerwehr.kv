@@ -459,17 +459,25 @@
                     pos: self.pos
 
         # TOOL
+        #Label:
+        #    size_hint_y: 2
+        #    id: tool_label
+        #    font_size: "28sp"
         Label:
-            size_hint_y: 2
+            size_hint_y: 3
             id: tool_label
             font_size: "28sp"
                 
         # FIRETRUCK ROOMS
-        GridLayout:
-            size_hint_y: 7
+        #GridLayout:
+        #    size_hint_y: 7
+        #    id: firetruck_rooms_layout
+        #    spacing: "3dp"
+        #    cols: 2
+        BoxLayout:
+            size_hint_y: 6
             id: firetruck_rooms_layout
-            spacing: "3dp"
-            cols: 2
+            # either GridLayout or FloatLayout
 
 
 <Fahrzeugkunde_Training_New>:

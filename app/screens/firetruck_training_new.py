@@ -11,11 +11,12 @@ from typing import cast
 
 from helper.functions import get_ToolQuestion_instances
 from helper.file_handling import save_to_scores_file, get_scores_key
-from helper.settings import Settings
+from helper.settings import Settings, Strings
 from helper.game_class import GameCore
 
 
 settings = Settings()
+strings = Strings()
 
 
 class Fahrzeugkunde_Training_New(Screen):
@@ -217,12 +218,16 @@ class Fahrzeugkunde_Training_New(Screen):
                 # answer in correct answers
                 instance.background_color = (0, 1, 0, 1)
 
-                # display string "weitere"
-                if self.tool_label.text[-7:] == "weitere":
-                    self.tool_label.text += " "
-                else:
-                    self.tool_label.text += "\n"
-                self.tool_label.text += "weitere"
+                # display hint for multiple answers
+                # if self.tool_label.text[-7:] == strings.HINT_STR_MULTIPLE_ANSWERS:
+                #     self.tool_label.text += " "
+                # else:
+                #     self.tool_label.text += "\n"
+                # self.tool_label.text += strings.HINT_STR_MULTIPLE_ANSWERS
+
+                self.tool_label.text += "\n"
+                self.tool_label.text += strings.HINT_STR_MULTIPLE_ANSWERS
+
                 return
 
         # document given answers in class instance

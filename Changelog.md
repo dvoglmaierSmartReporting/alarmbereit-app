@@ -1,3 +1,14 @@
+# next version:
+features:
+- change feedback color for multiple correct answers in firetruck training and game
+- add clean firetruck layout background for truck with 7 rooms
+
+fixes:
+- competitions with lowest question_id > 1 are not crashing anymore
+- cleaned pylint errors
+- fixed some competition questions
+
+
 # version 2.1.2:
 Go live in Google Play Store!
 
