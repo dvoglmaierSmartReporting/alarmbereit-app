@@ -1,54 +1,54 @@
-TestTruck:
-  Fahrer / GK:
-    - Handfunkgerät <Bild:tools_RL/handfunkgeraet>
-    - Vollmaske f. Pressluftatmer <Bild:tools_RL/vollmaske>
-    - Pressluftatmer
-  Mannschaft:
-    - Anhaltekelle <Bild:tools_RL/anhaltekelle> <Raumbild:truck_RL/in_right_backward>
-    - Handfunkgerät <Bild:tools_RL/handfunkgeraet> <Raumbild:truck_RL/in_right_forward>
-    - Rettungsleine <Bild:tools_RL/rettungsleine> <Raumbild:truck_RL/in_core>
-    - Totmannwarner <Raumbild:truck_RL/in_core>
-  G1:
-    - Spinboard <Bild:tools_RL/spineboard> <Raumbild:truck_RL/g1_core>
-    - Hacke langstielig <Bild:tools_RL/hacke_langstielig> <Raumbild:truck_RL/g1_front>
-    - Schnittschutzhose <Bild:tools_RL/schnittschutzbeinlinge> <Raumbild:truck_RL/g1_door>
-    - Aggregat f. hydr. Rettungssatz <Bild:tools_RL/rettungssatz> <Raumbild:truck_RL/g1_front>
-    - Rettungssäge <Bild:tools_RL/rettungssaege> <Raumbild:truck_RL/g1_door>
-    - Bogensäge <Raumbild:truck_RL/g1_core>
-  G2:
-    - Stromerzeuger <Bild:tools_RL/stromerzeuger> <Raumbild:truck_RL/g2_front>
-    - Kabeltrommel 230 V <Bild:tools_RL/kabeltrommel> <Raumbild:truck_RL/g2_door>
-    - Blitzer LED <Raumbild:truck_RL/g2_core>
-  G3:
-    - Türöffnungsset <Bild:tools_RL/tueroeffnungsset> <Raumbild:truck_RL/g3>
-    - Kombischaumrohr K2 <Bild:tools_RL/schaumrohr> <Raumbild:truck_RL/g3>
-    - Schaummittelkanister <Bild:tools_RL/schaummittel> <Raumbild:truck_RL/g3>
-    - Rauchvorhang <Raumbild:truck_RL/g3>
-  G4:
-    - Werkzeugsatz <Bild:tools_RL/handwerkzeug> <Raumbild:truck_RL/g4>
-    - Schuttwanne <Bild:tools_RL/schuttwanne> <Raumbild:truck_RL/g4>
-    - Schutzbrille <Raumbild:truck_RL/g4>
-  G5:
-    - Druckschlauch B <Bild:tools_RL/druckschlauch_b> <Raumbild:truck_RL/g5_front>
-    - Hohlstrahlrohr <Bild:tools_RL/hohlstrahlrohr> <Raumbild:truck_RL/g5_front>
-    - Druckbegrenzungsventil <Bild:tools_RL/druckbegrenzer> <Raumbild:truck_RL/g5_front>
-    - Stützkrümmer <Bild:tools_RL/stuetzkruemmer> <Raumbild:truck_RL/g5_door>
-    - Verbindungsschlauch B <Bild:tools_RL/flankierer> <Raumbild:truck_RL/g5_core>
-    - Schlauchhalter <Raumbild:truck_RL/g5_front>
-  G6:
-    - Druckschlauch B <Bild:tools_RL/druckschlauch_b> <Raumbild:truck_RL/g6>
-    - Schneeketten <Bild:tools_RL/schneekette> <Raumbild:truck_RL/g6>
-    - Trockenlöscher 12 kg <Bild:tools_RL/trockenloescher> <Raumbild:truck_RL/g6>
-    - HD-Kupplungsschlüssel <Raumbild:truck_RL/g6>
-  G7 / Heck:
-    - Handfunkgerät <Bild:tools_RL/handfunkgeraet> <Raumbild:truck_RL/g7>
-    - Schlauchhaspel <Bild:tools_RL/haspel> <Raumbild:truck_RL/g7>
-    - Atemschutz Überwachungstafel <Raumbild:truck_RL/g7>
-  Dach:
-    - Schlauchbrücken Alu <Bild:tools_RL/schlauchbruecke> <Raumbild:truck_RL/roof_back>
-    - Steckleiter Verbindungsteil <Bild:tools_RL/verbindungsstueck> <Raumbild:truck_RL/roof_left>
-    - Ausräumhaken <Bild:tools_RL/ausraeumhaken> <Raumbild:truck_RL/roof_right>
-    - Moosgummiplatte <Raumbild:truck_RL/roof_right>
+# TestTruck:
+#   Fahrer / GK:
+#     - Handfunkgerät <Bild:tools_RL/handfunkgeraet>
+#     - Vollmaske f. Pressluftatmer <Bild:tools_RL/vollmaske>
+#     - Pressluftatmer
+#   Mannschaft:
+#     - Anhaltekelle <Bild:tools_RL/anhaltekelle> <Raumbild:truck_RL/in_right_backward>
+#     - Handfunkgerät <Bild:tools_RL/handfunkgeraet> <Raumbild:truck_RL/in_right_forward>
+#     - Rettungsleine <Bild:tools_RL/rettungsleine> <Raumbild:truck_RL/in_core>
+#     - Totmannwarner <Raumbild:truck_RL/in_core>
+#   G1:
+#     - Spinboard <Bild:tools_RL/spineboard> <Raumbild:truck_RL/g1_core>
+#     - Hacke langstielig <Bild:tools_RL/hacke_langstielig> <Raumbild:truck_RL/g1_front>
+#     - Schnittschutzhose <Bild:tools_RL/schnittschutzbeinlinge> <Raumbild:truck_RL/g1_door>
+#     - Aggregat f. hydr. Rettungssatz <Bild:tools_RL/rettungssatz> <Raumbild:truck_RL/g1_front>
+#     - Rettungssäge <Bild:tools_RL/rettungssaege> <Raumbild:truck_RL/g1_door>
+#     - Bogensäge <Raumbild:truck_RL/g1_core>
+#   G2:
+#     - Stromerzeuger <Bild:tools_RL/stromerzeuger> <Raumbild:truck_RL/g2_front>
+#     - Kabeltrommel 230 V <Bild:tools_RL/kabeltrommel> <Raumbild:truck_RL/g2_door>
+#     - Blitzer LED <Raumbild:truck_RL/g2_core>
+#   G3:
+#     - Türöffnungsset <Bild:tools_RL/tueroeffnungsset> <Raumbild:truck_RL/g3>
+#     - Kombischaumrohr K2 <Bild:tools_RL/schaumrohr> <Raumbild:truck_RL/g3>
+#     - Schaummittelkanister <Bild:tools_RL/schaummittel> <Raumbild:truck_RL/g3>
+#     - Rauchvorhang <Raumbild:truck_RL/g3>
+#   G4:
+#     - Werkzeugsatz <Bild:tools_RL/handwerkzeug> <Raumbild:truck_RL/g4>
+#     - Schuttwanne <Bild:tools_RL/schuttwanne> <Raumbild:truck_RL/g4>
+#     - Schutzbrille <Raumbild:truck_RL/g4>
+#   G5:
+#     - Druckschlauch B <Bild:tools_RL/druckschlauch_b> <Raumbild:truck_RL/g5_front>
+#     - Hohlstrahlrohr <Bild:tools_RL/hohlstrahlrohr> <Raumbild:truck_RL/g5_front>
+#     - Druckbegrenzungsventil <Bild:tools_RL/druckbegrenzer> <Raumbild:truck_RL/g5_front>
+#     - Stützkrümmer <Bild:tools_RL/stuetzkruemmer> <Raumbild:truck_RL/g5_door>
+#     - Verbindungsschlauch B <Bild:tools_RL/flankierer> <Raumbild:truck_RL/g5_core>
+#     - Schlauchhalter <Raumbild:truck_RL/g5_front>
+#   G6:
+#     - Druckschlauch B <Bild:tools_RL/druckschlauch_b> <Raumbild:truck_RL/g6>
+#     - Schneeketten <Bild:tools_RL/schneekette> <Raumbild:truck_RL/g6>
+#     - Trockenlöscher 12 kg <Bild:tools_RL/trockenloescher> <Raumbild:truck_RL/g6>
+#     - HD-Kupplungsschlüssel <Raumbild:truck_RL/g6>
+#   G7 / Heck:
+#     - Handfunkgerät <Bild:tools_RL/handfunkgeraet> <Raumbild:truck_RL/g7>
+#     - Schlauchhaspel <Bild:tools_RL/haspel> <Raumbild:truck_RL/g7>
+#     - Atemschutz Überwachungstafel <Raumbild:truck_RL/g7>
+#   Dach:
+#     - Schlauchbrücken Alu <Bild:tools_RL/schlauchbruecke> <Raumbild:truck_RL/roof_back>
+#     - Steckleiter Verbindungsteil <Bild:tools_RL/verbindungsstueck> <Raumbild:truck_RL/roof_left>
+#     - Ausräumhaken <Bild:tools_RL/ausraeumhaken> <Raumbild:truck_RL/roof_right>
+#     - Moosgummiplatte <Raumbild:truck_RL/roof_right>
 
 RüstLösch:
   Fahrer / GK:
@@ -759,12 +759,12 @@ Voraus: &tunnel
     - Drucklöschgerät Bioversal
     - ABC-Pulverlöscher
     - Löschanlage
-  Tiefraum1:
+  "G1\ntief":
     - Abschleppseil
     - Schäkel 65 kN
     - Dieselkanister 20 l
     - Einfüllstutzen
-  Tiefraum2:
+  "G2\ntief":
     - KFZ Unterlegkeile
     - Löschdecke
     - Stromgenerator
@@ -797,38 +797,37 @@ Voraus: &tunnel
     - Anhängekupplung Maulkupplung
     - Adapter 7/13-Pol
 
-Voraus+Ölanh.:
-  <<: *tunnel
-  Ölanh. G1:
-    - Verkehrsleitkegel
-    - Erdspieß
-    - Warndreieck "Öleinsatz"
-    - Auffangwanne m. Ausguss
-    - Ölschlange
-    - Warntafel
-  Ölanh. G2:
-    - Abfüllschaufeln f. Ölbindemittel
-
-    - Universal Ölbindemittel
-    - Spannringfass 60 l
-    - Besen
-    - Alu-Schaufel
-    - Bindemittel Streuwagen
-    - Auffangwanne 150 l
-    - Arbeitsleine
-    - Schnürleine
-    - Spillbag 15
-    - Ölbindemittel Reservesack
-    - Ölschlange
-    - Schachtabdeckung
-    - Chemische Bindemittel
-    - Bindeflies Rolle
-    - Spilltech Öl-Absorbent 1,2 m
-    - Schutzanzug
-    - Chemische Schutzhandschuhe
-    - Leckdichtpaste
-    - Selbstschweißendes Dichtband
-    - Plane 3x4 m
+# Voraus+Ölanh.:
+#   <<: *tunnel
+#   Ölanh. G1:
+#     - Verkehrsleitkegel
+#     - Erdspieß
+#     - Warndreieck "Öleinsatz"
+#     - Auffangwanne m. Ausguss
+#     - Ölschlange
+#     - Warntafel
+#   Ölanh. G2:
+#     - Abfüllschaufeln f. Ölbindemittel
+#     - Universal Ölbindemittel
+#     - Spannringfass 60 l
+#     - Besen
+#     - Alu-Schaufel
+#     - Bindemittel Streuwagen
+#     - Auffangwanne 150 l
+#     - Arbeitsleine
+#     - Schnürleine
+#     - Spillbag 15
+#     - Ölbindemittel Reservesack
+#     - Ölschlange
+#     - Schachtabdeckung
+#     - Chemische Bindemittel
+#     - Bindeflies Rolle
+#     - Spilltech Öl-Absorbent 1,2 m
+#     - Schutzanzug
+#     - Chemische Schutzhandschuhe
+#     - Leckdichtpaste
+#     - Selbstschweißendes Dichtband
+#     - Plane 3x4 m
 
 Pumpe:
   Fahrer / GK:
@@ -998,7 +997,7 @@ Pumpe:
     - Flachansauger
 
 Rüst:
-  Fahrer / GK:
+  Mannschaft:
     - Handfunkgerät
     - Helm mit Funkgarnitur
     - Helmlampe
@@ -1017,8 +1016,7 @@ Rüst:
     - Wolldecke
     - Meldertasche
     - KFZ Bordwerkzeug
-  "": []
-  "G1 Drehfach\nlinks":
+  "G1\nlinks":
     - Umlenkrolle 140 kN
     - Umlenkrolle 200 kN
     - Klappkolben 60 kN
@@ -1051,7 +1049,7 @@ Rüst:
     - Bogensäge
     - Eisensäge
     - Stange f. Rangierwagenheber
-  "G2 Drehfach\nrechts":
+  "G2\nrechts":
     - Hydraulischer Rettungssatz
     - Teleskoprettunszylinder
     - Pedalschneider
@@ -1070,7 +1068,7 @@ Rüst:
     - Blitzleuchten
     - Absperrband
     - Flatterleine 5 m
-  G1 innen:
+  "G1\ninnen":
     - Radkreuz f. LKW
     - Radkreuz f. PKW
     - Brechstange 1,4 m
@@ -1087,7 +1085,7 @@ Rüst:
     - Übergangsstück B-C
     - Grabenstütze
     - Rüstholz
-  G2 innen:
+  "G2\ninnen":
     - Hydraulikverlängerung 10 m
     - Kurbel f. Hydraulikhaspel
     - Südbahnwinde
@@ -1112,7 +1110,7 @@ Rüst:
     - Bohrhammer
     - Strickleiter 20 m
     - Erdungskabel
-  "G1 Drehfach\nrechts":
+  "G1\nrechts":
     - Tauchpumpe 2400 l/min
     - Tauchpumpe 850 l/min
     - Radklammer
@@ -1133,7 +1131,7 @@ Rüst:
     - Seilführungsrolle f. Kranseilwinde
     - Aufsatz f. Rodator
     - Schlüssel f. Hauswasserabsperrung
-  "G2 Drehfach\nlinks":
+  "G2\nlinks":
     - Stromerzeuger 30 kVA
     - Stromerzeuger 10 kVA
     - Kabeltrommel 230 V

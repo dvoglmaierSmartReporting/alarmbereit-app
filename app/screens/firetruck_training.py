@@ -94,13 +94,43 @@ class Fahrzeugkunde_Training(Screen):
         ]
 
     def get_leiter_layout(self):
-        raise NotImplementedError
+        return [
+            ("Korb", 0.3, 0.13, 0.35, 1),
+            ("Mannschaft", 0.55, 0.155, 0.225, 0.86),
+            ("G1", 0.27, 0.2, 0.085, 0.68),
+            ("G3", 0.185, 0.185, 0.085, 0.45),
+            ("G5", 0.185, 0.125, 0.085, 0.14),
+            ("G2", 0.27, 0.2, 0.65, 0.68),
+            ("G4", 0.185, 0.185, 0.735, 0.45),
+            ("G6", 0.185, 0.125, 0.735, 0.14),
+            ("Dach", 0.28, 0.43, 0.43, 0.45),
+        ]
 
     def get_voraus_layout(self):
-        raise NotImplementedError
+        return [
+            ("Fahrer / GK", 0.55, 0.13, 0.225, 0.90),
+            ("Mannschaft", 0.55, 0.13, 0.225, 0.75),
+            ("G1", 0.22, 0.415, 0.18, 0.61),
+            ("G1\ntief", 0.1, 0.155, 0.08, 0.35),
+            ("G2", 0.22, 0.415, 0.605, 0.61),
+            ("G2\ntief", 0.1, 0.155, 0.825, 0.35),
+            ("G3", 0.4, 0.185, 0.3, 0.19),
+        ]
 
     def get_ruest_layout(self):
-        raise NotImplementedError
+        return [
+            ("Mannschaft", 0.55, 0.13, 0.225, 0.99),
+            ("G1\nlinks", 0.15, 0.22, 0.08, 0.81),
+            ("G1\ninnen", 0.15, 0.45, 0.23, 0.81),
+            ("G1\nrechts", 0.15, 0.22, 0.08, 0.58),
+            ("G3", 0.23, 0.265, 0.15, 0.355),
+            ("G2\nrechts", 0.15, 0.22, 0.77, 0.81),
+            ("G2\ninnen", 0.15, 0.45, 0.62, 0.81),
+            ("G2\nlinks", 0.15, 0.22, 0.77, 0.58),
+            ("G4", 0.23, 0.265, 0.62, 0.355),
+            ("G5 / Heck", 0.4, 0.08, 0.3, 0.085),
+            ("Dach", 0.2, 0.4, 0.4, 0.61),
+        ]
 
     def build_answer_layout(self, firetruck: str) -> FloatLayout:
         # display background and buttons
@@ -109,9 +139,23 @@ class Fahrzeugkunde_Training(Screen):
         if firetruck in ["RüstLösch", "Tank1", "TankDürrnberg"]:
             bgd_image = "./assets/layouts/truck.jpg"
             buttons = self.get_7_rooms_layout()
+
         elif firetruck in ["Pumpe", "PumpeDürrnberg"]:
             bgd_image = "./assets/layouts/truck.jpg"
             buttons = self.get_5_rooms_layout()
+
+        elif firetruck in ["Leiter"]:
+            bgd_image = "./assets/layouts/leiter.jpg"
+            buttons = self.get_leiter_layout()
+
+        elif firetruck in ["Rüst"]:
+            bgd_image = "./assets/layouts/ruest.jpg"
+            buttons = self.get_ruest_layout()
+
+        elif firetruck in ["Voraus"]:
+            bgd_image = "./assets/layouts/voraus.jpg"
+            buttons = self.get_voraus_layout()
+
         else:
             raise NotImplementedError
 
