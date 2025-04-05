@@ -1,6 +1,8 @@
-type totalStorage = dict[str, dict[str, list[str]]]
-type totalQuestion = dict[str, dict[int, dict[str, str | list[str]]]]
-type mainConfig = dict[str, dict[str, bool]]
-type floatButtons = list[tuple[str, float, float, float, float]]
-type scores = dict[str, dict[str, dict[str, int]]]
-type firetruckStorage = tuple[list[str], list[str], dict[str, list[str]]]
+from typing import TypeAlias
+
+totalStorage: TypeAlias = dict[str, dict[str, list[str]]]
+totalQuestion: TypeAlias = dict[str, dict[int, dict[str, str | list[str]]]]
+mainConfig: TypeAlias = dict[str, dict[str, bool]]
+floatButtons: TypeAlias = list[tuple[str, float, float, float, float]]
+scores: TypeAlias = dict[str, dict[str, dict[str, int]]]
+firetruckStorage: TypeAlias = tuple[list[str], list[str], dict[str, list[str]]]

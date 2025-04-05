@@ -1,7 +1,7 @@
 class Settings:
     def __init__(self) -> None:
         ## firetruck
-        self.FIRETRUCK_TRAINING_FEEDBACK_SEC = 0.3  # 2.0
+        self.FIRETRUCK_TRAINING_FEEDBACK_SEC = 1.5 # 2.0
         self.FIRETRUCK_TRAINING_NEW_FEEDBACK_SEC = 2.5
         self.FIRETRUCK_TRAINING_CORRECT_POINTS = 1
         self.FIRETRUCK_TRAINING_STRIKE_FACTOR = 50
