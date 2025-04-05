@@ -1,6 +1,7 @@
 from helper.settings import Strings, Settings
 from helper.file_handling import load_total_storage, load_total_competition_questions
 from helper.game_class import ToolQuestion
+from helper.custom_types import *
 
 import os
 
@@ -33,15 +34,7 @@ def invert_firetruck_equipment(firetruck: dict[str, list[str]]) -> dict[str, lis
     return tools_locations
 
 
-###
-# update function
-# or add function about
-# processing tools into list[toolQuestion]
-# enhance toolQuestion class to handle images
-# move <Bild: + <Location: detection here
-def get_firetruck_storage(
-    selected_firetruck: str,
-) -> tuple[list[str], list[str], dict[str, list[str]]]:
+def get_firetruck_storage(selected_firetruck: str) -> firetruckStorage:
     total_storage = load_total_storage()
     firetruck: dict = total_storage[selected_firetruck]
     rooms: list = list(firetruck.keys())
@@ -122,7 +115,9 @@ def create_scores_content() -> dict:
     total_storage = load_total_storage()
 
     for truck in total_storage.keys():
-        scores.get("firetrucks", {}).update({truck: {"high_score": 0, "high_strike": 0}})
+        scores.get("firetrucks", {}).update(
+            {truck: {"high_score": 0, "high_strike": 0}}
+        )
 
     total_questions = load_total_competition_questions()
 
@@ -132,10 +127,7 @@ def create_scores_content() -> dict:
     return scores
 
 
-from typing import cast
-
-
-def create_scores_text(scores: dict[str, dict[str, dict[str, int]]]) -> str:
+def create_scores_text(scores: scores) -> str:
     output = ""
     spacing = "      "
     separator = "  -  "

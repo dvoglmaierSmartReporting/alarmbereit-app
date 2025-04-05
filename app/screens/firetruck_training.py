@@ -7,12 +7,14 @@ from random import shuffle
 from typing import cast
 
 from helper.functions import get_ToolQuestion_instances
-from helper.file_handling import save_to_scores_file, get_scores_key
-from helper.settings import Settings
+from helper.file_handling import save_to_scores_file, get_score_value
+from helper.settings import Settings, Strings
 from helper.game_class import GameCore
+from helper.firetruck_layouts import build_answer_layout
 
 
 settings = Settings()
+strings = Strings()
 
 
 class Fahrzeugkunde_Training(Screen):
@@ -56,7 +58,7 @@ class Fahrzeugkunde_Training(Screen):
 
         self.reset_strike()
 
-        self.current_high_strike = get_scores_key(
+        self.current_high_strike = get_score_value(
             self.selected_firetruck, "high_strike"
         )
 
@@ -70,6 +72,7 @@ class Fahrzeugkunde_Training(Screen):
         if len(self.tool_questions) == 0:
             self.reset_tool_list()
 
+        # Reset image boxes
         self.ids.firetruck_rooms_layout.clear_widgets()
 
         # troubleshooting: fix tool
@@ -80,10 +83,9 @@ class Fahrzeugkunde_Training(Screen):
 
         self.tool_label.text = self.current_tool_question.tool
 
-        for storage in self.firetruck_rooms:
-            btn = Button(text=storage, font_size="28sp", disabled=storage == "")
-            btn.bind(on_press=self.on_answer)
-            self.ids.firetruck_rooms_layout.add_widget(btn)
+        float = build_answer_layout(self.selected_firetruck, "fahrzeugkunde_training")
+
+        self.ids.firetruck_rooms_layout.add_widget(float)
 
     def correct_answer(self):
         self.increment_strike()
@@ -122,15 +124,16 @@ class Fahrzeugkunde_Training(Screen):
         else:
             self.incorrect_answer()
 
-        # children = self.firetruck_rooms_layout.children
-        children = self.ids.firetruck_rooms_layout.children  # children is reversed
+        float_layout = self.ids.firetruck_rooms_layout.children[
+            0
+        ]  # children is reversed
 
         # indicate if correct or incorrect answer
         # for single correct answer
         if len(self.current_tool_question.rooms_to_be_answered) <= 1:
             # always identify and indicate the correct answer
             # for child in children:
-            for child in children:
+            for child in float_layout.children:
                 if isinstance(child, Button):
                     if child.text in self.current_tool_question.rooms:
                         child.background_color = (0, 1, 0, 1)
@@ -147,7 +150,7 @@ class Fahrzeugkunde_Training(Screen):
                 # if, indicate incorrect and all correct answers and close
                 instance.background_color = (1, 0, 0, 1)
                 # for child in children:
-                for child in children:
+                for child in float_layout.children:
                     if isinstance(child, Button):
                         if child.text in self.current_tool_question.rooms:
                             child.background_color = (0, 1, 0, 1)
@@ -155,14 +158,11 @@ class Fahrzeugkunde_Training(Screen):
 
             else:
                 # answer in correct answers
-                instance.background_color = (0, 1, 0, 1)
+                instance.background_color = (0, 0, 1, 1)
 
-                # display string "weitere"
-                if self.tool_label.text[-7:] == "weitere":
-                    self.tool_label.text += " "
-                else:
-                    self.tool_label.text += "\n"
-                self.tool_label.text += "weitere"
+                self.tool_label.text += "\n"
+                self.tool_label.text += strings.HINT_STR_MULTIPLE_ANSWERS
+
                 return
 
         # document given answers in class instance
