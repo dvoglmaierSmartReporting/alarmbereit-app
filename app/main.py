@@ -19,9 +19,11 @@ import traceback
 
 from screens.info_screen import Info_Screen
 from screens.acknowledgement_screen import Acknowledgement_Screen
+
 # from screens.settings_screen import Settings_Screen
 from screens.firetruck_menu import Fahrzeugkunde_Menu
 from screens.firetruck_training import Fahrzeugkunde_Training
+
 # from screens.firetruck_training_new import Fahrzeugkunde_Training_New
 from screens.firetruck_game import Fahrzeugkunde_Game
 from screens.firetruck_browse import Fahrzeugkunde_Browse

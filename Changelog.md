@@ -1,4 +1,7 @@
 # next version:
+...
+
+# version 2.2.0:
 known issues:
 - progress bar exceeds with additional time
 - extra time is hard -> 2 difficulties
@@ -6,9 +9,11 @@ known issues:
 - missing info about number of tools
 - competition game is too much text
 - missing "return to previous tool" feature
+- missing version tag in app
+- Android return button is not useable for screen navigation
 
 features:
-- change feedback color for multiple correct answers in firetruck training and game
+- change feedback color to blue for multiple correct answers in firetruck training and game
 - add clean firetruck layout background for firetruck training and game
 - use custom types for type hints
 - adding acknowledgements screen
