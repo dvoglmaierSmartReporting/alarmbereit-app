@@ -12,6 +12,7 @@
     # IDs
     content_layout: content_layout
     info_button: info_button
+    acknowledgement_button: acknowledgement_button
     #settings_button: settings_button
 
     # LOGO
@@ -35,7 +36,7 @@
             spacing: "3dp"
     
             Label:  # placeholder
-                size_hint_x: 5
+                size_hint_x: 3
             
             BoxLayout:
                 size_hint_x: 1
@@ -45,13 +46,22 @@
                     size_hint_y: 1
                     id: info_button
                     font_size: "32sp"
+                    background_normal: ''
+                    background_color: 0.2, 0.2, 0.2, 0.5
                     on_release:
                         app.root.current = "info_screen"
                         root.manager.transition.direction = "left"
                         root.update_info_text()
 
-                Label:  # placeholder
+                Button:
                     size_hint_y: 1
+                    id: acknowledgement_button
+                    font_size: "32sp"
+                    background_normal: ''
+                    background_color: 0.2, 0.2, 0.2, 0.5
+                    on_release:
+                        app.root.current = "acknowledgement_screen"
+                        root.manager.transition.direction = "left"
 
             #Button:
             #    id: settings_button
@@ -89,7 +99,7 @@
     name: "info_screen"
 
     # IDs
-    header_label:header_label
+    header_label: header_label
     about_label: about_label
     info_text_label: info_text_label
 
@@ -133,7 +143,8 @@
                 Rectangle:
                     size: self.size
                     pos: self.pos
-
+        
+        # ABOUT
         Label:
             id: about_label
             size_hint_y: 2
@@ -149,14 +160,78 @@
                     size: self.size
                     pos: self.pos
 
+        # SCORES
         ScrollView:
-            id: question_scrollview
             size_hint_y: 7
             pos_hint: {'center_x': 0.5}
 
             Label:
                 id: info_text_label
                 font_size: "15sp"
+                halign: "left"
+                valign: "top"
+                size_hint_y: None
+                text_size: self.width, None
+                height: self.texture_size[1]
+                markup: True
+
+
+<Acknowledgement_Screen>:
+    name: "acknowledgement_screen"
+
+    # IDs
+    header_label: header_label
+    acknowledgement_label: acknowledgement_label
+
+    # SCREEN
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: "10dp"
+        padding: "5dp"
+
+        # HEADER
+        BoxLayout:
+            size_hint_y: 1
+            spacing: "3dp"
+
+            Button:
+                size_hint_x: 1
+                text: "<"
+                font_size: "32sp"
+                on_release:
+                    app.root.current = "start_menu"
+                    root.manager.transition.direction = "right"
+            
+            Label: # placeholder
+                size_hint_x: 2
+
+            Label:
+                size_hint_x: 3
+                id: header_label
+                font_size: "25sp"
+                halign: "center"
+                valign: "middle"
+                text_size: self.size
+    
+        # SEPARATOR
+        BoxLayout:
+            size_hint_y: None
+            height: 2
+            canvas.before:
+                Color:
+                    rgba: 0.5, 0.5, 0.5, 1
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+        
+        # ACKNOWLEDGEMENT
+        ScrollView:
+            size_hint_y: 9
+            pos_hint: {'center_x': 0.5}
+
+            Label:
+                id: acknowledgement_label
+                font_size: "20sp"
                 halign: "left"
                 valign: "top"
                 size_hint_y: None

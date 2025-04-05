@@ -31,6 +31,7 @@ class Strings:
 
         # Start_Menu button names
         self.BUTTON_STR_INFO = "Info"
+        self.BUTTON_STR_ACKNOWLEDGEMENT = "Danke"
         self.BUTTON_STR_SETTINGS = "Einst."
         self.BUTTON_STR_TRAINING = "Übung"  # "Lernen" # "Erkunden"
         self.BUTTON_STR_TRAINING_NEW = f"{self.BUTTON_STR_TRAINING} mit Bildern"
@@ -96,16 +97,23 @@ class About_Text:
 class Acknowledgements_Text:
     def __init__(self) -> None:
         self.TEXT = """
-        Vielen Dank an alle Unterstützer dieses Projects!
+        Herzlichen Dank an alle Unterstützerinnen und Unterstützer dieses Projekts!
 
-        Konstruktive Diskussionen:
+        [b]• Für inspirierende Gespräche und hilfreiche Diskussionen:[/b]
         Liora Feicht
         OFK Sebastian Wass
 
-        Tester:
+        [b]• Für ihren Einsatz als System-Tester der ersten Stunde:[/b]
         Kilian Brüderl
         Martin Reisaus
         Thomas Herbst
-        Manuel Promock
+
+        [b]• Für die tatkräftige Unterstützung bei der Erstellung der Beladelisten:[/b]
+        Bereitschaft 1
+
+        [b]• Für konstruktives Feedback und intensive Belastungstests der Beta-Version:[/b]
         Bereitschaft 5
+
+        [b]• Danke an alle Fehler-Finder:[/b]
+        Manuel Promock
         """

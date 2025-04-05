@@ -5,7 +5,6 @@ from kivy.uix.screenmanager import Screen
 
 from helper.settings import About_Text, Strings
 
-
 about_text = About_Text().TEXT
 strings = Strings()
 

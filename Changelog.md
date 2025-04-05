@@ -1,7 +1,17 @@
 # next version:
+known issues:
+- progress bar exceeds with additional time
+- extra time is hard -> 2 difficulties
+- missing time limit/end screen
+- missing info about number of tools
+- competition game is too much text
+- missing "return to previous tool" feature
+
 features:
 - change feedback color for multiple correct answers in firetruck training and game
-- add clean firetruck layout background for truck with 7 rooms
+- add clean firetruck layout background for firetruck training and game
+- use custom types for type hints
+- adding acknowledgements screen
 
 fixes:
 - competitions with lowest question_id > 1 are not crashing anymore

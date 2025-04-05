@@ -996,6 +996,28 @@ Pumpe:
     - Steckleiter Verbindungsteil
     - Flachansauger
 
+Tank2:
+  Fahrer / GK:
+    - ""
+  Mannschaft:
+    - ""
+  G1:
+    - ""
+  G2:
+    - ""
+  G3:
+    - ""
+  G4:
+    - ""
+  G5:
+    - ""
+  G6:
+    - ""
+  G7 / Heck:
+    - ""
+  Dach:
+    - ""
+
 Rüst:
   Mannschaft:
     - Handfunkgerät

@@ -18,11 +18,11 @@ from kivy.clock import Clock
 import traceback
 
 from screens.info_screen import Info_Screen
-
+from screens.acknowledgement_screen import Acknowledgement_Screen
 # from screens.settings_screen import Settings_Screen
 from screens.firetruck_menu import Fahrzeugkunde_Menu
 from screens.firetruck_training import Fahrzeugkunde_Training
-from screens.firetruck_training_new import Fahrzeugkunde_Training_New
+# from screens.firetruck_training_new import Fahrzeugkunde_Training_New
 from screens.firetruck_game import Fahrzeugkunde_Game
 from screens.firetruck_browse import Fahrzeugkunde_Browse
 from screens.firetruck_images import Fahrzeugkunde_Images
@@ -45,10 +45,12 @@ class Start_Menu(Screen):
         super(Start_Menu, self).__init__(**kwargs)
         # type annotations
         self.info_button = cast(Button, self.info_button)
+        self.acknowledgement_button = cast(Button, self.acknowledgement_button)
         self.content_layout = cast(Layout, self.content_layout)
 
         # update button strings
         self.info_button.text = strings.BUTTON_STR_INFO
+        self.acknowledgement_button.text = strings.BUTTON_STR_ACKNOWLEDGEMENT
 
         # Container where the additional widget will be displayed
         # Part of content_layout
@@ -211,26 +213,34 @@ class Start_Menu(Screen):
 
         # firetrucks_modi_widget.add_widget(firetruck_btn5)
 
-        ### BUTTON 6 ###
-        firetruck_btn6 = Button(
-            pos_hint={"center_x": 0.5},
-            text=f"{strings.BUTTON_STR_TRAINING_NEW} --->",
-            font_size="32sp",
-        )
+        # ### BUTTON Übung mit Bildern ###
+        # firetruck_btn6 = Button(
+        #     pos_hint={"center_x": 0.5},
+        #     text=f"{strings.BUTTON_STR_TRAINING_NEW} --->",
+        #     font_size="32sp",
+        # )
 
-        firetruck_btn6.bind(  # type: ignore[attr-defined]
-            on_release=lambda instance: self.forward_mode2menu_manually(
-                "fahrzeugkunde_menu", strings.BUTTON_STR_TRAINING_NEW
+        # firetruck_btn6.bind(  # type: ignore[attr-defined]
+        #     on_release=lambda instance: self.forward_mode2menu_manually(
+        #         "fahrzeugkunde_menu", strings.BUTTON_STR_TRAINING_NEW
+        #     )
+        # )
+
+        # firetruck_btn6.bind(  # type: ignore[attr-defined]
+        #     on_release=lambda instance: self.update_firetruck_buttons(
+        #         strings.BUTTON_STR_TRAINING_NEW
+        #     )
+        # )
+
+        # firetrucks_modi_widget.add_widget(firetruck_btn6)
+
+        ### BUTTON Placeholder ###
+        firetrucks_modi_widget.add_widget(
+            Label(  # placeholder
+                size_hint=(1, 1),
+                font_size="32sp",
             )
         )
-
-        firetruck_btn6.bind(  # type: ignore[attr-defined]
-            on_release=lambda instance: self.update_firetruck_buttons(
-                strings.BUTTON_STR_TRAINING_NEW
-            )
-        )
-
-        firetrucks_modi_widget.add_widget(firetruck_btn6)
 
         return firetrucks_modi_widget
 
@@ -250,7 +260,7 @@ class Start_Menu(Screen):
             )
         )
 
-        ### BUTTON 1 ###
+        ### BUTTON Übung ###
         competition_btn1 = Button(
             pos_hint={"center_x": 0.5},
             text=f"{strings.BUTTON_STR_TRAINING} --->",
@@ -271,7 +281,7 @@ class Start_Menu(Screen):
 
         competitions_modi_widget.add_widget(competition_btn1)
 
-        ### BUTTON 2 ###
+        ### BUTTON Zeitdruck ###
         competition_btn2 = Button(
             pos_hint={"center_x": 0.5},
             text=f"{strings.BUTTON_STR_GAME} --->",
@@ -292,7 +302,7 @@ class Start_Menu(Screen):
 
         competitions_modi_widget.add_widget(competition_btn2)
 
-        ### BUTTON 3 ###
+        ### BUTTON Placeholder ###
         competitions_modi_widget.add_widget(
             Label(  # placeholder
                 size_hint=(1, 1),
@@ -314,7 +324,7 @@ class Start_Menu(Screen):
 
         self.manager.get_screen("info_screen").ids.info_text_label.text = info_text
 
-    def add_firetruck_button(self, firetruck: str):
+    def add_firetruck_button(self, firetruck: str, disabled: bool = False):
         abbreviation = strings.trucks_hallein.get(firetruck, "")
         # Create a button with two strings, one centered and one at the bottom right
         btn = Button(
@@ -324,6 +334,7 @@ class Start_Menu(Screen):
             size_hint_y=None,
             height=150,
             size_hint_x=1,
+            disabled=disabled,
         )
         btn.bind(  # type: ignore[attr-defined]
             on_release=self.manager.get_screen("fahrzeugkunde_menu").on_button_release
@@ -361,6 +372,7 @@ class Start_Menu(Screen):
         if mode_training or mode_game:
             # excluded_firetrucks = ["BDLP-Tank1", "TestTruck"]
             excluded_firetrucks = ["BDLP-Tank1"]
+            disabled_firetrucks = ["Tank2"]
 
             for firetruck in self.total_firetrucks:
 
@@ -368,7 +380,10 @@ class Start_Menu(Screen):
                     # skip BDLP and always add at the bottom of the list
                     continue
 
-                self.add_firetruck_button(firetruck)
+                if firetruck in disabled_firetrucks:
+                    self.add_firetruck_button(firetruck, disabled=True)
+                else:
+                    self.add_firetruck_button(firetruck)
 
         elif mode_browse:
             for firetruck in self.total_firetrucks:
@@ -434,11 +449,12 @@ class FeuerwehrApp(App):
             sm = ScreenManager()
             sm.add_widget(Start_Menu())
             sm.add_widget(Info_Screen())
+            sm.add_widget(Acknowledgement_Screen())
             # sm.add_widget(Settings_Screen())
             sm.add_widget(Fahrzeugkunde_Menu())
             sm.add_widget(Bewerb_Menu())
             sm.add_widget(Fahrzeugkunde_Training())
-            sm.add_widget(Fahrzeugkunde_Training_New())
+            # sm.add_widget(Fahrzeugkunde_Training_New())
             sm.add_widget(Fahrzeugkunde_Game())
             sm.add_widget(Fahrzeugkunde_Browse())
             sm.add_widget(Fahrzeugkunde_Images())

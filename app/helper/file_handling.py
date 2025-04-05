@@ -6,6 +6,7 @@ import os
 from typing import cast
 
 from helper.settings import Strings
+from helper.custom_types import *
 
 strings = Strings()
 
@@ -47,7 +48,7 @@ def get_user_data_dir() -> str:
     return get_running_app.user_data_dir
 
 
-def load_total_firetruck_storage() -> dict[str, dict[str, list[str]]]:
+def load_total_firetruck_storage() -> totalStorage:
     default_file_path = (
         "/".join(__file__.split("/")[:-2]) + "/content/firetruck_tools.yaml"
     )
@@ -68,12 +69,12 @@ def load_total_firetruck_storage() -> dict[str, dict[str, list[str]]]:
     return load_from_yaml(file_path)
 
 
-def load_bdlp_storage() -> dict[str, dict[str, list[str]]]:
+def load_bdlp_storage() -> totalStorage:
     default_file_path = "/".join(__file__.split("/")[:-2]) + "/content/bdlp_tools.yaml"
     return load_from_yaml(default_file_path)
 
 
-def load_total_storage() -> dict[str, dict[str, list[str]]]:
+def load_total_storage() -> totalStorage:
     output = load_total_firetruck_storage()
 
     # add BDLP content for default and custom firetruck contents
@@ -81,9 +82,7 @@ def load_total_storage() -> dict[str, dict[str, list[str]]]:
     return output
 
 
-def load_total_competition_questions() -> (
-    dict[str, dict[int, dict[str, str | list[str]]]]
-):
+def load_total_competition_questions() -> totalQuestion:
     default_file_path = (
         "/".join(__file__.split("/")[:-2])
         + "/content/competition_questions_multiple_choice.yaml"
@@ -92,7 +91,9 @@ def load_total_competition_questions() -> (
     return load_from_yaml(default_file_path)
 
 
-def copy_file_to_writable_dir(file_path: str, file_name: str, new_file_name: str = ""):
+def copy_file_to_writable_dir(
+    file_path: str, file_name: str, new_file_name: str = ""
+) -> None:
     file_current_dir = os.path.dirname(os.path.abspath(__file__))
     file_relative_path = os.path.join(file_current_dir, file_path, file_name)
     src = os.path.normpath(file_relative_path)
@@ -111,7 +112,7 @@ def copy_file_to_writable_dir(file_path: str, file_name: str, new_file_name: str
     copyfile(src, dst)
 
 
-def read_scores_file():
+def read_scores_file() -> dict:
     scores_file_path = os.path.join(
         get_user_data_dir(),
         "scores.yaml",
@@ -132,13 +133,13 @@ def read_scores_file():
     return load_from_yaml(file_path)
 
 
-def get_scores_key(firetruck: str, key: str, questions: str = "firetrucks"):
+def get_score_value(firetruck: str, key: str, questions: str = "firetrucks") -> int:
     return read_scores_file().get(questions, {}).get(firetruck, {}).get(key, {})
 
 
 def save_to_scores_file(
     firetruck: str, key: str, value: int, questions: str = "firetrucks"
-):
+) -> None:
     content = read_scores_file()
 
     if not questions in content.keys():
@@ -194,7 +195,7 @@ def save_to_scores_file(
         save_to_yaml(file_path, content)
 
 
-def read_main_cfg() -> dict:
+def read_main_cfg() -> mainConfig:
     file_path = os.path.join(
         get_user_data_dir(),
         "main.cfg",
@@ -203,7 +204,7 @@ def read_main_cfg() -> dict:
     return load_from_yaml(file_path)
 
 
-def update_main_cfg(to_update: dict):
+def update_main_cfg(to_update: dict) -> None:
     content = read_main_cfg()
 
     content.update(to_update)

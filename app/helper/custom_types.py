@@ -1,0 +1,6 @@
+type totalStorage = dict[str, dict[str, list[str]]]
+type totalQuestion = dict[str, dict[int, dict[str, str | list[str]]]]
+type mainConfig = dict[str, dict[str, bool]]
+type floatButtons = list[tuple[str, float, float, float, float]]
+type scores = dict[str, dict[str, dict[str, int]]]
+type firetruckStorage = tuple[list[str], list[str], dict[str, list[str]]]

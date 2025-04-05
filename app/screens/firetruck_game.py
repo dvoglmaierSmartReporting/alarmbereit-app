@@ -1,6 +1,6 @@
 from kivy.app import App
-from kivy.uix.button import Button
 from kivy.uix.label import Label
+from kivy.uix.button import Button
 from kivy.uix.progressbar import ProgressBar
 from kivy.properties import BooleanProperty
 from kivy.uix.screenmanager import Screen
@@ -14,9 +14,10 @@ from helper.functions import (
     break_tool_name,
     get_ToolQuestion_instances,
 )
-from helper.file_handling import save_to_scores_file, get_scores_key
+from helper.file_handling import save_to_scores_file, get_score_value
 from helper.settings import Settings, Strings
-from helper.game_class import GameCore, ToolQuestion
+from helper.game_class import GameCore
+from helper.firetruck_layouts import build_answer_layout
 
 
 settings = Settings()
@@ -42,7 +43,7 @@ class Fahrzeugkunde_Game(Screen):
     def reset_timer(self):
         self.time_left = settings.FIRETRUCK_GAME_START_TIME_SEC
 
-        # self.set_progress_bar()
+        # todo: update progressBar limit
         self.progress_bar = cast(ProgressBar, self.progress_bar)
         self.progress_bar.max = settings.FIRETRUCK_GAME_START_TIME_SEC
 
@@ -73,7 +74,6 @@ class Fahrzeugkunde_Game(Screen):
             )
 
         else:
-            # Clock.unschedule(self.update_timer)  # Stop the timer when it reaches 0
             self.end_game()
             pass
 
@@ -99,12 +99,6 @@ class Fahrzeugkunde_Game(Screen):
         app.root.transition.direction = "right"
 
     def reset_tool_list(self):
-        # (self.firetruck_rooms, self.tools, self.tools_locations) = (
-        #     get_firetruck_storage(self.selected_firetruck)
-        # )
-
-        # shuffle(self.tools)
-
         (self.firetruck_rooms, self.tool_questions) = get_ToolQuestion_instances(
             self.selected_firetruck
         )
@@ -120,7 +114,7 @@ class Fahrzeugkunde_Game(Screen):
 
         self.reset_timer()
 
-        self.current_high_score = get_scores_key(
+        self.current_high_score = get_score_value(
             firetruck=self.selected_firetruck,
             key="high_score",
         )
@@ -135,9 +129,6 @@ class Fahrzeugkunde_Game(Screen):
     def next_tool(self, *args):
         self.accept_answers = True  # Enable answer processing for the new tool
 
-        # if len(self.tools) == 0:
-        #     self.reset_tool_list()
-
         if len(self.tool_questions) == 0:
             self.reset_tool_list()
 
@@ -150,10 +141,14 @@ class Fahrzeugkunde_Game(Screen):
 
         self.tool_label.text = self.current_tool_question.tool
 
-        for storage in self.firetruck_rooms:
-            btn = Button(text=storage, font_size="28sp", disabled=storage == "")
-            btn.bind(on_press=self.on_answer)
-            self.ids.firetruck_rooms_layout.add_widget(btn)
+        # for storage in self.firetruck_rooms:
+        #     btn = Button(text=storage, font_size="28sp", disabled=storage == "")
+        #     btn.bind(on_press=self.on_answer)
+        #     self.ids.firetruck_rooms_layout.add_widget(btn)
+
+        float = build_answer_layout(self.selected_firetruck, "fahrzeugkunde_game")
+
+        self.ids.firetruck_rooms_layout.add_widget(float)
 
     def correct_answer(self):
         self.increment_score()
@@ -185,15 +180,19 @@ class Fahrzeugkunde_Game(Screen):
         else:
             self.incorrect_answer()
 
-        children = self.ids.firetruck_rooms_layout.children
+        float_layout = self.ids.firetruck_rooms_layout.children[
+            0
+        ]  # children is reversed
 
         # indicate if correct or incorrect answer
         # for single correct answer
         if len(self.current_tool_question.rooms_to_be_answered) <= 1:
             # always identify and indicate the correct answer
-            for child in children:
-                if child.text in self.current_tool_question.rooms:
-                    child.background_color = (0, 1, 0, 1)
+            # for child in children:
+            for child in float_layout.children:
+                if isinstance(child, Button):
+                    if child.text in self.current_tool_question.rooms:
+                        child.background_color = (0, 1, 0, 1)
             # if, indicate incorrect answer
             if instance.text not in self.current_tool_question.rooms:
                 instance.background_color = (1, 0, 0, 1)
@@ -201,27 +200,21 @@ class Fahrzeugkunde_Game(Screen):
         # for multiple correct answers
         else:
             # document given answers in class instance
-            # todo: add if answer was correct
             self.current_tool_question.room_answered.append(instance.text)
 
             if instance.text not in self.current_tool_question.rooms:
                 # if, indicate incorrect and all correct answers and close
                 instance.background_color = (1, 0, 0, 1)
-                for child in children:
-                    if child.text in self.current_tool_question.rooms:
-                        child.background_color = (0, 1, 0, 1)
+                # for child in children:
+                for child in float_layout.children:
+                    if isinstance(child, Button):
+                        if child.text in self.current_tool_question.rooms:
+                            child.background_color = (0, 1, 0, 1)
                 pass
 
             else:
                 # answer in correct answers
-                instance.background_color = (0, 1, 0, 1)
-
-                # display hint for multiple answers
-                # if self.tool_label.text[-7:] == strings.HINT_STR_MULTIPLE_ANSWERS:
-                #     self.tool_label.text += " "
-                # else:
-                #     self.tool_label.text += "\n"
-                # self.tool_label.text += strings.HINT_STR_MULTIPLE_ANSWERS
+                instance.background_color = (0, 0, 1, 1)
 
                 self.tool_label.text += "\n"
                 self.tool_label.text += strings.HINT_STR_MULTIPLE_ANSWERS
