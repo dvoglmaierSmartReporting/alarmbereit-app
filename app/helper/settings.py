@@ -1,7 +1,7 @@
 class Settings:
     def __init__(self) -> None:
         ## firetruck
-        self.FIRETRUCK_TRAINING_FEEDBACK_SEC = 1.5 # 2.0
+        self.FIRETRUCK_TRAINING_FEEDBACK_SEC = 1.5  # 2.0
         self.FIRETRUCK_TRAINING_NEW_FEEDBACK_SEC = 2.5
         self.FIRETRUCK_TRAINING_CORRECT_POINTS = 1
         self.FIRETRUCK_TRAINING_STRIKE_FACTOR = 50
@@ -31,7 +31,7 @@ class Strings:
 
         # Start_Menu button names
         self.BUTTON_STR_INFO = "Info"
-        self.BUTTON_STR_ACKNOWLEDGEMENT = "Danke"
+        self.BUTTON_STR_ACKNOWLEDGEMENT = "Dank"
         self.BUTTON_STR_SETTINGS = "Einst."
         self.BUTTON_STR_TRAINING = "Übung"  # "Lernen" # "Erkunden"
         self.BUTTON_STR_TRAINING_NEW = f"{self.BUTTON_STR_TRAINING} mit Bildern"
@@ -85,35 +85,34 @@ class Strings:
 class About_Text:
     def __init__(self) -> None:
         self.TEXT = """
-        © 2025 Freiwillige Feuerwehr der Stadt Hallein
+© 2025 Freiwillige Feuerwehr der Stadt Hallein
 
-        Idee und Entwicklung: Dominik Voglmaier
-        
-        Support: d.voglmaier@feuerwehr-hallein.at
+Idee und Entwicklung: Dominik Voglmaier
 
-        """
+Support: d.voglmaier@feuerwehr-hallein.at
+
+"""
 
 
 class Acknowledgements_Text:
     def __init__(self) -> None:
         self.TEXT = """
-        Herzlichen Dank an alle Unterstützerinnen und Unterstützer dieses Projekts!
+Herzlichen Dank an alle Unterstützerinnen und Unterstützer dieses Projekts!
 
-        [b]• Für inspirierende Gespräche und hilfreiche Diskussionen:[/b]
-        Liora Feicht
-        OFK Sebastian Wass
+• Für hilfreiche Diskussionen und Finanzierung:
+[b]OFK Sebastian Wass[/b]
 
-        [b]• Für ihren Einsatz als System-Tester der ersten Stunde:[/b]
-        Kilian Brüderl
-        Martin Reisaus
-        Thomas Herbst
+• Für ihren Einsatz als System-Tester der ersten Stunde:
+[b]Kilian Brüderl[/b]
+[b]Martin Reisaus[/b]
+[b]Thomas Herbst[/b]
 
-        [b]• Für die tatkräftige Unterstützung bei der Erstellung der Beladelisten:[/b]
-        Bereitschaft 1
+• Für die tatkräftige Unterstützung bei der Erstellung der Beladelisten:
+[b]Bereitschaft 1[/b]
 
-        [b]• Für konstruktives Feedback und intensive Belastungstests der Beta-Version:[/b]
-        Bereitschaft 5
+• Für konstruktives Feedback und intensive Belastungstests der Beta-Version:
+[b]Bereitschaft 5[/b]
 
-        [b]• Danke an alle Fehler-Finder:[/b]
-        Manuel Promock
-        """
+• Danke an alle Fehler-Finder:
+[b]Manuel Promock[/b]
+"""

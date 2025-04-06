@@ -1002,21 +1002,164 @@ Tank2:
   Mannschaft:
     - ""
   G1:
-    - ""
+    - Tauchpumpe
+
+    - Überdruckbelüftungsgerät
+    - Be- u. Entlüftungsgerät
+
+    - Polarskiaxt
+    - Löschrucksack
+    - Wasserdieb
+
+    - Motorkettensäge
+    - Ersatzkette f. Motorsäge
+    - Rettungssäge
+    - Ersatzkette f. Rettungssäge
+    - Motortrennschleifer
+    - div. Ersatzblätter f. Motortrennschleifer
+    - Kombikanister
+    - Schnittschutzbeinlinge
+    - Forsthelm
+    - Arbeitsleine
+    - Schnürleine
+    - Verschlussband f. Lutte
+    - PE-Lutte
+    - Abschleppseil m. Seilstropp
+    - Elektrohaspel
+    - Gorgui
+    - Schäkel 6,5 t
   G2:
-    - ""
+    - Stromerzeuger
+
+    - Absperrband
+    - Bolzenschneider
+    - FW-Axt
+    - Hacke, lang
+    - Hacke, kurz
+    - Handfäustel 2 kg
+    - Vorschlaghammer 5 kg
+    - Krampen
+    - Sappel
+    - Schachthaken
+    - Abgasschlauch
+
+    - Bodenteller
+    - Flutlichtscheinwerfer
+    - Kabeltrommel 230/400 V
+    - Kabeltrommel 230 V
+    - Verlängerungskabel 230 V 10 m
+    - Werkzeugsatz
+    - Fluterbrücke
+    - Stativ
+    - Triopan
+    - Bogensäge
+    - Betankungsgarnitur
+
+    - Akku-Warnblitzleuchte
+    - Reserveflasche
+
+    - Absperrstange
+    - Brecheisen 1,5 m
   G3:
-    - ""
+    - Waldbrandrucksack
+    - Schlauchtragekorb
+    - Rauchabschluss
+    - Rauchfangkehrersatz
+    - Blechkübel
+    - Schuttwanne
   G4:
-    - ""
+    - VARIOMATIC
+    - Druckschlauch B
+    - Schaummittelbehälter
+    - Chemieschutzanzug Stufe 2
+    - Unterbekleidung
+    - Chemieschutzstiefel
+    - Chemieschutzhandschuhe
+    - Dieselkanister
+    - Benzinkanister
+    - Einfüllstutzen
+    - Weithalskanister f. Ölbindemittel
+
+    - Schlauchbrücke
   G5:
-    - ""
+    - Verteiler B-CBC
+    - Druckschlauch B
+    - Verbindungsschlauch
+    - Übergangsstück B-C
+
+    - Mehrzweckstrahlrohr B
+    - Stützkrümmer B
+    - Hohlstrahlrohr C
+    - Verteiler
+    - Übergangsstück A-B
+    - ABC-Kupplungsschlüssel
+
+    - Schlauchhalter
+    - Sammelstück BB-A
+    - Übergangsstück 125-110
+    - Hydroschild C
+    - Wasserwerfer
+    - Druckbegrenzungsventil
+    - Kupplungsschlüssel HD
+    - Kupplungsschlüssel A125
+    - Kanalratte
+    - Überflurhydrantenschlüssel
+
+    - Druckschlauch C
+    - Druckschlauch B
+    - Schlauchhaspel
+    - Druckschlauch B, 5m
+    - Halligan-Tool
   G6:
-    - ""
+    - Übergangsstück B-C
+    - Verteiler B-CBC
+    - Druckschlauch B
+
+    - Druckschlauch C
+    - Hygienewand
+    - Schlauchpaket
+    - Schlauchbinden
+    - Löschdecke
+    - Kombischaumrohr S4/M4
+    - div. Kabelbinder
+    - Rolle Müllsäcke
+    - Hydrofix
+    - Pulverlöscher
+    - Fettbrandlöscher
+    - Kohlendioxidlöscher
   G7 / Heck:
-    - ""
+    - Radkeil
+    - ABC-Kupplungsschlüssel
+    - Fernsteuerung f. Lichtmast
+    - Handfunkgerät
+    - Großraumlüfter
+    - Atemschutzüberwachung
+
   Dach:
-    - ""
+    - Fassschaufel
+    - Dunggabel
+    - Ausräumhaken
+    - Einreisshaken
+    - Haspelkurbel
+    - Falttank 3000 l
+    - Aluschaufel
+    - Besen
+    - Heugabel
+    - Mehrzweckleiter
+    - Plane 4x4 m
+    - Löschlanze
+
+    - D-Saugschlauch
+    - Zumischer Z8
+    - Wasserwerfer
+    - Lutte f. Lüfter
+    - Leichtschaumaufsatz
+    - Schaumrohr S8/M8
+    - Saugschlauch Storz 38
+    - Verschlussband f. Lüfter
+
+    - Steckleiter 4-teilig
+    - Steckleiter Verbindungsteil
 
 Rüst:
   Mannschaft:

@@ -44,7 +44,7 @@ def get_leiter_layout() -> floatButtons:
         ("G2", 0.27, 0.2, 0.65, 0.68),
         ("G4", 0.185, 0.185, 0.735, 0.45),
         ("G6", 0.185, 0.125, 0.735, 0.14),
-        ("Dach", 0.31, 0.43, 0.41, 0.45),
+        ("Dach", 0.34, 0.42, 0.33, 0.45),
     ]
 
 
@@ -80,7 +80,7 @@ def build_answer_layout(firetruck: str, calling_screen: str) -> FloatLayout:
     # display background and buttons
     float = FloatLayout(size_hint=(1, 1))
 
-    if firetruck in ["RüstLösch", "Tank1", "TankDürrnberg"]:
+    if firetruck in ["RüstLösch", "Tank1", "Tank2", "TankDürrnberg"]:
         bgd_image = "./assets/layouts/truck.jpg"
         buttons = get_7_rooms_layout()
 

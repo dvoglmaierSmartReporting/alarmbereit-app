@@ -374,7 +374,7 @@ class Start_Menu(Screen):
         if mode_training or mode_game:
             # excluded_firetrucks = ["BDLP-Tank1", "TestTruck"]
             excluded_firetrucks = ["BDLP-Tank1"]
-            disabled_firetrucks = ["Tank2"]
+            disabled_firetrucks = []  # ["Tank2"]
 
             for firetruck in self.total_firetrucks:
 
