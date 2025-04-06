@@ -80,7 +80,7 @@ def build_answer_layout(firetruck: str, calling_screen: str) -> FloatLayout:
     # display background and buttons
     float = FloatLayout(size_hint=(1, 1))
 
-    if firetruck in ["RüstLösch", "Tank1", "Tank2", "TankDürrnberg"]:
+    if firetruck in ["RüstLösch", "Tank1", "Tank2", "TankDürrnberg", "BDLP-Tank1"]:
         bgd_image = "./assets/layouts/truck.jpg"
         buttons = get_7_rooms_layout()
 

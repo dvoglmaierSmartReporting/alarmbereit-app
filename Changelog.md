@@ -1,7 +1,7 @@
 # next version:
 ...
 
-# version 2.2.0:
+# version 2.2.1
 known issues:
 - progress bar exceeds with additional time
 - extra time is hard -> 2 difficulties
@@ -12,6 +12,11 @@ known issues:
 - missing version tag in app
 - Android return button is not useable for screen navigation
 
+fixes:
+- show Leistungsprüfung modi
+- add button for "Übung mit Bildern" but disable it
+
+# version 2.2.0:
 features:
 - change feedback color to blue for multiple correct answers in firetruck training and game
 - add clean firetruck layout background for firetruck training and game

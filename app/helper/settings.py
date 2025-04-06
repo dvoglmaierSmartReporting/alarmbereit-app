@@ -1,7 +1,7 @@
 class Settings:
     def __init__(self) -> None:
         ## firetruck
-        self.FIRETRUCK_TRAINING_FEEDBACK_SEC = 1.5  # 2.0
+        self.FIRETRUCK_TRAINING_FEEDBACK_SEC = 2.0
         self.FIRETRUCK_TRAINING_NEW_FEEDBACK_SEC = 2.5
         self.FIRETRUCK_TRAINING_CORRECT_POINTS = 1
         self.FIRETRUCK_TRAINING_STRIKE_FACTOR = 50
@@ -34,7 +34,9 @@ class Strings:
         self.BUTTON_STR_ACKNOWLEDGEMENT = "Dank"
         self.BUTTON_STR_SETTINGS = "Einst."
         self.BUTTON_STR_TRAINING = "Übung"  # "Lernen" # "Erkunden"
-        self.BUTTON_STR_TRAINING_NEW = f"{self.BUTTON_STR_TRAINING} mit Bildern"
+        self.BUTTON_STR_TRAINING_NEW = (
+            f"{self.BUTTON_STR_TRAINING} mit Bildern\n(bald verfügbar)"
+        )
         self.BUTTON_STR_GAME = "Zeitdruck"  # "Herausfordern" # "Testen" # "Challengen"
         self.BUTTON_STR_BROWSE = "Stöbern"
         self.BUTTON_STR_IMAGES = "Bilder"
@@ -109,6 +111,7 @@ Herzlichen Dank an alle Unterstützerinnen und Unterstützer dieses Projekts!
 
 • Für die tatkräftige Unterstützung bei der Erstellung der Beladelisten:
 [b]Bereitschaft 1[/b]
+[b]Dienstführer[/b]
 
 • Für konstruktives Feedback und intensive Belastungstests der Beta-Version:
 [b]Bereitschaft 5[/b]

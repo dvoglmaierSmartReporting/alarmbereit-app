@@ -194,55 +194,57 @@ class Start_Menu(Screen):
 
         # firetrucks_modi_widget.add_widget(firetruck_btn4)
 
-        # ### BUTTON Leistungsprüfung ###
-        # firetruck_btn5 = Button(
-        #     pos_hint={"center_x": 0.5},
-        #     text=f"{strings.BUTTON_STR_EXAM} --->",
-        #     font_size="32sp",
-        # )
+        ### BUTTON Leistungsprüfung ###
+        firetruck_btn5 = Button(
+            pos_hint={"center_x": 0.5},
+            text=f"{strings.BUTTON_STR_EXAM} --->",
+            font_size="32sp",
+        )
 
-        # firetruck_btn5.bind(   # type: ignore[attr-defined]
-        #     on_release=lambda instance: self.forward_mode2menu_manually(
-        #         "fahrzeugkunde_menu", strings.BUTTON_STR_EXAM
-        #     )
-        # )
-
-        # firetruck_btn5.bind(   # type: ignore[attr-defined]
-        #     on_release=lambda instance: self.update_firetruck_buttons(
-        #         strings.BUTTON_STR_EXAM
-        #     )
-        # )
-
-        # firetrucks_modi_widget.add_widget(firetruck_btn5)
-
-        # ### BUTTON Übung mit Bildern ###
-        # firetruck_btn6 = Button(
-        #     pos_hint={"center_x": 0.5},
-        #     text=f"{strings.BUTTON_STR_TRAINING_NEW} --->",
-        #     font_size="32sp",
-        # )
-
-        # firetruck_btn6.bind(  # type: ignore[attr-defined]
-        #     on_release=lambda instance: self.forward_mode2menu_manually(
-        #         "fahrzeugkunde_menu", strings.BUTTON_STR_TRAINING_NEW
-        #     )
-        # )
-
-        # firetruck_btn6.bind(  # type: ignore[attr-defined]
-        #     on_release=lambda instance: self.update_firetruck_buttons(
-        #         strings.BUTTON_STR_TRAINING_NEW
-        #     )
-        # )
-
-        # firetrucks_modi_widget.add_widget(firetruck_btn6)
-
-        ### BUTTON Placeholder ###
-        firetrucks_modi_widget.add_widget(
-            Label(  # placeholder
-                size_hint=(1, 1),
-                font_size="32sp",
+        firetruck_btn5.bind(  # type: ignore[attr-defined]
+            on_release=lambda instance: self.forward_mode2menu_manually(
+                "fahrzeugkunde_menu", strings.BUTTON_STR_EXAM
             )
         )
+
+        firetruck_btn5.bind(  # type: ignore[attr-defined]
+            on_release=lambda instance: self.update_firetruck_buttons(
+                strings.BUTTON_STR_EXAM
+            )
+        )
+
+        firetrucks_modi_widget.add_widget(firetruck_btn5)
+
+        ### BUTTON Übung mit Bildern ###
+        firetruck_btn6 = Button(
+            pos_hint={"center_x": 0.5},
+            text=f"{strings.BUTTON_STR_TRAINING_NEW} --->",
+            font_size="32sp",
+            # Modus not ready yet
+            disabled=True,
+        )
+
+        firetruck_btn6.bind(  # type: ignore[attr-defined]
+            on_release=lambda instance: self.forward_mode2menu_manually(
+                "fahrzeugkunde_menu", strings.BUTTON_STR_TRAINING_NEW
+            )
+        )
+
+        firetruck_btn6.bind(  # type: ignore[attr-defined]
+            on_release=lambda instance: self.update_firetruck_buttons(
+                strings.BUTTON_STR_TRAINING_NEW
+            )
+        )
+
+        firetrucks_modi_widget.add_widget(firetruck_btn6)
+
+        # ### BUTTON Placeholder ###
+        # firetrucks_modi_widget.add_widget(
+        #     Label(  # placeholder
+        #         size_hint=(1, 1),
+        #         font_size="32sp",
+        #     )
+        # )
 
         return firetrucks_modi_widget
 

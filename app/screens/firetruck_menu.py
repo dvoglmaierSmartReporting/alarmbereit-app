@@ -71,10 +71,10 @@ class Fahrzeugkunde_Menu(Screen):
             screen.select_firetruck(instance.text.split(" ")[0])
             screen.load_image()
 
-        # elif mode_exam:
-        #     app.root.current = "fahrzeugkunde_exam"
-        #     app.root.transition.direction = "left"
+        elif mode_exam:
+            app.root.current = "fahrzeugkunde_training"
+            app.root.transition.direction = "left"
 
-        #     screen = app.root.get_screen("fahrzeugkunde_exam")
-        #     screen.select_firetruck(instance.text.split(" ")[0])
-        #     screen.load_image()
+            screen = app.root.get_screen("fahrzeugkunde_training")
+            screen.select_firetruck(instance.text.split(" ")[0])
+            screen.play()
