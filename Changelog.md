@@ -11,6 +11,7 @@ known issues:
 - missing "return to previous tool" feature
 - missing version tag in app
 - Android return button is not useable for screen navigation
+- Google Play Console Recommondation: Remove resizability and orientation restrictions in your app to support large screen devices
 
 fixes:
 - show Leistungsprüfung modi
