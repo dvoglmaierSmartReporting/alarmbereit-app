@@ -13,6 +13,10 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.togglebutton import ToggleButton
 from kivy.uix.screenmanager import ScreenManager, Screen, SlideTransition
 from kivy.clock import Clock
+from kivy.core.window import Window
+from kivy.utils import platform
+from kivy.base import EventLoop
+
 
 # from inspect import currentframe
 import traceback
@@ -450,22 +454,28 @@ class FeuerwehrApp(App):
             transfer_file("../storage", "scores.yaml")
             transfer_file("../storage", "main.cfg")
 
-            sm = ScreenManager()
-            sm.add_widget(Start_Menu())
-            sm.add_widget(Info_Screen())
-            sm.add_widget(Acknowledgement_Screen())
-            # sm.add_widget(Settings_Screen())
-            sm.add_widget(Fahrzeugkunde_Menu())
-            sm.add_widget(Bewerb_Menu())
-            sm.add_widget(Fahrzeugkunde_Training())
-            # sm.add_widget(Fahrzeugkunde_Training_New())
-            sm.add_widget(Fahrzeugkunde_Game())
-            sm.add_widget(Fahrzeugkunde_Browse())
-            sm.add_widget(Fahrzeugkunde_Images())
-            sm.add_widget(Bewerb_Training())
-            sm.add_widget(Bewerb_Game())
+            self.sm = ScreenManager()
+            self.sm.add_widget(Start_Menu())
+            self.sm.add_widget(Info_Screen())
+            self.sm.add_widget(Acknowledgement_Screen())
+            # self.sm.add_widget(Settings_Screen())
+            self.sm.add_widget(Fahrzeugkunde_Menu())
+            self.sm.add_widget(Bewerb_Menu())
+            self.sm.add_widget(Fahrzeugkunde_Training())
+            # self.sm.add_widget(Fahrzeugkunde_Training_New())
+            self.sm.add_widget(Fahrzeugkunde_Game())
+            self.sm.add_widget(Fahrzeugkunde_Browse())
+            self.sm.add_widget(Fahrzeugkunde_Images())
+            self.sm.add_widget(Bewerb_Training())
+            self.sm.add_widget(Bewerb_Game())
 
-            return sm
+            # # Android return button
+            # if platform == "android":
+            #     Window.bind(on_key_down=self.on_android_back_button)
+            # Bind keyboard handler after window is initialized
+            EventLoop.window.bind(on_keyboard=self.on_android_back_button)
+
+            return self.sm
 
         except Exception as e:
             error_message = f"An error occurred:\n{str(e)}\n{traceback.format_exc()}"
@@ -476,6 +486,52 @@ class FeuerwehrApp(App):
     def show_error_popup(self, message="An unknown error occurred!"):
         popup = ErrorPopup(message)
         popup.open()
+
+    # Android return button
+    def on_android_back_button(self, window, key, *args):
+        try:
+            if key == 27:  # 27 is the Android back button key code
+                current = self.sm.current
+                if current == "start_menu":
+                    self.stop()  # exit the app
+                    return True
+
+                elif current in [
+                    "info_screen",
+                    "acknowledgement_screen",
+                    "settings_screen",
+                    "fahrzeugkunde_menu",
+                    "bewerb_menu",
+                ]:
+                    self.sm.transition.direction = "right"
+                    self.sm.current = "start_menu"
+                    return True
+
+                elif current in [
+                    "fahrzeugkunde_training",
+                    "fahrzeugkunde_training_new",
+                    "fahrzeugkunde_game",
+                    "fahrzeugkunde_browse",
+                    "fahrzeugkunde_images",
+                ]:
+                    self.sm.transition.direction = "right"
+                    self.sm.current = "fahrzeugkunde_menu"
+                    return True
+
+                elif current in [
+                    "bewerb_training",
+                    "bewerb_game",
+                ]:
+                    self.sm.transition.direction = "right"
+                    self.sm.current = "bewerb_menu"
+                    return True
+
+            return False
+
+        except Exception as e:
+            error_message = f"Android return button {key = }\nAn error occurred:\n{str(e)}\n{traceback.format_exc()}"
+            self.show_error_popup(error_message)
+            return None  # Return None to prevent further crashes
 
 
 if __name__ == "__main__":

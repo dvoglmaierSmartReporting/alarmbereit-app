@@ -41,11 +41,14 @@
             BoxLayout:
                 size_hint_x: 1
                 orientation: 'vertical'
+                spacing: "18dp"
+                padding: "18dp"
 
+                # INFO BUTTON
                 Button:
                     size_hint_y: 1
                     id: info_button
-                    font_size: "32sp"
+                    font_size: "20sp"
                     background_normal: ''
                     background_color: 0.2, 0.2, 0.2, 0.5
                     on_release:
@@ -53,10 +56,11 @@
                         root.manager.transition.direction = "left"
                         root.update_info_text()
 
+                # ACKNOWLEDGEMENT BUTTON
                 Button:
                     size_hint_y: 1
                     id: acknowledgement_button
-                    font_size: "32sp"
+                    font_size: "20sp"
                     background_normal: ''
                     background_color: 0.2, 0.2, 0.2, 0.5
                     on_release:
@@ -93,7 +97,15 @@
                 id: content_layout
                 orientation: "vertical"
                 spacing: "3dp"
-            
+        
+    # VERSION
+    FloatLayout:
+        Label:
+            text: "Version 2.3.5"
+            font_size: "10sp"
+            size_hint: 0.1, 0.03
+            pos_hint: {"center_x": 0.5, "y": 0}
+
 
 <Info_Screen>:
     name: "info_screen"
@@ -119,8 +131,9 @@
                 text: "<"
                 font_size: "32sp"
                 on_release:
-                    app.root.current = "start_menu"
-                    root.manager.transition.direction = "right"
+                    #app.root.current = "start_menu"
+                    #root.manager.transition.direction = "right"
+                    root.go_back()
             
             Label: # placeholder
                 size_hint_x: 2
@@ -180,6 +193,7 @@
     name: "acknowledgement_screen"
 
     # IDs
+    return_button: return_button
     header_label: header_label
     acknowledgement_label: acknowledgement_label
 
@@ -195,12 +209,14 @@
             spacing: "3dp"
 
             Button:
+                id: return_button
                 size_hint_x: 1
                 text: "<"
                 font_size: "32sp"
                 on_release:
-                    app.root.current = "start_menu"
-                    root.manager.transition.direction = "right"
+                    #app.root.current = "start_menu"
+                    #root.manager.transition.direction = "right"
+                    root.go_back()
             
             Label: # placeholder
                 size_hint_x: 2
@@ -258,6 +274,7 @@
 #        on_release:
 #            app.root.current = "start_menu"
 #            root.manager.transition.direction = "right"
+#            #self.go_back()
 #    
 #    BoxLayout:
 #        orientation: 'vertical'
@@ -364,8 +381,9 @@
                 text: "<"
                 font_size: "32sp"
                 on_release:
-                    app.root.current = "start_menu"
-                    root.manager.transition.direction = "right"
+                    #app.root.current = "start_menu"
+                    #root.manager.transition.direction = "right"
+                    root.go_back()
             
             Label: # placeholder
                 size_hint_x: 2
@@ -425,8 +443,9 @@
                 text: "<"
                 font_size: "32sp"
                 on_release:
-                    app.root.current = "start_menu"
-                    root.manager.transition.direction = "right"
+                    #app.root.current = "start_menu"
+                    #root.manager.transition.direction = "right"
+                    root.go_back()
 
             Label: # placeholder
                 size_hint_x: 2
@@ -488,8 +507,9 @@
                 text: "<"
                 font_size: "32sp"
                 on_release:
-                    app.root.current = "fahrzeugkunde_menu"
-                    root.manager.transition.direction = "right"
+                    #app.root.current = "fahrzeugkunde_menu"
+                    #root.manager.transition.direction = "right"
+                    root.go_back()
     
             Label:
                 size_hint_x: 2
@@ -581,8 +601,9 @@
                 text: "<"
                 font_size: "32sp"
                 on_release:
-                    app.root.current = "fahrzeugkunde_menu"
-                    root.manager.transition.direction = "right"
+                    #app.root.current = "fahrzeugkunde_menu"
+                    #root.manager.transition.direction = "right"
+                    root.go_back()
     
             Label:
                 size_hint_x: 2
@@ -676,6 +697,7 @@
                 font_size: "32sp"
                 on_release:
                     root.manager.get_screen('fahrzeugkunde_game').end_game()
+                    #root.go_back()
 
             Label:
                 size_hint_x: 2
@@ -766,8 +788,9 @@
                 text: "<"
                 font_size: "32sp"
                 on_release:
-                    app.root.current = "fahrzeugkunde_menu"
-                    root.manager.transition.direction = "right"
+                    #app.root.current = "fahrzeugkunde_menu"
+                    #root.manager.transition.direction = "right"
+                    root.go_back()
     
             Label: # placeholder
                 size_hint_x: 2
@@ -855,8 +878,9 @@
                 text: "<"
                 font_size: "32sp"
                 on_release:
-                    app.root.current = "fahrzeugkunde_menu"
-                    root.manager.transition.direction = "right"
+                    #app.root.current = "fahrzeugkunde_menu"
+                    #root.manager.transition.direction = "right"
+                    root.go_back()
             
             Label: # placeholder
                 size_hint_x: 2
@@ -921,8 +945,9 @@
                 text: "<"
                 font_size: "32sp"
                 on_release:
-                    app.root.current = "bewerb_menu"
-                    root.manager.transition.direction = "right"
+                    #app.root.current = "bewerb_menu"
+                    #root.manager.transition.direction = "right"
+                    root.go_back()
 
             Label:  # placeholder
                 size_hint_x: 2
@@ -1033,6 +1058,8 @@
                 font_size: "32sp"
                 on_release:
                     root.manager.get_screen('bewerb_game').end_game()
+                    #root.manager.get_screen('bewerb_game').go_back()
+                    #root.go_back()
 
             BoxLayout:
                 size_hint_x: 2

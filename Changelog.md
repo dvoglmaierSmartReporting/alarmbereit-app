@@ -19,10 +19,17 @@ fixes:
 
 # version 2.2.0:
 features:
+- use Android return button for screen navigation
+
+fixes: []
+
+# version 2.2.0:
+features:
 - change feedback color to blue for multiple correct answers in firetruck training and game
 - add clean firetruck layout background for firetruck training and game
 - use custom types for type hints
 - adding acknowledgements screen
+- adding new Tank 2
 
 fixes:
 - competitions with lowest question_id > 1 are not crashing anymore

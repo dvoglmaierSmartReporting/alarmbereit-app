@@ -10,8 +10,7 @@ from random import shuffle
 from typing import cast
 
 from helper.functions import (
-    get_firetruck_storage,
-    break_tool_name,
+    change_screen_to,
     get_ToolQuestion_instances,
 )
 from helper.file_handling import save_to_scores_file, get_score_value
@@ -94,9 +93,10 @@ class Fahrzeugkunde_Game(Screen):
         if self.game.score > self.current_high_score:
             save_to_scores_file(self.selected_firetruck, "high_score", self.game.score)
 
-        app = App.get_running_app()
-        app.root.current = "fahrzeugkunde_menu"
-        app.root.transition.direction = "right"
+        # app = App.get_running_app()
+        # app.root.current = "fahrzeugkunde_menu"
+        # app.root.transition.direction = "right"
+        change_screen_to("fahrzeugkunde_menu")
 
     def reset_tool_list(self):
         (self.firetruck_rooms, self.tool_questions) = get_ToolQuestion_instances(
@@ -232,3 +232,6 @@ class Fahrzeugkunde_Game(Screen):
         self.game.questions.append(self.current_tool_question)
 
         Clock.schedule_once(self.next_tool, settings.FIRETRUCK_GAME_FEEDBACK_SEC)
+
+    def go_back(self, *args) -> None:
+        self.end_game()

@@ -3,7 +3,7 @@ from kivy.uix.screenmanager import Screen
 
 from typing import cast
 
-from helper.functions import load_total_storage
+from helper.functions import load_total_storage, change_screen_to
 from helper.settings import Strings
 
 
@@ -94,3 +94,6 @@ class Fahrzeugkunde_Browse(Screen):
 
     def remove_filter_text(self):
         self.filter_text.text = ""
+
+    def go_back(self, *args) -> None:
+        change_screen_to("bewerb_menu")

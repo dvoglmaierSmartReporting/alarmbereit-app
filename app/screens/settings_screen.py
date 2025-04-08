@@ -1,4 +1,3 @@
-from kivy.app import App
 from kivy.uix.button import Button
 from kivy.uix.screenmanager import Screen
 from kivy.uix.floatlayout import FloatLayout
@@ -16,8 +15,9 @@ from helper.file_handling import (
     save_to_yaml,
     load_from_yaml,
     update_yaml_values,
+    get_user_data_dir,
 )
-from helper.functions import create_scores_content
+from helper.functions import create_scores_content, change_screen_to
 from helper.settings import Strings
 
 
@@ -48,13 +48,13 @@ class Settings_Screen(Screen):
         self.ids.upload_confirm_button.text = strings.BUTTON_STR_CONFIRM_UPLOAD
 
         custom_file_path = os.path.join(
-            App.get_running_app().user_data_dir,
+            get_user_data_dir(),
             "custom_firetruck_tools.yaml",
         )
         custom_file_exists = os.path.exists(custom_file_path)
 
         main_cfg_file_path = os.path.join(
-            App.get_running_app().user_data_dir,
+            get_user_data_dir(),
             "main.cfg",
         )
 
@@ -214,7 +214,7 @@ class Settings_Screen(Screen):
 
         # init custom scores yaml
         file_path = os.path.join(
-            App.get_running_app().user_data_dir,
+            get_user_data_dir(),
             "scores.yaml",
         )
 
@@ -228,7 +228,7 @@ class Settings_Screen(Screen):
         new_content["competitions"] = updated_comp_content
 
         custom_file_path = os.path.join(
-            App.get_running_app().user_data_dir,
+            get_user_data_dir(),
             "custom_scores.yaml",
         )
         save_to_yaml(custom_file_path, new_content)
@@ -242,6 +242,9 @@ class Settings_Screen(Screen):
 
         else:
             update_main_cfg({"content": {"use_default": False}})
+
+    def go_back(self, *args) -> None:
+        change_screen_to("start_menu")
 
 
 Factory.register("Settings_Screen", cls=Settings_Screen)

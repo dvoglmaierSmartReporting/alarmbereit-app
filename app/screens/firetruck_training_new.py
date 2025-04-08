@@ -9,7 +9,7 @@ from kivy.graphics import Color, Rectangle
 from random import shuffle
 from typing import cast
 
-from helper.functions import get_ToolQuestion_instances
+from helper.functions import get_ToolQuestion_instances, change_screen_to
 from helper.file_handling import save_to_scores_file, get_score_value
 from helper.settings import Settings, Strings
 from helper.game_class import GameCore
@@ -279,3 +279,6 @@ class Fahrzeugkunde_Training_New(Screen):
         if hasattr(layout, "rect"):
             layout.rect.pos = layout.pos
             layout.rect.size = layout.size
+
+    def go_back(self, *args) -> None:
+        change_screen_to("fahrzeugkunde_menu")
