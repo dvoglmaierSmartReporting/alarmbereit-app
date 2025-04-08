@@ -1,16 +1,19 @@
 # next version:
-...
+features:
+- Android return button is useable for screen navigation
+- version tag in app displayed
+
+fixes:
+- progress bar exceeds with additional time
+
 
 # version 2.2.1
 known issues:
-- progress bar exceeds with additional time
 - extra time is hard -> 2 difficulties
 - missing time limit/end screen
 - missing info about number of tools
 - competition game is too much text
 - missing "return to previous tool" feature
-- missing version tag in app
-- Android return button is not useable for screen navigation
 - Google Play Console Recommondation: Remove resizability and orientation restrictions in your app to support large screen devices
 
 fixes:

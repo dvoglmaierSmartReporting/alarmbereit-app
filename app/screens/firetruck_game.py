@@ -1,4 +1,3 @@
-from kivy.app import App
 from kivy.uix.label import Label
 from kivy.uix.button import Button
 from kivy.uix.progressbar import ProgressBar
@@ -50,6 +49,10 @@ class Fahrzeugkunde_Game(Screen):
         self.time_left = round(
             self.time_left + settings.FIRETRUCK_GAME_EXTRA_TIME_SEC, 1
         )
+
+        # avoid that remaining time (add time) can exceed max progress bar
+        if self.time_left > self.progress_bar.max:
+            self.progress_bar.max = self.time_left
 
         self.extra_time_label.text = f"+ {settings.FIRETRUCK_GAME_EXTRA_TIME_SEC} s"
 

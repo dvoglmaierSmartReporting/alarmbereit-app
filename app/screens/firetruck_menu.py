@@ -27,58 +27,48 @@ class Fahrzeugkunde_Menu(Screen):
 
         # bind firetruck selection
         app = App.get_running_app()
+        app_root = app.root
 
         if mode_training:
-            # app.root.current = "fahrzeugkunde_training"
-            # app.root.transition.direction = "left"
             change_screen_to("fahrzeugkunde_training", transition_direction="left")
             # continue game with selected firetruck
-            screen = app.root.get_screen("fahrzeugkunde_training")
+            screen = app_root.get_screen("fahrzeugkunde_training")
             screen.select_firetruck(instance.text.split(" ")[0])
             # screen.forward_mode_2_fk_training(mode)
             screen.play()
 
         elif mode_training_new:
-            # app.root.current = "fahrzeugkunde_training_new"
-            # app.root.transition.direction = "left"
             change_screen_to("fahrzeugkunde_training_new", transition_direction="left")
 
-            screen = app.root.get_screen("fahrzeugkunde_training_new")
+            screen = app_root.get_screen("fahrzeugkunde_training_new")
             screen.select_firetruck(instance.text.split(" ")[0])
             screen.play()
 
         if mode_game:
-            # app.root.current = "fahrzeugkunde_game"
-            # app.root.transition.direction = "left"
             change_screen_to("fahrzeugkunde_game", transition_direction="left")
             # continue game with selected firetruck
-            screen = app.root.get_screen("fahrzeugkunde_game")
+            screen = app_root.get_screen("fahrzeugkunde_game")
             screen.select_firetruck(instance.text.split(" ")[0])
             # screen.forward_mode_2_fk_game(mode)
             screen.play()
 
         elif mode_browse:
             # change screen
-            # app.root.current = "fahrzeugkunde_browse"
-            # app.root.transition.direction = "left"
             change_screen_to("fahrzeugkunde_browse", transition_direction="left")
             # continue game with selected firetruck
-            screen = app.root.get_screen("fahrzeugkunde_browse")
+            screen = app_root.get_screen("fahrzeugkunde_browse")
             screen.select_firetruck(instance.text.split(" ")[0])
             screen.display_all_tools()
 
         elif mode_images:
-            # app.root.current = "fahrzeugkunde_images"
-            # app.root.transition.direction = "left"
             change_screen_to("fahrzeugkunde_images", transition_direction="left")
 
-            screen = app.root.get_screen("fahrzeugkunde_images")
+            screen = app_root.get_screen("fahrzeugkunde_images")
             screen.select_firetruck(instance.text.split(" ")[0])
             screen.load_image()
 
         elif mode_exam:
-            app.root.current = "fahrzeugkunde_training"
-            app.root.transition.direction = "left"
+            change_screen_to("fahrzeugkunde_training", transition_direction="left")
 
         #     screen = app.root.get_screen("fahrzeugkunde_exam")
         #     screen.select_firetruck(instance.text.split(" ")[0])

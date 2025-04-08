@@ -47,6 +47,10 @@ class Bewerb_Game(Screen):
             self.time_left + settings.COMPETITION_GAME_EXTRA_TIME_SEC, 1
         )
 
+        # avoid that remaining time (add time) can exceed max progress bar
+        if self.time_left > self.progress_bar.max:
+            self.progress_bar.max = self.time_left
+
         self.extra_time_label.text = f"+ {settings.COMPETITION_GAME_EXTRA_TIME_SEC} s"
 
         self.extra_time_label.opacity = 1

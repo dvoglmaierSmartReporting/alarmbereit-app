@@ -13,8 +13,6 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.togglebutton import ToggleButton
 from kivy.uix.screenmanager import ScreenManager, Screen, SlideTransition
 from kivy.clock import Clock
-from kivy.core.window import Window
-from kivy.utils import platform
 from kivy.base import EventLoop
 
 
@@ -469,9 +467,7 @@ class FeuerwehrApp(App):
             self.sm.add_widget(Bewerb_Training())
             self.sm.add_widget(Bewerb_Game())
 
-            # # Android return button
-            # if platform == "android":
-            #     Window.bind(on_key_down=self.on_android_back_button)
+            # Android return button
             # Bind keyboard handler after window is initialized
             EventLoop.window.bind(on_keyboard=self.on_android_back_button)
 
