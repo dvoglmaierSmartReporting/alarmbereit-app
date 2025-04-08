@@ -1,8 +1,6 @@
-from kivy.app import App
 from kivy.uix.button import Button
 from kivy.uix.label import Label
 from kivy.uix.layout import Layout
-from kivy.uix.widget import Widget
 from kivy.uix.progressbar import ProgressBar
 from kivy.uix.screenmanager import Screen
 from kivy.clock import Clock
@@ -15,6 +13,7 @@ from helper.file_handling import (
     save_to_scores_file,
     get_score_value,
 )
+from helper.functions import change_screen_to
 from helper.settings import Settings
 from helper.game_class import GameCore, CompetitionQuestion
 
@@ -94,9 +93,7 @@ class Bewerb_Game(Screen):
                 self.selected_competition, "high_score", self.game.score, "competitions"
             )
 
-        app = App.get_running_app()
-        app.root.current = "bewerb_menu"
-        app.root.transition.direction = "right"
+        change_screen_to("bewerb_menu")
 
     def reset_competition_questions(self):
         self.competition_dict = load_total_competition_questions().get(
@@ -263,3 +260,6 @@ class Bewerb_Game(Screen):
         self.game.questions.append(self.current_question)
 
         Clock.schedule_once(self.next_question, settings.COMPETITION_GAME_FEEDBACK_SEC)
+
+    def go_back(self, *args) -> None:
+        self.end_game()

@@ -1,3 +1,5 @@
+from kivy.app import App
+
 from helper.settings import Strings, Settings
 from helper.file_handling import load_total_storage, load_total_competition_questions
 from helper.game_class import ToolQuestion
@@ -7,6 +9,12 @@ import os
 
 strings = Strings()
 settings = Settings()
+
+
+def change_screen_to(move_to: str, transition_direction: str = "right"):
+    app = App.get_running_app()
+    app.root.current = move_to
+    app.root.transition.direction = transition_direction
 
 
 def remove_tool_tags(tool_name: str) -> str:

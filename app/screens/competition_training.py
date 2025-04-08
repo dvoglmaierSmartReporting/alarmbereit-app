@@ -6,6 +6,7 @@ from random import shuffle
 from typing import cast
 
 from helper.file_handling import load_total_competition_questions
+from helper.functions import change_screen_to
 from helper.settings import Strings
 from helper.game_class import CompetitionQuestion
 
@@ -160,3 +161,6 @@ class Bewerb_Training(Screen):
 
         self.question_label.text += "\n\n" + self.current_question.correct_answer
         self.ids.question_label.height = self.ids.question_label.texture_size[1]
+
+    def go_back(self, *args) -> None:
+        change_screen_to("bewerb_menu")

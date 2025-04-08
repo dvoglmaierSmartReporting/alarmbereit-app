@@ -4,7 +4,7 @@ from kivy.uix.label import Label
 from kivy.uix.layout import Layout
 from kivy.uix.screenmanager import Screen
 
-from helper.functions import mode_str2bool
+from helper.functions import mode_str2bool, change_screen_to
 from helper.file_handling import load_total_competition_questions
 from helper.settings import Strings
 
@@ -51,16 +51,18 @@ class Bewerb_Menu(Screen):
         app = App.get_running_app()
 
         if mode_training:
-            app.root.current = "bewerb_training"
-            app.root.transition.direction = "left"
+            # app.root.current = "bewerb_training"
+            # app.root.transition.direction = "left"
+            change_screen_to("bewerb_training", transition_direction="left")
             # continue game with selected competition
             bewerb_training_screen = app.root.get_screen("bewerb_training")
             bewerb_training_screen.select_competition(instance.text)
             bewerb_training_screen.play()
 
         if mode_game:
-            app.root.current = "bewerb_game"
-            app.root.transition.direction = "left"
+            # app.root.current = "bewerb_game"
+            # app.root.transition.direction = "left"
+            change_screen_to("bewerb_game", transition_direction="left")
             # continue game with selected competition
             bewerb_game_screen = app.root.get_screen("bewerb_game")
             bewerb_game_screen.select_competition(instance.text)
@@ -80,3 +82,6 @@ class Bewerb_Menu(Screen):
         # elif mode_images:
         #     app.root.current = "fahrzeugkunde_images"
         #     app.root.transition.direction = "left"
+
+    def go_back(self, *args) -> None:
+        change_screen_to("start_menu")

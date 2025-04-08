@@ -4,7 +4,7 @@ from kivy.uix.screenmanager import Screen
 
 from typing import cast
 
-from helper.functions import mode_str2bool
+from helper.functions import mode_str2bool, change_screen_to
 from helper.settings import Strings
 
 
@@ -29,8 +29,9 @@ class Fahrzeugkunde_Menu(Screen):
         app = App.get_running_app()
 
         if mode_training:
-            app.root.current = "fahrzeugkunde_training"
-            app.root.transition.direction = "left"
+            # app.root.current = "fahrzeugkunde_training"
+            # app.root.transition.direction = "left"
+            change_screen_to("fahrzeugkunde_training", transition_direction="left")
             # continue game with selected firetruck
             screen = app.root.get_screen("fahrzeugkunde_training")
             screen.select_firetruck(instance.text.split(" ")[0])
@@ -38,16 +39,18 @@ class Fahrzeugkunde_Menu(Screen):
             screen.play()
 
         elif mode_training_new:
-            app.root.current = "fahrzeugkunde_training_new"
-            app.root.transition.direction = "left"
+            # app.root.current = "fahrzeugkunde_training_new"
+            # app.root.transition.direction = "left"
+            change_screen_to("fahrzeugkunde_training_new", transition_direction="left")
 
             screen = app.root.get_screen("fahrzeugkunde_training_new")
             screen.select_firetruck(instance.text.split(" ")[0])
             screen.play()
 
         if mode_game:
-            app.root.current = "fahrzeugkunde_game"
-            app.root.transition.direction = "left"
+            # app.root.current = "fahrzeugkunde_game"
+            # app.root.transition.direction = "left"
+            change_screen_to("fahrzeugkunde_game", transition_direction="left")
             # continue game with selected firetruck
             screen = app.root.get_screen("fahrzeugkunde_game")
             screen.select_firetruck(instance.text.split(" ")[0])
@@ -56,16 +59,18 @@ class Fahrzeugkunde_Menu(Screen):
 
         elif mode_browse:
             # change screen
-            app.root.current = "fahrzeugkunde_browse"
-            app.root.transition.direction = "left"
+            # app.root.current = "fahrzeugkunde_browse"
+            # app.root.transition.direction = "left"
+            change_screen_to("fahrzeugkunde_browse", transition_direction="left")
             # continue game with selected firetruck
             screen = app.root.get_screen("fahrzeugkunde_browse")
             screen.select_firetruck(instance.text.split(" ")[0])
             screen.display_all_tools()
 
         elif mode_images:
-            app.root.current = "fahrzeugkunde_images"
-            app.root.transition.direction = "left"
+            # app.root.current = "fahrzeugkunde_images"
+            # app.root.transition.direction = "left"
+            change_screen_to("fahrzeugkunde_images", transition_direction="left")
 
             screen = app.root.get_screen("fahrzeugkunde_images")
             screen.select_firetruck(instance.text.split(" ")[0])
@@ -75,6 +80,9 @@ class Fahrzeugkunde_Menu(Screen):
             app.root.current = "fahrzeugkunde_training"
             app.root.transition.direction = "left"
 
-            screen = app.root.get_screen("fahrzeugkunde_training")
-            screen.select_firetruck(instance.text.split(" ")[0])
-            screen.play()
+        #     screen = app.root.get_screen("fahrzeugkunde_exam")
+        #     screen.select_firetruck(instance.text.split(" ")[0])
+        #     screen.load_image()
+
+    def go_back(self, *args) -> None:
+        change_screen_to("start_menu")

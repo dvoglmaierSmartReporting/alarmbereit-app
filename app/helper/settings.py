@@ -116,6 +116,9 @@ Herzlichen Dank an alle Unterstützerinnen und Unterstützer dieses Projekts!
 • Für konstruktives Feedback und intensive Belastungstests der Beta-Version:
 [b]Bereitschaft 5[/b]
 
+• Hilfe bei der Programmierung:
+[b]ChatGPT[/b]
+
 • Danke an alle Fehler-Finder:
 [b]Manuel Promock[/b]
 """

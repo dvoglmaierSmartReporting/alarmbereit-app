@@ -5,6 +5,8 @@ from kivy.clock import Clock
 
 from typing import cast
 
+from helper.functions import change_screen_to
+
 
 class Fahrzeugkunde_Images(Screen):
     # def load_image(self):
@@ -132,3 +134,6 @@ class Fahrzeugkunde_Images(Screen):
         container.bind(width=lambda *_: set_height())
 
         return img
+
+    def go_back(self, *args) -> None:
+        change_screen_to("fahrzeugkunde_menu")
