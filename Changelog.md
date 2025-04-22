@@ -2,6 +2,8 @@
 features:
 - Android return button is useable for screen navigation
 - version tag in app displayed
+- acknowledgements screen button invisible (easter egg)
+- hide "Übung mit Bildern" button in training mode
 
 fixes:
 - progress bar exceeds with additional time

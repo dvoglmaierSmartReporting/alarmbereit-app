@@ -34,15 +34,26 @@
         BoxLayout:
             size_hint_y: 2
             spacing: "3dp"
-    
+
+            # ACKNOWLEDGEMENT BUTTON
+            Button:
+                size_hint_x: 2
+                id: acknowledgement_button
+                font_size: "20sp"
+                background_normal: ''
+                background_color: 0, 0, 0, 0
+                on_release:
+                    app.root.current = "acknowledgement_screen"
+                    root.manager.transition.direction = "left"
+
             Label:  # placeholder
-                size_hint_x: 3
+                size_hint_x: 1
             
             BoxLayout:
                 size_hint_x: 1
                 orientation: 'vertical'
-                spacing: "18dp"
-                padding: "18dp"
+                spacing: "15dp"
+                padding: "15dp"
 
                 # INFO BUTTON
                 Button:
@@ -56,16 +67,19 @@
                         root.manager.transition.direction = "left"
                         root.update_info_text()
 
-                # ACKNOWLEDGEMENT BUTTON
-                Button:
+                Label:  # placeholder
                     size_hint_y: 1
-                    id: acknowledgement_button
-                    font_size: "20sp"
-                    background_normal: ''
-                    background_color: 0.2, 0.2, 0.2, 0.5
-                    on_release:
-                        app.root.current = "acknowledgement_screen"
-                        root.manager.transition.direction = "left"
+
+                ## ACKNOWLEDGEMENT BUTTON
+                #Button:
+                #    size_hint_y: 1
+                #    id: acknowledgement_button
+                #    font_size: "20sp"
+                #    background_normal: ''
+                #    background_color: 0.2, 0.2, 0.2, 0.5
+                #    on_release:
+                #        app.root.current = "acknowledgement_screen"
+                #        root.manager.transition.direction = "left"
 
             #Button:
             #    id: settings_button
@@ -101,7 +115,7 @@
     # VERSION
     FloatLayout:
         Label:
-            text: "Version 2.3.5"
+            text: "Version 0.0.1"
             font_size: "10sp"
             size_hint: 0.1, 0.03
             pos_hint: {"center_x": 0.5, "y": 0}

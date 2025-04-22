@@ -79,7 +79,7 @@ class Strings:
             "Voraus+Ölanh.": "VRFA-Tunnel",
             "Pumpe": "LFA",
             "Rüst": "SRFK-A",
-            "TankDürrnberg": "TLFA 3000",
+            "TankDürrnberg": "TLF-A 3000",
             "PumpeDürrnberg": "LFA",
         }
 
@@ -115,9 +115,6 @@ Herzlichen Dank an alle Unterstützerinnen und Unterstützer dieses Projekts!
 
 • Für konstruktives Feedback und intensive Belastungstests der Beta-Version:
 [b]Bereitschaft 5[/b]
-
-• Hilfe bei der Programmierung:
-[b]ChatGPT[/b]
 
 • Danke an alle Fehler-Finder:
 [b]Manuel Promock[/b]
