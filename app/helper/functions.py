@@ -1,11 +1,15 @@
 from kivy.app import App
 
+import os
+
 from helper.settings import Strings, Settings
-from helper.file_handling import load_total_storage, load_total_competition_questions
+from helper.file_handling import (
+    load_total_storage,
+    load_total_competition_questions,
+)
 from helper.game_class import ToolQuestion
 from helper.custom_types import *
 
-import os
 
 strings = Strings()
 settings = Settings()

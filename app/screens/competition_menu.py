@@ -4,11 +4,12 @@ from kivy.uix.label import Label
 from kivy.uix.layout import Layout
 from kivy.uix.screenmanager import Screen
 
+from typing import cast
+
 from helper.functions import mode_str2bool, change_screen_to
 from helper.file_handling import load_total_competition_questions
 from helper.settings import Strings
 
-from typing import cast
 
 strings = Strings()
 

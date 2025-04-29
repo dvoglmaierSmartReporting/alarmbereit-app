@@ -14,10 +14,13 @@ from kivy.uix.togglebutton import ToggleButton
 from kivy.uix.screenmanager import ScreenManager, Screen, SlideTransition
 from kivy.clock import Clock
 from kivy.base import EventLoop
+from kivy.lang import Builder
 
 
 # from inspect import currentframe
 import traceback
+from typing import cast
+import sys
 
 from screens.info_screen import Info_Screen
 from screens.acknowledgement_screen import Acknowledgement_Screen
@@ -39,14 +42,19 @@ from helper.functions import load_total_storage, create_scores_text, mode_str2bo
 from helper.file_handling import read_scores_file, transfer_file
 from helper.settings import Strings
 
-from typing import cast
 
 strings = Strings()
+
+
+if "pytest" in sys.modules:
+    Builder.load_file("app/feuerwehr.kv")
 
 
 class Start_Menu(Screen):
     def __init__(self, **kwargs):
         super(Start_Menu, self).__init__(**kwargs)
+
+    def on_kv_post(self, base_widget):
         # type annotations
         self.info_button = cast(Button, self.info_button)
         # self.acknowledgement_button = cast(Button, self.acknowledgement_button)
@@ -475,6 +483,7 @@ class FeuerwehrApp(App):
 
         except Exception as e:
             error_message = f"An error occurred:\n{str(e)}\n{traceback.format_exc()}"
+            print(error_message)
             self.show_error_popup(error_message)
             return None  # Return None to prevent further crashes
 

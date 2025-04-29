@@ -1,9 +1,13 @@
 # next version:
+
+# version 2.3.0 (Announce for everyone to use!)
+Idea: Hide optional features. Include them one by one in future releases.
 features:
 - Android return button is useable for screen navigation
 - version tag in app displayed
 - acknowledgements screen button invisible (easter egg)
 - hide "Übung mit Bildern" button in training mode
+- pytest to verify all screens are loading
 
 fixes:
 - progress bar exceeds with additional time

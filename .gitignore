@@ -42,3 +42,6 @@ Unterlagen Bewerbe _ Leistungsabzeichen
 # logs
 /app/logs
 *.log
+
+# tests
+.hypothesis
