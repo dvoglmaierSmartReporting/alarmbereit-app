@@ -119,4 +119,6 @@ Herzlichen Dank an alle Unterstützerinnen und Unterstützer dieses Projekts!
 • Danke an alle Fehler-Finder:
 [b]Manuel Promock[/b]
 [b]Michael Nocker[/b]
+[b]Julian Marx[/b]
+[b]Jürgen Jung[/b]
 """
