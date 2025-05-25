@@ -158,8 +158,8 @@ def test_competition_game__select_invalid_competition__should_fail():
 
 
 def test_firetruck_training__select_firetruck():
-    # need to be loaded in test, because
-    # fct is using get_running_app() methode, which is simulated above
+    # need to be loaded in test, because function is
+    # using get_running_app() methode, which is simulated above
     firetrucks = list(load_total_firetruck_storage().keys())
 
     for firetruck_name in firetrucks:
@@ -184,8 +184,8 @@ def test_firetruck_training__select_invalid_firetruck__should_fail():
 
 
 def test_firetruck_game__select_firetruck():
-    # need to be loaded in test, because
-    # fct is using get_running_app() methode, which is simulated above
+    # need to be loaded in test, because function is
+    # using get_running_app() methode, which is simulated above
     firetrucks = list(load_total_firetruck_storage().keys())
 
     for firetruck_name in firetrucks:
