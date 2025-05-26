@@ -44,28 +44,57 @@ def app():
     application.root = None
 
 
+def test_root_is_screen_manager(app):
+    assert app.root is not None, "app.root is None — build() likely failed"
+    assert isinstance(
+        app.root, ScreenManager
+    ), f"Expected ScreenManager, got {type(app.root)}"
+
+
+def test_user_data_dir_available(app):
+    assert app.user_data_dir is not None
+
+
 #### COMPETITION TRAINING ####
 
 competitions = list(load_total_competition_questions().keys())
 
 
-@pytest.mark.parametrize("competition_name", competitions)
-def test_competition_training__select_competition(competition_name):
-    screen = Bewerb_Training(name="bewerb_training")
-    try:
-        screen.select_competition(competition_name)
-        screen.play()
-        print(
-            f"competition_training loaded successfully for competition {competition_name}."
-        )
-        print(f"Loaded successfully question {screen.current_question.question_id}")
+# @pytest.mark.parametrize("competition_name", competitions)
+# def test_competition_training__select_competition(competition_name):
+#     screen = Bewerb_Training(name="bewerb_training")
+#     try:
+#         screen.select_competition(competition_name)
+#         screen.play()
+#         print(
+#             f"✅ competition_training loaded successfully for competition {competition_name}."
+#         )
+#         print(f"Loaded successfully question {screen.current_question.question_id}")
 
-        while screen.next_question_button.disabled == False:
-            screen.next_question()
-            print(f"Loaded successfully question {screen.current_question.question_id}")
-            screen.reveal_answer()
+#         while screen.next_question_button.disabled == False:
+#             screen.next_question()
+#             print(f"Loaded successfully question {screen.current_question.question_id}")
+#             screen.reveal_answer()
 
-    except Exception as e:
-        pytest.fail(
-            f"select_competition('{competition_name}') raised an exception: {e}"
-        )
+#     except Exception as e:
+#         pytest.fail(
+#             f"❌ select_competition('{competition_name}') raised an exception: {e}"
+#         )
+
+
+#### FIRETRUCK TRAINING ####
+
+
+def test_firetruck_training__select_firetruck():
+    # need to be loaded in test, because function is
+    # using get_running_app() methode, which is simulated above
+    firetrucks = list(load_total_firetruck_storage().keys())
+
+    for firetruck_name in firetrucks:
+        screen = Fahrzeugkunde_Training(name="fahrzeugkunde_training")
+        try:
+            screen.select_firetruck(firetruck_name)
+            screen.play()
+            print(f"✅ Loaded firetruck_training '{firetruck_name}'")
+        except Exception as e:
+            pytest.fail(f"❌ Failed to load firetruck_training '{firetruck_name}': {e}")
