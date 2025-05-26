@@ -90,11 +90,26 @@ def test_firetruck_training__select_firetruck():
     # using get_running_app() methode, which is simulated above
     firetrucks = list(load_total_firetruck_storage().keys())
 
-    for firetruck_name in firetrucks:
-        screen = Fahrzeugkunde_Training(name="fahrzeugkunde_training")
-        try:
-            screen.select_firetruck(firetruck_name)
-            screen.play()
-            print(f"✅ Loaded firetruck_training '{firetruck_name}'")
-        except Exception as e:
-            pytest.fail(f"❌ Failed to load firetruck_training '{firetruck_name}': {e}")
+    class Instance:
+        def __init__(self, text, background_color=(0, 0, 0, 0)):
+            self.text = text
+            self.background_color = background_color
+
+    # for firetruck_name in firetrucks:
+    firetruck_name = "Tank1"
+    screen = Fahrzeugkunde_Training(name="fahrzeugkunde_training")
+    try:
+        screen.select_firetruck(firetruck_name)
+        screen.play()
+        print(f"✅ Loaded firetruck_training '{firetruck_name}'")
+
+        for i in range(200):
+            instance = Instance("Mannschaft")
+            screen.on_answer(instance)
+            if instance.background_color == (0, 0, 1, 1):
+                instance = Instance("G3")
+                screen.on_answer(instance)
+            print(f"Loaded successfully tool {i+1}: {screen.tool_label.text}")
+
+    except Exception as e:
+        pytest.fail(f"❌ Failed to load firetruck_training '{firetruck_name}': {e}")

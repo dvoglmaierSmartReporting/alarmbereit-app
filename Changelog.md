@@ -1,4 +1,9 @@
 # next version:
+features:
+- adding tests against all questions and tools
+
+fixes:
+- errors found by Fehlerfinder
 
 # version 2.3.0 (Announce for everyone to use!)
 Idea: Hide optional features. Include them one by one in future releases.
