@@ -8,6 +8,9 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../a
 import pytest
 import os
 import shutil
+import time
+
+from unittest.mock import patch
 
 from kivy.app import App
 from kivy.base import EventLoop
@@ -25,6 +28,9 @@ from app.helper.file_handling import (
     load_total_competition_questions,
     load_total_firetruck_storage,
 )
+from app.helper.settings import Settings
+
+settings = Settings()
 
 
 @pytest.fixture(scope="module")
@@ -89,27 +95,40 @@ def test_firetruck_training__select_firetruck():
     # need to be loaded in test, because function is
     # using get_running_app() methode, which is simulated above
     firetrucks = list(load_total_firetruck_storage().keys())
+    settings.FIRETRUCK_TRAINING_FEEDBACK_SEC = 0.3
 
     class Instance:
         def __init__(self, text, background_color=(0, 0, 0, 0)):
             self.text = text
             self.background_color = background_color
 
-    # for firetruck_name in firetrucks:
-    firetruck_name = "Tank1"
-    screen = Fahrzeugkunde_Training(name="fahrzeugkunde_training")
-    try:
-        screen.select_firetruck(firetruck_name)
-        screen.play()
-        print(f"✅ Loaded firetruck_training '{firetruck_name}'")
+    # Patch Clock.schedule_once to call the function immediately
+    with patch("kivy.clock.Clock.schedule_once") as mock_schedule:
+        mock_schedule.side_effect = lambda func, timeout: func(0.016)
 
-        for i in range(200):
-            instance = Instance("Mannschaft")
-            screen.on_answer(instance)
-            if instance.background_color == (0, 0, 1, 1):
-                instance = Instance("G3")
+        # for firetruck_name in firetrucks:
+        firetruck_name = "Tank1"
+        screen = Fahrzeugkunde_Training(name="fahrzeugkunde_training")
+        try:
+            screen.select_firetruck(firetruck_name)
+            screen.play()
+            print(f"✅ Loaded firetruck_training '{firetruck_name}'")
+
+            # for i in range(200):
+            i = 0
+            while True:
+                instance = Instance("Mannschaft")
                 screen.on_answer(instance)
-            print(f"Loaded successfully tool {i+1}: {screen.tool_label.text}")
+                if instance.background_color == (0, 0, 1, 1):
+                    instance = Instance("G3")
+                    screen.on_answer(instance)
+                print(f"Loaded successfully tool {i+1}: {screen.tool_label.text}")
 
-    except Exception as e:
-        pytest.fail(f"❌ Failed to load firetruck_training '{firetruck_name}': {e}")
+                # i += 1
+                # time.sleep(3)
+
+                if i >= 200:
+                    break
+
+        except Exception as e:
+            pytest.fail(f"❌ Failed to load firetruck_training '{firetruck_name}': {e}")
