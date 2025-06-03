@@ -120,5 +120,5 @@ Herzlichen Dank an alle Unterstützerinnen und Unterstützer dieses Projekts!
 [b]Manuel Promock[/b]
 [b]Michael Nocker[/b]
 [b]Julian Marx[/b]
-[b]Jürgen Jung (3x)[/b]
+[b]Jürgen Jung (4x)[/b]
 """

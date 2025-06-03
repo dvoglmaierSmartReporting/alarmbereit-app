@@ -1,3 +1,8 @@
+# next version
+fixes:
+- error found by Fehlerfinder
+
+
 # version 2.3.2
 fixes:
 - updated tools Tank 2
