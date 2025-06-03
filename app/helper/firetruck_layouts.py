@@ -1,3 +1,9 @@
+import os
+
+# Get absolute path to the layouts asset folder
+ASSETS_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "assets", "layouts"))
+
+
 from kivy.app import App
 from kivy.uix.image import Image
 from kivy.uix.button import Button
@@ -81,23 +87,23 @@ def build_answer_layout(firetruck: str, calling_screen: str) -> FloatLayout:
     float = FloatLayout(size_hint=(1, 1))
 
     if firetruck in ["RüstLösch", "Tank1", "Tank2", "TankDürrnberg", "BDLP-Tank1"]:
-        bgd_image = "./assets/layouts/truck.jpg"
+        bgd_image = os.path.join(ASSETS_DIR, "truck.jpg")
         buttons = get_7_rooms_layout()
 
     elif firetruck in ["Pumpe", "PumpeDürrnberg"]:
-        bgd_image = "./assets/layouts/truck.jpg"
+        bgd_image = os.path.join(ASSETS_DIR, "truck.jpg")
         buttons = get_5_rooms_layout()
 
     elif firetruck in ["Leiter"]:
-        bgd_image = "./assets/layouts/leiter.jpg"
+        bgd_image = os.path.join(ASSETS_DIR, "leiter.jpg")
         buttons = get_leiter_layout()
 
     elif firetruck in ["Rüst"]:
-        bgd_image = "./assets/layouts/ruest.jpg"
+        bgd_image = os.path.join(ASSETS_DIR, "ruest.jpg")
         buttons = get_ruest_layout()
 
     elif firetruck in ["Voraus"]:
-        bgd_image = "./assets/layouts/voraus.jpg"
+        bgd_image = os.path.join(ASSETS_DIR, "voraus.jpg")
         buttons = get_voraus_layout()
 
     else:

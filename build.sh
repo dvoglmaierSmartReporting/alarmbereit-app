@@ -74,12 +74,16 @@ fi
 
 # Run tests
 echo "🧪 Running tests with pytest..."
-if pytest tests/ -v | tee build-test.log; then
+pytest tests/ -v | tee build-test.log
+exit_code=${PIPESTATUS[0]}
+
+if [ "$exit_code" -eq 0 ]; then
     echo "✅ All tests passed."
 else
     echo "❌ Tests failed. Aborting build!" >&2
-    exit 1
+    exit $exit_code
 fi
+
 
 # Ensure we are in the correct directory
 TARGET_DIR="./app"

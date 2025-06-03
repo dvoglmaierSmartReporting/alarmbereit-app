@@ -8,7 +8,6 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../a
 import pytest
 import os
 import shutil
-import time
 
 from unittest.mock import patch
 
@@ -18,12 +17,8 @@ from kivy.clock import Clock
 from kivy.uix.screenmanager import ScreenManager
 
 from app.main import FeuerwehrApp
-from app.screens.competition_menu import Bewerb_Menu
 from app.screens.competition_training import Bewerb_Training
-from app.screens.competition_game import Bewerb_Game
-from app.screens.firetruck_menu import Fahrzeugkunde_Menu
 from app.screens.firetruck_training import Fahrzeugkunde_Training
-from app.screens.firetruck_game import Fahrzeugkunde_Game
 from app.helper.file_handling import (
     load_total_competition_questions,
     load_total_firetruck_storage,
@@ -66,26 +61,26 @@ def test_user_data_dir_available(app):
 competitions = list(load_total_competition_questions().keys())
 
 
-# @pytest.mark.parametrize("competition_name", competitions)
-# def test_competition_training__select_competition(competition_name):
-#     screen = Bewerb_Training(name="bewerb_training")
-#     try:
-#         screen.select_competition(competition_name)
-#         screen.play()
-#         print(
-#             f"✅ competition_training loaded successfully for competition {competition_name}."
-#         )
-#         print(f"Loaded successfully question {screen.current_question.question_id}")
+@pytest.mark.parametrize("competition_name", competitions)
+def test_competition_training__select_competition(competition_name):
+    screen = Bewerb_Training(name="bewerb_training")
+    try:
+        screen.select_competition(competition_name)
+        screen.play()
+        print()
+        print(f"Loaded successfully question {screen.current_question.question_id}")
 
-#         while screen.next_question_button.disabled == False:
-#             screen.next_question()
-#             print(f"Loaded successfully question {screen.current_question.question_id}")
-#             screen.reveal_answer()
+        while screen.next_question_button.disabled == False:
+            screen.next_question()
+            print(
+                f"Loaded successfully question {screen.current_question.question_id}"
+            )
+            screen.reveal_answer()
 
-#     except Exception as e:
-#         pytest.fail(
-#             f"❌ select_competition('{competition_name}') raised an exception: {e}"
-#         )
+    except Exception as e:
+        pytest.fail(
+            f"❌ select_competition('{competition_name}') raised an exception: {e}"
+        )
 
 
 #### FIRETRUCK TRAINING ####
@@ -106,29 +101,30 @@ def test_firetruck_training__select_firetruck():
     with patch("kivy.clock.Clock.schedule_once") as mock_schedule:
         mock_schedule.side_effect = lambda func, timeout: func(0.016)
 
-        # for firetruck_name in firetrucks:
-        firetruck_name = "Tank1"
-        screen = Fahrzeugkunde_Training(name="fahrzeugkunde_training")
-        try:
-            screen.select_firetruck(firetruck_name)
-            screen.play()
-            print(f"✅ Loaded firetruck_training '{firetruck_name}'")
+        for firetruck_name in firetrucks:
+            screen = Fahrzeugkunde_Training(name="fahrzeugkunde_training")
+            try:
+                screen.select_firetruck(firetruck_name)
+                screen.play()
+                print(f"✅ Loaded firetruck_training '{firetruck_name}'")
 
-            # for i in range(200):
-            i = 0
-            while True:
-                instance = Instance("Mannschaft")
-                screen.on_answer(instance)
-                if instance.background_color == (0, 0, 1, 1):
-                    instance = Instance("G3")
+                i = 0
+                while True:
+                    instance = Instance("Mannschaft")
                     screen.on_answer(instance)
-                print(f"Loaded successfully tool {i+1}: {screen.tool_label.text}")
+                    if instance.background_color == (0, 0, 1, 1):
+                        instance = Instance("G3")
+                        screen.on_answer(instance)
+                    print(
+                        f"Loaded successfully tool {i+1}: {screen.tool_label.text}"
+                    )
 
-                # i += 1
-                # time.sleep(3)
+                    i += 1
 
-                if i >= 200:
-                    break
+                    if i >= 200:
+                        break
 
-        except Exception as e:
-            pytest.fail(f"❌ Failed to load firetruck_training '{firetruck_name}': {e}")
+            except Exception as e:
+                pytest.fail(
+                    f"❌ Failed to load firetruck_training '{firetruck_name}': {e}"
+                )

@@ -1,4 +1,8 @@
-# next version:
+# version 2.3.2
+fixes:
+- updated tools Tank 2
+- errors found by Fehlerfinder
+- tests independent of assets file paths
 
 # version 2.3.1
 features:
