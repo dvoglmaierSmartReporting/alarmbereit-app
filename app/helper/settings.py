@@ -57,6 +57,9 @@ class Strings:
         # firetruck training
         self.HINT_STR_MULTIPLE_ANSWERS = "Wo noch?"
 
+        # competition country
+        self.LABEL_COMPETITION_COUNTRY = "Bundesland"
+
         # competition training
         self.BUTTON_STR_SOLUTION = "Lösung"
         self.BUTTON_STR_RANDOM_QUESTION = "Zufällig"
@@ -68,6 +71,8 @@ class Strings:
         self.TITLE_ERROR_POPUP = "Fehlermeldung"
         self.BUTTON_CLOSE_POPUP = "Schließen"
 
+        # TODO: move this to firetruck.yaml into truck key-value pair
+        # in screen, read from firetruck.yaml
         self.trucks_hallein = {
             "TestTruck": "testing",
             "RüstLösch": "RLFA 2000",

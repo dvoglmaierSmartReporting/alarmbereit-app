@@ -1,5 +1,7 @@
 from kivy.app import App
 from kivy.uix.label import Label
+from kivy.uix.button import Button
+from kivy.uix.switch import Switch
 from kivy.uix.screenmanager import Screen
 
 from typing import cast

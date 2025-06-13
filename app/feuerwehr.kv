@@ -70,27 +70,6 @@
                 Label:  # placeholder
                     size_hint_y: 1
 
-                ## ACKNOWLEDGEMENT BUTTON
-                #Button:
-                #    size_hint_y: 1
-                #    id: acknowledgement_button
-                #    font_size: "20sp"
-                #    background_normal: ''
-                #    background_color: 0.2, 0.2, 0.2, 0.5
-                #    on_release:
-                #        app.root.current = "acknowledgement_screen"
-                #        root.manager.transition.direction = "left"
-
-            #Button:
-            #    id: settings_button
-            #    font_size: "32sp"
-            #    size_hint: None, None
-            #    size: "150dp", "100dp"
-            #    pos_hint: {'right': 1, 'top': 1}
-            #    on_release:
-            #        app.root.current = "settings_screen"
-            #        root.manager.transition.direction = "left"
-        
         # SEPARATOR
         BoxLayout:
             size_hint_y: None
@@ -104,14 +83,15 @@
         
         # CONTENT
         BoxLayout:
-            size_hint_y: 8
+            id: content_layout
+            size_hint_y: 7.5
             orientation: "vertical"
-
-            BoxLayout:
-                id: content_layout
-                orientation: "vertical"
-                spacing: "3dp"
+            padding: "5dp"
+            spacing: "10dp"
         
+        Label: # placeholder
+            size_hint_y: 0.5
+
     # VERSION
     FloatLayout:
         Label:
@@ -270,75 +250,6 @@
                 markup: True
 
 
-#<Settings_Screen>:
-#    name: "settings_screen"
-#
-#    text_output: text_output
-#    default_content_label: default_content_label
-#    default_content_switch: default_content_switch
-#    select_file_button: select_file_button
-#    upload_confirm_button: upload_confirm_button
-#
-#    Button:
-#        text: "<"
-#        font_size: "32sp"
-#        size_hint: None, None
-#        size: "75dp", "75dp"
-#        pos_hint: {'left': 1, 'top': 1}
-#        on_release:
-#            app.root.current = "start_menu"
-#            root.manager.transition.direction = "right"
-#            #self.go_back()
-#    
-#    BoxLayout:
-#        orientation: 'vertical'
-#
-#        Label:  # placeholder
-#            size_hint: 1, 1
-#
-#        BoxLayout:
-#            orientation: 'horizontal'
-#
-#            Label:
-#                id: default_content_label
-#                font_size: "32sp"
-#            
-#            Switch:
-#                id: default_content_switch
-#                #active: True
-#                #disabled: True
-#                on_active: root.update_default_content_switch(self, self.active)
-#
-#        Button:
-#            id: select_file_button
-#            font_size: "32sp"
-#            size_hint: 1, 1
-#            on_release: root.show_load()
-#
-#        Button:
-#            id: upload_confirm_button
-#            font_size: "32sp"
-#            disabled: True
-#            on_release: 
-#            size_hint: 1, 1
-#            on_release:
-#                root.confirm_upload()
-#        
-#        Label:  # placeholder
-#            size_hint: 1, 0.1
-#
-#        Label:
-#            id: text_output
-#            text: ""
-#            font_size: "23sp"
-#            text_size: self.size
-#            valign: "top"
-#            halign: "left"
-#            show_errors: True
-#            markup: True
-#            size_hint: 1, 6
-
-
 <LoadDialog>:
     # IDs
     cancel_button: cancel_button
@@ -428,67 +339,6 @@
             
             BoxLayout:
                 id: firetrucks_layout
-                orientation: 'vertical'
-                size_hint_y: None
-                height: self.minimum_height
-                spacing: "5dp"
-
-
-<Bewerb_Menu>:
-    name: "bewerb_menu"
-
-    # IDs
-    mode_label: mode_label
-    bewerbe_layout: bewerbe_layout
-
-    # SCREEN
-    BoxLayout:
-        orientation: 'vertical'
-        spacing: "10dp"
-        padding: "5dp"
-    
-        # HEADER
-        BoxLayout:
-            size_hint_y: 1
-            orientation: 'horizontal'
-
-            Button:
-                size_hint_x: 1
-                text: "<"
-                font_size: "32sp"
-                on_release:
-                    #app.root.current = "start_menu"
-                    #root.manager.transition.direction = "right"
-                    root.go_back()
-
-            Label: # placeholder
-                size_hint_x: 2
-
-            Label:
-                size_hint_x: 3
-                id: mode_label
-                font_size: "25sp"
-                halign: "center"
-                valign: "middle"
-                text_size: self.size
-
-        # SEPARATOR
-        BoxLayout:
-            size_hint_y: None
-            height: 2
-            canvas.before:
-                Color:
-                    rgba: 0.5, 0.5, 0.5, 1
-                Rectangle:
-                    size: self.size
-                    pos: self.pos
-        
-        # COMPETITIONS
-        ScrollView:
-            size_hint_y: 9
-
-            BoxLayout:
-                id: bewerbe_layout
                 orientation: 'vertical'
                 size_hint_y: None
                 height: self.minimum_height
@@ -931,6 +781,175 @@
                 spacing: "5dp"
 
 
+<Bewerb_Bundesland>:
+    name: "bewerb_bundesland"
+    
+    # IDs
+    country_label: country_label
+    country_scrollview: country_scrollview
+    country_layout: country_layout
+
+    # SCREEN
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: "10dp"
+        padding: "5dp"
+
+        # HEADER
+        BoxLayout:
+            size_hint_y: 2
+            spacing: "3dp"
+            orientation: 'vertical'
+
+            # ROW 1
+            BoxLayout:
+                size_hint_y: 1
+
+                Button:
+                    size_hint_x: 1
+                    text: "<"
+                    font_size: "32sp"
+                    on_release:
+                        root.go_back()
+        
+                Label:  # placeholder
+                    size_hint_x: 2
+                
+                Label:
+                    size_hint_x: 3
+                    id: country_label
+                    font_size: "25sp"
+                    halign: "center"
+                    valign: "middle"
+                    text_size: self.size
+            
+            # ROW 2
+            BoxLayout:
+                size_hint_y: 1
+
+                Switch:
+                    size_hint_x: 1
+                    id: store_selection_switch
+                    disabled: True
+
+                Label:  
+                    size_hint_x: 3
+                    id: store_selection_label
+                    text: "Auswahl speichern"
+                    font_size: "25sp"
+                    halign: "left"
+                    valign: "middle"
+                    text_size: self.size
+
+        
+        # SEPARATOR
+        BoxLayout:
+            size_hint_y: None
+            height: 2
+            canvas.before:
+                Color:
+                    rgba: 0.5, 0.5, 0.5, 1
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+
+        # COUNTRIES
+        ScrollView:
+            size_hint_y: 8
+            id: country_scrollview
+            
+            BoxLayout:
+                id: country_layout
+                orientation: 'vertical'
+                size_hint_y: None
+                height: self.minimum_height
+                spacing: "5dp"
+
+
+<Bewerb_Menu>:
+    name: "bewerb_menu"
+
+    # IDs
+    mode_label: mode_label
+    choose_mode_switch: choose_mode_switch
+    choose_mode_label: choose_mode_label
+    bewerbe_layout_scrollview: bewerbe_layout_scrollview
+    bewerbe_layout: bewerbe_layout
+
+    # SCREEN
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: "10dp"
+        padding: "5dp"
+    
+        # HEADER
+        BoxLayout:
+            size_hint_y: 2
+            spacing: "3dp"
+            orientation: 'vertical'
+
+            # ROW 1
+            BoxLayout:
+                size_hint_y: 1
+
+                Button:
+                    size_hint_x: 1
+                    text: "<"
+                    font_size: "32sp"
+                    on_release:
+                        root.go_back()
+
+                Label: # placeholder
+                    size_hint_x: 2
+
+                Label:
+                    size_hint_x: 3
+                    id: mode_label
+                    font_size: "25sp"
+                    halign: "center"
+                    valign: "middle"
+                    text_size: self.size
+            
+            # ROW 2
+            BoxLayout:
+                size_hint_y: 1
+
+                Switch:
+                    size_hint_x: 1
+                    id: choose_mode_switch
+
+                Label:  
+                    size_hint_x: 3
+                    id: choose_mode_label
+                    font_size: "25sp"
+                    halign: "left"
+                    valign: "middle"
+                    text_size: self.size
+
+        # SEPARATOR
+        BoxLayout:
+            size_hint_y: None
+            height: 2
+            canvas.before:
+                Color:
+                    rgba: 0.5, 0.5, 0.5, 1
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+        
+        # COMPETITIONS
+        ScrollView:
+            size_hint_y: 8
+            id: bewerbe_layout_scrollview
+
+            BoxLayout:
+                id: bewerbe_layout
+                orientation: 'vertical'
+                size_hint_y: None
+                height: self.minimum_height
+                spacing: "5dp"
+
+
 <Bewerb_Training>:
     name: "bewerb_training"
 
@@ -959,8 +978,6 @@
                 text: "<"
                 font_size: "32sp"
                 on_release:
-                    #app.root.current = "bewerb_menu"
-                    #root.manager.transition.direction = "right"
                     root.go_back()
 
             Label:  # placeholder
@@ -1151,3 +1168,72 @@
             id: answer_buttons_layout
             spacing: "3dp"
             cols: 4
+
+
+#<Settings_Screen>:
+#    name: "settings_screen"
+#
+#    text_output: text_output
+#    default_content_label: default_content_label
+#    default_content_switch: default_content_switch
+#    select_file_button: select_file_button
+#    upload_confirm_button: upload_confirm_button
+#
+#    Button:
+#        text: "<"
+#        font_size: "32sp"
+#        size_hint: None, None
+#        size: "75dp", "75dp"
+#        pos_hint: {'left': 1, 'top': 1}
+#        on_release:
+#            app.root.current = "start_menu"
+#            root.manager.transition.direction = "right"
+#            #self.go_back()
+#    
+#    BoxLayout:
+#        orientation: 'vertical'
+#
+#        Label:  # placeholder
+#            size_hint: 1, 1
+#
+#        BoxLayout:
+#            orientation: 'horizontal'
+#
+#            Label:
+#                id: default_content_label
+#                font_size: "32sp"
+#            
+#            Switch:
+#                id: default_content_switch
+#                #active: True
+#                #disabled: True
+#                on_active: root.update_default_content_switch(self, self.active)
+#
+#        Button:
+#            id: select_file_button
+#            font_size: "32sp"
+#            size_hint: 1, 1
+#            on_release: root.show_load()
+#
+#        Button:
+#            id: upload_confirm_button
+#            font_size: "32sp"
+#            disabled: True
+#            on_release: 
+#            size_hint: 1, 1
+#            on_release:
+#                root.confirm_upload()
+#        
+#        Label:  # placeholder
+#            size_hint: 1, 0.1
+#
+#        Label:
+#            id: text_output
+#            text: ""
+#            font_size: "23sp"
+#            text_size: self.size
+#            valign: "top"
+#            halign: "left"
+#            show_errors: True
+#            markup: True
+#            size_hint: 1, 6

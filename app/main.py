@@ -33,12 +33,19 @@ from screens.firetruck_training import Fahrzeugkunde_Training
 from screens.firetruck_game import Fahrzeugkunde_Game
 from screens.firetruck_browse import Fahrzeugkunde_Browse
 from screens.firetruck_images import Fahrzeugkunde_Images
+
+from screens.competition_country import Bewerb_Bundesland
 from screens.competition_menu import Bewerb_Menu
 from screens.competition_training import Bewerb_Training
 from screens.competition_game import Bewerb_Game
 from errors.error_popup import ErrorPopup
 
-from helper.functions import load_total_storage, create_scores_text, mode_str2bool
+from helper.functions import (
+    load_total_storage,
+    create_scores_text,
+    mode_str2bool,
+    change_screen_to,
+)
 from helper.file_handling import read_scores_file, transfer_file
 from helper.settings import Strings
 
@@ -99,11 +106,55 @@ class Start_Menu(Screen):
             display_widget=competitions_modi_widget,
         )
 
+        ###
+        fahrzeuge_button = Button(
+            size_hint=(1, 1),
+            text=strings.BUTTON_STR_FIRETRUCKS,
+            font_size="32sp",
+        )
+        # transition to login screen
+        fahrzeuge_button.bind(
+            # on_release=lambda instance: change_screen_to("fahrzeugkunde_login")
+        )
+
+        # firetruck_btn3.bind(   # type: ignore[attr-defined]
+        #     on_release=lambda instance: self.forward_mode2menu_manually(
+        #         "fahrzeugkunde_menu", strings.BUTTON_STR_BROWSE
+        #     )
+        # )
+
+        bewerbe_button = Button(
+            size_hint=(1, 1),
+            text=strings.BUTTON_STR_COMPETITIONS,
+            font_size="32sp",
+        )
+
+        # if selection is stored
+        if True:
+            # transition to countries screen
+            bewerbe_button.bind(
+                on_release=lambda instance: change_screen_to(
+                    "bewerb_bundesland", "left"
+                )
+            )
+        else:
+            bewerbe_button.bind(
+                on_release=lambda instance: change_screen_to("bewerb_menu", "left")
+            )
+
+        placeholder1 = Label(
+            size_hint=(1, 1),
+        )
+
         # Add widgets to layout
-        self.content_layout.add_widget(questions_label)
-        self.content_layout.add_widget(firetrucks_button)
-        self.content_layout.add_widget(competitions_button)
-        self.content_layout.add_widget(self.display_container)
+        # self.content_layout.add_widget(questions_label)
+        # self.content_layout.add_widget(firetrucks_button)
+        # self.content_layout.add_widget(competitions_button)
+        # self.content_layout.add_widget(self.display_container)
+
+        self.content_layout.add_widget(fahrzeuge_button)
+        self.content_layout.add_widget(bewerbe_button)
+        self.content_layout.add_widget(placeholder1)
 
     def add_firetruck_modi_widget(self):
         firetrucks_modi_widget = BoxLayout(
@@ -466,6 +517,7 @@ class FeuerwehrApp(App):
             self.sm.add_widget(Acknowledgement_Screen())
             # self.sm.add_widget(Settings_Screen())
             self.sm.add_widget(Fahrzeugkunde_Menu())
+            self.sm.add_widget(Bewerb_Bundesland())
             self.sm.add_widget(Bewerb_Menu())
             self.sm.add_widget(Fahrzeugkunde_Training())
             # self.sm.add_widget(Fahrzeugkunde_Training_New())
@@ -506,7 +558,7 @@ class FeuerwehrApp(App):
                     "acknowledgement_screen",
                     "settings_screen",
                     "fahrzeugkunde_menu",
-                    "bewerb_menu",
+                    "bewerb_country",
                 ]:
                     self.sm.transition.direction = "right"
                     self.sm.current = "start_menu"
@@ -521,6 +573,17 @@ class FeuerwehrApp(App):
                 ]:
                     self.sm.transition.direction = "right"
                     self.sm.current = "fahrzeugkunde_menu"
+                    return True
+
+                elif current in [
+                    "bewerb_menu",
+                ]:
+                    if True:  # add logic to save country
+                        self.sm.transition.direction = "right"
+                        self.sm.current = "bewerb_country"
+                    else:
+                        self.sm.transition.direction = "right"
+                        self.sm.current = "start_menu"
                     return True
 
                 elif current in [

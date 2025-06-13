@@ -1,5 +1,6 @@
 from kivy.app import App
 from kivy.uix.button import Button
+from kivy.uix.switch import Switch
 from kivy.uix.label import Label
 from kivy.uix.layout import Layout
 from kivy.uix.screenmanager import Screen
@@ -22,6 +23,17 @@ class Bewerb_Menu(Screen):
         self.total_competitions = list(total_competition_questions.keys())
 
         self.bewerbe_layout = cast(Layout, self.bewerbe_layout)
+        self.choose_mode_switch = cast(Switch, self.choose_mode_switch)
+        self.choose_mode_label = cast(Label, self.choose_mode_label)
+        self.mode_label = cast(Label, self.mode_label)
+
+        # update button strings
+        # self.choose_mode_label.text = strings.BUTTON_STR_SOLUTION
+        self.choose_mode_label.text = "Modus wählen"
+
+        self.choose_mode_switch.active = False
+        self.choose_mode_switch.bind(active=self.on_switch_toggle)
+        self.mode_label.text = strings.BUTTON_STR_TRAINING
 
         # create button for all competitions
         for competitions in self.total_competitions:
@@ -34,6 +46,16 @@ class Bewerb_Menu(Screen):
             )
             btn.bind(on_release=self.on_button_release)
             self.bewerbe_layout.add_widget(btn)
+
+    def on_enter(self):
+        # Reset the scrollview to the top
+        self.ids.bewerbe_layout_scrollview.scroll_y = 1
+
+    def on_switch_toggle(self, instance, value):
+        if value:
+            self.mode_label.text = strings.BUTTON_STR_GAME
+        else:
+            self.mode_label.text = strings.BUTTON_STR_TRAINING
 
     def on_button_release(self, instance):
         self.mode_label = cast(Label, self.mode_label)
@@ -85,4 +107,8 @@ class Bewerb_Menu(Screen):
         #     app.root.transition.direction = "left"
 
     def go_back(self, *args) -> None:
-        change_screen_to("start_menu")
+        # if selection is stored
+        if True:
+            change_screen_to("bewerb_bundesland")
+        else:
+            change_screen_to("start_menu")
