@@ -107,7 +107,7 @@ class Bewerb_Menu(Screen):
         #     app.root.transition.direction = "left"
 
     def go_back(self, *args) -> None:
-        # if selection is stored
+        # if selection is not stored
         if True:
             change_screen_to("bewerb_bundesland")
         else:

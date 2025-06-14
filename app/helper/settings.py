@@ -54,11 +54,19 @@ class Strings:
         self.BUTTON_DIALOG_POPUP_CANCEL = "Abbrechen"
         self.BUTTON_DIALOG_POPUP_CONFIRM = "Auswählen"
 
+        # firetruck login
+        self.LABEL_STR_LOGIN = "Login"
+        self.BUTTON_STR_LOGIN = "Login"
+        self.LABEL_STR_DEPARTMENT = "Freiwillige Feuerwehr"
+
+        # firetruck modes
+        self.LABEL_STR_MODES = "Inhalte"
+
         # firetruck training
         self.HINT_STR_MULTIPLE_ANSWERS = "Wo noch?"
 
         # competition country
-        self.LABEL_COMPETITION_COUNTRY = "Bundesland"
+        self.LABEL_STR_COUNTRY = "Bundesland"
 
         # competition training
         self.BUTTON_STR_SOLUTION = "Lösung"

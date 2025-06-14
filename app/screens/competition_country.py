@@ -15,8 +15,14 @@ strings = Strings()
 class Bewerb_Bundesland(Screen):
     def __init__(self, **kwargs):
         super(Bewerb_Bundesland, self).__init__(**kwargs)
+
+        self.country_layout = cast(BoxLayout, self.country_layout)
+        self.country_label = cast(Label, self.country_label)
+
+        self.country_label.text = strings.LABEL_STR_COUNTRY
+
         # load available countries
-        self.countries = [
+        countries = [
             "Salzburg",
             "Burgenland",
             "Kärnten",
@@ -27,14 +33,8 @@ class Bewerb_Bundesland(Screen):
             "Vorarlberg",
             "Wien",
         ]
-
-        self.country_layout = cast(BoxLayout, self.country_layout)
-        self.country_label = cast(Label, self.country_label)
-
-        self.country_label.text = strings.LABEL_COMPETITION_COUNTRY
-
-        # create button for all competitions
-        for country in self.countries:
+        # create button for all countries
+        for country in countries:
             btn = Button(
                 text=country,
                 font_size="32sp",

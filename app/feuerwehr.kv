@@ -282,6 +282,214 @@
                     root.load(filechooser.path, filechooser.selection)
 
 
+<Fahrzeugkunde_Login>:
+    name: "fahrzeugkunde_login"
+
+    # IDs
+    login_label: login_label
+    store_login_switch: store_login_switch
+    store_login_label: store_login_label
+    login_layout: login_layout
+    department_label: department_label
+    department_scrollview: department_scrollview
+    department_layout: department_layout
+    #password_label: password_label
+    #password_text: password_text
+    #login_button: login_button
+
+    # SCREEN
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: "10dp"
+        padding: "5dp"
+
+        # HEADER
+        BoxLayout:
+            size_hint_y: 2
+            spacing: "3dp"
+            orientation: 'vertical'
+
+            # ROW 1
+            BoxLayout:
+                size_hint_y: 1
+
+                Button:
+                    size_hint_x: 1
+                    text: "<"
+                    font_size: "32sp"
+                    on_release:
+                        root.go_back()
+        
+                Label:  # placeholder
+                    size_hint_x: 2
+                
+                Label:
+                    size_hint_x: 3
+                    id: login_label
+                    font_size: "25sp"
+                    halign: "center"
+                    valign: "middle"
+                    text_size: self.size
+            
+            # ROW 2
+            BoxLayout:
+                size_hint_y: 1
+
+                Switch:
+                    size_hint_x: 1
+                    id: store_login_switch
+                    disabled: True
+
+                Label:  
+                    size_hint_x: 3
+                    id: store_login_label
+                    text: "Auswahl speichern"
+                    font_size: "25sp"
+                    halign: "left"
+                    valign: "middle"
+                    text_size: self.size
+
+        
+        # SEPARATOR
+        BoxLayout:
+            size_hint_y: None
+            height: 2
+            canvas.before:
+                Color:
+                    rgba: 0.5, 0.5, 0.5, 1
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+
+        # LOGIN
+        BoxLayout:
+            id: login_layout
+            orientation: 'vertical'
+            size_hint_y: 8
+            padding: "25dp"
+            spacing: "20dp"
+
+            BoxLayout:
+                size_hint_y: 1
+                orientation: 'horizontal'
+
+                Label:
+                    id: department_label 
+                    size_hint_x: 1
+                    text: "Feuerwehr"
+                    font_size: "25sp"
+                    halign: "center"
+                    valign: "middle"
+                    text_size: self.size
+                
+                Label:  # placeholder
+                    size_hint_x: 1
+            
+            # DEPARTMENT
+            ScrollView:
+                size_hint_y: 3
+                id: department_scrollview
+                
+                BoxLayout:
+                    id: department_layout
+                    orientation: 'vertical'
+                    size_hint_y: None
+                    height: self.minimum_height
+                    spacing: "5dp"
+
+            #BoxLayout:
+            #    size_hint_y: 1
+            #    orientation: 'horizontal'
+            #
+            #    Label:
+            #        id: password_label 
+            #        size_hint_x: 1
+            #        text: "Password"
+            #        font_size: "25sp"
+            #        halign: "center"
+            #        valign: "middle"
+            #        text_size: self.size
+            #
+            #    Label:  # placeholder
+            #        size_hint_x: 1
+            #
+            #TextInput:
+            #    id: password_text
+            #    size_hint_y: 1
+            #    pos_hint: {'center_x': 0.5}
+            #    text_size: self.width, None
+            #    font_size: "25sp"
+            #    multiline: False
+            #
+            ## can be used for login errors or messages
+            #Label:  # placeholder
+            #    size_hint_y: 1
+            #
+            #Button:
+            #    id: login_button
+            #    size_hint_y: 1
+            #    text: "Login"
+            #    font_size: "25sp"
+
+
+<Fahrzeugkunde_Mode>:
+    name: "fahrzeugkunde_mode"
+
+    # IDs
+    modes_label: modes_label
+    modes_layout: modes_layout
+
+    # SCREEN
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: "10dp"
+        padding: "5dp"
+
+        # HEADER
+        BoxLayout:
+            size_hint_y: 1
+            spacing: "3dp"
+            orientation: 'horizontal'
+
+            Button:
+                size_hint_x: 1
+                text: "<"
+                font_size: "32sp"
+                on_release:
+                    root.go_back()
+    
+            Label:  # placeholder
+                size_hint_x: 2
+            
+            Label:
+                size_hint_x: 3
+                id: modes_label
+                font_size: "25sp"
+                halign: "center"
+                valign: "middle"
+                text_size: self.size
+            
+        
+        # SEPARATOR
+        BoxLayout:
+            size_hint_y: None
+            height: 2
+            canvas.before:
+                Color:
+                    rgba: 0.5, 0.5, 0.5, 1
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+
+        # MODES
+        BoxLayout:
+            id: modes_layout
+            orientation: 'vertical'
+            size_hint_y: 9
+            padding: "25dp"
+            spacing: "20dp"
+
+
 <Fahrzeugkunde_Menu>:
     name: "fahrzeugkunde_menu"
 
@@ -786,6 +994,8 @@
     
     # IDs
     country_label: country_label
+    store_selection_switch: store_selection_switch
+    store_selection_label: store_selection_label
     country_scrollview: country_scrollview
     country_layout: country_layout
 

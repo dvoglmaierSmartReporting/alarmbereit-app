@@ -1,7 +1,5 @@
 from kivy.app import App
 from kivy.uix.label import Label
-from kivy.uix.button import Button
-from kivy.uix.switch import Switch
 from kivy.uix.screenmanager import Screen
 
 from typing import cast
@@ -36,12 +34,11 @@ class Fahrzeugkunde_Menu(Screen):
             # continue game with selected firetruck
             screen = app_root.get_screen("fahrzeugkunde_training")
             screen.select_firetruck(instance.text.split(" ")[0])
-            # screen.forward_mode_2_fk_training(mode)
             screen.play()
 
         elif mode_training_new:
             change_screen_to("fahrzeugkunde_training_new", transition_direction="left")
-
+            # continue game with selected firetruck
             screen = app_root.get_screen("fahrzeugkunde_training_new")
             screen.select_firetruck(instance.text.split(" ")[0])
             screen.play()
@@ -51,11 +48,9 @@ class Fahrzeugkunde_Menu(Screen):
             # continue game with selected firetruck
             screen = app_root.get_screen("fahrzeugkunde_game")
             screen.select_firetruck(instance.text.split(" ")[0])
-            # screen.forward_mode_2_fk_game(mode)
             screen.play()
 
         elif mode_browse:
-            # change screen
             change_screen_to("fahrzeugkunde_browse", transition_direction="left")
             # continue game with selected firetruck
             screen = app_root.get_screen("fahrzeugkunde_browse")
@@ -64,7 +59,7 @@ class Fahrzeugkunde_Menu(Screen):
 
         elif mode_images:
             change_screen_to("fahrzeugkunde_images", transition_direction="left")
-
+            # continue game with selected firetruck
             screen = app_root.get_screen("fahrzeugkunde_images")
             screen.select_firetruck(instance.text.split(" ")[0])
             screen.load_image()
@@ -77,4 +72,4 @@ class Fahrzeugkunde_Menu(Screen):
         #     screen.load_image()
 
     def go_back(self, *args) -> None:
-        change_screen_to("start_menu")
+        change_screen_to("fahrzeugkunde_mode")
