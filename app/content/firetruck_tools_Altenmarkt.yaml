@@ -1,0 +1,329 @@
+LF8:
+  Layout: "7-Raum"
+  Abb: "42/1"
+  Tools:
+    Fahrer / GF:
+      - Handfunkgerät
+      - Winkerkelle
+      - Wärmebildkamera
+      - Einsatzleiterüberwurf
+      - Gruppenführerüberwurf
+      - Dreikantschlüssel
+    Mannschaft:
+      - Handfunkgerät
+      - Feuerlöscher
+      - Erste-Hilfe-Rucksack
+      - Pressluftatmer
+      - Rettungsleine
+      - Signalfahnen
+      - Handlampen
+      - Einweghandschuhe
+      - Bügelsäge
+      - Säbelsäge
+      - Erste-Hilfe-Koffer
+      - Patientenschutz
+      - Abschleppseil
+      - Trösterbär
+      - Warnüberwurf
+      - Absperrband
+      - Halligan-Tool
+      - Bolzenschneider
+      - Werkzeugkiste E
+      - Brechstange
+      - Spaten
+      - Getränke
+      - Krankenhausdecke
+      - Bindestränge
+      - Schäkel
+      - Einwegoverall
+    G1:
+      - TS 8/8
+      - Abgasschlauch f. TS
+      - Stabfast lang
+      - Stabfast kurz
+      - Glasmaster
+      - Kettensatz f. Spreizer
+      - Hydr. Rettungssatz
+      - Hydr. Zylinder lang
+      - Hydr. Zylinder kurz
+      - Unterleghölter
+      - Schwelleraufsatz
+      - Kantenschutz
+    G2:
+      - Stromerzeuger
+      - Abgasschlauch f. Stromerzeuger
+      - Motorketternsäge m. Zubehör
+      - Kombikanister
+      - Schnittschutz
+      - Kanister 5 l
+      - Trennschleifer m. Zubehör
+      - Trennscheiben
+      - Schutzbrille
+      - Zubehör f. Stativ
+      - Hitzeschutzkleidung
+      - Flutlichtstrahler
+      - Kabeltrommel 230 V
+      - Dreifachstecker
+      - Aufnahmebrücke
+    G3:
+      - Türöffnungsrucksack
+      - Reserveflasche
+      - Warndreieck
+      - Verkehrsleitkegel
+      - Blitzer
+      - Pressluftatmer
+      - Türmarkierungen
+    G4:
+      - C-Strahlrohr
+      - C-Hohlstrahlrohr
+      - B-Strahlrohr
+      - Stützkrümmer
+      - Seilschlauchhalter
+      - Stativ
+      - Tauchpumpe
+      - Montagewerkzeugkasten
+      - Standrohr
+      - Schachthaken
+      - Schuttmulde
+      - MicroCAFS
+      - Kupplungsschlüssel B
+      - Kupplungsschlüssel C
+      - Unterflur-Hydrantenschlüssel
+      - Wasserhahn C
+      - Gartenschlauch
+      - Spülmittel
+      - Übergangsstück A-B
+      - Systemtrenner
+      - Kugelhahn B
+    G5:
+      - Rundschlinge
+      - Greifzug
+      - Druckschlauch B
+      - Schlauchtragekorb
+      - Stufenhölzer
+      - Airbagsafe
+      - Bereitstellungplane
+    G6:
+      - Schnellangriff
+      - Schaumpistole f. Schnellangriff
+      - Druckschlauch C
+      - Druckschlauch B
+      - Hygieneeinheit
+      - Druckschlauch B m. Verteiler
+      - Verteiler
+    G7 / Heck:
+      - Saugschlauch A
+      - Saugkorb
+      - Laubschutz f. Saugkorb
+      - 5 m Druckschlauch B
+      - Kurbel f. Schnellangriff
+      - Halteleine
+      - Ventilleine
+      - Übergangsstück A-B
+      - Sammelstück
+      - Kupplungsschlüssel
+    Dach:
+      - Steckleiter
+      - Schleifkorbtrage
+      - Schlauchaufwickler
+      - Einreisshaken
+      - Ölbindemittel
+      - Ölbindeflies
+      - Dunggabel
+      - Mistgabel
+      - Schaufel
+      - Powermoon
+      - Vorschaltgerät f. Powermoon
+      - Stativ f. Powermoon
+      - Sichtschutz
+      - Besen
+      - Alu-Schaufel
+      - Abschleppstange
+      - Spineboard
+      - Zubehör f. Spineboard
+
+LF20:
+  Layout: "7-Raum"
+  Abb: "41/1"
+  Tools:
+    Fahrer / GF:
+      - Handlampe
+      - Handfunkgerät
+      - Einsatzleiterüberwurf
+      - Gruppenführerüberwurf
+    Mannschaft:
+      - Handfunkgerät
+      - Winkerkelle
+      - Wärmebildkamera
+      - Pressluftatmer
+      - Rettungsleine
+      - Warnüberwurf
+      - Erste-Hilfe-Rucksack
+      - Handlampe
+      - Ex-Ox-Meter
+      - Atemschutzüberwachung
+      - Atemschutzmaske
+      - Einweghandschuhe
+      - Türmarkierungen
+      - Getränke
+      - Tragetuch
+      - Krankenhausdecke
+      - Fluchthaube
+    G1:
+      - Überdruckentlüfter
+      - Bügelsäge
+      - Schäkel
+      - Axt
+      - Sarpine
+      - Brecheisen
+      - Halligan-Tool
+      - Spaltaxt
+      - Feuerwehraxt
+      - Bolzenschneider
+      - Warnzeichen Feuerwehr
+      - Verkehrsleitkegel
+      - Euro-Blitz
+      - Wasserwerfer mobil
+      - Spineboard
+      - Zubehör f. Spineboard
+      - Säbelsäge
+      - Ersatzsägeblatt f. Säbelsäge
+      - Ersatzkette
+      - Patientenhelm
+      - Schnittschutzhose
+      - Forsthelm
+      - Motorsäge
+      - Rettungssäge
+      - Handwerkzeug
+      - Feinstaubmaske
+      - Schutzbrille
+      - Reserveflasche
+      - Räummulden
+      - Kombikanister
+      - Ölbindemittel
+      - Rettungsweste
+      - Zubehör f. Tunnel
+      - Ölwehr
+      - VU-Koffer
+      - Bindestränge
+      - Rundschlinge
+      - Krankentrage
+      - Alu-Schaufel
+      - Straßenbesen
+    G2:
+      - Warnzeichen Feuerwehr
+      - Verkehrsleitkegel
+      - Euro-Blitz
+      - Stromerzeuger
+      - Betankungsschlauch
+      - Abgasschlauch f. Stromerzeuger
+      - Kanister 20 l
+      - Druckluftschlauch
+      - Stromhaspel m. Verteiler
+      - Schachthaken
+      - B-Hohlstrahlrohr m. Stützkrümmer
+      - C-Hohlstrahlrohr
+      - Schaumaufsatz
+      - Absperrband
+      - Schachtdeckelheber
+      - Gassperrschlüssel
+      - Stativ
+      - Treibstoffkanister 5 l
+      - Fluterbrücke
+      - Kabeltrommel 230 V
+      - Sturmverspannung
+      - LED Akku Leuchte
+      - Fluter
+      - Tauchpumpe
+      - Grossflächenleuchte
+      - Schornsteinwerkzeug
+      - Verlängerungskabel
+      - Deltabox
+      - FI-Schutzschalter
+      - Zubehör f. Tauchpumpe
+      - Leichenbergesack
+      - Sperrwerkzeug
+    G3:
+      - C-Druckschlauch
+      - B-Druckschlauch
+      - D-Druckschlauch 10 m
+      - Sprungretter
+      - Wasserbehälter 5000 l
+      - Fognail
+    G4:
+      - Verbandskasten
+      - Krankenhausdecke
+      - Gummistiefel
+      - Einwegoverall
+      - Spülmittelflasche
+      - Infektionsset
+      - Chemiehandschuhe
+      - Chemieschutzanzug leicht
+      - Hitzeschutzanzug
+      - Chemieschutz
+      - Lederhandschuhe
+      - Schachtabdeckung
+    G5:
+      - Saugkorb
+      - Laubschutz f. Saugkorb
+      - Hydroschild B
+      - Hydroschild C
+      - Druckbegrenzungsventil
+      - Sammelstück BBB-A
+      - Sammelstück BB-A
+      - Kugelhahn
+      - Systemtrenner
+      - Kupplungsschlüssel
+      - Rauchabschluss
+      - Arbeitsleine
+      - Rettungstrupptasche
+      - Druckschlauch B
+      - Schlauchtragekorb
+      - Schlauchhalter
+      - 5 m Druckschlauch B
+      - Druckschlauch B m. Verteiler
+      - Übergangsstück B-C
+    G6:
+      - Schnellangriff
+      - CO2-Löscher
+      - Pulverlöscher
+      - MicroCAFS
+      - Löscher PG
+      - Schaumrohr f. Schnellangriff
+      - Hygieneeinheit
+      - Druckluftschlauch
+      - Wasserschlauch
+      - Druckschlauch B
+      - Druckschlauch B m. Verteiler
+      - 5 m Druckschlauch B
+      - Übergangsstück B-C
+      - Übergangsstück C-D
+    G7 / Heck:
+      - Handfunkgerät
+      - Schlauchhaspel
+      - Standrohr
+      - Unterflur-Hydrantenschlüssel
+      - Oberflur-Hydrantenschlüssel
+      - Kupplungsschlüssel
+      - Systemtrenner
+      - Unterflur-Deckelhammer
+    Dach:
+      - Schiebeleiter
+      - Steckleiter
+      - Verbindungsteil
+      - Schleifkorbtrage
+      - Einreisshaken
+      - Gassperrschlüssel
+      - Wasserwerfer Dach
+      - Saugschlauch
+      - Abgasschlauch LKW
+      - Standrohr
+      - Oberflur-Hydrantenschlüssel
+      - Federstangen
+      - Spaten
+      - Feuerpatsche
+      - Misthaken
+      - Straßenbesen
+      - Schaufel
+      - Mistgabel
+      - Haspelkurbel

@@ -1,7 +1,9 @@
 import os
 
 # Get absolute path to the layouts asset folder
-ASSETS_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "assets", "layouts"))
+ASSETS_DIR = os.path.abspath(
+    os.path.join(os.path.dirname(__file__), "..", "assets", "layouts")
+)
 
 
 from kivy.app import App
@@ -82,27 +84,27 @@ def get_ruest_layout() -> floatButtons:
     ]
 
 
-def build_answer_layout(firetruck: str, calling_screen: str) -> FloatLayout:
+def build_answer_layout(room_layout: str, calling_screen: str) -> FloatLayout:
     # display background and buttons
     float = FloatLayout(size_hint=(1, 1))
 
-    if firetruck in ["RüstLösch", "Tank1", "Tank2", "TankDürrnberg", "BDLP-Tank1"]:
+    if room_layout in ["7-Raum"]:
         bgd_image = os.path.join(ASSETS_DIR, "truck.jpg")
         buttons = get_7_rooms_layout()
 
-    elif firetruck in ["Pumpe", "PumpeDürrnberg"]:
+    elif room_layout in ["5-Raum"]:
         bgd_image = os.path.join(ASSETS_DIR, "truck.jpg")
         buttons = get_5_rooms_layout()
 
-    elif firetruck in ["Leiter"]:
+    elif room_layout in ["Leiter"]:
         bgd_image = os.path.join(ASSETS_DIR, "leiter.jpg")
         buttons = get_leiter_layout()
 
-    elif firetruck in ["Rüst"]:
+    elif room_layout in ["Rüst", "Ruest"]:
         bgd_image = os.path.join(ASSETS_DIR, "ruest.jpg")
         buttons = get_ruest_layout()
 
-    elif firetruck in ["Voraus"]:
+    elif room_layout in ["Voraus"]:
         bgd_image = os.path.join(ASSETS_DIR, "voraus.jpg")
         buttons = get_voraus_layout()
 

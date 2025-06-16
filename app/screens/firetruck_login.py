@@ -19,12 +19,12 @@ class Fahrzeugkunde_Login(Screen):
 
         self.login_label = cast(Label, self.login_label)
         # self.login_button = cast(Button, self.login_button)
-        self.department_label = cast(Label, self.department_label)
-        self.department_layout = cast(BoxLayout, self.department_layout)
+        # self.city_label = cast(Label, self.city_label)
+        self.city_layout = cast(BoxLayout, self.city_layout)
 
         self.login_label.text = strings.LABEL_STR_LOGIN
         # self.login_button.text = strings.BUTTON_STR_LOGIN
-        self.department_label.text = strings.LABEL_STR_DEPARTMENT
+        # self.city_label.text = strings.LABEL_STR_DEPARTMENT
 
         # load available departments
         departments = [
@@ -47,7 +47,7 @@ class Fahrzeugkunde_Login(Screen):
                 disabled=department in departments_disabled,
             )
             btn.bind(on_release=self.on_button_release)
-            self.department_layout.add_widget(btn)
+            self.city_layout.add_widget(btn)
 
     def on_button_release(self, instance):
         change_screen_to("fahrzeugkunde_mode", transition_direction="left")

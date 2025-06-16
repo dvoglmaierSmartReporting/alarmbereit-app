@@ -6,7 +6,11 @@ from kivy.clock import Clock
 from random import shuffle
 from typing import cast
 
-from helper.functions import get_ToolQuestion_instances, change_screen_to
+from helper.functions import (
+    get_ToolQuestion_instances,
+    change_screen_to,
+    get_firetruck_layout_value,
+)
 from helper.file_handling import save_to_scores_file, get_score_value
 from helper.settings import Settings, Strings
 from helper.game_class import GameCore
@@ -18,6 +22,9 @@ strings = Strings()
 
 
 class Fahrzeugkunde_Training(Screen):
+    def select_city(self, selected_city: str):
+        self.selected_city = selected_city
+
     def select_firetruck(self, selected_firetruck: str):
         # troubleshooting: fix firetruck
         # self.selected_firetruck = "Tank1" "Rüst+Lösch"
@@ -25,6 +32,10 @@ class Fahrzeugkunde_Training(Screen):
 
         self.firetruck_label = cast(Label, self.firetruck_label)
         self.firetruck_label.text = selected_firetruck
+
+        self.room_layout = get_firetruck_layout_value(
+            selected_firetruck, self.selected_city
+        )
 
     def update_strike_label(self):
         self.strike_label = cast(Label, self.strike_label)
@@ -44,7 +55,7 @@ class Fahrzeugkunde_Training(Screen):
 
     def reset_tool_list(self):
         (self.firetruck_rooms, self.tool_questions) = get_ToolQuestion_instances(
-            self.selected_firetruck
+            self.selected_firetruck, self.selected_city
         )
 
         shuffle(self.tool_questions)
@@ -59,7 +70,9 @@ class Fahrzeugkunde_Training(Screen):
         self.reset_strike()
 
         self.current_high_strike = get_score_value(
-            self.selected_firetruck, "high_strike"
+            city=self.selected_city,
+            truck_or_comp=self.selected_firetruck,
+            key="high_strike",
         )
 
         self.update_high_strike_label()
@@ -83,7 +96,7 @@ class Fahrzeugkunde_Training(Screen):
 
         self.tool_label.text = self.current_tool_question.tool
 
-        float = build_answer_layout(self.selected_firetruck, "fahrzeugkunde_training")
+        float = build_answer_layout(self.room_layout, "fahrzeugkunde_training")
 
         self.ids.firetruck_rooms_layout.add_widget(float)
 
@@ -96,7 +109,10 @@ class Fahrzeugkunde_Training(Screen):
             self.current_high_strike = self.game.answers_correct_strike
             self.update_high_strike_label()
             save_to_scores_file(
-                self.selected_firetruck, "high_strike", self.game.answers_correct_strike
+                self.selected_city,
+                self.selected_firetruck,
+                "high_strike",
+                self.game.answers_correct_strike,
             )
 
         self.feedback_green = True

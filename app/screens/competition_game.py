@@ -129,6 +129,7 @@ class Bewerb_Game(Screen):
         # )
 
         self.current_high_score = get_score_value(
+            city="",
             firetruck=self.selected_competition,
             key="high_score",
             questions="competitions",

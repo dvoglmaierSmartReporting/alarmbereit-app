@@ -12,6 +12,9 @@ strings = Strings()
 
 
 class Fahrzeugkunde_Menu(Screen):
+    def select_city(self, selected_city: str):
+        self.selected_city = selected_city
+
     def on_button_release(self, instance):
         self.mode_label = cast(Label, self.mode_label)
         # on question selection, read mode label text from current screen
@@ -33,43 +36,45 @@ class Fahrzeugkunde_Menu(Screen):
             change_screen_to("fahrzeugkunde_training", transition_direction="left")
             # continue game with selected firetruck
             screen = app_root.get_screen("fahrzeugkunde_training")
+            screen.select_city(self.selected_city)
             screen.select_firetruck(instance.text.split(" ")[0])
             screen.play()
 
-        elif mode_training_new:
-            change_screen_to("fahrzeugkunde_training_new", transition_direction="left")
-            # continue game with selected firetruck
-            screen = app_root.get_screen("fahrzeugkunde_training_new")
-            screen.select_firetruck(instance.text.split(" ")[0])
-            screen.play()
+        # elif mode_training_new:
+        #     change_screen_to("fahrzeugkunde_training_new", transition_direction="left")
+        #     # continue game with selected firetruck
+        #     screen = app_root.get_screen("fahrzeugkunde_training_new")
+        #     screen.select_firetruck(instance.text.split(" ")[0])
+        #     screen.play()
 
         if mode_game:
             change_screen_to("fahrzeugkunde_game", transition_direction="left")
             # continue game with selected firetruck
             screen = app_root.get_screen("fahrzeugkunde_game")
+            screen.select_city(self.selected_city)
             screen.select_firetruck(instance.text.split(" ")[0])
             screen.play()
 
-        elif mode_browse:
-            change_screen_to("fahrzeugkunde_browse", transition_direction="left")
-            # continue game with selected firetruck
-            screen = app_root.get_screen("fahrzeugkunde_browse")
-            screen.select_firetruck(instance.text.split(" ")[0])
-            screen.display_all_tools()
+        # elif mode_browse:
+        #     change_screen_to("fahrzeugkunde_browse", transition_direction="left")
+        #     # continue game with selected firetruck
+        #     screen = app_root.get_screen("fahrzeugkunde_browse")
+        #     screen.select_firetruck(instance.text.split(" ")[0])
+        #     screen.display_all_tools()
 
-        elif mode_images:
-            change_screen_to("fahrzeugkunde_images", transition_direction="left")
-            # continue game with selected firetruck
-            screen = app_root.get_screen("fahrzeugkunde_images")
-            screen.select_firetruck(instance.text.split(" ")[0])
-            screen.load_image()
-
-        elif mode_exam:
-            change_screen_to("fahrzeugkunde_training", transition_direction="left")
-
-        #     screen = app.root.get_screen("fahrzeugkunde_exam")
+        # elif mode_images:
+        #     change_screen_to("fahrzeugkunde_images", transition_direction="left")
+        #     # continue game with selected firetruck
+        #     screen = app_root.get_screen("fahrzeugkunde_images")
         #     screen.select_firetruck(instance.text.split(" ")[0])
         #     screen.load_image()
+
+        # elif mode_exam:
+        #     change_screen_to("fahrzeugkunde_training", transition_direction="left")
+
+        # #     screen = app.root.get_screen("fahrzeugkunde_exam")
+        # #     screen.select_firetruck(instance.text.split(" ")[0])
+        # #     screen.load_image()
 
     def go_back(self, *args) -> None:
         change_screen_to("fahrzeugkunde_mode")

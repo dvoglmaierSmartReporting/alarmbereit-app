@@ -9,6 +9,7 @@ from helper.functions import (
     load_total_storage,
     mode_str2bool,
     change_screen_to,
+    get_firetruck_abbreviation_values,
 )
 from helper.settings import Strings
 
@@ -26,31 +27,24 @@ class Fahrzeugkunde_Mode(Screen):
         self.modes_label.text = strings.LABEL_STR_MODES
 
     def on_kv_post(self, base_widget):
-
         self.modes_layout.add_widget(self.add_firetruck_modi_widget())
 
-    def select_city(self):
-        raise NotImplementedError
+    def select_city(self, selected_city: str):
+        self.selected_city = selected_city
+
+        self.abbreviations = get_firetruck_abbreviation_values(self.selected_city)
 
     def add_firetruck_modi_widget(self):
         firetrucks_modi_widget = BoxLayout(
             orientation="vertical",
-            spacing="3dp",
+            spacing="5dp",
         )
 
-        firetrucks_modi_widget.add_widget(
-            Label(
-                size_hint=(1, 0.5),
-                text=strings.LABEL_STR_MODE,
-                font_size="32sp",
-                bold=True,
-            )
-        )
 
         ### BUTTON Übung ###
         firetruck_btn1 = Button(
             pos_hint={"center_x": 0.5},
-            text=f"{strings.BUTTON_STR_TRAINING} --->",
+            text=strings.BUTTON_STR_TRAINING,
             font_size="32sp",
         )
 
@@ -71,7 +65,7 @@ class Fahrzeugkunde_Mode(Screen):
         ### BUTTON Zeitdruck ###
         firetruck_btn2 = Button(
             pos_hint={"center_x": 0.5},
-            text=f"{strings.BUTTON_STR_GAME} --->",
+            text=strings.BUTTON_STR_GAME,
             font_size="32sp",
         )
 
@@ -196,8 +190,7 @@ class Fahrzeugkunde_Mode(Screen):
         ).ids.firetrucks_scrollview.scroll_y = 1
 
         # load available firetrucks
-        total_storage = load_total_storage()
-        raise NotImplementedError("add city selection to load storage")
+        total_storage = load_total_storage(self.selected_city)
         self.total_firetrucks = list(total_storage.keys())
 
         # create button for all firetrucks
@@ -250,7 +243,8 @@ class Fahrzeugkunde_Mode(Screen):
             self.add_firetruck_button(firetruck)
 
     def add_firetruck_button(self, firetruck: str, disabled: bool = False):
-        abbreviation = strings.trucks_hallein.get(firetruck, "")
+
+        abbreviation = self.abbreviations.get(firetruck, "")
         # Create a button with two strings, one centered and one at the bottom right
         btn = Button(
             text=f"{firetruck}{' '*3}[size=30]{abbreviation}[/size]",
@@ -263,6 +257,11 @@ class Fahrzeugkunde_Mode(Screen):
         )
         btn.bind(
             on_release=self.manager.get_screen("fahrzeugkunde_menu").on_button_release
+        )
+        btn.bind(
+            on_release=lambda instance: self.manager.get_screen(
+                "fahrzeugkunde_menu"
+            ).select_city(self.selected_city)
         )
 
         # Add the button to the layout

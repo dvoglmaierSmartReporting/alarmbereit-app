@@ -48,23 +48,25 @@ def get_user_data_dir() -> str:
     return get_running_app.user_data_dir
 
 
-def load_total_firetruck_storage() -> totalStorage:
-    default_file_path = (
-        "/".join(__file__.split("/")[:-2]) + "/content/firetruck_tools.yaml"
-    )
-    file_path = default_file_path
+def load_total_firetruck_storage(selected_city: str) -> totalStorage:
+    if selected_city == "Hallein":
+        content_file = "firetruck_tools_Hallein.yaml"
+    elif selected_city == "Bad Dürrnberg":
+        content_file = "firetruck_tools_Dürrnberg.yaml"
+    elif selected_city == "Altenmarkt a.d. Alz":
+        content_file = "firetruck_tools_Altenmarkt.yaml"
 
-    custom_file_path = os.path.join(
-        get_user_data_dir(),
-        "custom_firetruck_tools.yaml",
-    )
-    custom_file_exists = os.path.exists(custom_file_path)
+    file_path = "/".join(__file__.split("/")[:-2]) + "/content/" + content_file
 
-    # main.cfg is source-of-truth for firetruck content and scores
-    config = read_main_cfg()
-    if not config.get("content", {}).get("use_default", {}) and custom_file_exists:
-
-        file_path = custom_file_path
+    # custom_file_path = os.path.join(
+    #     get_user_data_dir(),
+    #     "custom_firetruck_tools.yaml",
+    # )
+    # custom_file_exists = os.path.exists(custom_file_path)
+    # # main.cfg is source-of-truth for firetruck content and scores
+    # config = read_main_cfg()
+    # if not config.get("content", {}).get("use_default", {}) and custom_file_exists:
+    #     file_path = custom_file_path
 
     return load_from_yaml(file_path)
 
@@ -74,11 +76,11 @@ def load_bdlp_storage() -> totalStorage:
     return load_from_yaml(default_file_path)
 
 
-def load_total_storage() -> totalStorage:
-    output = load_total_firetruck_storage()
+def load_total_storage(selected_city: str) -> totalStorage:
+    output = load_total_firetruck_storage(selected_city)
 
-    # add BDLP content for default and custom firetruck contents
-    output.update(load_bdlp_storage())
+    # # add BDLP content for default and custom firetruck contents
+    # output.update(load_bdlp_storage())
     return output
 
 
@@ -119,43 +121,55 @@ def read_scores_file() -> dict:
     )
     file_path = scores_file_path
 
-    custom_scores_file_path = os.path.join(
-        get_user_data_dir(),
-        "custom_scores.yaml",
-    )
-    custom_scores_exists = os.path.exists(custom_scores_file_path)
-
-    config = read_main_cfg()
-
-    if not config.get("content", {}).get("use_default", {}) and custom_scores_exists:
-        file_path = custom_scores_file_path
+    # custom_scores_file_path = os.path.join(
+    #     get_user_data_dir(),
+    #     "custom_scores.yaml",
+    # )
+    # custom_scores_exists = os.path.exists(custom_scores_file_path)
+    # config = read_main_cfg()
+    # if not config.get("content", {}).get("use_default", {}) and custom_scores_exists:
+    #     file_path = custom_scores_file_path
 
     return load_from_yaml(file_path)
 
 
-def get_score_value(firetruck: str, key: str, questions: str = "firetrucks") -> int:
-    return read_scores_file().get(questions, {}).get(firetruck, {}).get(key, {})
+def get_score_value(
+    city: str, truck_or_comp: str, key: str, questions: str = "firetrucks"
+) -> int:
+    if questions == "competitions":
+        return read_scores_file().get(questions, {}).get(truck_or_comp, {}).get(key, 0)
+    elif questions == "firetrucks":
+        return (
+            read_scores_file()
+            .get(questions, {})
+            .get(city, {})
+            .get(truck_or_comp, {})
+            .get(key, 0)
+        )
 
 
 def save_to_scores_file(
-    firetruck: str, key: str, value: int, questions: str = "firetrucks"
+    city: str, firetruck: str, key: str, value: int, questions: str = "firetrucks"
 ) -> None:
     content = read_scores_file()
 
     if not questions in content.keys():
         raise ValueError(f"Questions {questions} not found in scores.yaml")
 
-    if not firetruck in content.get(questions, {}).keys():
+    if not city in content.get(questions, {}).keys():
+        raise ValueError(f"City {city} not found in scores.yaml > {questions}")
+
+    if not firetruck in content.get(questions, {}).get(city, {}).keys():
         raise ValueError(
-            f"Firetruck {firetruck} not found in scores.yaml > {questions}"
+            f"Firetruck {firetruck} not found in scores.yaml > {questions} > {city}"
         )
 
-    if not key in content.get(questions, {}).get(firetruck, {}).keys():
+    if not key in content.get(questions, {}).get(city, {}).get(firetruck, {}).keys():
         raise ValueError(
-            f"Key {key} not found in scores.yaml > {questions} > {firetruck}"
+            f"Key {key} not found in scores.yaml > {questions} > {city} > {firetruck}"
         )
 
-    content[questions][firetruck][key] = value
+    content[questions][city][firetruck][key] = value
 
     #
     # competition scores are to be added in both scores files (if custom exists)
@@ -168,28 +182,27 @@ def save_to_scores_file(
         get_user_data_dir(),
         "scores.yaml",
     )
-    custom_scores_file_path = os.path.join(
-        get_user_data_dir(),
-        "custom_scores.yaml",
-    )
-    custom_scores_exists = os.path.exists(custom_scores_file_path)
+    # custom_scores_file_path = os.path.join(
+    #     get_user_data_dir(),
+    #     "custom_scores.yaml",
+    # )
+    # custom_scores_exists = os.path.exists(custom_scores_file_path)
 
     file_paths = [scores_file_path]
 
-    config = read_main_cfg()
-
+    # config = read_main_cfg()
     # overwrite and only update custom firetruck scores
     # it's assumed the file was already created
-    if (
-        questions == "firetrucks"
-        and not config.get("content", {}).get("use_default", {})
-        and custom_scores_exists
-    ):
-        file_paths = [custom_scores_file_path]
+    # if (
+    #     questions == "firetrucks"
+    #     and not config.get("content", {}).get("use_default", {})
+    #     and custom_scores_exists
+    # ):
+    #     file_paths = [custom_scores_file_path]
 
-    # update both scores files' competitions high scores
-    elif questions == "competitions" and custom_scores_exists:
-        file_paths.append(custom_scores_file_path)
+    # # update both scores files' competitions high scores
+    # elif questions == "competitions" and custom_scores_exists:
+    #     file_paths.append(custom_scores_file_path)
 
     for file_path in file_paths:
         save_to_yaml(file_path, content)

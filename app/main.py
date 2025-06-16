@@ -79,36 +79,6 @@ class Start_Menu(Screen):
             size_hint=(1, 3), orientation="vertical", spacing="5dp", padding="20dp"
         )
 
-        # firetrucks_modi_widget = self.add_firetruck_modi_widget()
-
-        competitions_modi_widget = self.add_competition_modi_widget()
-
-        # Part of content_layout
-        questions_label = Label(
-            size_hint=(1, 0.5),
-            text=strings.LABEL_STR_QUESTIONS,
-            font_size="32sp",
-            bold=True,
-        )
-        # firetrucks_button = CustomContentToggleButton(
-        #     size_hint=(1, 1),
-        #     group="content_button",
-        #     text=strings.BUTTON_STR_FIRETRUCKS,
-        #     font_size="32sp",
-        #     container=self.display_container,
-        #     display_widget=firetrucks_modi_widget,
-        # )
-
-        competitions_button = CustomContentToggleButton(
-            size_hint=(1, 1),
-            group="content_button",
-            text=strings.BUTTON_STR_COMPETITIONS,
-            font_size="32sp",
-            container=self.display_container,
-            display_widget=competitions_modi_widget,
-        )
-
-        ###
         fahrzeuge_button = Button(
             size_hint=(1, 1),
             text=strings.BUTTON_STR_FIRETRUCKS,
@@ -118,18 +88,16 @@ class Start_Menu(Screen):
         if True:
             # transition to login screen
             fahrzeuge_button.bind(
-                on_release=lambda instance: change_screen_to("fahrzeugkunde_login", "left")
+                on_release=lambda instance: change_screen_to(
+                    "fahrzeugkunde_login", "left"
+                )
             )
         else:
             fahrzeuge_button.bind(
-                on_release=lambda instance: change_screen_to("fahrzeugkunde_menu", "left")
+                on_release=lambda instance: change_screen_to(
+                    "fahrzeugkunde_menu", "left"
+                )
             )
-
-        # firetruck_btn3.bind(   # type: ignore[attr-defined]
-        #     on_release=lambda instance: self.forward_mode2menu_manually(
-        #         "fahrzeugkunde_menu", strings.BUTTON_STR_BROWSE
-        #     )
-        # )
 
         bewerbe_button = Button(
             size_hint=(1, 1),
@@ -155,167 +123,9 @@ class Start_Menu(Screen):
         )
 
         # Add widgets to layout
-        # self.content_layout.add_widget(questions_label)
-        # self.content_layout.add_widget(firetrucks_button)
-        # self.content_layout.add_widget(competitions_button)
-        # self.content_layout.add_widget(self.display_container)
-
         self.content_layout.add_widget(fahrzeuge_button)
         self.content_layout.add_widget(bewerbe_button)
         self.content_layout.add_widget(placeholder1)
-
-    # def add_firetruck_modi_widget(self):
-    #     firetrucks_modi_widget = BoxLayout(
-    #         orientation="vertical",
-    #         spacing="3dp",
-    #     )
-
-    #     firetrucks_modi_widget.add_widget(
-    #         Label(
-    #             size_hint=(1, 0.5),
-    #             text=strings.LABEL_STR_MODE,
-    #             font_size="32sp",
-    #             bold=True,
-    #         )
-    #     )
-
-    #     ### BUTTON Übung ###
-    #     firetruck_btn1 = Button(
-    #         pos_hint={"center_x": 0.5},
-    #         text=f"{strings.BUTTON_STR_TRAINING} --->",
-    #         font_size="32sp",
-    #     )
-
-    #     firetruck_btn1.bind(  # type: ignore[attr-defined]
-    #         on_release=lambda instance: self.forward_mode2menu_manually(
-    #             "fahrzeugkunde_menu", strings.BUTTON_STR_TRAINING
-    #         )
-    #     )
-
-    #     firetruck_btn1.bind(  # type: ignore[attr-defined]
-    #         on_release=lambda instance: self.update_firetruck_buttons(
-    #             strings.BUTTON_STR_TRAINING
-    #         )
-    #     )
-
-    #     firetrucks_modi_widget.add_widget(firetruck_btn1)
-
-    #     ### BUTTON Zeitdruck ###
-    #     firetruck_btn2 = Button(
-    #         pos_hint={"center_x": 0.5},
-    #         text=f"{strings.BUTTON_STR_GAME} --->",
-    #         font_size="32sp",
-    #     )
-
-    #     firetruck_btn2.bind(  # type: ignore[attr-defined]
-    #         on_release=lambda instance: self.forward_mode2menu_manually(
-    #             "fahrzeugkunde_menu", strings.BUTTON_STR_GAME
-    #         )
-    #     )
-
-    #     firetruck_btn2.bind(  # type: ignore[attr-defined]
-    #         on_release=lambda instance: self.update_firetruck_buttons(
-    #             strings.BUTTON_STR_GAME
-    #         )
-    #     )
-
-    #     firetrucks_modi_widget.add_widget(firetruck_btn2)
-
-    #     # ### BUTTON Stöbern ###
-    #     # firetruck_btn3 = Button(
-    #     #     pos_hint={"center_x": 0.5},
-    #     #     text=f"{strings.BUTTON_STR_BROWSE} --->",
-    #     #     font_size="32sp",
-    #     # )
-
-    #     # firetruck_btn3.bind(   # type: ignore[attr-defined]
-    #     #     on_release=lambda instance: self.forward_mode2menu_manually(
-    #     #         "fahrzeugkunde_menu", strings.BUTTON_STR_BROWSE
-    #     #     )
-    #     # )
-
-    #     # firetruck_btn3.bind(   # type: ignore[attr-defined]
-    #     #     on_release=lambda instance: self.update_firetruck_buttons(
-    #     #         strings.BUTTON_STR_BROWSE
-    #     #     )
-    #     # )
-
-    #     # firetrucks_modi_widget.add_widget(firetruck_btn3)
-
-    #     # ### BUTTON Bilder ###
-    #     # firetruck_btn4 = Button(
-    #     #     pos_hint={"center_x": 0.5},
-    #     #     text=f"{strings.BUTTON_STR_IMAGES} --->",
-    #     #     font_size="32sp",
-    #     # )
-
-    #     # firetruck_btn4.bind(   # type: ignore[attr-defined]
-    #     #     on_release=lambda instance: self.forward_mode2menu_manually(
-    #     #         "fahrzeugkunde_menu", strings.BUTTON_STR_IMAGES
-    #     #     )
-    #     # )
-
-    #     # firetruck_btn4.bind(   # type: ignore[attr-defined]
-    #     #     on_release=lambda instance: self.update_firetruck_buttons(
-    #     #         strings.BUTTON_STR_IMAGES
-    #     #     )
-    #     # )
-
-    #     # firetrucks_modi_widget.add_widget(firetruck_btn4)
-
-    #     # ### BUTTON Leistungsprüfung ###
-    #     # firetruck_btn5 = Button(
-    #     #     pos_hint={"center_x": 0.5},
-    #     #     text=f"{strings.BUTTON_STR_EXAM} --->",
-    #     #     font_size="32sp",
-    #     # )
-
-    #     # firetruck_btn5.bind(  # type: ignore[attr-defined]
-    #     #     on_release=lambda instance: self.forward_mode2menu_manually(
-    #     #         "fahrzeugkunde_menu", strings.BUTTON_STR_EXAM
-    #     #     )
-    #     # )
-
-    #     # firetruck_btn5.bind(  # type: ignore[attr-defined]
-    #     #     on_release=lambda instance: self.update_firetruck_buttons(
-    #     #         strings.BUTTON_STR_EXAM
-    #     #     )
-    #     # )
-
-    #     # firetrucks_modi_widget.add_widget(firetruck_btn5)
-
-    #     # ### BUTTON Übung mit Bildern ###
-    #     # firetruck_btn6 = Button(
-    #     #     pos_hint={"center_x": 0.5},
-    #     #     text=f"{strings.BUTTON_STR_TRAINING_NEW} --->",
-    #     #     font_size="32sp",
-    #     #     # Modus not ready yet
-    #     #     disabled=True,
-    #     # )
-
-    #     # firetruck_btn6.bind(  # type: ignore[attr-defined]
-    #     #     on_release=lambda instance: self.forward_mode2menu_manually(
-    #     #         "fahrzeugkunde_menu", strings.BUTTON_STR_TRAINING_NEW
-    #     #     )
-    #     # )
-
-    #     # firetruck_btn6.bind(  # type: ignore[attr-defined]
-    #     #     on_release=lambda instance: self.update_firetruck_buttons(
-    #     #         strings.BUTTON_STR_TRAINING_NEW
-    #     #     )
-    #     # )
-
-    #     # firetrucks_modi_widget.add_widget(firetruck_btn6)
-
-    #     ### BUTTON Placeholder ###
-    #     firetrucks_modi_widget.add_widget(
-    #         Label(  # placeholder
-    #             size_hint=(1, 1),
-    #             font_size="32sp",
-    #         )
-    #     )
-
-    #     return firetrucks_modi_widget
 
     def add_competition_modi_widget(self):
         ### WIDGET ###
@@ -324,19 +134,10 @@ class Start_Menu(Screen):
             spacing="3dp",
         )
 
-        competitions_modi_widget.add_widget(
-            Label(
-                size_hint=(1, 0.5),
-                text=strings.LABEL_STR_MODE,
-                font_size="32sp",
-                bold=True,
-            )
-        )
-
         ### BUTTON Übung ###
         competition_btn1 = Button(
             pos_hint={"center_x": 0.5},
-            text=f"{strings.BUTTON_STR_TRAINING} --->",
+            text=strings.BUTTON_STR_TRAINING,
             font_size="32sp",
         )
 
@@ -346,30 +147,18 @@ class Start_Menu(Screen):
             )
         )
 
-        competition_btn1.bind(  # type: ignore[attr-defined]
-            on_release=lambda instance: self.update_firetruck_buttons(
-                strings.BUTTON_STR_TRAINING
-            )
-        )
-
         competitions_modi_widget.add_widget(competition_btn1)
 
         ### BUTTON Zeitdruck ###
         competition_btn2 = Button(
             pos_hint={"center_x": 0.5},
-            text=f"{strings.BUTTON_STR_GAME} --->",
+            text=strings.BUTTON_STR_GAME,
             font_size="32sp",
         )
 
         competition_btn2.bind(  # type: ignore[attr-defined]
             on_release=lambda instance: self.forward_mode2menu_manually(
                 "bewerb_menu", strings.BUTTON_STR_GAME
-            )
-        )
-
-        competition_btn2.bind(  # type: ignore[attr-defined]
-            on_release=lambda instance: self.update_firetruck_buttons(
-                strings.BUTTON_STR_GAME
             )
         )
 
@@ -397,118 +186,7 @@ class Start_Menu(Screen):
 
         self.manager.get_screen("info_screen").ids.info_text_label.text = info_text
 
-    def add_firetruck_button(self, firetruck: str, disabled: bool = False):
-        abbreviation = strings.trucks_hallein.get(firetruck, "")
-        # Create a button with two strings, one centered and one at the bottom right
-        btn = Button(
-            text=f"{firetruck}{' '*3}[size=30]{abbreviation}[/size]",
-            font_size="32sp",
-            markup=True,  # Enable markup for custom text positioning
-            size_hint_y=None,
-            height=150,
-            size_hint_x=1,
-            disabled=disabled,
-        )
-        btn.bind(  # type: ignore[attr-defined]
-            on_release=self.manager.get_screen("fahrzeugkunde_menu").on_button_release
-        )
 
-        # Add the button to the layout
-        self.manager.get_screen("fahrzeugkunde_menu").ids.firetrucks_layout.add_widget(
-            btn
-        )
-
-    def update_firetruck_buttons(self, mode_name: str):
-        self.manager.get_screen(
-            "fahrzeugkunde_menu"
-        ).ids.firetrucks_scrollview.scroll_y = 1
-
-        # load available firetrucks
-        total_storage = load_total_storage()
-        self.total_firetrucks = list(total_storage.keys())
-
-        # create button for all firetrucks
-        self.manager.get_screen(
-            "fahrzeugkunde_menu"
-        ).ids.firetrucks_layout.clear_widgets()
-
-        mode = mode_str2bool(mode_name.strip())
-        (
-            mode_training,
-            mode_training_new,
-            mode_game,
-            mode_browse,
-            mode_images,
-            mode_exam,
-        ) = mode
-
-        if mode_training or mode_game:
-            # excluded_firetrucks = ["BDLP-Tank1", "TestTruck"]
-            excluded_firetrucks = ["BDLP-Tank1"]
-            disabled_firetrucks = []  # ["Tank2"]
-
-            for firetruck in self.total_firetrucks:
-
-                if firetruck in excluded_firetrucks:
-                    # skip BDLP and always add at the bottom of the list
-                    continue
-
-                if firetruck in disabled_firetrucks:
-                    self.add_firetruck_button(firetruck, disabled=True)
-                else:
-                    self.add_firetruck_button(firetruck)
-
-        elif mode_browse:
-            for firetruck in self.total_firetrucks:
-                self.add_firetruck_button(firetruck)
-
-        elif mode_images:
-            firetruck = "RüstLösch"
-            self.add_firetruck_button(firetruck)
-
-        elif mode_exam:
-            # create button for BDLP-Tank1
-            firetruck = "BDLP-Tank1"
-            self.add_firetruck_button(firetruck)
-
-        elif mode_training_new:
-            # create button for BDLP-Tank1
-            firetruck = "TestTruck"
-            self.add_firetruck_button(firetruck)
-
-
-class CustomContentToggleButton(ToggleButton):
-    def __init__(self, container, display_widget, **kwargs):
-        super().__init__(**kwargs)
-        self.container = (
-            container  # Reference to the container for displaying the widget
-        )
-        self.display_widget = display_widget  # The widget to show when selected
-        self.scheduled_event = None  # To store the scheduled event for cancellation
-
-    def on_touch_up(self, touch):
-        super_result = super(CustomContentToggleButton, self).on_touch_up(touch)
-
-        if self.collide_point(*touch.pos):  # Ensure the button was actually clicked
-            if self.state == "down":
-                # If there's a scheduled event, cancel it to avoid duplicate scheduling
-                if self.scheduled_event:
-                    Clock.unschedule(self.scheduled_event)
-
-                self.container.clear_widgets()  # Remove any previous content
-
-                # Schedule the widget appearance with a 0.5-second delay
-                self.scheduled_event = Clock.schedule_once(self.show_widget, 0.3)
-            else:
-                # If button is deselected, cancel any scheduled event and remove the widget immediately
-                if self.scheduled_event:
-                    Clock.unschedule(self.scheduled_event)
-                self.container.clear_widgets()
-
-        return super_result
-
-    def show_widget(self, dt):
-        self.container.add_widget(self.display_widget)  # Add the new content
 
 
 class FeuerwehrApp(App):
@@ -595,7 +273,7 @@ class FeuerwehrApp(App):
                         self.sm.transition.direction = "right"
                         self.sm.current = "start_menu"
                     return True
-                
+
                 elif current in [
                     "fahrzeugkunde_mode",
                 ]:
@@ -606,7 +284,7 @@ class FeuerwehrApp(App):
                         self.sm.transition.direction = "right"
                         self.sm.current = "start_menu"
                     return True
-                
+
                 elif current in [
                     "fahrzeugkunde_menu",
                 ]:

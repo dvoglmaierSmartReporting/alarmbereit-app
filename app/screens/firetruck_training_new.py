@@ -60,7 +60,9 @@ class Fahrzeugkunde_Training_New(Screen):
 
         self.reset_strike()
 
+        # TODO: update!
         self.current_high_strike = get_score_value(
+            "Halleiin"
             self.selected_firetruck, "high_strike"
         )
 

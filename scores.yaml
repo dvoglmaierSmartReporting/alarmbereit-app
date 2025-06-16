@@ -28,33 +28,39 @@ competitions:
   TechnLP Stufe II:
     high_score: 0
 firetrucks:
-  Leiter:
-    high_score: 0
-    high_strike: 0
-  Pumpe:
-    high_score: 0
-    high_strike: 0
-  "PumpeD\xFCrrnberg":
-    high_score: 0
-    high_strike: 0
-  "R\xFCst":
-    high_score: 0
-    high_strike: 0
-  "R\xFCstL\xF6sch":
-    high_score: 0
-    high_strike: 0
-  Tank1:
-    high_score: 0
-    high_strike: 0
-  Tank2:
-    high_score: 0
-    high_strike: 0
-  "TankD\xFCrrnberg":
-    high_score: 0
-    high_strike: 0
-  Voraus:
-    high_score: 0
-    high_strike: 0
-  "Voraus+\xD6lanh.":
-    high_score: 0
-    high_strike: 0
+  Altenmarkt:
+    LF20:
+      high_score: 0
+      high_strike: 0
+    LF8:
+      high_score: 0
+      high_strike: 0
+  "D\xFCrrnberg":
+    Pumpe:
+      high_score: 0
+      high_strike: 0
+    Tank:
+      high_score: 0
+      high_strike: 0
+  Hallein:
+    Leiter:
+      high_score: 0
+      high_strike: 0
+    Pumpe:
+      high_score: 0
+      high_strike: 0
+    "R\xFCst":
+      high_score: 0
+      high_strike: 0
+    "R\xFCstL\xF6sch":
+      high_score: 0
+      high_strike: 0
+    Tank1:
+      high_score: 0
+      high_strike: 0
+    Tank2:
+      high_score: 0
+      high_strike: 0
+    Voraus:
+      high_score: 0
+      high_strike: 0
