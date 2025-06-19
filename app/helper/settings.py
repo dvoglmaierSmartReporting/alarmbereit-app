@@ -25,6 +25,12 @@ class Settings:
 class Strings:
     def __init__(self) -> None:
 
+        # login
+        self.LABEL_STR_LOGIN = "Login"
+        # self.BUTTON_STR_LOGIN = "Login"
+        # self.LABEL_STR_CITY = "Freiwillige Feuerwehr"
+        self.BUTTON_STR_STORE_SELECTION = "Auswahl speichern"
+
         # Start_Menu mode names
         self.LABEL_STR_QUESTIONS = "Mission"
 
@@ -52,11 +58,6 @@ class Strings:
         self.TITLE_DIALOG_POPUP = "Datei auswählen"
         self.BUTTON_DIALOG_POPUP_CANCEL = "Abbrechen"
         self.BUTTON_DIALOG_POPUP_CONFIRM = "Auswählen"
-
-        # firetruck login
-        self.LABEL_STR_LOGIN = "Freiwillige Feuerwehr"
-        self.BUTTON_STR_LOGIN = "Login"
-        self.LABEL_STR_DEPARTMENT = "Freiwillige Feuerwehr"
 
         # firetruck modes
         self.LABEL_STR_MODES = "Lernpfad"

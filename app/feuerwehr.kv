@@ -1,14 +1,14 @@
 #:kivy 2.3.0
 
 
-<Start_Menu>:
-    name: "start_menu"
-    
+<Login>:
+    name: "login"
+
     # IDs
-    content_layout: content_layout
-    info_button: info_button
-    acknowledgement_button: acknowledgement_button
-    #settings_button: settings_button
+    login_label: login_label
+    login_layout: login_layout
+    city_scrollview: city_scrollview
+    city_layout: city_layout
 
     # LOGO
     FloatLayout:
@@ -18,6 +18,95 @@
             size_hint: 0.45, 0.2  # 40% width, 20% height of screen
             pos_hint: {"x": 0, "y": 0.8}  # Stick to top-left
 
+    # SCREEN
+    BoxLayout:
+        orientation: 'vertical'
+        padding: "5dp"
+        spacing: "10dp"
+
+        # HEADER
+        BoxLayout:
+            size_hint_y: 2
+            spacing: "3dp"
+            orientation: 'vertical'
+
+            BoxLayout:
+                size_hint_y: 1
+
+                Label:
+                    id: login_label
+                    font_size: "25sp"
+                    halign: "center"
+                    valign: "middle"
+                    text_size: self.size
+            
+        # SEPARATOR
+        BoxLayout:
+            size_hint_y: None
+            height: 2
+            canvas.before:
+                Color:
+                    rgba: 0.5, 0.5, 0.5, 1
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+
+        # LOGIN
+        BoxLayout:
+            id: login_layout
+            orientation: 'vertical'
+            size_hint_y: 6
+            
+            # CITY
+            ScrollView:
+                size_hint_y: 3
+                id: city_scrollview
+                
+                BoxLayout:
+                    id: city_layout
+                    orientation: 'vertical'
+                    size_hint_y: None
+                    height: self.minimum_height
+                    spacing: "5dp"
+
+        # SEPARATOR
+        BoxLayout:
+            size_hint_y: None
+            height: 2
+            canvas.before:
+                Color:
+                    rgba: 0.5, 0.5, 0.5, 1
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+
+        # STORE SELECTION
+        BoxLayout:
+            id: store_selection_layout
+
+            Button:
+                id: store_selection_button
+                font_size: "32sp"
+                on_release:
+                    root.manager.get_screen('login').store_selection()
+
+
+<Start_Menu>:
+    name: "start_menu"
+    
+    # IDs
+    content_layout: content_layout
+    info_button: info_button
+    acknowledgement_button: acknowledgement_button
+    settings_button: settings_button
+
+    # LOGO
+    FloatLayout:
+        Image:
+            source: "assets/FFH_Logohalter_negativ.png"
+            fit_mode: "fill"  # or "contain" if preserving aspect is needed
+            size_hint: 0.45, 0.2  # 40% width, 20% height of screen
+            pos_hint: {"x": 0, "y": 0.8}  # Stick to top-left
 
     # SCREEN
     BoxLayout:
@@ -65,7 +154,7 @@
                 # SETTINGS BUTTON
                 Button:
                     size_hint_y: 1
-                    id: info_button
+                    id: settings_button
                     font_size: "20sp"
                     background_normal: ''
                     background_color: 0.2, 0.2, 0.2, 0.5
@@ -184,7 +273,6 @@
                 text_size: self.width, None
                 height: self.texture_size[1]
                 markup: True
-
 
 
 <Settings_Screen>:
@@ -364,136 +452,6 @@
                 on_release:
                     root.load(filechooser.path, filechooser.selection)
 
-
-<Fahrzeugkunde_Login>:
-    name: "fahrzeugkunde_login"
-
-    # IDs
-    login_label: login_label
-    store_login_switch: store_login_switch
-    store_login_label: store_login_label
-    login_layout: login_layout
-    city_scrollview: city_scrollview
-    city_layout: city_layout
-    #password_label: password_label
-    #password_text: password_text
-    #login_button: login_button
-
-    # SCREEN
-    BoxLayout:
-        orientation: 'vertical'
-        padding: "5dp"
-        spacing: "10dp"
-
-        # HEADER
-        BoxLayout:
-            size_hint_y: 2
-            spacing: "3dp"
-            orientation: 'vertical'
-
-            # ROW 1
-            BoxLayout:
-                size_hint_y: 1
-
-                Button:
-                    size_hint_x: 1
-                    text: "<"
-                    font_size: "32sp"
-                    on_release:
-                        root.go_back()
-        
-                Label:  # placeholder
-                    size_hint_x: 2
-                
-                Label:
-                    size_hint_x: 3
-                    id: login_label
-                    font_size: "25sp"
-                    halign: "center"
-                    valign: "middle"
-                    text_size: self.size
-            
-            # ROW 2
-            BoxLayout:
-                size_hint_y: 1
-
-                Switch:
-                    size_hint_x: 3
-                    id: store_login_switch
-                   # disabled: True
-
-                Label:  
-                    size_hint_x: 3
-                    id: store_login_label
-                    text: "Auswahl speichern"
-                    font_size: "25sp"
-                    halign: "left"
-                    valign: "middle"
-                    text_size: self.size
-
-        
-        # SEPARATOR
-        BoxLayout:
-            size_hint_y: None
-            height: 2
-            canvas.before:
-                Color:
-                    rgba: 0.5, 0.5, 0.5, 1
-                Rectangle:
-                    size: self.size
-                    pos: self.pos
-
-        # LOGIN
-        BoxLayout:
-            id: login_layout
-            orientation: 'vertical'
-            size_hint_y: 8
-            
-            # CITY
-            ScrollView:
-                size_hint_y: 3
-                id: city_scrollview
-                
-                BoxLayout:
-                    id: city_layout
-                    orientation: 'vertical'
-                    size_hint_y: None
-                    height: self.minimum_height
-                    spacing: "5dp"
-
-            #BoxLayout:
-            #    size_hint_y: 1
-            #    orientation: 'horizontal'
-            #
-            #    Label:
-            #        id: password_label 
-            #        size_hint_x: 1
-            #        text: "Password"
-            #        font_size: "25sp"
-            #        halign: "center"
-            #        valign: "middle"
-            #        text_size: self.size
-            #
-            #    Label:  # placeholder
-            #        size_hint_x: 1
-            #
-            #TextInput:
-            #    id: password_text
-            #    size_hint_y: 1
-            #    pos_hint: {'center_x': 0.5}
-            #    text_size: self.width, None
-            #    font_size: "25sp"
-            #    multiline: False
-            #
-            ## can be used for login errors or messages
-            #Label:  # placeholder
-            #    size_hint_y: 1
-            #
-            #Button:
-            #    id: login_button
-            #    size_hint_y: 1
-            #    text: "Login"
-            #    font_size: "25sp"
 
 
 <Fahrzeugkunde_Mode>:

@@ -29,10 +29,6 @@ class Settings_Screen(Screen):
             load_from_yaml(main_cfg_file_path).get("content").get("use_default")
         )
 
-        if not custom_file_exists and use_default:
-            # keep at using default and disable switch as file is missing
-            self.default_content_switch.active = True
-            self.default_content_switch.disabled = True
 
     def update_default_content_switch(self, switch, value):
         if value:
