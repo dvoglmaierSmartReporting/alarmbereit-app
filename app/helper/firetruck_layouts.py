@@ -98,7 +98,7 @@ def build_answer_layout(room_layout: str, calling_screen: str) -> FloatLayout:
         bgd_image = os.path.join(ASSETS_DIR, "truck.jpg")
         buttons = get_7_rooms_layout()
 
-    if room_layout in ["7-Raum-DE"]:
+    elif room_layout in ["7-Raum-DE"]:
         bgd_image = os.path.join(ASSETS_DIR, "truck.jpg")
         buttons = get_7_rooms_DE_layout()
 
@@ -119,7 +119,7 @@ def build_answer_layout(room_layout: str, calling_screen: str) -> FloatLayout:
         buttons = get_voraus_layout()
 
     else:
-        raise NotImplementedError
+        raise NotImplementedError("Layout not found.")
 
     background = Image(
         source=bgd_image,

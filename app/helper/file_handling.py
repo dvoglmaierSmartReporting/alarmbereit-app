@@ -125,6 +125,14 @@ def map_selected_city(city: str) -> str:
     return city
 
 
+def get_logo_file_path(selected_city: str) -> str:
+    if selected_city in ["Hallein", "Bad Dürrnberg"]:
+        return "assets/FFH_Logohalter_negativ.png"
+    if selected_city in ["Altenmarkt a.d. Alz"]:
+        return "assets/altenmarkt.jpg"
+    return "assets/FFH_Logohalter_negativ.png"
+
+
 def get_score_value(
     city: str,
     questions: str,

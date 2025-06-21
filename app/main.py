@@ -20,7 +20,6 @@ from screens.login_screen import Login
 from screens.info_screen import Info_Screen
 from screens.acknowledgement_screen import Acknowledgement_Screen
 
-# from screens.settings_screen import Settings_Screen
 from screens.firetruck_mode import Fahrzeugkunde_Mode
 from screens.firetruck_menu import Fahrzeugkunde_Menu
 from screens.firetruck_training import Fahrzeugkunde_Training
@@ -56,7 +55,6 @@ class FeuerwehrApp(App):
             self.sm.add_widget(Start_Menu())
             self.sm.add_widget(Info_Screen())
             self.sm.add_widget(Acknowledgement_Screen())
-            # self.sm.add_widget(Settings_Screen())
             self.sm.add_widget(Fahrzeugkunde_Mode())
             self.sm.add_widget(Fahrzeugkunde_Menu())
             self.sm.add_widget(Fahrzeugkunde_Training())
@@ -113,9 +111,6 @@ class FeuerwehrApp(App):
                 elif current in [
                     "info_screen",
                     "acknowledgement_screen",
-                    # "settings_screen",
-                    # "fahrzeugkunde_login",
-                    # "bewerb_country",
                     "fahrzeugkunde_mode",
                     "bewerb_menu",
                 ]:
@@ -133,20 +128,6 @@ class FeuerwehrApp(App):
                     self.sm.transition.direction = "right"
                     self.sm.current = "fahrzeugkunde_menu"
                     return True
-
-                # elif current in [
-                #     "bewerb_menu",
-                # ]:
-                #     self.sm.transition.direction = "right"
-                #     self.sm.current = "start_menu"
-                #     return True
-
-                # elif current in [
-                #     "fahrzeugkunde_mode",
-                # ]:
-                #     self.sm.transition.direction = "right"
-                #     self.sm.current = "start_menu"
-                #     return True
 
                 elif current in [
                     "fahrzeugkunde_menu",

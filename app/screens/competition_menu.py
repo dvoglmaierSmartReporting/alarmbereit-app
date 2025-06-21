@@ -49,7 +49,7 @@ class Bewerb_Menu(Screen):
             btn.bind(on_release=self.on_button_release)
             self.ids.bewerbe_layout.add_widget(btn)
 
-    def on_enter(self):
+    def on_pre_enter(self):
         # Reset the scrollview to the top
         self.ids.bewerbe_layout_scrollview.scroll_y = 1
 

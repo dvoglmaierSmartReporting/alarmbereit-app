@@ -97,6 +97,7 @@
     name: "start_menu"
     
     # IDs
+    logo_layout: logo_layout
     content_layout: content_layout
     info_button: info_button
     acknowledgement_button: acknowledgement_button
@@ -105,7 +106,7 @@
     # LOGO
     FloatLayout:
         Image:
-            source: "assets/FFH_Logohalter_negativ.png"
+            id: logo_layout
             fit_mode: "fill"  # or "contain" if preserving aspect is needed
             size_hint: 0.45, 0.2  # 40% width, 20% height of screen
             pos_hint: {"x": 0, "y": 0.8}  # Stick to top-left
@@ -277,85 +278,6 @@
                 markup: True
 
 
-<Settings_Screen>:
-    name: "settings_screen"
-
-    # IDs
-    header_label: header_label
-    reset_city_button: reset_city_button
-    reset_country_button: reset_country_button
-
-    # SCREEN
-    BoxLayout:
-        orientation: 'vertical'
-        padding: "5dp"
-        spacing: "10dp"
-
-        # HEADER
-        BoxLayout:
-            size_hint_y: 1
-            spacing: "3dp"
-
-            Button:
-                size_hint_x: 1
-                text: "<"
-                font_size: "32sp"
-                on_release:
-                    #app.root.current = "start_menu"
-                    #root.manager.transition.direction = "right"
-                    root.go_back()
-            
-            Label: # placeholder
-                size_hint_x: 2
-
-            Label:
-                size_hint_x: 3
-                id: header_label
-                font_size: "25sp"
-                halign: "center"
-                valign: "middle"
-                text_size: self.size
-
-        # SEPARATOR
-        BoxLayout:
-            size_hint_y: None
-            height: 2
-            canvas.before:
-                Color:
-                    rgba: 0.5, 0.5, 0.5, 1
-                Rectangle:
-                    size: self.size
-                    pos: self.pos
-    
-        # SETTINGS
-        BoxLayout:
-            orientation: 'vertical'
-            size_hint_y: 9
-
-            Button:
-                id: reset_city_button
-                size_hint_y: 1
-                font_size: "32sp"
-                on_release:
-                    root.reset_city()
-
-            Button:
-                id: reset_country_button
-                size_hint_y: 1
-                font_size: "32sp"
-                on_release:
-                    root.reset_country()
-            
-            Label:
-                id: text_output
-                text: ""
-                font_size: "23sp"
-                text_size: self.size
-                show_errors: True
-                markup: True
-                size_hint_y: 3
-
-
 <Acknowledgement_Screen>:
     name: "acknowledgement_screen"
 
@@ -423,45 +345,21 @@
                 markup: True
 
 
-<LoadDialog>:
-    # IDs
-    cancel_button: cancel_button
-    load_button: load_button
-
-    BoxLayout:
-        size: root.size
-        pos: root.pos
-        orientation: "vertical"
-
-        FileChooserListView:
-            id: filechooser
-            filters: ['*.yaml', '*.yml']
-            size_hint: 1, 6
-            on_selection: root.on_selection(self, self.selection)
-
-        BoxLayout:
-            size_hint: 1, 1
-
-            Button:
-                id: cancel_button
-                font_size: "32sp"
-                on_release: 
-                    root.cancel()
-
-            Button:
-                id: load_button
-                font_size: "32sp"
-                on_release:
-                    root.load(filechooser.path, filechooser.selection)
-
-
-
 <Fahrzeugkunde_Mode>:
     name: "fahrzeugkunde_mode"
 
     # IDs
+    logo_layout: logo_layout
     modes_label: modes_label
     modes_layout: modes_layout
+
+    # LOGO
+    FloatLayout:
+        Image:
+            id: logo_layout
+            fit_mode: "fill"  # or "contain" if preserving aspect is needed
+            size_hint: 0.225, 0.105  # 20% width, 10% height of screen
+            pos_hint: {"x": 0.18, "y": 0.89}  # Stick to return button
 
     # SCREEN
     BoxLayout:
@@ -518,9 +416,18 @@
     name: "fahrzeugkunde_menu"
 
     # IDs
+    logo_layout: logo_layout
     mode_label: mode_label
     firetrucks_scrollview: firetrucks_scrollview
     firetrucks_layout: firetrucks_layout
+
+    # LOGO
+    FloatLayout:
+        Image:
+            id: logo_layout
+            fit_mode: "fill"  # or "contain" if preserving aspect is needed
+            size_hint: 0.225, 0.105  # 20% width, 10% height of screen
+            pos_hint: {"x": 0.18, "y": 0.89}  # Stick to return button
 
     # SCREEN
     BoxLayout:
@@ -1024,6 +931,14 @@
     bewerbe_layout_scrollview: bewerbe_layout_scrollview
     bewerbe_layout: bewerbe_layout
 
+    # LOGO
+    FloatLayout:
+        Image:
+            source: "assets/lfv_salzburg.png"
+            fit_mode: "fill"  # or "contain" if preserving aspect is needed
+            size_hint: 0.225, 0.092  # 20% width, 10% height of screen
+            pos_hint: {"x": 0.18, "y": 0.902}  # Stick to return button
+
     # SCREEN
     BoxLayout:
         orientation: 'vertical'
@@ -1033,7 +948,7 @@
         # HEADER
         BoxLayout:
             size_hint_y: 2
-            spacing: "3dp"
+            spacing: "5dp"
             orientation: 'vertical'
 
             # ROW 1

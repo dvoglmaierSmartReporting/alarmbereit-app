@@ -7,7 +7,11 @@ from kivy.uix.screenmanager import Screen, SlideTransition
 from typing import cast
 
 from helper.functions import change_screen_to, create_scores_text
-from helper.file_handling import read_scores_file, get_selected_city_country
+from helper.file_handling import (
+    read_scores_file,
+    get_selected_city_country,
+    get_logo_file_path,
+)
 from helper.settings import Strings
 
 
@@ -22,8 +26,11 @@ class Start_Menu(Screen):
 
         # TODO: display city icon from self.selected_city
 
-    def on_enter(self):
-        self.selected_city, self.selected_country = get_selected_city_country()
+    def on_pre_enter(self):
+        self.selected_city, _ = get_selected_city_country()
+
+        # update city logo
+        self.ids.logo_layout.source = get_logo_file_path(self.selected_city)
 
     def on_kv_post(self, base_widget):
         # type annotations

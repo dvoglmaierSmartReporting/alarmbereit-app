@@ -9,7 +9,7 @@ from helper.functions import (
     change_screen_to,
     get_firetruck_abbreviation_values,
 )
-from helper.file_handling import get_selected_city_country
+from helper.file_handling import get_selected_city_country, get_logo_file_path
 from helper.settings import Strings
 
 
@@ -25,15 +25,13 @@ class Fahrzeugkunde_Mode(Screen):
     def on_kv_post(self, base_widget):
         self.ids.modes_layout.add_widget(self.add_firetruck_modi_widget())
 
-    # def select_city(self, selected_city: str):
-    #     self.selected_city = selected_city
-
-    #     self.abbreviations = get_firetruck_abbreviation_values(self.selected_city)
-
-    def on_enter(self):
+    def on_pre_enter(self):
         # read from main.cfg
         self.selected_city, _ = get_selected_city_country()
         self.abbreviations = get_firetruck_abbreviation_values(self.selected_city)
+
+        # update city logo
+        self.ids.logo_layout.source = get_logo_file_path(self.selected_city)
 
     def add_firetruck_modi_widget(self):
         firetrucks_modi_widget = BoxLayout(
@@ -251,18 +249,13 @@ class Fahrzeugkunde_Mode(Screen):
             font_size="32sp",
             markup=True,  # Enable markup for custom text positioning
             size_hint_y=None,
-            height=150,
+            height=200,
             size_hint_x=1,
             disabled=disabled,
         )
         btn.bind(
             on_release=self.manager.get_screen("fahrzeugkunde_menu").on_button_release
         )
-        # btn.bind(
-        #     on_release=lambda instance: self.manager.get_screen(
-        #         "fahrzeugkunde_menu"
-        #     ).select_city(self.selected_city)
-        # )
 
         # Add the button to the layout
         self.manager.get_screen("fahrzeugkunde_menu").ids.firetrucks_layout.add_widget(
