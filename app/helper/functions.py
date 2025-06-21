@@ -7,6 +7,7 @@ from helper.settings import Strings, Settings
 from helper.file_handling import (
     load_total_storage,
     load_total_competition_questions,
+    map_selected_city,
 )
 from helper.game_class import ToolQuestion
 from helper.custom_types import *
@@ -168,43 +169,31 @@ def break_tool_name(tool_name: str) -> str:
     return tool_name
 
 
-def create_scores_content() -> dict:
-    scores = {"firetrucks": {}, "competitions": {}}
-
-    total_storage = load_total_storage()
-
-    for truck in total_storage.keys():
-        scores.get("firetrucks", {}).update(
-            {truck: {"high_score": 0, "high_strike": 0}}
-        )
-
-    total_questions = load_total_competition_questions()
-
-    for question in total_questions.keys():
-        scores.get("competitions", {}).update({question: {"high_score": 0}})
-
-    return scores
-
-
-def create_scores_text(scores: scores) -> str:
+def create_scores_text(scores: scores, selected_city: str) -> str:
     spacing = "      "
     separator = "  -  "
     # divider = "  |  "
     factor = settings.FIRETRUCK_TRAINING_STRIKE_FACTOR
 
-    # TODO:
-    # store all scores for all citeis
-    # if no city is stored: print "Keine Stadt gespeichert" in info_screen
-    # if city is stored: only print scores of that city
+    filtered_scores = scores.get(map_selected_city(selected_city), {})
+
+    if selected_city == "Hallein":
+        output = "Stadt Hallein\n\n"
+    else:
+        output = selected_city + "\n\n"
 
     # always display firetrucks on top
-    output, total_score, total_strike = create_firetruck_score_text(scores)
+    output_2add, total_score, total_strike = create_firetruck_score_text(
+        filtered_scores.get("firetrucks")
+    )
 
-    output += "\n"
+    output += output_2add + "\n"
 
-    output_to_be_added, total_score_to_be_added = create_competition_score_text(scores)
-    output += output_to_be_added
-    total_score += total_score_to_be_added
+    output_2add, total_score_2add = create_competition_score_text(
+        filtered_scores.get("competitions")
+    )
+    output += output_2add
+    total_score += total_score_2add
 
     output += "________________________________________\n"
     output += f"Gesamt Best{separator}{str(total_score)} Punkte\n"
@@ -219,67 +208,52 @@ def create_scores_text(scores: scores) -> str:
 
 
 def create_firetruck_score_text(
-    scores: scores, spacing: str = "      ", separator: str = "  -  "
+    scores,
+    spacing: str = "      ",
+    separator: str = "  -  ",
 ) -> tuple[str, int, int]:
     total_score = 0
     total_strike = 0
 
     output = f"{strings.BUTTON_STR_FIRETRUCKS}:\n"
 
-    # TODO: remove hard-coded city
-    # dynamically check for stored city name
-    stored_city = "Hallein"
+    for truck, data in scores.items():
+        data = cast(dict, data)
 
-    if stored_city not in scores["firetrucks"].keys():
-        raise ValueError("Stored city not listed in scores.yaml")
+        if isinstance(data.get("high_score"), int):
+            score = data.get("high_score", 0)
+            score = cast(int, score)
 
-    for city, city_data in scores["firetrucks"].items():
+        total_score += score
+        dynamic_spacing = " " * (14 - len(str(score)) * 2)
+        output += f"{spacing}{spacing}Best:{dynamic_spacing}{score}"
 
-        # if city is not stored
-        if True:
-            return output + f"{spacing}{spacing}Keine Stadt gespeichert!\n", 0, 0
+        if isinstance(data.get("high_strike"), int):
+            strike = data.get("high_strike", 0)
+            strike = cast(int, strike)
 
-        # get stored_city
-        if stored_city != city:
-            continue
-
-        for truck, data in city_data.items():
-            data = cast(dict, data)
-
-            if isinstance(data.get("high_score"), int):
-                score = data.get("high_score", 0)
-                score = cast(int, score)
-
-            total_score += score
-            dynamic_spacing = " " * (14 - len(str(score)) * 2)
-            output += f"{spacing}{spacing}Best:{dynamic_spacing}{score}"
-
-            if isinstance(data.get("high_strike"), int):
-                strike = data.get("high_strike", 0)
-                strike = cast(int, strike)
-
-            total_strike += strike
-            dynamic_spacing = " " * (10 - len(str(strike)))
-            output += f"{spacing}Best Strike:{spacing}{strike}{separator}{truck}\n"
+        total_strike += strike
+        dynamic_spacing = " " * (10 - len(str(strike)))
+        output += f"{spacing}Best Strike:{spacing}{strike}{separator}{truck}\n"
 
     return output, total_score, total_strike
 
 
 def create_competition_score_text(
-    scores: scores, spacing: str = "      ", separator: str = "  -  "
+    scores,
+    spacing: str = "      ",
+    separator: str = "  -  ",
 ) -> tuple[str, int]:
-    output = ""
     total_score = 0
-    for category, competitions in scores.items():
-        if category == "competitions":
-            output += f"{strings.BUTTON_STR_COMPETITIONS}:\n"
 
-            for comp, data in competitions.items():
-                if isinstance(data.get("high_score"), int):
-                    score = data.get("high_score", 0)
-                    score = cast(int, score)
-                total_score += score
-                dynamic_spacing = " " * (14 - len(str(score)) * 2)
-                output += f"{spacing}{spacing}Best:{dynamic_spacing}{score}{separator}{comp}\n"
+    output = f"{strings.BUTTON_STR_COMPETITIONS}:\n"
+
+    for comp, data in scores.items():
+        if isinstance(data.get("high_score"), int):
+            score = data.get("high_score", 0)
+            score = cast(int, score)
+        total_score += score
+        dynamic_spacing = " " * (14 - len(str(score)) * 2)
+        output += f"{spacing}{spacing}Best:{dynamic_spacing}{score}{separator}{comp}\n"
 
     return output, total_score

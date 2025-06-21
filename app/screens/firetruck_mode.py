@@ -3,14 +3,13 @@ from kivy.uix.button import Button
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.screenmanager import Screen, SlideTransition
 
-from typing import cast
-
 from helper.functions import (
     load_total_storage,
     mode_str2bool,
     change_screen_to,
     get_firetruck_abbreviation_values,
 )
+from helper.file_handling import get_selected_city_country
 from helper.settings import Strings
 
 
@@ -21,17 +20,19 @@ class Fahrzeugkunde_Mode(Screen):
     def __init__(self, **kwargs):
         super(Fahrzeugkunde_Mode, self).__init__(**kwargs)
 
-        self.modes_label = cast(Label, self.modes_label)
-        self.modes_layout = cast(BoxLayout, self.modes_layout)
-
-        self.modes_label.text = strings.LABEL_STR_MODES
+        self.ids.modes_label.text = strings.LABEL_STR_MODES
 
     def on_kv_post(self, base_widget):
-        self.modes_layout.add_widget(self.add_firetruck_modi_widget())
+        self.ids.modes_layout.add_widget(self.add_firetruck_modi_widget())
 
-    def select_city(self, selected_city: str):
-        self.selected_city = selected_city
+    # def select_city(self, selected_city: str):
+    #     self.selected_city = selected_city
 
+    #     self.abbreviations = get_firetruck_abbreviation_values(self.selected_city)
+
+    def on_enter(self):
+        # read from main.cfg
+        self.selected_city, _ = get_selected_city_country()
         self.abbreviations = get_firetruck_abbreviation_values(self.selected_city)
 
     def add_firetruck_modi_widget(self):
@@ -39,7 +40,6 @@ class Fahrzeugkunde_Mode(Screen):
             orientation="vertical",
             spacing="5dp",
         )
-
 
         ### BUTTON Übung ###
         firetruck_btn1 = Button(
@@ -258,11 +258,11 @@ class Fahrzeugkunde_Mode(Screen):
         btn.bind(
             on_release=self.manager.get_screen("fahrzeugkunde_menu").on_button_release
         )
-        btn.bind(
-            on_release=lambda instance: self.manager.get_screen(
-                "fahrzeugkunde_menu"
-            ).select_city(self.selected_city)
-        )
+        # btn.bind(
+        #     on_release=lambda instance: self.manager.get_screen(
+        #         "fahrzeugkunde_menu"
+        #     ).select_city(self.selected_city)
+        # )
 
         # Add the button to the layout
         self.manager.get_screen("fahrzeugkunde_menu").ids.firetrucks_layout.add_widget(
@@ -270,8 +270,4 @@ class Fahrzeugkunde_Mode(Screen):
         )
 
     def go_back(self, *args) -> None:
-        # if selection is not stored
-        if True:
-            change_screen_to("fahrzeugkunde_login")
-        else:
-            change_screen_to("start_menu")
+        change_screen_to("start_menu")

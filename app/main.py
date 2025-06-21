@@ -6,7 +6,7 @@ Config.set("graphics", "height", "1000")
 
 
 from kivy.app import App
-from kivy.uix.screenmanager import ScreenManager
+from kivy.uix.screenmanager import ScreenManager, NoTransition
 from kivy.clock import Clock
 from kivy.base import EventLoop
 from kivy.lang import Builder
@@ -36,6 +36,7 @@ from screens.competition_game import Bewerb_Game
 from errors.error_popup import ErrorPopup
 
 from helper.file_handling import transfer_file
+from helper.file_handling import read_main_cfg
 
 
 if "pytest" in sys.modules:
@@ -79,6 +80,22 @@ class FeuerwehrApp(App):
             self.show_error_popup(error_message)
             return None  # Return None to prevent further crashes
 
+    def on_start(self):
+        main_cfg = read_main_cfg()
+        selected_city = main_cfg["content"].get("city", "")
+        selected_country = main_cfg["content"].get("country", "")
+
+        if selected_city:
+            # Delay screen switch until app is fully initialized
+            Clock.schedule_once(self.jump_to_start_menu, 0)
+
+    def jump_to_start_menu(self, dt):
+        # Temporarily disable transitions
+        original_transition = self.sm.transition
+        self.sm.transition = NoTransition()
+        self.sm.current = "start_menu"
+        self.sm.transition = original_transition
+
     # test
     def show_error_popup(self, message="An unknown error occurred!"):
         popup = ErrorPopup(message)
@@ -99,6 +116,8 @@ class FeuerwehrApp(App):
                     # "settings_screen",
                     # "fahrzeugkunde_login",
                     # "bewerb_country",
+                    "fahrzeugkunde_mode",
+                    "bewerb_menu",
                 ]:
                     self.sm.transition.direction = "right"
                     self.sm.current = "start_menu"
@@ -115,19 +134,19 @@ class FeuerwehrApp(App):
                     self.sm.current = "fahrzeugkunde_menu"
                     return True
 
-                elif current in [
-                    "bewerb_menu",
-                ]:
-                    self.sm.transition.direction = "right"
-                    self.sm.current = "start_menu"
-                    return True
+                # elif current in [
+                #     "bewerb_menu",
+                # ]:
+                #     self.sm.transition.direction = "right"
+                #     self.sm.current = "start_menu"
+                #     return True
 
-                elif current in [
-                    "fahrzeugkunde_mode",
-                ]:
-                    self.sm.transition.direction = "right"
-                    self.sm.current = "start_menu"
-                    return True
+                # elif current in [
+                #     "fahrzeugkunde_mode",
+                # ]:
+                #     self.sm.transition.direction = "right"
+                #     self.sm.current = "start_menu"
+                #     return True
 
                 elif current in [
                     "fahrzeugkunde_menu",

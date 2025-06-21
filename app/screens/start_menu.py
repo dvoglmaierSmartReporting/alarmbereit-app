@@ -7,7 +7,7 @@ from kivy.uix.screenmanager import Screen, SlideTransition
 from typing import cast
 
 from helper.functions import change_screen_to, create_scores_text
-from helper.file_handling import read_scores_file
+from helper.file_handling import read_scores_file, get_selected_city_country
 from helper.settings import Strings
 
 
@@ -17,6 +17,13 @@ strings = Strings()
 class Start_Menu(Screen):
     def __init__(self, **kwargs):
         super(Start_Menu, self).__init__(**kwargs)
+
+        self.ids.all_cities_button.text = strings.BUTTON_STR_ALL_CITIES
+
+        # TODO: display city icon from self.selected_city
+
+    def on_enter(self):
+        self.selected_city, self.selected_country = get_selected_city_country()
 
     def on_kv_post(self, base_widget):
         # type annotations
@@ -40,7 +47,7 @@ class Start_Menu(Screen):
             font_size="32sp",
         )
         fahrzeuge_button.bind(
-            on_release=lambda instance: change_screen_to("fahrzeugkunde_menu", "left")
+            on_release=lambda instance: change_screen_to("fahrzeugkunde_mode", "left")
         )
 
         bewerbe_button = Button(
@@ -115,7 +122,7 @@ class Start_Menu(Screen):
         self.manager.get_screen(menu_screen).ids.mode_label.text = mode
 
     def update_info_text(self):
-        info_text = create_scores_text(read_scores_file())
+        info_text = create_scores_text(read_scores_file(), self.selected_city)
 
         info_text += "\n\n\n\n"
 

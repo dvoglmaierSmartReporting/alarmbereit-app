@@ -29,6 +29,12 @@ def get_7_rooms_layout() -> floatButtons:
     ]
 
 
+def get_7_rooms_DE_layout() -> floatButtons:
+    layout = get_7_rooms_layout()
+    layout[0] = ("Fahrer / GF", 0.5, 0.15, 0.25, 1)
+    return layout
+
+
 def get_5_rooms_layout() -> floatButtons:
     return [
         ("Fahrer / GK", 0.5, 0.15, 0.25, 1),
@@ -91,6 +97,10 @@ def build_answer_layout(room_layout: str, calling_screen: str) -> FloatLayout:
     if room_layout in ["7-Raum"]:
         bgd_image = os.path.join(ASSETS_DIR, "truck.jpg")
         buttons = get_7_rooms_layout()
+
+    if room_layout in ["7-Raum-DE"]:
+        bgd_image = os.path.join(ASSETS_DIR, "truck.jpg")
+        buttons = get_7_rooms_DE_layout()
 
     elif room_layout in ["5-Raum"]:
         bgd_image = os.path.join(ASSETS_DIR, "truck.jpg")

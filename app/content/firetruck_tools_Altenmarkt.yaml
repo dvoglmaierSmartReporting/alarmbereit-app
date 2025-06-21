@@ -1,5 +1,5 @@
 LF8:
-  Layout: "7-Raum"
+  Layout: "7-Raum-DE"
   Abb: "42/1"
   Tools:
     Fahrer / GF:
@@ -143,7 +143,7 @@ LF8:
       - Zubehör f. Spineboard
 
 LF20:
-  Layout: "7-Raum"
+  Layout: "7-Raum-DE"
   Abb: "41/1"
   Tools:
     Fahrer / GF:

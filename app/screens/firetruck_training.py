@@ -71,6 +71,7 @@ class Fahrzeugkunde_Training(Screen):
 
         self.current_high_strike = get_score_value(
             city=self.selected_city,
+            questions="firetrucks",
             truck_or_comp=self.selected_firetruck,
             key="high_strike",
         )
@@ -109,10 +110,11 @@ class Fahrzeugkunde_Training(Screen):
             self.current_high_strike = self.game.answers_correct_strike
             self.update_high_strike_label()
             save_to_scores_file(
-                self.selected_city,
-                self.selected_firetruck,
-                "high_strike",
-                self.game.answers_correct_strike,
+                city=self.selected_city,
+                questions="firetrucks",
+                truck_or_comp=self.selected_firetruck,
+                key="high_strike",
+                value=self.game.answers_correct_strike,
             )
 
         self.feedback_green = True

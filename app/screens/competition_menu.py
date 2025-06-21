@@ -8,7 +8,10 @@ from kivy.uix.screenmanager import Screen
 from typing import cast
 
 from helper.functions import mode_str2bool, change_screen_to
-from helper.file_handling import load_total_competition_questions
+from helper.file_handling import (
+    load_total_competition_questions,
+    get_selected_city_country,
+)
 from helper.settings import Strings
 
 
@@ -22,18 +25,17 @@ class Bewerb_Menu(Screen):
         total_competition_questions = load_total_competition_questions()
         self.total_competitions = list(total_competition_questions.keys())
 
-        self.bewerbe_layout = cast(Layout, self.bewerbe_layout)
-        self.choose_mode_switch = cast(Switch, self.choose_mode_switch)
-        self.choose_mode_label = cast(Label, self.choose_mode_label)
-        self.mode_label = cast(Label, self.mode_label)
-
         # update button strings
         # self.choose_mode_label.text = strings.BUTTON_STR_SOLUTION
-        self.choose_mode_label.text = "Modus wählen"
+        # self.ids.choose_mode_label.text = "Modus wählen"
 
-        self.choose_mode_switch.active = False
-        self.choose_mode_switch.bind(active=self.on_switch_toggle)
-        self.mode_label.text = strings.BUTTON_STR_TRAINING
+        self.ids.mode_toggle_training.text = strings.BUTTON_STR_TRAINING
+        self.ids.mode_toggle_game.text = strings.BUTTON_STR_GAME
+
+        # training button selected by default
+        self.ids.mode_toggle_training.state = "down"
+        self.ids.mode_toggle_game.state = "normal"
+        self.selected_mode = strings.BUTTON_STR_TRAINING
 
         # create button for all competitions
         for competitions in self.total_competitions:
@@ -45,22 +47,32 @@ class Bewerb_Menu(Screen):
                 size_hint_x=1,
             )
             btn.bind(on_release=self.on_button_release)
-            self.bewerbe_layout.add_widget(btn)
+            self.ids.bewerbe_layout.add_widget(btn)
 
     def on_enter(self):
         # Reset the scrollview to the top
         self.ids.bewerbe_layout_scrollview.scroll_y = 1
 
-    def on_switch_toggle(self, instance, value):
-        if value:
-            self.mode_label.text = strings.BUTTON_STR_GAME
+        # read from main.cfg
+        self.selected_city, _ = get_selected_city_country()
+
+        # TODO: add icon landesfeuerwehrverband Salzburg / country
+
+    def on_mode_toggle(self, instance):
+        if instance.state == "down":
+            # Deselect all others
+            for btn in self.ids.mode_toggle_layout.children:
+                if btn != instance:
+                    btn.state = "normal"
+            self.selected_mode = instance.text
         else:
-            self.mode_label.text = strings.BUTTON_STR_TRAINING
+            self.selected_mode = ""
 
     def on_button_release(self, instance):
         self.mode_label = cast(Label, self.mode_label)
         # on question selection, read mode label text from current screen
-        mode = mode_str2bool(self.mode_label.text.strip())
+        # mode = mode_str2bool(self.mode_label.text.strip())
+        mode = mode_str2bool(self.selected_mode.strip())
         (
             mode_training,
             mode_training_new,
@@ -88,6 +100,7 @@ class Bewerb_Menu(Screen):
             change_screen_to("bewerb_game", transition_direction="left")
             # continue game with selected competition
             bewerb_game_screen = app.root.get_screen("bewerb_game")
+            bewerb_game_screen.select_city(self.selected_city)
             bewerb_game_screen.select_competition(instance.text)
             bewerb_game_screen.play()
 
@@ -107,8 +120,4 @@ class Bewerb_Menu(Screen):
         #     app.root.transition.direction = "left"
 
     def go_back(self, *args) -> None:
-        # if selection is not stored
-        if True:
-            change_screen_to("bewerb_bundesland")
-        else:
-            change_screen_to("start_menu")
+        change_screen_to("start_menu")

@@ -23,7 +23,10 @@ answer_idx: dict = {0: "A", 1: "B", 2: "C", 3: "D"}
 
 
 class Bewerb_Game(Screen):
-    def select_competition(self, selected_competition):
+    def select_city(self, selected_city: str):
+        self.selected_city = selected_city
+
+    def select_competition(self, selected_competition: str):
         # troubleshooting: fix competition
         # self.selected_competition = "Funk"
         self.selected_competition = selected_competition
@@ -93,8 +96,14 @@ class Bewerb_Game(Screen):
         Clock.unschedule(self.update_timer)  # Stop the timer when it reaches 0
 
         if self.game.score > self.current_high_score:
+
+            # TODO: refactor scores.yaml
             save_to_scores_file(
-                self.selected_competition, "high_score", self.game.score, "competitions"
+                city=self.selected_city,
+                questions="competitions",
+                truck_or_comp=self.selected_competition,
+                key="high_score",
+                value=self.game.score,
             )
 
         change_screen_to("bewerb_menu")
@@ -129,10 +138,10 @@ class Bewerb_Game(Screen):
         # )
 
         self.current_high_score = get_score_value(
-            city="",
-            firetruck=self.selected_competition,
-            key="high_score",
+            city=self.selected_city,
             questions="competitions",
+            truck_or_comp=self.selected_competition,
+            key="high_score",
         )
 
         self.update_score_labels()

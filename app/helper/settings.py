@@ -31,10 +31,9 @@ class Strings:
         # self.LABEL_STR_CITY = "Freiwillige Feuerwehr"
         self.BUTTON_STR_STORE_SELECTION = "Auswahl speichern"
 
-        # Start_Menu mode names
+        # start_nenu
         self.LABEL_STR_QUESTIONS = "Mission"
-
-        # Start_Menu button names
+        self.BUTTON_STR_ALL_CITIES = "Alle Städte"
         self.BUTTON_STR_INFO = "Info"
         self.BUTTON_STR_ACKNOWLEDGEMENT = "Dank"
         self.BUTTON_STR_SETTINGS = "Einst."

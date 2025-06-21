@@ -38,7 +38,9 @@ class Fahrzeugkunde_Game(Screen):
         self.firetruck_label = cast(Label, self.firetruck_label)
         self.firetruck_label.text = selected_firetruck
 
-        self.room_layout = get_firetruck_layout_value(selected_firetruck, self.selected_city)
+        self.room_layout = get_firetruck_layout_value(
+            selected_firetruck, self.selected_city
+        )
 
     def hide_label(self, *args):
         self.extra_time_label = cast(Label, self.extra_time_label)
@@ -99,8 +101,13 @@ class Fahrzeugkunde_Game(Screen):
         Clock.unschedule(self.update_timer)
 
         if self.game.score > self.current_high_score:
-            save_to_scores_file(self.selected_firetruck, "high_score", self.game.score)
-
+            save_to_scores_file(
+                city=self.selected_city,
+                questions="firetrucks",
+                truck_or_comp=self.selected_firetruck,
+                key="high_score",
+                value=self.game.score,
+            )
         # app = App.get_running_app()
         # app.root.current = "fahrzeugkunde_menu"
         # app.root.transition.direction = "right"
@@ -124,7 +131,8 @@ class Fahrzeugkunde_Game(Screen):
 
         self.current_high_score = get_score_value(
             city=self.selected_city,
-            firetruck=self.selected_firetruck,
+            questions="firetrucks",
+            truck_or_comp=self.selected_firetruck,
             key="high_score",
         )
 
