@@ -5,7 +5,7 @@ from kivy.clock import Clock
 from kivy.uix.togglebutton import ToggleButton
 
 from helper.functions import change_screen_to
-from helper.file_handling import read_main_cfg, update_main_cfg
+from helper.file_handling import update_main_cfg, map_selected_city_2long_name
 from helper.settings import Strings
 
 
@@ -33,9 +33,9 @@ class Login(Screen):
             ("Altenmarkt a.d. Alz", "Bayern"),
         ]
 
-        for city, country in self.cities:
+        for city, state in self.cities:
             btn = ToggleButton(
-                text=f"{city}   ({country})",
+                text=f"{city}   ({state})",
                 font_size="32sp",
                 group="city",
                 allow_no_selection=True,
@@ -61,19 +61,14 @@ class Login(Screen):
             self.ids.store_selection_button.disabled = True
 
     def store_selection(self):
-        self.selected_country = self.selected_button.split("(")[1][:-1]
+        self.selected_state = self.selected_button.split("(")[1][:-1]
+        self.selected_city = map_selected_city_2long_name(self.selected_button)
 
-        if "Hallein" in self.selected_button:
-            self.selected_city = "Hallein"
-        elif "Dürrnberg" in self.selected_button:
-            self.selected_city = "Bad Dürrnberg"
-        elif "Altenmarkt" in self.selected_button:
-            self.selected_city = "Altenmarkt a.d. Alz"
-
-        main_cfg = read_main_cfg()
-        main_cfg["content"]["city"] = self.selected_city
-        main_cfg["content"]["country"] = self.selected_country
-
-        update_main_cfg(main_cfg)
+        update_main_cfg(
+            {
+                "city": self.selected_city,
+                "state": self.selected_state,
+            }
+        )
 
         change_screen_to("start_menu", transition_direction="left")

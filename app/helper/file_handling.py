@@ -1,4 +1,5 @@
 from kivy.app import App
+from kivy.config import Config
 
 import yaml
 from shutil import copyfile
@@ -114,7 +115,7 @@ def read_scores_file() -> dict:
     return load_from_yaml(file_path)
 
 
-def map_selected_city(city: str) -> str:
+def map_selected_city_2short_name(city: str) -> str:
     if city in ["Bad Dürrnberg"]:
         return "Dürrnberg"
     elif city in ["Altenmarkt a.d. Alz", "Altenmarkt ad Alz", "Altenmarkt Alz"]:
@@ -125,11 +126,22 @@ def map_selected_city(city: str) -> str:
     return city
 
 
+def map_selected_city_2long_name(city: str) -> str:
+    if "Hallein" in city:
+        return "Hallein"
+    elif "Dürrnberg" in city:
+        return "Bad Dürrnberg"
+    elif "Altenmarkt" in city:
+        return "Altenmarkt a.d. Alz"
+
+    return city
+
+
 def get_logo_file_path(selected_city: str) -> str:
     if selected_city in ["Hallein", "Bad Dürrnberg"]:
         return "assets/FFH_Logohalter_negativ.png"
     if selected_city in ["Altenmarkt a.d. Alz"]:
-        return "assets/altenmarkt.jpg"
+        return "assets/altenmarkt.png"
     return "assets/FFH_Logohalter_negativ.png"
 
 
@@ -141,7 +153,7 @@ def get_score_value(
 ) -> int:
     return (
         read_scores_file()
-        .get(map_selected_city(city), {})
+        .get(map_selected_city_2short_name(city), {})
         .get(questions, {})
         .get(truck_or_comp, {})
         .get(key, 0)
@@ -157,7 +169,7 @@ def save_to_scores_file(
 ) -> None:
     content = read_scores_file()
 
-    city = map_selected_city(city)
+    city = map_selected_city_2short_name(city)
 
     if not city in content.keys():
         raise ValueError(f"City {city} not found in scores.yaml")
@@ -187,31 +199,14 @@ def save_to_scores_file(
     save_to_yaml(scores_file_path, content)
 
 
-def read_main_cfg() -> mainConfig:
-    file_path = os.path.join(
-        get_user_data_dir(),
-        "main.cfg",
-    )
-
-    return load_from_yaml(file_path)
-
-
 def update_main_cfg(to_update: dict) -> None:
-    content = read_main_cfg()
-
-    content.update(to_update)
-
-    file_path = os.path.join(
-        get_user_data_dir(),
-        "main.cfg",
-    )
-
-    save_to_yaml(file_path, content)
+    for key, value in to_update.items():
+        Config.set("content", key, value)
+    Config.write()
 
 
-def get_selected_city_country() -> tuple[str, str]:
-    main_cfg = read_main_cfg()
-    return main_cfg["content"]["city"], main_cfg["content"]["country"]
+def get_selected_city_state() -> tuple[str, str]:
+    return Config.get("content", "city"), Config.get("content", "state")
 
 
 def transfer_file(file_path: str, file_name: str, new_file_name: str = "") -> None:

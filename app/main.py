@@ -35,7 +35,6 @@ from screens.competition_game import Bewerb_Game
 from errors.error_popup import ErrorPopup
 
 from helper.file_handling import transfer_file
-from helper.file_handling import read_main_cfg
 
 
 if "pytest" in sys.modules:
@@ -44,7 +43,12 @@ if "pytest" in sys.modules:
 
 class FeuerwehrApp(App):
     def build(self):
+        # print(f'{App.get_running_app().user_data_dir = }')
+        # App.get_running_app().user_data_dir = '/Users/dominikvoglmaier/Library/Application Support/feuerwehr'
 
+        # print(f'{Config.filename = }')
+        # Config.filename = '/Users/dominikvoglmaier/.kivy/config.ini'
+        
         try:
             # path relative to app/helper/file_handling.py
             transfer_file("../storage", "scores.yaml")
@@ -79,11 +83,7 @@ class FeuerwehrApp(App):
             return None  # Return None to prevent further crashes
 
     def on_start(self):
-        main_cfg = read_main_cfg()
-        selected_city = main_cfg["content"].get("city", "")
-        selected_country = main_cfg["content"].get("country", "")
-
-        if selected_city:
+        if Config.get("content", "city"):
             # Delay screen switch until app is fully initialized
             Clock.schedule_once(self.jump_to_start_menu, 0)
 

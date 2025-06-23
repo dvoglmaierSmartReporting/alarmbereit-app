@@ -64,8 +64,8 @@ class Strings:
         # firetruck training
         self.HINT_STR_MULTIPLE_ANSWERS = "Wo noch?"
 
-        # competition country
-        self.LABEL_STR_COUNTRY = "Bundesland"
+        # competition state
+        self.LABEL_STR_STATE = "Bundesland"
 
         # competition training
         self.BUTTON_STR_SOLUTION = "Lösung"

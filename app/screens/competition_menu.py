@@ -10,7 +10,7 @@ from typing import cast
 from helper.functions import mode_str2bool, change_screen_to
 from helper.file_handling import (
     load_total_competition_questions,
-    get_selected_city_country,
+    get_selected_city_state,
 )
 from helper.settings import Strings
 
@@ -54,9 +54,9 @@ class Bewerb_Menu(Screen):
         self.ids.bewerbe_layout_scrollview.scroll_y = 1
 
         # read from main.cfg
-        self.selected_city, _ = get_selected_city_country()
+        self.selected_city, _ = get_selected_city_state()
 
-        # TODO: add icon landesfeuerwehrverband Salzburg / country
+        # TODO: add icon landesfeuerwehrverband Salzburg / state
 
     def on_mode_toggle(self, instance):
         if instance.state == "down":

@@ -9,7 +9,7 @@ from helper.functions import (
     change_screen_to,
     get_firetruck_abbreviation_values,
 )
-from helper.file_handling import get_selected_city_country, get_logo_file_path
+from helper.file_handling import get_selected_city_state, get_logo_file_path
 from helper.settings import Strings
 
 
@@ -27,7 +27,7 @@ class Fahrzeugkunde_Mode(Screen):
 
     def on_pre_enter(self):
         # read from main.cfg
-        self.selected_city, _ = get_selected_city_country()
+        self.selected_city, _ = get_selected_city_state()
         self.abbreviations = get_firetruck_abbreviation_values(self.selected_city)
 
         # update city logo

@@ -7,7 +7,7 @@ from helper.settings import Strings, Settings
 from helper.file_handling import (
     load_total_storage,
     load_total_competition_questions,
-    map_selected_city,
+    map_selected_city_2short_name,
 )
 from helper.game_class import ToolQuestion
 from helper.custom_types import *
@@ -175,7 +175,7 @@ def create_scores_text(scores: scores, selected_city: str) -> str:
     # divider = "  |  "
     factor = settings.FIRETRUCK_TRAINING_STRIKE_FACTOR
 
-    filtered_scores = scores.get(map_selected_city(selected_city), {})
+    filtered_scores = scores.get(map_selected_city_2short_name(selected_city), {})
 
     if selected_city == "Hallein":
         output = "Stadt Hallein\n\n"

@@ -9,7 +9,7 @@ from typing import cast
 from helper.functions import change_screen_to, create_scores_text
 from helper.file_handling import (
     read_scores_file,
-    get_selected_city_country,
+    get_selected_city_state,
     get_logo_file_path,
 )
 from helper.settings import Strings
@@ -27,7 +27,7 @@ class Start_Menu(Screen):
         # TODO: display city icon from self.selected_city
 
     def on_pre_enter(self):
-        self.selected_city, _ = get_selected_city_country()
+        self.selected_city, _ = get_selected_city_state()
 
         # update city logo
         self.ids.logo_layout.source = get_logo_file_path(self.selected_city)
