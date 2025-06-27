@@ -96,8 +96,6 @@ class Bewerb_Game(Screen):
         Clock.unschedule(self.update_timer)  # Stop the timer when it reaches 0
 
         if self.game.score > self.current_high_score:
-
-            # TODO: refactor scores.yaml
             save_to_scores_file(
                 city=self.selected_city,
                 questions="competitions",

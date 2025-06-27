@@ -52,6 +52,10 @@ class FeuerwehrApp(App):
         try:
             # path relative to app/helper/file_handling.py
             transfer_file("../storage", "scores.yaml")
+            # TODO: migration to refactored scores.yaml
+            # from 2.3.2 to 2.4.0
+
+            # TODO: is main.cfg needed?
             transfer_file("../storage", "main.cfg")
 
             self.sm = ScreenManager()

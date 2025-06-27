@@ -60,7 +60,6 @@ class Fahrzeugkunde_Training_New(Screen):
 
         self.reset_strike()
 
-        # TODO: update!
         self.current_high_strike = get_score_value(
             city="Hallein",
             questions="firetrucks",
@@ -171,8 +170,6 @@ class Fahrzeugkunde_Training_New(Screen):
         self.feedback_green = False
 
         Clock.schedule_once(self.reset_strike, settings.FIRETRUCK_TRAINING_FEEDBACK_SEC)
-
-        # todo: check for PB score!
 
     def on_answer(self, instance):
         if not self.accept_answers:  # Check if answer processing is enabled

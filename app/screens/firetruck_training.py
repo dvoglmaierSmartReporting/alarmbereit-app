@@ -125,8 +125,6 @@ class Fahrzeugkunde_Training(Screen):
         # self.reset_strike()
         Clock.schedule_once(self.reset_strike, settings.FIRETRUCK_TRAINING_FEEDBACK_SEC)
 
-        # todo: check for PB score!
-
     def on_answer(self, instance):
         if not self.accept_answers:  # Check if answer processing is enabled
             return  # Ignore the button press if answer processing is disabled

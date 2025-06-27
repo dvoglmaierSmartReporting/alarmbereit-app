@@ -12,6 +12,7 @@ from helper.file_handling import (
     load_total_competition_questions,
     get_selected_city_state,
 )
+from helper.aspect_image import get_state_image
 from helper.settings import Strings
 
 
@@ -54,9 +55,11 @@ class Bewerb_Menu(Screen):
         self.ids.bewerbe_layout_scrollview.scroll_y = 1
 
         # read from main.cfg
-        self.selected_city, _ = get_selected_city_state()
+        self.selected_city, self.selected_state = get_selected_city_state()
 
-        # TODO: add icon landesfeuerwehrverband Salzburg / state
+        # update state logo
+        self.ids.logo_layout.clear_widgets()
+        self.ids.logo_layout.add_widget(get_state_image(self.selected_state))
 
     def on_mode_toggle(self, instance):
         if instance.state == "down":

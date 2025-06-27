@@ -5,6 +5,7 @@
     name: "login"
 
     # IDs
+    logo_layout: logo_layout
     login_label: login_label
     login_layout: login_layout
     city_scrollview: city_scrollview
@@ -13,11 +14,7 @@
 
     # LOGO
     FloatLayout:
-        Image:
-            source: "assets/FFH_Logohalter_negativ.png"
-            fit_mode: "fill"  # or "contain" if preserving aspect is needed
-            size_hint: 0.45, 0.2  # 40% width, 20% height of screen
-            pos_hint: {"x": 0, "y": 0.8}  # Stick to top-left
+        id: logo_layout
 
     # SCREEN
     BoxLayout:
@@ -105,11 +102,7 @@
 
     # LOGO
     FloatLayout:
-        Image:
-            id: logo_layout
-            fit_mode: "fill"  # or "contain" if preserving aspect is needed
-            size_hint: 0.45, 0.2  # 40% width, 20% height of screen
-            pos_hint: {"x": 0, "y": 0.8}  # Stick to top-left
+        id: logo_layout
 
     # SCREEN
     BoxLayout:
@@ -353,14 +346,6 @@
     modes_label: modes_label
     modes_layout: modes_layout
 
-    # LOGO
-    FloatLayout:
-        Image:
-            id: logo_layout
-            fit_mode: "fill"  # or "contain" if preserving aspect is needed
-            size_hint: 0.225, 0.105  # 20% width, 10% height of screen
-            pos_hint: {"x": 0.18, "y": 0.89}  # Stick to return button
-
     # SCREEN
     BoxLayout:
         orientation: 'vertical'
@@ -379,9 +364,14 @@
                 font_size: "32sp"
                 on_release:
                     root.go_back()
+            
+            # LOGO
+            BoxLayout:
+                id: logo_layout
+                size_hint_x: 1
     
             Label:  # placeholder
-                size_hint_x: 2
+                size_hint_x: 1
             
             Label:
                 size_hint_x: 3
@@ -924,6 +914,7 @@
     name: "bewerb_menu"
 
     # IDs
+    logo_layout: logo_layout
     mode_label: mode_label
     mode_toggle_layout: mode_toggle_layout
     mode_toggle_training: mode_toggle_training
@@ -932,12 +923,12 @@
     bewerbe_layout: bewerbe_layout
 
     # LOGO
-    FloatLayout:
-        Image:
-            source: "assets/lfv_salzburg.png"
-            fit_mode: "fill"  # or "contain" if preserving aspect is needed
-            size_hint: 0.225, 0.092  # 20% width, 10% height of screen
-            pos_hint: {"x": 0.18, "y": 0.902}  # Stick to return button
+    #FloatLayout:
+    #    Image:
+    #        source: "assets/lfv_salzburg.png"
+    #        fit_mode: "fill"  # or "contain" if preserving aspect is needed
+    #        size_hint: 0.225, 0.092  # 20% width, 10% height of screen
+    #        pos_hint: {"x": 0.18, "y": 0.902}  # Stick to return button
 
     # SCREEN
     BoxLayout:
@@ -954,6 +945,7 @@
             # ROW 1
             BoxLayout:
                 size_hint_y: 1
+                spacing: "3dp"
 
                 Button:
                     size_hint_x: 1
@@ -962,8 +954,13 @@
                     on_release:
                         root.go_back()
 
+                # LOGO
+                BoxLayout:
+                    id: logo_layout
+                    size_hint_x: 1
+
                 Label: # placeholder
-                    size_hint_x: 2
+                    size_hint_x: 1
 
                 Label:
                     size_hint_x: 3

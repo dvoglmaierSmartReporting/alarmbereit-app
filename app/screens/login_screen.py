@@ -6,6 +6,7 @@ from kivy.uix.togglebutton import ToggleButton
 
 from helper.functions import change_screen_to
 from helper.file_handling import update_main_cfg, map_selected_city_2long_name
+from helper.aspect_image import get_city_image
 from helper.settings import Strings
 
 
@@ -23,6 +24,10 @@ class Login(Screen):
         self.ids.store_selection_button.disabled = True
 
     def on_pre_enter(self):
+        # Logo
+        self.ids.logo_layout.clear_widgets()
+        self.ids.logo_layout.add_widget(get_city_image("Hallein"))
+
         # Clear existing buttons
         self.ids.city_layout.clear_widgets()
         self.ids.store_selection_button.disabled = True

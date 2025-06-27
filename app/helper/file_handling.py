@@ -28,10 +28,15 @@ def load_from_yaml(file_path: str) -> dict:
     #     print(f"An unexpected error occurred: {e}")
 
 
+class NoAliasDumper(yaml.SafeDumper):
+    def ignore_aliases(self, data):
+        return True
+
+
 def save_to_yaml(file_path: str, content: dict) -> None:
     try:
         with open(file_path, "w") as file:
-            yaml.dump(content, file)
+            yaml.dump(content, file, Dumper=NoAliasDumper)
     except Exception as e:
         print(f"Error writing to file: {e}")
         print(f"{file_path = }")
@@ -115,34 +120,45 @@ def read_scores_file() -> dict:
     return load_from_yaml(file_path)
 
 
-def map_selected_city_2short_name(city: str) -> str:
-    if city in ["Bad Dürrnberg"]:
+def map_selected_city_2short_name(selected_city_long_name: str) -> str:
+    if selected_city_long_name in ["Bad Dürrnberg"]:
         return "Dürrnberg"
-    elif city in ["Altenmarkt a.d. Alz", "Altenmarkt ad Alz", "Altenmarkt Alz"]:
+    elif selected_city_long_name in [
+        "Altenmarkt a.d. Alz",
+        "Altenmarkt ad Alz",
+        "Altenmarkt Alz",
+    ]:
         return "Altenmarkt"
-    elif city in ["Stadt Hallein"]:
+    elif selected_city_long_name in ["Stadt Hallein"]:
         return "Hallein"
 
-    return city
+    return selected_city_long_name
 
 
-def map_selected_city_2long_name(city: str) -> str:
-    if "Hallein" in city:
+def map_selected_city_2long_name(selected_city_short_name: str) -> str:
+    if "Hallein" in selected_city_short_name:
         return "Hallein"
-    elif "Dürrnberg" in city:
+    elif "Dürrnberg" in selected_city_short_name:
         return "Bad Dürrnberg"
-    elif "Altenmarkt" in city:
+    elif "Altenmarkt" in selected_city_short_name:
         return "Altenmarkt a.d. Alz"
 
-    return city
+    return selected_city_short_name
 
 
-def get_logo_file_path(selected_city: str) -> str:
-    if selected_city in ["Hallein", "Bad Dürrnberg"]:
-        return "assets/FFH_Logohalter_negativ.png"
-    if selected_city in ["Altenmarkt a.d. Alz"]:
+def get_logo_file_path(selected_long_name: str) -> str:
+    # city logos
+    if selected_long_name in ["Hallein", "Dürrnberg"]:
+        return "assets/FFH_Logohalter.png"
+    if selected_long_name == "Altenmarkt":
         return "assets/altenmarkt.png"
-    return "assets/FFH_Logohalter_negativ.png"
+
+    # state logos
+    if selected_long_name in ["Salzburg", "Bayern"]:
+        return "assets/lfv_salzburg.png"
+
+    # default
+    return "assets/FFH_Logohalter.png"
 
 
 def get_score_value(
@@ -221,18 +237,56 @@ def transfer_file(file_path: str, file_name: str, new_file_name: str = "") -> No
         get_user_data_dir(),
         new_file_name,
     )
-    dst_file_exists = os.path.exists(dst)
 
-    if not dst_file_exists:
+    if not os.path.exists(dst):
         copy_file_to_writable_dir(file_path, file_name, new_file_name)
 
     else:
         existing_content = load_from_yaml(dst)
         new_content = load_from_yaml(src)
 
-        updated_content = update_yaml_values(existing_content, new_content)
+        # Migration 2.3.2 -> 2.4.0
+        # up to 2.3.2: no multi-tenancy available
+        if (
+            "competitions" in existing_content.keys()
+            and "firetrucks" in existing_content.keys()
+        ):
+            updated_content = migrate_to_2_4_0(existing_content, new_content)
+
+        else:
+            updated_content = update_yaml_values(existing_content, new_content)
 
         save_to_yaml(dst, updated_content)
+
+
+def migrate_to_2_4_0(existing_content: dict, new_content: dict) -> dict:
+    for key, values in existing_content.items():
+        if key == "competitions":
+            # competitions scores are conserved no matter which city is selected
+            new_content["Hallein"]["competitions"].update(values)
+            new_content["Dürrnberg"]["competitions"].update(values)
+            new_content["Altenmarkt"]["competitions"].update(values)
+
+        elif key == "firetrucks":
+            for truck, strike_score in values.items():
+                if truck in [
+                    "Leiter",
+                    "Pumpe",
+                    "Rüst",
+                    "RüstLösch",
+                    "Tank1",
+                    "Tank2",
+                    "Voraus",
+                ]:
+                    # new_content["Hallein"]["firetrucks"][truck].update(deepcopy(strike_score))
+                    new_content["Hallein"]["firetrucks"][truck].update(strike_score)
+
+                elif truck == "PumpeDürrnberg":
+                    new_content["Dürrnberg"]["firetrucks"]["Pumpe"].update(strike_score)
+                elif truck == "TankDürrnberg":
+                    new_content["Dürrnberg"]["firetrucks"]["Tank"].update(strike_score)
+
+    return new_content
 
 
 def update_yaml_values(source_yaml: dict, target_yaml: dict) -> dict:

@@ -1,6 +1,9 @@
 from kivy.uix.label import Label
 from kivy.uix.button import Button
 from kivy.uix.boxlayout import BoxLayout
+
+# from kivy.uix.image import Image
+# from kivy.properties import StringProperty
 from kivy.uix.layout import Layout
 from kivy.uix.screenmanager import Screen, SlideTransition
 
@@ -10,12 +13,33 @@ from helper.functions import change_screen_to, create_scores_text
 from helper.file_handling import (
     read_scores_file,
     get_selected_city_state,
-    get_logo_file_path,
 )
+from helper.aspect_image import get_city_image
 from helper.settings import Strings
 
 
 strings = Strings()
+
+
+# class AspectImage(Image):
+#     source = StringProperty()
+
+#     def __init__(self, **kwargs):
+#         super().__init__(**kwargs)
+
+#         self.bind(texture=self._on_texture, size=self._on_size)
+
+#     def _on_texture(self, *args):
+#         self._update_size()
+
+#     def _on_size(self, *args):
+#         self._update_size()
+
+#     def _update_size(self):
+#         if self.texture:
+#             image_ratio = self.texture.width / self.texture.height
+#             self.size_hint_x = None
+#             self.width = self.height * image_ratio
 
 
 class Start_Menu(Screen):
@@ -24,13 +48,12 @@ class Start_Menu(Screen):
 
         self.ids.all_cities_button.text = strings.BUTTON_STR_ALL_CITIES
 
-        # TODO: display city icon from self.selected_city
-
     def on_pre_enter(self):
         self.selected_city, _ = get_selected_city_state()
 
         # update city logo
-        self.ids.logo_layout.source = get_logo_file_path(self.selected_city)
+        self.ids.logo_layout.clear_widgets()
+        self.ids.logo_layout.add_widget(get_city_image(self.selected_city))
 
     def on_kv_post(self, base_widget):
         # type annotations
