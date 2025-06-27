@@ -5,7 +5,8 @@ from kivy.uix.screenmanager import Screen
 from typing import cast
 
 from helper.functions import mode_str2bool, change_screen_to
-from helper.file_handling import get_selected_city_state, get_logo_file_path
+from helper.file_handling import get_selected_city_state
+from helper.aspect_image import get_city_image
 from helper.settings import Strings
 
 
@@ -18,7 +19,8 @@ class Fahrzeugkunde_Menu(Screen):
         self.selected_city, _ = get_selected_city_state()
 
         # update city logo
-        self.ids.logo_layout.source = get_logo_file_path(self.selected_city)
+        self.ids.logo_layout.clear_widgets()
+        self.ids.logo_layout.add_widget(get_city_image(f"{self.selected_city}_small"))
 
     def on_button_release(self, instance):
         self.mode_label = cast(Label, self.mode_label)

@@ -411,14 +411,6 @@
     firetrucks_scrollview: firetrucks_scrollview
     firetrucks_layout: firetrucks_layout
 
-    # LOGO
-    FloatLayout:
-        Image:
-            id: logo_layout
-            fit_mode: "fill"  # or "contain" if preserving aspect is needed
-            size_hint: 0.225, 0.105  # 20% width, 10% height of screen
-            pos_hint: {"x": 0.18, "y": 0.89}  # Stick to return button
-
     # SCREEN
     BoxLayout:
         orientation: 'vertical'
@@ -439,8 +431,13 @@
                     #root.manager.transition.direction = "right"
                     root.go_back()
             
-            Label: # placeholder
-                size_hint_x: 2
+            # LOGO
+            BoxLayout:
+                id: logo_layout
+                size_hint_x: 1
+    
+            Label:  # placeholder
+                size_hint_x: 1
 
             Label:
                 size_hint_x: 3

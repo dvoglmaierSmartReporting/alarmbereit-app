@@ -32,8 +32,6 @@ class Fahrzeugkunde_Mode(Screen):
         self.abbreviations = get_firetruck_abbreviation_values(self.selected_city)
 
         # update city logo
-        # self.ids.logo_layout.source = get_logo_file_path(self.selected_city)
-
         self.ids.logo_layout.clear_widgets()
         self.ids.logo_layout.add_widget(get_city_image(f"{self.selected_city}_small"))
 
