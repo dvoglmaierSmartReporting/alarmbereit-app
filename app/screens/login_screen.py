@@ -38,7 +38,8 @@ class Login(Screen):
 
         for city, state in self.cities:
             btn = ToggleButton(
-                text=f"{city}   ({state})",
+                text=f"{city}{' '*3}[size=30]{state}[/size]",
+                markup=True,  # Enable markup for custom text positioning
                 font_size="32sp",
                 group="city",
                 allow_no_selection=True,
@@ -64,7 +65,8 @@ class Login(Screen):
             self.ids.store_selection_button.disabled = True
 
     def store_selection(self):
-        self.selected_state = self.selected_button.split("(")[1][:-1]
+        state = self.selected_button.split("   ")[1]
+        self.selected_state = state[9:-7]
         self.selected_city = map_selected_city_2long_name(self.selected_button)
 
         update_config(

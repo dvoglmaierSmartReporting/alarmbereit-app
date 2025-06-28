@@ -248,8 +248,8 @@ class Fahrzeugkunde_Mode(Screen):
         # Create a button with two strings, one centered and one at the bottom right
         btn = Button(
             text=f"{firetruck}{' '*3}[size=30]{abbreviation}[/size]",
-            font_size="32sp",
             markup=True,  # Enable markup for custom text positioning
+            font_size="32sp",
             size_hint_y=None,
             height=200,
             size_hint_x=1,
