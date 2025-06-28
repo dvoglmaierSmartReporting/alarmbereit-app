@@ -1,13 +1,14 @@
 # next version
 features:
-- Choose your fire department in first screen
-- Only see the content of your department and state
-- Refactor scores storage
-- Only display scores of your department
-- Change your department any time
-- Display logo of your fire department
-- Use "Fahrer / GF" in layout for German trucks
-- Use kivy.Config to store settings
+- choose your fire department in first screen
+- only see the content of your department and state
+- refactor scores storage
+- scores migration from 2.3.2 to 2.4.0
+- only display scores of your department
+- change your department any time
+- display logo of your fire department
+- use "Fahrer / GF" in layout for German trucks
+- use kivy.Config to store settings
 
 fixes:
 - error found by Fehlerfinder
