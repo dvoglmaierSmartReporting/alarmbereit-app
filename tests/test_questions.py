@@ -85,11 +85,13 @@ def test_competition_training__select_competition(competition_name):
 
 #### FIRETRUCK TRAINING ####
 
+cities = ["Hallein", "Bad Dürrnberg", "Altenmarkt a.d. Alz"]
 
-def test_firetruck_training__select_firetruck():
+@pytest.mark.parametrize("city_name", cities)
+def test_firetruck_training__select_firetruck(city_name):
     # need to be loaded in test, because function is
     # using get_running_app() methode, which is simulated above
-    firetrucks = list(load_total_firetruck_storage().keys())
+    firetrucks = list(load_total_firetruck_storage(city_name).keys())
     settings.FIRETRUCK_TRAINING_FEEDBACK_SEC = 0.3
 
     class Instance:
@@ -104,6 +106,7 @@ def test_firetruck_training__select_firetruck():
         for firetruck_name in firetrucks:
             screen = Fahrzeugkunde_Training(name="fahrzeugkunde_training")
             try:
+                screen.select_city(city_name)
                 screen.select_firetruck(firetruck_name)
                 screen.play()
                 print(f"✅ Loaded firetruck_training '{firetruck_name}'")

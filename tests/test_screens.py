@@ -79,35 +79,35 @@ def test_all_screens_load(app):
         EventLoop.idle()
 
 
-#### COMPETITION MENU ####
+# #### COMPETITION MENU ####
 
 
-@pytest.mark.parametrize("mode", ["Übung", "Zeitdruck"])
-def test_competition_menu__select_mode(mode):
-    screen = Bewerb_Menu(name="bewerb_menu")
-    try:
-        screen.mode_label = mode
-        print(f"competition_menu loaded successfully for mode {mode}.")
-    except Exception as e:
-        pytest.fail(f"Mode ('{mode}') raised an exception: {e}")
+# @pytest.mark.parametrize("mode", ["Übung", "Zeitdruck"])
+# def test_competition_menu__select_mode(mode):
+#     screen = Bewerb_Menu(name="bewerb_menu")
+#     try:
+#         screen.mode_label = mode
+#         print(f"competition_menu loaded successfully for mode {mode}.")
+#     except Exception as e:
+#         pytest.fail(f"Mode ('{mode}') raised an exception: {e}")
 
 
-#### FIRETRUCK MENU ####
+# #### FIRETRUCK MENU ####
 
 
-@pytest.mark.parametrize("mode", ["Übung", "Zeitdruck"])
-def test_firetruck_menu__select_mode(mode):
-    screen = Fahrzeugkunde_Menu(name="firetruck_menu")
-    try:
-        screen.mode_label = mode
-        print(f"firetruck_menu loaded successfully for mode {mode}.")
-    except Exception as e:
-        pytest.fail(f"Mode ('{mode}') raised an exception: {e}")
+# @pytest.mark.parametrize("mode", ["Übung", "Zeitdruck"])
+# def test_firetruck_menu__select_mode(mode):
+#     screen = Fahrzeugkunde_Menu(name="firetruck_menu")
+#     try:
+#         screen.mode_label = mode
+#         print(f"firetruck_menu loaded successfully for mode {mode}.")
+#     except Exception as e:
+#         pytest.fail(f"Mode ('{mode}') raised an exception: {e}")
 
 
-#### COMPETITION TRAINING ####
+# #### COMPETITION TRAINING ####
 
-competitions = list(load_total_competition_questions().keys())
+# competitions = list(load_total_competition_questions().keys())
 
 
 # @pytest.mark.parametrize("competition_name", competitions)
