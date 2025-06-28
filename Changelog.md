@@ -1,6 +1,18 @@
 # next version
+features:
+- choose your fire department in first screen
+- only see the content of your department and state
+- refactor scores storage
+- scores migration from 2.3.2 to 2.4.0
+- only display scores of your department
+- change your department any time
+- display logo of your fire department
+- use "Fahrer / GF" in layout for German trucks
+- use kivy.Config to store settings
+
 fixes:
 - error found by Fehlerfinder
+- update tools of Hallein RüstLösch
 
 
 # version 2.3.2
@@ -98,7 +110,7 @@ fix issues of version 0.8
 3. Update Zeitdruck modus gameplay
 4. import & compile PyYaml pkg
 
-todo:
+to be fixed:
 - app crash at end_game() func
 - multi-answer: already selected answer results incorrect answer
 

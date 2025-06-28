@@ -1,11 +1,13 @@
 from kivy.app import App
 
 import os
+from typing import cast
 
 from helper.settings import Strings, Settings
 from helper.file_handling import (
     load_total_storage,
     load_total_competition_questions,
+    map_selected_city_2short_name,
 )
 from helper.game_class import ToolQuestion
 from helper.custom_types import *
@@ -46,9 +48,19 @@ def invert_firetruck_equipment(firetruck: dict[str, list[str]]) -> dict[str, lis
     return tools_locations
 
 
-def get_firetruck_storage(selected_firetruck: str) -> firetruckStorage:
-    total_storage = load_total_storage()
-    firetruck: dict = total_storage[selected_firetruck]
+def get_firetruck_storage(
+    selected_firetruck: str, selected_city: str
+) -> firetruckStorage:
+    total_storage = load_total_storage(selected_city)
+
+    if isinstance(total_storage[selected_firetruck]["Tools"], dict):
+        firetruck = total_storage[selected_firetruck]["Tools"]
+        firetruck = cast(dict, firetruck)
+    else:
+        raise TypeError(
+            f"Firetruck {selected_firetruck} is not configured correctly. Tools key is not a dict."
+        )
+
     rooms: list = list(firetruck.keys())
     tools: list = list(set([tool for room in firetruck.values() for tool in room]))
     tools_locations: dict = invert_firetruck_equipment(firetruck)
@@ -56,11 +68,14 @@ def get_firetruck_storage(selected_firetruck: str) -> firetruckStorage:
 
 
 def get_ToolQuestion_instances(
-    selected_firetruck: str,
+    selected_firetruck: str, selected_city: str
 ) -> tuple[list[str], list[ToolQuestion]]:
-    # merge get_firetruck_storage + get_ToolQuestion_instances after refactoring all screens
 
-    (rooms, tools, tools_locations) = get_firetruck_storage(selected_firetruck)
+    # TODO: merge get_firetruck_storage + get_ToolQuestion_instances after refactoring all screens
+
+    (rooms, tools, tools_locations) = get_firetruck_storage(
+        selected_firetruck, selected_city
+    )
 
     tool_questions = []
 
@@ -78,6 +93,39 @@ def get_ToolQuestion_instances(
         )
 
     return (rooms, tool_questions)
+
+
+def get_firetruck_layout_value(selected_firetruck: str, selected_city: str) -> str:
+    total_storage = load_total_storage(selected_city)
+
+    if isinstance(total_storage[selected_firetruck]["Layout"], str):
+        layout = total_storage[selected_firetruck]["Layout"]
+        layout = cast(str, layout)
+    else:
+        raise TypeError(
+            f"Firetruck {selected_firetruck} is not configured correctly. Layout key is not a str."
+        )
+
+    return layout
+
+
+def get_firetruck_abbreviation_values(selected_city: str) -> dict:
+    total_storage = load_total_storage(selected_city)
+
+    abbs = dict()
+
+    for firetruck in total_storage.keys():
+        if isinstance(total_storage[firetruck]["Abb"], str):
+            abb = total_storage[firetruck]["Abb"]
+            abb = cast(str, abb)
+
+            abbs[firetruck] = abb
+        else:
+            raise TypeError(
+                f"Firetruck {firetruck} is not configured correctly. Abb key is not a str."
+            )
+
+    return abbs
 
 
 def mode_str2bool(selected_mode: str) -> tuple:
@@ -121,56 +169,31 @@ def break_tool_name(tool_name: str) -> str:
     return tool_name
 
 
-def create_scores_content() -> dict:
-    scores = {"firetrucks": {}, "competitions": {}}
-
-    total_storage = load_total_storage()
-
-    for truck in total_storage.keys():
-        scores.get("firetrucks", {}).update(
-            {truck: {"high_score": 0, "high_strike": 0}}
-        )
-
-    total_questions = load_total_competition_questions()
-
-    for question in total_questions.keys():
-        scores.get("competitions", {}).update({question: {"high_score": 0}})
-
-    return scores
-
-
-def create_scores_text(scores: scores) -> str:
-    output = ""
+def create_scores_text(scores: scores, selected_city: str) -> str:
     spacing = "      "
     separator = "  -  "
     # divider = "  |  "
-    total_score = 0
-    total_strike = 0
-    total = 0
     factor = settings.FIRETRUCK_TRAINING_STRIKE_FACTOR
 
-    for category, competitions in scores.items():
-        if category == "competitions":
-            output += f"{strings.BUTTON_STR_COMPETITIONS}:\n"
+    filtered_scores = scores.get(map_selected_city_2short_name(selected_city), {})
 
-            for comp, data in competitions.items():
-                score = data.get("high_score", 0)
-                total_score += score
-                dynamic_spacing = " " * (14 - len(str(score)) * 2)
-                output += f"{spacing}{spacing}Best:{dynamic_spacing}{score}{separator}{comp}\n"
+    if selected_city == "Hallein":
+        output = "Stadt Hallein\n\n"
+    else:
+        output = selected_city + "\n\n"
 
-        elif category == "firetrucks":
-            output += f"{strings.BUTTON_STR_FIRETRUCKS}:\n"
+    # always display firetrucks on top
+    output_2add, total_score, total_strike = create_firetruck_score_text(
+        filtered_scores.get("firetrucks")
+    )
 
-            for comp, data in competitions.items():
-                score = data.get("high_score", 0)
-                total_score += score
-                dynamic_spacing = " " * (14 - len(str(score)) * 2)
-                output += f"{spacing}{spacing}Best:{dynamic_spacing}{score}"
-                strike = data.get("high_strike", 0)
-                total_strike += strike
-                dynamic_spacing = " " * (10 - len(str(strike)))
-                output += f"{spacing}Best Strike:{spacing}{strike}{separator}{comp}\n"
+    output += output_2add + "\n"
+
+    output_2add, total_score_2add = create_competition_score_text(
+        filtered_scores.get("competitions")
+    )
+    output += output_2add
+    total_score += total_score_2add
 
     output += "________________________________________\n"
     output += f"Gesamt Best{separator}{str(total_score)} Punkte\n"
@@ -182,3 +205,55 @@ def create_scores_text(scores: scores) -> str:
     total = total_score + total_strike * factor
     output += f"Gesamtpunktzahl{separator}{str(total)} Punkte"
     return output
+
+
+def create_firetruck_score_text(
+    scores,
+    spacing: str = "      ",
+    separator: str = "  -  ",
+) -> tuple[str, int, int]:
+    total_score = 0
+    total_strike = 0
+
+    output = f"{strings.BUTTON_STR_FIRETRUCKS}:\n"
+
+    for truck, data in scores.items():
+        data = cast(dict, data)
+
+        if isinstance(data.get("high_score"), int):
+            score = data.get("high_score", 0)
+            score = cast(int, score)
+
+        total_score += score
+        dynamic_spacing = " " * (14 - len(str(score)) * 2)
+        output += f"{spacing}{spacing}Best:{dynamic_spacing}{score}"
+
+        if isinstance(data.get("high_strike"), int):
+            strike = data.get("high_strike", 0)
+            strike = cast(int, strike)
+
+        total_strike += strike
+        dynamic_spacing = " " * (10 - len(str(strike)))
+        output += f"{spacing}Best Strike:{spacing}{strike}{separator}{truck}\n"
+
+    return output, total_score, total_strike
+
+
+def create_competition_score_text(
+    scores,
+    spacing: str = "      ",
+    separator: str = "  -  ",
+) -> tuple[str, int]:
+    total_score = 0
+
+    output = f"{strings.BUTTON_STR_COMPETITIONS}:\n"
+
+    for comp, data in scores.items():
+        if isinstance(data.get("high_score"), int):
+            score = data.get("high_score", 0)
+            score = cast(int, score)
+        total_score += score
+        dynamic_spacing = " " * (14 - len(str(score)) * 2)
+        output += f"{spacing}{spacing}Best:{dynamic_spacing}{score}{separator}{comp}\n"
+
+    return output, total_score

@@ -25,11 +25,15 @@ class Settings:
 class Strings:
     def __init__(self) -> None:
 
-        # Start_Menu mode names
-        self.LABEL_STR_QUESTIONS = "Mission"
-        self.LABEL_STR_MODE = "Lernpfad"
+        # login
+        self.LABEL_STR_LOGIN = "Login"
+        # self.BUTTON_STR_LOGIN = "Login"
+        # self.LABEL_STR_CITY = "Freiwillige Feuerwehr"
+        self.BUTTON_STR_STORE_SELECTION = "Auswahl speichern"
 
-        # Start_Menu button names
+        # start_nenu
+        self.LABEL_STR_QUESTIONS = "Mission"
+        self.BUTTON_STR_ALL_CITIES = "Alle Städte"
         self.BUTTON_STR_INFO = "Info"
         self.BUTTON_STR_ACKNOWLEDGEMENT = "Dank"
         self.BUTTON_STR_SETTINGS = "Einst."
@@ -54,8 +58,14 @@ class Strings:
         self.BUTTON_DIALOG_POPUP_CANCEL = "Abbrechen"
         self.BUTTON_DIALOG_POPUP_CONFIRM = "Auswählen"
 
+        # firetruck modes
+        self.LABEL_STR_MODES = "Lernpfad"
+
         # firetruck training
         self.HINT_STR_MULTIPLE_ANSWERS = "Wo noch?"
+
+        # competition state
+        self.LABEL_STR_STATE = "Bundesland"
 
         # competition training
         self.BUTTON_STR_SOLUTION = "Lösung"
@@ -67,21 +77,6 @@ class Strings:
         # error popup
         self.TITLE_ERROR_POPUP = "Fehlermeldung"
         self.BUTTON_CLOSE_POPUP = "Schließen"
-
-        self.trucks_hallein = {
-            "TestTruck": "testing",
-            "RüstLösch": "RLFA 2000",
-            "Tank1": "TLF-A 3000",
-            "BDLP-Tank1": "TLF-A 3000",
-            "Leiter": "DLA(K) 23-12",
-            "Tank2": "TLF-A 4000",
-            "Voraus": "VRFA-Tunnel",
-            "Voraus+Ölanh.": "VRFA-Tunnel",
-            "Pumpe": "LFA",
-            "Rüst": "SRFK-A",
-            "TankDürrnberg": "TLF-A 3000",
-            "PumpeDürrnberg": "LFA",
-        }
 
 
 class About_Text:

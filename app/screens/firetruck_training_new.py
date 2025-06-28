@@ -61,7 +61,10 @@ class Fahrzeugkunde_Training_New(Screen):
         self.reset_strike()
 
         self.current_high_strike = get_score_value(
-            self.selected_firetruck, "high_strike"
+            city="Hallein",
+            questions="firetrucks",
+            truck_or_comp=self.selected_firetruck,
+            key="high_strike"
         )
 
         self.update_high_strike_label()
@@ -154,7 +157,11 @@ class Fahrzeugkunde_Training_New(Screen):
             self.current_high_strike = self.game.answers_correct_strike
             self.update_high_strike_label()
             save_to_scores_file(
-                self.selected_firetruck, "high_strike", self.game.answers_correct_strike
+                city=self.selected_city,
+                questions="firetrucks",
+                truck_or_comp=self.selected_firetruck,
+                key="high_strike", 
+                value=self.game.answers_correct_strike
             )
 
         self.feedback_green = True
@@ -163,8 +170,6 @@ class Fahrzeugkunde_Training_New(Screen):
         self.feedback_green = False
 
         Clock.schedule_once(self.reset_strike, settings.FIRETRUCK_TRAINING_FEEDBACK_SEC)
-
-        # todo: check for PB score!
 
     def on_answer(self, instance):
         if not self.accept_answers:  # Check if answer processing is enabled

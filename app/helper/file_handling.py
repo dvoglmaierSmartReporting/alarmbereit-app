@@ -1,4 +1,5 @@
 from kivy.app import App
+from kivy.config import Config
 
 import yaml
 from shutil import copyfile
@@ -27,10 +28,15 @@ def load_from_yaml(file_path: str) -> dict:
     #     print(f"An unexpected error occurred: {e}")
 
 
+class NoAliasDumper(yaml.SafeDumper):
+    def ignore_aliases(self, data):
+        return True
+
+
 def save_to_yaml(file_path: str, content: dict) -> None:
     try:
         with open(file_path, "w") as file:
-            yaml.dump(content, file)
+            yaml.dump(content, file, Dumper=NoAliasDumper)
     except Exception as e:
         print(f"Error writing to file: {e}")
         print(f"{file_path = }")
@@ -48,23 +54,15 @@ def get_user_data_dir() -> str:
     return get_running_app.user_data_dir
 
 
-def load_total_firetruck_storage() -> totalStorage:
-    default_file_path = (
-        "/".join(__file__.split("/")[:-2]) + "/content/firetruck_tools.yaml"
-    )
-    file_path = default_file_path
+def load_total_firetruck_storage(selected_city: str) -> totalStorage:
+    if selected_city == "Hallein":
+        content_file = "firetruck_tools_Hallein.yaml"
+    elif selected_city == "Bad Dürrnberg":
+        content_file = "firetruck_tools_Dürrnberg.yaml"
+    elif selected_city == "Altenmarkt a.d. Alz":
+        content_file = "firetruck_tools_Altenmarkt.yaml"
 
-    custom_file_path = os.path.join(
-        get_user_data_dir(),
-        "custom_firetruck_tools.yaml",
-    )
-    custom_file_exists = os.path.exists(custom_file_path)
-
-    # main.cfg is source-of-truth for firetruck content and scores
-    config = read_main_cfg()
-    if not config.get("content", {}).get("use_default", {}) and custom_file_exists:
-
-        file_path = custom_file_path
+    file_path = "/".join(__file__.split("/")[:-2]) + "/content/" + content_file
 
     return load_from_yaml(file_path)
 
@@ -74,11 +72,11 @@ def load_bdlp_storage() -> totalStorage:
     return load_from_yaml(default_file_path)
 
 
-def load_total_storage() -> totalStorage:
-    output = load_total_firetruck_storage()
+def load_total_storage(selected_city: str) -> totalStorage:
+    output = load_total_firetruck_storage(selected_city)
 
-    # add BDLP content for default and custom firetruck contents
-    output.update(load_bdlp_storage())
+    # # add BDLP content for default and custom firetruck contents
+    # output.update(load_bdlp_storage())
     return output
 
 
@@ -119,102 +117,112 @@ def read_scores_file() -> dict:
     )
     file_path = scores_file_path
 
-    custom_scores_file_path = os.path.join(
-        get_user_data_dir(),
-        "custom_scores.yaml",
-    )
-    custom_scores_exists = os.path.exists(custom_scores_file_path)
-
-    config = read_main_cfg()
-
-    if not config.get("content", {}).get("use_default", {}) and custom_scores_exists:
-        file_path = custom_scores_file_path
-
     return load_from_yaml(file_path)
 
 
-def get_score_value(firetruck: str, key: str, questions: str = "firetrucks") -> int:
-    return read_scores_file().get(questions, {}).get(firetruck, {}).get(key, {})
+def map_selected_city_2short_name(selected_city_long_name: str) -> str:
+    if selected_city_long_name in ["Bad Dürrnberg"]:
+        return "Dürrnberg"
+    elif selected_city_long_name in [
+        "Altenmarkt a.d. Alz",
+        "Altenmarkt ad Alz",
+        "Altenmarkt Alz",
+    ]:
+        return "Altenmarkt"
+    elif selected_city_long_name in ["Stadt Hallein"]:
+        return "Hallein"
+
+    return selected_city_long_name
+
+
+def map_selected_city_2long_name(selected_city_short_name: str) -> str:
+    if "Hallein" in selected_city_short_name:
+        return "Hallein"
+    elif "Dürrnberg" in selected_city_short_name:
+        return "Bad Dürrnberg"
+    elif "Altenmarkt" in selected_city_short_name:
+        return "Altenmarkt a.d. Alz"
+
+    return selected_city_short_name
+
+
+def get_logo_file_path(selected_long_name: str) -> str:
+    # city logos
+    if selected_long_name in ["Hallein", "Dürrnberg"]:
+        return "assets/FFH_Logohalter.png"
+    if selected_long_name == "Altenmarkt":
+        return "assets/altenmarkt.png"
+
+    # state logos
+    if selected_long_name in ["Salzburg", "Bayern"]:
+        return "assets/lfv_salzburg.png"
+
+    # default
+    return "assets/FFH_Logohalter.png"
+
+
+def get_score_value(
+    city: str,
+    questions: str,
+    truck_or_comp: str,
+    key: str,
+) -> int:
+    return (
+        read_scores_file()
+        .get(map_selected_city_2short_name(city), {})
+        .get(questions, {})
+        .get(truck_or_comp, {})
+        .get(key, 0)
+    )
 
 
 def save_to_scores_file(
-    firetruck: str, key: str, value: int, questions: str = "firetrucks"
+    city: str,
+    questions: str,
+    truck_or_comp: str,
+    key: str,
+    value: int,
 ) -> None:
     content = read_scores_file()
 
-    if not questions in content.keys():
-        raise ValueError(f"Questions {questions} not found in scores.yaml")
+    city = map_selected_city_2short_name(city)
 
-    if not firetruck in content.get(questions, {}).keys():
+    if not city in content.keys():
+        raise ValueError(f"City {city} not found in scores.yaml")
+
+    if not questions in content.get(city, {}).keys():
+        raise ValueError(f"Questions {questions} not found in scores.yaml > {city}")
+
+    if not truck_or_comp in content.get(city, {}).get(questions, {}).keys():
         raise ValueError(
-            f"Firetruck {firetruck} not found in scores.yaml > {questions}"
+            f"Firetruck {truck_or_comp} not found in scores.yaml > {city} > {questions}"
         )
 
-    if not key in content.get(questions, {}).get(firetruck, {}).keys():
+    if (
+        not key
+        in content.get(city, {}).get(questions, {}).get(truck_or_comp, {}).keys()
+    ):
         raise ValueError(
-            f"Key {key} not found in scores.yaml > {questions} > {firetruck}"
+            f"Key {key} not found in scores.yaml > {city} > {questions} > {truck_or_comp}"
         )
 
-    content[questions][firetruck][key] = value
+    content[city][questions][truck_or_comp][key] = value
 
-    #
-    # competition scores are to be added in both scores files (if custom exists)
-    # because this allows to have 2 scores files instead of 4
-    #
-    # for saving firetruck scores and strikes,
-    # main.cfg is source-of-truth for firetruck content and scores
-    #
     scores_file_path = os.path.join(
         get_user_data_dir(),
         "scores.yaml",
     )
-    custom_scores_file_path = os.path.join(
-        get_user_data_dir(),
-        "custom_scores.yaml",
-    )
-    custom_scores_exists = os.path.exists(custom_scores_file_path)
-
-    file_paths = [scores_file_path]
-
-    config = read_main_cfg()
-
-    # overwrite and only update custom firetruck scores
-    # it's assumed the file was already created
-    if (
-        questions == "firetrucks"
-        and not config.get("content", {}).get("use_default", {})
-        and custom_scores_exists
-    ):
-        file_paths = [custom_scores_file_path]
-
-    # update both scores files' competitions high scores
-    elif questions == "competitions" and custom_scores_exists:
-        file_paths.append(custom_scores_file_path)
-
-    for file_path in file_paths:
-        save_to_yaml(file_path, content)
-
-
-def read_main_cfg() -> mainConfig:
-    file_path = os.path.join(
-        get_user_data_dir(),
-        "main.cfg",
-    )
-
-    return load_from_yaml(file_path)
+    save_to_yaml(scores_file_path, content)
 
 
 def update_main_cfg(to_update: dict) -> None:
-    content = read_main_cfg()
+    for key, value in to_update.items():
+        Config.set("content", key, value)
+    Config.write()
 
-    content.update(to_update)
 
-    file_path = os.path.join(
-        get_user_data_dir(),
-        "main.cfg",
-    )
-
-    save_to_yaml(file_path, content)
+def get_selected_city_state() -> tuple[str, str]:
+    return Config.get("content", "city"), Config.get("content", "state")
 
 
 def transfer_file(file_path: str, file_name: str, new_file_name: str = "") -> None:
@@ -229,18 +237,56 @@ def transfer_file(file_path: str, file_name: str, new_file_name: str = "") -> No
         get_user_data_dir(),
         new_file_name,
     )
-    dst_file_exists = os.path.exists(dst)
 
-    if not dst_file_exists:
+    if not os.path.exists(dst):
         copy_file_to_writable_dir(file_path, file_name, new_file_name)
 
     else:
         existing_content = load_from_yaml(dst)
         new_content = load_from_yaml(src)
 
-        updated_content = update_yaml_values(existing_content, new_content)
+        # Migration 2.3.2 -> 2.4.0
+        # up to 2.3.2: no multi-tenancy available
+        if (
+            "competitions" in existing_content.keys()
+            and "firetrucks" in existing_content.keys()
+        ):
+            updated_content = migrate_to_2_4_0(existing_content, new_content)
+
+        else:
+            updated_content = update_yaml_values(existing_content, new_content)
 
         save_to_yaml(dst, updated_content)
+
+
+def migrate_to_2_4_0(existing_content: dict, new_content: dict) -> dict:
+    for key, values in existing_content.items():
+        if key == "competitions":
+            # competitions scores are conserved no matter which city is selected
+            new_content["Hallein"]["competitions"].update(values)
+            new_content["Dürrnberg"]["competitions"].update(values)
+            new_content["Altenmarkt"]["competitions"].update(values)
+
+        elif key == "firetrucks":
+            for truck, strike_score in values.items():
+                if truck in [
+                    "Leiter",
+                    "Pumpe",
+                    "Rüst",
+                    "RüstLösch",
+                    "Tank1",
+                    "Tank2",
+                    "Voraus",
+                ]:
+                    # new_content["Hallein"]["firetrucks"][truck].update(deepcopy(strike_score))
+                    new_content["Hallein"]["firetrucks"][truck].update(strike_score)
+
+                elif truck == "PumpeDürrnberg":
+                    new_content["Dürrnberg"]["firetrucks"]["Pumpe"].update(strike_score)
+                elif truck == "TankDürrnberg":
+                    new_content["Dürrnberg"]["firetrucks"]["Tank"].update(strike_score)
+
+    return new_content
 
 
 def update_yaml_values(source_yaml: dict, target_yaml: dict) -> dict:

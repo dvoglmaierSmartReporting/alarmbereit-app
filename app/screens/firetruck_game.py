@@ -11,6 +11,7 @@ from typing import cast
 from helper.functions import (
     change_screen_to,
     get_ToolQuestion_instances,
+    get_firetruck_layout_value,
 )
 from helper.file_handling import save_to_scores_file, get_score_value
 from helper.settings import Settings, Strings
@@ -26,6 +27,9 @@ class Fahrzeugkunde_Game(Screen):
     timer_change_label_visible = BooleanProperty(False)
     # timer_change_add = BooleanProperty(True)
 
+    def select_city(self, selected_city: str):
+        self.selected_city = selected_city
+
     def select_firetruck(self, selected_firetruck: str):
         # troubleshooting: fix firetruck
         # self.selected_firetruck = "Tank1" "Rüst+Lösch"
@@ -34,6 +38,10 @@ class Fahrzeugkunde_Game(Screen):
         self.firetruck_label = cast(Label, self.firetruck_label)
         self.firetruck_label.text = selected_firetruck
 
+        self.room_layout = get_firetruck_layout_value(
+            selected_firetruck, self.selected_city
+        )
+
     def hide_label(self, *args):
         self.extra_time_label = cast(Label, self.extra_time_label)
         self.extra_time_label.opacity = 0
@@ -41,7 +49,6 @@ class Fahrzeugkunde_Game(Screen):
     def reset_timer(self):
         self.time_left = settings.FIRETRUCK_GAME_START_TIME_SEC
 
-        # todo: update progressBar limit
         self.progress_bar = cast(ProgressBar, self.progress_bar)
         self.progress_bar.max = settings.FIRETRUCK_GAME_START_TIME_SEC
 
@@ -94,8 +101,13 @@ class Fahrzeugkunde_Game(Screen):
         Clock.unschedule(self.update_timer)
 
         if self.game.score > self.current_high_score:
-            save_to_scores_file(self.selected_firetruck, "high_score", self.game.score)
-
+            save_to_scores_file(
+                city=self.selected_city,
+                questions="firetrucks",
+                truck_or_comp=self.selected_firetruck,
+                key="high_score",
+                value=self.game.score,
+            )
         # app = App.get_running_app()
         # app.root.current = "fahrzeugkunde_menu"
         # app.root.transition.direction = "right"
@@ -103,7 +115,7 @@ class Fahrzeugkunde_Game(Screen):
 
     def reset_tool_list(self):
         (self.firetruck_rooms, self.tool_questions) = get_ToolQuestion_instances(
-            self.selected_firetruck
+            self.selected_firetruck, self.selected_city
         )
 
         shuffle(self.tool_questions)
@@ -118,7 +130,9 @@ class Fahrzeugkunde_Game(Screen):
         self.reset_timer()
 
         self.current_high_score = get_score_value(
-            firetruck=self.selected_firetruck,
+            city=self.selected_city,
+            questions="firetrucks",
+            truck_or_comp=self.selected_firetruck,
             key="high_score",
         )
 
@@ -149,7 +163,7 @@ class Fahrzeugkunde_Game(Screen):
         #     btn.bind(on_press=self.on_answer)
         #     self.ids.firetruck_rooms_layout.add_widget(btn)
 
-        float = build_answer_layout(self.selected_firetruck, "fahrzeugkunde_game")
+        float = build_answer_layout(self.room_layout, "fahrzeugkunde_game")
 
         self.ids.firetruck_rooms_layout.add_widget(float)
 

@@ -1,7 +1,9 @@
 import os
 
 # Get absolute path to the layouts asset folder
-ASSETS_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "assets", "layouts"))
+ASSETS_DIR = os.path.abspath(
+    os.path.join(os.path.dirname(__file__), "..", "assets", "layouts")
+)
 
 
 from kivy.app import App
@@ -25,6 +27,12 @@ def get_7_rooms_layout() -> floatButtons:
         ("G7 / Heck", 0.4, 0.145, 0.3, 0.145),
         ("Dach", 0.2, 0.4, 0.4, 0.61),
     ]
+
+
+def get_7_rooms_DE_layout() -> floatButtons:
+    layout = get_7_rooms_layout()
+    layout[0] = ("Fahrer / GF", 0.5, 0.15, 0.25, 1)
+    return layout
 
 
 def get_5_rooms_layout() -> floatButtons:
@@ -82,32 +90,36 @@ def get_ruest_layout() -> floatButtons:
     ]
 
 
-def build_answer_layout(firetruck: str, calling_screen: str) -> FloatLayout:
+def build_answer_layout(room_layout: str, calling_screen: str) -> FloatLayout:
     # display background and buttons
     float = FloatLayout(size_hint=(1, 1))
 
-    if firetruck in ["RüstLösch", "Tank1", "Tank2", "TankDürrnberg", "BDLP-Tank1"]:
+    if room_layout in ["7-Raum"]:
         bgd_image = os.path.join(ASSETS_DIR, "truck.jpg")
         buttons = get_7_rooms_layout()
 
-    elif firetruck in ["Pumpe", "PumpeDürrnberg"]:
+    elif room_layout in ["7-Raum-DE"]:
+        bgd_image = os.path.join(ASSETS_DIR, "truck.jpg")
+        buttons = get_7_rooms_DE_layout()
+
+    elif room_layout in ["5-Raum"]:
         bgd_image = os.path.join(ASSETS_DIR, "truck.jpg")
         buttons = get_5_rooms_layout()
 
-    elif firetruck in ["Leiter"]:
+    elif room_layout in ["Leiter"]:
         bgd_image = os.path.join(ASSETS_DIR, "leiter.jpg")
         buttons = get_leiter_layout()
 
-    elif firetruck in ["Rüst"]:
+    elif room_layout in ["Rüst", "Ruest"]:
         bgd_image = os.path.join(ASSETS_DIR, "ruest.jpg")
         buttons = get_ruest_layout()
 
-    elif firetruck in ["Voraus"]:
+    elif room_layout in ["Voraus"]:
         bgd_image = os.path.join(ASSETS_DIR, "voraus.jpg")
         buttons = get_voraus_layout()
 
     else:
-        raise NotImplementedError
+        raise NotImplementedError("Layout not found.")
 
     background = Image(
         source=bgd_image,

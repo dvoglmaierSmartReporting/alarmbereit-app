@@ -1,34 +1,114 @@
 #:kivy 2.3.0
 
 
-<CustomContentToggleButton>
-    group: "content_button"
-    font_size: "32sp"
+<Login>:
+    name: "login"
+
+    # IDs
+    logo_layout: logo_layout
+    login_label: login_label
+    login_layout: login_layout
+    city_scrollview: city_scrollview
+    city_layout: city_layout
+    store_selection_button: store_selection_button
+
+    # LOGO
+    FloatLayout:
+        id: logo_layout
+
+    # SCREEN
+    BoxLayout:
+        orientation: 'vertical'
+        padding: "5dp"
+        spacing: "10dp"
+
+        # HEADER
+        BoxLayout:
+            size_hint_y: 2
+            spacing: "3dp"
+
+            Label: # placeholder
+                size_hint_x: 2
+
+            Label:
+                size_hint_x: 1
+                id: login_label
+                font_size: "25sp"
+                halign: "center"
+                valign: "middle"
+                text_size: self.size
+            
+        # SEPARATOR
+        BoxLayout:
+            size_hint_y: None
+            height: 2
+            canvas.before:
+                Color:
+                    rgba: 0.5, 0.5, 0.5, 1
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+
+        # LOGIN
+        BoxLayout:
+            id: login_layout
+            orientation: 'vertical'
+            size_hint_y: 6.5
+            
+            # CITY
+            ScrollView:
+                id: city_scrollview
+                do_scroll_x: False
+                
+                GridLayout:
+                    id: city_layout
+                    cols: 1
+                    size_hint_y: None
+                    height: self.minimum_height
+                    row_default_height: '50dp'
+                    spacing: "5dp"
+
+        # SEPARATOR
+        BoxLayout:
+            size_hint_y: None
+            height: 2
+            canvas.before:
+                Color:
+                    rgba: 0.5, 0.5, 0.5, 1
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+
+        # STORE SELECTION
+        BoxLayout:
+            size_hint_y: 1.5
+
+            Button:
+                id: store_selection_button
+                font_size: "32sp"
+                on_release:
+                    root.manager.get_screen('login').store_selection()
 
 
 <Start_Menu>:
     name: "start_menu"
     
     # IDs
+    logo_layout: logo_layout
     content_layout: content_layout
     info_button: info_button
     acknowledgement_button: acknowledgement_button
-    #settings_button: settings_button
+    all_cities_button: all_cities_button
 
     # LOGO
     FloatLayout:
-        Image:
-            source: "assets/FFH_Logohalter_negativ.png"
-            fit_mode: "fill"  # or "contain" if preserving aspect is needed
-            size_hint: 0.45, 0.2  # 40% width, 20% height of screen
-            pos_hint: {"x": 0, "y": 0.8}  # Stick to top-left
-
+        id: logo_layout
 
     # SCREEN
     BoxLayout:
         orientation: 'vertical'
-        spacing: "10dp"
         padding: "5dp"
+        spacing: "10dp"
 
         # HEADER
         BoxLayout:
@@ -37,7 +117,7 @@
 
             # ACKNOWLEDGEMENT BUTTON
             Button:
-                size_hint_x: 2
+                size_hint_x: 3
                 id: acknowledgement_button
                 font_size: "20sp"
                 background_normal: ''
@@ -50,7 +130,7 @@
                 size_hint_x: 1
             
             BoxLayout:
-                size_hint_x: 1
+                size_hint_x: 2
                 orientation: 'vertical'
                 spacing: "15dp"
                 padding: "15dp"
@@ -67,30 +147,17 @@
                         root.manager.transition.direction = "left"
                         root.update_info_text()
 
-                Label:  # placeholder
+                # ALL CITIES BUTTON
+                Button:
                     size_hint_y: 1
+                    id: all_cities_button
+                    font_size: "20sp"
+                    background_normal: ''
+                    background_color: 0.2, 0.2, 0.2, 0.5
+                    on_release:
+                        app.root.current = "login"
+                        root.manager.transition.direction = "right"
 
-                ## ACKNOWLEDGEMENT BUTTON
-                #Button:
-                #    size_hint_y: 1
-                #    id: acknowledgement_button
-                #    font_size: "20sp"
-                #    background_normal: ''
-                #    background_color: 0.2, 0.2, 0.2, 0.5
-                #    on_release:
-                #        app.root.current = "acknowledgement_screen"
-                #        root.manager.transition.direction = "left"
-
-            #Button:
-            #    id: settings_button
-            #    font_size: "32sp"
-            #    size_hint: None, None
-            #    size: "150dp", "100dp"
-            #    pos_hint: {'right': 1, 'top': 1}
-            #    on_release:
-            #        app.root.current = "settings_screen"
-            #        root.manager.transition.direction = "left"
-        
         # SEPARATOR
         BoxLayout:
             size_hint_y: None
@@ -104,14 +171,15 @@
         
         # CONTENT
         BoxLayout:
-            size_hint_y: 8
+            id: content_layout
+            size_hint_y: 7.5
             orientation: "vertical"
-
-            BoxLayout:
-                id: content_layout
-                orientation: "vertical"
-                spacing: "3dp"
+           # padding: "5dp"
+            spacing: "5dp"
         
+        Label: # placeholder
+            size_hint_y: 0.5
+
     # VERSION
     FloatLayout:
         Label:
@@ -132,8 +200,8 @@
     # SCREEN
     BoxLayout:
         orientation: 'vertical'
-        spacing: "10dp"
         padding: "5dp"
+        spacing: "10dp"
 
         # HEADER
         BoxLayout:
@@ -270,111 +338,75 @@
                 markup: True
 
 
-#<Settings_Screen>:
-#    name: "settings_screen"
-#
-#    text_output: text_output
-#    default_content_label: default_content_label
-#    default_content_switch: default_content_switch
-#    select_file_button: select_file_button
-#    upload_confirm_button: upload_confirm_button
-#
-#    Button:
-#        text: "<"
-#        font_size: "32sp"
-#        size_hint: None, None
-#        size: "75dp", "75dp"
-#        pos_hint: {'left': 1, 'top': 1}
-#        on_release:
-#            app.root.current = "start_menu"
-#            root.manager.transition.direction = "right"
-#            #self.go_back()
-#    
-#    BoxLayout:
-#        orientation: 'vertical'
-#
-#        Label:  # placeholder
-#            size_hint: 1, 1
-#
-#        BoxLayout:
-#            orientation: 'horizontal'
-#
-#            Label:
-#                id: default_content_label
-#                font_size: "32sp"
-#            
-#            Switch:
-#                id: default_content_switch
-#                #active: True
-#                #disabled: True
-#                on_active: root.update_default_content_switch(self, self.active)
-#
-#        Button:
-#            id: select_file_button
-#            font_size: "32sp"
-#            size_hint: 1, 1
-#            on_release: root.show_load()
-#
-#        Button:
-#            id: upload_confirm_button
-#            font_size: "32sp"
-#            disabled: True
-#            on_release: 
-#            size_hint: 1, 1
-#            on_release:
-#                root.confirm_upload()
-#        
-#        Label:  # placeholder
-#            size_hint: 1, 0.1
-#
-#        Label:
-#            id: text_output
-#            text: ""
-#            font_size: "23sp"
-#            text_size: self.size
-#            valign: "top"
-#            halign: "left"
-#            show_errors: True
-#            markup: True
-#            size_hint: 1, 6
+<Fahrzeugkunde_Mode>:
+    name: "fahrzeugkunde_mode"
 
-
-<LoadDialog>:
     # IDs
-    cancel_button: cancel_button
-    load_button: load_button
+    logo_layout: logo_layout
+    modes_label: modes_label
+    modes_layout: modes_layout
 
+    # SCREEN
     BoxLayout:
-        size: root.size
-        pos: root.pos
-        orientation: "vertical"
+        orientation: 'vertical'
+        padding: "5dp"
+        spacing: "10dp"
 
-        FileChooserListView:
-            id: filechooser
-            filters: ['*.yaml', '*.yml']
-            size_hint: 1, 6
-            on_selection: root.on_selection(self, self.selection)
-
+        # HEADER
         BoxLayout:
-            size_hint: 1, 1
+            size_hint_y: 1
+            spacing: "3dp"
+            orientation: 'horizontal'
 
             Button:
-                id: cancel_button
-                font_size: "32sp"
-                on_release: 
-                    root.cancel()
-
-            Button:
-                id: load_button
+                size_hint_x: 1
+                text: "<"
                 font_size: "32sp"
                 on_release:
-                    root.load(filechooser.path, filechooser.selection)
+                    root.go_back()
+            
+            # LOGO
+            BoxLayout:
+                id: logo_layout
+                size_hint_x: 1
+    
+            Label:  # placeholder
+                size_hint_x: 1
+            
+            Label:
+                size_hint_x: 3
+                id: modes_label
+                font_size: "25sp"
+                halign: "center"
+                valign: "middle"
+                text_size: self.size
+            
+        
+        # SEPARATOR
+        BoxLayout:
+            size_hint_y: None
+            height: 2
+            canvas.before:
+                Color:
+                    rgba: 0.5, 0.5, 0.5, 1
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+
+        # MODES
+        BoxLayout:
+            id: modes_layout
+            orientation: 'vertical'
+            size_hint_y: 9
+            # padding: "5dp"  # in Fahrzeugkunde_mode python
+            # spacing: "10dp"  # in Fahrzeugkunde_mode python
 
 
 <Fahrzeugkunde_Menu>:
     name: "fahrzeugkunde_menu"
 
     # IDs
+    logo_layout: logo_layout
     mode_label: mode_label
     firetrucks_scrollview: firetrucks_scrollview
     firetrucks_layout: firetrucks_layout
@@ -399,8 +431,13 @@
                     #root.manager.transition.direction = "right"
                     root.go_back()
             
-            Label: # placeholder
-                size_hint_x: 2
+            # LOGO
+            BoxLayout:
+                id: logo_layout
+                size_hint_x: 1
+    
+            Label:  # placeholder
+                size_hint_x: 1
 
             Label:
                 size_hint_x: 3
@@ -428,67 +465,6 @@
             
             BoxLayout:
                 id: firetrucks_layout
-                orientation: 'vertical'
-                size_hint_y: None
-                height: self.minimum_height
-                spacing: "5dp"
-
-
-<Bewerb_Menu>:
-    name: "bewerb_menu"
-
-    # IDs
-    mode_label: mode_label
-    bewerbe_layout: bewerbe_layout
-
-    # SCREEN
-    BoxLayout:
-        orientation: 'vertical'
-        spacing: "10dp"
-        padding: "5dp"
-    
-        # HEADER
-        BoxLayout:
-            size_hint_y: 1
-            orientation: 'horizontal'
-
-            Button:
-                size_hint_x: 1
-                text: "<"
-                font_size: "32sp"
-                on_release:
-                    #app.root.current = "start_menu"
-                    #root.manager.transition.direction = "right"
-                    root.go_back()
-
-            Label: # placeholder
-                size_hint_x: 2
-
-            Label:
-                size_hint_x: 3
-                id: mode_label
-                font_size: "25sp"
-                halign: "center"
-                valign: "middle"
-                text_size: self.size
-
-        # SEPARATOR
-        BoxLayout:
-            size_hint_y: None
-            height: 2
-            canvas.before:
-                Color:
-                    rgba: 0.5, 0.5, 0.5, 1
-                Rectangle:
-                    size: self.size
-                    pos: self.pos
-        
-        # COMPETITIONS
-        ScrollView:
-            size_hint_y: 9
-
-            BoxLayout:
-                id: bewerbe_layout
                 orientation: 'vertical'
                 size_hint_y: None
                 height: self.minimum_height
@@ -931,6 +907,111 @@
                 spacing: "5dp"
 
 
+<Bewerb_Menu>:
+    name: "bewerb_menu"
+
+    # IDs
+    logo_layout: logo_layout
+    mode_label: mode_label
+    mode_toggle_layout: mode_toggle_layout
+    mode_toggle_training: mode_toggle_training
+    mode_toggle_game: mode_toggle_game
+    bewerbe_layout_scrollview: bewerbe_layout_scrollview
+    bewerbe_layout: bewerbe_layout
+
+    # LOGO
+    #FloatLayout:
+    #    Image:
+    #        source: "assets/lfv_salzburg.png"
+    #        fit_mode: "fill"  # or "contain" if preserving aspect is needed
+    #        size_hint: 0.225, 0.092  # 20% width, 10% height of screen
+    #        pos_hint: {"x": 0.18, "y": 0.902}  # Stick to return button
+
+    # SCREEN
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: "10dp"
+        padding: "5dp"
+    
+        # HEADER
+        BoxLayout:
+            size_hint_y: 2
+            spacing: "5dp"
+            orientation: 'vertical'
+
+            # ROW 1
+            BoxLayout:
+                size_hint_y: 1
+                spacing: "3dp"
+
+                Button:
+                    size_hint_x: 1
+                    text: "<"
+                    font_size: "32sp"
+                    on_release:
+                        root.go_back()
+
+                # LOGO
+                BoxLayout:
+                    id: logo_layout
+                    size_hint_x: 1
+
+                Label: # placeholder
+                    size_hint_x: 1
+
+                Label:
+                    size_hint_x: 3
+                    id: mode_label
+                    font_size: "25sp"
+                    halign: "center"
+                    valign: "middle"
+                    text_size: self.size
+            
+            # ROW 2
+            GridLayout:
+                id: mode_toggle_layout
+                cols: 2
+                size_hint_y: 1
+                height: self.minimum_height
+                row_default_height: '50dp'
+                spacing: '5dp'
+
+                ToggleButton:
+                    id: mode_toggle_training
+                    font_size: "32sp"
+                    group: 'mode'
+                    on_release: root.on_mode_toggle(self)
+
+                ToggleButton:
+                    id: mode_toggle_game
+                    font_size: "32sp"
+                    group: 'mode'
+                    on_release: root.on_mode_toggle(self)
+
+        # SEPARATOR
+        BoxLayout:
+            size_hint_y: None
+            height: 2
+            canvas.before:
+                Color:
+                    rgba: 0.5, 0.5, 0.5, 1
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+        
+        # COMPETITIONS
+        ScrollView:
+            size_hint_y: 8
+            id: bewerbe_layout_scrollview
+
+            BoxLayout:
+                id: bewerbe_layout
+                orientation: 'vertical'
+                size_hint_y: None
+                height: self.minimum_height
+                spacing: "5dp"
+
+
 <Bewerb_Training>:
     name: "bewerb_training"
 
@@ -946,8 +1027,8 @@
     # SCREEN
     BoxLayout:
         orientation: 'vertical'
-        spacing: "10dp"
         padding: "5dp"
+        spacing: "10dp"
 
         # HEADER
         BoxLayout:
@@ -959,8 +1040,6 @@
                 text: "<"
                 font_size: "32sp"
                 on_release:
-                    #app.root.current = "bewerb_menu"
-                    #root.manager.transition.direction = "right"
                     root.go_back()
 
             Label:  # placeholder
@@ -1024,7 +1103,7 @@
         # ANSWER
         BoxLayout:
             size_hint_y: 1
-            spacing: "3dp"
+            spacing: "5dp"
 
             Button:
                 size_hint_x: 1
@@ -1151,3 +1230,4 @@
             id: answer_buttons_layout
             spacing: "3dp"
             cols: 4
+
