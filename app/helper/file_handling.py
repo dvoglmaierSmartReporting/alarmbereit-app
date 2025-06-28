@@ -56,11 +56,11 @@ def get_user_data_dir() -> str:
 
 def load_total_firetruck_storage(selected_city: str) -> totalStorage:
     if selected_city == "Hallein":
-        content_file = "firetruck_tools_Hallein.yaml"
+        content_file = "firetruck_tools_hallein.yaml"
     elif selected_city == "Bad Dürrnberg":
-        content_file = "firetruck_tools_Dürrnberg.yaml"
+        content_file = "firetruck_tools_duerrnberg.yaml"
     elif selected_city == "Altenmarkt a.d. Alz":
-        content_file = "firetruck_tools_Altenmarkt.yaml"
+        content_file = "firetruck_tools_altenmarkt.yaml"
 
     file_path = "/".join(__file__.split("/")[:-2]) + "/content/" + content_file
 

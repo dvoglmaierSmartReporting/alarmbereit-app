@@ -47,6 +47,7 @@ class Start_Menu(Screen):
             size_hint=(1, 3), orientation="vertical", spacing="5dp", padding="20dp"
         )
 
+        # FIRETRUCKS BUTTON
         fahrzeuge_button = Button(
             size_hint=(1, 1),
             text=strings.BUTTON_STR_FIRETRUCKS,
@@ -56,6 +57,7 @@ class Start_Menu(Screen):
             on_release=lambda instance: change_screen_to("fahrzeugkunde_mode", "left")
         )
 
+        # COMPETITIONS BUTTON
         bewerbe_button = Button(
             size_hint=(1, 1),
             text=strings.BUTTON_STR_COMPETITIONS,
@@ -74,53 +76,6 @@ class Start_Menu(Screen):
         self.content_layout.add_widget(fahrzeuge_button)
         self.content_layout.add_widget(bewerbe_button)
         self.content_layout.add_widget(placeholder1)
-
-    def add_competition_modi_widget(self):
-        ### WIDGET ###
-        competitions_modi_widget = BoxLayout(
-            orientation="vertical",
-            spacing="3dp",
-        )
-
-        ### BUTTON Übung ###
-        competition_btn1 = Button(
-            pos_hint={"center_x": 0.5},
-            text=strings.BUTTON_STR_TRAINING,
-            font_size="32sp",
-        )
-
-        competition_btn1.bind(  # type: ignore[attr-defined]
-            on_release=lambda instance: self.forward_mode2menu_manually(
-                "bewerb_menu", strings.BUTTON_STR_TRAINING
-            )
-        )
-
-        competitions_modi_widget.add_widget(competition_btn1)
-
-        ### BUTTON Zeitdruck ###
-        competition_btn2 = Button(
-            pos_hint={"center_x": 0.5},
-            text=strings.BUTTON_STR_GAME,
-            font_size="32sp",
-        )
-
-        competition_btn2.bind(  # type: ignore[attr-defined]
-            on_release=lambda instance: self.forward_mode2menu_manually(
-                "bewerb_menu", strings.BUTTON_STR_GAME
-            )
-        )
-
-        competitions_modi_widget.add_widget(competition_btn2)
-
-        ### BUTTON Placeholder ###
-        competitions_modi_widget.add_widget(
-            Label(  # placeholder
-                size_hint=(1, 1),
-                font_size="32sp",
-            )
-        )
-
-        return competitions_modi_widget
 
     def forward_mode2menu_manually(self, menu_screen: str, mode: str):
         self.manager.transition = SlideTransition(direction="left")
