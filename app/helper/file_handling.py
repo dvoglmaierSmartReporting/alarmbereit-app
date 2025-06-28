@@ -216,6 +216,10 @@ def save_to_scores_file(
 
 
 def update_config(to_update: dict) -> None:
+    # make sure the content section exists
+    if not Config.has_section("content"):
+        Config.add_section("content")
+
     for key, value in to_update.items():
         Config.set("content", key, value)
     Config.write()
