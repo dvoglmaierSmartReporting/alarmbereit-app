@@ -54,7 +54,7 @@ class Bewerb_Menu(Screen):
         # Reset the scrollview to the top
         self.ids.bewerbe_layout_scrollview.scroll_y = 1
 
-        # read from main.cfg
+        # read from Config
         self.selected_city, self.selected_state = get_selected_city_state()
 
         # update state logo

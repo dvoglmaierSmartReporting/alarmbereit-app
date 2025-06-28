@@ -27,7 +27,7 @@ class Fahrzeugkunde_Mode(Screen):
         self.ids.modes_layout.add_widget(self.add_firetruck_modi_widget())
 
     def on_pre_enter(self):
-        # read from main.cfg
+        # read from Config
         self.selected_city, _ = get_selected_city_state()
         self.abbreviations = get_firetruck_abbreviation_values(self.selected_city)
 

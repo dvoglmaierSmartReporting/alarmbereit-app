@@ -1,11 +1,9 @@
-from kivy.uix.label import Label
-from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.screenmanager import Screen
 from kivy.clock import Clock
 from kivy.uix.togglebutton import ToggleButton
 
 from helper.functions import change_screen_to
-from helper.file_handling import update_main_cfg, map_selected_city_2long_name
+from helper.file_handling import update_config, map_selected_city_2long_name
 from helper.aspect_image import get_city_image
 from helper.settings import Strings
 
@@ -69,7 +67,7 @@ class Login(Screen):
         self.selected_state = self.selected_button.split("(")[1][:-1]
         self.selected_city = map_selected_city_2long_name(self.selected_button)
 
-        update_main_cfg(
+        update_config(
             {
                 "city": self.selected_city,
                 "state": self.selected_state,

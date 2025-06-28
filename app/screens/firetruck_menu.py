@@ -15,7 +15,7 @@ strings = Strings()
 
 class Fahrzeugkunde_Menu(Screen):
     def on_pre_enter(self):
-        # read from main.cfg
+        # read from Config
         self.selected_city, _ = get_selected_city_state()
 
         # update city logo

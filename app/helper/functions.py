@@ -6,7 +6,6 @@ from typing import cast
 from helper.settings import Strings, Settings
 from helper.file_handling import (
     load_total_storage,
-    load_total_competition_questions,
     map_selected_city_2short_name,
 )
 from helper.game_class import ToolQuestion

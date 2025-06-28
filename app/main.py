@@ -41,6 +41,7 @@ if "pytest" in sys.modules:
     Builder.load_file("app/feuerwehr.kv")
 
 
+
 class FeuerwehrApp(App):
     def build(self):
         # print(f'{App.get_running_app().user_data_dir = }')
@@ -51,12 +52,11 @@ class FeuerwehrApp(App):
         
         try:
             # path relative to app/helper/file_handling.py
+            # transfer_file contains migration from 2.3.2 to 2.4.0
             transfer_file("../storage", "scores.yaml")
-            # TODO: migration to refactored scores.yaml
-            # from 2.3.2 to 2.4.0
 
             # TODO: is main.cfg needed?
-            transfer_file("../storage", "main.cfg")
+            # transfer_file("../storage", "main.cfg")
 
             self.sm = ScreenManager()
             self.sm.add_widget(Login())
@@ -87,9 +87,11 @@ class FeuerwehrApp(App):
             return None  # Return None to prevent further crashes
 
     def on_start(self):
-        if Config.get("content", "city"):
-            # Delay screen switch until app is fully initialized
-            Clock.schedule_once(self.jump_to_start_menu, 0)
+        # Avoid app crash at first installation, when Config is not added yet
+        if "content" in Config.sections() and Config.has_option("content", "city"):
+            if Config.get("content", "city"):
+                # Delay screen switch until app is fully initialized
+                Clock.schedule_once(self.jump_to_start_menu, 0)
 
     def jump_to_start_menu(self, dt):
         # Temporarily disable transitions

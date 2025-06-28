@@ -215,7 +215,7 @@ def save_to_scores_file(
     save_to_yaml(scores_file_path, content)
 
 
-def update_main_cfg(to_update: dict) -> None:
+def update_config(to_update: dict) -> None:
     for key, value in to_update.items():
         Config.set("content", key, value)
     Config.write()
@@ -245,16 +245,20 @@ def transfer_file(file_path: str, file_name: str, new_file_name: str = "") -> No
         existing_content = load_from_yaml(dst)
         new_content = load_from_yaml(src)
 
-        # Migration 2.3.2 -> 2.4.0
-        # up to 2.3.2: no multi-tenancy available
-        if (
-            "competitions" in existing_content.keys()
-            and "firetrucks" in existing_content.keys()
-        ):
-            updated_content = migrate_to_2_4_0(existing_content, new_content)
+        if file_name == "scores.yaml":
+            # Migration 2.3.2 -> 2.4.0
+            # up to 2.3.2: no multi-tenancy available
+            if (
+                "competitions" in existing_content.keys()
+                and "firetrucks" in existing_content.keys()
+            ):
+                updated_content = migrate_to_2_4_0(existing_content, new_content)
 
-        else:
-            updated_content = update_yaml_values(existing_content, new_content)
+            else:
+                updated_content = update_yaml_values(existing_content, new_content)
+
+        # elif file_name == "main.cfg":
+        #     updated_content = update_yaml_values(existing_content, new_content)
 
         save_to_yaml(dst, updated_content)
 
