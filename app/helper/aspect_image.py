@@ -50,15 +50,15 @@ def get_city_image(selected_city_long_name: str) -> AspectImage:
             return AspectImage(
                 source=get_logo_file_path(selected_city),
                 # values are highly specific to used PNG
-                size_hint=(1.05, 1.05),
-                pos_hint={"x": -0.05, "y": -0.05},
+                size_hint=(1, 1),
+                pos_hint={"x": 0, "y": 0},
             )
         else:
             return AspectImage(
                 source=get_logo_file_path(selected_city),
                 # values are highly specific to used PNG
-                size_hint=(None, 0.21),
-                pos_hint={"x": 0, "y": 0.79},
+                size_hint=(None, 0.205),
+                pos_hint={"x": 0, "y": 0.795},
             )
     elif selected_city == "Altenmarkt":
         if "small" in selected_city_long_name:
