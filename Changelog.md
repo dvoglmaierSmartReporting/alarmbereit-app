@@ -1,5 +1,17 @@
 # next version
 features:
+- refactor info screen into highscore screen
+- show impressum + version in start screen
+- new LZ logo
+- added supporter info text
+
+fixes: 
+- tools of Hallein Tank1 + Leiter updated
+- tool corrections
+
+
+# version 2.4.0
+features:
 - choose your fire department in first screen
 - only see the content of your department and state
 - refactor scores storage

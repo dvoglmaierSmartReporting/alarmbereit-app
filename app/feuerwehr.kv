@@ -60,14 +60,15 @@
                 id: city_scrollview
                 do_scroll_x: False
                 
-                GridLayout:
+                BoxLayout:
+                    orientation: 'vertical'
                     id: city_layout
-                    cols: 1
+                    #cols: 1
                     size_hint_y: None
                     height: self.minimum_height
-                    row_default_height: '50dp'
+                    #row_default_height: '50dp'
                     spacing: "5dp"
-
+                
         # SEPARATOR
         BoxLayout:
             size_hint_y: None
@@ -85,7 +86,7 @@
 
             Button:
                 id: store_selection_button
-                font_size: "32sp"
+                font_size: "27sp"
                 on_release:
                     root.manager.get_screen('login').store_selection()
 
@@ -96,7 +97,7 @@
     # IDs
     logo_layout: logo_layout
     content_layout: content_layout
-    info_button: info_button
+    score_button: score_button
     acknowledgement_button: acknowledgement_button
     all_cities_button: all_cities_button
 
@@ -126,6 +127,9 @@
                     app.root.current = "acknowledgement_screen"
                     root.manager.transition.direction = "left"
 
+            # TODO: Info butten with About and info text
+            # how to add new department?!
+            
             Label:  # placeholder
                 size_hint_x: 1
             
@@ -135,15 +139,15 @@
                 spacing: "15dp"
                 padding: "15dp"
 
-                # INFO BUTTON
+                # SCORE BUTTON
                 Button:
                     size_hint_y: 1
-                    id: info_button
+                    id: score_button
                     font_size: "20sp"
                     background_normal: ''
                     background_color: 0.2, 0.2, 0.2, 0.5
                     on_release:
-                        app.root.current = "info_screen"
+                        app.root.current = "punkte_screen"
                         root.manager.transition.direction = "left"
                         root.update_info_text()
 
@@ -174,28 +178,26 @@
             id: content_layout
             size_hint_y: 7.5
             orientation: "vertical"
-           # padding: "5dp"
             spacing: "5dp"
         
         Label: # placeholder
             size_hint_y: 0.5
 
-    # VERSION
-    FloatLayout:
-        Label:
-            text: "Version 2.4.0"
-            font_size: "10sp"
-            size_hint: 0.1, 0.03
-            pos_hint: {"center_x": 0.5, "y": 0}
+    ## VERSION
+    #FloatLayout:
+    #    Label:
+    #        text: "Version 2.4.9"
+    #        font_size: "10sp"
+    #        size_hint: 0.1, 0.03
+    #        pos_hint: {"center_x": 0.5, "y": 0.025}
 
 
-<Info_Screen>:
-    name: "info_screen"
+<Punkte_Screen>:
+    name: "punkte_screen"
 
     # IDs
     header_label: header_label
-    about_label: about_label
-    info_text_label: info_text_label
+    score_text_label: score_text_label
 
     # SCREEN
     BoxLayout:
@@ -213,8 +215,6 @@
                 text: "<"
                 font_size: "32sp"
                 on_release:
-                    #app.root.current = "start_menu"
-                    #root.manager.transition.direction = "right"
                     root.go_back()
             
             Label: # placeholder
@@ -239,29 +239,13 @@
                     size: self.size
                     pos: self.pos
         
-        # ABOUT
-        Label:
-            id: about_label
-            size_hint_y: 2
-
-        # SEPARATOR
-        BoxLayout:
-            size_hint_y: None
-            height: 2
-            canvas.before:
-                Color:
-                    rgba: 0.5, 0.5, 0.5, 1
-                Rectangle:
-                    size: self.size
-                    pos: self.pos
-
         # SCORES
         ScrollView:
             size_hint_y: 7
             pos_hint: {'center_x': 0.5}
 
             Label:
-                id: info_text_label
+                id: score_text_label
                 font_size: "15sp"
                 halign: "left"
                 valign: "top"
@@ -296,8 +280,6 @@
                 text: "<"
                 font_size: "32sp"
                 on_release:
-                    #app.root.current = "start_menu"
-                    #root.manager.transition.direction = "right"
                     root.go_back()
             
             Label: # placeholder
@@ -428,8 +410,6 @@
                 text: "<"
                 font_size: "32sp"
                 on_release:
-                    #app.root.current = "start_menu"
-                    #root.manager.transition.direction = "right"
                     root.go_back()
             
             # LOGO

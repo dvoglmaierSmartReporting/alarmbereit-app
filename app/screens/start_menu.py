@@ -12,7 +12,7 @@ from helper.file_handling import (
     get_selected_city_state,
 )
 from helper.aspect_image import get_city_image
-from helper.settings import Strings
+from helper.settings import Strings, About_Text
 
 
 strings = Strings()
@@ -21,7 +21,7 @@ strings = Strings()
 class Start_Menu(Screen):
     def __init__(self, **kwargs):
         super(Start_Menu, self).__init__(**kwargs)
-
+        
         self.ids.all_cities_button.text = strings.BUTTON_STR_ALL_CITIES
 
     def on_pre_enter(self):
@@ -33,12 +33,12 @@ class Start_Menu(Screen):
 
     def on_kv_post(self, base_widget):
         # type annotations
-        self.info_button = cast(Button, self.info_button)
+        self.score_button = cast(Button, self.score_button)
         # self.acknowledgement_button = cast(Button, self.acknowledgement_button)
         self.content_layout = cast(Layout, self.content_layout)
 
         # update button strings
-        self.info_button.text = strings.BUTTON_STR_INFO
+        self.score_button.text = strings.BUTTON_STR_SCORE
         # self.acknowledgement_button.text = strings.BUTTON_STR_ACKNOWLEDGEMENT
 
         # Container where the additional widget will be displayed
@@ -68,14 +68,17 @@ class Start_Menu(Screen):
             on_release=lambda instance: change_screen_to("bewerb_menu", "left")
         )
 
-        placeholder1 = Label(
+        about_label = Label(
             size_hint=(1, 1),
+            text=About_Text().TEXT,
+            font_size="15sp",
+            halign="center",
         )
 
         # Add widgets to layout
         self.content_layout.add_widget(fahrzeuge_button)
         self.content_layout.add_widget(bewerbe_button)
-        self.content_layout.add_widget(placeholder1)
+        self.content_layout.add_widget(about_label)
 
     def forward_mode2menu_manually(self, menu_screen: str, mode: str):
         self.manager.transition = SlideTransition(direction="left")
@@ -83,8 +86,8 @@ class Start_Menu(Screen):
         self.manager.get_screen(menu_screen).ids.mode_label.text = mode
 
     def update_info_text(self):
-        info_text = create_scores_text(read_scores_file(), self.selected_city)
+        info_text = (
+            create_scores_text(read_scores_file(), self.selected_city) + "\n\n\n\n"
+        )
 
-        info_text += "\n\n\n\n"
-
-        self.manager.get_screen("info_screen").ids.info_text_label.text = info_text
+        self.manager.get_screen("punkte_screen").ids.score_text_label.text = info_text

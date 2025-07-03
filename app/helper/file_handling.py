@@ -148,8 +148,12 @@ def map_selected_city_2long_name(selected_city_short_name: str) -> str:
 
 def get_logo_file_path(selected_long_name: str) -> str:
     # city logos
-    if selected_long_name in ["Hallein", "Dürrnberg"]:
+    # if selected_long_name in ["Hallein", "Dürrnberg"]:
+    #     return "assets/FFH_Logohalter.png"
+    if selected_long_name == "Hallein":
         return "assets/FFH_Logohalter.png"
+    if selected_long_name == "Dürrnberg":
+        return "assets/LZ_Logohalter.png"
     if selected_long_name == "Altenmarkt":
         return "assets/altenmarkt.png"
 

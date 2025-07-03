@@ -26,14 +26,15 @@ class Strings:
     def __init__(self) -> None:
 
         # login
-        self.LABEL_STR_LOGIN = "Login"
+        self.LABEL_STR_LOGIN = "meine Feuerwehr\nwählen"
         # self.BUTTON_STR_LOGIN = "Login"
         # self.LABEL_STR_CITY = "Freiwillige Feuerwehr"
-        self.BUTTON_STR_STORE_SELECTION = "Auswahl speichern"
+        self.BUTTON_STR_STORE_SELECTION = "Speichern"
 
         # start_nenu
         self.LABEL_STR_QUESTIONS = "Mission"
-        self.BUTTON_STR_ALL_CITIES = "Alle Städte"
+        self.BUTTON_STR_ALL_CITIES = "Wähle deine\nFeuerwehr"
+        self.BUTTON_STR_SCORE = "Highscore"
         self.BUTTON_STR_INFO = "Info"
         self.BUTTON_STR_ACKNOWLEDGEMENT = "Dank"
         self.BUTTON_STR_SETTINGS = "Einst."
@@ -79,6 +80,15 @@ class Strings:
         self.BUTTON_CLOSE_POPUP = "Schließen"
 
 
+class Info_Text:
+    def __init__(self) -> None:
+        self.TEXT = """Meine Feuerwehr fehlt noch!
+
+Standorte können kostenlos hinzugefügt
+werden. Schicke deine Anfrage an
+[b]d.voglmaier@feuerwehr-hallein.at[/b]"""
+
+
 class About_Text:
     def __init__(self) -> None:
         self.TEXT = """
@@ -88,6 +98,7 @@ Idee und Entwicklung: Dominik Voglmaier
 
 Support: d.voglmaier@feuerwehr-hallein.at
 
+Version: 2.4.1
 """
 
 
@@ -116,4 +127,17 @@ Herzlichen Dank an alle Unterstützerinnen und Unterstützer dieses Projekts!
 [b]Michael Nocker[/b]
 [b]Julian Marx[/b]
 [b]Jürgen Jung (4x)[/b]
+
+
+
+[b]WERDE SELBST AKTIVER UNTERSTÜTZER DIESES PROJEKTS[/b]
+
+• Bewirb die FahrzeugkundeApp in deiner Feuerwehr
+
+• Schreibe eine positive Bewertung im App Store
+
+• Unterstütze die Entwicklung mit einer freiwilligen Spende:
+  Dominik Voglmaier
+  DE26 1203 0000 1055 3765 43
+  
 """

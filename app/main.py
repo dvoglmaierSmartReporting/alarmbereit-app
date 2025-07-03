@@ -17,7 +17,8 @@ import sys
 
 from screens.start_menu import Start_Menu
 from screens.login_screen import Login
-from screens.info_screen import Info_Screen
+# from screens.info_screen import Info_Screen
+from screens.score_screen import Punkte_Screen
 from screens.acknowledgement_screen import Acknowledgement_Screen
 
 from screens.firetruck_mode import Fahrzeugkunde_Mode
@@ -61,7 +62,8 @@ class FeuerwehrApp(App):
             self.sm = ScreenManager()
             self.sm.add_widget(Login())
             self.sm.add_widget(Start_Menu())
-            self.sm.add_widget(Info_Screen())
+            # self.sm.add_widget(Info_Screen())
+            self.sm.add_widget(Punkte_Screen())
             self.sm.add_widget(Acknowledgement_Screen())
             self.sm.add_widget(Fahrzeugkunde_Mode())
             self.sm.add_widget(Fahrzeugkunde_Menu())
