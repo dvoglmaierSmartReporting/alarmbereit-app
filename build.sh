@@ -1,6 +1,7 @@
 #!/bin/bash
 
 set -e  # Exit on any error
+set -u  # Treat unset variables as errors
 
 VERSION_FILE="app/app-version"
 
@@ -83,6 +84,50 @@ else
     echo "❌ Tests failed. Aborting build!" >&2
     exit $exit_code
 fi
+
+# update iOS proxy directory
+
+SRC_BASE="../feuerwehr_app/app"
+DST_BASE="feuerwehr_app_proxy/app"
+
+# Copy single files (overwrite with -f)
+cp -f "$SRC_BASE/main.py" "$DST_BASE/"
+echo "main.py updated"
+
+cp -f "$SRC_BASE/feuerwehr.kv" "$DST_BASE/"
+echo "feuerwehr.kv updated"
+
+# Copy folders (overwrite by removing target first)
+copy_dir() {
+    local src="$1"
+    local dst="$2"
+    if [ -d "$dst" ]; then
+        rm -rf "$dst"
+    fi
+    cp -r "$src" "$dst"
+    echo "$(basename "$src") folder updated"
+}
+
+copy_dir "$SRC_BASE/assets"   "$DST_BASE/assets"
+copy_dir "$SRC_BASE/content"  "$DST_BASE/content"
+copy_dir "$SRC_BASE/errors"   "$DST_BASE/errors"
+copy_dir "$SRC_BASE/fonts"    "$DST_BASE/fonts"
+copy_dir "$SRC_BASE/helper"   "$DST_BASE/helper"
+copy_dir "$SRC_BASE/screens"  "$DST_BASE/screens"
+copy_dir "$SRC_BASE/storage"  "$DST_BASE/storage"
+
+# Optional iOS icon update
+IOS_DIR="fa1000-ios"
+ICON_TARGET="$IOS_DIR/icon.png"
+ICON_SOURCE="$SRC_BASE/assets/firetruck_icon.png"
+
+if [ -d "$IOS_DIR" ] && [ -f "$ICON_TARGET" ]; then
+    cp -f "$ICON_SOURCE" "$ICON_TARGET"
+    echo "icon.png updated"
+fi
+
+echo "Successfully updated iOS proxy directory."
+
 
 
 # Ensure we are in the correct directory

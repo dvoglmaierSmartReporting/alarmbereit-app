@@ -139,5 +139,4 @@ Herzlichen Dank an alle Unterstützerinnen und Unterstützer dieses Projekts!
 • Unterstütze die Entwicklung mit einer freiwilligen Spende:
   Dominik Voglmaier
   DE26 1203 0000 1055 3765 43
-  
 """

@@ -18,7 +18,7 @@ class Acknowledgement_Screen(Screen):
         self.acknowledgement_label = cast(Label, self.acknowledgement_label)
 
         self.header_label.text = strings.BUTTON_STR_ACKNOWLEDGEMENT
-        self.acknowledgement_label.text = acknowledgement_text
+        self.acknowledgement_label.text = acknowledgement_text + "\n\n\n"
 
     def go_back(self, *args) -> None:
         change_screen_to("start_menu")
