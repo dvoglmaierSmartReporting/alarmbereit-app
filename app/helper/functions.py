@@ -208,16 +208,20 @@ def create_scores_text(scores: scores, selected_city: str) -> str:
     total_score, total_strike = sum_firetruck_scores_strikes(truck_scores)
     total_score += sum_competition_score(competition_scores)
 
-    doubleline = "\n=============================================\n\n"
+    doubleline = "\n========================================\n\n"
 
     output += doubleline
-    output += f"Gesamt {strings.BUTTON_STR_GAME}{separator}{total_score:_} Punkte\n\n"
-    output += f"Punkte aus {strings.BUTTON_STR_TRAINING} werden mit Faktor {factor} multipliziert:\n"
-    output += f"Gesamt {strings.BUTTON_STR_TRAINING}{separator}{total_strike} x {factor} Punkte\n\n"
+    output += (
+        f"Gesamt {strings.BUTTON_STR_GAME}: {dot_separator(total_score)} Punkte\n\n"
+    )
+    output += (
+        f"Gesamt {strings.BUTTON_STR_TRAINING}: {total_strike} x {factor} Punkte\n\n"
+    )
+    output += f"([i]Punkte aus {strings.BUTTON_STR_TRAINING} werden mit\nFaktor {factor} multipliziert[/i])\n"
     output += doubleline
 
     total = total_score + total_strike * factor
-    output += f"[b]Gesamtpunktzahl{separator}{total:_} Punkte[/b]"
+    output += f"[b]Gesamtpunktzahl{separator}{dot_separator(total)} Punkte[/b]"
     return output
 
 
@@ -225,6 +229,10 @@ def extra_charactor(number: int) -> int:
     if 999_999 >= number >= 1_000:
         return len(str(number)) + 1
     return len(str(number))
+
+
+def dot_separator(number: int) -> str:
+    return f"{number:,}".replace(",", ".")
 
 
 def create_firetruck_score_text(
@@ -261,7 +269,7 @@ def create_firetruck_score_text(
             strings.BUTTON_STR_GAME
             + ":"
             + " " * (characters - extra_charactor(score))
-            + f"{score:_}"
+            + dot_separator(score)
         )
         output += truck_space + score_space + "\n"
 
@@ -281,7 +289,7 @@ def create_firetruck_score_text(
             strings.BUTTON_STR_TRAINING
             + ":"
             + " " * (4 - len(str(strike)))
-            + f"{strike:_}"
+            + dot_separator(strike)
         )
         output += truck_space + strike_space + "\n"
 
@@ -330,18 +338,13 @@ def create_competition_score_text(
     characters += 1
 
     for comp, data in scores.items():
-        comp_space = spacing + " " * (longest_key - len(comp)) + comp + separator
+        comp_space = spacing + " " * (longest_key - len(comp)) + comp + ":"
 
         if isinstance(data.get("high_score"), int):
             score = data.get("high_score", 0)
             score = cast(int, score)
 
-        score_space = (
-            strings.BUTTON_STR_GAME
-            + ":"
-            + " " * (characters - extra_charactor(score))
-            + f"{score:_}"
-        )
+        score_space = " " * (characters - extra_charactor(score)) + dot_separator(score)
         output += comp_space + score_space + "\n"
 
     return output
