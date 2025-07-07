@@ -21,7 +21,7 @@ strings = Strings()
 class Start_Menu(Screen):
     def __init__(self, **kwargs):
         super(Start_Menu, self).__init__(**kwargs)
-        
+
         self.ids.all_cities_button.text = strings.BUTTON_STR_ALL_CITIES
 
     def on_pre_enter(self):

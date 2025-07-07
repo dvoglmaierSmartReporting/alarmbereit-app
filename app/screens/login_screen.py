@@ -50,7 +50,7 @@ class Login(Screen):
         lbl = Label(
             text=Info_Text().TEXT,
             markup=True,
-            font_size="20sp",
+            font_size="17sp",
             size_hint_y=None,
             height="150dp",
         )

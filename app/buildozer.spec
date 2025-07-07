@@ -15,7 +15,7 @@ package.domain = feuerwehrhallein.fahrzeugkundeapp
 source.dir = .
 
 # (list) Source files to include (let empty to include all the files)
-source.include_exts = py,png,jpg,kv,atlas,yaml,cfg,config,ini
+source.include_exts = py,png,jpg,kv,atlas,yaml,cfg,config,ini,ttf
 
 # (list) List of inclusions using pattern matching
 #source.include_patterns = assets/*,images/*.png
@@ -31,7 +31,7 @@ source.include_exts = py,png,jpg,kv,atlas,yaml,cfg,config,ini
 #source.exclude_patterns = license,images/*/*.jpg
 
 # (str) Application versioning (method 1)
-version = 2.4.1
+version = 2.5.0
 
 # (str) Application versioning (method 2)
 # version.regex = __version__ = ['"](.*)['"]

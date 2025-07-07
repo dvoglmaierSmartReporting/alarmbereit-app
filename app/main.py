@@ -10,6 +10,7 @@ from kivy.uix.screenmanager import ScreenManager, NoTransition
 from kivy.clock import Clock
 from kivy.base import EventLoop
 from kivy.lang import Builder
+from kivy.core.text import LabelBase
 
 
 import traceback
@@ -17,6 +18,7 @@ import sys
 
 from screens.start_menu import Start_Menu
 from screens.login_screen import Login
+
 # from screens.info_screen import Info_Screen
 from screens.score_screen import Punkte_Screen
 from screens.acknowledgement_screen import Acknowledgement_Screen
@@ -41,6 +43,22 @@ from helper.file_handling import transfer_file
 if "pytest" in sys.modules:
     Builder.load_file("app/feuerwehr.kv")
 
+    LabelBase.register(
+        name="CourierNew",
+        fn_regular="app/fonts/courier_prime.ttf",
+        fn_bold="app/fonts/courier_prime_bold.ttf",
+        fn_italic="app/fonts/courier_prime_italic.ttf",
+        fn_bolditalic="app/fonts/courier_prime_bold_italic.ttf",
+    )
+
+else:
+    LabelBase.register(
+        name="CourierNew",
+        fn_regular="fonts/courier_prime.ttf",
+        fn_bold="fonts/courier_prime_bold.ttf",
+        fn_italic="fonts/courier_prime_italic.ttf",
+        fn_bolditalic="fonts/courier_prime_bold_italic.ttf",
+    )
 
 
 class FeuerwehrApp(App):
@@ -50,7 +68,7 @@ class FeuerwehrApp(App):
 
         # print(f'{Config.filename = }')
         # Config.filename = '/Users/dominikvoglmaier/.kivy/config.ini'
-        
+
         try:
             # path relative to app/helper/file_handling.py
             # transfer_file contains migration from 2.3.2 to 2.4.0

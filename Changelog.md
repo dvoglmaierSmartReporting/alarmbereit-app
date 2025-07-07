@@ -1,13 +1,19 @@
-# next version
+# version 2.5.0
 features:
 - refactor info screen into highscore screen
 - show impressum + version in start screen
 - new LZ logo
 - added supporter info text
+- refactor highscore output text
+- add custom font "Courier Prime"
 
 fixes: 
 - tools of Hallein Tank1 + Leiter updated
 - tool corrections
+
+
+# version 2.4.1
+- iOS only: file naming fixed
 
 
 # version 2.4.0
