@@ -1,4 +1,4 @@
-# version 2.5.0
+# version 2.5.1 (2.5.0 was forced to re-upload)
 features:
 - refactor info screen into highscore screen
 - show impressum + version in start screen

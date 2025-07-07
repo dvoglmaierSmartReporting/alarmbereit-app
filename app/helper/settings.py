@@ -98,7 +98,7 @@ Idee und Entwicklung: Dominik Voglmaier
 
 Support: d.voglmaier@feuerwehr-hallein.at
 
-Version: 2.5.0
+Version: 2.5.1
 """
 
 

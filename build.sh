@@ -88,7 +88,8 @@ fi
 # update iOS proxy directory
 
 SRC_BASE="../feuerwehr_app/app"
-DST_BASE="feuerwehr_app_proxy/app"
+SRC_BASE="./app"
+DST_BASE="../ios_builds/feuerwehr_app_proxy/app/"
 
 # Copy single files (overwrite with -f)
 cp -f "$SRC_BASE/main.py" "$DST_BASE/"
@@ -126,8 +127,9 @@ if [ -d "$IOS_DIR" ] && [ -f "$ICON_TARGET" ]; then
     echo "icon.png updated"
 fi
 
-echo "Successfully updated iOS proxy directory."
-
+echo "✅ Successfully updated iOS proxy directory."
+echo ""
+echo ""
 
 
 # Ensure we are in the correct directory
