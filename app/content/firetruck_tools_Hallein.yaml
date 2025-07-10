@@ -327,7 +327,7 @@ Tank1:
       - Schutzbrille
       - Staubmaske
       - Werkzeugkiste
-      - Stockschlüsselsatz
+      - Steckschlüsselsatz
       - Verzurreinrichtung f. Stativ
       - Stromerzeuger 14 kVA
       - Absperrschlüssel f. Gas
@@ -431,10 +431,10 @@ Tank1:
     Dach:
       - Schiebeleiter
       - Kombileiter
+      - Hakenleiter
       - Monsunrohr
       - Rettungsring
       - Einreißhaken
-      - Hakenleiter
       - Heugabel
       - Dunggabel
       - Breithaue

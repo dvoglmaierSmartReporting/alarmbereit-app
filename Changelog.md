@@ -1,3 +1,8 @@
+# version 2.5.2
+fixes:
+- error found by Fehlerfinder
+
+
 # version 2.5.1 (2.5.0 was forced to re-upload)
 features:
 - refactor info screen into highscore screen
