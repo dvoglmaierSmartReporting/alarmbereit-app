@@ -162,7 +162,7 @@ def mode_bool2str(mode: tuple) -> str:
 
 
 def break_tool_name(tool_name: str) -> str:
-    if len(tool_name) >= 29:
+    if len(tool_name) >= 27:
         tool_name_lst: list = tool_name[14:].split(" ")
         return tool_name[:14] + tool_name_lst[0] + "\n" + " ".join(tool_name_lst[1:])
     return tool_name

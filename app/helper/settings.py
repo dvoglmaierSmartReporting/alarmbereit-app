@@ -75,9 +75,30 @@ class Strings:
         # browse screen
         self.BUTTON_STR_FILTER = "Filtern"
 
-        # error popup
+        # popup
         self.TITLE_ERROR_POPUP = "Fehlermeldung"
+        self.TITLE_INFO_POPUP = "Info"
         self.BUTTON_CLOSE_POPUP = "Schließen"
+
+
+class Training_Text__All_Tools:
+    def __init__(self, tool_amount: int) -> None:
+        self.TEXT = f"""
+
+[b]Super![/b]
+
+Du hast alle {tool_amount} Geräte des Fahrzeugs gelernt.
+
+Die Geräte werden neu geladen und weiterhin zufällig gezogen."""
+
+
+class Training_Text__Half_Tools:
+    def __init__(self, tool_amount: int) -> None:
+        self.TEXT = f"""
+
+[b]Bleib dran![/b]
+
+Du hast bereits die Hälfte der {tool_amount} Geräte des Fahrzeugs gelernt."""
 
 
 class Info_Text:

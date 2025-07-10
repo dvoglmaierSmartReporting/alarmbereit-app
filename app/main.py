@@ -35,9 +35,14 @@ from screens.competition_menu import Bewerb_Menu
 from screens.competition_training import Bewerb_Training
 from screens.competition_game import Bewerb_Game
 
-from errors.error_popup import ErrorPopup
+# from popups.error_popup import ErrorPopup
+from popups.text_popup import TextPopup
 
 from helper.file_handling import transfer_file
+from helper.settings import Strings
+
+
+strings = Strings()
 
 
 if "pytest" in sys.modules:
@@ -122,8 +127,8 @@ class FeuerwehrApp(App):
 
     # test
     def show_error_popup(self, message="An unknown error occurred!"):
-        popup = ErrorPopup(message)
-        popup.open()
+        error_popup = TextPopup(message, title=strings.TITLE_ERROR_POPUP)
+        error_popup.open()
 
     # Android return button
     def on_android_back_button(self, window, key, *args):

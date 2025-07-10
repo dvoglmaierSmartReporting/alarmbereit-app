@@ -1,4 +1,7 @@
-# version 2.5.2
+# next version
+features:
+- add info popup when all and half the tools are trained
+
 fixes:
 - error found by Fehlerfinder
 

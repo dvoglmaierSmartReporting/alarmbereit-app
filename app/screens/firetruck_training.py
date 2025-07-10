@@ -6,13 +6,20 @@ from kivy.clock import Clock
 from random import shuffle
 from typing import cast
 
+from popups.text_popup import TextPopup
+
 from helper.functions import (
     get_ToolQuestion_instances,
     change_screen_to,
     get_firetruck_layout_value,
 )
 from helper.file_handling import save_to_scores_file, get_score_value
-from helper.settings import Settings, Strings
+from helper.settings import (
+    Settings,
+    Strings,
+    Training_Text__All_Tools,
+    Training_Text__Half_Tools,
+)
 from helper.game_class import GameCore
 from helper.firetruck_layouts import build_answer_layout
 
@@ -57,6 +64,7 @@ class Fahrzeugkunde_Training(Screen):
         (self.firetruck_rooms, self.tool_questions) = get_ToolQuestion_instances(
             self.selected_firetruck, self.selected_city
         )
+        self.tool_amount = len(self.tool_questions)
 
         shuffle(self.tool_questions)
 
@@ -85,6 +93,23 @@ class Fahrzeugkunde_Training(Screen):
 
         if len(self.tool_questions) == 0:
             self.reset_tool_list()
+
+            # all tools have been trained
+            info_popup = TextPopup(
+                message=Training_Text__All_Tools(self.tool_amount).TEXT,
+                title=strings.TITLE_INFO_POPUP,
+                size_hint=(0.6, 0.6),
+            )
+            info_popup.open()
+
+        if len(self.tool_questions) == self.tool_amount // 2:
+            # half of tools have been trained
+            info_popup = TextPopup(
+                message=Training_Text__Half_Tools(self.tool_amount).TEXT,
+                title=strings.TITLE_INFO_POPUP,
+                size_hint=(0.6, 0.6),
+            )
+            info_popup.open()
 
         # Reset image boxes
         self.ids.firetruck_rooms_layout.clear_widgets()
