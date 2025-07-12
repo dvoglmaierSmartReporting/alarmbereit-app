@@ -8,16 +8,19 @@ from kivy.clock import Clock
 from random import shuffle
 from typing import cast
 
+from popups.text_popup import TextPopup
+
 from helper.file_handling import (
     load_total_competition_questions,
     save_to_scores_file,
     get_score_value,
 )
 from helper.functions import change_screen_to
-from helper.settings import Settings
+from helper.settings import Settings, Strings, Competition_GameEndText
 from helper.game_class import GameCore, CompetitionQuestion
 
 settings = Settings()
+strings = Strings()
 
 answer_idx: dict = {0: "A", 1: "B", 2: "C", 3: "D"}
 
@@ -103,6 +106,20 @@ class Bewerb_Game(Screen):
                 key="high_score",
                 value=self.game.score,
             )
+
+        message = Competition_GameEndText(
+            answers_total=self.game.questions_len,
+            answers_correct=self.game.answers_correct_total,
+            score=self.game.score,
+            is_new_highscore=self.game.score > self.current_high_score,
+        ).TEXT
+
+        info_popup = TextPopup(
+            message=message,
+            title=strings.TITLE_INFO_POPUP,
+            size_hint=(0.6, 0.6),
+        )
+        info_popup.open()
 
         change_screen_to("bewerb_menu")
 

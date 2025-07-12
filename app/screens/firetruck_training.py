@@ -17,8 +17,8 @@ from helper.file_handling import save_to_scores_file, get_score_value
 from helper.settings import (
     Settings,
     Strings,
-    Training_Text__All_Tools,
-    Training_Text__Half_Tools,
+    Firetruck_TrainingText_AllTools,
+    Firetruck_TrainingText_HalfTools,
 )
 from helper.game_class import GameCore
 from helper.firetruck_layouts import build_answer_layout
@@ -96,7 +96,7 @@ class Fahrzeugkunde_Training(Screen):
 
             # all tools have been trained
             info_popup = TextPopup(
-                message=Training_Text__All_Tools(self.tool_amount).TEXT,
+                message=Firetruck_TrainingText_AllTools(self.tool_amount).TEXT,
                 title=strings.TITLE_INFO_POPUP,
                 size_hint=(0.6, 0.6),
             )
@@ -105,7 +105,7 @@ class Fahrzeugkunde_Training(Screen):
         if len(self.tool_questions) == self.tool_amount // 2:
             # half of tools have been trained
             info_popup = TextPopup(
-                message=Training_Text__Half_Tools(self.tool_amount).TEXT,
+                message=Firetruck_TrainingText_HalfTools(self.tool_amount).TEXT,
                 title=strings.TITLE_INFO_POPUP,
                 size_hint=(0.6, 0.6),
             )

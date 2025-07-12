@@ -7,7 +7,7 @@ class Settings:
         self.FIRETRUCK_TRAINING_STRIKE_FACTOR = 50
         self.FIRETRUCK_GAME_INTERVAL_SEC = 0.1
         self.FIRETRUCK_GAME_DISPLAY_EXTRA_TIME_SEC = 2
-        self.FIRETRUCK_GAME_START_TIME_SEC = 15.0
+        self.FIRETRUCK_GAME_START_TIME_SEC = 5  # 15.0
         self.FIRETRUCK_GAME_EXTRA_TIME_SEC = 10.0
         self.FIRETRUCK_GAME_FEEDBACK_SEC = 0.5
         self.FIRETRUCK_GAME_CORRECT_FOR_EXTRA_TIME = 5
@@ -15,7 +15,7 @@ class Settings:
         ## competition
         self.COMPETITION_GAME_INTERVAL_SEC = 0.1
         self.COMPETITION_GAME_DISPLAY_EXTRA_TIME_SEC = 2
-        self.COMPETITION_GAME_START_TIME_SEC = 90.0
+        self.COMPETITION_GAME_START_TIME_SEC = 5  # 90.0
         self.COMPETITION_GAME_EXTRA_TIME_SEC = 60.0
         self.COMPETITION_GAME_FEEDBACK_SEC = 1.5
         self.COMPETITION_GAME_CORRECT_FOR_EXTRA_TIME = 4
@@ -81,7 +81,7 @@ class Strings:
         self.BUTTON_CLOSE_POPUP = "Schließen"
 
 
-class Training_Text__All_Tools:
+class Firetruck_TrainingText_AllTools:
     def __init__(self, tool_amount: int) -> None:
         self.TEXT = f"""
 
@@ -92,13 +92,75 @@ Du hast alle {tool_amount} Geräte des Fahrzeugs gelernt.
 Die Geräte werden neu geladen und weiterhin zufällig gezogen."""
 
 
-class Training_Text__Half_Tools:
+class Firetruck_TrainingText_HalfTools:
     def __init__(self, tool_amount: int) -> None:
         self.TEXT = f"""
 
 [b]Bleib dran![/b]
 
 Du hast bereits die Hälfte der {tool_amount} Geräte des Fahrzeugs gelernt."""
+
+
+class Firetruck_GameEndText:
+    def __init__(
+        self,
+        answers_total: int,
+        answers_correct: int,
+        score: int,
+        is_new_highscore: bool,
+    ) -> None:
+        self.TEXT = f"""
+[b]Spiel Ende![/b]
+
+Du hast {answers_total} {self.is_plural(answers_total>1)} gespielt, davon {answers_correct} richtig zugeordnet. {self.add_text(score,is_new_highscore)}
+"""
+
+    def add_text(self, score: int, is_new_highscore: bool) -> str:
+        if is_new_highscore:
+            return f"""
+
+Glückwunsch!
+Du hast deinen persönlichen Highscore an diesem Fahrzeug verbessert.
+
+Neuer Highscore: {score}"""
+        return f"""
+
+Punktestand: {score}"""
+
+    def is_plural(self, is_plural: bool) -> str:
+        if is_plural:
+            return "Geräte"
+        return "Gerät"
+
+
+class Competition_GameEndText:
+    def __init__(
+        self,
+        answers_total: int,
+        answers_correct: int,
+        score: int,
+        is_new_highscore: bool,
+    ) -> None:
+        self.TEXT = f"""
+[b]Spiel Ende![/b]
+
+Du hast {answers_total} {self.is_plural(answers_total > 1)} gespielt, davon {answers_correct} richtig zugeordnet.
+
+{self.is_new_highscore(score, is_new_highscore)}
+"""
+
+    def is_new_highscore(self, score: int, is_new_highscore: bool) -> str:
+        if is_new_highscore:
+            return f"""[b]Glückwunsch![/b]
+Du hast deinen persönlichen Highscore in diesem Bewerb verbessert.
+
+Neuer Highscore: {score}"""
+        return f"\n\nPunktestand: {score}"
+
+    def is_plural(self, is_plural: bool) -> str:
+        if is_plural:
+            return "Fragen"
+        return "Frage"
 
 
 class Info_Text:

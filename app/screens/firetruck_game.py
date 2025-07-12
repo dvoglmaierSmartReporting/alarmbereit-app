@@ -8,13 +8,15 @@ from kivy.clock import Clock
 from random import shuffle
 from typing import cast
 
+from popups.text_popup import TextPopup
+
 from helper.functions import (
     change_screen_to,
     get_ToolQuestion_instances,
     get_firetruck_layout_value,
 )
 from helper.file_handling import save_to_scores_file, get_score_value
-from helper.settings import Settings, Strings
+from helper.settings import Settings, Strings, Firetruck_GameEndText
 from helper.game_class import GameCore
 from helper.firetruck_layouts import build_answer_layout
 
@@ -108,9 +110,21 @@ class Fahrzeugkunde_Game(Screen):
                 key="high_score",
                 value=self.game.score,
             )
-        # app = App.get_running_app()
-        # app.root.current = "fahrzeugkunde_menu"
-        # app.root.transition.direction = "right"
+
+        message = Firetruck_GameEndText(
+            answers_total=self.game.questions_len,
+            answers_correct=self.game.answers_correct_total,
+            score=self.game.score,
+            is_new_highscore=self.game.score > self.current_high_score,
+        ).TEXT
+
+        info_popup = TextPopup(
+            message=message,
+            title=strings.TITLE_INFO_POPUP,
+            size_hint=(0.6, 0.6),
+        )
+        info_popup.open()
+
         change_screen_to("fahrzeugkunde_menu")
 
     def reset_tool_list(self):
