@@ -25,7 +25,7 @@ settings = Settings()
 strings = Strings()
 
 
-class Fahrzeugkunde_Game(Screen):
+class Firetruck_Game(Screen):
     timer_change_label_visible = BooleanProperty(False)
     # timer_change_add = BooleanProperty(True)
 
@@ -125,7 +125,7 @@ class Fahrzeugkunde_Game(Screen):
         )
         info_popup.open()
 
-        change_screen_to("fahrzeugkunde_menu")
+        change_screen_to("firetruck_menu")
 
     def reset_tool_list(self):
         (self.firetruck_rooms, self.tool_questions) = get_ToolQuestion_instances(
@@ -177,7 +177,7 @@ class Fahrzeugkunde_Game(Screen):
         #     btn.bind(on_press=self.on_answer)
         #     self.ids.firetruck_rooms_layout.add_widget(btn)
 
-        float = build_answer_layout(self.room_layout, "fahrzeugkunde_game")
+        float = build_answer_layout(self.room_layout, "firetruck_game")
 
         self.ids.firetruck_rooms_layout.add_widget(float)
 

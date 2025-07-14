@@ -13,9 +13,9 @@ from helper.game_class import CompetitionQuestion
 strings = Strings()
 
 
-class Bewerb_Training(Screen):
+class Competition_Training(Screen):
     def __init__(self, **kwargs):
-        super(Bewerb_Training, self).__init__(**kwargs)
+        super(Competition_Training, self).__init__(**kwargs)
         # update button strings
         self.solution_button = cast(Button, self.solution_button)
         self.random_question_button = cast(Button, self.random_question_button)
@@ -163,4 +163,4 @@ class Bewerb_Training(Screen):
         self.ids.question_label.height = self.ids.question_label.texture_size[1]
 
     def go_back(self, *args) -> None:
-        change_screen_to("bewerb_menu")
+        change_screen_to("competition_menu")

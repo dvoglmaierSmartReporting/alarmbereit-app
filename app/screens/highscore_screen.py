@@ -9,6 +9,6 @@ about_text = About_Text().TEXT
 strings = Strings()
 
 
-class Punkte_Screen(Screen):
+class Highscore(Screen):
     def go_back(self, *args) -> None:
         change_screen_to("start_menu")

@@ -10,9 +10,9 @@ about_text = About_Text().TEXT
 strings = Strings()
 
 
-class Info_Screen(Screen):
+class Info(Screen):
     def __init__(self, **kwargs):
-        super(Info_Screen, self).__init__(**kwargs)
+        super(Info, self).__init__(**kwargs)
         self.header_label = cast(Label, self.header_label)
         self.header_label.text = strings.BUTTON_STR_INFO
 

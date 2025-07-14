@@ -125,9 +125,6 @@
                     app.root.current = "acknowledgement_screen"
                     root.manager.transition.direction = "left"
 
-            # TODO: Info butten with About and info text
-            # how to add new department?!
-            
             Label:  # placeholder
                 size_hint_x: 1
             
@@ -145,7 +142,7 @@
                     background_normal: ''
                     background_color: 0.2, 0.2, 0.2, 0.5
                     on_release:
-                        app.root.current = "punkte_screen"
+                        app.root.current = "highscore_screen"
                         root.manager.transition.direction = "left"
                         root.update_info_text()
 
@@ -190,8 +187,8 @@
     #        pos_hint: {"center_x": 0.5, "y": 0.025}
 
 
-<Punkte_Screen>:
-    name: "punkte_screen"
+<Highscore>:
+    name: "highscore_screen"
 
     # IDs
     header_label: header_label
@@ -254,7 +251,7 @@
                 markup: True
 
 
-<Acknowledgement_Screen>:
+<Acknowledgment>:
     name: "acknowledgement_screen"
 
     # IDs
@@ -319,8 +316,8 @@
                 markup: True
 
 
-<Fahrzeugkunde_Mode>:
-    name: "fahrzeugkunde_mode"
+<Firetruck_Mode>:
+    name: "firetruck_mode"
 
     # IDs
     logo_layout: logo_layout
@@ -379,12 +376,12 @@
             id: modes_layout
             orientation: 'vertical'
             size_hint_y: 9
-            # padding: "5dp"  # in Fahrzeugkunde_mode python
-            # spacing: "10dp"  # in Fahrzeugkunde_mode python
+            # padding: "5dp"  # in Firetruck_mode python
+            # spacing: "10dp"  # in Firetruck_mode python
 
 
-<Fahrzeugkunde_Menu>:
-    name: "fahrzeugkunde_menu"
+<Firetruck_Menu>:
+    name: "firetruck_menu"
 
     # IDs
     logo_layout: logo_layout
@@ -451,8 +448,8 @@
                 spacing: "5dp"
 
 
-<Fahrzeugkunde_Training>:
-    name: "fahrzeugkunde_training"
+<Firetruck_Training>:
+    name: "firetruck_training"
 
     # IDs
     firetruck_label: firetruck_label
@@ -477,7 +474,7 @@
                 text: "<"
                 font_size: "32sp"
                 on_release:
-                    #app.root.current = "fahrzeugkunde_menu"
+                    #app.root.current = "firetruck_menu"
                     #root.manager.transition.direction = "right"
                     root.go_back()
     
@@ -545,8 +542,8 @@
             # either GridLayout or FloatLayout
 
 
-<Fahrzeugkunde_Training_New>:
-    name: "fahrzeugkunde_training_new"
+<Firetruck_Training_New>:
+    name: "firetruck_training_new"
 
     # IDs
     firetruck_label: firetruck_label
@@ -571,7 +568,7 @@
                 text: "<"
                 font_size: "32sp"
                 on_release:
-                    #app.root.current = "fahrzeugkunde_menu"
+                    #app.root.current = "firetruck_menu"
                     #root.manager.transition.direction = "right"
                     root.go_back()
     
@@ -638,8 +635,8 @@
             # either GridLayout or FloatLayout
 
 
-<Fahrzeugkunde_Game>:
-    name: "fahrzeugkunde_game"
+<Firetruck_Game>:
+    name: "firetruck_game"
 
     # IDs
     firetruck_label: firetruck_label
@@ -666,7 +663,7 @@
                 text: "<"
                 font_size: "32sp"
                 on_release:
-                    root.manager.get_screen('fahrzeugkunde_game').end_game()
+                    root.manager.get_screen('firetruck_game').end_game()
                     #root.go_back()
 
             Label:
@@ -733,8 +730,8 @@
     height: self.minimum_height
 
 
-<Fahrzeugkunde_Browse>:
-    name: "fahrzeugkunde_browse"
+<Firetruck_Browse>:
+    name: "firetruck_browse"
 
     # IDs
     firetruck_label: firetruck_label
@@ -758,7 +755,7 @@
                 text: "<"
                 font_size: "32sp"
                 on_release:
-                    #app.root.current = "fahrzeugkunde_menu"
+                    #app.root.current = "firetruck_menu"
                     #root.manager.transition.direction = "right"
                     root.go_back()
     
@@ -794,7 +791,7 @@
                 id: filter_button
                 font_size: "32sp"
                 on_release:
-                    root.manager.get_screen('fahrzeugkunde_browse').filter_list()
+                    root.manager.get_screen('firetruck_browse').filter_list()
 
             TextInput:
                 size_hint_x: 4
@@ -809,7 +806,7 @@
                 text:  "X"
                 font_size: "32sp"
                 on_release:
-                    root.manager.get_screen('fahrzeugkunde_browse').remove_filter_text()
+                    root.manager.get_screen('firetruck_browse').remove_filter_text()
 
         # TOOL-LIST
         ScrollView:
@@ -825,8 +822,8 @@
                 height: self.minimum_height
 
 
-<Fahrzeugkunde_Images>:
-    name: "fahrzeugkunde_images"
+<Firetruck_Images>:
+    name: "firetruck_images"
 
     # IDs
     firetruck_label: firetruck_label
@@ -848,7 +845,7 @@
                 text: "<"
                 font_size: "32sp"
                 on_release:
-                    #app.root.current = "fahrzeugkunde_menu"
+                    #app.root.current = "firetruck_menu"
                     #root.manager.transition.direction = "right"
                     root.go_back()
             
@@ -887,8 +884,8 @@
                 spacing: "5dp"
 
 
-<Bewerb_Menu>:
-    name: "bewerb_menu"
+<Competition_Menu>:
+    name: "competition_menu"
 
     # IDs
     logo_layout: logo_layout
@@ -896,8 +893,8 @@
     mode_toggle_layout: mode_toggle_layout
     mode_toggle_training: mode_toggle_training
     mode_toggle_game: mode_toggle_game
-    bewerbe_layout_scrollview: bewerbe_layout_scrollview
-    bewerbe_layout: bewerbe_layout
+    competitions_layout_scrollview: competitions_layout_scrollview
+    competitions_layout: competitions_layout
 
     # LOGO
     #FloatLayout:
@@ -982,18 +979,18 @@
         # COMPETITIONS
         ScrollView:
             size_hint_y: 8
-            id: bewerbe_layout_scrollview
+            id: competitions_layout_scrollview
 
             BoxLayout:
-                id: bewerbe_layout
+                id: competitions_layout
                 orientation: 'vertical'
                 size_hint_y: None
                 height: self.minimum_height
                 spacing: "5dp"
 
 
-<Bewerb_Training>:
-    name: "bewerb_training"
+<Competition_Training>:
+    name: "competition_training"
 
     # IDs
     question_id_label: question_id_label
@@ -1070,7 +1067,7 @@
                 id: previous_question_button
                 font_size: "45sp"
                 on_release:
-                    root.manager.get_screen('bewerb_training').next_question(previous=True)
+                    root.manager.get_screen('competition_training').next_question(previous=True)
 
             Button:
                 size_hint_x: 1
@@ -1078,7 +1075,7 @@
                 id: next_question_button
                 font_size: "45sp"
                 on_release:
-                    root.manager.get_screen('bewerb_training').next_question()
+                    root.manager.get_screen('competition_training').next_question()
         
         # ANSWER
         BoxLayout:
@@ -1090,18 +1087,18 @@
                 id: random_question_button
                 font_size: "32sp"
                 on_release:
-                    root.manager.get_screen('bewerb_training').random_question()
+                    root.manager.get_screen('competition_training').random_question()
         
             Button:
                 size_hint_x: 1
                 id: solution_button
                 font_size: "32sp"
                 on_release:
-                    root.manager.get_screen('bewerb_training').reveal_answer()
+                    root.manager.get_screen('competition_training').reveal_answer()
             
 
-<Bewerb_Game>:
-    name: "bewerb_game"
+<Competition_Game>:
+    name: "competition_game"
 
     # IDs
     competition_label: competition_label
@@ -1130,8 +1127,8 @@
                 text: "<"
                 font_size: "32sp"
                 on_release:
-                    root.manager.get_screen('bewerb_game').end_game()
-                    #root.manager.get_screen('bewerb_game').go_back()
+                    root.manager.get_screen('competition_game').end_game()
+                    #root.manager.get_screen('competition_game').go_back()
                     #root.go_back()
 
             BoxLayout:

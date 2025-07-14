@@ -8,7 +8,7 @@ from typing import cast
 from helper.functions import change_screen_to
 
 
-class Fahrzeugkunde_Images(Screen):
+class Firetruck_Images(Screen):
     # def load_image(self):
     #     self.scatter.clear_widgets()
 
@@ -136,4 +136,4 @@ class Fahrzeugkunde_Images(Screen):
         return img
 
     def go_back(self, *args) -> None:
-        change_screen_to("fahrzeugkunde_menu")
+        change_screen_to("firetruck_menu")

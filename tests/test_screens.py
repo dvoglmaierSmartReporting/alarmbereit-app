@@ -84,7 +84,7 @@ def test_all_screens_load(app):
 
 # @pytest.mark.parametrize("mode", ["Übung", "Zeitdruck"])
 # def test_competition_menu__select_mode(mode):
-#     screen = Bewerb_Menu(name="bewerb_menu")
+#     screen = Bewerb_Menu(name="competition_menu")
 #     try:
 #         screen.mode_label = mode
 #         print(f"competition_menu loaded successfully for mode {mode}.")
@@ -112,7 +112,7 @@ def test_all_screens_load(app):
 
 # @pytest.mark.parametrize("competition_name", competitions)
 # def test_competition_training__select_competition(competition_name):
-#     screen = Bewerb_Training(name="bewerb_training")
+#     screen = Bewerb_Training(name="competition_training")
 #     try:
 #         screen.select_competition(competition_name)
 #         screen.play()
@@ -126,7 +126,7 @@ def test_all_screens_load(app):
 
 
 # def test_competition_training__select_invalid_competition__should_fail():
-#     screen = Bewerb_Training(name="bewerb_training")
+#     screen = Bewerb_Training(name="competition_training")
 #     invalid_competition = "Blub - not exists"
 #     with pytest.raises(Exception):
 #         screen.select_competition(invalid_competition)
@@ -138,7 +138,7 @@ def test_all_screens_load(app):
 
 # @pytest.mark.parametrize("competition_name", competitions)
 # def test_competition_game__select_competition(competition_name):
-#     screen = Bewerb_Game(name="bewerb_game")
+#     screen = Bewerb_Game(name="competition_game")
 #     try:
 #         screen.select_competition(competition_name)
 #         screen.play()
@@ -152,7 +152,7 @@ def test_all_screens_load(app):
 
 
 # def test_competition_game__select_invalid_competition__should_fail():
-#     screen = Bewerb_Game(name="bewerb_game")
+#     screen = Bewerb_Game(name="competition_game")
 #     invalid_competition = "Blub - not exists"
 #     with pytest.raises(Exception):
 #         screen.select_competition(invalid_competition)
@@ -168,7 +168,7 @@ def test_all_screens_load(app):
 #     firetrucks = list(load_total_firetruck_storage().keys())
 
 #     for firetruck_name in firetrucks:
-#         screen = Fahrzeugkunde_Training(name="fahrzeugkunde_training")
+#         screen = Fahrzeugkunde_Training(name="firetruck_training")
 #         try:
 #             screen.select_firetruck(firetruck_name)
 #             screen.play()
@@ -178,7 +178,7 @@ def test_all_screens_load(app):
 
 
 # def test_firetruck_training__select_invalid_firetruck__should_fail():
-#     screen = Fahrzeugkunde_Training(name="fahrzeugkunde_training")
+#     screen = Fahrzeugkunde_Training(name="firetruck_training")
 #     invalid_firetruck = "Tank300"
 #     with pytest.raises(Exception):
 #         screen.select_firetruck(invalid_firetruck)
@@ -194,7 +194,7 @@ def test_all_screens_load(app):
 #     firetrucks = list(load_total_firetruck_storage().keys())
 
 #     for firetruck_name in firetrucks:
-#         screen = Fahrzeugkunde_Game(name="fahrzeugkunde_game")
+#         screen = Fahrzeugkunde_Game(name="firetruck_game")
 #         try:
 #             screen.select_firetruck(firetruck_name)
 #             screen.play()
@@ -204,7 +204,7 @@ def test_all_screens_load(app):
 
 
 # def test_firetruck_game__select_invalid_firetruck__should_fail():
-#     screen = Fahrzeugkunde_Game(name="fahrzeugkunde_game")
+#     screen = Fahrzeugkunde_Game(name="firetruck_game")
 #     invalid_firetruck = "Tank300"
 #     with pytest.raises(Exception):
 #         screen.select_firetruck(invalid_firetruck)

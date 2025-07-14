@@ -10,9 +10,9 @@ from helper.settings import Strings
 strings = Strings()
 
 
-class Fahrzeugkunde_Browse(Screen):
+class Firetruck_Browse(Screen):
     def __init__(self, **kwargs):
-        super(Fahrzeugkunde_Browse, self).__init__(**kwargs)
+        super(Firetruck_Browse, self).__init__(**kwargs)
 
         self.ids.filter_button.text = strings.BUTTON_STR_FILTER
 
@@ -96,4 +96,4 @@ class Fahrzeugkunde_Browse(Screen):
         self.filter_text.text = ""
 
     def go_back(self, *args) -> None:
-        change_screen_to("bewerb_menu")
+        change_screen_to("competition_menu")

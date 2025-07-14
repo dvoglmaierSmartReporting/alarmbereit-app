@@ -11,9 +11,9 @@ strings = Strings()
 acknowledgement_text = Acknowledgements_Text().TEXT
 
 
-class Acknowledgement_Screen(Screen):
+class Acknowledgment(Screen):
     def __init__(self, **kwargs):
-        super(Acknowledgement_Screen, self).__init__(**kwargs)
+        super(Acknowledgment, self).__init__(**kwargs)
         self.header_label = cast(Label, self.header_label)
         self.acknowledgement_label = cast(Label, self.acknowledgement_label)
 

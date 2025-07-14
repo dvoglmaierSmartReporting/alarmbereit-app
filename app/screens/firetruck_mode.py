@@ -17,9 +17,9 @@ from helper.settings import Strings
 strings = Strings()
 
 
-class Fahrzeugkunde_Mode(Screen):
+class Firetruck_Mode(Screen):
     def __init__(self, **kwargs):
-        super(Fahrzeugkunde_Mode, self).__init__(**kwargs)
+        super(Firetruck_Mode, self).__init__(**kwargs)
 
         self.ids.modes_label.text = strings.LABEL_STR_MODES
 
@@ -50,7 +50,7 @@ class Fahrzeugkunde_Mode(Screen):
 
         firetruck_btn1.bind(
             on_release=lambda instance: self.forward_mode2menu_manually(
-                "fahrzeugkunde_menu", strings.BUTTON_STR_TRAINING
+                "firetruck_menu", strings.BUTTON_STR_TRAINING
             )
         )
 
@@ -71,7 +71,7 @@ class Fahrzeugkunde_Mode(Screen):
 
         firetruck_btn2.bind(
             on_release=lambda instance: self.forward_mode2menu_manually(
-                "fahrzeugkunde_menu", strings.BUTTON_STR_GAME
+                "firetruck_menu", strings.BUTTON_STR_GAME
             )
         )
 
@@ -92,7 +92,7 @@ class Fahrzeugkunde_Mode(Screen):
 
         # firetruck_btn3.bind(
         #     on_release=lambda instance: self.forward_mode2menu_manually(
-        #         "fahrzeugkunde_menu", strings.BUTTON_STR_BROWSE
+        #         "firetruck_menu", strings.BUTTON_STR_BROWSE
         #     )
         # )
 
@@ -113,7 +113,7 @@ class Fahrzeugkunde_Mode(Screen):
 
         # firetruck_btn4.bind(
         #     on_release=lambda instance: self.forward_mode2menu_manually(
-        #         "fahrzeugkunde_menu", strings.BUTTON_STR_IMAGES
+        #         "firetruck_menu", strings.BUTTON_STR_IMAGES
         #     )
         # )
 
@@ -134,7 +134,7 @@ class Fahrzeugkunde_Mode(Screen):
 
         # firetruck_btn5.bind(
         #     on_release=lambda instance: self.forward_mode2menu_manually(
-        #         "fahrzeugkunde_menu", strings.BUTTON_STR_EXAM
+        #         "firetruck_menu", strings.BUTTON_STR_EXAM
         #     )
         # )
 
@@ -146,28 +146,28 @@ class Fahrzeugkunde_Mode(Screen):
 
         # firetrucks_modi_widget.add_widget(firetruck_btn5)
 
-        # ### BUTTON Übung mit Bildern ###
-        # firetruck_btn6 = Button(
-        #     pos_hint={"center_x": 0.5},
-        #     text=f"{strings.BUTTON_STR_TRAINING_NEW} --->",
-        #     font_size="32sp",
-        #     # Modus not ready yet
-        #     disabled=True,
-        # )
+        ### BUTTON Übung mit Bildern ###
+        firetruck_btn6 = Button(
+            pos_hint={"center_x": 0.5},
+            text=f"{strings.BUTTON_STR_TRAINING_NEW} --->",
+            font_size="32sp",
+            # Modus not ready yet
+            # disabled=True,
+        )
 
-        # firetruck_btn6.bind(
-        #     on_release=lambda instance: self.forward_mode2menu_manually(
-        #         "fahrzeugkunde_menu", strings.BUTTON_STR_TRAINING_NEW
-        #     )
-        # )
+        firetruck_btn6.bind(
+            on_release=lambda instance: self.forward_mode2menu_manually(
+                "firetruck_menu", strings.BUTTON_STR_TRAINING_NEW
+            )
+        )
 
-        # firetruck_btn6.bind(
-        #     on_release=lambda instance: self.update_firetruck_buttons(
-        #         strings.BUTTON_STR_TRAINING_NEW
-        #     )
-        # )
+        firetruck_btn6.bind(
+            on_release=lambda instance: self.update_firetruck_buttons(
+                strings.BUTTON_STR_TRAINING_NEW
+            )
+        )
 
-        # firetrucks_modi_widget.add_widget(firetruck_btn6)
+        firetrucks_modi_widget.add_widget(firetruck_btn6)
 
         ### BUTTON Placeholder ###
         firetrucks_modi_widget.add_widget(
@@ -185,18 +185,14 @@ class Fahrzeugkunde_Mode(Screen):
         self.manager.get_screen(menu_screen).ids.mode_label.text = mode
 
     def update_firetruck_buttons(self, mode_name: str):
-        self.manager.get_screen(
-            "fahrzeugkunde_menu"
-        ).ids.firetrucks_scrollview.scroll_y = 1
+        self.manager.get_screen("firetruck_menu").ids.firetrucks_scrollview.scroll_y = 1
 
         # load available firetrucks
         total_storage = load_total_storage(self.selected_city)
         self.total_firetrucks = list(total_storage.keys())
 
         # create button for all firetrucks
-        self.manager.get_screen(
-            "fahrzeugkunde_menu"
-        ).ids.firetrucks_layout.clear_widgets()
+        self.manager.get_screen("firetruck_menu").ids.firetrucks_layout.clear_widgets()
 
         mode = mode_str2bool(mode_name.strip())
         (
@@ -255,14 +251,10 @@ class Fahrzeugkunde_Mode(Screen):
             size_hint_x=1,
             disabled=disabled,
         )
-        btn.bind(
-            on_release=self.manager.get_screen("fahrzeugkunde_menu").on_button_release
-        )
+        btn.bind(on_release=self.manager.get_screen("firetruck_menu").on_button_release)
 
         # Add the button to the layout
-        self.manager.get_screen("fahrzeugkunde_menu").ids.firetrucks_layout.add_widget(
-            btn
-        )
+        self.manager.get_screen("firetruck_menu").ids.firetrucks_layout.add_widget(btn)
 
     def go_back(self, *args) -> None:
         change_screen_to("start_menu")

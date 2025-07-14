@@ -7,7 +7,7 @@ class Settings:
         self.FIRETRUCK_TRAINING_STRIKE_FACTOR = 50
         self.FIRETRUCK_GAME_INTERVAL_SEC = 0.1
         self.FIRETRUCK_GAME_DISPLAY_EXTRA_TIME_SEC = 2
-        self.FIRETRUCK_GAME_START_TIME_SEC = 5  # 15.0
+        self.FIRETRUCK_GAME_START_TIME_SEC = 15.0
         self.FIRETRUCK_GAME_EXTRA_TIME_SEC = 10.0
         self.FIRETRUCK_GAME_FEEDBACK_SEC = 0.5
         self.FIRETRUCK_GAME_CORRECT_FOR_EXTRA_TIME = 5
@@ -15,7 +15,7 @@ class Settings:
         ## competition
         self.COMPETITION_GAME_INTERVAL_SEC = 0.1
         self.COMPETITION_GAME_DISPLAY_EXTRA_TIME_SEC = 2
-        self.COMPETITION_GAME_START_TIME_SEC = 5  # 90.0
+        self.COMPETITION_GAME_START_TIME_SEC = 90.0
         self.COMPETITION_GAME_EXTRA_TIME_SEC = 60.0
         self.COMPETITION_GAME_FEEDBACK_SEC = 1.5
         self.COMPETITION_GAME_CORRECT_FOR_EXTRA_TIME = 4
@@ -40,7 +40,7 @@ class Strings:
         self.BUTTON_STR_SETTINGS = "Einst."
         self.BUTTON_STR_TRAINING = "Übung"  # "Lernen" # "Erkunden"
         self.BUTTON_STR_TRAINING_NEW = (
-            f"{self.BUTTON_STR_TRAINING} mit Bildern\n(bald verfügbar)"
+            f"{self.BUTTON_STR_TRAINING} mit Bildern"
         )
         self.BUTTON_STR_GAME = "Zeitdruck"  # "Herausfordern" # "Testen" # "Challengen"
         self.BUTTON_STR_BROWSE = "Stöbern"

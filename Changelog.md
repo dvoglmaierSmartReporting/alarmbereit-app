@@ -1,4 +1,10 @@
 # next version
+TODO:
+- remove TestTruck from scores.yaml
+- reset settings seconds etc.
+- remove Bilder from modi
+
+
 features:
 - add info popup when all and half the tools are trained
 

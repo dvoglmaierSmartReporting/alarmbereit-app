@@ -63,7 +63,7 @@ competitions = list(load_total_competition_questions().keys())
 
 @pytest.mark.parametrize("competition_name", competitions)
 def test_competition_training__select_competition(competition_name):
-    screen = Bewerb_Training(name="bewerb_training")
+    screen = Bewerb_Training(name="competition_training")
     try:
         screen.select_competition(competition_name)
         screen.play()
@@ -72,9 +72,7 @@ def test_competition_training__select_competition(competition_name):
 
         while screen.next_question_button.disabled == False:
             screen.next_question()
-            print(
-                f"Loaded successfully question {screen.current_question.question_id}"
-            )
+            print(f"Loaded successfully question {screen.current_question.question_id}")
             screen.reveal_answer()
 
     except Exception as e:
@@ -86,6 +84,7 @@ def test_competition_training__select_competition(competition_name):
 #### FIRETRUCK TRAINING ####
 
 cities = ["Hallein", "Bad Dürrnberg", "Altenmarkt a.d. Alz"]
+
 
 @pytest.mark.parametrize("city_name", cities)
 def test_firetruck_training__select_firetruck(city_name):
@@ -104,7 +103,7 @@ def test_firetruck_training__select_firetruck(city_name):
         mock_schedule.side_effect = lambda func, timeout: func(0.016)
 
         for firetruck_name in firetrucks:
-            screen = Fahrzeugkunde_Training(name="fahrzeugkunde_training")
+            screen = Fahrzeugkunde_Training(name="firetruck_training")
             try:
                 screen.select_city(city_name)
                 screen.select_firetruck(firetruck_name)
@@ -118,9 +117,7 @@ def test_firetruck_training__select_firetruck(city_name):
                     if instance.background_color == (0, 0, 1, 1):
                         instance = Instance("G3")
                         screen.on_answer(instance)
-                    print(
-                        f"Loaded successfully tool {i+1}: {screen.tool_label.text}"
-                    )
+                    print(f"Loaded successfully tool {i+1}: {screen.tool_label.text}")
 
                     i += 1
 

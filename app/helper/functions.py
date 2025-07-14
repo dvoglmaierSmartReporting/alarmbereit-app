@@ -47,9 +47,9 @@ def invert_firetruck_equipment(firetruck: dict[str, list[str]]) -> dict[str, lis
     return tools_locations
 
 
-def get_firetruck_storage(
+def get_ToolQuestion_instances(
     selected_firetruck: str, selected_city: str
-) -> firetruckStorage:
+) -> tuple[list[str], list[ToolQuestion]]:
     total_storage = load_total_storage(selected_city)
 
     if isinstance(total_storage[selected_firetruck]["Tools"], dict):
@@ -63,18 +63,6 @@ def get_firetruck_storage(
     rooms: list = list(firetruck.keys())
     tools: list = list(set([tool for room in firetruck.values() for tool in room]))
     tools_locations: dict = invert_firetruck_equipment(firetruck)
-    return rooms, tools, tools_locations
-
-
-def get_ToolQuestion_instances(
-    selected_firetruck: str, selected_city: str
-) -> tuple[list[str], list[ToolQuestion]]:
-
-    # TODO: merge get_firetruck_storage + get_ToolQuestion_instances after refactoring all screens
-
-    (rooms, tools, tools_locations) = get_firetruck_storage(
-        selected_firetruck, selected_city
-    )
 
     tool_questions = []
 

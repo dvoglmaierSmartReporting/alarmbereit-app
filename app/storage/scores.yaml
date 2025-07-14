@@ -124,3 +124,6 @@ Hallein:
     Voraus:
       high_score: 0
       high_strike: 0
+    TestTruck:
+      high_score: 0
+      high_strike: 0

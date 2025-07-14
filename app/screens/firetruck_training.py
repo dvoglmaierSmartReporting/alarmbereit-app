@@ -28,7 +28,7 @@ settings = Settings()
 strings = Strings()
 
 
-class Fahrzeugkunde_Training(Screen):
+class Firetruck_Training(Screen):
     def select_city(self, selected_city: str):
         self.selected_city = selected_city
 
@@ -122,7 +122,7 @@ class Fahrzeugkunde_Training(Screen):
 
         self.tool_label.text = self.current_tool_question.tool
 
-        float = build_answer_layout(self.room_layout, "fahrzeugkunde_training")
+        float = build_answer_layout(self.room_layout, "firetruck_training")
 
         self.ids.firetruck_rooms_layout.add_widget(float)
 
@@ -219,4 +219,4 @@ class Fahrzeugkunde_Training(Screen):
         Clock.schedule_once(self.next_tool, settings.FIRETRUCK_TRAINING_FEEDBACK_SEC)
 
     def go_back(self, *args) -> None:
-        change_screen_to("fahrzeugkunde_menu")
+        change_screen_to("firetruck_menu")

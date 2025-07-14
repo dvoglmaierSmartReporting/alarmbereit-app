@@ -54,18 +54,18 @@ class Start_Menu(Screen):
             font_size="32sp",
         )
         fahrzeuge_button.bind(
-            on_release=lambda instance: change_screen_to("fahrzeugkunde_mode", "left")
+            on_release=lambda instance: change_screen_to("firetruck_mode", "left")
         )
 
         # COMPETITIONS BUTTON
-        bewerbe_button = Button(
+        competitions_button = Button(
             size_hint=(1, 1),
             text=strings.BUTTON_STR_COMPETITIONS,
             font_size="32sp",
         )
 
-        bewerbe_button.bind(
-            on_release=lambda instance: change_screen_to("bewerb_menu", "left")
+        competitions_button.bind(
+            on_release=lambda instance: change_screen_to("competition_menu", "left")
         )
 
         about_label = Label(
@@ -77,7 +77,7 @@ class Start_Menu(Screen):
 
         # Add widgets to layout
         self.content_layout.add_widget(fahrzeuge_button)
-        self.content_layout.add_widget(bewerbe_button)
+        self.content_layout.add_widget(competitions_button)
         self.content_layout.add_widget(about_label)
 
     def forward_mode2menu_manually(self, menu_screen: str, mode: str):
@@ -90,4 +90,6 @@ class Start_Menu(Screen):
             create_scores_text(read_scores_file(), self.selected_city) + "\n\n\n\n"
         )
 
-        self.manager.get_screen("punkte_screen").ids.score_text_label.text = info_text
+        self.manager.get_screen("highscore_screen").ids.score_text_label.text = (
+            info_text
+        )

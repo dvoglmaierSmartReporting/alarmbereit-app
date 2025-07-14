@@ -25,7 +25,7 @@ strings = Strings()
 answer_idx: dict = {0: "A", 1: "B", 2: "C", 3: "D"}
 
 
-class Bewerb_Game(Screen):
+class Competition_Game(Screen):
     def select_city(self, selected_city: str):
         self.selected_city = selected_city
 
@@ -121,7 +121,7 @@ class Bewerb_Game(Screen):
         )
         info_popup.open()
 
-        change_screen_to("bewerb_menu")
+        change_screen_to("competition_menu")
 
     def reset_competition_questions(self):
         self.competition_dict = load_total_competition_questions().get(

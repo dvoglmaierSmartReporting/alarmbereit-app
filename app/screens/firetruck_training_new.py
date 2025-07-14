@@ -19,7 +19,10 @@ settings = Settings()
 strings = Strings()
 
 
-class Fahrzeugkunde_Training_New(Screen):
+class Firetruck_Training_New(Screen):
+    def select_city(self, selected_city: str):
+        self.selected_city = selected_city
+
     def select_firetruck(self, selected_firetruck: str):
         # troubleshooting: fix firetruck
         # self.selected_firetruck = "Tank1" "Rüst+Lösch"
@@ -46,7 +49,7 @@ class Fahrzeugkunde_Training_New(Screen):
 
     def reset_tool_list(self):
         (self.firetruck_rooms, self.tool_questions) = get_ToolQuestion_instances(
-            self.selected_firetruck
+            self.selected_firetruck, self.selected_city
         )
 
         shuffle(self.tool_questions)
@@ -61,10 +64,10 @@ class Fahrzeugkunde_Training_New(Screen):
         self.reset_strike()
 
         self.current_high_strike = get_score_value(
-            city="Hallein",
+            city=self.selected_city,
             questions="firetrucks",
             truck_or_comp=self.selected_firetruck,
-            key="high_strike"
+            key="high_strike",
         )
 
         self.update_high_strike_label()
@@ -160,8 +163,8 @@ class Fahrzeugkunde_Training_New(Screen):
                 city=self.selected_city,
                 questions="firetrucks",
                 truck_or_comp=self.selected_firetruck,
-                key="high_strike", 
-                value=self.game.answers_correct_strike
+                key="high_strike",
+                value=self.game.answers_correct_strike,
             )
 
         self.feedback_green = True
@@ -286,4 +289,4 @@ class Fahrzeugkunde_Training_New(Screen):
             layout.rect.size = layout.size
 
     def go_back(self, *args) -> None:
-        change_screen_to("fahrzeugkunde_menu")
+        change_screen_to("firetruck_menu")
