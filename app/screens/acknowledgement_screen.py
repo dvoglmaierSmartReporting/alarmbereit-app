@@ -3,7 +3,7 @@ from kivy.uix.screenmanager import Screen
 
 from typing import cast
 
-from helper.settings import Strings, Acknowledgements_Text
+from helper.strings import Strings, Acknowledgements_Text
 from helper.functions import change_screen_to
 
 

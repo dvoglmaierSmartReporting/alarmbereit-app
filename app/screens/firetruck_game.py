@@ -16,7 +16,8 @@ from helper.functions import (
     get_firetruck_layout_value,
 )
 from helper.file_handling import save_to_scores_file, get_score_value
-from helper.settings import Settings, Strings, Firetruck_GameEndText
+from helper.settings import Settings
+from helper.strings import Strings, Firetruck_GameEndText
 from helper.game_class import GameCore
 from helper.firetruck_layouts import build_answer_layout
 

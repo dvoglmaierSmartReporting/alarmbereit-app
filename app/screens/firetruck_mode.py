@@ -11,7 +11,7 @@ from helper.functions import (
 )
 from helper.file_handling import get_selected_city_state
 from helper.aspect_image import get_city_image
-from helper.settings import Strings
+from helper.strings import Strings
 
 
 strings = Strings()

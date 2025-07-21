@@ -16,7 +16,8 @@ from helper.file_handling import (
     get_score_value,
 )
 from helper.functions import change_screen_to
-from helper.settings import Settings, Strings, Competition_GameEndText
+from helper.settings import Settings
+from helper.strings import Strings, Competition_GameEndText
 from helper.game_class import GameCore, CompetitionQuestion
 
 settings = Settings()

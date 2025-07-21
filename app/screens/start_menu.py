@@ -2,6 +2,7 @@ from kivy.uix.label import Label
 from kivy.uix.button import Button
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.layout import Layout
+from kivy.uix.image import Image
 from kivy.uix.screenmanager import Screen, SlideTransition
 
 from typing import cast
@@ -11,8 +12,8 @@ from helper.file_handling import (
     read_scores_file,
     get_selected_city_state,
 )
-from helper.aspect_image import get_city_image
-from helper.settings import Strings, About_Text
+from helper.aspect_image import get_city_image, get_team122_image
+from helper.strings import Strings, About_Text
 
 
 strings = Strings()
@@ -68,6 +69,7 @@ class Start_Menu(Screen):
             on_release=lambda instance: change_screen_to("competition_menu", "left")
         )
 
+        # ABOUT TEXT / IMPRESSUM
         about_label = Label(
             size_hint=(1, 1),
             text=About_Text().TEXT,
@@ -75,10 +77,14 @@ class Start_Menu(Screen):
             halign="center",
         )
 
+        # TEAM122 LOGO
+        team122_logo = get_team122_image()
+
         # Add widgets to layout
         self.content_layout.add_widget(fahrzeuge_button)
         self.content_layout.add_widget(competitions_button)
         self.content_layout.add_widget(about_label)
+        self.content_layout.add_widget(team122_logo)
 
     def forward_mode2menu_manually(self, menu_screen: str, mode: str):
         self.manager.transition = SlideTransition(direction="left")

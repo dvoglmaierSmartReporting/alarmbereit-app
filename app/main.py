@@ -39,7 +39,7 @@ from screens.competition_game import Competition_Game
 from popups.text_popup import TextPopup
 
 from helper.file_handling import transfer_file
-from helper.settings import Strings
+from helper.strings import Strings
 
 
 strings = Strings()

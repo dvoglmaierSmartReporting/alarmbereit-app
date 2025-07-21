@@ -5,16 +5,21 @@
     name: "login"
 
     # IDs
-    logo_layout: logo_layout
+    logo_hallein_layout: logo_hallein_layout
+    logo_team122_layout: logo_team122_layout
     login_label: login_label
     login_layout: login_layout
     city_scrollview: city_scrollview
     city_layout: city_layout
     store_selection_button: store_selection_button
 
-    # LOGO
+    # LOGO HALLEIN
     FloatLayout:
-        id: logo_layout
+        id: logo_hallein_layout
+    
+    # LOGO TEAM122
+    FloatLayout:
+        id: logo_team122_layout
 
     # SCREEN
     BoxLayout:
@@ -28,15 +33,32 @@
             spacing: "3dp"
 
             Label: # placeholder
-                size_hint_x: 2
+                size_hint_x: 4
 
-            Label:
-                size_hint_x: 1
-                id: login_label
-                font_size: "25sp"
-                halign: "center"
-                valign: "middle"
-                text_size: self.size
+                #size_hint_x: 2
+
+            #Label:
+            #    size_hint_x: 1
+            #    id: login_label
+            #    font_size: "21sp"
+            #    halign: "center"
+            #    valign: "middle"
+            #    text_size: self.size
+
+            BoxLayout:
+                size_hint_x: 2
+                orientation: 'vertical'
+                
+                Label: # placeholder
+                    size_hint_y: 1
+
+                Label:
+                    size_hint_y: 1
+                    id: login_label
+                    font_size: "21sp"
+                    halign: "center"
+                    valign: "middle"
+                    text_size: self.size
             
         # SEPARATOR
         BoxLayout:
@@ -191,14 +213,14 @@
     name: "highscore_screen"
 
     # IDs
-    header_label: header_label
     score_text_label: score_text_label
+    #share_button: share_button
 
     # SCREEN
     BoxLayout:
         orientation: 'vertical'
-        padding: "5dp"
         spacing: "10dp"
+        padding: "5dp"
 
         # HEADER
         BoxLayout:
@@ -213,15 +235,17 @@
                     root.go_back()
             
             Label: # placeholder
-                size_hint_x: 2
+                size_hint_x: 4
 
-            Label:
-                size_hint_x: 3
-                id: header_label
-                font_size: "25sp"
-                halign: "center"
-                valign: "middle"
-                text_size: self.size
+                #size_hint_x: 1
+
+            ## SCREENSHOT
+            #Button:
+            #    id: share_button
+            #    size_hint_x: 4
+            #    font_size: "21sp"
+            #    on_release:
+            #        root.capture_scrollview()
     
         # SEPARATOR
         BoxLayout:
@@ -249,13 +273,12 @@
                 text_size: self.width, None
                 height: self.texture_size[1]
                 markup: True
-
+        
 
 <Acknowledgment>:
     name: "acknowledgement_screen"
 
     # IDs
-    return_button: return_button
     header_label: header_label
     acknowledgement_label: acknowledgement_label
 
@@ -271,7 +294,6 @@
             spacing: "3dp"
 
             Button:
-                id: return_button
                 size_hint_x: 1
                 text: "<"
                 font_size: "32sp"

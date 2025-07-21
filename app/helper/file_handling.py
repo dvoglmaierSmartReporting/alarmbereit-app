@@ -6,7 +6,7 @@ from shutil import copyfile
 import os
 from typing import cast
 
-from helper.settings import Strings
+from helper.strings import Strings
 from helper.custom_types import *
 
 strings = Strings()
@@ -158,6 +158,10 @@ def get_logo_file_path(selected_long_name: str) -> str:
     # state logos
     if selected_long_name in ["Salzburg", "Bayern"]:
         return "assets/lfv_salzburg.png"
+    
+    # team122
+    if selected_long_name == "team122":
+        return "assets/team122_logo_lang.png"
 
     # default
     return "assets/FFH_Logohalter.png"

@@ -4,7 +4,7 @@ from kivy.uix.screenmanager import Screen
 from typing import cast
 
 from helper.functions import load_total_storage, change_screen_to
-from helper.settings import Strings
+from helper.strings import Strings
 
 
 strings = Strings()

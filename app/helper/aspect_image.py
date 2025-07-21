@@ -25,6 +25,24 @@ class AspectImage(Image):
             self.width = self.height * image_ratio
 
 
+def get_team122_image() -> AspectImage:
+    return AspectImage(
+        source=get_logo_file_path("team122"),
+        # values are highly specific to used PNG
+        size_hint=(0.35, 0.35),
+        pos_hint={"center_x": 0.5, "center_y": 0.5},
+    )
+
+
+def get_team122_small_image() -> AspectImage:
+    return AspectImage(
+        source=get_logo_file_path("team122"),
+        # values are highly specific to used PNG
+        size_hint=(0.035, 0.035),
+        pos_hint={"right": 0.98, "top": 0.96},
+    )
+
+
 def get_city_image(selected_city_long_name: str) -> AspectImage:
     selected_city = map_selected_city_2short_name(
         selected_city_long_name.strip("_small")

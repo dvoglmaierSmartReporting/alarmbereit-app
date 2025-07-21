@@ -3,7 +3,8 @@ from kivy.app import App
 import os
 from typing import cast
 
-from helper.settings import Strings, Settings
+from helper.settings import Settings
+from helper.strings import Strings
 from helper.file_handling import (
     load_total_storage,
     map_selected_city_2short_name,

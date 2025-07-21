@@ -4,7 +4,7 @@ from kivy.uix.button import Button
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.scrollview import ScrollView
 
-from helper.settings import Strings
+from helper.strings import Strings
 
 
 strings = Strings()

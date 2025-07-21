@@ -7,7 +7,7 @@ from typing import cast
 from helper.functions import mode_str2bool, change_screen_to
 from helper.file_handling import get_selected_city_state
 from helper.aspect_image import get_city_image
-from helper.settings import Strings
+from helper.strings import Strings
 
 
 strings = Strings()

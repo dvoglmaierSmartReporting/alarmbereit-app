@@ -7,7 +7,7 @@ from typing import cast
 
 from helper.file_handling import load_total_competition_questions
 from helper.functions import change_screen_to
-from helper.settings import Strings
+from helper.strings import Strings
 from helper.game_class import CompetitionQuestion
 
 strings = Strings()
