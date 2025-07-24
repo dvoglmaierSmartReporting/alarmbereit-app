@@ -121,7 +121,7 @@ class Competition_GameEndText:
         self.TEXT = f"""
 [b]Spiel Ende![/b]
 
-Du hast {answers_total} {self.is_plural(answers_total > 1)} gespielt, davon {answers_correct} richtig zugeordnet.
+Du hast {answers_total} {self.is_plural(answers_total > 1)} gespielt, davon {answers_correct} richtig beantwortet.
 
 {self.is_new_highscore(score, is_new_highscore)}
 """

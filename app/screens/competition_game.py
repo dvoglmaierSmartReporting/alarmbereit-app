@@ -125,10 +125,11 @@ class Competition_Game(Screen):
         change_screen_to("competition_menu")
 
     def reset_competition_questions(self):
-        self.competition_dict = load_total_competition_questions().get(
-            self.selected_competition, {}
-        )
+        tmp = load_total_competition_questions().get(self.selected_competition, {})
 
+        self.competition_dict = tmp.get("Questions")
+
+        # TODO: update new question structure "Questions"
         self.question_ids = list(self.competition_dict.keys())
         self.question_ids_bak = list(self.competition_dict.keys())
 

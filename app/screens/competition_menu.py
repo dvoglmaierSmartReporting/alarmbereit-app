@@ -42,7 +42,7 @@ class Competition_Menu(Screen):
                 text=competitions,
                 font_size="32sp",
                 size_hint_y=None,
-                height=150,
+                height=200,
                 size_hint_x=1,
             )
             btn.bind(on_release=self.on_button_release)

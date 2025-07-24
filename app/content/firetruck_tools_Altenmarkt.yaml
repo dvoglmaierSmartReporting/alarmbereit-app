@@ -4,10 +4,10 @@ LF8:
   Tools:
     Fahrer / GF:
       - Handfunkgerät
-      - Winkerkelle
+      - Anhaltekelle
       - Wärmebildkamera
-      - Einsatzleiterüberwurf
-      - Gruppenführerüberwurf
+      - Einsatzleiter Überwurf
+      - Gruppenführer Überwurf
       - Dreikantschlüssel
     Mannschaft:
       - Handfunkgerät
@@ -16,15 +16,15 @@ LF8:
       - Pressluftatmer
       - Rettungsleine
       - Signalfahnen
-      - Handlampen
+      - Handlampe
       - Einweghandschuhe
-      - Bügelsäge
+      - Bogensäge
       - Säbelsäge
       - Erste-Hilfe-Koffer
       - Patientenschutz
       - Abschleppseil
       - Trösterbär
-      - Warnüberwurf
+      - Warnweste
       - Absperrband
       - Halligan-Tool
       - Bolzenschneider
@@ -42,43 +42,45 @@ LF8:
       - Stabfast lang
       - Stabfast kurz
       - Glasmaster
-      - Kettensatz f. Spreizer
+      - Kettensatz Spreizer
       - Hydr. Rettungssatz
       - Hydr. Zylinder lang
       - Hydr. Zylinder kurz
-      - Unterleghölter
+      - Unterleghölzer
       - Schwelleraufsatz
       - Kantenschutz
     G2:
       - Stromerzeuger
-      - Abgasschlauch f. Stromerzeuger
-      - Motorketternsäge m. Zubehör
+      - Abgasschlauch Stromerzeuger
+      - Motorsäge
+      - Zubehör Motorsäge
       - Kombikanister
       - Schnittschutz
-      - Kanister 5 l
-      - Trennschleifer m. Zubehör
+      - Treibstoffkanister 5 l
+      - Trennschleifer
+      - Zubehör Trennschleifer
       - Trennscheiben
       - Schutzbrille
-      - Zubehör f. Stativ
+      - Zubehör Stativ
       - Hitzeschutzkleidung
-      - Flutlichtstrahler
+      - Lichtfluter
+      - Fluterbrücke
       - Kabeltrommel 230 V
       - Dreifachstecker
-      - Aufnahmebrücke
     G3:
       - Türöffnungsrucksack
       - Reserveflasche
-      - Warndreieck
+      - Warndreieck "Feuerwehr"
       - Verkehrsleitkegel
-      - Blitzer
+      - Warnblitzleuchte
       - Pressluftatmer
       - Türmarkierungen
     G4:
-      - C-Strahlrohr
-      - C-Hohlstrahlrohr
-      - B-Strahlrohr
+      - Strahlrohr C
+      - Hohlstrahlrohr
+      - Strahlrohr B
       - Stützkrümmer
-      - Seilschlauchhalter
+      - Schlauchhalter
       - Stativ
       - Tauchpumpe
       - Montagewerkzeugkasten
@@ -101,22 +103,22 @@ LF8:
       - Druckschlauch B
       - Schlauchtragekorb
       - Stufenhölzer
-      - Airbagsafe
+      - Airbag Safe
       - Bereitstellungplane
     G6:
       - Schnellangriff
-      - Schaumpistole f. Schnellangriff
+      - Schaumpistole Schnellangriff
       - Druckschlauch C
       - Druckschlauch B
       - Hygieneeinheit
       - Druckschlauch B m. Verteiler
       - Verteiler
     G7 / Heck:
-      - Saugschlauch A
+      - A-Saugschlauch
       - Saugkorb
-      - Laubschutz f. Saugkorb
-      - 5 m Druckschlauch B
-      - Kurbel f. Schnellangriff
+      - Laubschutz Saugkorb
+      - Flankierer
+      - Kurbel Schnellangriff
       - Halteleine
       - Ventilleine
       - Übergangsstück A-B
@@ -126,18 +128,18 @@ LF8:
       - Steckleiter
       - Schleifkorbtrage
       - Schlauchaufwickler
-      - Einreisshaken
+      - Einreißhaken
       - Ölbindemittel
       - Ölbindeflies
       - Dunggabel
       - Mistgabel
-      - Schaufel
+      - Spitzschaufel
       - Powermoon
-      - Vorschaltgerät f. Powermoon
-      - Stativ f. Powermoon
+      - Vorschaltgerät Powermoon
+      - Stativ Powermoon
       - Sichtschutz
-      - Besen
-      - Alu-Schaufel
+      - Straßenesen
+      - Alurandschaufel
       - Abschleppstange
       - Spineboard
       - Zubehör f. Spineboard
@@ -149,56 +151,56 @@ LF20:
     Fahrer / GF:
       - Handlampe
       - Handfunkgerät
-      - Einsatzleiterüberwurf
-      - Gruppenführerüberwurf
+      - Einsatzleiter Überwurf
+      - Gruppenführer Überwurf
     Mannschaft:
       - Handfunkgerät
-      - Winkerkelle
+      - Anhaltekelle
       - Wärmebildkamera
       - Pressluftatmer
       - Rettungsleine
-      - Warnüberwurf
+      - Warnweste
       - Erste-Hilfe-Rucksack
       - Handlampe
       - Ex-Ox-Meter
-      - Atemschutzüberwachung
-      - Atemschutzmaske
+      - Atemschutz Überwachungstafel
+      - Vollmaske
       - Einweghandschuhe
       - Türmarkierungen
       - Getränke
       - Tragetuch
       - Krankenhausdecke
-      - Fluchthaube
+      - Brandfluchthaube
     G1:
       - Überdruckentlüfter
-      - Bügelsäge
+      - Bogensäge
       - Schäkel
       - Axt
       - Sarpine
-      - Brecheisen
+      - Brechstange
       - Halligan-Tool
       - Spaltaxt
       - Feuerwehraxt
       - Bolzenschneider
-      - Warnzeichen Feuerwehr
+      - Warndreieck "Feuerwehr"
       - Verkehrsleitkegel
-      - Euro-Blitz
+      - Warnblitzleuchte
       - Wasserwerfer mobil
       - Spineboard
-      - Zubehör f. Spineboard
+      - Zubehör Spineboard
       - Säbelsäge
-      - Ersatzsägeblatt f. Säbelsäge
-      - Ersatzkette
+      - Ersatzsägeblatt Säbelsäge
+      - Ersatzkette Motorsäge
       - Patientenhelm
       - Schnittschutzhose
       - Forsthelm
       - Motorsäge
       - Rettungssäge
       - Handwerkzeug
-      - Feinstaubmaske
+      - Staubmaske
       - Schutzbrille
       - Reserveflasche
-      - Räummulden
+      - Auffangmulden
       - Kombikanister
       - Ölbindemittel
       - Rettungsweste
@@ -208,21 +210,21 @@ LF20:
       - Bindestränge
       - Rundschlinge
       - Krankentrage
-      - Alu-Schaufel
+      - Alurandschaufel
       - Straßenbesen
     G2:
-      - Warnzeichen Feuerwehr
+      - Warndreieck "Feuerwehr"
       - Verkehrsleitkegel
-      - Euro-Blitz
+      - Warnblitzleuchte
       - Stromerzeuger
       - Betankungsschlauch
-      - Abgasschlauch f. Stromerzeuger
+      - Abgasschlauch Stromerzeuger
       - Kanister 20 l
       - Druckluftschlauch
-      - Stromhaspel m. Verteiler
+      - Eingebaute Kabeltrommel
       - Schachthaken
-      - B-Hohlstrahlrohr m. Stützkrümmer
-      - C-Hohlstrahlrohr
+      - Hohlstrahlrohr B m. Stützkrümmer
+      - Hohlstrahlrohr
       - Schaumaufsatz
       - Absperrband
       - Schachtdeckelheber
@@ -233,7 +235,7 @@ LF20:
       - Kabeltrommel 230 V
       - Sturmverspannung
       - LED Akku Leuchte
-      - Fluter
+      - Lichtfluter
       - Tauchpumpe
       - Grossflächenleuchte
       - Schornsteinwerkzeug
@@ -244,9 +246,9 @@ LF20:
       - Leichenbergesack
       - Sperrwerkzeug
     G3:
-      - C-Druckschlauch
-      - B-Druckschlauch
-      - D-Druckschlauch 10 m
+      - Druckschlauch C
+      - Druckschlauch B
+      - Druckschlauch D
       - Sprungretter
       - Wasserbehälter 5000 l
       - Fognail
@@ -257,7 +259,7 @@ LF20:
       - Einwegoverall
       - Spülmittelflasche
       - Infektionsset
-      - Chemiehandschuhe
+      - Chemieschutzhandschuhe
       - Chemieschutzanzug leicht
       - Hitzeschutzanzug
       - Chemieschutz
@@ -265,7 +267,7 @@ LF20:
       - Schachtabdeckung
     G5:
       - Saugkorb
-      - Laubschutz f. Saugkorb
+      - Laubschutz Saugkorb
       - Hydroschild B
       - Hydroschild C
       - Druckbegrenzungsventil
@@ -280,7 +282,7 @@ LF20:
       - Druckschlauch B
       - Schlauchtragekorb
       - Schlauchhalter
-      - 5 m Druckschlauch B
+      - Flankierer
       - Druckschlauch B m. Verteiler
       - Übergangsstück B-C
     G6:
@@ -295,7 +297,7 @@ LF20:
       - Wasserschlauch
       - Druckschlauch B
       - Druckschlauch B m. Verteiler
-      - 5 m Druckschlauch B
+      - Flankierer
       - Übergangsstück B-C
       - Übergangsstück C-D
     G7 / Heck:
@@ -312,11 +314,10 @@ LF20:
       - Steckleiter
       - Verbindungsteil
       - Schleifkorbtrage
-      - Einreisshaken
+      - Einreißhaken
       - Gassperrschlüssel
       - Wasserwerfer Dach
-      - Saugschlauch
-      - Abgasschlauch LKW
+      - A-Saugschlauch
       - Standrohr
       - Oberflur-Hydrantenschlüssel
       - Federstangen
@@ -324,6 +325,6 @@ LF20:
       - Feuerpatsche
       - Misthaken
       - Straßenbesen
-      - Schaufel
+      - Spitzschaufel
       - Mistgabel
       - Haspelkurbel

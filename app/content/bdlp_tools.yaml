@@ -3,24 +3,24 @@ BDLP-Tank1:
   Mannschaft:
     - Vollmaske f. Pressluftatmer
     - Warnzeichen "Feuerwehr"
-    - Warnüberwurf
+    - Warnweste
     - Rettungsleine
     - Handlampe
     - Pressluftatmer
-    - FW-Gurt
+    - Feuerwehrgurt
   G1:
     - Schnittschutzbeinlinge
-    - Motorkettensäge
+    - Motorsäge
     - Treibstoffkanister
     - Drucklüfter
   G2:
     - Werkzeugkiste
-    - Aluschaufel
+    - Alurandschaufel
     - Hacke kurz
     - Kabeltrommel 230/400 V
-    - Besen
+    - Straßenbesen
     - Hacke lang
-    - Flutlichtscheinwerfer
+    - Lichtfluter
     - Feuerwehraxt
   G3:
     - Schaummittel
@@ -30,7 +30,7 @@ BDLP-Tank1:
     - Arbeitsleine
   G5:
     - Druckschlauch B
-    - Druckschlauch C42
+    - Druckschlauch C
     - Druckbegrenzungsventil
     - Übergangsstück A-C
     - Hydrantenschlüssel
@@ -43,7 +43,7 @@ BDLP-Tank1:
   G6:
     - Löschdecke
     - Druckschlauch B
-    - HD Kupplungsschlüssel
+    - HD-Kupplungsschlüssel
     - Handfeuerlöscher
   G7 / Heck: []
   Dach:
