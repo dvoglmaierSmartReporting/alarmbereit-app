@@ -190,7 +190,7 @@ RüstLösch:
       - Tauchpumpe
       - Blindkupplungen f. Ölsperre
       - Druckschlauch C
-      - Gardenaschlauch m. Pistole
+      - Gartenschlauch m. Pistole
       - Waschbürste
       - Haspelkurbel
       - Verteilerschnellangriff
@@ -396,7 +396,7 @@ Tank1:
       - Schlauchbinden
       - Mittelschaumpistole
       - Arbeitshandschuhe
-      - Gardenaschlauch
+      - Gartenschlauch
       - Waschbürste
       - Hygienestation
     G6:
@@ -848,7 +848,7 @@ Tank2:
       - Spineboard
       - Zubehör f. Spineboard
       - Feuerwehrgurt
-      - Getränke
+      - Kühlbox
       - Krankenhausdecke
       - Warnweste
       - Rettungsleine
@@ -880,7 +880,7 @@ Tank2:
       - PE-Lutte
       - Abschleppseil
       - Elektrohaspel
-      - Gorgui
+      - Gorgui Werkzeug
       - Schäkel 6,5 t
     G2:
       - Stromerzeuger
@@ -1046,7 +1046,7 @@ Rüst:
       - Greifzug T35
       - Kantenreiter
       - Werkzeugkiste
-      - Gedore Satz
+      - Steckschlüsselsatz
       - Rohrzange
       - Nägel
       - Rundschlinge 60 kN 3 m
@@ -1302,6 +1302,7 @@ TestTruck:
       - Steckleiter Verbindungsteil <Bild:tools_RL/verbindungsstueck> <Raumbild:truck_RL/roof_left>
       - Ausräumhaken <Bild:tools_RL/ausraeumhaken> <Raumbild:truck_RL/roof_right>
       - Moosgummiplatte <Raumbild:truck_RL/roof_right>
+
 # Voraus+Ölanh.:
 #   <<: *tunnel
 #   Ölanh. G1:

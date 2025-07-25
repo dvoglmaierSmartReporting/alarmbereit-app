@@ -6,8 +6,8 @@ LF8:
       - Handfunkgerät
       - Anhaltekelle
       - Wärmebildkamera
-      - Einsatzleiter Überwurf
-      - Gruppenführer Überwurf
+      - Überwurf Einsatzleiter
+      - Überwurf Gruppenführer
       - Dreikantschlüssel
     Mannschaft:
       - Handfunkgerät
@@ -38,7 +38,7 @@ LF8:
       - Einwegoverall
     G1:
       - TS 8/8
-      - Abgasschlauch f. TS
+      - Abgasschlauch TS
       - Stabfast lang
       - Stabfast kurz
       - Glasmaster
@@ -151,8 +151,8 @@ LF20:
     Fahrer / GF:
       - Handlampe
       - Handfunkgerät
-      - Einsatzleiter Überwurf
-      - Gruppenführer Überwurf
+      - Überwurf Einsatzleiter
+      - Überwurf Gruppenführer
     Mannschaft:
       - Handfunkgerät
       - Anhaltekelle
@@ -168,6 +168,7 @@ LF20:
       - Einweghandschuhe
       - Türmarkierungen
       - Getränke
+      - Kühlbox
       - Tragetuch
       - Krankenhausdecke
       - Brandfluchthaube
@@ -228,7 +229,7 @@ LF20:
       - Schaumaufsatz
       - Absperrband
       - Schachtdeckelheber
-      - Gassperrschlüssel
+      - Absperrschlüssel Gas
       - Stativ
       - Treibstoffkanister 5 l
       - Fluterbrücke
@@ -294,7 +295,7 @@ LF20:
       - Schaumrohr f. Schnellangriff
       - Hygieneeinheit
       - Druckluftschlauch
-      - Wasserschlauch
+      - Gartenschlauch
       - Druckschlauch B
       - Druckschlauch B m. Verteiler
       - Flankierer
@@ -315,7 +316,7 @@ LF20:
       - Verbindungsteil
       - Schleifkorbtrage
       - Einreißhaken
-      - Gassperrschlüssel
+      - Absperrschlüssel Gas
       - Wasserwerfer Dach
       - A-Saugschlauch
       - Standrohr

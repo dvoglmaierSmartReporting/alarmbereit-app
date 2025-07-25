@@ -27,7 +27,7 @@ Tank:
       - Wärmebildkamera
       - Handscheinwerfer
       - Warnlichthauben Handscheinwerfer
-      - Einsatzleiter Überwurf
+      - Überwurf Einsatzleiter
       - Triopan FEUERWEHR
       - Wathose
       - Anhaltekelle
@@ -323,9 +323,8 @@ Pumpe:
       - Kettengehänge 56 kN
       - Kettengehänge 67 kN
       - Greifzug
+      - Greifzugseil
       - Freilandverankerung
-      - 
-      - Seil f. Greifzug
       - Abschleppseil
       - Rundschlinge 22 kN
       - Seilstropp 5 m

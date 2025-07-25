@@ -17,6 +17,7 @@ tool_list.txt
 screen.py
 screen.kv
 sandbox*
+tools_*.yaml
 
 # cache
 *.pyc
