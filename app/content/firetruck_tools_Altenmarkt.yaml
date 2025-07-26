@@ -28,7 +28,7 @@ LF8:
       - Absperrband
       - Halligan-Tool
       - Bolzenschneider
-      - Werkzeugkiste E
+      - Elektrowerkzeug
       - Brechstange
       - Spaten
       - Getränke
@@ -62,7 +62,7 @@ LF8:
       - Trennscheiben
       - Schutzbrille
       - Zubehör Stativ
-      - Hitzeschutzkleidung
+      - Hitzeschutzanzug
       - Lichtfluter
       - Fluterbrücke
       - Kabeltrommel 230 V
@@ -83,7 +83,7 @@ LF8:
       - Schlauchhalter
       - Stativ
       - Tauchpumpe
-      - Montagewerkzeugkasten
+      - Werkzeugkasten
       - Standrohr
       - Schachthaken
       - Schuttmulde
@@ -106,11 +106,11 @@ LF8:
       - Airbag Safe
       - Bereitstellungplane
     G6:
-      - Schnellangriff
-      - Schaumpistole Schnellangriff
+      - HD-Schnellangriff
+      - Schaumrohr Schnellangriff
       - Druckschlauch C
       - Druckschlauch B
-      - Hygieneeinheit
+      - Hygienestation
       - Druckschlauch B m. Verteiler
       - Verteiler
     G7 / Heck:
@@ -239,7 +239,7 @@ LF20:
       - Lichtfluter
       - Tauchpumpe
       - Grossflächenleuchte
-      - Schornsteinwerkzeug
+      - Kaminwerkzeug
       - Verlängerungskabel
       - Deltabox
       - FI-Schutzschalter
@@ -287,13 +287,13 @@ LF20:
       - Druckschlauch B m. Verteiler
       - Übergangsstück B-C
     G6:
-      - Schnellangriff
+      - HD-Schnellangriff
       - CO2-Löscher
       - Pulverlöscher
       - MicroCAFS
       - Löscher PG
-      - Schaumrohr f. Schnellangriff
-      - Hygieneeinheit
+      - Schaumrohr Schnellangriff
+      - Hygienestation
       - Druckluftschlauch
       - Gartenschlauch
       - Druckschlauch B
@@ -328,4 +328,4 @@ LF20:
       - Straßenbesen
       - Spitzschaufel
       - Mistgabel
-      - Haspelkurbel
+      - Kurbel Schlauchhaspel

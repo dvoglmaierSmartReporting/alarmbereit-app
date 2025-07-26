@@ -8,7 +8,7 @@ Tank:
       - Kartentasche
       - Meldertasche
       - Schlüsselsortiment
-      - Schnellinfo Gefahrenstoffe
+      - Gefahrguthelfer
       - Arbeitsmesser
       - Suchscheinwerfer
       - Handlampe
@@ -19,7 +19,6 @@ Tank:
       - Schlauchhalter
       - Sitzgurt
       - Schutzhandschuhe
-      - Starthilfekabel
       - Handlampe
       - Halligan-Tool
       - Tragetuch
@@ -52,7 +51,7 @@ Tank:
       - Steckschlüsselsatz
       - Straßenbesen
       - Tauchpumpe 230 V
-      - Werkzeugkoffer aus Stahlblech
+      - Werkzeugkasten
       - Forsthelm
       - Kombikanister
       - E-Motorsäge
@@ -61,16 +60,16 @@ Tank:
       - Schnittschutzhose
       - Bolzenschneider
       - Sappel
-      - Hacke kurzstielig
-      - Hacke langstielig
-      - Handfäustel 2 kg
+      - Hacke kurz
+      - Hacke lang
+      - Handfäustel
       - Atemschutztisch
       - Schachthaken
       - Zimmermannshammer
       - Fassbundöffner
       - Spitzschneidekrampen
       - Türöffner
-      - Vorschlaghammer 5 kg
+      - Vorschlaghammer
     G2:
       - Abgasschlauch Stromerzeuger
       - Fluterbrücke
@@ -91,17 +90,16 @@ Tank:
       - Steuerung Lichtmast
       - Hebekissensatz klein
       - Verkehrsunfall- Schnellangriffskoffer
-      - Ersatzscheiben Trennschleifer
+      - Ersatzblätter Trennschleifer
       - Trennschleifer
       - Verkehrsleitkegel
     G3:
       - Mehrzweckstrahlrohr C
       - Hitzeschutzanzug
       - Hitzeschutzhandschuhe
-      - Hitzeschutzhaube
       - Rundschlinge
-      - D-Saugschlauch f. Pumpenvormischer
-      - Schaumaufsatz f. Pistolenstrahlrohr
+      - D-Saugschlauch Pumpenvormischer
+      - Schaumaufsatz Pistolenstrahlrohr
       - Mehrbereichsschaummittel
       - Präzisionszumischer
       - Zurrgurt mit Ratsche
@@ -131,7 +129,7 @@ Tank:
       - Hydroschild C
       - ABC-Kupplungsschlüssel
       - Stützkrümmer
-      - Überflurhydrantenschlüssel
+      - Oberflur-Hydrantenschlüssel
       - Übergangsstück A125-A110
       - Übergangsstück A-B
       - Übergangsstück B-C
@@ -147,20 +145,19 @@ Tank:
     G6:
       - Druckschlauch B
       - Druckschlauch HD
-      - Kaminkehrwerkzeug
+      - Rauchfang-Werkzeug
       - Löschdecke
       - Wasserwerfer
-      - Hydrofix 10 l
+      - Hydrofix
       - Kohlendioxydlöscher 6 kg
       - ABC-Pulverlöscher
       - HD-Strahlrohr
       - HD-Kupplungsschlüssel
       - Schneeketten
-      - Notkurbel f. Schlauchhaspel
+      - Kurbel Schnellangriff
       - Unterlegkeil
     G7 / Heck:
-      - HD Schlauch 60 m
-      - HD-Strahlrohr
+      - HD-Schnellangriff
       - ABC-Kupplungsschlüssel
       - Atemschutz Überwachungstafel
       - Fernsteuerung Lichtmast
@@ -221,19 +218,19 @@ Pumpe:
       - Bolzenschneider
       - Brechstange
       - Feuerwehraxt
-      - Hacke langstielig
-      - Hacke kurzstielig
-      - Handhammer 2 kg
+      - Hacke lang
+      - Hacke kurz
+      - Handfäustel
       - Zimmermannshammer
       - Nageleisen
-      - Vorschlaghammer 5 kg
+      - Vorschlaghammer
       - TNT-Tool
       - Straßenbesen
       - Spitzschaufel
       - Alurandschaufel
       - Schnittschutzhose
       - Forsthelm
-      - Spitzschneidekrampen 2,5 kg
+      - Spitzschneidekrampen
       - Sappel
       - Hubwinde 100 kN
       - Motorsäge
@@ -242,7 +239,7 @@ Pumpe:
       - Ersatzkette Motorsäge
       - Kombikanister
       - Tauchpumpe
-      - Werkzeugkoffer
+      - Werkzeugkasten
       - Schneeketten
       - Ölbindemittel
       - Luftschlauch m. Luftpistole
@@ -291,8 +288,7 @@ Pumpe:
       - Hohlstrahlrohr
       - Druckbegrenzungsventil
       - Sammelstück BB-A
-      - Überflurhydrantenschlüssel
-      - Überflurhydrantenschlüssel m. Ratsche
+      - Oberflur-Hydrantenschlüssel
       - Übergangsstück A125-A110
       - Übergangsstück A-B
       - Übergangsstück B-C
@@ -336,7 +332,7 @@ Pumpe:
       - A-Saugschlauch
       - Tragkraftspritze
       - Schlauchhaspel
-      - Werkzeugsatz Tragkraftspritze
+      - Werkzeugsatz TS
       - Unterflur-Hydrantenstandrohr
       - Unterflur-Hydrantenschlüssel
     Dach:

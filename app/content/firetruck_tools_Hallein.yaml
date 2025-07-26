@@ -5,7 +5,7 @@ RüstLösch:
     Fahrer / GK:
       - Handfunkgerät
       - Gasmessgerät
-      - Nüssler Gefahrguthelfer
+      - Gefahrguthelfer
       - PAX-Meldertasche
       - Auto-Öffnungswerkzeug
       - Pressluftatmer
@@ -18,6 +18,7 @@ RüstLösch:
       - Suchscheinwerfer
       - Ersatzakku Strongarm
       - Schlüsselbund
+      - Hinweiszettel Lift
     Mannschaft:
       - Anhaltekelle
       - Handfunkgerät
@@ -54,8 +55,8 @@ RüstLösch:
       - Arbeitsmesser
       - Bogensäge
       - Bolzenschneider
-      - Hacke langstielig
-      - Hacke kurzstielig
+      - Hacke lang
+      - Hacke kurz
       - Vorschlaghammer
       - Handfäustel
       - Brechstange
@@ -141,7 +142,7 @@ RüstLösch:
       - Türöffnungsrucksatz
       - Schlauchtragekorb
       - Schlauchpaket
-      - D-Saugschlauch f. Zumischer
+      - D-Saugschlauch Zumischer
       - Schaummittel
       - Zumischer Z2
       - Schaumschnellangriff C
@@ -188,11 +189,11 @@ RüstLösch:
       - Hydrantenschlüssel
       - Hydroschild C
       - Tauchpumpe
-      - Blindkupplungen f. Ölsperre
+      - Blindkupplungen Ölsperre
       - Druckschlauch C
       - Gartenschlauch m. Pistole
       - Waschbürste
-      - Haspelkurbel
+      - Kurbel Schlauchhaspel
       - Verteilerschnellangriff
       - Hygienestation
       - Luftschlauch m. Pistole
@@ -236,7 +237,7 @@ Tank1:
       - Handfunkgerät
       - Gasmessgerät
       - Reserveakku f. Akkugeräte
-      - Anzeige Heumessgerät
+      - Anzeige Heumesssonde
       - Gasbrenner
       - Schlüsselset
       - Hinweiszettel Lift
@@ -253,7 +254,7 @@ Tank1:
       - Handfunkgerät
       - Lederhandschuhe
       - Gummihandschuhe
-      - Handbeil
+      - Hacke kurz
       - Trainingsanzug
       - Handtuch
       - Warndreieck "Feuerwehr"
@@ -295,7 +296,7 @@ Tank1:
       - Abschleppseil
       - Stahlseil 5 m
       - Schäkel
-      - Handfasspumpe
+      - Handpumpe
       - Pressluftschläuche
       - Pressluftschlauchgerät
       - Benzinkanister
@@ -319,13 +320,13 @@ Tank1:
       - Hacke lang
       - Schachthaken
       - Elektrowerkzeug
-      - Handhammer
+      - Handfäustel
       - Fassschlüssel
       - Zimmermannshammer
       - Trichter
       - Schutzbrille
       - Staubmaske
-      - Werkzeugkiste
+      - Werkzeugkasten
       - Steckschlüsselsatz
       - Stromerzeuger 14 kVA
       - Absperrschlüssel Gas
@@ -351,8 +352,8 @@ Tank1:
       - Schaummittel
       - Netzmittel
       - D-Saugschlauch
-      - Hitzeschutzkleidung
-      - Hitzeschutzhaube
+      - Hitzeschutzanzug
+      - Hitzeschutzhandschuhe
       - Schaum-Pumpenvormischer
     G4:
       - Verkehrsleitkegel
@@ -403,7 +404,7 @@ Tank1:
       - Löschdecke
       - Druckschlauch B
       - Druckschlauch D
-      - Kaminkehrer Werkzeug
+      - Rauchfang-Werkzeug
       - Schlauch f. Schaumaufsatz Wasserwerfer
       - Wasserwerfer
       - Schaumaufsatz Wasserwerfer
@@ -415,8 +416,8 @@ Tank1:
       - CO2-Löscher
       - Metallbrand Pulverlöscher
       - HD-Kupplungsschlüssel
-      - Notkurbel Schlauchhaspel
       - HD-Strahlrohr
+      - Kurbel Schlauchhaspel
     G7 / Heck:
       - Handfunkgerät
       - ABC-Kupplungsschlüssel
@@ -483,7 +484,7 @@ Leiter:
       - Halligan-Tool
       - Feuerwehraxt
       - Hacke kurz
-      - Handfäustel 2 kg
+      - Handfäustel
       - Krankentrage 2-teilig
       - Schwerlastaufnahme
       - Arbeitsleine
@@ -523,7 +524,7 @@ Leiter:
       - Kabeltrommel 230 V
       - Sprungpolster
       - Rollgliss
-      - Werkzeugkiste
+      - Werkzeugkasten
       - Sturmleine
       - Unterlegsplatte
     G5:
@@ -542,7 +543,7 @@ Leiter:
       - Unterlegsplatte
     Dach:
       - Stromerzeuger
-      - Abgasschlauch f. Stromerzeuger
+      - Abgasschlauch Stromerzeuger
       - Benzinkanister
       - Drucklüfter
       - Rollgliss Bügel
@@ -571,7 +572,7 @@ Voraus: &tunnel
       - Schlüsselkasten
       - Handlampe
       - Atemschutz Überwachungstafel
-      - Information "Gefährliche Stoffe"
+      - Gefahrguthelfer
       - Schreibmaterial
       - Arbeitsmesser
       - Pressluftatmer
@@ -605,7 +606,7 @@ Voraus: &tunnel
       - Notfallwanne
       - Glasmanagement Set
       - Airbag Safe
-      - Werkzeugkiste
+      - Werkzeugkasten
       - StabPacks
     G2:
       - Verlängerungskabel 10 m
@@ -622,7 +623,7 @@ Voraus: &tunnel
       - Warnblitzleuchte
       - RIS-Beleuchtungssystem
       - ABC-Kupplungsschlüssel
-      - Notkurbel HD-Haspel
+      - Kurbel Schnellangriff
       - Steuerung Lichtmast
       - Drucklöschgerät BioVersal
       - ABC-Pulverlöscher
@@ -649,7 +650,7 @@ Voraus: &tunnel
       - Notstromkabel Schere/Spreizer
       - Brechstange kurz
       - Brechstange lang
-      - Handhammer
+      - Handfäustel
       - Bolzenschneider
       - Straßenbesen
       - Alurandschaufel
@@ -694,7 +695,7 @@ Pumpe:
       - Erste-Hilfe-Koffer
       - Warnlichthaube "orange"
       - Feuerwehrbeil
-      - Halteseil
+      - Halteleine
       - Stützstange
       - Tragetuch
     G1:
@@ -706,7 +707,7 @@ Pumpe:
       - Übergangsstück B-C
       - Übergangsstück A-B
       - Druckbegrenzungsventil
-      - Werkzeug f. TS
+      - Werkzeugsatz TS
       - Motorsäge
       - Zubehör Motorsäge
       - Kombikanister
@@ -727,15 +728,15 @@ Pumpe:
       - A-Saugschlauch
     G2:
       - Bolzenschneider
-      - Hacke langstielig
-      - Hacke kurzstielig
-      - Handhammer 2 kg
-      - Vorschlaghammer 5 kg
+      - Hacke lang
+      - Hacke kurz
+      - Handfäustel
+      - Vorschlaghammer
       - Zimmermannshammer
       - Schachthaken
       - Rauchfangschlüsselsatz
       - Tragkraftspritze
-      - Werkzeugkiste
+      - Werkzeugkasten
       - Krampen
       - Brechstange kurz
       - Brechstange lang
@@ -756,13 +757,13 @@ Pumpe:
       - Absperrband
       - ABC-Kupplungsschlüssel
       - Saugkorb
-      - Schutzkorb f. Saugkorb
+      - Schutzkorb Saugkorb
       - Leinensatz
       - Sammelstück BB-A
       - Übergangsstück B-C
       - Übergangsstück A-B
       - Druckbegrenzungsventil
-      - Werkzeug f. TS
+      - Werkzeugsatz TS
       - A-Saugschlauch
     G3:
       - Druckschlauch B
@@ -771,7 +772,7 @@ Pumpe:
       - Hohlstrahlrohr
       - Stützkrümmer
       - Hydrantenschlüssel
-      - Kupplungsschlüssel A125
+      - A125-Kupplungsschlüssel
       - Übergangsstück A125-A110
       - Übergangsstück A-B
       - Übergangsstück B-C
@@ -794,7 +795,7 @@ Pumpe:
       - Flankierer
       - A-Saugschlauch
       - Saugkorb B
-      - Kupplungsschlüssel B-C
+      - BC-Kupplungsschlüssel
       - Trichter
       - CO2-Löscher
       - Segeltucheimer
@@ -803,7 +804,7 @@ Pumpe:
       - Druckschlauch B
       - Stromerzeuger MAG
       - Stromerzeuger klein
-      - Abgasschlauch f. Stromerzeuger
+      - Abgasschlauch Stromerzeuger
       - Verlängerungskabel 10 m
       - Lichtfluter
       - Fluterbrücke
@@ -816,7 +817,7 @@ Pumpe:
     G5 / Heck:
       - Schlauchladen B
       - Schlauchbrücken
-      - Kupplungsschlüssel B-C
+      - BC-Kupplungsschlüssel
       - Sappie
       - Dunggabel
       - Heugabel
@@ -870,7 +871,7 @@ Tank2:
       - Rettungssäge
       - Ersatzkette Rettungssäge
       - Trennschleifer
-      - div. Ersatzblätter Trennschleifer
+      - Ersatzblätter Trennschleifer
       - Kombikanister
       - Schnittschutzbeinlinge
       - Forsthelm
@@ -887,19 +888,19 @@ Tank2:
       - Absperrband
       - Bolzenschneider
       - Feuerwehraxt
-      - Hacke, lang
-      - Hacke, kurz
-      - Handfäustel 2 kg
-      - Vorschlaghammer 5 kg
+      - Hacke lang
+      - Hacke kurz
+      - Handfäustel
+      - Vorschlaghammer
       - Krampen
       - Sappel
       - Schachthaken
-      - Abgasschlauch f. Stromerzeuger
+      - Abgasschlauch Stromerzeuger
       - Lichtfluter
       - Kabeltrommel 400 V
       - Kabeltrommel 230 V
       - Verlängerungskabel 230 V 10 m
-      - Werkzeugsatz
+      - Werkzeugkasten
       - Fluterbrücke
       - Stativ
       - Triopan
@@ -939,14 +940,14 @@ Tank2:
       - Stützkrümmer B
       - Hohlstrahlrohr
       - Verteiler
-      - ABC-Kupplungsschlüssel
       - Schlauchhalter
       - Sammelstück BB-A
       - Hydroschild C
       - Wasserwerfer
       - Druckbegrenzungsventil
+      - ABC-Kupplungsschlüssel
       - HD-Kupplungsschlüssel
-      - Kupplungsschlüssel A125
+      - A125-Kupplungsschlüssel
       - Kanalratte
       - Hydrantenschlüssel
       - Druckschlauch C
@@ -959,7 +960,7 @@ Tank2:
       - Verteiler B-CBC
       - Druckschlauch B
       - Druckschlauch C
-      - Hygienewand
+      - Hygienestation
       - Schlauchpaket
       - Schlauchbinden
       - Löschdecke
@@ -981,7 +982,7 @@ Tank2:
       - Dunggabel
       - Ausräumhaken
       - Einreißhaken
-      - Haspelkurbel
+      - Kurbel Schnellangriff
       - Falttank 3000 l
       - Alurandschaufel
       - Straßenbesen
@@ -1006,7 +1007,7 @@ Rüst:
   Tools:
     Mannschaft:
       - Handfunkgerät
-      - Helm mit Funkgarnitur
+      - Helm m. Funkgarnitur
       - Helmlampe
       - Handscheinwerfer
       - Signaltaschenlampe
@@ -1033,19 +1034,19 @@ Rüst:
       - Bolzenschneider
       - Kaminschlüssel
       - Feuerwehraxt
-      - Handhacke kurz
-      - Handhacke lang
+      - Hacke kurz
+      - Hacke lang
       - Krampen
       - Kombisäge/Lochsäge
       - Brechstange/Schaleisen
       - Freilandverankerung
-      - Vorschlaghammer 5 kg
+      - Vorschlaghammer
       - Brechstange 70 cm
       - Schäkel
       - Greifzug HIT/32
       - Greifzug T35
       - Kantenreiter
-      - Werkzeugkiste
+      - Werkzeugkasten
       - Steckschlüsselsatz
       - Rohrzange
       - Nägel
@@ -1072,7 +1073,7 @@ Rüst:
       - Verkehrsleitkegel
       - Warnblitzleuchten
       - Absperrband
-      - Flatterleine 5 m
+      - Halteleine
     "G1\ninnen":
       - Radkreuz f. LKW
       - Radkreuz f. PKW
@@ -1091,15 +1092,15 @@ Rüst:
       - Grabenstütze
       - Rüstholz
     "G2\ninnen":
-      - Hydraulikverlängerung 10 m
-      - Kurbel f. Hydraulikhaspel
+      - Hydr. Schlauchverlängerung
+      - Kurbel Hydraulikhaspel
       - Südbahnwinde
       - Stativ 5 m
       - Verzurreinrichtung
       - Kanister leer 10 l
       - Schwelleraufsatz
       - Rangierroller lenkbar
-      - Hydraulisches Kompaktaggregat
+      - Hydr. Kompaktaggregat
       - Kabeltrommel 400 V
       - Motorsäge kurz
       - Motorsäge lang
@@ -1110,7 +1111,7 @@ Rüst:
       - Absperrstangen
       - Auffangmulden
       - Schlagbohrmaschine
-      - Handtrennschleifer
+      - Trennschleifer
       - Unterschiebbock
       - Bohrhammer
       - Strickleiter 20 m
@@ -1120,7 +1121,7 @@ Rüst:
       - Tauchpumpe 850 l/min
       - Radklammer
       - Gurt f. Radklammer
-      - Hakenelement f. Takler
+      - Hakenelement Takler
       - Spezial Hebematte 2,5 t
       - Hebegurt 4 m
       - Hebegurt 6 m
@@ -1131,9 +1132,9 @@ Rüst:
       - Schäkel 5 t
       - Haken f. Kran
       - Endstückbefestigung Kranarm
-      - Umlenkrolle f. Kranseilwinde
-      - Bolzen f. Umlenkrolle
-      - Seilführungsrolle f. Kranseilwinde
+      - Umlenkrolle Kranseilwinde
+      - Bolzen Umlenkrolle
+      - Seilführungsrolle Kranseilwinde
       - Aufsatz f. Rodator
       - Schlüssel Hauswasserabsperrung
     "G2\nlinks":
@@ -1155,7 +1156,7 @@ Rüst:
       - Verlängerungskabel 400 V
       - Übergangsstück 400 V
       - Übergangsstück 400 V m. Polwender
-      - Abgasschlauch f. Stromerzeuger
+      - Abgasschlauch Stromerzeuger
     G3:
       - Abschleppseil 12 mm
       - Abschleppseil 16 mm
@@ -1200,7 +1201,7 @@ Rüst:
       - Feuerlöscher P6
       - Löschdecke
       - Unterlegrollen
-      - Hitzeschutzhaube
+      - Hitzeschutzanzug
       - Hitzeschutzhandschuhe
       - Chemieschutzhandschuhe
       - Lederhandschuhe
@@ -1278,7 +1279,7 @@ TestTruck:
       - Schaummittel <Bild:tools_RL/schaummittel> <Raumbild:truck_RL/g3>
       - Rauchvorhang <Raumbild:truck_RL/g3>
     G4:
-      - Werkzeugsatz <Bild:tools_RL/handwerkzeug> <Raumbild:truck_RL/g4>
+      - Werkzeugkasten <Bild:tools_RL/handwerkzeug> <Raumbild:truck_RL/g4>
       - Schuttwanne <Bild:tools_RL/schuttwanne> <Raumbild:truck_RL/g4>
       - Schutzbrille <Raumbild:truck_RL/g4>
     G5:
