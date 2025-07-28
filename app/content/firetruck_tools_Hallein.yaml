@@ -158,7 +158,7 @@ RüstLösch:
       - Säbelsäge
       - Reserve-Akku
       - Handbohrmaschine
-      - Handscheinwerfer
+      - Akku-Lampe
       - Ölbindemittel
       - Schutzbrille
       - Staubmaske
@@ -201,12 +201,12 @@ RüstLösch:
       - Schneeketten
       - Kunststoffeimer
       - Löschdecke
-      - CAFS Löscher 10 l
-      - Trockenlöscher 12 kg
-      - Kohlendioxidlöscher 5 kg
+      - CAFS-Löscher
+      - ABC-Trockenlöscher
+      - CO2-Löscher
       - HD-Kupplungsschlüssel
       - Tragbarer Wasserwerfer
-      - Unterlegshölzer
+      - Unterleghölzer
       - Druckschlauch B
       - Schlauchrollwagen
     G7 / Heck:
@@ -236,7 +236,7 @@ Tank1:
     Fahrer / GK:
       - Handfunkgerät
       - Gasmessgerät
-      - Reserveakku f. Akkugeräte
+      - Reserveakku Akkugeräte
       - Anzeige Heumesssonde
       - Gasbrenner
       - Schlüsselset
@@ -262,7 +262,6 @@ Tank1:
       - Feuerwehrgurt
       - Warnweste
       - Reserveflasche
-      - Ladekabel 10 m
       - Atemschutzfilter
       - Reservemaske
       - Rettungsleine
@@ -372,7 +371,7 @@ Tank1:
       - Müllsack
       - Kanalabdeckung
       - PE-Plane 4x4 m
-      - Kunststofffolie 4x4 m
+      - Kunststoffplane 4x4 m
       - Absperrstangen
       - Druckschlauch D
     G5:
@@ -414,7 +413,7 @@ Tank1:
       - Hydrofix
       - Lanze Hydrofix
       - CO2-Löscher
-      - Metallbrand Pulverlöscher
+      - Metallbrandlöscher
       - HD-Kupplungsschlüssel
       - HD-Strahlrohr
       - Kurbel Schlauchhaspel
@@ -619,7 +618,7 @@ Voraus: &tunnel
       - Absperrband
       - Stativ
       - Kabeltrommel 230 V
-      - LED-Schweinwerfer
+      - Akku-Lampe
       - Warnblitzleuchte
       - RIS-Beleuchtungssystem
       - ABC-Kupplungsschlüssel
@@ -700,7 +699,7 @@ Pumpe:
       - Tragetuch
     G1:
       - Saugkorb
-      - Schutzkorb f. Saugkorb
+      - Schutzkorb Saugkorb
       - ABC-Kupplungsschlüssel
       - Leinensatz
       - Sammelstück BB-A
@@ -714,7 +713,7 @@ Pumpe:
       - Schnittschutzhose
       - Greifzug
       - Greifzugseil
-      - Leichtklappklobe
+      - Klappkloben
       - Ölbindemittel
       - Tragkraftspritze
       - Tauchpumpe
@@ -734,7 +733,7 @@ Pumpe:
       - Vorschlaghammer
       - Zimmermannshammer
       - Schachthaken
-      - Rauchfangschlüsselsatz
+      - Kamintürschlüssel
       - Tragkraftspritze
       - Werkzeugkasten
       - Krampen
@@ -800,7 +799,6 @@ Pumpe:
       - CO2-Löscher
       - Segeltucheimer
     G4:
-      - KSA 20
       - Druckschlauch B
       - Stromerzeuger MAG
       - Stromerzeuger klein
@@ -810,7 +808,7 @@ Pumpe:
       - Fluterbrücke
       - Stativ 5 m
       - Stativ 1,7 m
-      - Kunststofffolie
+      - Kunststoffplane
       - Müllsack
       - Kabeltrommel 230 V
       - A-Saugschlauch
@@ -864,7 +862,7 @@ Tank2:
       - Drucklüfter
       - Be- u. Entlüftungsgerät
       - Polarskiaxt
-      - Löschrucksack
+      - Löschrucksack Waldbrand
       - Wasserdieb
       - Motorsäge
       - Ersatzkette Motorsäge
@@ -880,7 +878,7 @@ Tank2:
       - Verschlussband f. Lutte
       - PE-Lutte
       - Abschleppseil
-      - Elektrohaspel
+      - Eingebaute Kabeltrommel
       - Gorgui Werkzeug
       - Schäkel 6,5 t
     G2:
@@ -915,7 +913,7 @@ Tank2:
       - Waldbrandrucksack
       - Schlauchtragekorb
       - Rauchabschluss
-      - Rauchfangkehrersatz
+      - Rauchfang-Werkzeug
       - Stahlblecheimer
       - Schuttwanne
     G4:
@@ -948,7 +946,7 @@ Tank2:
       - ABC-Kupplungsschlüssel
       - HD-Kupplungsschlüssel
       - A125-Kupplungsschlüssel
-      - Kanalratte
+      - Kanalspülratte
       - Hydrantenschlüssel
       - Druckschlauch C
       - Druckschlauch B
@@ -968,9 +966,9 @@ Tank2:
       - Kabelbinder
       - Rolle Müllsäcke
       - Hydrofix
-      - Pulverlöscher
+      - ABC-Pulverlöscher
       - Fettbrandlöscher
-      - Kohlendioxidlöscher
+      - CO2-Löscher
     G7 / Heck:
       - ABC-Kupplungsschlüssel
       - Fernsteuerung Lichtmast
@@ -997,7 +995,7 @@ Tank2:
       - Leichtschaumaufsatz
       - Schaumrohr S8/M8
       - Saugschlauch Storz 38
-      - Verschlussband f. Lüfter
+      - Verschlussband Lüfter
       - Steckleiter 4-teilig
       - Steckleiter Verbindungsteil
 
@@ -1013,7 +1011,7 @@ Rüst:
       - Signaltaschenlampe
       - Schlüsselkasten
       - Kransteuergerät
-      - Windensteuergerät
+      - Fernsteuerung Seilwinde
       - Fernsteuerung Suchscheinwerfer
       - Vollmaske m. Filter
       - Feuerwehrgurt
@@ -1026,13 +1024,13 @@ Rüst:
     "G1\nlinks":
       - Umlenkrolle 140 kN
       - Umlenkrolle 200 kN
-      - Klappkolben 60 kN
+      - Klappkloben
       - Wirbelhaken
       - Fussteil Kantenreiter
       - Klappspaten
       - Schachthaken
       - Bolzenschneider
-      - Kaminschlüssel
+      - Rauchfangtürschlüssel
       - Feuerwehraxt
       - Hacke kurz
       - Hacke lang
@@ -1075,8 +1073,8 @@ Rüst:
       - Absperrband
       - Halteleine
     "G1\ninnen":
-      - Radkreuz f. LKW
-      - Radkreuz f. PKW
+      - Radkreuz LKW
+      - Radkreuz PKW
       - Brechstange 1,4 m
       - Brechstange 1,7 m
       - Rangierwagenheber 1,5 t
@@ -1185,7 +1183,6 @@ Rüst:
       - Dichtungsband
       - Gerüstklemme
       - Drahtstift
-      - Kunststoffsack
       - Müllsack
       - Plane 1,4 x 2,2 m
       - Plane 4x4 m
@@ -1197,8 +1194,8 @@ Rüst:
     G4:
       - Sanitätskasten m. Beatmungsbeutel
       - Elektrowerkzeug
-      - Feuerlöscher P12
-      - Feuerlöscher P6
+      - ABC-Pulverlöscher 12 kg
+      - ABC-Pulverlöscher 6 kg
       - Löschdecke
       - Unterlegrollen
       - Hitzeschutzanzug
@@ -1274,7 +1271,7 @@ TestTruck:
       - Kabeltrommel 230 V <Bild:tools_RL/kabeltrommel> <Raumbild:truck_RL/g2_door>
       - Warnblitzleuchte <Raumbild:truck_RL/g2_core>
     G3:
-      - Türöffnungsset <Bild:tools_RL/tueroeffnungsset> <Raumbild:truck_RL/g3>
+      - Türöffnungsrucksack <Bild:tools_RL/tueroeffnungsset> <Raumbild:truck_RL/g3>
       - Kombischaumrohr K2 <Bild:tools_RL/schaumrohr> <Raumbild:truck_RL/g3>
       - Schaummittel <Bild:tools_RL/schaummittel> <Raumbild:truck_RL/g3>
       - Rauchvorhang <Raumbild:truck_RL/g3>
@@ -1292,7 +1289,7 @@ TestTruck:
     G6:
       - Druckschlauch B <Bild:tools_RL/druckschlauch_b> <Raumbild:truck_RL/g6>
       - Schneeketten <Bild:tools_RL/schneekette> <Raumbild:truck_RL/g6>
-      - Trockenlöscher 12 kg <Bild:tools_RL/trockenloescher> <Raumbild:truck_RL/g6>
+      - Trockenlöscher <Bild:tools_RL/trockenloescher> <Raumbild:truck_RL/g6>
       - HD-Kupplungsschlüssel <Raumbild:truck_RL/g6>
     G7 / Heck:
       - Handfunkgerät <Bild:tools_RL/handfunkgeraet> <Raumbild:truck_RL/g7>

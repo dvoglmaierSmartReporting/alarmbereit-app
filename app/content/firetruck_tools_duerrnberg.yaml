@@ -30,7 +30,7 @@ Tank:
       - Triopan FEUERWEHR
       - Wathose
       - Anhaltekelle
-      - Wolldecke
+      - Krankenhausdecke
     G1:
       - Abschleppseil
       - Brechstange
@@ -77,7 +77,7 @@ Tank:
       - Stromerzeuger 10 kVA
       - Übergangsstück 400 V m. Polwender
       - Verlängerungskabel 10 m
-      - Verteilerkabeltrommel 230 V 30 m
+      - Kabeltrommel 230 V
       - Rollgliss m. Abseilachter
       - Absperrband
       - Stativ
@@ -149,7 +149,7 @@ Tank:
       - Löschdecke
       - Wasserwerfer
       - Hydrofix
-      - Kohlendioxydlöscher 6 kg
+      - CO2-Löscher
       - ABC-Pulverlöscher
       - HD-Strahlrohr
       - HD-Kupplungsschlüssel
@@ -242,7 +242,7 @@ Pumpe:
       - Werkzeugkasten
       - Schneeketten
       - Ölbindemittel
-      - Luftschlauch m. Luftpistole
+      - Luftschlauch m. Pistole
       - Luftdruckprüfer
     G2:
       - Fernsteuerung Lichtmast
@@ -250,7 +250,7 @@ Pumpe:
       - Kabeltrommel 230 V
       - Kabeltrommel 400 V
       - Schleifringtrommel 400 V
-      - LED-Schweinwerfer
+      - Akku-Lampe
       - Klebeband
       - Absperrband
       - Fluterbrücke
@@ -273,7 +273,7 @@ Pumpe:
     G3:
       - ABC-Kupplungsschlüssel
       - Saugkorb
-      - Laubschutz Saugkorb
+      - Schutzkorb Saugkorb
       - Ventilleine
       - Schwimmsauger
       - Druckschlauch B

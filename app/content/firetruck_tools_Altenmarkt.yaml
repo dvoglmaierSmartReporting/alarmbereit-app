@@ -56,7 +56,7 @@ LF8:
       - Zubehör Motorsäge
       - Kombikanister
       - Schnittschutz
-      - Treibstoffkanister 5 l
+      - Benzinkanister 5 l
       - Trennschleifer
       - Zubehör Trennschleifer
       - Trennscheiben
@@ -88,15 +88,14 @@ LF8:
       - Schachthaken
       - Schuttmulde
       - MicroCAFS
-      - Kupplungsschlüssel B
-      - Kupplungsschlüssel C
+      - ABC-Kupplungsschlüssel
       - Unterflur-Hydrantenschlüssel
       - Wasserhahn C
       - Gartenschlauch
       - Spülmittel
       - Übergangsstück A-B
       - Systemtrenner
-      - Kugelhahn B
+      - Kugelhahn
     G5:
       - Rundschlinge
       - Greifzug
@@ -116,14 +115,14 @@ LF8:
     G7 / Heck:
       - A-Saugschlauch
       - Saugkorb
-      - Laubschutz Saugkorb
+      - Schutzkorb Saugkorb
       - Flankierer
       - Kurbel Schnellangriff
       - Halteleine
       - Ventilleine
       - Übergangsstück A-B
       - Sammelstück
-      - Kupplungsschlüssel
+      - ABC-Kupplungsschlüssel
     Dach:
       - Steckleiter
       - Schleifkorbtrage
@@ -142,7 +141,7 @@ LF8:
       - Alurandschaufel
       - Abschleppstange
       - Spineboard
-      - Zubehör f. Spineboard
+      - Zubehör Spineboard
 
 LF20:
   Layout: "7-Raum-DE"
@@ -220,7 +219,8 @@ LF20:
       - Stromerzeuger
       - Betankungsschlauch
       - Abgasschlauch Stromerzeuger
-      - Kanister 20 l
+      - Benzinkanister 20 l
+      - Benzinkanister 5 l
       - Druckluftschlauch
       - Eingebaute Kabeltrommel
       - Schachthaken
@@ -231,11 +231,10 @@ LF20:
       - Schachtdeckelheber
       - Absperrschlüssel Gas
       - Stativ
-      - Treibstoffkanister 5 l
       - Fluterbrücke
       - Kabeltrommel 230 V
       - Sturmverspannung
-      - LED Akku Leuchte
+      - Akku-Lampe
       - Lichtfluter
       - Tauchpumpe
       - Grossflächenleuchte
@@ -243,8 +242,8 @@ LF20:
       - Verlängerungskabel
       - Deltabox
       - FI-Schutzschalter
-      - Zubehör f. Tauchpumpe
-      - Leichenbergesack
+      - Zubehör Tauchpumpe
+      - Leichensack
       - Sperrwerkzeug
     G3:
       - Druckschlauch C
@@ -268,7 +267,7 @@ LF20:
       - Schachtabdeckung
     G5:
       - Saugkorb
-      - Laubschutz Saugkorb
+      - Schutzkorb Saugkorb
       - Hydroschild B
       - Hydroschild C
       - Druckbegrenzungsventil
@@ -276,7 +275,7 @@ LF20:
       - Sammelstück BB-A
       - Kugelhahn
       - Systemtrenner
-      - Kupplungsschlüssel
+      - ABC-Kupplungsschlüssel
       - Rauchabschluss
       - Arbeitsleine
       - Rettungstrupptasche
@@ -289,9 +288,8 @@ LF20:
     G6:
       - HD-Schnellangriff
       - CO2-Löscher
-      - Pulverlöscher
+      - ABC-Pulverlöscher
       - MicroCAFS
-      - Löscher PG
       - Schaumrohr Schnellangriff
       - Hygienestation
       - Druckluftschlauch
@@ -307,7 +305,7 @@ LF20:
       - Standrohr
       - Unterflur-Hydrantenschlüssel
       - Oberflur-Hydrantenschlüssel
-      - Kupplungsschlüssel
+      - ABC-Kupplungsschlüssel
       - Systemtrenner
       - Unterflur-Deckelhammer
     Dach:
