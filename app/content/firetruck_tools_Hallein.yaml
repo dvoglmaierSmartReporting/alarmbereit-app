@@ -6,18 +6,18 @@ RüstLösch:
       - Handfunkgerät
       - Gasmessgerät
       - Gefahrguthelfer
-      - PAX-Meldertasche
+      - Meldertasche
       - Auto-Öffnungswerkzeug
-      - Pressluftatmer
-      - Vollmaske f. Pressluftatmer
+      - Atemschutzgerät
+      - Atemschutz-Vollmaske
       - Tablet
       - Defibrillator
       - Handlampe
-      - Fernsteuerung Seilwinde
+      - Steuerung Seilwinde
       - Dreikantschlüssel
       - Suchscheinwerfer
-      - Ersatzakku Strongarm
-      - Schlüsselbund
+      - Reserve-Akku Strongarm
+      - Schlüsselset
       - Hinweiszettel Lift
     Mannschaft:
       - Anhaltekelle
@@ -31,10 +31,9 @@ RüstLösch:
       - Basis Sichern/Auffangen
       - Erste-Hilfe-Rucksack
       - Einweghandschuhe
-      - Alu-Rettungsdecke
       - Krankenhausdecke
-      - Pressluftatmer
-      - Vollmaske f. Pressluftatmer
+      - Atemschutzgerät
+      - Atemschutz-Vollmaske
       - Reservemaske
       - Reserveflasche
       - Brandfluchthaube
@@ -47,8 +46,10 @@ RüstLösch:
       - Trainingsanzug
       - Handtuch
       - Warnblitzleuchte
-      - Atemschutzfilter
+      - Ersatzfilter
       - Auer 3S-Maske
+      - Filteratemschutzset
+      - Plane
     G1:
       - Spineboard
       - Zubehör Spineboard
@@ -68,17 +69,17 @@ RüstLösch:
       - Krampen
       - Sappel
       - Bindedraht
-      - Gerüstklammern
+      - Gerüstklammer
       - Nägel
       - Schachthaken
-      - Seilklemmen
+      - Seilklemme
       - Stahlseil 5 m
       - Stahlseil 10 m
-      - Rundschlinge 3 m
+      - Rundschlinge
       - Kette einsträngig
       - Kette zweisträngig
-      - Schäkel 65 kN
-      - Schäkel 120 kN
+      - Schäkel 6,5 t
+      - Schäkel 12 t
       - Handpumpe
       - Aggregat hydr. Rettungssatz
       - Hydr. Spreizer
@@ -92,12 +93,12 @@ RüstLösch:
       - Schwelleraufsatz
       - Kantenreiter
       - Werkzeugsatz VU
-      - Schutzdeckenset
+      - Patientenschutz
       - Stab-Fast
       - Stab-Pack
       - Freilandverankerung
       - Greifzug 30 kN
-      - Seilspreichertrommel Greifzug
+      - Seilspeichertrommel Greifzug
       - Umlenkrolle 60 kN
       - Umlenkrolle 140 kN
       - Forsthelm
@@ -139,18 +140,18 @@ RüstLösch:
       - Drucklüfter
       - Dieselkanister
     G3:
-      - Türöffnungsrucksatz
+      - Türöffnungsrucksack
       - Schlauchtragekorb
       - Schlauchpaket
       - D-Saugschlauch Zumischer
       - Schaummittel
       - Zumischer Z2
-      - Schaumschnellangriff C
+      - Schaumschnellangriff
       - Rauchvorhang
       - Arbeitsleine
     G4:
       - Handwerkzeug
-      - Zurrgurte
+      - Zurrgurt
       - Schnürleinen
       - Windenkeile
       - Trennschleifer
@@ -167,7 +168,7 @@ RüstLösch:
       - Müllsäcke
       - Schuttwanne
       - Auffangplane 3x4 m
-      - Spillpack
+      - SpillPack
       - Dichtkeil
       - Holzhammer
       - Dichtpfropfen
@@ -178,10 +179,10 @@ RüstLösch:
       - Schlauchbinden
       - Schlauchhalter
       - Hohlstrahlrohr
-      - Mehrzweckstrahlrohr B
+      - Strahlrohr B
       - Stützkrümmer
       - Druckbegrenzungsventil
-      - Verteiler B-CBC
+      - Verteiler
       - Sammelstück BB-A
       - Übergangsstück A125-A110
       - Übergangsstück A-B
@@ -205,7 +206,7 @@ RüstLösch:
       - ABC-Trockenlöscher
       - CO2-Löscher
       - HD-Kupplungsschlüssel
-      - Tragbarer Wasserwerfer
+      - Wasserwerfer tragbar
       - Unterleghölzer
       - Druckschlauch B
       - Schlauchrollwagen
@@ -214,17 +215,17 @@ RüstLösch:
       - Schlauchhaspel
       - Atemschutz Überwachungstafel
       - HD-Schnellangriff
+      - Schiebeleiter 3-teilig
     Dach:
       - Moosgummiplatte
       - Schlauchbrücken Alu
-      - Schiebeleiter 3-teilig
-      - Steckleiter 4-teilig
+      - Steckleiter
       - Steckleiter Verbindungsteil
       - Chemieschutzstiefel
       - Chemieschutzhandschuhe
       - Chemieschutzanzug Stufe 2
-      - Ausräumhaken
       - Heugabel
+      - Ausräumhaken
       - Einreißhaken
       - Kescher
       - Schachtabdeckung
@@ -236,7 +237,7 @@ Tank1:
     Fahrer / GK:
       - Handfunkgerät
       - Gasmessgerät
-      - Reserveakku Akkugeräte
+      - Reserve-Akku
       - Anzeige Heumesssonde
       - Gasbrenner
       - Schlüsselset
@@ -244,8 +245,8 @@ Tank1:
       - Dreikantschlüssel
       - Handlampe
       - FFP2-Maske
-      - Pressluftatmer
-      - Vollmaske f. Pressluftatmer
+      - Atemschutzgerät
+      - Atemschutz-Vollmaske
       - Suchscheinwerfer
       - Handscheinwerfer
       - Tablet
@@ -267,10 +268,10 @@ Tank1:
       - Rettungsleine
       - Wärmebildkamera
       - Handlampe
-      - Pressluftatmer
-      - Vollmaske f. Pressluftatmer
+      - Atemschutzgerät
+      - Atemschutz-Vollmaske
       - TNT-Tool
-      - Erste-Hilfe-Koffer
+      - Verbandskasten
       - Anhaltekelle
       - Krankenhausdecke
       - Tragetuch
@@ -309,11 +310,12 @@ Tank1:
       - Lichtfluter
       - Stahlblecheimer
       - Kunststoffeimer
-      - Schleifringkabeltrommel
+      - Schleifringkabeltrommel 400 V
       - Kabeltrommel 230 V
       - Kabeltrommel 400 V
       - Steuerung Lichtmast
       - Verlängerungskabel
+      - Stromerzeuger
       - Abgasschlauch Stromerzeuger
       - Hacke kurz
       - Hacke lang
@@ -327,7 +329,6 @@ Tank1:
       - Staubmaske
       - Werkzeugkasten
       - Steckschlüsselsatz
-      - Stromerzeuger 14 kVA
       - Absperrschlüssel Gas
       - Absperrschlüssel Hauswasser
       - Brechstange kurz
@@ -359,30 +360,30 @@ Tank1:
       - Bodenteller Absperrstangen
       - Vollmaske m. Filter
       - Fognail
-      - Türöffnungsrucksatz
+      - Türöffnungsrucksack
       - Absperrband
-      - Unterbekleidung
+      - Trainingsanzug
       - Chemieschutzanzug
       - Bogensäge
       - Arbeitsleine
       - Säureschutzhandschuhe
-      - Schnürleine
+      - Schnürleinen
       - Dekowanne
-      - Müllsack
-      - Kanalabdeckung
+      - Müllsäcke
+      - Schachtabdeckung
       - PE-Plane 4x4 m
-      - Kunststoffplane 4x4 m
+      - Plane 4x4 m
       - Absperrstangen
       - Druckschlauch D
     G5:
       - Druckschlauch B
       - Druckschlauch C
       - Schlauchpaket
-      - Verteiler CBC
+      - Verteiler
       - Flankierer
       - Hohlstrahlrohr
       - Stützkrümmer
-      - Mehrzweckstrahlrohr B
+      - Strahlrohr B
       - Übergangsstück A125-A110
       - Übergangsstück A-B
       - Übergangsstück B-C
@@ -405,7 +406,7 @@ Tank1:
       - Druckschlauch D
       - Rauchfang-Werkzeug
       - Schlauch f. Schaumaufsatz Wasserwerfer
-      - Wasserwerfer
+      - Wasserwerfer tragbar
       - Schaumaufsatz Wasserwerfer
       - Sammelstück BBB-A
       - Fettbrandlöscher
@@ -427,7 +428,7 @@ Tank1:
       - Fernstuerung Lichtmast
       - Fußtaster Haspel
     Dach:
-      - Schiebeleiter
+      - Schiebeleiter 2-teilig
       - Kombileiter
       - Hakenleiter
       - Monsunrohr
@@ -441,9 +442,9 @@ Tank1:
       - Krampen
       - Spitzschaufel
       - Alurandschaufel
-      - Sappie
+      - Sappel
       - Spaten
-      - Notfalltank
+      - Notfallwanne
       - Auffangbehälter
       - Straßenbesen
       - Feuerwehraxt
@@ -487,7 +488,7 @@ Leiter:
       - Krankentrage 2-teilig
       - Schwerlastaufnahme
       - Arbeitsleine
-      - Schnürleine
+      - Schnürleinen
       - Druckluftschlauch
       - Zimmermannshammer
       - Absturzsicherung MSA
@@ -496,8 +497,8 @@ Leiter:
       - Halten u. Sichern Rucksack
       - Alu-Rettungsdecke
       - Rettungsleine
-      - Pressluftatmer
-      - Vollmaske f. Pressluftatmer
+      - Atemschutzgerät
+      - Atemschutz-Vollmaske
       - Reserveflasche
       - Brandfluchthaube
       - Safety Peak Rucksack
@@ -509,37 +510,37 @@ Leiter:
       - Druckschlauch B 25 m orange
       - Druckschlauch B
       - Druckschlauch C
-      - Schlauchbinde C
+      - Schlauchbinden
       - Druckbegrenzungsventil
       - Hydrantenschlüssel
       - Übergangsstück B-C
-      - Verteiler B-CBC
+      - Verteiler
       - Flankierer
       - Schlauchbrücken
-      - Unterlegsplatte
+      - Unterlegplatte
     G4:
       - Lichtfluter
       - Stativ
       - Kabeltrommel 230 V
-      - Sprungpolster
+      - Sprungretter
       - Rollgliss
       - Werkzeugkasten
       - Sturmleine
-      - Unterlegsplatte
+      - Unterlegplatte
     G5:
       - Löschdecke
       - ABC-Pulverlöscher
       - Verkehrsleitkegel
       - Warndreieck "Feuerwehr"
       - Absperrband
-      - Unterlegsplatte
+      - Unterlegplatte
     G6:
-      - Schäkel 65 kN
+      - Schäkel
       - Abschleppseil
       - Schneeketten
       - Dieselkanister
       - Einfüllstutzen
-      - Unterlegsplatte
+      - Unterlegplatte
     Dach:
       - Stromerzeuger
       - Abgasschlauch Stromerzeuger
@@ -559,8 +560,8 @@ Voraus: &tunnel
     Fahrer / GK:
       - Handfunkgerät
       - Handlampe
-      - Pressluftatmer
-      - Vollmaske f. Pressluftatmer
+      - Atemschutzgerät
+      - Atemschutz-Vollmaske
       - Suchscheinwerfer
       - Meldertasche
       - Gasmessgerät
@@ -572,10 +573,10 @@ Voraus: &tunnel
       - Handlampe
       - Atemschutz Überwachungstafel
       - Gefahrguthelfer
-      - Schreibmaterial
+      - Meldertasche
       - Arbeitsmesser
-      - Pressluftatmer
-      - Vollmaske f. Pressluftatmer
+      - Atemschutzgerät
+      - Atemschutz-Vollmaske
       - Notrettungsset
       - Rettungsleine
       - Brandfluchthaube
@@ -593,22 +594,22 @@ Voraus: &tunnel
     G1:
       - Teleskopleiter
       - Arbeitsleine
-      - Schnürleine
+      - Schnürleinen
       - Trennschleifer
       - Säbelsäge
       - Schutzbrille
       - FFP2-Maske
-      - Müllsack
-      - Schutzdecke
-      - Stabfast
+      - Müllsäcke
+      - Patientenschutz
+      - Stab-Fast
       - Unterleghölzer
       - Notfallwanne
       - Glasmanagement Set
       - Airbag Safe
       - Werkzeugkasten
-      - StabPacks
+      - Stab-Pack
     G2:
-      - Verlängerungskabel 10 m
+      - Verlängerungskabel
       - Sichtschutz
       - Druckschlauch C
       - Ölbindemittel
@@ -620,7 +621,7 @@ Voraus: &tunnel
       - Kabeltrommel 230 V
       - Akku-Lampe
       - Warnblitzleuchte
-      - RIS-Beleuchtungssystem
+      - RLS-Beleuchtungssystem
       - ABC-Kupplungsschlüssel
       - Kurbel Schnellangriff
       - Steuerung Lichtmast
@@ -629,14 +630,13 @@ Voraus: &tunnel
       - Löschanlage
     "G1\ntief":
       - Abschleppseil
-      - Schäkel 65 kN
+      - Schäkel
       - Dieselkanister
       - Einfüllstutzen
     "G2\ntief":
       - Löschdecke
       - Stromerzeuger
     G3:
-      - NATO-Kabel
       - Schleifkorbtrage
       - Schaufeltrage
       - Akku-Kombigerät
@@ -644,8 +644,8 @@ Voraus: &tunnel
       - Akku-Schere
       - Akku-Zylinder
       - Zylinder Verlängerung
-      - Zylinder Unterlegsgestell
-      - Akkuladegerät
+      - Unterlegsgestell
+      - Akku-Ladegerät
       - Notstromkabel Schere/Spreizer
       - Brechstange kurz
       - Brechstange lang
@@ -676,8 +676,8 @@ Pumpe:
       - Suchscheinwerfer
     Mannschaft:
       - Arbeitsmesser
-      - Pressluftatmer
-      - Vollmaske f. Pressluftatmer
+      - Atemschutzgerät
+      - Atemschutz-Vollmaske
       - Reserveflasche
       - Handlampe
       - Atemschutzfilter
@@ -685,14 +685,14 @@ Pumpe:
       - Rettungsleine
       - Notrettungsset
       - Sicherungsgeschirr
-      - Sanitätskasten
+      - Verbandskasten
       - Krankenhausdecke
       - Handscheinwerfer
+      - Warnlichthaube Handscheinwerfer
       - Warndreieck "Feuerwehr"
       - Warnweste
       - Schutzhandschuhe
-      - Erste-Hilfe-Koffer
-      - Warnlichthaube "orange"
+      - Erste-Hilfe-Rucksack
       - Feuerwehrbeil
       - Halteleine
       - Stützstange
@@ -747,12 +747,12 @@ Pumpe:
       - Kettengehänge
       - Tauchpumpe
       - Straßenbesen
-      - Alurandchaufel
+      - Alurandschaufel
       - Bogensäge
       - Feuerwehraxt
       - Kescher
       - Eisensäge
-      - Ratschnesatz
+      - Steckschlüsselsatz
       - Absperrband
       - ABC-Kupplungsschlüssel
       - Saugkorb
@@ -775,11 +775,11 @@ Pumpe:
       - Übergangsstück A125-A110
       - Übergangsstück A-B
       - Übergangsstück B-C
-      - Verteiler B-CBC
+      - Verteiler
       - Hydroschild C
       - ABC-Pulverlöscher
       - Löschdecke
-      - Mehrzweckstrahlrohr B
+      - Strahlrohr B
       - Schlauchbinden
       - Homelite-Pumpe
       - Dieselkanister
@@ -788,7 +788,7 @@ Pumpe:
       - Einfüllstutzen
       - Unterflur-Hydrantenschlüssel
       - Arbeitsleine
-      - Schnürleine
+      - Schnürleinen
       - Schlauchknickschutz
       - Rohrkrümmer
       - Flankierer
@@ -803,20 +803,20 @@ Pumpe:
       - Stromerzeuger MAG
       - Stromerzeuger klein
       - Abgasschlauch Stromerzeuger
-      - Verlängerungskabel 10 m
+      - Verlängerungskabel
       - Lichtfluter
       - Fluterbrücke
       - Stativ 5 m
       - Stativ 1,7 m
       - Kunststoffplane
-      - Müllsack
+      - Müllsäcke
       - Kabeltrommel 230 V
       - A-Saugschlauch
     G5 / Heck:
-      - Schlauchladen B
+      - Schlauchladen
       - Schlauchbrücken
       - BC-Kupplungsschlüssel
-      - Sappie
+      - Sappel
       - Dunggabel
       - Heugabel
       - Dungkralle
@@ -825,7 +825,7 @@ Pumpe:
       - Feuerpatsche
     Dach:
       - Schiebeleiter 2-teilig
-      - Steckleiter 4-teilig
+      - Steckleiter
       - Steckleiter Verbindungsteil
       - Flachansauger
 
@@ -837,15 +837,15 @@ Tank2:
       - Tablet
       - Handlampe
       - Handfunkgerät
-      - PAX-Meldertasche
+      - Meldertasche
     Mannschaft:
       - Handlampe
       - Handfunkgerät
       - Wärmebildkamera
       - Absturzsicherung
-      - Vollmaske
+      - Atemschutz-Vollmaske
       - Spineboard
-      - Zubehör f. Spineboard
+      - Zubehör Spineboard
       - Feuerwehrgurt
       - Kühlbox
       - Krankenhausdecke
@@ -853,15 +853,15 @@ Tank2:
       - Rettungsleine
       - Brandfluchthaube
       - Waldbrandhelm
-      - Pressluftatmer
-      - Vollmaske f. Pressluftatmer
+      - Atemschutzgerät
+      - Atemschutz-Vollmaske
       - Anhaltekelle
       - Einweghandschuhe
     G1:
       - Tauchpumpe
       - Drucklüfter
       - Be- u. Entlüftungsgerät
-      - Polarskiaxt
+      - Pularskiaxt
       - Löschrucksack Waldbrand
       - Wasserdieb
       - Motorsäge
@@ -874,13 +874,13 @@ Tank2:
       - Schnittschutzbeinlinge
       - Forsthelm
       - Arbeitsleine
-      - Schnürleine
-      - Verschlussband f. Lutte
-      - PE-Lutte
+      - Schnürleinen
+      - Verschlussband Lutte
+      - Lutte
       - Abschleppseil
       - Eingebaute Kabeltrommel
       - Gorgui Werkzeug
-      - Schäkel 6,5 t
+      - Schäkel
     G2:
       - Stromerzeuger
       - Absperrband
@@ -897,11 +897,11 @@ Tank2:
       - Lichtfluter
       - Kabeltrommel 400 V
       - Kabeltrommel 230 V
-      - Verlängerungskabel 230 V 10 m
+      - Verlängerungskabel
       - Werkzeugkasten
       - Fluterbrücke
       - Stativ
-      - Triopan
+      - Warndreieck "Feuerwehr"
       - Bogensäge
       - Betankungsgarnitur
       - Warnblitzleuchte
@@ -912,7 +912,7 @@ Tank2:
     G3:
       - Waldbrandrucksack
       - Schlauchtragekorb
-      - Rauchabschluss
+      - Rauchvorhang
       - Rauchfang-Werkzeug
       - Stahlblecheimer
       - Schuttwanne
@@ -920,28 +920,27 @@ Tank2:
       - Druckschlauch B
       - Schaummittel
       - Chemieschutzanzug Stufe 2
-      - Unterbekleidung
+      - Trainingsanzug
       - Chemieschutzstiefel
       - Chemieschutzhandschuhe
       - Dieselkanister
       - Benzinkanister
       - Einfüllstutzen
       - Ölbindemittel
-      - Schlauchbrücke
+      - Schlauchbrücken
     G5:
       - Übergangsstück A125-A110
       - Übergangsstück A-B
       - Übergangsstück B-C
-      - Verteiler B-CBC
       - Druckschlauch B
-      - Mehrzweckstrahlrohr B
-      - Stützkrümmer B
+      - Strahlrohr B
+      - Stützkrümmer
       - Hohlstrahlrohr
       - Verteiler
       - Schlauchhalter
       - Sammelstück BB-A
       - Hydroschild C
-      - Wasserwerfer
+      - Wasserwerfer tragbar
       - Druckbegrenzungsventil
       - ABC-Kupplungsschlüssel
       - HD-Kupplungsschlüssel
@@ -955,7 +954,7 @@ Tank2:
       - Halligan-Tool
     G6:
       - Übergangsstück B-C
-      - Verteiler B-CBC
+      - Verteiler
       - Druckschlauch B
       - Druckschlauch C
       - Hygienestation
@@ -964,7 +963,7 @@ Tank2:
       - Löschdecke
       - Kombischaumrohr S4/M4
       - Kabelbinder
-      - Rolle Müllsäcke
+      - Müllsäcke
       - Hydrofix
       - ABC-Pulverlöscher
       - Fettbrandlöscher
@@ -990,13 +989,13 @@ Tank2:
       - Löschlanze
       - D-Saugschlauch
       - Zumischer Z8
-      - Wasserwerfer
-      - Lutte f. Lüfter
+      - Wasserwerfer Dach
+      - Lutte
       - Leichtschaumaufsatz
       - Schaumrohr S8/M8
       - Saugschlauch Storz 38
       - Verschlussband Lüfter
-      - Steckleiter 4-teilig
+      - Steckleiter
       - Steckleiter Verbindungsteil
 
 Rüst:
@@ -1036,10 +1035,10 @@ Rüst:
       - Hacke lang
       - Krampen
       - Kombisäge/Lochsäge
-      - Brechstange/Schaleisen
+      - Schaleisen
       - Freilandverankerung
       - Vorschlaghammer
-      - Brechstange 70 cm
+      - Brechstange 0,7 m
       - Schäkel
       - Greifzug HIT/32
       - Greifzug T35
@@ -1048,14 +1047,14 @@ Rüst:
       - Steckschlüsselsatz
       - Rohrzange
       - Nägel
-      - Rundschlinge 60 kN 3 m
+      - Rundschlinge 60 kN
       - Arbeitsleine
       - Bogensäge
       - Eisensäge
       - Stange f. Rangierwagenheber
     "G2\nrechts":
       - Hydr. Rettungssatz
-      - Teleskoprettunszylinder
+      - Hydr. Zylinder
       - Pedalschneider
       - Ersatzmesser Rettungsschere
       - Ersatzbacken Rettungsspreizer
@@ -1069,7 +1068,7 @@ Rüst:
       - Federkörner
       - Verbundglasschneider
       - Verkehrsleitkegel
-      - Warnblitzleuchten
+      - Warnblitzleuchte
       - Absperrband
       - Halteleine
     "G1\ninnen":
@@ -1078,7 +1077,7 @@ Rüst:
       - Brechstange 1,4 m
       - Brechstange 1,7 m
       - Rangierwagenheber 1,5 t
-      - Sappie
+      - Sappel
       - Trägerklemme 5 t
       - Gripp Plattengreifer
       - Trennschleifer
@@ -1105,7 +1104,7 @@ Rüst:
       - Forsthelm
       - Schnittschutzbeinlinge
       - Schnittschutzhose
-      - Teleskopleiter 3,5 m
+      - Teleskopleiter
       - Absperrstangen
       - Auffangmulden
       - Schlagbohrmaschine
@@ -1124,23 +1123,23 @@ Rüst:
       - Hebegurt 4 m
       - Hebegurt 6 m
       - Rundschlinge f. PKW-Ösen
-      - Rundschlinge blau 8 t
-      - Schnürleine
+      - Rundschlinge 80 kN
+      - Schnürleinen
       - Schäkel 6 t
-      - Schäkel 5 t
       - Haken f. Kran
       - Endstückbefestigung Kranarm
       - Umlenkrolle Kranseilwinde
       - Bolzen Umlenkrolle
-      - Seilführungsrolle Kranseilwinde
+      - Umlenkrolle Kranseilwinde
       - Aufsatz f. Rodator
-      - Schlüssel Hauswasserabsperrung
+      - Absperrschlüssel Hauswasser
     "G2\nlinks":
       - Stromerzeuger 30 kVA
       - Stromerzeuger 10 kVA
+      - Abgasschlauch Stromerzeuger
       - Kabeltrommel 230 V
       - Kabeltrommel 400 V
-      - Schnellangriff Kabeltrommel m. Verteiler
+      - Stromschnellangriff
       - Hammer funkenfrei
       - Fassschlüssel funkenfrei
       - Rohrzange funkenfrei
@@ -1150,11 +1149,10 @@ Rüst:
       - Erdungslitze
       - Fluterbrücke
       - Lichtfluter
-      - Verlängerungskabel 230 V 10 m
+      - Verlängerungskabel 230 V
       - Verlängerungskabel 400 V
-      - Übergangsstück 400 V
-      - Übergangsstück 400 V m. Polwender
-      - Abgasschlauch Stromerzeuger
+      - Übergangsstück Strom
+      - Übergangsstück Strom m. Polwender
     G3:
       - Abschleppseil 12 mm
       - Abschleppseil 16 mm
@@ -1167,7 +1165,7 @@ Rüst:
       - Kettenstrang 5 t 5 m
       - Kettenstrang 10 t 3 m
       - Kettenstrang 15 t 0,75 m
-      - Seilklemmen
+      - Seilklemme
       - Schäkel 10 t
       - Schäkel 15 t
       - Seilkeil klein
@@ -1183,7 +1181,7 @@ Rüst:
       - Dichtungsband
       - Gerüstklemme
       - Drahtstift
-      - Müllsack
+      - Müllsäcke
       - Plane 1,4 x 2,2 m
       - Plane 4x4 m
       - Faltbehälter
@@ -1209,7 +1207,7 @@ Rüst:
       - Einzelsteuerorgan Hebekissen
       - Verbindungsschlauch Hebekissen
       - Verbindungsschlauch Leckdichtkissen
-      - Zurrgurt 7 m
+      - Zurrgurt
       - Schaumgummimatte
       - Moosgummiplatte
       - Schachtabdeckung
@@ -1230,7 +1228,7 @@ Rüst:
       - Kranabstützunterlagen
       - Schäkel 12 t
     Dach:
-      - Steckleiter 4-teilig
+      - Steckleiter
       - Schleifkorbtrage m. Gehänge
       - Hebebaum
       - Feuerpatsche
@@ -1238,11 +1236,11 @@ Rüst:
       - Rundschaufel
       - Spitzschaufel
       - Straßenbesen
-      - Ausräumhaken
       - Dunggabel
       - Heugabel
       - Rüstholz
-      - Öl-Auffangplane 5,5 x 5,5 m
+      - Auffangplane 5,5 x 5,5 m
+      - Ausräumhaken
       - Einreißhaken
       - Deckenstützen
 
@@ -1251,9 +1249,90 @@ TestTruck:
   Abb: "Dummy"
   Tools:
     Fahrer / GK:
+      - Handfunkgerät
+      - Gasmessgerät
+      - Gefahrguthelfer
+      - Meldertasche
+      - Auto-Öffnungswerkzeug <Raumbild:hallein_rl/fahrer_gk_tuer>
+      - Atemschutzgerät
+      - Atemschutz-Vollmaske
+      - Tablet <Raumbild:hallein_rl/fahrer_gk_tuer>
+      - Defibrillator
+      - Handlampe
+      - Steuerung Seilwinde <Bild:tools/rl_steuerung seilwinde>
+      - Dreikantschlüssel
+      - Suchscheinwerfer
+      - Reserve-Akku Strongarm
+      - Schlüsselset <Bild:tools/rl_schluesselset>
+      - Hinweiszettel Lift <Bild:tools/rl_hinweiszettel lift>
+    Mannschaft:
+      - Anhaltekelle <Raumbild:hallein_rl/mannschaft_rechts>
+      - Handfunkgerät <Raumbild:hallein_rl/mannschaft_rechts>
+      - Warndreieck "Feuerwehr" <Raumbild:hallein_rl/mannschaft_rechts>
+      - Rettungsleine <Raumbild:hallein_rl/mannschaft_links>
+      - Feuerwehrgurt <Raumbild:hallein_rl/mannschaft_links>
+      - Tragetuch <Raumbild:hallein_rl/mannschaft_rechts>
+      - Notrettungsset
+      - Personensicherungsset
+      - Basis Sichern/Auffangen
+      - Erste-Hilfe-Rucksack
+      - Einweghandschuhe <Bild:tools/rl_einweghandschuhe> <Raumbild:hallein_rl/mannschaft_links>
+      - Krankenhausdecke
+      - Atemschutzgerät <Raumbild:hallein_rl/mannschaft_links>
+      - Atemschutz-Vollmaske <Raumbild:hallein_rl/mannschaft_links>
+      - Reservemaske <Bild:tools/atemschutz-vollmaske>
+      - Reserveflasche
+      - Brandfluchthaube
+      - Wärmebildkamera
+      - Schutzhandschuhe
+      - Warnweste <Raumbild:hallein_rl/mannschaft_links>
+      - Handlampe <Raumbild:hallein_rl/mannschaft_links>
+      - Kühlbox <Bild:tools/rl_kuehlbox>
+      - Leichensack
+      - Trainingsanzug
+      - Handtuch
+      - Warnblitzleuchte
+      - Reserve-Atemschutzfilter
+      - Auer 3S-Maske
+      - Filteratemschutzset
+      - Plane
+    G1:
+      - Spineboard <Raumbild:hallein_rl/g1_links>
+      - Zubehör Spineboard <Raumbild:hallein_rl/g1_links>
+      - Arbeitsmesser
+      - Bogensäge
+      - Bolzenschneider <Raumbild:hallein_rl/g1_innen>
+      - Hacke lang
+      - Hacke kurz
+      - Vorschlaghammer
+      - Handfäustel
+      - Brechstange <Raumbild:hallein_rl/g1_innen>
+      - Feuerwehraxt
+      - Halligan-Tool m. Hammer
+      - Straßenbesen <Raumbild:hallein_rl/g1_innen>
+      - Spitzschaufel <Raumbild:hallein_rl/g1_innen>
+      - Alurandschaufel <Raumbild:hallein_rl/g1_innen>
+      - Krampen <Raumbild:hallein_rl/g1_innen>
+      #- Sappel <Raumbild:hallein_rl/g1_innen>
+      - Bindedraht <Raumbild:hallein_rl/g1_tuer>
+      - Gerüstklammer <Raumbild:hallein_rl/g1_tuer>
+      - Nägel <Raumbild:hallein_rl/g1_tuer>
+      - Schachthaken
+      - Seilklemme <Raumbild:hallein_rl/g1_tuer>
+      - Stahlseil 5 m <Bild:tools/stahlseil> <Raumbild:hallein_rl/g1_innen>
+      - Stahlseil 10 m <Bild:tools/stahlseil> <Raumbild:hallein_rl/g1_innen>
+      - Rundschlinge <Raumbild:hallein_rl/g1_innen>
+      - Kette einsträngig <Raumbild:hallein_rl/g1_innen>
+      - Kette zweisträngig <Raumbild:hallein_rl/g1_innen>
+
+TestTruck2:
+  Layout: "7-Raum"
+  Abb: "Dummy"
+  Tools:
+    Fahrer / GK:
       - Handfunkgerät <Bild:tools_RL/handfunkgeraet>
-      - Vollmaske f. Pressluftatmer <Bild:tools_RL/vollmaske>
-      - Pressluftatmer
+      - Atemschutz-Vollmaske <Bild:tools_RL/vollmaske>
+      - Atemschutzgerät
     Mannschaft:
       - Anhaltekelle <Bild:tools_RL/anhaltekelle> <Raumbild:truck_RL/in_right_backward>
       - Handfunkgerät <Bild:tools_RL/handfunkgeraet> <Raumbild:truck_RL/in_right_forward>
@@ -1300,7 +1379,6 @@ TestTruck:
       - Steckleiter Verbindungsteil <Bild:tools_RL/verbindungsstueck> <Raumbild:truck_RL/roof_left>
       - Ausräumhaken <Bild:tools_RL/ausraeumhaken> <Raumbild:truck_RL/roof_right>
       - Moosgummiplatte <Raumbild:truck_RL/roof_right>
-
 # Voraus+Ölanh.:
 #   <<: *tunnel
 #   Ölanh. G1:
@@ -1319,7 +1397,7 @@ TestTruck:
 #     - Bindemittel Streuwagen
 #     - Auffangwanne 150 l
 #     - Arbeitsleine
-#     - Schnürleine
+#     - Schnürleinen
 #     - Spillbag 15
 #     - Ölbindemittel Reservesack
 #     - Ölschlange

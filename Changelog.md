@@ -2,11 +2,14 @@
 TODO:
 - remove TestTruck from scores.yaml
 - reset settings seconds etc.
-- remove Bilder from modi
+- remove "Bilder" from modi
 
 
 features:
 - add info popup when all and half the tools are trained
+- add "Training mit Bildern", start with Hallein RüstLösch truck
+- competitions list with descriptions
+- competition_training with competition label
 
 fixes:
 - error found by Fehlerfinder

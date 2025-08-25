@@ -27,7 +27,7 @@ from screens.firetruck_mode import Firetruck_Mode
 from screens.firetruck_menu import Firetruck_Menu
 from screens.firetruck_training import Firetruck_Training
 
-from screens.firetruck_training_new import Firetruck_Training_New
+from screens.firetruck_training_with_images import Firetruck_Training_With_Images
 from screens.firetruck_game import Firetruck_Game
 from screens.firetruck_browse import Firetruck_Browse
 from screens.firetruck_images import Firetruck_Images
@@ -88,7 +88,7 @@ class FeuerwehrApp(App):
             self.sm.add_widget(Firetruck_Mode())
             self.sm.add_widget(Firetruck_Menu())
             self.sm.add_widget(Firetruck_Training())
-            self.sm.add_widget(Firetruck_Training_New())
+            self.sm.add_widget(Firetruck_Training_With_Images())
             self.sm.add_widget(Firetruck_Game())
             self.sm.add_widget(Firetruck_Browse())
             self.sm.add_widget(Firetruck_Images())
@@ -149,7 +149,7 @@ class FeuerwehrApp(App):
 
                 elif current in [
                     "firetruck_training",
-                    "firetruck_training_new",
+                    "firetruck_training_with_images",
                     "firetruck_game",
                     "firetruck_browse",
                     "firetruck_images",

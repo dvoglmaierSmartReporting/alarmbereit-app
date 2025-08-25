@@ -17,8 +17,8 @@ from kivy.clock import Clock
 from kivy.uix.screenmanager import ScreenManager
 
 from app.main import FeuerwehrApp
-from app.screens.competition_training import Bewerb_Training
-from app.screens.firetruck_training import Fahrzeugkunde_Training
+from app.screens.competition_training import Competition_Training
+from app.screens.firetruck_training import Firetruck_Training
 from app.helper.file_handling import (
     load_total_competition_questions,
     load_total_firetruck_storage,
@@ -63,7 +63,7 @@ competitions = list(load_total_competition_questions().keys())
 
 @pytest.mark.parametrize("competition_name", competitions)
 def test_competition_training__select_competition(competition_name):
-    screen = Bewerb_Training(name="competition_training")
+    screen = Competition_Training(name="competition_training")
     try:
         screen.select_competition(competition_name)
         screen.play()
@@ -103,7 +103,7 @@ def test_firetruck_training__select_firetruck(city_name):
         mock_schedule.side_effect = lambda func, timeout: func(0.016)
 
         for firetruck_name in firetrucks:
-            screen = Fahrzeugkunde_Training(name="firetruck_training")
+            screen = Firetruck_Training(name="firetruck_training")
             try:
                 screen.select_city(city_name)
                 screen.select_firetruck(firetruck_name)

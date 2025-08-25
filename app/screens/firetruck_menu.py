@@ -48,9 +48,9 @@ class Firetruck_Menu(Screen):
             screen.play()
 
         elif mode_training_new:
-            change_screen_to("firetruck_training_new", transition_direction="left")
+            change_screen_to("firetruck_training_with_images", transition_direction="left")
             # continue game with selected firetruck
-            screen = app_root.get_screen("firetruck_training_new")
+            screen = app_root.get_screen("firetruck_training_with_images")
             screen.select_city(self.selected_city)
             screen.select_firetruck(instance.text.split(" ")[0])
             screen.play()

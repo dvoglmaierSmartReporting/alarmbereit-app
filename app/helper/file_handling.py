@@ -1,5 +1,6 @@
 from kivy.app import App
 from kivy.config import Config
+from kivy.resources import resource_find
 
 import yaml
 from shutil import copyfile
@@ -158,7 +159,7 @@ def get_logo_file_path(selected_long_name: str) -> str:
     # state logos
     if selected_long_name in ["Salzburg", "Bayern"]:
         return "assets/lfv_salzburg.png"
-    
+
     # team122
     if selected_long_name == "team122":
         return "assets/team122_logo_lang.png"
@@ -233,6 +234,53 @@ def update_config(to_update: dict) -> None:
 
 def get_selected_city_state() -> tuple[str, str]:
     return Config.get("content", "city"), Config.get("content", "state")
+
+
+def image_file_exists(file_name: str) -> bool:
+    # Example: file_name = "assets/images/myicon.png"
+    path = resource_find(file_name)
+    return path is not None and os.path.isfile(path)
+
+
+def tool_image_file_exists(image_name: str) -> bool:
+    return image_file_exists(image_name)
+
+
+def room_image_file_exists(
+    selected_city: str, selected_firetruck: str, image_name: str
+) -> bool:
+    if selected_city == "Hallein":
+        city = "hallein"
+    elif selected_city == "Bad Dürrnberg":
+        city = "duerrnberg"
+    elif selected_city == "Altenmarkt a.d. Alz":
+        city = "altenmarkt"
+
+    if selected_firetruck == "RüstLösch":
+        firetruck = "rl"
+    elif selected_firetruck == "Rüst":
+        firetruck = "r"
+    elif selected_firetruck == "Tank1":
+        firetruck = "t1"
+    elif selected_firetruck == "Tank2":
+        firetruck = "t2"
+    elif selected_firetruck == "Voraus":
+        firetruck = "v"
+    elif selected_firetruck == "Leiter":
+        firetruck = "l"
+    elif selected_firetruck == "Pumpe":
+        firetruck = "p"
+    elif selected_firetruck == "Tank":
+        firetruck = "t"
+    elif selected_firetruck == "LF8":
+        firetruck = "lf8"
+    elif selected_firetruck == "LF20":
+        firetruck = "lf20"
+    else:
+        firetruck = "rl"
+
+    room_image_file_name = f"{city}_{firetruck}/{image_name}"
+    return image_file_exists(room_image_file_name)
 
 
 def transfer_file(file_path: str, file_name: str, new_file_name: str = "") -> None:

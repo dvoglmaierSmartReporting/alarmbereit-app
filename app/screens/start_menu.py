@@ -73,7 +73,7 @@ class Start_Menu(Screen):
         about_label = Label(
             size_hint=(1, 1),
             text=About_Text().TEXT,
-            font_size="15sp",
+            font_size="13sp",
             halign="center",
         )
 

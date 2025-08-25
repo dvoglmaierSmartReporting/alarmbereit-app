@@ -7,6 +7,7 @@ from helper.settings import Settings
 from helper.strings import Strings
 from helper.file_handling import (
     load_total_storage,
+    load_total_competition_questions,
     map_selected_city_2short_name,
 )
 from helper.game_class import ToolQuestion
@@ -48,6 +49,18 @@ def invert_firetruck_equipment(firetruck: dict[str, list[str]]) -> dict[str, lis
     return tools_locations
 
 
+def tool_name_2image_name(tool_name: str) -> str:
+    return (
+        tool_name.lower()
+        .replace("ä", "ae")
+        .replace("ö", "oe")
+        .replace("ü", "ue")
+        .replace("ß", "ss")
+        .replace('"', "")
+        .replace("/", "")
+    )
+
+
 def get_ToolQuestion_instances(
     selected_firetruck: str, selected_city: str
 ) -> tuple[list[str], list[ToolQuestion]]:
@@ -62,28 +75,69 @@ def get_ToolQuestion_instances(
         )
 
     rooms: list = list(firetruck.keys())
-    tools: list = list(set([tool for room in firetruck.values() for tool in room]))
-    tools_locations: dict = invert_firetruck_equipment(firetruck)
 
+    # tools can have multiple entries for same tools in multiple locations,
+    # because of varying tag strings
+    tools: list = list(set([tool for room in firetruck.values() for tool in room]))
+
+    tools_locations: dict = invert_firetruck_equipment(firetruck)
     tool_questions = []
+    already_registered_tools = []
 
     for tool in tools:
         clean_tool_name = remove_tool_tags(tool)
+
+        if clean_tool_name in already_registered_tools:
+            continue
+        else:
+            already_registered_tools.append(clean_tool_name)
+
+        image_tag = isolate_tag_value(tool, "<Bild:")
+
+        if image_tag:
+            tool_image_name = image_tag
+        else:
+            tool_image_name = (
+                "assets/tools/" + tool_name_2image_name(clean_tool_name) + ".jpg"
+            )
+
+        # room can be used to identify room_image_name
+        # but tag shall overrule auto-detection
+        # so, check if Raumbild-tag is present
+        # if not, use room name
+        room_tag = isolate_tag_value(tool, "<Raumbild:")
+        rooms = list(set(tools_locations.get(clean_tool_name, [])))
+
+        # a tool can have multiple rooms
+        # which to display?
+        #
+        # DECISION: use only one room for now
+        # TODO: allow multiple rooms in the future
+
+        if room_tag:
+            room_image_name = room_tag
+        else:
+            room_name = str(rooms[0]).lower()
+            if " / " in room_name:
+                # room image file name convention
+                # replace " / " with "_"
+                room_name = "_".join(room_name.split(" / "))
+            room_image_name = "assets/hallein_rl/" + room_name + ".jpg"
 
         tool_questions.append(
             ToolQuestion(
                 firetruck=selected_firetruck,
                 tool=break_tool_name(clean_tool_name),
-                rooms=list(set(tools_locations.get(clean_tool_name, []))),
-                tool_image_name=isolate_tag_value(tool, "<Bild:"),
-                room_image_name=isolate_tag_value(tool, "<Raumbild:"),
+                rooms=rooms,
+                tool_image_name=tool_image_name,
+                room_image_name=room_image_name,
             )
         )
 
     return (rooms, tool_questions)
 
 
-def get_firetruck_layout_value(selected_firetruck: str, selected_city: str) -> str:
+def get_firetruck_layouts(selected_firetruck: str, selected_city: str) -> str:
     total_storage = load_total_storage(selected_city)
 
     if isinstance(total_storage[selected_firetruck]["Layout"], str):
@@ -97,7 +151,7 @@ def get_firetruck_layout_value(selected_firetruck: str, selected_city: str) -> s
     return layout
 
 
-def get_firetruck_abbreviation_values(selected_city: str) -> dict:
+def get_firetruck_abbreviations(selected_city: str) -> dict:
     total_storage = load_total_storage(selected_city)
 
     abbs = dict()
@@ -150,10 +204,16 @@ def mode_bool2str(mode: tuple) -> str:
     return ""
 
 
-def break_tool_name(tool_name: str) -> str:
-    if len(tool_name) >= 27:
-        tool_name_lst: list = tool_name[14:].split(" ")
-        return tool_name[:14] + tool_name_lst[0] + "\n" + " ".join(tool_name_lst[1:])
+def break_tool_name(tool_name: str, max_character: int = 27) -> str:
+    if len(tool_name) >= max_character:
+        max_character_half = max_character // 2 + 1
+        tool_name_lst: list = tool_name[max_character_half:].split(" ")
+        return (
+            tool_name[:max_character_half]
+            + tool_name_lst[0]
+            + "\n"
+            + " ".join(tool_name_lst[1:])
+        )
     return tool_name
 
 

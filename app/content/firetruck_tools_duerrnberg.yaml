@@ -7,7 +7,7 @@ Tank:
       - Handfunkgerät
       - Kartentasche
       - Meldertasche
-      - Schlüsselsortiment
+      - Schlüsselkasten
       - Gefahrguthelfer
       - Arbeitsmesser
       - Suchscheinwerfer
@@ -25,9 +25,9 @@ Tank:
       - Sicherungsleine 2 m
       - Wärmebildkamera
       - Handscheinwerfer
-      - Warnlichthauben Handscheinwerfer
+      - Warnlichthaube Handscheinwerfer
       - Überwurf Einsatzleiter
-      - Triopan FEUERWEHR
+      - Warndreieck "Feuerwehr"
       - Wathose
       - Anhaltekelle
       - Krankenhausdecke
@@ -46,11 +46,11 @@ Tank:
       - Absperrschlüssel Hauswasser
       - Rohrzange
       - Bindedraht
-      - Gerüstklammern
+      - Gerüstklammer
       - Nägel
       - Steckschlüsselsatz
       - Straßenbesen
-      - Tauchpumpe 230 V
+      - Tauchpumpe
       - Werkzeugkasten
       - Forsthelm
       - Kombikanister
@@ -67,42 +67,42 @@ Tank:
       - Schachthaken
       - Zimmermannshammer
       - Fassbundöffner
-      - Spitzschneidekrampen
+      - Krampen
       - Türöffner
       - Vorschlaghammer
     G2:
+      - Stromerzeuger
       - Abgasschlauch Stromerzeuger
       - Fluterbrücke
       - Stromschnellangriff
-      - Stromerzeuger 10 kVA
-      - Übergangsstück 400 V m. Polwender
-      - Verlängerungskabel 10 m
+      - Übergangsstück Strom m. Polwender
+      - Verlängerungskabel
       - Kabeltrommel 230 V
-      - Rollgliss m. Abseilachter
+      - Rollgliss
       - Absperrband
       - Stativ
       - Schaufeltrage
       - Schlagbohrmaschine
-      - Schleiferbrille
-      - Schmutzwasserpumpe
+      - Schutzbrille
+      - Tauchpumpe
       - Absperrstangen
       - Bodenteller Absperrstangen
       - Steuerung Lichtmast
       - Hebekissensatz klein
-      - Verkehrsunfall- Schnellangriffskoffer
+      - VU-Koffer
       - Ersatzblätter Trennschleifer
       - Trennschleifer
       - Verkehrsleitkegel
     G3:
-      - Mehrzweckstrahlrohr C
+      - Strahlrohr C
       - Hitzeschutzanzug
       - Hitzeschutzhandschuhe
       - Rundschlinge
       - D-Saugschlauch Pumpenvormischer
-      - Schaumaufsatz Pistolenstrahlrohr
-      - Mehrbereichsschaummittel
-      - Präzisionszumischer
-      - Zurrgurt mit Ratsche
+      - Schaumaufsatz Hohlstrahlrohr
+      - Schaummittel
+      - Zumischer
+      - Zurrgurt m. Ratsche
     G4:
       - Arbeitsleine
       - Bogensäge
@@ -112,10 +112,10 @@ Tank:
       - Ölbindemittel
       - Schachtabdeckung
       - Schlauchbrücken
-      - Schnürleine 6 m
+      - Schnürleinen
       - Einfüllstutzen
       - Abdeckplane
-      - Kunststoffplane 4x4 m
+      - Plane 4x4 m
       - Müllsäcke
       - Chemieschutzanzug m. Stiefel
     G5:
@@ -123,8 +123,8 @@ Tank:
       - Kanalspülratte
       - Sammelstück BB-A
       - Schlauchtragekorb
-      - Verteiler B-CBC
-      - Mehrzweckstrahlrohr B
+      - Verteiler
+      - Strahlrohr B
       - Strahlrohr C
       - Hydroschild C
       - ABC-Kupplungsschlüssel
@@ -140,7 +140,7 @@ Tank:
       - Schlauchbinden
       - Schlauchhalter
       - Absperrschieber B
-      - Rauchabschluss
+      - Rauchvorhang
       - Löschrucksack Waldbrand
     G6:
       - Druckschlauch B
@@ -173,7 +173,7 @@ Tank:
       - Ausräumhaken
       - Dunggabel
       - Stahlblecheimer
-      - Sappie
+      - Sappel
       - Heugabel
       - Straßenbesen
       - Alurandschaufel
@@ -193,7 +193,7 @@ Pumpe:
       - Handfunkgerät
       - Handlampe
       - Handscheinwerfer
-      - Schreibmaterial
+      - Meldertasche
       - Steuerung Seilwinde
     Mannschaft:
       - Arbeitsmesser
@@ -204,14 +204,14 @@ Pumpe:
       - Rettungsleine
       - Feuerwehrgurt
       - Tragetuch
-      - Rettungsdecke
-      - Sicherheitsgeschirr
+      - Krankenhausdecke
+      - Sicherungsgeschirr
       - Erste-Hilfe-Rucksack
       - Schutzhandschuhe
       - Einweghandschuhe
-      - Pressluftatmer
+      - Atemschutzgerät
       - Reserveflasche
-      - Vollmaske f. Pressluftatmer
+      - Atemschutz-Vollmaske
       - Vollmaske m. Filter
       - Handlampe
     G1:
@@ -230,7 +230,7 @@ Pumpe:
       - Alurandschaufel
       - Schnittschutzhose
       - Forsthelm
-      - Spitzschneidekrampen
+      - Krampen
       - Sappel
       - Hubwinde 100 kN
       - Motorsäge
@@ -246,26 +246,26 @@ Pumpe:
       - Luftdruckprüfer
     G2:
       - Fernsteuerung Lichtmast
-      - Stromerzeuger 9 kVA
+      - Stromerzeuger
+      - Abgasschlauch Stromerzeuger
       - Kabeltrommel 230 V
       - Kabeltrommel 400 V
-      - Schleifringtrommel 400 V
+      - Schleifringkabeltrommel 400 V
       - Akku-Lampe
       - Klebeband
       - Absperrband
       - Fluterbrücke
       - Warnblitzleuchte
-      - Verlängerungskabel 230 V
+      - Verlängerungskabel
       - Einfüllstutzen
       - Betankungsgarnitur
       - Benzinkanister 10 l
       - Benzinkanister 20 l
       - Dieselkanister
       - Verkehrsleitkegel faltbar
-      - Beleuchtungssystem RLS2000
+      - RLS-Beleuchtungssystem
       - Abdeckplane
       - Stativ
-      - Abgasschlauch Stromerzeuger
       - PVC-Folie
       - Müllsäcke
       - Kabelbinder
@@ -283,7 +283,7 @@ Pumpe:
       - Schlauchbinden
       - Schlauchbrücken
       - Schlauchhalter
-      - Mehrzweckstrahlrohr B
+      - Strahlrohr B
       - Stützkrümmer
       - Hohlstrahlrohr
       - Druckbegrenzungsventil
@@ -292,26 +292,27 @@ Pumpe:
       - Übergangsstück A125-A110
       - Übergangsstück A-B
       - Übergangsstück B-C
-      - Verteiler B-CBC
+      - Verteiler
       - Schlauchpaket
     G4:
       - Wathose
       - Arbeitsleine
-      - Schnürleine
+      - Schnürleinen
       - Wassersauger m. Zubehör
       - Koffer Abschleppösen
       - ABC-Pulverlöscher
       - Löschdecke
+      - Umlenkrolle 60 kN
       - Umlenkrolle 140 kN
-      - Seilrolle 60 kN
       - Basisausrüstung ÖBFV
       - Rundschlinge 60 kN
       - Rundschlinge 40 kN
+      - Rundschlinge 22 kN
       - Kantenreiter
       - Windenkeile
-      - Zurrgurt m. Ratsche 8 m 2-teilig
+      - Zurrgurt m. Ratsche
       - Zurrgurt 7 m
-      - Gerüstklammern
+      - Gerüstklammer
       - Schäkel 65 kN
       - Schäkel 120 kN
       - Kettengehänge 19 kN
@@ -322,7 +323,6 @@ Pumpe:
       - Greifzugseil
       - Freilandverankerung
       - Abschleppseil
-      - Rundschlinge 22 kN
       - Seilstropp 5 m
       - Seilstropp 10 m
       - Unterleghölzer
@@ -333,16 +333,16 @@ Pumpe:
       - Tragkraftspritze
       - Schlauchhaspel
       - Werkzeugsatz TS
-      - Unterflur-Hydrantenstandrohr
+      - Standrohr
       - Unterflur-Hydrantenschlüssel
     Dach:
-      - Schiebeleiter 2-teilig 8 m
+      - Schiebeleiter 2-teilig
       - Korbtrage
       - Ausräumhaken
       - Einreißhaken
       - Spitzschaufel
       - Heugabel
       - Schaufeltrage
-      - Wasserschieber
+      - Absperrschlüssel Hauswasser
       - Tafel "Ölspur"
       - Streuwagen

@@ -11,7 +11,7 @@ from popups.text_popup import TextPopup
 from helper.functions import (
     get_ToolQuestion_instances,
     change_screen_to,
-    get_firetruck_layout_value,
+    get_firetruck_layouts,
 )
 from helper.file_handling import save_to_scores_file, get_score_value
 from helper.settings import Settings
@@ -40,9 +40,7 @@ class Firetruck_Training(Screen):
         self.firetruck_label = cast(Label, self.firetruck_label)
         self.firetruck_label.text = selected_firetruck
 
-        self.room_layout = get_firetruck_layout_value(
-            selected_firetruck, self.selected_city
-        )
+        self.room_layout = get_firetruck_layouts(selected_firetruck, self.selected_city)
 
     def update_strike_label(self):
         self.strike_label = cast(Label, self.strike_label)
@@ -118,9 +116,7 @@ class Firetruck_Training(Screen):
         # self.current_tool = "Handfunkgerät"  # "Druckschlauch B"
         self.current_tool_question = self.tool_questions.pop()
 
-        self.tool_label = cast(Label, self.tool_label)
-
-        self.tool_label.text = self.current_tool_question.tool
+        self.ids.tool_label.text = self.current_tool_question.tool
 
         float = build_answer_layout(self.room_layout, "firetruck_training")
 

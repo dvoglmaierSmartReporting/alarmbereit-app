@@ -111,7 +111,7 @@ copy_dir() {
 
 copy_dir "$SRC_BASE/assets"   "$DST_BASE/assets"
 copy_dir "$SRC_BASE/content"  "$DST_BASE/content"
-copy_dir "$SRC_BASE/errors"   "$DST_BASE/errors"
+# copy_dir "$SRC_BASE/errors"   "$DST_BASE/errors"
 copy_dir "$SRC_BASE/fonts"    "$DST_BASE/fonts"
 copy_dir "$SRC_BASE/helper"   "$DST_BASE/helper"
 copy_dir "$SRC_BASE/screens"  "$DST_BASE/screens"

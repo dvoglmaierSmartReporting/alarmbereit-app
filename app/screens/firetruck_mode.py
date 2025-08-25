@@ -7,7 +7,7 @@ from helper.functions import (
     load_total_storage,
     mode_str2bool,
     change_screen_to,
-    get_firetruck_abbreviation_values,
+    get_firetruck_abbreviations,
 )
 from helper.file_handling import get_selected_city_state
 from helper.aspect_image import get_city_image
@@ -29,7 +29,7 @@ class Firetruck_Mode(Screen):
     def on_pre_enter(self):
         # read from Config
         self.selected_city, _ = get_selected_city_state()
-        self.abbreviations = get_firetruck_abbreviation_values(self.selected_city)
+        self.abbreviations = get_firetruck_abbreviations(self.selected_city)
 
         # update city logo
         self.ids.logo_layout.clear_widgets()
@@ -149,7 +149,7 @@ class Firetruck_Mode(Screen):
         ### BUTTON Übung mit Bildern ###
         firetruck_btn6 = Button(
             pos_hint={"center_x": 0.5},
-            text=f"{strings.BUTTON_STR_TRAINING_NEW} --->",
+            text=f"{strings.BUTTON_STR_TRAINING_NEW}",
             font_size="32sp",
             # Modus not ready yet
             # disabled=True,

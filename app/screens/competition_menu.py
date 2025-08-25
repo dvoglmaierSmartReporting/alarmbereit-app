@@ -21,8 +21,11 @@ class Competition_Menu(Screen):
     def __init__(self, **kwargs):
         super(Competition_Menu, self).__init__(**kwargs)
         # load available competitions
-        total_competition_questions = load_total_competition_questions()
-        self.total_competitions = list(total_competition_questions.keys())
+        self.total_competition_questions = load_total_competition_questions()
+
+        self.total_competitions = list(self.total_competition_questions.keys())
+
+        self.competition_descriptions = self.get_competition_descriptions()
 
         # update button strings
         # self.choose_mode_label.text = strings.BUTTON_STR_SOLUTION
@@ -37,9 +40,12 @@ class Competition_Menu(Screen):
         self.selected_mode = strings.BUTTON_STR_TRAINING
 
         # create button for all competitions
-        for competitions in self.total_competitions:
+        for competitions, description in zip(
+            self.total_competitions, self.competition_descriptions.values()
+        ):
             btn = Button(
-                text=competitions,
+                text=f"{competitions}\n[size=25]{description}[/size]",
+                markup=True,  # Enable markup for custom text positioning
                 font_size="32sp",
                 size_hint_y=None,
                 height=200,
@@ -47,6 +53,22 @@ class Competition_Menu(Screen):
             )
             btn.bind(on_release=self.on_button_release)
             self.ids.competitions_layout.add_widget(btn)
+
+    def get_competition_descriptions(self) -> dict:
+        descriptions = dict()
+
+        for competition in self.total_competition_questions.keys():
+            if isinstance(self.total_competition_questions[competition]["Desc"], str):
+                desc = self.total_competition_questions[competition]["Desc"]
+                desc = cast(str, desc)
+
+                descriptions[competition] = desc
+            else:
+                raise TypeError(
+                    f"Questions {competition} is not configured correctly. Desc key is not a str."
+                )
+
+        return descriptions
 
     def on_pre_enter(self):
         # Reset the scrollview to the top

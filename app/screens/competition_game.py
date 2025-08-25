@@ -33,10 +33,9 @@ class Competition_Game(Screen):
     def select_competition(self, selected_competition: str):
         # troubleshooting: fix competition
         # self.selected_competition = "Funk"
-        self.selected_competition = selected_competition
+        self.selected_competition = selected_competition.split("\n")[0]
 
-        self.competition_label = cast(Label, self.competition_label)
-        self.competition_label.text = selected_competition
+        self.ids.competition_label.text = self.selected_competition
 
     def hide_label(self, *args):
         self.extra_time_label = cast(Label, self.extra_time_label)
@@ -80,7 +79,6 @@ class Competition_Game(Screen):
             )
 
         else:
-            # Clock.unschedule(self.update_timer)  # Stop the timer when it reaches 0
             self.end_game()
             pass
 
@@ -125,11 +123,12 @@ class Competition_Game(Screen):
         change_screen_to("competition_menu")
 
     def reset_competition_questions(self):
-        tmp = load_total_competition_questions().get(self.selected_competition, {})
+        self.competition_dict = (
+            load_total_competition_questions()
+            .get(self.selected_competition, {})
+            .get("Questions", {})
+        )
 
-        self.competition_dict = tmp.get("Questions")
-
-        # TODO: update new question structure "Questions"
         self.question_ids = list(self.competition_dict.keys())
         self.question_ids_bak = list(self.competition_dict.keys())
 

@@ -127,3 +127,6 @@ Hallein:
     TestTruck:
       high_score: 0
       high_strike: 0
+    TestTruck2:
+      high_score: 0
+      high_strike: 0

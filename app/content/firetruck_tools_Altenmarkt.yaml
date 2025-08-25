@@ -13,14 +13,14 @@ LF8:
       - Handfunkgerät
       - Feuerlöscher
       - Erste-Hilfe-Rucksack
-      - Pressluftatmer
+      - Atemschutzgerät
       - Rettungsleine
       - Signalfahnen
       - Handlampe
       - Einweghandschuhe
       - Bogensäge
       - Säbelsäge
-      - Erste-Hilfe-Koffer
+      - Verbandskasten
       - Patientenschutz
       - Abschleppseil
       - Trösterbär
@@ -37,10 +37,10 @@ LF8:
       - Schäkel
       - Einwegoverall
     G1:
-      - TS 8/8
+      - Tragkraftspritze
       - Abgasschlauch TS
-      - Stabfast lang
-      - Stabfast kurz
+      - Stab-Fast lang
+      - Stab-Fast kurz
       - Glasmaster
       - Kettensatz Spreizer
       - Hydr. Rettungssatz
@@ -55,11 +55,11 @@ LF8:
       - Motorsäge
       - Zubehör Motorsäge
       - Kombikanister
-      - Schnittschutz
+      - Schnittschutzhose
       - Benzinkanister 5 l
       - Trennschleifer
       - Zubehör Trennschleifer
-      - Trennscheiben
+      - Ersatzblätter Trennschleifer
       - Schutzbrille
       - Zubehör Stativ
       - Hitzeschutzanzug
@@ -73,7 +73,7 @@ LF8:
       - Warndreieck "Feuerwehr"
       - Verkehrsleitkegel
       - Warnblitzleuchte
-      - Pressluftatmer
+      - Atemschutzgerät
       - Türmarkierungen
     G4:
       - Strahlrohr C
@@ -86,7 +86,7 @@ LF8:
       - Werkzeugkasten
       - Standrohr
       - Schachthaken
-      - Schuttmulde
+      - Schuttwanne
       - MicroCAFS
       - ABC-Kupplungsschlüssel
       - Unterflur-Hydrantenschlüssel
@@ -121,12 +121,12 @@ LF8:
       - Halteleine
       - Ventilleine
       - Übergangsstück A-B
-      - Sammelstück
+      - Sammelstück BB-A
       - ABC-Kupplungsschlüssel
     Dach:
-      - Steckleiter
+      - Steckleiter 
       - Schleifkorbtrage
-      - Schlauchaufwickler
+      - Schlauchrollwagen
       - Einreißhaken
       - Ölbindemittel
       - Ölbindeflies
@@ -137,7 +137,7 @@ LF8:
       - Vorschaltgerät Powermoon
       - Stativ Powermoon
       - Sichtschutz
-      - Straßenesen
+      - Straßenbesen
       - Alurandschaufel
       - Abschleppstange
       - Spineboard
@@ -156,14 +156,14 @@ LF20:
       - Handfunkgerät
       - Anhaltekelle
       - Wärmebildkamera
-      - Pressluftatmer
+      - Atemschutzgerät
       - Rettungsleine
       - Warnweste
       - Erste-Hilfe-Rucksack
       - Handlampe
       - Ex-Ox-Meter
       - Atemschutz Überwachungstafel
-      - Vollmaske
+      - Atemschutz-Vollmaske
       - Einweghandschuhe
       - Türmarkierungen
       - Getränke
@@ -172,11 +172,11 @@ LF20:
       - Krankenhausdecke
       - Brandfluchthaube
     G1:
-      - Überdruckentlüfter
+      - Drucklüfter
       - Bogensäge
       - Schäkel
       - Axt
-      - Sarpine
+      - Sappel
       - Brechstange
       - Halligan-Tool
       - Spaltaxt
@@ -185,7 +185,7 @@ LF20:
       - Warndreieck "Feuerwehr"
       - Verkehrsleitkegel
       - Warnblitzleuchte
-      - Wasserwerfer mobil
+      - Wasserwerfer tragbar
       - Spineboard
       - Zubehör Spineboard
       - Säbelsäge
@@ -204,7 +204,7 @@ LF20:
       - Kombikanister
       - Ölbindemittel
       - Rettungsweste
-      - Zubehör f. Tunnel
+      - Zubehör Tunnel
       - Ölwehr
       - VU-Koffer
       - Bindestränge
@@ -224,11 +224,11 @@ LF20:
       - Druckluftschlauch
       - Eingebaute Kabeltrommel
       - Schachthaken
+      - Schachtdeckelheber
       - Hohlstrahlrohr B m. Stützkrümmer
-      - Hohlstrahlrohr
+      - Hohlstrahlrohr Hohlstrahlrohr
       - Schaumaufsatz
       - Absperrband
-      - Schachtdeckelheber
       - Absperrschlüssel Gas
       - Stativ
       - Fluterbrücke
@@ -257,7 +257,7 @@ LF20:
       - Krankenhausdecke
       - Gummistiefel
       - Einwegoverall
-      - Spülmittelflasche
+      - Spülmittel
       - Infektionsset
       - Chemieschutzhandschuhe
       - Chemieschutzanzug leicht
@@ -276,7 +276,7 @@ LF20:
       - Kugelhahn
       - Systemtrenner
       - ABC-Kupplungsschlüssel
-      - Rauchabschluss
+      - Rauchvorhang
       - Arbeitsleine
       - Rettungstrupptasche
       - Druckschlauch B
@@ -309,9 +309,9 @@ LF20:
       - Systemtrenner
       - Unterflur-Deckelhammer
     Dach:
-      - Schiebeleiter
+      - Schiebeleiter 2-teilig
       - Steckleiter
-      - Verbindungsteil
+      - Steckleiter Verbindungsteil
       - Schleifkorbtrage
       - Einreißhaken
       - Absperrschlüssel Gas

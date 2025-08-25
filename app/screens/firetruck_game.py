@@ -13,7 +13,7 @@ from popups.text_popup import TextPopup
 from helper.functions import (
     change_screen_to,
     get_ToolQuestion_instances,
-    get_firetruck_layout_value,
+    get_firetruck_layouts,
 )
 from helper.file_handling import save_to_scores_file, get_score_value
 from helper.settings import Settings
@@ -41,9 +41,7 @@ class Firetruck_Game(Screen):
         self.firetruck_label = cast(Label, self.firetruck_label)
         self.firetruck_label.text = selected_firetruck
 
-        self.room_layout = get_firetruck_layout_value(
-            selected_firetruck, self.selected_city
-        )
+        self.room_layout = get_firetruck_layouts(selected_firetruck, self.selected_city)
 
     def hide_label(self, *args):
         self.extra_time_label = cast(Label, self.extra_time_label)

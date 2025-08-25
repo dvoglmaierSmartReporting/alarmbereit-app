@@ -57,6 +57,9 @@ class Strings:
         self.TITLE_INFO_POPUP = "Info"
         self.BUTTON_CLOSE_POPUP = "Schließen"
 
+        # errors
+        self.ERROR_IMAGE_NOT_FOUND = "Bild nicht verfügbar"
+
 
 class Firetruck_TrainingText_AllTools:
     def __init__(self, tool_amount: int) -> None:
@@ -153,11 +156,8 @@ class About_Text:
     def __init__(self) -> None:
         self.TEXT = """
 © 2025 Freiwillige Feuerwehr der Stadt Hallein
-
 Idee und Entwicklung: Dominik Voglmaier
-
 Support: d.voglmaier@feuerwehr-hallein.at
-
 Version: 2.5.1
 """
 

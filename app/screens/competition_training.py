@@ -26,14 +26,18 @@ class Competition_Training(Screen):
     def select_competition(self, selected_competition):
         # troubleshooting: fix competition
         # self.selected_competition = "Funk"
-        self.selected_competition = selected_competition
+        self.selected_competition = selected_competition.split("\n")[0]
+
+        self.ids.competition_label.text = self.selected_competition
 
     def shuffle_questions(self):
         shuffle(self.question_ids)
 
     def reset_competition_questions(self):
-        self.competition_dict = load_total_competition_questions().get(
-            self.selected_competition, {}
+        self.competition_dict = (
+            load_total_competition_questions()
+            .get(self.selected_competition, {})
+            .get("Questions", {})
         )
 
         self.question_ids = list(self.competition_dict.keys())

@@ -543,34 +543,25 @@
                     pos: self.pos
 
         # TOOL
-        #Label:
-        #    size_hint_y: 2
-        #    id: tool_label
-        #    font_size: "28sp"
         Label:
             size_hint_y: 3
             id: tool_label
             font_size: "28sp"
                 
         # FIRETRUCK ROOMS
-        #GridLayout:
-        #    size_hint_y: 7
-        #    id: firetruck_rooms_layout
-        #    spacing: "3dp"
-        #    cols: 2
         BoxLayout:
             size_hint_y: 6
             id: firetruck_rooms_layout
-            # either GridLayout or FloatLayout
 
 
-<Firetruck_Training_New>:
-    name: "firetruck_training_new"
+<Firetruck_Training_With_Images>:
+    name: "firetruck_training_with_images"
 
     # IDs
     firetruck_label: firetruck_label
     strike_label: strike_label
     high_strike_label: high_strike_label
+    progress_bar_answer: progress_bar_answer
     tool_image_layout: tool_image_layout
     firetruck_rooms_layout: firetruck_rooms_layout
 
@@ -626,35 +617,23 @@
                     text_size: self.size
 
         # SEPARATOR
-        BoxLayout:
-            size_hint_y: None
-            height: 2
-            canvas.before:
-                Color:
-                    rgba: 0.5, 0.5, 0.5, 1
-                Rectangle:
-                    size: self.size
-                    pos: self.pos
+        ProgressBar:
+            size_hint_y: 0.1
+            id: progress_bar_answer
 
         # TOOL / IMAGE / ANSWER
         BoxLayout:
             size_hint_y: 4.5
-            orientation: 'vertical'
             id: tool_image_layout
+            orientation: 'vertical'
 
             # either tool-label + tool-image
             # or answer image
-                
+
         # FIRETRUCK ROOMS
-        #GridLayout:
-        #    size_hint_y: 4
-        #    id: firetruck_rooms_layout
-        #    spacing: "3dp"
-        #    cols: 2
         BoxLayout:
             size_hint_y: 4.5
             id: firetruck_rooms_layout
-            # either GridLayout or FloatLayout
 
 
 <Firetruck_Game>:
@@ -1015,6 +994,7 @@
     name: "competition_training"
 
     # IDs
+    competition_label: competition_label
     question_id_label: question_id_label
     question_scrollview: question_scrollview
     question_label: question_label
@@ -1041,8 +1021,20 @@
                 on_release:
                     root.go_back()
 
-            Label:  # placeholder
+            BoxLayout:
                 size_hint_x: 2
+                orientation: 'vertical'
+
+                Label:
+                    size_hint_y: 1
+                    id: competition_label
+                    font_size: "20sp"
+                    halign: "left"
+                    valign: "middle"
+                    text_size: self.size
+
+                Label:  # placeholder
+                    size_hint_y: 1
 
             Label:
                 size_hint_x: 3
@@ -1150,8 +1142,6 @@
                 font_size: "32sp"
                 on_release:
                     root.manager.get_screen('competition_game').end_game()
-                    #root.manager.get_screen('competition_game').go_back()
-                    #root.go_back()
 
             BoxLayout:
                 size_hint_x: 2

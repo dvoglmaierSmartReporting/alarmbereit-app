@@ -1,5 +1,5 @@
 Funk Bronze:
-  Desc: ""
+  Desc: "Funkleistungsabzeichen"
   Questions:
     1:
       Q: Was ist vor Eröffnung eines Funkgespräches zu beachten?
@@ -283,8 +283,8 @@ Funk Bronze:
         - Das Gerät in den Bereitschaftsmodus schalten.
 
 Funk Silber:
-  Desc: ""
-  Questions:  
+  Desc: "Funkleistungsabzeichen"
+  Questions:
     1:
       Q: Was versteht man unter Funkverkehr?
       A:
@@ -567,7 +567,7 @@ Funk Silber:
         - Ein kurzer Signalton von 30 Sekunden.
 
 Funk Gold:
-  Desc: ""
+  Desc: "Funkleistungsabzeichen"
   Questions:
     1:
       Q: Warum ist bei der Durchgabe von längeren Funksprüchen in Sprechpausen die Sprechtaste freizugeben?
@@ -5089,8 +5089,6 @@ BDLP ME+Trupps Stufe II:
         - Eine Wache, die den Brand dokumentiert
         - Eine Maßnahme, die nur bei Großbränden erforderlich ist
         - Freiwillige Helfer, die den Einsatzort bewachen
-
-
 # Test:
 #   Desc: "Test Fragen Entwicklung"
 #   Questions:
