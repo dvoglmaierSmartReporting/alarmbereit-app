@@ -164,7 +164,9 @@ class Firetruck_Training_With_Images(Screen):
             )
             self.ids.tool_image_layout.add_widget(tool_image)
         except Exception as e:
-            print(f"Tool image load failed: {e}")
+            print(
+                f"Tool image load failed. Error: {e}, Tool file: {self.current_tool_question.tool_image_name}"
+            )
             # else:
             placeholder = Label(text=strings.ERROR_IMAGE_NOT_FOUND, size_hint_y=3)
             self.ids.tool_image_layout.add_widget(placeholder)

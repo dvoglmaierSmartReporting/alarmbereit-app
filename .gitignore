@@ -47,3 +47,6 @@ Unterlagen Bewerbe _ Leistungsabzeichen
 
 # tests
 .hypothesis
+
+# backup assets
+app/assets/backup

@@ -427,8 +427,8 @@ Tank1:
       - Hydrantenschlüssel
       - Fernstuerung Lichtmast
       - Fußtaster Haspel
-    Dach:
       - Schiebeleiter 2-teilig
+    Dach:
       - Kombileiter
       - Hakenleiter
       - Monsunrohr
@@ -1249,13 +1249,13 @@ TestTruck:
   Abb: "Dummy"
   Tools:
     Fahrer / GK:
-      - Handfunkgerät
-      - Gasmessgerät
-      - Gefahrguthelfer
-      - Meldertasche
-      - Auto-Öffnungswerkzeug <Raumbild:hallein_rl/fahrer_gk_tuer>
-      - Atemschutzgerät
-      - Atemschutz-Vollmaske
+      # - Handfunkgerät
+      # - Gasmessgerät
+      # - Gefahrguthelfer
+      # - Meldertasche
+      # - Auto-Öffnungswerkzeug <Raumbild:hallein_rl/fahrer_gk_tuer>
+      # - Atemschutzgerät
+      # - Atemschutz-Vollmaske
       - Tablet <Raumbild:hallein_rl/fahrer_gk_tuer>
       - Defibrillator
       - Handlampe
@@ -1273,45 +1273,45 @@ TestTruck:
       - Feuerwehrgurt <Raumbild:hallein_rl/mannschaft_links>
       - Tragetuch <Raumbild:hallein_rl/mannschaft_rechts>
       - Notrettungsset
-      - Personensicherungsset
-      - Basis Sichern/Auffangen
-      - Erste-Hilfe-Rucksack
-      - Einweghandschuhe <Bild:tools/rl_einweghandschuhe> <Raumbild:hallein_rl/mannschaft_links>
-      - Krankenhausdecke
-      - Atemschutzgerät <Raumbild:hallein_rl/mannschaft_links>
-      - Atemschutz-Vollmaske <Raumbild:hallein_rl/mannschaft_links>
-      - Reservemaske <Bild:tools/atemschutz-vollmaske>
-      - Reserveflasche
-      - Brandfluchthaube
-      - Wärmebildkamera
-      - Schutzhandschuhe
-      - Warnweste <Raumbild:hallein_rl/mannschaft_links>
-      - Handlampe <Raumbild:hallein_rl/mannschaft_links>
-      - Kühlbox <Bild:tools/rl_kuehlbox>
-      - Leichensack
-      - Trainingsanzug
-      - Handtuch
-      - Warnblitzleuchte
-      - Reserve-Atemschutzfilter
-      - Auer 3S-Maske
-      - Filteratemschutzset
-      - Plane
+      # - Personensicherungsset
+      # - Basis Sichern/Auffangen
+      # - Erste-Hilfe-Rucksack
+      # - Einweghandschuhe <Bild:tools/rl_einweghandschuhe> <Raumbild:hallein_rl/mannschaft_links>
+      # - Krankenhausdecke
+      # - Atemschutzgerät <Raumbild:hallein_rl/mannschaft_links>
+      # - Atemschutz-Vollmaske <Raumbild:hallein_rl/mannschaft_links>
+      # - Reservemaske <Bild:tools/atemschutz-vollmaske>
+      # - Reserveflasche
+      # - Brandfluchthaube
+      # - Wärmebildkamera
+      # - Schutzhandschuhe
+      # - Warnweste <Raumbild:hallein_rl/mannschaft_links>
+      # - Handlampe <Raumbild:hallein_rl/mannschaft_links>
+      # - Kühlbox <Bild:tools/rl_kuehlbox>
+      # - Leichensack
+      # - Trainingsanzug
+      # - Handtuch
+      # - Warnblitzleuchte
+      # - Reserve-Atemschutzfilter
+      # - Auer 3S-Maske
+      # - Filteratemschutzset
+      # - Plane
     G1:
-      - Spineboard <Raumbild:hallein_rl/g1_links>
-      - Zubehör Spineboard <Raumbild:hallein_rl/g1_links>
-      - Arbeitsmesser
-      - Bogensäge
-      - Bolzenschneider <Raumbild:hallein_rl/g1_innen>
-      - Hacke lang
-      - Hacke kurz
-      - Vorschlaghammer
-      - Handfäustel
-      - Brechstange <Raumbild:hallein_rl/g1_innen>
-      - Feuerwehraxt
-      - Halligan-Tool m. Hammer
-      - Straßenbesen <Raumbild:hallein_rl/g1_innen>
-      - Spitzschaufel <Raumbild:hallein_rl/g1_innen>
-      - Alurandschaufel <Raumbild:hallein_rl/g1_innen>
+      # - Spineboard <Raumbild:hallein_rl/g1_links>
+      # - Zubehör Spineboard <Raumbild:hallein_rl/g1_links>
+      # - Arbeitsmesser
+      # - Bogensäge
+      # - Bolzenschneider <Raumbild:hallein_rl/g1_innen>
+      # - Hacke lang
+      # - Hacke kurz
+      # - Vorschlaghammer
+      # - Handfäustel
+      # - Brechstange <Raumbild:hallein_rl/g1_innen>
+      # - Feuerwehraxt
+      # - Halligan-Tool m. Hammer
+      # - Straßenbesen <Raumbild:hallein_rl/g1_innen>
+      # - Spitzschaufel <Raumbild:hallein_rl/g1_innen>
+      # - Alurandschaufel <Raumbild:hallein_rl/g1_innen>
       - Krampen <Raumbild:hallein_rl/g1_innen>
       #- Sappel <Raumbild:hallein_rl/g1_innen>
       - Bindedraht <Raumbild:hallein_rl/g1_tuer>
@@ -1324,6 +1324,27 @@ TestTruck:
       - Rundschlinge <Raumbild:hallein_rl/g1_innen>
       - Kette einsträngig <Raumbild:hallein_rl/g1_innen>
       - Kette zweisträngig <Raumbild:hallein_rl/g1_innen>
+    G2:
+      - test g2
+      - test g2 innen <Raumbild:hallein_rl/g2_innen>
+      - test g2 rechts <Raumbild:hallein_rl/g2_rechts>
+    G3:
+      - test g3
+    G4:
+      - test g4
+    G5:
+      - test g5
+      - test g5 innen <Raumbild:hallein_rl/g5_innen>
+    G6:
+      - test g6
+    G7 / Heck:
+      - test heck
+      - test heck außen <Raumbild:hallein_rl/g7_heck_aussen>
+      - test heck haspel <Raumbild:hallein_rl/g7_heck_haspel>
+
+    Dach:
+      - test dach
+      - test dach offen <Raumbild:hallein_rl/dach_offen>
 
 TestTruck2:
   Layout: "7-Raum"
