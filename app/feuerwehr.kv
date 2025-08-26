@@ -722,7 +722,90 @@
             id: firetruck_rooms_layout
             spacing: "3dp"
             cols: 2
-        
+
+
+<Firetruck_Exam>:
+    name: "firetruck_exam"
+
+    # IDs
+    firetruck_label: firetruck_label
+    strike_label: strike_label
+    high_strike_label: high_strike_label
+    tool_label: tool_label
+    firetruck_rooms_layout: firetruck_rooms_layout
+
+    # SCREEN
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: "10dp"
+        padding: "5dp"
+
+        # HEADER
+        BoxLayout:
+            size_hint_y: 1
+            spacing: "3dp"
+
+            Button:
+                size_hint_x: 1
+                text: "<"
+                font_size: "32sp"
+                on_release:
+                    root.go_back()
+    
+            Label:
+                size_hint_x: 2
+                id: firetruck_label
+                font_size: "20sp"
+                halign: "left"
+                valign: "middle"
+                text_size: self.size
+            
+            Label:  # placeholder
+                size_hint_x: 1
+            
+            BoxLayout:
+                size_hint_x: 2
+                orientation: 'vertical'
+
+                Label:
+                    size_hint_y: 1
+                    id: high_strike_label
+                    font_size: "20sp"
+                    halign: "center"
+                    valign: "middle"
+                    text_size: self.size
+
+                Label:
+                    size_hint_y: 1
+                    id: strike_label
+                    font_size: "25sp"
+                    halign: "center"
+                    valign: "middle"
+                    text_size: self.size
+
+        # SEPARATOR
+        BoxLayout:
+            size_hint_y: None
+            height: 2
+            canvas.before:
+                Color:
+                    rgba: 0.5, 0.5, 0.5, 1
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+
+        # TOOL
+        Label:
+            size_hint_y: 3
+            id: tool_label
+            font_size: "28sp"
+                
+        # FIRETRUCK ROOMS
+        BoxLayout:
+            size_hint_y: 6
+            id: firetruck_rooms_layout
+            # either GridLayout or FloatLayout
+
 
 <Label_List>:
     name: label_list
