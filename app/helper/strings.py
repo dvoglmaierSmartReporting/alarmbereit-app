@@ -15,7 +15,9 @@ class Strings:
         self.BUTTON_STR_ACKNOWLEDGEMENT = "Dank"
         self.BUTTON_STR_SETTINGS = "Einst."
         self.BUTTON_STR_TRAINING = "Übung"  # "Lernen" # "Erkunden"
-        self.BUTTON_STR_TRAINING_NEW = f"{self.BUTTON_STR_TRAINING} mit Bildern"
+        self.BUTTON_STR_TRAINING_NEW = (
+            f"{self.BUTTON_STR_TRAINING} mit Bildern\n(coming soon)"
+        )
         self.BUTTON_STR_GAME = "Zeitdruck"  # "Herausfordern" # "Testen" # "Challengen"
         self.BUTTON_STR_BROWSE = "Stöbern"
         self.BUTTON_STR_IMAGES = "Bilder"

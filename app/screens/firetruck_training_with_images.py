@@ -1,10 +1,8 @@
 from kivy.uix.image import Image
-from kivy.uix.floatlayout import FloatLayout
 from kivy.graphics import Color, Rectangle
 from kivy.uix.button import Button
 from kivy.uix.label import Label
 from kivy.uix.screenmanager import Screen
-from kivy.uix.progressbar import ProgressBar
 from kivy.clock import Clock
 
 from random import shuffle

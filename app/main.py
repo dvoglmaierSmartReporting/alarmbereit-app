@@ -23,7 +23,7 @@ from screens.login_screen import Login
 from screens.highscore_screen import Highscore
 from screens.acknowledgement_screen import Acknowledgment
 
-from screens.firetruck_mode import Firetruck_Mode
+# from screens.firetruck_mode import Firetruck_Mode
 from screens.firetruck_menu import Firetruck_Menu
 from screens.firetruck_training import Firetruck_Training
 
@@ -31,9 +31,10 @@ from screens.firetruck_training_with_images import Firetruck_Training_With_Image
 from screens.firetruck_game import Firetruck_Game
 from screens.firetruck_browse import Firetruck_Browse
 from screens.firetruck_images import Firetruck_Images
-from screens.competition_menu import Competition_Menu
-from screens.competition_training import Competition_Training
-from screens.competition_game import Competition_Game
+
+# from screens.competition_menu import Competition_Menu
+# from screens.competition_training import Competition_Training
+# from screens.competition_game import Competition_Game
 
 # from popups.error_popup import ErrorPopup
 from popups.text_popup import TextPopup
@@ -85,16 +86,16 @@ class FeuerwehrApp(App):
             # self.sm.add_widget(Info_Screen())
             self.sm.add_widget(Highscore())
             self.sm.add_widget(Acknowledgment())
-            self.sm.add_widget(Firetruck_Mode())
+            # self.sm.add_widget(Firetruck_Mode())
             self.sm.add_widget(Firetruck_Menu())
             self.sm.add_widget(Firetruck_Training())
             self.sm.add_widget(Firetruck_Training_With_Images())
             self.sm.add_widget(Firetruck_Game())
             self.sm.add_widget(Firetruck_Browse())
             self.sm.add_widget(Firetruck_Images())
-            self.sm.add_widget(Competition_Menu())
-            self.sm.add_widget(Competition_Training())
-            self.sm.add_widget(Competition_Game())
+            # self.sm.add_widget(Competition_Menu())
+            # self.sm.add_widget(Competition_Training())
+            # self.sm.add_widget(Competition_Game())
 
             # Android return button
             # Bind keyboard handler after window is initialized
@@ -140,8 +141,9 @@ class FeuerwehrApp(App):
                     # "info_screen",
                     "highscore_screen",
                     "acknowledgement_screen",
-                    "firetruck_mode",
-                    "competition_menu",
+                    # "firetruck_mode",
+                    # "competition_menu",
+                    "firetruck_menu",
                 ]:
                     self.sm.transition.direction = "right"
                     self.sm.current = "start_menu"
@@ -158,20 +160,20 @@ class FeuerwehrApp(App):
                     self.sm.current = "firetruck_menu"
                     return True
 
-                elif current in [
-                    "firetruck_menu",
-                ]:
-                    self.sm.transition.direction = "right"
-                    self.sm.current = "firetruck_mode"
-                    return True
+                # elif current in [
+                #     "firetruck_menu",
+                # ]:
+                #     self.sm.transition.direction = "right"
+                #     self.sm.current = "firetruck_mode"
+                #     return True
 
-                elif current in [
-                    "competition_training",
-                    "competition_game",
-                ]:
-                    self.sm.transition.direction = "right"
-                    self.sm.current = "competition_menu"
-                    return True
+                # elif current in [
+                #     "competition_training",
+                #     "competition_game",
+                # ]:
+                #     self.sm.transition.direction = "right"
+                #     self.sm.current = "competition_menu"
+                #     return True
 
             return False
 

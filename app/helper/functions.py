@@ -220,6 +220,10 @@ def break_tool_name(tool_name: str, max_character: int = 27) -> str:
 def create_scores_text(scores: scores, selected_city: str) -> str:
     spacing = "   "
     separator = " - "
+    section_line_char = "="
+    section_line = "\n\n" + section_line_char * 35 + "\n\n"
+    # doubleline = "\n========================================\n\n"
+
     factor = settings.FIRETRUCK_TRAINING_STRIKE_FACTOR
 
     filtered_scores = scores.get(map_selected_city_2short_name(selected_city), {})
@@ -233,41 +237,33 @@ def create_scores_text(scores: scores, selected_city: str) -> str:
     else:
         output = selected_city
 
-    output += "\n\n"
+    output += section_line
 
-    # always display firetrucks on top
     truck_scores = filtered_scores.get("firetrucks")
     truck_scores = cast(departmentTruckScores, truck_scores)
-    output_2add = create_firetruck_score_text(
+
+    output += create_firetruck_score_text(
         truck_scores, spacing=spacing, separator=separator
     )
 
-    output += output_2add + "\n"
+    total_score = sum_firetruck_scores(truck_scores)
 
-    # always display competitions below
-    competition_scores = filtered_scores.get("competitions")
-    competition_scores = cast(departmentCompetitionScores, competition_scores)
-    output_2add = create_competition_score_text(
-        competition_scores, spacing=spacing, separator=separator
+    output += f"Summe - {dot_separator(total_score)} Punkte"
+
+    output += section_line
+
+    output += create_firetruck_score_text(
+        truck_scores,
+        spacing=spacing,
+        separator=separator,
+        key="high_strike",
     )
 
-    output += output_2add
+    total_strike = sum_firetruck_scores(truck_scores, key="high_strike")
 
-    # Calculation
-    total_score, total_strike = sum_firetruck_scores_strikes(truck_scores)
-    total_score += sum_competition_score(competition_scores)
-
-    doubleline = "\n========================================\n\n"
-
-    output += doubleline
-    output += (
-        f"Gesamt {strings.BUTTON_STR_GAME}: {dot_separator(total_score)} Punkte\n\n"
-    )
-    output += (
-        f"Gesamt {strings.BUTTON_STR_TRAINING}: {total_strike} x {factor} Punkte\n\n"
-    )
-    output += f"([i]Punkte aus {strings.BUTTON_STR_TRAINING} werden mit\nFaktor {factor} multipliziert[/i])\n"
-    output += doubleline
+    output += f"Summe - {total_strike} x {factor} = {total_strike * factor} Punkte\n\n"
+    output += f"([i]Punkte aus {strings.BUTTON_STR_TRAINING} werden mit\nFaktor {factor} multipliziert[/i])"
+    output += section_line
 
     total = total_score + total_strike * factor
     output += f"[b]Gesamtpunktzahl{separator}{dot_separator(total)} Punkte[/b]"
@@ -288,83 +284,81 @@ def create_firetruck_score_text(
     scores: departmentTruckScores,
     spacing: str,
     separator: str,
+    key: str = "high_score",
 ) -> str:
-    output = strings.BUTTON_STR_FIRETRUCKS + ":\n\n"
+    # output = strings.BUTTON_STR_FIRETRUCKS + ":\n\n"
+    output = ""
 
     longest_key = len(max(scores.keys(), key=len))
 
     # define score column width
     characters = 0
     for data in scores.values():
-        if isinstance(data.get("high_score"), int):
-            score = data.get("high_score", 0)
+        if isinstance(data.get(key), int):
+            score = data.get(key, 0)
             score = cast(int, score)
 
             if extra_charactor(score) > characters:
                 characters = extra_charactor(score)
     characters += 1
 
-    # print Zeitdruck
+    if key == "high_score":
+        # game mode
+        output += strings.BUTTON_STR_GAME + ":\n\n"
+    else:
+        # training mode
+        output += strings.BUTTON_STR_TRAINING + ":\n\n"
+
     for truck, data in scores.items():
         data = cast(dict, data)
 
         truck_space = spacing + " " * (longest_key - len(truck)) + truck + separator
 
-        if isinstance(data.get("high_score"), int):
-            score = data.get("high_score", 0)
+        if isinstance(data.get(key), int):
+            score = data.get(key, 0)
             score = cast(int, score)
 
-        score_space = (
-            strings.BUTTON_STR_GAME
-            + ":"
-            + " " * (characters - extra_charactor(score))
-            + dot_separator(score)
-        )
+        score_space = " " * (characters - extra_charactor(score)) + dot_separator(score)
         output += truck_space + score_space + "\n"
 
-    output += "\n"
-
-    # print Übung
-    for truck, data in scores.items():
-        data = cast(dict, data)
-
-        truck_space = spacing + " " * (longest_key - len(truck)) + truck + separator
-
-        if isinstance(data.get("high_strike"), int):
-            strike = data.get("high_strike", 0)
-            strike = cast(int, strike)
-
-        strike_space = (
-            strings.BUTTON_STR_TRAINING
-            + ":"
-            + " " * (4 - len(str(strike)))
-            + dot_separator(strike)
-        )
-        output += truck_space + strike_space + "\n"
-
-    return output
+    return output + "\n"
 
 
-def sum_firetruck_scores_strikes(scores: departmentTruckScores) -> tuple[int, int]:
-    total_score = 0
-    total_strike = 0
+def sum_firetruck_scores(scores: departmentTruckScores, key: str = "high_score") -> int:
+    total = 0
 
     for data in scores.values():
         data = cast(dict, data)
 
-        if isinstance(data.get("high_score"), int):
-            score = data.get("high_score", 0)
+        if isinstance(data.get(key), int):
+            score = data.get(key, 0)
             score = cast(int, score)
 
-        total_score += score
+        total += score
 
-        if isinstance(data.get("high_strike"), int):
-            strike = data.get("high_strike", 0)
-            strike = cast(int, strike)
+    return total
 
-        total_strike += strike
 
-    return total_score, total_strike
+# def sum_firetruck_scores_strikes(scores: departmentTruckScores) -> tuple[int, int]:
+#     total_score = 0
+#     total_strike = 0
+
+#     for data in scores.values():
+#         data = cast(dict, data)
+
+#         if isinstance(data.get("high_score"), int):
+#             score = data.get("high_score", 0)
+#             score = cast(int, score)
+
+#         total_score += score
+
+#         if isinstance(data.get("high_strike"), int):
+#             strike = data.get("high_strike", 0)
+#             strike = cast(int, strike)
+
+#         total_strike += strike
+
+#     return total_score, total_strike
 
 
 def create_competition_score_text(

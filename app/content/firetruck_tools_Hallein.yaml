@@ -1,3 +1,55 @@
+Kommando:
+  Layout: "Kommando"
+  Abb: "KDO"
+  Tools:
+    Innenraum:
+      - Kühlbox
+      - Handfunkgerät
+      - Schlüsselset
+      - Leichensack
+    Oberboden:
+      - Handlampe
+      - Überwurf Einsatzleiter
+      - Erste-Hilfe-Rucksack
+      - Fotoapparat
+      - GoPro
+      - Feldstecher
+      - Magnetlampe
+      - SO2 Messgerät
+      - Wärmebildkamera
+      - Warnblitzleuchte
+      - Fernthermometer
+    Schublade 1:
+      - LED Markierleuchtenset
+      - Warnweste
+      - Anhaltekelle
+      - Absperrband
+      - Warndreieck "Feuerwehr"
+    Schublade 2:
+      - Rettungsleine
+      - Personensicherungsset
+      - Dreieckstuch
+      - Lageführungskoffer
+      - Überwurf Gruppenkommandant
+      - Infomaterial Einsatzleitung
+      - Taktikfolie
+    Schublade 3:
+      - ABC-Pulverlöscher
+      - ABC-Trockenlöscher
+      - Löschdecke
+      - Halligan-Tool klein
+      - Bolzenschneider kurz
+      - Werkzeugkoffer
+    Schublade 4:
+      - Schneeketten
+      - Schutzhelm
+      - Atemschutz-Vollmaske
+      - Vollmaske m. Filter
+      - Ersatzfilter
+      - Schutzhandschuhe
+      - Schutzjacke
+      - Atemschutzgerät
+
 RüstLösch:
   Layout: "7-Raum"
   Abb: "RLFA 2000"
@@ -467,6 +519,7 @@ Leiter:
       - Entfernungsmesser
       - Schutzhandschuhe
       - Schlüsselset
+      - Ersatzakku E-Motorsäge
     Korb:
       - Druckschlauch C 7 m
       - Hohlstrahlrohr
@@ -476,6 +529,7 @@ Leiter:
       - Schaufeltrage
       - Forsthelm
       - Schnittschutzhose
+      - Schnittschutzbeinlinge
       - Schnittschutzjacke
       - E-Motorsäge
       - Ersatzkette Motorsäge
@@ -492,6 +546,10 @@ Leiter:
       - Druckluftschlauch
       - Zimmermannshammer
       - Absturzsicherung MSA
+      - Druckluft Ausgang
+      - 230 V Ausgang
+      - Forstkiste Korbaufnahme
+      - Aufstiegsleiter
     G2:
       - Notrettungsset m. Rettungsleine
       - Halten u. Sichern Rucksack
@@ -502,9 +560,10 @@ Leiter:
       - Reserveflasche
       - Brandfluchthaube
       - Safety Peak Rucksack
-      - Feuerwehrgurt
+      - Feuerwehrgurt m. Verbindungsmittel
       - Vollmaske m. Filter
-      - Verbindungsmittel
+      - Straßenbesen
+      - Alurandschaufel
     G3:
       - ABC-Kupplungsschlüssel
       - Druckschlauch B 25 m orange
@@ -1244,109 +1303,109 @@ Rüst:
       - Einreißhaken
       - Deckenstützen
 
-TestTruck:
-  Layout: "7-Raum"
-  Abb: "Dummy"
-  Tools:
-    Fahrer / GK:
-      # - Handfunkgerät
-      # - Gasmessgerät
-      # - Gefahrguthelfer
-      # - Meldertasche
-      # - Auto-Öffnungswerkzeug <Raumbild:hallein_rl/fahrer_gk_tuer>
-      # - Atemschutzgerät
-      # - Atemschutz-Vollmaske
-      - Tablet <Raumbild:hallein_rl/fahrer_gk_tuer>
-      - Defibrillator
-      - Handlampe
-      - Steuerung Seilwinde <Bild:tools/rl_steuerung seilwinde>
-      - Dreikantschlüssel
-      - Suchscheinwerfer
-      - Reserve-Akku Strongarm
-      - Schlüsselset <Bild:tools/rl_schluesselset>
-      - Hinweiszettel Lift <Bild:tools/rl_hinweiszettel lift>
-    Mannschaft:
-      - Anhaltekelle <Raumbild:hallein_rl/mannschaft_rechts>
-      - Handfunkgerät <Raumbild:hallein_rl/mannschaft_rechts>
-      - Warndreieck "Feuerwehr" <Raumbild:hallein_rl/mannschaft_rechts>
-      - Rettungsleine <Raumbild:hallein_rl/mannschaft_links>
-      - Feuerwehrgurt <Raumbild:hallein_rl/mannschaft_links>
-      - Tragetuch <Raumbild:hallein_rl/mannschaft_rechts>
-      - Notrettungsset
-      # - Personensicherungsset
-      # - Basis Sichern/Auffangen
-      # - Erste-Hilfe-Rucksack
-      # - Einweghandschuhe <Bild:tools/rl_einweghandschuhe> <Raumbild:hallein_rl/mannschaft_links>
-      # - Krankenhausdecke
-      # - Atemschutzgerät <Raumbild:hallein_rl/mannschaft_links>
-      # - Atemschutz-Vollmaske <Raumbild:hallein_rl/mannschaft_links>
-      # - Reservemaske <Bild:tools/atemschutz-vollmaske>
-      # - Reserveflasche
-      # - Brandfluchthaube
-      # - Wärmebildkamera
-      # - Schutzhandschuhe
-      # - Warnweste <Raumbild:hallein_rl/mannschaft_links>
-      # - Handlampe <Raumbild:hallein_rl/mannschaft_links>
-      # - Kühlbox <Bild:tools/rl_kuehlbox>
-      # - Leichensack
-      # - Trainingsanzug
-      # - Handtuch
-      # - Warnblitzleuchte
-      # - Reserve-Atemschutzfilter
-      # - Auer 3S-Maske
-      # - Filteratemschutzset
-      # - Plane
-    G1:
-      # - Spineboard <Raumbild:hallein_rl/g1_links>
-      # - Zubehör Spineboard <Raumbild:hallein_rl/g1_links>
-      # - Arbeitsmesser
-      # - Bogensäge
-      # - Bolzenschneider <Raumbild:hallein_rl/g1_innen>
-      # - Hacke lang
-      # - Hacke kurz
-      # - Vorschlaghammer
-      # - Handfäustel
-      # - Brechstange <Raumbild:hallein_rl/g1_innen>
-      # - Feuerwehraxt
-      # - Halligan-Tool m. Hammer
-      # - Straßenbesen <Raumbild:hallein_rl/g1_innen>
-      # - Spitzschaufel <Raumbild:hallein_rl/g1_innen>
-      # - Alurandschaufel <Raumbild:hallein_rl/g1_innen>
-      - Krampen <Raumbild:hallein_rl/g1_innen>
-      #- Sappel <Raumbild:hallein_rl/g1_innen>
-      - Bindedraht <Raumbild:hallein_rl/g1_tuer>
-      - Gerüstklammer <Raumbild:hallein_rl/g1_tuer>
-      - Nägel <Raumbild:hallein_rl/g1_tuer>
-      - Schachthaken
-      - Seilklemme <Raumbild:hallein_rl/g1_tuer>
-      - Stahlseil 5 m <Bild:tools/stahlseil> <Raumbild:hallein_rl/g1_innen>
-      - Stahlseil 10 m <Bild:tools/stahlseil> <Raumbild:hallein_rl/g1_innen>
-      - Rundschlinge <Raumbild:hallein_rl/g1_innen>
-      - Kette einsträngig <Raumbild:hallein_rl/g1_innen>
-      - Kette zweisträngig <Raumbild:hallein_rl/g1_innen>
-    G2:
-      - test g2
-      - test g2 innen <Raumbild:hallein_rl/g2_innen>
-      - test g2 rechts <Raumbild:hallein_rl/g2_rechts>
-    G3:
-      - test g3
-    G4:
-      - test g4
-    G5:
-      - test g5
-      - test g5 innen <Raumbild:hallein_rl/g5_innen>
-    G6:
-      - test g6
-    G7 / Heck:
-      - test heck
-      - test heck außen <Raumbild:hallein_rl/g7_heck_aussen>
-      - test heck haspel <Raumbild:hallein_rl/g7_heck_haspel>
+# TestTruck:
+#   Layout: "7-Raum"
+#   Abb: "Dummy"
+#   Tools:
+#     Fahrer / GK:
+#       # - Handfunkgerät
+#       # - Gasmessgerät
+#       # - Gefahrguthelfer
+#       # - Meldertasche
+#       # - Auto-Öffnungswerkzeug <Raumbild:hallein_rl/fahrer_gk_tuer>
+#       # - Atemschutzgerät
+#       # - Atemschutz-Vollmaske
+#       - Tablet <Raumbild:hallein_rl/fahrer_gk_tuer>
+#       - Defibrillator
+#       - Handlampe
+#       - Steuerung Seilwinde <Bild:tools/rl_steuerung seilwinde>
+#       - Dreikantschlüssel
+#       - Suchscheinwerfer
+#       - Reserve-Akku Strongarm
+#       - Schlüsselset <Bild:tools/rl_schluesselset>
+#       - Hinweiszettel Lift <Bild:tools/rl_hinweiszettel lift>
+#     Mannschaft:
+#       - Anhaltekelle <Raumbild:hallein_rl/mannschaft_rechts>
+#       - Handfunkgerät <Raumbild:hallein_rl/mannschaft_rechts>
+#       - Warndreieck "Feuerwehr" <Raumbild:hallein_rl/mannschaft_rechts>
+#       - Rettungsleine <Raumbild:hallein_rl/mannschaft_links>
+#       - Feuerwehrgurt <Raumbild:hallein_rl/mannschaft_links>
+#       - Tragetuch <Raumbild:hallein_rl/mannschaft_rechts>
+#       - Notrettungsset
+#       # - Personensicherungsset
+#       # - Basis Sichern/Auffangen
+#       # - Erste-Hilfe-Rucksack
+#       # - Einweghandschuhe <Bild:tools/rl_einweghandschuhe> <Raumbild:hallein_rl/mannschaft_links>
+#       # - Krankenhausdecke
+#       # - Atemschutzgerät <Raumbild:hallein_rl/mannschaft_links>
+#       # - Atemschutz-Vollmaske <Raumbild:hallein_rl/mannschaft_links>
+#       # - Reservemaske <Bild:tools/atemschutz-vollmaske>
+#       # - Reserveflasche
+#       # - Brandfluchthaube
+#       # - Wärmebildkamera
+#       # - Schutzhandschuhe
+#       # - Warnweste <Raumbild:hallein_rl/mannschaft_links>
+#       # - Handlampe <Raumbild:hallein_rl/mannschaft_links>
+#       # - Kühlbox <Bild:tools/rl_kuehlbox>
+#       # - Leichensack
+#       # - Trainingsanzug
+#       # - Handtuch
+#       # - Warnblitzleuchte
+#       # - Reserve-Atemschutzfilter
+#       # - Auer 3S-Maske
+#       # - Filteratemschutzset
+#       # - Plane
+#     G1:
+#       # - Spineboard <Raumbild:hallein_rl/g1_links>
+#       # - Zubehör Spineboard <Raumbild:hallein_rl/g1_links>
+#       # - Arbeitsmesser
+#       # - Bogensäge
+#       # - Bolzenschneider <Raumbild:hallein_rl/g1_innen>
+#       # - Hacke lang
+#       # - Hacke kurz
+#       # - Vorschlaghammer
+#       # - Handfäustel
+#       # - Brechstange <Raumbild:hallein_rl/g1_innen>
+#       # - Feuerwehraxt
+#       # - Halligan-Tool m. Hammer
+#       # - Straßenbesen <Raumbild:hallein_rl/g1_innen>
+#       # - Spitzschaufel <Raumbild:hallein_rl/g1_innen>
+#       # - Alurandschaufel <Raumbild:hallein_rl/g1_innen>
+#       - Krampen <Raumbild:hallein_rl/g1_innen>
+#       #- Sappel <Raumbild:hallein_rl/g1_innen>
+#       - Bindedraht <Raumbild:hallein_rl/g1_tuer>
+#       - Gerüstklammer <Raumbild:hallein_rl/g1_tuer>
+#       - Nägel <Raumbild:hallein_rl/g1_tuer>
+#       - Schachthaken
+#       - Seilklemme <Raumbild:hallein_rl/g1_tuer>
+#       - Stahlseil 5 m <Bild:tools/stahlseil> <Raumbild:hallein_rl/g1_innen>
+#       - Stahlseil 10 m <Bild:tools/stahlseil> <Raumbild:hallein_rl/g1_innen>
+#       - Rundschlinge <Raumbild:hallein_rl/g1_innen>
+#       - Kette einsträngig <Raumbild:hallein_rl/g1_innen>
+#       - Kette zweisträngig <Raumbild:hallein_rl/g1_innen>
+#     G2:
+#       - test g2
+#       - test g2 innen <Raumbild:hallein_rl/g2_innen>
+#       - test g2 rechts <Raumbild:hallein_rl/g2_rechts>
+#     G3:
+#       - test g3
+#     G4:
+#       - test g4
+#     G5:
+#       - test g5
+#       - test g5 innen <Raumbild:hallein_rl/g5_innen>
+#     G6:
+#       - test g6
+#     G7 / Heck:
+#       - test heck
+#       - test heck außen <Raumbild:hallein_rl/g7_heck_aussen>
+#       - test heck haspel <Raumbild:hallein_rl/g7_heck_haspel>
 
-    Dach:
-      - test dach
-      - test dach offen <Raumbild:hallein_rl/dach_offen>
+#     Dach:
+#       - test dach
+#       - test dach offen <Raumbild:hallein_rl/dach_offen>
 
-TestTruck2:
+# TestTruck2:
   Layout: "7-Raum"
   Abb: "Dummy"
   Tools:
@@ -1400,6 +1459,8 @@ TestTruck2:
       - Steckleiter Verbindungsteil <Bild:tools_RL/verbindungsstueck> <Raumbild:truck_RL/roof_left>
       - Ausräumhaken <Bild:tools_RL/ausraeumhaken> <Raumbild:truck_RL/roof_right>
       - Moosgummiplatte <Raumbild:truck_RL/roof_right>
+
+
 # Voraus+Ölanh.:
 #   <<: *tunnel
 #   Ölanh. G1:

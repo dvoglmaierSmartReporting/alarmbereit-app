@@ -90,33 +90,48 @@ def get_ruest_layout() -> floatButtons:
     ]
 
 
+def get_kommando_layout() -> floatButtons:
+    return [
+        ("Innenraum", 0.35, 0.12, 0.55, 0.99),
+        ("Oberboden", 0.73, 0.13, (1 - 0.73) / 2 + 0.005, 0.271 + 0.115 * 3 + 0.13),
+        ("Schublade 1", 0.67, 0.115, 0.17, 0.271 + 0.115 * 3),
+        ("Schublade 2", 0.67, 0.115, 0.17, 0.271 + 0.115 * 2),
+        ("Schublade 3", 0.67, 0.115, 0.17, 0.271 + 0.115),
+        ("Schublade 4", 0.67, 0.16, 0.17, 0.271),
+    ]
+
+
 def build_answer_layout(room_layout: str, calling_screen: str) -> FloatLayout:
     # display background and buttons
     float = FloatLayout(size_hint=(1, 1))
 
     if room_layout in ["7-Raum"]:
-        bgd_image = os.path.join(ASSETS_DIR, "truck.jpg")
+        bgd_image = os.path.join(ASSETS_DIR, "truck.png")
         buttons = get_7_rooms_layout()
 
     elif room_layout in ["7-Raum-DE"]:
-        bgd_image = os.path.join(ASSETS_DIR, "truck.jpg")
+        bgd_image = os.path.join(ASSETS_DIR, "truck.png")
         buttons = get_7_rooms_DE_layout()
 
     elif room_layout in ["5-Raum"]:
-        bgd_image = os.path.join(ASSETS_DIR, "truck.jpg")
+        bgd_image = os.path.join(ASSETS_DIR, "truck.png")
         buttons = get_5_rooms_layout()
 
     elif room_layout in ["Leiter"]:
-        bgd_image = os.path.join(ASSETS_DIR, "leiter.jpg")
+        bgd_image = os.path.join(ASSETS_DIR, "leiter.png")
         buttons = get_leiter_layout()
 
     elif room_layout in ["Rüst", "Ruest"]:
-        bgd_image = os.path.join(ASSETS_DIR, "ruest.jpg")
+        bgd_image = os.path.join(ASSETS_DIR, "ruest.png")
         buttons = get_ruest_layout()
 
     elif room_layout in ["Voraus"]:
-        bgd_image = os.path.join(ASSETS_DIR, "voraus.jpg")
+        bgd_image = os.path.join(ASSETS_DIR, "voraus.png")
         buttons = get_voraus_layout()
+
+    elif room_layout in ["Kommando"]:
+        bgd_image = os.path.join(ASSETS_DIR, "kommando.png")
+        buttons = get_kommando_layout()
 
     else:
         raise NotImplementedError("Layout not found.")

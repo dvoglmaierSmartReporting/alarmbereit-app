@@ -17,6 +17,7 @@ from helper.strings import Strings
 strings = Strings()
 
 
+# DEPRECATED since 4.6.0
 class Firetruck_Mode(Screen):
     def __init__(self, **kwargs):
         super(Firetruck_Mode, self).__init__(**kwargs)

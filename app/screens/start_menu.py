@@ -1,13 +1,13 @@
 from kivy.uix.label import Label
 from kivy.uix.button import Button
-from kivy.uix.boxlayout import BoxLayout
-from kivy.uix.layout import Layout
-from kivy.uix.image import Image
 from kivy.uix.screenmanager import Screen, SlideTransition
 
-from typing import cast
-
-from helper.functions import change_screen_to, create_scores_text
+from helper.functions import (
+    create_scores_text,
+    load_total_storage,
+    mode_str2bool,
+    get_firetruck_abbreviations,
+)
 from helper.file_handling import (
     read_scores_file,
     get_selected_city_state,
@@ -27,47 +27,42 @@ class Start_Menu(Screen):
 
     def on_pre_enter(self):
         self.selected_city, _ = get_selected_city_state()
+        self.abbreviations = get_firetruck_abbreviations(self.selected_city)
 
         # update city logo
         self.ids.logo_layout.clear_widgets()
         self.ids.logo_layout.add_widget(get_city_image(self.selected_city))
 
-    def on_kv_post(self, base_widget):
-        # type annotations
-        self.score_button = cast(Button, self.score_button)
-        # self.acknowledgement_button = cast(Button, self.acknowledgement_button)
-        self.content_layout = cast(Layout, self.content_layout)
+        self.ids.score_button.text = strings.BUTTON_STR_SCORE
 
-        # update button strings
-        self.score_button.text = strings.BUTTON_STR_SCORE
-        # self.acknowledgement_button.text = strings.BUTTON_STR_ACKNOWLEDGEMENT
+        self.content_layout.clear_widgets()
 
-        # Container where the additional widget will be displayed
-        # Part of content_layout
-        self.display_container = BoxLayout(
-            size_hint=(1, 3), orientation="vertical", spacing="5dp", padding="20dp"
-        )
+        # ### BUTTON Übung ###
+        firetruck_training_btn = self.create_button(strings.BUTTON_STR_TRAINING)
+        self.content_layout.add_widget(firetruck_training_btn)
 
-        # FIRETRUCKS BUTTON
-        fahrzeuge_button = Button(
-            size_hint=(1, 1),
-            text=strings.BUTTON_STR_FIRETRUCKS,
-            font_size="32sp",
-        )
-        fahrzeuge_button.bind(
-            on_release=lambda instance: change_screen_to("firetruck_mode", "left")
-        )
+        # ### BUTTON Zeitdruck ###
+        firetruck_game_btn = self.create_button(strings.BUTTON_STR_GAME)
+        self.content_layout.add_widget(firetruck_game_btn)
 
-        # COMPETITIONS BUTTON
-        competitions_button = Button(
-            size_hint=(1, 1),
-            text=strings.BUTTON_STR_COMPETITIONS,
-            font_size="32sp",
-        )
+        # ### BUTTON Stöbern ###
+        # firetruck_browse_btn = self.create_button(strings.BUTTON_STR_BROWSE)
+        # self.content_layout.add_widget(firetruck_browse_btn)
 
-        competitions_button.bind(
-            on_release=lambda instance: change_screen_to("competition_menu", "left")
-        )
+        # ### BUTTON Bilder ###
+        # firetruck_images_btn = self.create_button(strings.BUTTON_STR_IMAGES)
+        # self.content_layout.add_widget(firetruck_images_btn)
+
+        # ### BUTTON Leistungsprüfung ###
+        # firetruck_exam_btn = self.create_button(strings.BUTTON_STR_EXAM)
+        # self.content_layout.add_widget(firetruck_exam_btn)
+
+        ### BUTTON Übung mit Bildern ###
+        if self.selected_city in ["Hallein"]:
+            firetruck_training_with_images_btn = self.create_button(
+                strings.BUTTON_STR_TRAINING_NEW, disabled=True
+            )
+            self.content_layout.add_widget(firetruck_training_with_images_btn)
 
         # ABOUT TEXT / IMPRESSUM
         about_label = Label(
@@ -76,20 +71,111 @@ class Start_Menu(Screen):
             font_size="13sp",
             halign="center",
         )
+        self.content_layout.add_widget(about_label)
 
         # TEAM122 LOGO
         team122_logo = get_team122_image()
-
-        # Add widgets to layout
-        self.content_layout.add_widget(fahrzeuge_button)
-        self.content_layout.add_widget(competitions_button)
-        self.content_layout.add_widget(about_label)
         self.content_layout.add_widget(team122_logo)
+
+    def create_button(self, button_text: str, disabled: bool = False) -> Button:
+        btn = Button(
+            pos_hint={"center_x": 0.5},
+            text=button_text,
+            font_size="32sp",
+            disabled=disabled,
+        )
+
+        btn.bind(
+            on_release=lambda instance: self.forward_mode2menu_manually(
+                "firetruck_menu", button_text
+            )
+        )
+
+        btn.bind(on_release=lambda instance: self.update_firetruck_buttons(button_text))
+        return btn
+
+    def create_placeholder(self) -> Label:
+        return Label(
+            size_hint=(1, 1),
+            font_size="32sp",
+        )
 
     def forward_mode2menu_manually(self, menu_screen: str, mode: str):
         self.manager.transition = SlideTransition(direction="left")
         self.manager.current = menu_screen
         self.manager.get_screen(menu_screen).ids.mode_label.text = mode
+
+    def update_firetruck_buttons(self, mode_name: str):
+        self.manager.get_screen("firetruck_menu").ids.firetrucks_scrollview.scroll_y = 1
+
+        # load available firetrucks
+        total_storage = load_total_storage(self.selected_city)
+        self.total_firetrucks = list(total_storage.keys())
+
+        # create button for all firetrucks
+        self.manager.get_screen("firetruck_menu").ids.firetrucks_layout.clear_widgets()
+
+        mode = mode_str2bool(mode_name.strip())
+        (
+            mode_training,
+            mode_training_new,
+            mode_game,
+            mode_browse,
+            mode_images,
+            mode_exam,
+        ) = mode
+
+        if mode_training or mode_game:
+            # excluded_firetrucks = ["BDLP-Tank1", "TestTruck"]
+            excluded_firetrucks = ["BDLP-Tank1", "TestTruck", "TestTruck2"]
+            disabled_firetrucks = []  # ["Tank2"]
+
+            for firetruck in self.total_firetrucks:
+
+                if firetruck in excluded_firetrucks:
+                    # skip BDLP and always add at the bottom of the list
+                    continue
+
+                if firetruck in disabled_firetrucks:
+                    self.add_firetruck_button(firetruck, disabled=True)
+                else:
+                    self.add_firetruck_button(firetruck)
+
+        elif mode_browse:
+            for firetruck in self.total_firetrucks:
+                self.add_firetruck_button(firetruck)
+
+        elif mode_images:
+            firetruck = "RüstLösch"
+            self.add_firetruck_button(firetruck)
+
+        elif mode_exam:
+            # create button for BDLP-Tank1
+            firetruck = "BDLP-Tank1"
+            self.add_firetruck_button(firetruck)
+
+        elif mode_training_new:
+            # create button for BDLP-Tank1
+            firetruck = "TestTruck"
+            self.add_firetruck_button(firetruck)
+
+    def add_firetruck_button(self, firetruck: str, disabled: bool = False):
+
+        abbreviation = self.abbreviations.get(firetruck, "")
+        # Create a button with two strings, one centered and one at the bottom right
+        btn = Button(
+            text=f"{firetruck}{' '*3}[size=30]{abbreviation}[/size]",
+            markup=True,  # Enable markup for custom text positioning
+            font_size="32sp",
+            size_hint_y=None,
+            height=200,
+            size_hint_x=1,
+            disabled=disabled,
+        )
+        btn.bind(on_release=self.manager.get_screen("firetruck_menu").on_button_release)
+
+        # Add the button to the layout
+        self.manager.get_screen("firetruck_menu").ids.firetrucks_layout.add_widget(btn)
 
     def update_info_text(self):
         info_text = (
