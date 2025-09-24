@@ -16,16 +16,10 @@ from kivy.uix.screenmanager import ScreenManager
 from kivy.config import Config
 
 from app.main import FeuerwehrApp
-from app.screens.competition_menu import Competition_Menu
-from app.screens.competition_training import Competition_Training
-from app.screens.competition_game import Competition_Game
 from app.screens.firetruck_menu import Firetruck_Menu
 from app.screens.firetruck_training import Firetruck_Training
 from app.screens.firetruck_game import Firetruck_Game
-from app.helper.file_handling import (
-    load_total_competition_questions,
-    load_total_firetruck_storage,
-)
+from app.helper.file_handling import load_total_firetruck_storage
 
 
 @pytest.fixture(scope="module")
@@ -66,6 +60,7 @@ def test_all_screens_load(app):
     Config._sections.clear()
     Config.setdefaults("content", {"city": "Hallein", "state": "Salzburg"})
     Config.setdefaults("graphics", {"width": "600", "height": "1000"})
+    Config.setdefaults("graphics", {"min_state_time": ".035"})
 
     for screen_name in screen_names:
         screen_manager.current = screen_name
@@ -79,133 +74,63 @@ def test_all_screens_load(app):
         EventLoop.idle()
 
 
-# #### COMPETITION MENU ####
+### FIRETRUCK TRAINING ####
+
+cities = ["Hallein", "Bad Dürrnberg", "Altenmarkt a.d. Alz"]
 
 
-# @pytest.mark.parametrize("mode", ["Übung", "Zeitdruck"])
-# def test_competition_menu__select_mode(mode):
-#     screen = Competition_Menu(name="competition_menu")
-#     try:
-#         screen.mode_label = mode
-#         print(f"competition_menu loaded successfully for mode {mode}.")
-#     except Exception as e:
-#         pytest.fail(f"Mode ('{mode}') raised an exception: {e}")
+@pytest.mark.parametrize("city_name", cities)
+def test_firetruck_training__select_firetruck(city_name):
+    # need to be loaded in test, because function is
+    # using get_running_app() methode, which is simulated above
+    firetrucks = list(load_total_firetruck_storage(city_name).keys())
+
+    for firetruck_name in firetrucks:
+        screen = Firetruck_Training(name="firetruck_training")
+        try:
+            screen.select_city(city_name)
+            screen.select_firetruck(firetruck_name)
+            screen.play()
+            print(f"✅ Loaded firetruck_training '{firetruck_name}'")
+        except Exception as e:
+            pytest.fail(f"❌ Failed to load firetruck_training '{firetruck_name}': {e}")
 
 
-# #### FIRETRUCK MENU ####
-
-
-# @pytest.mark.parametrize("mode", ["Übung", "Zeitdruck"])
-# def test_firetruck_menu__select_mode(mode):
-#     screen = Firetruck_Menu(name="firetruck_menu")
-#     try:
-#         screen.mode_label = mode
-#         print(f"firetruck_menu loaded successfully for mode {mode}.")
-#     except Exception as e:
-#         pytest.fail(f"Mode ('{mode}') raised an exception: {e}")
-
-
-# #### COMPETITION TRAINING ####
-
-# competitions = list(load_total_competition_questions().keys())
-
-
-# @pytest.mark.parametrize("competition_name", competitions)
-# def test_competition_training__select_competition(competition_name):
-#     screen = Competition_Training(name="competition_training")
-#     try:
-#         screen.select_competition(competition_name)
-#         screen.play()
-#         print(
-#             f"competition_training loaded successfully for competition {competition_name}."
-#         )
-#     except Exception as e:
-#         pytest.fail(
-#             f"select_competition('{competition_name}') raised an exception: {e}"
-#         )
-
-
-# def test_competition_training__select_invalid_competition__should_fail():
-#     screen = Competition_Training(name="competition_training")
-#     invalid_competition = "Blub - not exists"
-#     with pytest.raises(Exception):
-#         screen.select_competition(invalid_competition)
-#         screen.play()
-
-
-#### COMPETITION GAME ####
-
-
-# @pytest.mark.parametrize("competition_name", competitions)
-# def test_competition_game__select_competition(competition_name):
-#     screen = Competition_Game(name="competition_game")
-#     try:
-#         screen.select_competition(competition_name)
-#         screen.play()
-#         print(
-#             f"competition_game loaded successfully for competition {competition_name}."
-#         )
-#     except Exception as e:
-#         pytest.fail(
-#             f"select_competition('{competition_name}') raised an exception: {e}"
-#         )
-
-
-# def test_competition_game__select_invalid_competition__should_fail():
-#     screen = Competition_Game(name="competition_game")
-#     invalid_competition = "Blub - not exists"
-#     with pytest.raises(Exception):
-#         screen.select_competition(invalid_competition)
-#         screen.play()
-
-
-#### FIRETRUCK TRAINING ####
-
-
-# def test_firetruck_training__select_firetruck():
-#     # need to be loaded in test, because function is
-#     # using get_running_app() methode, which is simulated above
-#     firetrucks = list(load_total_firetruck_storage().keys())
-
-#     for firetruck_name in firetrucks:
-#         screen = Firetruck_Training(name="firetruck_training")
-#         try:
-#             screen.select_firetruck(firetruck_name)
-#             screen.play()
-#             print(f"✅ Loaded firetruck_training '{firetruck_name}'")
-#         except Exception as e:
-#             pytest.fail(f"❌ Failed to load firetruck_training '{firetruck_name}': {e}")
-
-
-# def test_firetruck_training__select_invalid_firetruck__should_fail():
-#     screen = Firetruck_Training(name="firetruck_training")
-#     invalid_firetruck = "Tank300"
-#     with pytest.raises(Exception):
-#         screen.select_firetruck(invalid_firetruck)
-#         screen.play()
+@pytest.mark.parametrize("city_name", cities)
+def test_firetruck_training__select_invalid_firetruck__should_fail(city_name):
+    screen = Firetruck_Training(name="firetruck_training")
+    invalid_firetruck = "Tank300"
+    with pytest.raises(Exception):
+        screen.select_city(city_name)
+        screen.select_firetruck(invalid_firetruck)
+        screen.play()
 
 
 #### FIRETRUCK GAME ####
 
 
-# def test_firetruck_game__select_firetruck():
-#     # need to be loaded in test, because function is
-#     # using get_running_app() methode, which is simulated above
-#     firetrucks = list(load_total_firetruck_storage().keys())
+@pytest.mark.parametrize("city_name", cities)
+def test_firetruck_game__select_firetruck(city_name):
+    # need to be loaded in test, because function is
+    # using get_running_app() methode, which is simulated above
+    firetrucks = list(load_total_firetruck_storage(city_name).keys())
 
-#     for firetruck_name in firetrucks:
-#         screen = Firetruck_Game(name="firetruck_game")
-#         try:
-#             screen.select_firetruck(firetruck_name)
-#             screen.play()
-#             print(f"✅ Loaded firetruck_game '{firetruck_name}'")
-#         except Exception as e:
-#             pytest.fail(f"❌ Failed to load firetruck_game '{firetruck_name}': {e}")
+    for firetruck_name in firetrucks:
+        screen = Firetruck_Game(name="firetruck_game")
+        try:
+            screen.select_city(city_name)
+            screen.select_firetruck(firetruck_name)
+            screen.play()
+            print(f"✅ Loaded firetruck_game '{firetruck_name}'")
+        except Exception as e:
+            pytest.fail(f"❌ Failed to load firetruck_game '{firetruck_name}': {e}")
 
 
-# def test_firetruck_game__select_invalid_firetruck__should_fail():
-#     screen = Firetruck_Game(name="firetruck_game")
-#     invalid_firetruck = "Tank300"
-#     with pytest.raises(Exception):
-#         screen.select_firetruck(invalid_firetruck)
-#         screen.play()
+@pytest.mark.parametrize("city_name", cities)
+def test_firetruck_game__select_invalid_firetruck__should_fail(city_name):
+    screen = Firetruck_Game(name="firetruck_game")
+    invalid_firetruck = "Tank300"
+    with pytest.raises(Exception):
+        screen.select_city(city_name)
+        screen.select_firetruck(invalid_firetruck)
+        screen.play()
