@@ -13,6 +13,20 @@ from helper.custom_types import *
 strings = Strings()
 
 
+def load_from_txt(file_path: str) -> str:
+    try:
+        with open(file_path, "r") as file:
+            return file.read()
+    except Exception as e:
+        print(f"Error reading file: {e}")
+        print(f"{file_path = }")
+        return ""
+    # except FileNotFoundError:
+    #     print(f"Error: File at {file_path} not found.")
+    # except Exception as e:
+    #     print(f"An unexpected error occurred: {e}")
+
+
 def load_from_yaml(file_path: str) -> dict:
     try:
         with open(file_path, "r") as file:

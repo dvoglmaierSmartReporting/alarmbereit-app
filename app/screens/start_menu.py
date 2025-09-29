@@ -11,6 +11,7 @@ from helper.functions import (
 from helper.file_handling import (
     read_scores_file,
     get_selected_city_state,
+    load_from_txt,
 )
 from helper.aspect_image import get_city_image, get_team122_image
 from helper.strings import Strings, About_Text
@@ -24,6 +25,12 @@ class Start_Menu(Screen):
         super(Start_Menu, self).__init__(**kwargs)
 
         self.ids.all_cities_button.text = strings.BUTTON_STR_ALL_CITIES
+
+        # read version value from app-version file
+        try:
+            self.version = load_from_txt("app/app-version").strip()
+        except Exception as e:
+            self.version = "0.0.0"
 
     def on_pre_enter(self):
         self.selected_city, _ = get_selected_city_state()
@@ -67,7 +74,7 @@ class Start_Menu(Screen):
         # ABOUT TEXT / IMPRESSUM
         about_label = Label(
             size_hint=(1, 1),
-            text=About_Text().TEXT,
+            text=About_Text(self.version).TEXT,
             font_size="13sp",
             halign="center",
         )

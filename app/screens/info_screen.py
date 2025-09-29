@@ -3,10 +3,9 @@ from kivy.uix.screenmanager import Screen
 
 from typing import cast
 
-from helper.strings import About_Text, Strings
+from helper.strings import Strings
 from helper.functions import change_screen_to
 
-about_text = About_Text().TEXT
 strings = Strings()
 
 

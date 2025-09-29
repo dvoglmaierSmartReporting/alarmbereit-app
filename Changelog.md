@@ -1,3 +1,10 @@
+# version 2.6.1
+
+fix:
+
+- correct app version displayed on screen
+- use tabulate for highscore screen
+
 # version 2.6.0
 
 features:

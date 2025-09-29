@@ -155,12 +155,12 @@ werden. Schicke deine Anfrage an
 
 
 class About_Text:
-    def __init__(self) -> None:
-        self.TEXT = """
+    def __init__(self, version) -> None:
+        self.TEXT = f"""
 © 2025 Freiwillige Feuerwehr der Stadt Hallein
 Idee und Entwicklung: Dominik Voglmaier
 Support: d.voglmaier@feuerwehr-hallein.at
-Version: 2.5.1
+Version: {version}
 """
 
 

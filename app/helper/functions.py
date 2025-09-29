@@ -2,12 +2,12 @@ from kivy.app import App
 
 import os
 from typing import cast
+from tabulate import tabulate
 
 from helper.settings import Settings
 from helper.strings import Strings
 from helper.file_handling import (
     load_total_storage,
-    load_total_competition_questions,
     map_selected_city_2short_name,
 )
 from helper.game_class import ToolQuestion
@@ -221,13 +221,15 @@ def create_scores_text(scores: scores, selected_city: str) -> str:
     spacing = "   "
     separator = " - "
     section_line_char = "="
-    section_line = "\n\n" + section_line_char * 35 + "\n\n"
+    section_line = "\n\n" + section_line_char * 30 + "\n\n"
     # doubleline = "\n========================================\n\n"
 
     factor = settings.FIRETRUCK_TRAINING_STRIKE_FACTOR
 
     filtered_scores = scores.get(map_selected_city_2short_name(selected_city), {})
     filtered_scores = cast(departmentScores, filtered_scores)
+    truck_scores = filtered_scores.get("firetrucks")
+    truck_scores = cast(departmentTruckScores, truck_scores)
 
     # Text generation
     if selected_city == "Hallein":
@@ -238,9 +240,6 @@ def create_scores_text(scores: scores, selected_city: str) -> str:
         output = selected_city
 
     output += section_line
-
-    truck_scores = filtered_scores.get("firetrucks")
-    truck_scores = cast(departmentTruckScores, truck_scores)
 
     output += create_firetruck_score_text(
         truck_scores, spacing=spacing, separator=separator
@@ -289,39 +288,50 @@ def create_firetruck_score_text(
     # output = strings.BUTTON_STR_FIRETRUCKS + ":\n\n"
     output = ""
 
-    longest_key = len(max(scores.keys(), key=len))
+    # longest_key = len(max(scores.keys(), key=len))
 
-    # define score column width
-    characters = 0
-    for data in scores.values():
-        if isinstance(data.get(key), int):
-            score = data.get(key, 0)
-            score = cast(int, score)
+    # # define score column width
+    # characters = 0
+    # for data in scores.values():
+    #     if isinstance(data.get(key), int):
+    #         score = data.get(key, 0)
+    #         score = cast(int, score)
 
-            if extra_charactor(score) > characters:
-                characters = extra_charactor(score)
-    characters += 1
+    #         if extra_charactor(score) > characters:
+    #             characters = extra_charactor(score)
+    # characters += 1
 
     if key == "high_score":
         # game mode
-        output += strings.BUTTON_STR_GAME + ":\n\n"
+        # output += strings.BUTTON_STR_GAME + ":\n\n"
+        header = strings.BUTTON_STR_GAME
     else:
         # training mode
-        output += strings.BUTTON_STR_TRAINING + ":\n\n"
+        # output += strings.BUTTON_STR_TRAINING + ":\n\n"
+        header = strings.BUTTON_STR_TRAINING
 
-    for truck, data in scores.items():
-        data = cast(dict, data)
+    # for truck, data in scores.items():
+    #     data = cast(dict, data)
 
-        truck_space = spacing + " " * (longest_key - len(truck)) + truck + separator
+    #     truck_space = spacing + " " * (longest_key - len(truck)) + truck + separator
 
-        if isinstance(data.get(key), int):
-            score = data.get(key, 0)
-            score = cast(int, score)
+    #     if isinstance(data.get(key), int):
+    #         score = data.get(key, 0)
+    #         score = cast(int, score)
 
-        score_space = " " * (characters - extra_charactor(score)) + dot_separator(score)
-        output += truck_space + score_space + "\n"
+    #     score_space = " " * (characters - extra_charactor(score)) + dot_separator(score)
+    #     output += truck_space + score_space + "\n"
 
-    return output + "\n"
+    # output += "\n"
+
+    to_plot = []
+    for truck, score in scores.items():
+        to_plot.append([truck, score.get(key, 0)])
+    output += tabulate(to_plot, headers=[header, "Punkte"])
+
+    # output += "\n"
+
+    return output + "\n\n"
 
 
 def sum_firetruck_scores(scores: departmentTruckScores, key: str = "high_score") -> int:
@@ -337,70 +347,3 @@ def sum_firetruck_scores(scores: departmentTruckScores, key: str = "high_score")
         total += score
 
     return total
-
-
-# def sum_firetruck_scores_strikes(scores: departmentTruckScores) -> tuple[int, int]:
-#     total_score = 0
-#     total_strike = 0
-
-#     for data in scores.values():
-#         data = cast(dict, data)
-
-#         if isinstance(data.get("high_score"), int):
-#             score = data.get("high_score", 0)
-#             score = cast(int, score)
-
-#         total_score += score
-
-#         if isinstance(data.get("high_strike"), int):
-#             strike = data.get("high_strike", 0)
-#             strike = cast(int, strike)
-
-#         total_strike += strike
-
-#     return total_score, total_strike
-
-
-def create_competition_score_text(
-    scores: departmentCompetitionScores,
-    spacing: str,
-    separator: str,
-) -> str:
-    output = strings.BUTTON_STR_COMPETITIONS + ":\n\n"
-
-    longest_key = len(max(scores.keys(), key=len))
-    # define score column width
-    characters = 0
-    for data in scores.values():
-        if isinstance(data.get("high_score"), int):
-            score = data.get("high_score", 0)
-            score = cast(int, score)
-
-            if extra_charactor(score) > characters:
-                characters = extra_charactor(score)
-    characters += 1
-
-    for comp, data in scores.items():
-        comp_space = spacing + " " * (longest_key - len(comp)) + comp + ":"
-
-        if isinstance(data.get("high_score"), int):
-            score = data.get("high_score", 0)
-            score = cast(int, score)
-
-        score_space = " " * (characters - extra_charactor(score)) + dot_separator(score)
-        output += comp_space + score_space + "\n"
-
-    return output
-
-
-def sum_competition_score(scores: departmentCompetitionScores) -> int:
-    total_score = 0
-
-    for data in scores.values():
-        if isinstance(data.get("high_score"), int):
-            score = data.get("high_score", 0)
-            score = cast(int, score)
-
-        total_score += score
-
-    return total_score

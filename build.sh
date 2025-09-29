@@ -4,6 +4,7 @@ set -e  # Exit on any error
 set -u  # Treat unset variables as errors
 
 VERSION_FILE="app/app-version"
+SPECS_FILE="app/buildozer.spec"
 
 parse_args_and_maybe_bump() {
     # Ensure at least one argument is provided
@@ -49,6 +50,9 @@ parse_args_and_maybe_bump() {
 
         new_version="${major}.${minor}.${patch}"
         echo "$new_version" > "$VERSION_FILE"
+
+        sed -i '' -E "s/version = [0-9]+\.[0-9]+\.[0-9]+/version = $new_version/" $SPECS_FILE
+
         echo "🔧 Version bumped to $new_version"
     }
 
@@ -63,17 +67,6 @@ parse_args_and_maybe_bump() {
                 exit 1
                 ;;
         esac
-    fi
-}
-
-call_python_updater() {
-    # Call Python updater
-    echo "🔄 [$MODE] Updating files with version from $VERSION_FILE..."
-    if python3 update_version.py; then
-        echo "✅ Version update successful."
-    else
-        echo "❌ Version update failed!" >&2
-        exit 1
     fi
 }
 
@@ -159,11 +152,10 @@ build_android() {
 }
 
 main() {
-    # parse_args_and_maybe_bump "$@"
-    # call_python_updater
-    # run_tests
+    parse_args_and_maybe_bump "$@"
+    run_tests
     update_ios_proxy_dir
-    # build_android
+    build_android
 }
 
 main "$@"
