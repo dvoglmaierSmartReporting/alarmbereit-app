@@ -27,6 +27,14 @@ def load_from_txt(file_path: str) -> str:
     #     print(f"An unexpected error occurred: {e}")
 
 
+def load_app_version() -> str:
+    file_path = "/".join(__file__.split("/")[:-2]) + "/app-version"
+    try:
+        return load_from_txt(file_path).strip()
+    except:
+        return "0.0.0"
+
+
 def load_from_yaml(file_path: str) -> dict:
     try:
         with open(file_path, "r") as file:

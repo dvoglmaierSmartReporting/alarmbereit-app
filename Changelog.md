@@ -1,9 +1,8 @@
-# version 2.6.1
+# version 2.6.2 (2.6.1 was forced to re-upload)
 
 fix:
 
 - correct app version displayed on screen
-- use tabulate for highscore screen
 
 # version 2.6.0
 

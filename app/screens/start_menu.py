@@ -12,6 +12,7 @@ from helper.file_handling import (
     read_scores_file,
     get_selected_city_state,
     load_from_txt,
+    load_app_version,
 )
 from helper.aspect_image import get_city_image, get_team122_image
 from helper.strings import Strings, About_Text
@@ -26,11 +27,12 @@ class Start_Menu(Screen):
 
         self.ids.all_cities_button.text = strings.BUTTON_STR_ALL_CITIES
 
-        # read version value from app-version file
-        try:
-            self.version = load_from_txt("app/app-version").strip()
-        except Exception as e:
-            self.version = "0.0.0"
+        # # read version value from app-version file
+        # try:
+        #     self.version = load_from_txt("../app-version").strip()
+        # except Exception as e:
+        #     self.version = "0.0.0"
+        self.version = load_app_version()
 
     def on_pre_enter(self):
         self.selected_city, _ = get_selected_city_state()

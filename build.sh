@@ -91,12 +91,15 @@ update_ios_proxy_dir() {
     SRC_BASE="./app"
     DST_BASE="../ios_builds/feuerwehr_app_proxy/app/"
 
-    # Copy single files (overwrite with -f)
+    # Copy single files (overwrite with -f) 
     cp -f "$SRC_BASE/main.py" "$DST_BASE/"
     echo "main.py updated"
 
     cp -f "$SRC_BASE/feuerwehr.kv" "$DST_BASE/"
     echo "feuerwehr.kv updated"
+
+    cp -f "$SRC_BASE/app-version" "$DST_BASE/"
+    echo "app-version updated"
 
     # Copy folders (overwrite by removing target first)
     copy_dir() {
