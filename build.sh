@@ -148,7 +148,8 @@ build_android() {
 
     # Execute buildozer command
     echo "Running buildozer in $MODE mode..."
-    buildozer -v android "$MODE"
+    # buildozer -v android "$MODE"
+    buildozer android "$MODE"
 }
 
 main() {
