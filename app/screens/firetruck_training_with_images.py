@@ -20,7 +20,6 @@ from helper.file_handling import (
     save_to_scores_file,
     get_score_value,
     tool_image_file_exists,
-    room_image_file_exists,
 )
 from helper.settings import Settings
 from helper.strings import (
@@ -92,13 +91,13 @@ class Firetruck_Training_With_Images(Screen):
         self.reset_strike()
 
         # TODO: high_strike already used!
-        # decide on wether overwriting or intorducing a new variable
+        # decide on wether overwriting or introducing a new variable
         # or replacing regular training mode
         self.current_high_strike = get_score_value(
             city=self.selected_city,
             questions="firetrucks",
             truck_or_comp=self.selected_firetruck,
-            key="high_strike",
+            key="high_strike_image",
         )
 
         self.update_high_strike_label()
@@ -186,7 +185,7 @@ class Firetruck_Training_With_Images(Screen):
                 city=self.selected_city,
                 questions="firetrucks",
                 truck_or_comp=self.selected_firetruck,
-                key="high_strike",
+                key="high_strike_image",
                 value=self.game.answers_correct_strike,
             )
 
@@ -263,13 +262,15 @@ class Firetruck_Training_With_Images(Screen):
         # tool ends here. document tool and given answers in question history
         self.game.questions.append(self.current_tool_question)
 
+        self.show_feedback_image()
+
+    def show_feedback_image(self):
         # Show location image during cooldown if available
         # self.ids.image_box_answer.clear_widgets()
         #
         # room image file name is either tag or name of room + ".jpg"
         #
         # multiple rooms are ignored for now
-
         if not self.current_tool_question.room_image_name == "":
             layout = self.ids.tool_image_layout
             layout.clear_widgets()
@@ -286,18 +287,17 @@ class Firetruck_Training_With_Images(Screen):
             # Bind layout's pos/size to update the background rectangle
             layout.bind(pos=self.update_rect, size=self.update_rect)
 
-            # tool name Label
-            # tool + " in " + room
-            tool_answer = f"{self.current_tool_question.tool} in {', '.join(self.current_tool_question.rooms)}"
-            tool_label_answer = Label(
-                text=break_tool_name(tool_answer, 35),
-                size_hint_y=1,
-                font_size="20sp",  # "28sp"
-            )
-            layout.add_widget(tool_label_answer)
+            # # tool name Label
+            # # tool + " in " + room
+            # tool_answer = f"{self.current_tool_question.tool} in {', '.join(self.current_tool_question.rooms)}"
+            # tool_label_answer = Label(
+            #     text=break_tool_name(tool_answer, 35),
+            #     size_hint_y=1,
+            #     font_size="20sp",  # "28sp"
+            # )
+            # layout.add_widget(tool_label_answer)
 
             # progress bar
-
             interval = settings.FIRETRUCK_TRAINING_WITH_IMAGES_FEEDBACK_SEC / 50
 
             self.ids.progress_bar_answer.value = (
@@ -308,18 +308,9 @@ class Firetruck_Training_With_Images(Screen):
 
             # room image
             try:
-                if room_image_file_exists(
-                    self.selected_city,
-                    self.selected_firetruck,
-                    self.current_tool_question.room_image_name,
-                ):
-                    raise FileNotFoundError()
-
-                # Add the image
                 room_image = Image(
                     source=self.current_tool_question.room_image_name,
                     fit_mode="contain",
-                    size_hint_y=9,
                 )
                 layout.add_widget(room_image)
 
@@ -331,9 +322,27 @@ class Firetruck_Training_With_Images(Screen):
                 )
                 layout.add_widget(placeholder)
 
-        Clock.schedule_once(
-            self.next_tool, settings.FIRETRUCK_TRAINING_WITH_IMAGES_FEEDBACK_SEC
-        )
+            # add invincible overlay float button
+            # if clicked, skip cooldown
+            # overlay button shall span the whole screen except the top bar
+
+            self.root_layer = self.ids.root_layer
+
+            self.overlay_button = Button(
+                size_hint=(1, 1),
+                pos_hint={"center_x": 0.5, "center_y": 0.5},
+                background_color=(0, 0, 0, 0),  # Invisible
+            )
+            self.overlay_button.bind(
+                on_release=lambda *_: self.on_overlay_button_release()
+            )
+
+            self.root_layer.add_widget(self.overlay_button)
+
+    def on_overlay_button_release(self):
+        self.root_layer.remove_widget(self.overlay_button)
+
+        self.progress_bar_answer.value = -5
 
     def update_rect(self, *args):
         layout = self.ids.tool_image_layout
@@ -351,6 +360,10 @@ class Firetruck_Training_With_Images(Screen):
             Clock.unschedule(
                 self.update_progress_bar
             )  # Stop the timer when it reaches 0
+
+            self.root_layer.remove_widget(self.overlay_button)
+
+            self.next_tool()
 
     def go_back(self, *args) -> None:
         change_screen_to("firetruck_menu")

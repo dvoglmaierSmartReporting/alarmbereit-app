@@ -1,12 +1,13 @@
 from kivy.uix.screenmanager import Screen
 
 from kivy.clock import Clock
+from kivy.config import Config
 
 import os
 
 from helper.strings import Strings
 from helper.functions import change_screen_to
-from helper.file_handling import get_user_data_dir
+from helper.file_handling import get_selected_city_state, map_selected_city_2long_name
 
 strings = Strings()
 
@@ -27,9 +28,12 @@ import os
 
 
 class Highscore(Screen):
-    # def __init__(self, **kwargs):
-    #     super(Highscore, self).__init__(**kwargs)
-    #     self.ids.share_button.text = strings.BUTTON_STR_SHARE
+    def on_pre_enter(self):
+        selected_city, _ = get_selected_city_state()
+        selected_city = map_selected_city_2long_name(selected_city)
+        if selected_city == "Hallein":
+            selected_city = "Stadt Hallein"
+        self.ids.city_label.text = selected_city
 
     def capture_scrollview(self):
         content = self.ids.score_text_label  # Layout inside ScrollView
@@ -49,9 +53,6 @@ class Highscore(Screen):
             return app_storage_path()
         else:
             return os.path.expanduser("~")
-
-
-
 
     def go_back(self, *args) -> None:
         change_screen_to("start_menu")

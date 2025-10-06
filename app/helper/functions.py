@@ -7,7 +7,6 @@ from helper.settings import Settings
 from helper.strings import Strings
 from helper.file_handling import (
     load_total_storage,
-    load_total_competition_questions,
     map_selected_city_2short_name,
 )
 from helper.game_class import ToolQuestion
@@ -58,6 +57,7 @@ def tool_name_2image_name(tool_name: str) -> str:
         .replace("ß", "ss")
         .replace('"', "")
         .replace("/", "")
+        .replace(".", "")
     )
 
 
@@ -98,7 +98,7 @@ def get_ToolQuestion_instances(
             tool_image_name = image_tag
         else:
             tool_image_name = (
-                "assets/tools/" + tool_name_2image_name(clean_tool_name) + ".jpg"
+                "./assets/tools/" + tool_name_2image_name(clean_tool_name) + ".jpg"
             )
 
         # room can be used to identify room_image_name
@@ -122,7 +122,12 @@ def get_ToolQuestion_instances(
                 # room image file name convention
                 # replace " / " with "_"
                 room_name = "_".join(room_name.split(" / "))
-            room_image_name = "assets/hallein_rl/" + room_name + ".jpg"
+
+            # TODO: make dynamic for other cities
+            # now it only works for hallein_
+            room_image_name = (
+                f"./assets/hallein_{selected_firetruck.lower()}/{room_name.lower()}.jpg"
+            )
 
         tool_questions.append(
             ToolQuestion(
@@ -222,51 +227,57 @@ def create_scores_text(scores: scores, selected_city: str) -> str:
     separator = " - "
     section_line_char = "="
     section_line = "\n\n" + section_line_char * 35 + "\n\n"
-    # doubleline = "\n========================================\n\n"
+    output = ""
 
     factor = settings.FIRETRUCK_TRAINING_STRIKE_FACTOR
+    factor_image = settings.FIRETRUCK_TRAINING_STRIKE_IMAGE_FACTOR
 
     filtered_scores = scores.get(map_selected_city_2short_name(selected_city), {})
     filtered_scores = cast(departmentScores, filtered_scores)
 
-    # Text generation
-    if selected_city == "Hallein":
-        output = "Stadt Hallein"
-    elif selected_city == "Bad Dürrnberg":
-        output = f"LZ {selected_city}"
-    else:
-        output = selected_city
-
-    output += section_line
-
     truck_scores = filtered_scores.get("firetrucks")
     truck_scores = cast(departmentTruckScores, truck_scores)
 
+    # Zeitdruck
     output += create_firetruck_score_text(
         truck_scores, spacing=spacing, separator=separator
     )
-
     total_score = sum_firetruck_scores(truck_scores)
+    output += f"{strings.TEXT_SUM}: {dot_separator(total_score)} {strings.TEXT_POINTS}"
 
-    output += f"Summe - {dot_separator(total_score)} Punkte"
-
+    # Übung
     output += section_line
-
     output += create_firetruck_score_text(
         truck_scores,
         spacing=spacing,
         separator=separator,
         key="high_strike",
     )
-
     total_strike = sum_firetruck_scores(truck_scores, key="high_strike")
 
-    output += f"Summe - {total_strike} x {factor} = {total_strike * factor} Punkte\n\n"
-    output += f"([i]Punkte aus {strings.BUTTON_STR_TRAINING} werden mit\nFaktor {factor} multipliziert[/i])"
-    output += section_line
+    output += f"{strings.TEXT_SUM}: {total_strike} x {factor} = {dot_separator(total_strike * factor)} {strings.TEXT_POINTS}\n\n"
+    output += strings.TEXT_STRIKE_CALCULATION
 
-    total = total_score + total_strike * factor
-    output += f"[b]Gesamtpunktzahl{separator}{dot_separator(total)} Punkte[/b]"
+    # Übung mit Bildern
+    if selected_city in ["Hallein"]:
+        output += section_line
+        output += create_firetruck_score_text(
+            truck_scores,
+            spacing=spacing,
+            separator=separator,
+            key="high_strike_image",
+        )
+        total_strike_image = sum_firetruck_scores(truck_scores, key="high_strike_image")
+        output += f"{strings.TEXT_SUM}: {total_strike_image} x {factor_image} = {dot_separator(total_strike_image * factor_image)} {strings.TEXT_POINTS}\n\n"
+        output += strings.TEXT_STRIKE_IMAGE_CALCULATION
+    else:
+        total_strike_image = 0
+
+    # Gesamtpunktzahl
+    output += section_line
+    total = total_score + total_strike * factor + total_strike_image * factor_image
+    output += f"[b]{strings.TEXT_TOTAL_POINTS}{separator}{dot_separator(total)} {strings.TEXT_POINTS}[/b]"
+
     return output
 
 
@@ -305,12 +316,22 @@ def create_firetruck_score_text(
     if key == "high_score":
         # game mode
         output += strings.BUTTON_STR_GAME + ":\n\n"
-    else:
+    elif key == "high_strike":
         # training mode
         output += strings.BUTTON_STR_TRAINING + ":\n\n"
+    elif key == "high_strike_image":
+        # training with images mode
+        output += strings.BUTTON_STR_TRAINING_NEW + ":\n\n"
+    else:
+        output += key + ":\n\n"
 
     for truck, data in scores.items():
         data = cast(dict, data)
+
+        # truck list is limited for "Übung mit Bildern"
+        if key == "high_strike_image":
+            if truck not in ["Leiter"]:
+                continue
 
         truck_space = spacing + " " * (longest_key - len(truck)) + truck + separator
 
@@ -337,28 +358,6 @@ def sum_firetruck_scores(scores: departmentTruckScores, key: str = "high_score")
         total += score
 
     return total
-
-
-# def sum_firetruck_scores_strikes(scores: departmentTruckScores) -> tuple[int, int]:
-#     total_score = 0
-#     total_strike = 0
-
-#     for data in scores.values():
-#         data = cast(dict, data)
-
-#         if isinstance(data.get("high_score"), int):
-#             score = data.get("high_score", 0)
-#             score = cast(int, score)
-
-#         total_score += score
-
-#         if isinstance(data.get("high_strike"), int):
-#             strike = data.get("high_strike", 0)
-#             strike = cast(int, strike)
-
-#         total_strike += strike
-
-#     return total_score, total_strike
 
 
 def create_competition_score_text(

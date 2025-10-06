@@ -69,7 +69,7 @@ class Start_Menu(Screen):
         ### BUTTON Übung mit Bildern ###
         if self.selected_city in ["Hallein"]:
             firetruck_training_with_images_btn = self.create_button(
-                strings.BUTTON_STR_TRAINING_NEW, disabled=True
+                strings.BUTTON_STR_TRAINING_NEW, disabled=False
             )
             self.content_layout.add_widget(firetruck_training_with_images_btn)
 
@@ -165,7 +165,7 @@ class Start_Menu(Screen):
 
         elif mode_training_new:
             # create button for BDLP-Tank1
-            firetruck = "TestTruck"
+            firetruck = "Leiter"
             self.add_firetruck_button(firetruck)
 
     def add_firetruck_button(self, firetruck: str, disabled: bool = False):

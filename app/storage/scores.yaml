@@ -32,9 +32,11 @@ Altenmarkt:
     LF20:
       high_score: 0
       high_strike: 0
+      high_strike_image: 0
     LF8:
       high_score: 0
       high_strike: 0
+      high_strike_image: 0
 "D\xFCrrnberg":
   competitions:
     ASLP Stufe I:
@@ -69,9 +71,11 @@ Altenmarkt:
     Pumpe:
       high_score: 0
       high_strike: 0
+      high_strike_image: 0
     Tank:
       high_score: 0
       high_strike: 0
+      high_strike_image: 0
 Hallein:
   competitions:
     ASLP Stufe I:
@@ -106,24 +110,32 @@ Hallein:
     Leiter:
       high_score: 0
       high_strike: 0
+      high_strike_image: 0
     Pumpe:
       high_score: 0
       high_strike: 0
+      high_strike_image: 0
     "R\xFCst":
       high_score: 0
       high_strike: 0
+      high_strike_image: 0
     "R\xFCstL\xF6sch":
       high_score: 0
       high_strike: 0
+      high_strike_image: 0
     Tank1:
       high_score: 0
       high_strike: 0
+      high_strike_image: 0
     Tank2:
       high_score: 0
       high_strike: 0
+      high_strike_image: 0
     Voraus:
       high_score: 0
       high_strike: 0
+      high_strike_image: 0
     Kommando:
       high_score: 0
       high_strike: 0
+      high_strike_image: 0

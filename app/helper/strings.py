@@ -1,3 +1,8 @@
+from helper.settings import Settings
+
+settings = Settings()
+
+
 class Strings:
     def __init__(self) -> None:
 
@@ -15,10 +20,8 @@ class Strings:
         self.BUTTON_STR_ACKNOWLEDGEMENT = "Dank"
         self.BUTTON_STR_SETTINGS = "Einst."
         self.BUTTON_STR_TRAINING = "Übung"  # "Lernen" # "Erkunden"
-        self.BUTTON_STR_TRAINING_NEW = (
-            f"{self.BUTTON_STR_TRAINING} mit Bildern\n(coming soon)"
-        )
-        self.BUTTON_STR_GAME = "Zeitdruck"  # "Herausfordern" # "Testen" # "Challengen"
+        self.BUTTON_STR_TRAINING_NEW = f"{self.BUTTON_STR_TRAINING} mit Bildern"
+        self.BUTTON_STR_GAME = "Zeitdruck"  # "Herausfordern" # "Challengen"
         self.BUTTON_STR_BROWSE = "Stöbern"
         self.BUTTON_STR_IMAGES = "Bilder"
         self.BUTTON_STR_EXAM = "Leistungsprüfung"
@@ -37,6 +40,11 @@ class Strings:
 
         # highscore
         self.BUTTON_STR_SHARE = "Highscore via\nEmail senden"
+        self.TEXT_STRIKE_CALCULATION = f"([i]Punkte aus '{self.BUTTON_STR_TRAINING}' werden mit\nFaktor {settings.FIRETRUCK_TRAINING_STRIKE_FACTOR} multipliziert[/i])"
+        self.TEXT_STRIKE_IMAGE_CALCULATION = f"([i]Punkte aus '{self.BUTTON_STR_TRAINING_NEW}' werden mit\nFaktor {settings.FIRETRUCK_TRAINING_STRIKE_IMAGE_FACTOR} multipliziert[/i])"
+        self.TEXT_SUM = "Summe"
+        self.TEXT_POINTS = "Punkte"
+        self.TEXT_TOTAL_POINTS = "Gesamtpunktzahl"
 
         # firetruck modes
         self.LABEL_STR_MODES = "Lernpfad"

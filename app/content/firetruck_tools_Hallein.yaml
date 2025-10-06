@@ -506,86 +506,90 @@ Leiter:
   Abb: "DLA(K) 23-12"
   Tools:
     Mannschaft:
-      - Handscheinwerfer
-      - Warnlichthaube Handscheinwerfer
-      - Handlampe
-      - Suchscheinwerfer
-      - Warnweste
-      - Anhaltekelle
-      - Meldertasche
-      - Einweghandschuhe
       - Handfunkgerät
-      - Arbeitsmesser
       - Entfernungsmesser
-      - Schutzhandschuhe
-      - Schlüsselset
-      - Ersatzakku E-Motorsäge
+      - Schlüsselset <Bild:hallein_leiter/schluesselkasten>
+      - Reserve-Akku E-Motorsäge
+      - Handscheinwerfer <Raumbild:hallein_leiter/mannschaft meldersitz>
+      - Warnlichthaube Handscheinwerfer <Raumbild:hallein_leiter/mannschaft meldersitz>
+      - Handlampe <Raumbild:hallein_leiter/mannschaft meldersitz>
+      - Arbeitsmesser <Bild:hallein_leiter/arbeitsmesser> <Raumbild:hallein_leiter/mannschaft meldersitz>
+      - Anhaltekelle <Raumbild:hallein_leiter/mannschaft beifahrersitz>
+      - Einweghandschuhe <Bild:hallein_leiter/einweghandschuhe> <Raumbild:hallein_leiter/mannschaft beifahrersitz>
+      - Schutzhandschuhe <Raumbild:hallein_leiter/mannschaft beifahrersitz>
+      - Suchscheinwerfer <Raumbild:hallein_leiter/mannschaft armatur>
+      - tablet <Raumbild:hallein_leiter/mannschaft armatur>
+      - Warnweste <Raumbild:hallein_leiter/mannschaft tuer>
+      - Meldertasche <Raumbild:hallein_leiter/mannschaft tuer>
     Korb:
-      - Druckschlauch C 7 m
+      - Druckschlauch C 7 m <Bild:hallein_leiter/druckschlauch c 7 m>
       - Hohlstrahlrohr
     G1:
-      - Baufolie 4 x 4 m
+    # continue with Raumbild here
       - Korbtrage
       - Schaufeltrage
-      - Forsthelm
-      - Schnittschutzhose
-      - Schnittschutzbeinlinge
-      - Schnittschutzjacke
-      - E-Motorsäge
-      - Ersatzkette Motorsäge
-      - Ölkanister
-      - Bogensäge
-      - Halligan-Tool
-      - Feuerwehraxt
-      - Hacke kurz
-      - Handfäustel
       - Krankentrage 2-teilig
-      - Schwerlastaufnahme
-      - Arbeitsleine
-      - Schnürleinen
-      - Druckluftschlauch
-      - Zimmermannshammer
-      - Absturzsicherung MSA
-      - Druckluft Ausgang
-      - 230 V Ausgang
-      - Forstkiste Korbaufnahme
-      - Aufstiegsleiter
+      - Druckluft Ausgang <Bild:hallein_leiter/druckluft ausgang>
+      - 230 V Ausgang <Bild:hallein_leiter/230 v ausgang>
+      - Baufolie 4 x 4 m <Raumbild:hallein_leiter/g1 links>
+      - Halligan-Tool <Raumbild:hallein_leiter/g1 links>
+      - Feuerwehraxt <Raumbild:hallein_leiter/g1 links>
+      - Hacke kurz <Raumbild:hallein_leiter/g1 links>
+      - Handfäustel <Raumbild:hallein_leiter/g1 links>
+      - Zimmermannshammer <Raumbild:hallein_leiter/g1 links>
+      - Absturzsicherung MSA <Raumbild:hallein_leiter/g1 links>
+      - Forsthelm <Raumbild:hallein_leiter/g1 forstkiste>
+      - Schnittschutzhose <Raumbild:hallein_leiter/g1 forstkiste>
+      - Schnittschutzbeinlinge <Raumbild:hallein_leiter/g1 forstkiste>
+      - Schnittschutzjacke <Raumbild:hallein_leiter/g1 forstkiste>
+      - E-Motorsäge <Raumbild:hallein_leiter/g1 forstkiste>
+      - Ersatzkette Motorsäge <Raumbild:hallein_leiter/g1 forstkiste>
+      - Ölkanister <Raumbild:hallein_leiter/g1 forstkiste>
+      - Bogensäge <Raumbild:hallein_leiter/g1 forstkiste>
+      - Forstkiste Korbaufnahme <Raumbild:hallein_leiter/g1 forstkiste>
+      - Schwerlastaufnahme <Raumbild:hallein_leiter/g1 rechts>
+      - Arbeitsleine <Raumbild:hallein_leiter/g1 rechts>
+      - Schnürleinen <Raumbild:hallein_leiter/g1 rechts>
+      - Druckluftschlauch <Raumbild:hallein_leiter/g1 rechts>
+      - Druckluftpistole <Raumbild:hallein_leiter/g1 rechts>
+      - Aufstiegsleiter <Raumbild:hallein_leiter/g1 kabine>
     G2:
-      - Notrettungsset m. Rettungsleine
-      - Halten u. Sichern Rucksack
-      - Alu-Rettungsdecke
-      - Rettungsleine
       - Atemschutzgerät
       - Atemschutz-Vollmaske
-      - Reserveflasche
-      - Brandfluchthaube
-      - Safety Peak Rucksack
-      - Feuerwehrgurt m. Verbindungsmittel
-      - Vollmaske m. Filter
-      - Straßenbesen
-      - Alurandschaufel
+      - Rettungsleine
+      - Notrettungsset <Raumbild:hallein_leiter/g2 links>
+      - Halten u. Sichern Rucksack <Raumbild:hallein_leiter/g2 links>
+      - Safety Peak Rucksack <Raumbild:hallein_leiter/g2 links>
+      - Alu-Rettungsdecke <Raumbild:hallein_leiter/g2 rechts>
+      - Reserveflasche <Raumbild:hallein_leiter/g2 rechts>
+      - Brandfluchthaube <Raumbild:hallein_leiter/g2 rechts>
+      - Feuerwehrgurt m. Verbindungsmittel <Raumbild:hallein_leiter/g2 rechts>
+      - Straßenbesen <Raumbild:hallein_leiter/g2 kabine>
+      - Alurandschaufel <Raumbild:hallein_leiter/g2 kabine>
+      - Vollmaske m. Filter # ???
     G3:
       - ABC-Kupplungsschlüssel
-      - Druckschlauch B 25 m orange
+      - Druckschlauch B 25 m orange <Bild:hallein_leiter/druckschlauch b 25 m orange>
       - Druckschlauch B
       - Druckschlauch C
-      - Schlauchbinden
       - Druckbegrenzungsventil
       - Hydrantenschlüssel
       - Übergangsstück B-C
       - Verteiler
-      - Flankierer
-      - Schlauchbrücken
       - Unterlegplatte
+      - Flankierer <Raumbild:hallein_leiter/g3 rechts>
+      - Schlauchbrücken <Raumbild:hallein_leiter/g3 rechts>
+      - Schlauchhalter <Raumbild:hallein_leiter/g3 rechts>
+      - Schlauchbinden <Raumbild:hallein_leiter/g3 rechts>
     G4:
       - Lichtfluter
       - Stativ
       - Kabeltrommel 230 V
       - Sprungretter
-      - Rollgliss
-      - Werkzeugkasten
-      - Sturmleine
       - Unterlegplatte
+      - Sturmleine
+      - Rollgliss <Raumbild:hallein_leiter/g4 links>
+      - Werkzeugkasten <Raumbild:hallein_leiter/g4 links>
     G5:
       - Löschdecke
       - ABC-Pulverlöscher
@@ -595,22 +599,21 @@ Leiter:
       - Unterlegplatte
     G6:
       - Schäkel
-      - Abschleppseil
       - Schneeketten
       - Dieselkanister
       - Einfüllstutzen
       - Unterlegplatte
     Dach:
-      - Stromerzeuger
+      - Stromerzeuger <Bild:hallein_leiter/stromerzeuger>
       - Abgasschlauch Stromerzeuger
       - Benzinkanister
-      - Drucklüfter
-      - Rollgliss Bügel
-      - Safety Peak
-      - Wenderohr
-      - Verbindungsschlauch Wenderohr
-      - Aufnahme Korbtrage
-      - Auffahrbohlen
+      - Drucklüfter <Bild:hallein_leiter/druckluefter>
+      - Rollgliss Bügel <Raumbild:hallein_leiter/dach anbauteile> # fehlt am Fahrzeug
+      - Safety Peak <Bild:hallein_leiter/safety peak> <Raumbild:hallein_leiter/dach anbauteile>
+      - Wenderohr <Bild:hallein_leiter/wenderohr> <Raumbild:hallein_leiter/dach anbauteile>
+      - Verbindungsschlauch Wenderohr <Bild:hallein_leiter/verbindungsschlauch wenderohr> <Raumbild:hallein_leiter/dach anbauteile>
+      - Aufnahme Korbtrage <Bild:hallein_leiter/aufnahme korbtrage> <Raumbild:hallein_leiter/dach anbauteile>
+      - Auffahrbohlen <Raumbild:hallein_leiter/dach auffahrbohlen>
 
 Voraus: &tunnel
   Layout: "Voraus"

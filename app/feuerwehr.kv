@@ -213,6 +213,7 @@
     name: "highscore_screen"
 
     # IDs
+    city_label: city_label
     score_text_label: score_text_label
     #share_button: share_button
 
@@ -234,10 +235,13 @@
                 on_release:
                     root.go_back()
             
-            Label: # placeholder
-                size_hint_x: 4
-
-                #size_hint_x: 1
+            Label:
+                size_hint_x: 5
+                id: city_label
+                font_size: "25sp"
+                halign: "center"
+                valign: "middle"
+                text_size: self.size
 
             ## SCREENSHOT
             #Button:
@@ -260,7 +264,7 @@
         
         # SCORES
         ScrollView:
-            size_hint_y: 7
+            size_hint_y: 9
             pos_hint: {'center_x': 0.5}
 
             Label:
@@ -562,6 +566,7 @@
     strike_label: strike_label
     high_strike_label: high_strike_label
     progress_bar_answer: progress_bar_answer
+    root_layer: root_layer
     tool_image_layout: tool_image_layout
     firetruck_rooms_layout: firetruck_rooms_layout
 
@@ -620,20 +625,29 @@
         ProgressBar:
             size_hint_y: 0.1
             id: progress_bar_answer
+        
+        # parent layer that can host overlays
+        FloatLayout:
+            id: root_layer
+            size_hint_y: 9
 
-        # TOOL / IMAGE / ANSWER
-        BoxLayout:
-            size_hint_y: 4.5
-            id: tool_image_layout
-            orientation: 'vertical'
+            BoxLayout:
+                orientation: 'vertical'
+                size_hint: 1, 1
 
-            # either tool-label + tool-image
-            # or answer image
+                # TOOL / IMAGE / ANSWER
+                BoxLayout:
+                    #size_hint_y: 4.5
+                    id: tool_image_layout
+                    orientation: 'vertical'
 
-        # FIRETRUCK ROOMS
-        BoxLayout:
-            size_hint_y: 4.5
-            id: firetruck_rooms_layout
+                    # either tool-label + tool-image
+                    # or answer image
+
+                # FIRETRUCK ROOMS
+                BoxLayout:
+                    #size_hint_y: 4.5
+                    id: firetruck_rooms_layout
 
 
 <Firetruck_Game>:

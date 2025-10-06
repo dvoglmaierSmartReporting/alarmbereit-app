@@ -1,3 +1,10 @@
+# next version
+
+update acknowledgement
+
+- Karina for posters
+- David + Kilian for images
+
 # version 2.6.2 (2.6.1 was forced to re-upload)
 
 fix:
