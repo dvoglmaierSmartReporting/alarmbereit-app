@@ -4,6 +4,7 @@ from kivy.uix.button import Button
 from kivy.uix.label import Label
 from kivy.uix.screenmanager import Screen
 from kivy.clock import Clock
+from kivy.loader import Loader
 
 from random import shuffle
 from typing import cast
@@ -36,6 +37,51 @@ strings = Strings()
 
 
 class Firetruck_Training_With_Images(Screen):
+    def __init__(self, **kwargs):
+        super(Firetruck_Training_With_Images, self).__init__(**kwargs)
+
+        # do this once (e.g., in App.build or your Screen __init__)
+        Loader.num_workers = 2  # tweak 2–8 depending on cores
+        self._img_proxies = {}  # path -> ProxyImage
+
+    def prewarm_images(self, paths):
+        # kick off background loads and keep references so cache isn't GC'd
+        for p in paths:
+            self._img_proxies[p] = self._img_proxies.get(p) or Loader.image(p)
+
+    def add_image(self, layout, path, usage: str = "tool"):
+        # get (or start) the background load
+        proxy = self._img_proxies.get(path) or Loader.image(path)
+        self._img_proxies[path] = proxy
+
+        # make the widget now
+        if usage == "tool":
+            image = Image(
+                fit_mode="contain",
+                size_hint_y=3,
+            )
+        elif usage == "room":
+            image = Image(
+                fit_mode="contain",
+            )
+        layout.add_widget(image)
+
+        # when the background load finishes, assign the texture on the main thread
+        def _apply_texture(_=None):
+            if proxy.image and proxy.image.texture:
+                # schedule is extra-safe to ensure we're on the UI thread
+                Clock.schedule_once(
+                    lambda dt: setattr(image, "texture", proxy.image.texture), 0
+                )
+
+        # if it's already warm, set immediately; otherwise bind to on_load
+        if proxy.image:
+            _apply_texture()
+        else:
+            proxy.bind(on_load=_apply_texture)
+
+        return image
+
     def select_city(self, selected_city: str):
         self.selected_city = selected_city
 
@@ -86,6 +132,9 @@ class Firetruck_Training_With_Images(Screen):
         # (re)set game specific elements
         self.reset_tool_list()
 
+        # init prewarm var for next question
+        self.prewarmed_question = []
+
         self.reset_progress_bar()
 
         self.reset_strike()
@@ -105,7 +154,7 @@ class Firetruck_Training_With_Images(Screen):
         self.next_tool()
 
     def next_tool(self, *args):
-        self.accept_answers = True  # Enable answer processing for the new tool
+        self.accept_answers = True
 
         if len(self.tool_questions) == 0:
             self.reset_tool_list()
@@ -135,10 +184,19 @@ class Firetruck_Training_With_Images(Screen):
         layout.clear_widgets()
         layout.canvas.before.clear()
 
-        # troubleshooting: fix tool
-        # self.current_tool = "Handfunkgerät"  # "Druckschlauch B"
-        # current_tool = self.tools.pop()
-        self.current_tool_question = self.tool_questions.pop()
+        # first tool will be rendered without prewarm
+        # then prewarm next tool image
+        if self.prewarmed_question:
+            self.current_tool_question = self.prewarmed_question
+            tool_image_prewarmed = True
+        else:
+            # troubleshooting: fix tool
+            # self.current_tool = "Handfunkgerät"  # "Druckschlauch B"
+            self.current_tool_question = self.tool_questions.pop()
+            tool_image_prewarmed = False
+
+        # always prewarm room image
+        self.prewarm_images([self.current_tool_question.room_image_name])
 
         self.tool_label = Label(
             text=self.current_tool_question.tool,
@@ -154,17 +212,26 @@ class Firetruck_Training_With_Images(Screen):
             if not tool_image_file_exists(self.current_tool_question.tool_image_name):
                 raise FileNotFoundError()
 
-            tool_image = Image(
-                source=self.current_tool_question.tool_image_name,
-                fit_mode="contain",
-                size_hint_y=3,
-            )
-            self.ids.tool_image_layout.add_widget(tool_image)
+            # first tool will be created and rendered without prewarm
+            # then prewarm next tool image
+            if tool_image_prewarmed:
+                self.add_image(
+                    self.ids.tool_image_layout,
+                    self.current_tool_question.tool_image_name,
+                )
+
+            else:
+                tool_image = Image(
+                    source=self.current_tool_question.tool_image_name,
+                    fit_mode="contain",
+                    size_hint_y=3,
+                )
+                self.ids.tool_image_layout.add_widget(tool_image)
+
         except Exception as e:
             print(
                 f"Tool image load failed. Error: {e}, Tool file: {self.current_tool_question.tool_image_name}"
             )
-            # else:
             placeholder = Label(text=strings.ERROR_IMAGE_NOT_FOUND, size_hint_y=3)
             self.ids.tool_image_layout.add_widget(placeholder)
 
@@ -172,6 +239,10 @@ class Firetruck_Training_With_Images(Screen):
         float = build_answer_layout(self.room_layout, "firetruck_training_with_images")
 
         self.ids.firetruck_rooms_layout.add_widget(float)
+
+        # pick and prewarm upcoming tool question
+        self.prewarmed_question = self.tool_questions.pop()
+        self.prewarm_images([self.prewarmed_question.tool_image_name])
 
     def correct_answer(self):
         self.increment_strike()
@@ -308,11 +379,16 @@ class Firetruck_Training_With_Images(Screen):
 
             # room image
             try:
-                room_image = Image(
-                    source=self.current_tool_question.room_image_name,
-                    fit_mode="contain",
+                ###
+                # room_image = Image(
+                #     # source=self.current_tool_question.room_image_name,
+                #     fit_mode="contain",
+                # )
+                # layout.add_widget(room_image)
+                self.add_image(
+                    layout, self.current_tool_question.room_image_name, usage="room"
                 )
-                layout.add_widget(room_image)
+                ###
 
             except Exception as e:
                 print(f"Room image load failed: {e}")

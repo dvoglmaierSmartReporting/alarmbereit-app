@@ -1,9 +1,16 @@
 # next version
 
+TODO:
 update acknowledgement
 
 - Karina for posters
 - David + Kilian for images
+
+features:
+
+- adding "Übung mit Bildern" new mode
+- prewarm images to avoid rendering delays
+- update highscore display in screen
 
 # version 2.6.2 (2.6.1 was forced to re-upload)
 
@@ -18,7 +25,7 @@ features:
 - remove competitions
 - add Kommando truck
 - add info popup when all and half the tools are trained
-- introduce "Training mit Bildern" button, but disabled
+- introduce "Übung mit Bildern" button, but disabled
 
 fixes:
 
