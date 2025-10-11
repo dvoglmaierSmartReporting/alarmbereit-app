@@ -16,7 +16,6 @@ from kivy.uix.screenmanager import ScreenManager
 from kivy.config import Config
 
 from app.main import FeuerwehrApp
-from app.screens.firetruck_menu import Firetruck_Menu
 from app.screens.firetruck_training import Firetruck_Training
 from app.screens.firetruck_game import Firetruck_Game
 from app.helper.file_handling import load_total_firetruck_storage
@@ -50,6 +49,27 @@ def test_user_data_dir_available(app):
     assert app.user_data_dir is not None
 
 
+### HELPER FUNCTIONS ###
+
+
+def set_graphics_config(to_update: dict) -> None:
+    if not Config.has_section("graphics"):
+        Config.add_section("graphics")
+    for key, value in to_update.items():
+        Config.set("graphics", key, value)
+
+
+def set_graphics_defaults() -> None:
+    set_graphics_config({"width": "600", "height": "1000", "min_state_time": ".035"})
+
+
+def prepare_config_for_tests(city_name: str, mode: str):
+    Config._sections.clear()
+    Config.setdefaults("content", {"city": city_name, "state": "Salzburg"})
+    Config.setdefaults("firetruck", {"mode": mode})
+    set_graphics_defaults()
+
+
 #### ALL SCREENS ####
 
 
@@ -57,10 +77,8 @@ def test_all_screens_load(app):
     screen_manager = app.root
     screen_names = screen_manager.screen_names
 
-    Config._sections.clear()
-    Config.setdefaults("content", {"city": "Hallein", "state": "Salzburg"})
-    Config.setdefaults("graphics", {"width": "600", "height": "1000"})
-    Config.setdefaults("graphics", {"min_state_time": ".035"})
+    prepare_config_for_tests("Hallein", "Übung")
+    Config.set("firetruck", "selected_firetruck", "Leiter")
 
     for screen_name in screen_names:
         screen_manager.current = screen_name
@@ -85,25 +103,29 @@ def test_firetruck_training__select_firetruck(city_name):
     # using get_running_app() methode, which is simulated above
     firetrucks = list(load_total_firetruck_storage(city_name).keys())
 
-    for firetruck_name in firetrucks:
+    prepare_config_for_tests(city_name, "Übung")
+
+    for firetruck in firetrucks:
+        Config.set("firetruck", "selected_firetruck", firetruck)
+
         screen = Firetruck_Training(name="firetruck_training")
         try:
-            screen.select_city(city_name)
-            screen.select_firetruck(firetruck_name)
-            screen.play()
-            print(f"✅ Loaded firetruck_training '{firetruck_name}'")
+            screen.on_pre_enter()
+            print(f"✅ Loaded firetruck_training '{firetruck}'")
         except Exception as e:
-            pytest.fail(f"❌ Failed to load firetruck_training '{firetruck_name}': {e}")
+            pytest.fail(f"❌ Failed to load firetruck_training '{firetruck}': {e}")
 
 
 @pytest.mark.parametrize("city_name", cities)
 def test_firetruck_training__select_invalid_firetruck__should_fail(city_name):
     screen = Firetruck_Training(name="firetruck_training")
     invalid_firetruck = "Tank300"
+
+    prepare_config_for_tests(city_name, "Übung")
+
     with pytest.raises(Exception):
-        screen.select_city(city_name)
-        screen.select_firetruck(invalid_firetruck)
-        screen.play()
+        Config.set("firetruck", "selected_firetruck", invalid_firetruck)
+        screen.on_pre_enter()
 
 
 #### FIRETRUCK GAME ####
@@ -115,22 +137,25 @@ def test_firetruck_game__select_firetruck(city_name):
     # using get_running_app() methode, which is simulated above
     firetrucks = list(load_total_firetruck_storage(city_name).keys())
 
-    for firetruck_name in firetrucks:
+    prepare_config_for_tests(city_name, "Zeitdruck")
+
+    for firetruck in firetrucks:
+        Config.set("firetruck", "selected_firetruck", firetruck)
+
         screen = Firetruck_Game(name="firetruck_game")
         try:
-            screen.select_city(city_name)
-            screen.select_firetruck(firetruck_name)
-            screen.play()
-            print(f"✅ Loaded firetruck_game '{firetruck_name}'")
+            screen.on_pre_enter()
+            print(f"✅ Loaded firetruck_game '{firetruck}'")
         except Exception as e:
-            pytest.fail(f"❌ Failed to load firetruck_game '{firetruck_name}': {e}")
+            pytest.fail(f"❌ Failed to load firetruck_game '{firetruck}': {e}")
 
 
 @pytest.mark.parametrize("city_name", cities)
 def test_firetruck_game__select_invalid_firetruck__should_fail(city_name):
     screen = Firetruck_Game(name="firetruck_game")
     invalid_firetruck = "Tank300"
+
+    prepare_config_for_tests(city_name, "Zeitdruck")
+
     with pytest.raises(Exception):
-        screen.select_city(city_name)
-        screen.select_firetruck(invalid_firetruck)
-        screen.play()
+        screen.on_pre_enter()

@@ -15,12 +15,13 @@ from helper.functions import (
     get_ToolQuestion_instances,
     change_screen_to,
     get_firetruck_layouts,
-    break_tool_name,
 )
 from helper.file_handling import (
     save_to_scores_file,
     get_score_value,
     tool_image_file_exists,
+    get_selected_city_state,
+    get_selected_firetruck,
 )
 from helper.settings import Settings
 from helper.strings import (
@@ -43,6 +44,19 @@ class Firetruck_Training_With_Images(Screen):
         # do this once (e.g., in App.build or your Screen __init__)
         Loader.num_workers = 2  # tweak 2–8 depending on cores
         self._img_proxies = {}  # path -> ProxyImage
+
+    def on_pre_enter(self):
+        self.selected_city, _ = get_selected_city_state()
+
+        self.selected_firetruck = get_selected_firetruck()
+
+        self.ids.firetruck_label.text = self.selected_firetruck
+
+        self.room_layout = get_firetruck_layouts(
+            self.selected_firetruck, self.selected_city
+        )
+
+        self.play()
 
     def prewarm_images(self, paths):
         # kick off background loads and keep references so cache isn't GC'd
@@ -81,19 +95,6 @@ class Firetruck_Training_With_Images(Screen):
             proxy.bind(on_load=_apply_texture)
 
         return image
-
-    def select_city(self, selected_city: str):
-        self.selected_city = selected_city
-
-    def select_firetruck(self, selected_firetruck: str):
-        # troubleshooting: fix firetruck
-        # self.selected_firetruck = "Tank1" "Rüst+Lösch"
-        self.selected_firetruck = selected_firetruck
-
-        self.firetruck_label = cast(Label, self.firetruck_label)
-        self.firetruck_label.text = selected_firetruck
-
-        self.room_layout = get_firetruck_layouts(selected_firetruck, self.selected_city)
 
     def update_strike_label(self):
         self.strike_label = cast(Label, self.strike_label)

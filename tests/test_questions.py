@@ -15,9 +15,9 @@ from kivy.app import App
 from kivy.base import EventLoop
 from kivy.clock import Clock
 from kivy.uix.screenmanager import ScreenManager
+from kivy.config import Config
 
 from app.main import FeuerwehrApp
-from app.screens.competition_training import Competition_Training
 from app.screens.firetruck_training import Firetruck_Training
 from app.helper.file_handling import (
     load_total_firetruck_storage,
@@ -55,6 +55,27 @@ def test_user_data_dir_available(app):
     assert app.user_data_dir is not None
 
 
+### HELPER FUNCTIONS ###
+
+
+def set_graphics_config(to_update: dict) -> None:
+    if not Config.has_section("graphics"):
+        Config.add_section("graphics")
+    for key, value in to_update.items():
+        Config.set("graphics", key, value)
+
+
+def set_graphics_defaults() -> None:
+    set_graphics_config({"width": "600", "height": "1000", "min_state_time": ".035"})
+
+
+def prepare_config_for_tests(city_name: str, mode: str):
+    Config._sections.clear()
+    Config.setdefaults("content", {"city": city_name, "state": "Salzburg"})
+    Config.setdefaults("firetruck", {"mode": mode})
+    set_graphics_defaults()
+
+
 #### FIRETRUCK TRAINING ####
 
 cities = ["Hallein", "Bad Dürrnberg", "Altenmarkt a.d. Alz"]
@@ -65,6 +86,9 @@ def test_firetruck_training__select_firetruck(city_name):
     # need to be loaded in test, because function is
     # using get_running_app() methode, which is simulated above
     firetrucks = list(load_total_firetruck_storage(city_name).keys())
+
+    prepare_config_for_tests(city_name, "Übung")
+
     settings.FIRETRUCK_TRAINING_FEEDBACK_SEC = 0.3
 
     class Instance:
@@ -76,13 +100,13 @@ def test_firetruck_training__select_firetruck(city_name):
     with patch("kivy.clock.Clock.schedule_once") as mock_schedule:
         mock_schedule.side_effect = lambda func, timeout: func(0.016)
 
-        for firetruck_name in firetrucks:
+        for firetruck in firetrucks:
+            Config.set("firetruck", "selected_firetruck", firetruck)
+
             screen = Firetruck_Training(name="firetruck_training")
             try:
-                screen.select_city(city_name)
-                screen.select_firetruck(firetruck_name)
-                screen.play()
-                print(f"✅ Loaded firetruck_training '{firetruck_name}'")
+                screen.on_pre_enter()
+                print(f"✅ Loaded firetruck_training '{firetruck}'")
 
                 i = 0
                 while True:
@@ -99,6 +123,4 @@ def test_firetruck_training__select_firetruck(city_name):
                         break
 
             except Exception as e:
-                pytest.fail(
-                    f"❌ Failed to load firetruck_training '{firetruck_name}': {e}"
-                )
+                pytest.fail(f"❌ Failed to load firetruck_training '{firetruck}': {e}")

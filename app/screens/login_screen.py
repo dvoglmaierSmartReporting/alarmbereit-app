@@ -4,7 +4,7 @@ from kivy.uix.screenmanager import Screen
 from kivy.clock import Clock
 
 from helper.functions import change_screen_to
-from helper.file_handling import update_config, map_selected_city_2long_name
+from helper.file_handling import update_config_content, map_selected_city_2long_name
 from helper.aspect_image import get_city_image, get_team122_small_image
 from helper.strings import Strings, Info_Text
 
@@ -82,7 +82,7 @@ class Login(Screen):
         self.selected_state = state[9:-7]
         self.selected_city = map_selected_city_2long_name(self.selected_button)
 
-        update_config(
+        update_config_content(
             {
                 "city": self.selected_city,
                 "state": self.selected_state,

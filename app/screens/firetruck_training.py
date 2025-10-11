@@ -13,7 +13,12 @@ from helper.functions import (
     change_screen_to,
     get_firetruck_layouts,
 )
-from helper.file_handling import save_to_scores_file, get_score_value
+from helper.file_handling import (
+    save_to_scores_file,
+    get_score_value,
+    get_selected_city_state,
+    get_selected_firetruck,
+)
 from helper.settings import Settings
 from helper.strings import (
     Strings,
@@ -29,26 +34,24 @@ strings = Strings()
 
 
 class Firetruck_Training(Screen):
-    def select_city(self, selected_city: str):
-        self.selected_city = selected_city
+    def on_pre_enter(self):
+        self.selected_city, _ = get_selected_city_state()
 
-    def select_firetruck(self, selected_firetruck: str):
-        # troubleshooting: fix firetruck
-        # self.selected_firetruck = "Tank1" "Rüst+Lösch"
-        self.selected_firetruck = selected_firetruck
+        self.selected_firetruck = get_selected_firetruck()
 
-        self.firetruck_label = cast(Label, self.firetruck_label)
-        self.firetruck_label.text = selected_firetruck
+        self.ids.firetruck_label.text = self.selected_firetruck
 
-        self.room_layout = get_firetruck_layouts(selected_firetruck, self.selected_city)
+        self.room_layout = get_firetruck_layouts(
+            self.selected_firetruck, self.selected_city
+        )
+
+        self.play()
 
     def update_strike_label(self):
-        self.strike_label = cast(Label, self.strike_label)
-        self.strike_label.text = str(self.game.answers_correct_strike)
+        self.ids.strike_label.text = str(self.game.answers_correct_strike)
 
     def update_high_strike_label(self):
-        self.high_strike_label = cast(Label, self.high_strike_label)
-        self.high_strike_label.text = f"Best: {str(self.current_high_strike)}"
+        self.ids.high_strike_label.text = f"Best: {str(self.current_high_strike)}"
 
     def reset_strike(self, *arg):
         self.game.answers_correct_strike = 0
@@ -143,7 +146,6 @@ class Firetruck_Training(Screen):
     def incorrect_answer(self):
         self.feedback_green = False
 
-        # self.reset_strike()
         Clock.schedule_once(self.reset_strike, settings.FIRETRUCK_TRAINING_FEEDBACK_SEC)
 
     def on_answer(self, instance):

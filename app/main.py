@@ -26,8 +26,9 @@ from screens.firetruck_menu import Firetruck_Menu
 from screens.firetruck_training import Firetruck_Training
 from screens.firetruck_training_with_images import Firetruck_Training_With_Images
 from screens.firetruck_game import Firetruck_Game
-from screens.firetruck_browse import Firetruck_Browse
-from screens.firetruck_images import Firetruck_Images
+
+# from screens.firetruck_browse import Firetruck_Browse
+# from screens.firetruck_images import Firetruck_Images
 
 # from popups.error_popup import ErrorPopup
 from popups.text_popup import TextPopup
@@ -83,8 +84,8 @@ class FeuerwehrApp(App):
             self.sm.add_widget(Firetruck_Training())
             self.sm.add_widget(Firetruck_Training_With_Images())
             self.sm.add_widget(Firetruck_Game())
-            self.sm.add_widget(Firetruck_Browse())
-            self.sm.add_widget(Firetruck_Images())
+            # self.sm.add_widget(Firetruck_Browse())
+            # self.sm.add_widget(Firetruck_Images())
 
             # Android return button
             # Bind keyboard handler after window is initialized

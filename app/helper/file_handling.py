@@ -244,18 +244,46 @@ def save_to_scores_file(
     save_to_yaml(scores_file_path, content)
 
 
-def update_config(to_update: dict) -> None:
+def update_config(to_update: dict, section: str) -> None:
     # make sure the content section exists
-    if not Config.has_section("content"):
-        Config.add_section("content")
+    if not Config.has_section(section):
+        Config.add_section(section)
 
     for key, value in to_update.items():
-        Config.set("content", key, value)
+        Config.set(section, key, value)
     Config.write()
+
+
+def update_config_content(to_update: dict) -> None:
+    update_config(to_update, "content")
 
 
 def get_selected_city_state() -> tuple[str, str]:
     return Config.get("content", "city"), Config.get("content", "state")
+
+
+def update_config_firetruck(to_update: dict) -> None:
+    update_config(to_update, "firetruck")
+
+
+def get_selected_mode() -> str:
+    section = "firetruck"
+    if not Config.has_section(section):
+        raise ValueError(f"Config section '{section}' does not exist.")
+    if not Config.has_option(section, "mode"):
+        raise ValueError(f"Config option 'mode' does not exist in section '{section}'.")
+    return Config.get(section, "mode")
+
+
+def get_selected_firetruck() -> str:
+    section = "firetruck"
+    if not Config.has_section(section):
+        raise ValueError(f"Config section '{section}' does not exist.")
+    if not Config.has_option(section, "selected_firetruck"):
+        raise ValueError(
+            f"Config option 'selected_firetruck' does not exist in section '{section}'."
+        )
+    return Config.get(section, "selected_firetruck")
 
 
 def image_file_exists(file_name: str) -> bool:

@@ -15,7 +15,12 @@ from helper.functions import (
     get_ToolQuestion_instances,
     get_firetruck_layouts,
 )
-from helper.file_handling import save_to_scores_file, get_score_value
+from helper.file_handling import (
+    save_to_scores_file,
+    get_score_value,
+    get_selected_city_state,
+    get_selected_firetruck,
+)
 from helper.settings import Settings
 from helper.strings import Strings, Firetruck_GameEndText
 from helper.game_class import GameCore
@@ -30,18 +35,18 @@ class Firetruck_Game(Screen):
     timer_change_label_visible = BooleanProperty(False)
     # timer_change_add = BooleanProperty(True)
 
-    def select_city(self, selected_city: str):
-        self.selected_city = selected_city
+    def on_pre_enter(self):
+        self.selected_city, _ = get_selected_city_state()
 
-    def select_firetruck(self, selected_firetruck: str):
-        # troubleshooting: fix firetruck
-        # self.selected_firetruck = "Tank1" "Rüst+Lösch"
-        self.selected_firetruck = selected_firetruck
+        self.selected_firetruck = get_selected_firetruck()
 
-        self.firetruck_label = cast(Label, self.firetruck_label)
-        self.firetruck_label.text = selected_firetruck
+        self.ids.firetruck_label.text = self.selected_firetruck
 
-        self.room_layout = get_firetruck_layouts(selected_firetruck, self.selected_city)
+        self.room_layout = get_firetruck_layouts(
+            self.selected_firetruck, self.selected_city
+        )
+
+        self.play()
 
     def hide_label(self, *args):
         self.extra_time_label = cast(Label, self.extra_time_label)

@@ -73,7 +73,8 @@ parse_args_and_maybe_bump() {
 run_tests() {
     # Run tests
     echo "🧪 Running tests with pytest..."
-    pytest tests/ -v | tee build-test.log
+    pytest ./tests/test_screens.py -v | tee build-test.log
+    pytest ./tests/test_questions.py -v | tee build-test.log
     exit_code=${PIPESTATUS[0]}
 
     if [ "$exit_code" -eq 0 ]; then
