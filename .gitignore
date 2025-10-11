@@ -43,6 +43,7 @@ Unterlagen Bewerbe _ Leistungsabzeichen
 
 # tests
 .hypothesis
+.pytest_cache
 
 # backup
 app/assets/backup
