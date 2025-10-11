@@ -7,7 +7,6 @@ ideen_backlog.md
 
 # helper scripts
 helper
-helper_new
 
 # sandbox
 screen.py
@@ -48,7 +47,6 @@ Unterlagen Bewerbe _ Leistungsabzeichen
 app/assets/backup
 next_version
 deprecated
-deprecated_new
 
 ## include this folder later, when using it
 IaC
