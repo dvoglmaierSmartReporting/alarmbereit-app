@@ -6,12 +6,8 @@ app/assets/.DS_Store
 ideen_backlog.md
 
 # helper scripts
-create_default_score_yaml.py
-compress_images.py
-images_compress.py
-images_size.py
-tools_analysis.py
-tool_list.txt
+helper
+helper_new
 
 # sandbox
 screen.py
@@ -48,9 +44,11 @@ Unterlagen Bewerbe _ Leistungsabzeichen
 # tests
 .hypothesis
 
-# backup assets
+# backup
 app/assets/backup
 next_version
+deprecated
+deprecated_new
 
-## REMOVE LATER
+## include this folder later, when using it
 IaC
