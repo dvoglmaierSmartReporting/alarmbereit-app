@@ -6,7 +6,6 @@ from kivy.uix.screenmanager import Screen
 from kivy.clock import Clock
 
 from random import shuffle
-from typing import cast
 
 from popups.text_popup import TextPopup
 
@@ -33,7 +32,6 @@ strings = Strings()
 
 class Firetruck_Game(Screen):
     timer_change_label_visible = BooleanProperty(False)
-    # timer_change_add = BooleanProperty(True)
 
     def on_pre_enter(self):
         self.selected_city, _ = get_selected_city_state()
@@ -49,14 +47,12 @@ class Firetruck_Game(Screen):
         self.play()
 
     def hide_label(self, *args):
-        self.extra_time_label = cast(Label, self.extra_time_label)
-        self.extra_time_label.opacity = 0
+        self.ids.extra_time_label.opacity = 0
 
     def reset_timer(self):
         self.time_left = settings.FIRETRUCK_GAME_START_TIME_SEC
 
-        self.progress_bar = cast(ProgressBar, self.progress_bar)
-        self.progress_bar.max = settings.FIRETRUCK_GAME_START_TIME_SEC
+        self.ids.progress_bar.max = settings.FIRETRUCK_GAME_START_TIME_SEC
 
     def add_time(self):
         self.time_left = round(
@@ -67,7 +63,7 @@ class Firetruck_Game(Screen):
         if self.time_left > self.progress_bar.max:
             self.progress_bar.max = self.time_left
 
-        self.extra_time_label.text = f"+ {settings.FIRETRUCK_GAME_EXTRA_TIME_SEC} s"
+        self.ids.extra_time_label.text = f"+ {settings.FIRETRUCK_GAME_EXTRA_TIME_SEC} s"
 
         self.extra_time_label.opacity = 1
 
@@ -94,14 +90,11 @@ class Firetruck_Game(Screen):
 
     def increment_score(self, add: int = settings.FIRETRUCK_GAME_CORRECT_POINTS):
         self.game.score += add
-        self.score_label.text = str(self.game.score)
+        self.ids.score_label.text = str(self.game.score)
 
     def update_score_labels(self):
-        self.score_label = cast(Label, self.score_label)
-        self.high_score_label = cast(Label, self.high_score_label)
-
-        self.score_label.text = str(self.game.score)
-        self.high_score_label.text = f"Best: {str(self.current_high_score)}"
+        self.ids.score_label.text = str(self.game.score)
+        self.ids.high_score_label.text = f"Best: {str(self.current_high_score)}"
 
     def end_game(self):
         Clock.unschedule(self.update_timer)
@@ -172,14 +165,7 @@ class Firetruck_Game(Screen):
 
         self.current_tool_question = self.tool_questions.pop()
 
-        self.tool_label = cast(Label, self.tool_label)
-
-        self.tool_label.text = self.current_tool_question.tool
-
-        # for storage in self.firetruck_rooms:
-        #     btn = Button(text=storage, font_size="28sp", disabled=storage == "")
-        #     btn.bind(on_press=self.on_answer)
-        #     self.ids.firetruck_rooms_layout.add_widget(btn)
+        self.ids.tool_label.text = self.current_tool_question.tool
 
         float = build_answer_layout(self.room_layout, "firetruck_game")
 
@@ -251,8 +237,8 @@ class Firetruck_Game(Screen):
                 # answer in correct answers
                 instance.background_color = (0, 0, 1, 1)
 
-                self.tool_label.text += "\n"
-                self.tool_label.text += strings.HINT_STR_MULTIPLE_ANSWERS
+                self.ids.tool_label.text += "\n"
+                self.ids.tool_label.text += strings.HINT_STR_MULTIPLE_ANSWERS
 
                 return
 

@@ -5,7 +5,6 @@ from kivy.animation import Animation
 from kivy.clock import Clock
 
 from random import shuffle
-from typing import cast
 
 from helper.functions import get_ToolQuestion_instances, change_screen_to
 from helper.file_handling import save_to_scores_file, get_score_value
@@ -24,16 +23,13 @@ class Firetruck_Exam(Screen):
         # self.selected_firetruck = "Tank1" "Rüst+Lösch"
         self.selected_firetruck = selected_firetruck
 
-        self.firetruck_label = cast(Label, self.firetruck_label)
-        self.firetruck_label.text = selected_firetruck
+        self.ids.firetruck_label.text = selected_firetruck
 
     def update_strike_label(self):
-        self.strike_label = cast(Label, self.strike_label)
-        self.strike_label.text = str(self.game.answers_correct_strike)
+        self.ids.strike_label.text = str(self.game.answers_correct_strike)
 
     def update_high_strike_label(self):
-        self.high_strike_label = cast(Label, self.high_strike_label)
-        self.high_strike_label.text = f"Best: {str(self.current_high_strike)}"
+        self.ids.high_strike_label.text = f"Best: {str(self.current_high_strike)}"
 
     def reset_strike(self, *arg):
         self.game.answers_correct_strike = 0
@@ -95,9 +91,7 @@ class Firetruck_Exam(Screen):
         # self.current_tool = "Handfunkgerät"  # "Druckschlauch B"
         self.current_tool_question = self.tool_questions.pop()
 
-        self.tool_label = cast(Label, self.tool_label)
-
-        self.tool_label.text = self.current_tool_question.tool
+        self.ids.tool_label.text = self.current_tool_question.tool
 
         self.first_layout = build_answer_layout(
             self.selected_firetruck, "fahrzeugkunde_exam"
@@ -171,8 +165,8 @@ class Firetruck_Exam(Screen):
                 # answer in correct answers
                 instance.background_color = (0, 0, 1, 1)
 
-                self.tool_label.text += "\n"
-                self.tool_label.text += strings.HINT_STR_MULTIPLE_ANSWERS
+                self.ids.tool_label.text += "\n"
+                self.ids.tool_label.text += strings.HINT_STR_MULTIPLE_ANSWERS
 
                 return
 

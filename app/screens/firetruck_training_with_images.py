@@ -7,7 +7,6 @@ from kivy.clock import Clock
 from kivy.loader import Loader
 
 from random import shuffle
-from typing import cast
 
 from popups.text_popup import TextPopup
 
@@ -97,12 +96,10 @@ class Firetruck_Training_With_Images(Screen):
         return image
 
     def update_strike_label(self):
-        self.strike_label = cast(Label, self.strike_label)
-        self.strike_label.text = str(self.game.answers_correct_strike)
+        self.ids.strike_label.text = str(self.game.answers_correct_strike)
 
     def update_high_strike_label(self):
-        self.high_strike_label = cast(Label, self.high_strike_label)
-        self.high_strike_label.text = f"Best: {str(self.current_high_strike)}"
+        self.ids.high_strike_label.text = f"Best: {str(self.current_high_strike)}"
 
     def reset_strike(self, *arg):
         self.game.answers_correct_strike = 0
@@ -319,8 +316,8 @@ class Firetruck_Training_With_Images(Screen):
                 # answer in correct answers
                 instance.background_color = (0, 0, 1, 1)
 
-                self.tool_label.text += "\n"
-                self.tool_label.text += strings.HINT_STR_MULTIPLE_ANSWERS
+                self.ids.tool_label.text += "\n"
+                self.ids.tool_label.text += strings.HINT_STR_MULTIPLE_ANSWERS
 
                 return
 

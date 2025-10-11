@@ -185,9 +185,16 @@ Herzlichen Dank an alle Unterstützerinnen und Unterstützer dieses Projekts!
 [b]Martin Reisaus[/b]
 [b]Thomas Herbst[/b]
 
+• Für die Erstellung von Infoplakaten:
+[b]Karina Tschematschar[/b]
+
 • Für die tatkräftige Unterstützung bei der Erstellung der Beladelisten:
 [b]Bereitschaft 1[/b]
 [b]Dienstführer[/b]
+
+• Für die Unterstützung bei den Geräteaufnahmen:
+[b]David Reiterer[/b]
+[b]Kilian Brüderl[/b]
 
 • Für konstruktives Feedback und intensive Belastungstests der Beta-Version:
 [b]Bereitschaft 5[/b]

@@ -4,7 +4,6 @@ from kivy.uix.screenmanager import Screen
 from kivy.clock import Clock
 
 from random import shuffle
-from typing import cast
 
 from popups.text_popup import TextPopup
 
@@ -199,8 +198,8 @@ class Firetruck_Training(Screen):
                 # answer in correct answers
                 instance.background_color = (0, 0, 1, 1)
 
-                self.tool_label.text += "\n"
-                self.tool_label.text += strings.HINT_STR_MULTIPLE_ANSWERS
+                self.ids.tool_label.text += "\n"
+                self.ids.tool_label.text += strings.HINT_STR_MULTIPLE_ANSWERS
 
                 return
 
