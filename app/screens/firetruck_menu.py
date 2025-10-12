@@ -137,7 +137,7 @@ class Firetruck_Menu(Screen):
             markup=True,  # Enable markup for custom text positioning
             font_size="32sp",
             size_hint_y=None,
-            height=200,
+            height=350,  # 200
             size_hint_x=1,
             disabled=disabled,
         )

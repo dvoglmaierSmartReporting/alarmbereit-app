@@ -1,10 +1,4 @@
-# next version
-
-TODO:
-update acknowledgement
-
-- Karina for posters
-- David + Kilian for images
+# version 2.7.0
 
 features:
 

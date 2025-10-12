@@ -316,8 +316,8 @@ class Firetruck_Training_With_Images(Screen):
                 # answer in correct answers
                 instance.background_color = (0, 0, 1, 1)
 
-                self.ids.tool_label.text += "\n"
-                self.ids.tool_label.text += strings.HINT_STR_MULTIPLE_ANSWERS
+                self.tool_label.text += "\n"
+                self.tool_label.text += strings.HINT_STR_MULTIPLE_ANSWERS
 
                 return
 
