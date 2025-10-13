@@ -380,7 +380,7 @@ def migrate_to_2_4_0(existing_content: dict, new_content: dict) -> dict:
             new_content["Altenmarkt"]["competitions"].update(values)
 
         elif key == "firetrucks":
-            for truck, strike_score in values.items():
+            for truck, score in values.items():
                 if truck in [
                     "Leiter",
                     "Pumpe",
@@ -390,13 +390,13 @@ def migrate_to_2_4_0(existing_content: dict, new_content: dict) -> dict:
                     "Tank2",
                     "Voraus",
                 ]:
-                    # new_content["Hallein"]["firetrucks"][truck].update(deepcopy(strike_score))
-                    new_content["Hallein"]["firetrucks"][truck].update(strike_score)
+                    # new_content["Hallein"]["firetrucks"][truck].update(deepcopy(score))
+                    new_content["Hallein"]["firetrucks"][truck].update(score)
 
                 elif truck == "PumpeDürrnberg":
-                    new_content["Dürrnberg"]["firetrucks"]["Pumpe"].update(strike_score)
+                    new_content["Dürrnberg"]["firetrucks"]["Pumpe"].update(score)
                 elif truck == "TankDürrnberg":
-                    new_content["Dürrnberg"]["firetrucks"]["Tank"].update(strike_score)
+                    new_content["Dürrnberg"]["firetrucks"]["Tank"].update(score)
 
     return new_content
 

@@ -132,12 +132,18 @@ class Firetruck_Menu(Screen):
     def add_firetruck_button(self, firetruck: str, disabled: bool = False):
         abbreviation = self.abbreviations.get(firetruck, "")
         # Create a button with two strings, one centered and one at the bottom right
+
+        if self.selected_city == "Hallein":
+            button_height = 200
+        else:
+            button_height = 350
+
         btn = Button(
             text=f"{firetruck}{' '*3}[size=30]{abbreviation}[/size]",
             markup=True,  # Enable markup for custom text positioning
             font_size="32sp",
             size_hint_y=None,
-            height=350,  # 200
+            height=button_height,
             size_hint_x=1,
             disabled=disabled,
         )

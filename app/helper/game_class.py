@@ -5,7 +5,7 @@ from random import shuffle
 @dataclass
 class GameCore:
     answers_correct_total: int = 0
-    answers_correct_strike: int = 0
+    answers_correct: int = 0
     score: int = 0
 
     # option to store all questions list here

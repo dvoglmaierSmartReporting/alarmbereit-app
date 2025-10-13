@@ -1,3 +1,13 @@
+# next version
+
+to-be-fixed
+
+- training mit bildern: multi-answer tool fails
+
+features:
+
+- tech depth: share methods between screens by using BaseMethode class
+
 # version 2.7.0
 
 features:

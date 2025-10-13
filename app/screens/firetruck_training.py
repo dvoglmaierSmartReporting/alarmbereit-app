@@ -1,20 +1,10 @@
-from kivy.uix.button import Button
-from kivy.uix.label import Label
 from kivy.uix.screenmanager import Screen
 from kivy.clock import Clock
 
-from random import shuffle
-
 from popups.text_popup import TextPopup
 
-from helper.functions import (
-    get_ToolQuestion_instances,
-    change_screen_to,
-    get_firetruck_layouts,
-)
+from helper.functions import get_firetruck_layouts
 from helper.file_handling import (
-    save_to_scores_file,
-    get_score_value,
     get_selected_city_state,
     get_selected_firetruck,
 )
@@ -27,16 +17,20 @@ from helper.strings import (
 from helper.game_class import GameCore
 from helper.firetruck_layouts import build_answer_layout
 
+from screens.screen_base import BaseMethods
+
 
 settings = Settings()
 strings = Strings()
 
 
-class Firetruck_Training(Screen):
+class Firetruck_Training(Screen, BaseMethods):
     def on_pre_enter(self):
         self.selected_city, _ = get_selected_city_state()
 
         self.selected_firetruck = get_selected_firetruck()
+
+        self.current_screen = self.get_current_screen()
 
         self.ids.firetruck_label.text = self.selected_firetruck
 
@@ -46,50 +40,19 @@ class Firetruck_Training(Screen):
 
         self.play()
 
-    def update_strike_label(self):
-        self.ids.strike_label.text = str(self.game.answers_correct_strike)
-
-    def update_high_strike_label(self):
-        self.ids.high_strike_label.text = f"Best: {str(self.current_high_strike)}"
-
-    def reset_strike(self, *arg):
-        self.game.answers_correct_strike = 0
-        self.update_strike_label()
-
-    def increment_strike(self):
-        self.game.answers_correct_strike += settings.FIRETRUCK_TRAINING_CORRECT_POINTS
-        self.update_strike_label()
-
-    def reset_tool_list(self):
-        (self.firetruck_rooms, self.tool_questions) = get_ToolQuestion_instances(
-            self.selected_firetruck, self.selected_city
-        )
-        self.tool_amount = len(self.tool_questions)
-
-        shuffle(self.tool_questions)
-
     def play(self):
-        # init GameCore class instance
         self.game = GameCore()
 
-        # (re)set game specific elements
         self.reset_tool_list()
 
-        self.reset_strike()
+        self.load_high_score()
 
-        self.current_high_strike = get_score_value(
-            city=self.selected_city,
-            questions="firetrucks",
-            truck_or_comp=self.selected_firetruck,
-            key="high_strike",
-        )
-
-        self.update_high_strike_label()
+        self.reset_score()
 
         self.next_tool()
 
     def next_tool(self, *args):
-        self.accept_answers = True  # Enable answer processing for the new tool
+        self.accept_answers = True
 
         if len(self.tool_questions) == 0:
             self.reset_tool_list()
@@ -114,8 +77,8 @@ class Firetruck_Training(Screen):
         # Reset image boxes
         self.ids.firetruck_rooms_layout.clear_widgets()
 
-        # troubleshooting: fix tool
-        # self.current_tool = "Handfunkgerät"  # "Druckschlauch B"
+        # troubleshooting: fix first popped tool
+        # self.set_first_tool("Unterlegplatte")  # for testing
         self.current_tool_question = self.tool_questions.pop()
 
         self.ids.tool_label.text = self.current_tool_question.tool
@@ -123,29 +86,6 @@ class Firetruck_Training(Screen):
         float = build_answer_layout(self.room_layout, "firetruck_training")
 
         self.ids.firetruck_rooms_layout.add_widget(float)
-
-    def correct_answer(self):
-        self.increment_strike()
-
-        self.game.answers_correct_total += settings.FIRETRUCK_TRAINING_CORRECT_POINTS
-
-        if self.game.answers_correct_strike > self.current_high_strike:
-            self.current_high_strike = self.game.answers_correct_strike
-            self.update_high_strike_label()
-            save_to_scores_file(
-                city=self.selected_city,
-                questions="firetrucks",
-                truck_or_comp=self.selected_firetruck,
-                key="high_strike",
-                value=self.game.answers_correct_strike,
-            )
-
-        self.feedback_green = True
-
-    def incorrect_answer(self):
-        self.feedback_green = False
-
-        Clock.schedule_once(self.reset_strike, settings.FIRETRUCK_TRAINING_FEEDBACK_SEC)
 
     def on_answer(self, instance):
         if not self.accept_answers:  # Check if answer processing is enabled
@@ -162,46 +102,8 @@ class Firetruck_Training(Screen):
         else:
             self.incorrect_answer()
 
-        float_layout = self.ids.firetruck_rooms_layout.children[
-            0
-        ]  # children is reversed
-
-        # indicate if correct or incorrect answer
-        # for single correct answer
-        if len(self.current_tool_question.rooms_to_be_answered) <= 1:
-            # always identify and indicate the correct answer
-            # for child in children:
-            for child in float_layout.children:
-                if isinstance(child, Button):
-                    if child.text in self.current_tool_question.rooms:
-                        child.background_color = (0, 1, 0, 1)
-            # if, indicate incorrect answer
-            if instance.text not in self.current_tool_question.rooms:
-                instance.background_color = (1, 0, 0, 1)
-
-        # for multiple correct answers
-        else:
-            # document given answers in class instance
-            self.current_tool_question.room_answered.append(instance.text)
-
-            if instance.text not in self.current_tool_question.rooms:
-                # if, indicate incorrect and all correct answers and close
-                instance.background_color = (1, 0, 0, 1)
-                # for child in children:
-                for child in float_layout.children:
-                    if isinstance(child, Button):
-                        if child.text in self.current_tool_question.rooms:
-                            child.background_color = (0, 1, 0, 1)
-                pass
-
-            else:
-                # answer in correct answers
-                instance.background_color = (0, 0, 1, 1)
-
-                self.ids.tool_label.text += "\n"
-                self.ids.tool_label.text += strings.HINT_STR_MULTIPLE_ANSWERS
-
-                return
+        if self.color_layout(instance):
+            return
 
         # document given answers in class instance
         self.current_tool_question.room_answered.append(instance.text)
@@ -214,6 +116,3 @@ class Firetruck_Training(Screen):
         self.game.questions.append(self.current_tool_question)
 
         Clock.schedule_once(self.next_tool, settings.FIRETRUCK_TRAINING_FEEDBACK_SEC)
-
-    def go_back(self, *args) -> None:
-        change_screen_to("firetruck_menu")

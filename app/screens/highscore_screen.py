@@ -11,6 +11,9 @@ from helper.file_handling import (
     read_scores_file,
 )
 
+from screens.screen_base import BaseMethods
+
+
 strings = Strings()
 
 
@@ -24,13 +27,15 @@ strings = Strings()
 #  - in buildozer file
 # open default email app and prepare email
 
-from kivy.utils import platform
-from kivy.clock import Clock
-import os
+# from kivy.utils import platform
+# from kivy.clock import Clock
+# import os
 
 
-class Highscore(Screen):
+class Highscore(Screen, BaseMethods):
     def on_pre_enter(self):
+        self.current_screen = self.get_current_screen()
+
         self.update_city_label()
 
         self.update_info_text()
@@ -52,8 +57,8 @@ class Highscore(Screen):
 
         self.ids.score_text_label.text = info_text
 
-    def go_back(self, *args) -> None:
-        change_screen_to("start_menu")
+    # def go_back(self, *args) -> None:
+    #     change_screen_to("start_menu")
 
     # Not used currently
     # idea: in internal competitions, use button to create image of highscore screen

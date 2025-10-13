@@ -6,18 +6,10 @@ from kivy.uix.screenmanager import Screen
 from kivy.clock import Clock
 from kivy.loader import Loader
 
-from random import shuffle
-
 from popups.text_popup import TextPopup
 
-from helper.functions import (
-    get_ToolQuestion_instances,
-    change_screen_to,
-    get_firetruck_layouts,
-)
+from helper.functions import get_firetruck_layouts
 from helper.file_handling import (
-    save_to_scores_file,
-    get_score_value,
     tool_image_file_exists,
     get_selected_city_state,
     get_selected_firetruck,
@@ -31,12 +23,14 @@ from helper.strings import (
 from helper.game_class import GameCore
 from helper.firetruck_layouts import build_answer_layout
 
+from screens.screen_base import BaseMethods
+
 
 settings = Settings()
 strings = Strings()
 
 
-class Firetruck_Training_With_Images(Screen):
+class Firetruck_Training_With_Images(Screen, BaseMethods):
     def __init__(self, **kwargs):
         super(Firetruck_Training_With_Images, self).__init__(**kwargs)
 
@@ -49,6 +43,8 @@ class Firetruck_Training_With_Images(Screen):
 
         self.selected_firetruck = get_selected_firetruck()
 
+        self.current_screen = self.get_current_screen()
+
         self.ids.firetruck_label.text = self.selected_firetruck
 
         self.room_layout = get_firetruck_layouts(
@@ -56,6 +52,21 @@ class Firetruck_Training_With_Images(Screen):
         )
 
         self.play()
+
+    def play(self):
+        self.game = GameCore()
+
+        self.reset_tool_list()
+
+        self.prewarmed_question = []
+
+        self.reset_progress_bar()
+
+        self.load_high_score()
+
+        self.reset_score()
+
+        self.next_tool()
 
     def prewarm_images(self, paths):
         # kick off background loads and keep references so cache isn't GC'd
@@ -95,62 +106,6 @@ class Firetruck_Training_With_Images(Screen):
 
         return image
 
-    def update_strike_label(self):
-        self.ids.strike_label.text = str(self.game.answers_correct_strike)
-
-    def update_high_strike_label(self):
-        self.ids.high_strike_label.text = f"Best: {str(self.current_high_strike)}"
-
-    def reset_strike(self, *arg):
-        self.game.answers_correct_strike = 0
-        self.update_strike_label()
-
-    def increment_strike(self):
-        self.game.answers_correct_strike += settings.FIRETRUCK_TRAINING_CORRECT_POINTS
-        self.update_strike_label()
-
-    def reset_tool_list(self):
-        (self.firetruck_rooms, self.tool_questions) = get_ToolQuestion_instances(
-            self.selected_firetruck, self.selected_city
-        )
-        self.tool_amount = len(self.tool_questions)
-
-        shuffle(self.tool_questions)
-
-    def reset_progress_bar(self):
-        self.ids.progress_bar_answer.max = (
-            settings.FIRETRUCK_TRAINING_WITH_IMAGES_FEEDBACK_SEC - 0.3
-        )
-        self.ids.progress_bar_answer.value = 0
-
-    def play(self):
-        # init GameCore class instance
-        self.game = GameCore()
-
-        # (re)set game specific elements
-        self.reset_tool_list()
-
-        # init prewarm var for next question
-        self.prewarmed_question = []
-
-        self.reset_progress_bar()
-
-        self.reset_strike()
-
-        # TODO: high_strike already used!
-        # decide on wether overwriting or introducing a new variable
-        # or replacing regular training mode
-        self.current_high_strike = get_score_value(
-            city=self.selected_city,
-            questions="firetrucks",
-            truck_or_comp=self.selected_firetruck,
-            key="high_strike_image",
-        )
-
-        self.update_high_strike_label()
-
-        self.next_tool()
-
     def next_tool(self, *args):
         self.accept_answers = True
 
@@ -188,8 +143,8 @@ class Firetruck_Training_With_Images(Screen):
             self.current_tool_question = self.prewarmed_question
             tool_image_prewarmed = True
         else:
-            # troubleshooting: fix tool
-            # self.current_tool = "Handfunkgerät"  # "Druckschlauch B"
+            # troubleshooting: fix first popped tool
+            # self.set_first_tool("Unterlegplatte")  # for testing
             self.current_tool_question = self.tool_questions.pop()
             tool_image_prewarmed = False
 
@@ -242,29 +197,6 @@ class Firetruck_Training_With_Images(Screen):
         self.prewarmed_question = self.tool_questions.pop()
         self.prewarm_images([self.prewarmed_question.tool_image_name])
 
-    def correct_answer(self):
-        self.increment_strike()
-
-        self.game.answers_correct_total += settings.FIRETRUCK_TRAINING_CORRECT_POINTS
-
-        if self.game.answers_correct_strike > self.current_high_strike:
-            self.current_high_strike = self.game.answers_correct_strike
-            self.update_high_strike_label()
-            save_to_scores_file(
-                city=self.selected_city,
-                questions="firetrucks",
-                truck_or_comp=self.selected_firetruck,
-                key="high_strike_image",
-                value=self.game.answers_correct_strike,
-            )
-
-        self.feedback_green = True
-
-    def incorrect_answer(self):
-        self.feedback_green = False
-
-        Clock.schedule_once(self.reset_strike, settings.FIRETRUCK_TRAINING_FEEDBACK_SEC)
-
     def on_answer(self, instance):
         if not self.accept_answers:  # Check if answer processing is enabled
             return  # Ignore the button press if answer processing is disabled
@@ -276,50 +208,14 @@ class Firetruck_Training_With_Images(Screen):
         # process actual answer
         if instance.text in self.current_tool_question.rooms:
             self.correct_answer()
+            self.answer_correct = True
 
         else:
             self.incorrect_answer()
+            self.answer_correct = False
 
-        float_layout = self.ids.firetruck_rooms_layout.children[
-            0
-        ]  # children is reversed
-
-        # indicate if correct or incorrect answer
-        # for single correct answer
-        if len(self.current_tool_question.rooms_to_be_answered) <= 1:
-            # always identify and indicate the correct answer
-            # for child in children:
-            for child in float_layout.children:
-                if isinstance(child, Button):
-                    if child.text in self.current_tool_question.rooms:
-                        child.background_color = (0, 1, 0, 1)
-            # if, indicate incorrect answer
-            if instance.text not in self.current_tool_question.rooms:
-                instance.background_color = (1, 0, 0, 1)
-
-        # for multiple correct answers
-        else:
-            # document given answers in class instance
-            self.current_tool_question.room_answered.append(instance.text)
-
-            if instance.text not in self.current_tool_question.rooms:
-                # if, indicate incorrect and all correct answers and close
-                instance.background_color = (1, 0, 0, 1)
-                # for child in children:
-                for child in float_layout.children:
-                    if isinstance(child, Button):
-                        if child.text in self.current_tool_question.rooms:
-                            child.background_color = (0, 1, 0, 1)
-                pass
-
-            else:
-                # answer in correct answers
-                instance.background_color = (0, 0, 1, 1)
-
-                self.tool_label.text += "\n"
-                self.tool_label.text += strings.HINT_STR_MULTIPLE_ANSWERS
-
-                return
+        if self.color_layout(instance):
+            return
 
         # document given answers in class instance
         self.current_tool_question.room_answered.append(instance.text)
@@ -332,6 +228,9 @@ class Firetruck_Training_With_Images(Screen):
         self.game.questions.append(self.current_tool_question)
 
         self.show_feedback_image()
+
+    def incorrect_answer(self):
+        self.feedback_green = False
 
     def show_feedback_image(self):
         # Show location image during cooldown if available
@@ -377,16 +276,9 @@ class Firetruck_Training_With_Images(Screen):
 
             # room image
             try:
-                ###
-                # room_image = Image(
-                #     # source=self.current_tool_question.room_image_name,
-                #     fit_mode="contain",
-                # )
-                # layout.add_widget(room_image)
                 self.add_image(
                     layout, self.current_tool_question.room_image_name, usage="room"
                 )
-                ###
 
             except Exception as e:
                 print(f"Room image load failed: {e}")
@@ -435,9 +327,9 @@ class Firetruck_Training_With_Images(Screen):
                 self.update_progress_bar
             )  # Stop the timer when it reaches 0
 
+            if not self.answer_correct:
+                self.reset_score()
+
             self.root_layer.remove_widget(self.overlay_button)
 
             self.next_tool()
-
-    def go_back(self, *args) -> None:
-        change_screen_to("firetruck_menu")
