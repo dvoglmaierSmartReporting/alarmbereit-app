@@ -1,6 +1,7 @@
 from kivy.app import App
 from kivy.clock import Clock
 from kivy.uix.button import Button
+from kivy.uix.screenmanager import Screen
 
 from dataclasses import dataclass
 from random import shuffle
@@ -102,6 +103,7 @@ class BaseMethods:
         return app.root.current
 
     def get_scores_key(self):
+        print(f"{self.current_screen = }")
         if self.current_screen == "firetruck_training":
             return "high_strike"
         elif self.current_screen == "firetruck_training_with_images":
@@ -111,17 +113,46 @@ class BaseMethods:
         else:
             raise NotImplementedError("scores.yaml key not defined!")
 
-    def get_scores_value(self):
-        if self.current_screen in [
-            "firetruck_training",
-            "firetruck_training_with_images",
-            "firetruck_exam",
-        ]:
-            return settings.FIRETRUCK_TRAINING_CORRECT_POINTS
-        elif self.current_screen == "firetruck_game":
-            return settings.FIRETRUCK_GAME_CORRECT_POINTS
-        else:
+    def _screen_name(self):
+        # Prefer the instance's own Screen.name if present
+        if isinstance(self, Screen) and getattr(self, "name", None):
+            return self.name
+
+        # Fall back to the running app's ScreenManager current
+        try:
+            app = App.get_running_app()
+            if app and app.root:
+                return app.root.current
+        except Exception:
+            pass
+        return None
+
+    def get_scores_key(self):
+        current_screen = self._screen_name()
+
+        mapping = {
+            "firetruck_training": "high_strike",
+            "firetruck_training_with_images": "high_strike_image",
+            "firetruck_game": "high_score",
+        }
+        try:
+            return mapping[current_screen]
+        except KeyError:
             raise NotImplementedError("scores.yaml key not defined!")
+
+    def get_scores_value(self):
+        current_screen = self._screen_name()
+
+        mapping = {
+            "firetruck_training": settings.FIRETRUCK_TRAINING_CORRECT_POINTS,
+            "firetruck_training_with_images": settings.FIRETRUCK_TRAINING_CORRECT_POINTS,
+            "firetruck_exam": settings.FIRETRUCK_TRAINING_CORRECT_POINTS,
+            "firetruck_game": settings.FIRETRUCK_GAME_CORRECT_POINTS,
+        }
+        try:
+            return mapping[current_screen]
+        except KeyError:
+            raise NotImplementedError("self.current_screen not defined!")
 
     def correct_answer(self):
         self.increment_score()

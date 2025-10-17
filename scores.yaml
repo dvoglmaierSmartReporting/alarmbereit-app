@@ -1,66 +1,141 @@
-competitions:
-  ASLP Stufe I:
-    high_score: 0
-  ASLP Stufe II:
-    high_score: 0
-  ASLP Stufe III:
-    high_score: 0
-  BDLP GRKDT Stufe I:
-    high_score: 0
-  BDLP GRKDT Stufe II:
-    high_score: 0
-  BDLP MA Stufe II:
-    high_score: 0
-  BDLP ME+Trupps Stufe II:
-    high_score: 0
-  FLA Gold - Organisation:
-    high_score: 0
-  FLA Gold - Taktik:
-    high_score: 0
-  FLA Gold - Technik:
-    high_score: 0
-  Funk Bronze:
-    high_score: 0
-  Funk Gold:
-    high_score: 0
-  Funk Silber:
-    high_score: 0
-  TechnLP Stufe II:
-    high_score: 0
-firetrucks:
-  Altenmarkt:
+Altenmarkt:
+  competitions:
+    ASLP Stufe I:
+      high_score: 0
+    ASLP Stufe II:
+      high_score: 0
+    ASLP Stufe III:
+      high_score: 0
+    BDLP GRKDT Stufe I:
+      high_score: 0
+    BDLP GRKDT Stufe II:
+      high_score: 0
+    BDLP MA Stufe II:
+      high_score: 0
+    BDLP ME+Trupps Stufe II:
+      high_score: 0
+    FLA Gold - Organisation:
+      high_score: 0
+    FLA Gold - Taktik:
+      high_score: 0
+    FLA Gold - Technik:
+      high_score: 0
+    Funk Bronze:
+      high_score: 0
+    Funk Gold:
+      high_score: 0
+    Funk Silber:
+      high_score: 0
+    TechnLP Stufe II:
+      high_score: 0
+  firetrucks:
     LF20:
       high_score: 0
       high_strike: 0
+      high_strike_image: 0
     LF8:
       high_score: 0
       high_strike: 0
-  "D\xFCrrnberg":
+      high_strike_image: 0
+"D\xFCrrnberg":
+  competitions:
+    ASLP Stufe I:
+      high_score: 0
+    ASLP Stufe II:
+      high_score: 0
+    ASLP Stufe III:
+      high_score: 0
+    BDLP GRKDT Stufe I:
+      high_score: 0
+    BDLP GRKDT Stufe II:
+      high_score: 0
+    BDLP MA Stufe II:
+      high_score: 0
+    BDLP ME+Trupps Stufe II:
+      high_score: 0
+    FLA Gold - Organisation:
+      high_score: 0
+    FLA Gold - Taktik:
+      high_score: 0
+    FLA Gold - Technik:
+      high_score: 0
+    Funk Bronze:
+      high_score: 0
+    Funk Gold:
+      high_score: 0
+    Funk Silber:
+      high_score: 0
+    TechnLP Stufe II:
+      high_score: 0
+  firetrucks:
     Pumpe:
       high_score: 0
       high_strike: 0
+      high_strike_image: 0
     Tank:
       high_score: 0
       high_strike: 0
-  Hallein:
+      high_strike_image: 0
+Hallein:
+  competitions:
+    ASLP Stufe I:
+      high_score: 0
+    ASLP Stufe II:
+      high_score: 0
+    ASLP Stufe III:
+      high_score: 0
+    BDLP GRKDT Stufe I:
+      high_score: 0
+    BDLP GRKDT Stufe II:
+      high_score: 0
+    BDLP MA Stufe II:
+      high_score: 0
+    BDLP ME+Trupps Stufe II:
+      high_score: 0
+    FLA Gold - Organisation:
+      high_score: 0
+    FLA Gold - Taktik:
+      high_score: 0
+    FLA Gold - Technik:
+      high_score: 0
+    Funk Bronze:
+      high_score: 0
+    Funk Gold:
+      high_score: 0
+    Funk Silber:
+      high_score: 0
+    TechnLP Stufe II:
+      high_score: 0
+  firetrucks:
     Leiter:
       high_score: 0
       high_strike: 0
+      high_strike_image: 0
     Pumpe:
       high_score: 0
       high_strike: 0
+      high_strike_image: 0
     "R\xFCst":
       high_score: 0
       high_strike: 0
+      high_strike_image: 0
     "R\xFCstL\xF6sch":
       high_score: 0
       high_strike: 0
+      high_strike_image: 0
     Tank1:
       high_score: 0
       high_strike: 0
+      high_strike_image: 0
     Tank2:
       high_score: 0
       high_strike: 0
+      high_strike_image: 0
     Voraus:
       high_score: 0
       high_strike: 0
+      high_strike_image: 0
+    Kommando:
+      high_score: 0
+      high_strike: 0
+      high_strike_image: 0

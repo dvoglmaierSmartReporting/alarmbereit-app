@@ -19,6 +19,7 @@ from kivy.config import Config
 
 from app.main import FeuerwehrApp
 from app.screens.firetruck_training import Firetruck_Training
+from app.screens.screen_base import BaseMethods
 from app.helper.file_handling import (
     load_total_firetruck_storage,
 )
