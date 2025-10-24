@@ -5,7 +5,7 @@ from kivy.clock import Clock
 
 from helper.functions import change_screen_to
 from helper.file_handling import update_config_content, map_selected_city_2long_name
-from helper.aspect_image import get_city_image, get_team122_small_image
+from helper.aspect_image import get_city_image
 from helper.strings import Strings, Info_Text
 
 
@@ -23,10 +23,6 @@ class Login(Screen):
         # Logo Hallein
         self.ids.logo_hallein_layout.clear_widgets()
         self.ids.logo_hallein_layout.add_widget(get_city_image("Hallein"))
-
-        # Logo Team122
-        self.ids.logo_team122_layout.clear_widgets()
-        self.ids.logo_team122_layout.add_widget(get_team122_small_image())
 
         # Clear existing buttons
         self.ids.city_layout.clear_widgets()

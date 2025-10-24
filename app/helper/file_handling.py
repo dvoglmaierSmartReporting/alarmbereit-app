@@ -182,10 +182,6 @@ def get_logo_file_path(selected_long_name: str) -> str:
     if selected_long_name in ["Salzburg", "Bayern"]:
         return "assets/lfv_salzburg.png"
 
-    # team122
-    if selected_long_name == "team122":
-        return "assets/team122_logo_lang.png"
-
     # default
     return "assets/FFH_Logohalter.png"
 

@@ -1,12 +1,13 @@
-# next version
+# version 2.7.2 (2.7.1 was forced to re-upload)
 
-to-be-fixed
+update:
 
-- training mit bildern: multi-answer tool fails
+- remove team122 logos
 
-features:
+tech depth:
 
-- tech depth: share methods between screens by using BaseMethode class
+- introduce BaseMethode to share common methods between screens
+- upgrade Android SPK = 35 (Android 15) and NDK = 28b (28.2.13676358)
 
 # version 2.7.0
 

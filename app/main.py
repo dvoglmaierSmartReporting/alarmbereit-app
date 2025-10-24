@@ -1,9 +1,8 @@
 from kivy.config import Config
 
-# Set width and height
+# Set a default window size for development (will be ignored on mobile)
 Config.set("graphics", "width", "600")
 Config.set("graphics", "height", "1000")
-
 
 from kivy.app import App
 from kivy.uix.screenmanager import ScreenManager, NoTransition
@@ -11,6 +10,8 @@ from kivy.clock import Clock
 from kivy.base import EventLoop
 from kivy.lang import Builder
 from kivy.core.text import LabelBase
+from kivy.core.window import Window
+from kivy.metrics import dp
 
 
 import traceback
@@ -61,13 +62,31 @@ else:
     )
 
 
+class ResponsiveLayout:
+    @staticmethod
+    def is_landscape():
+        return Window.width > Window.height
+
+    @staticmethod
+    def is_tablet():
+        # Consider screens wider than 600dp as tablets
+        return min(Window.width, Window.height) > dp(600)
+
+    @staticmethod
+    def get_font_scale():
+        # Scale fonts based on screen density
+        base_width = dp(600)
+        return max(0.8, min(2.0, Window.width / base_width))
+
+    @staticmethod
+    def get_spacing():
+        return dp(5) if ResponsiveLayout.is_landscape() else dp(10)
+
+
 class FeuerwehrApp(App):
     def build(self):
-        # print(f'{App.get_running_app().user_data_dir = }')
-        # App.get_running_app().user_data_dir = '/Users/dominikvoglmaier/Library/Application Support/feuerwehr'
-
-        # print(f'{Config.filename = }')
-        # Config.filename = '/Users/dominikvoglmaier/.kivy/config.ini'
+        # Bind to window size changes for responsive behavior
+        Window.bind(on_resize=self.on_window_resize)
 
         try:
             # path relative to app/helper/file_handling.py
@@ -91,6 +110,9 @@ class FeuerwehrApp(App):
             # Bind keyboard handler after window is initialized
             EventLoop.window.bind(on_keyboard=self.on_android_back_button)
 
+            # Schedule initial layout update to ensure correct initial layout
+            Clock.schedule_once(self.force_layout_update, 0.1)
+
             return self.sm
 
         except Exception as e:
@@ -99,12 +121,41 @@ class FeuerwehrApp(App):
             self.show_error_popup(error_message)
             return None  # Return None to prevent further crashes
 
+    def force_layout_update(self, dt):
+        """Force a layout update to ensure correct initial layout"""
+        # Trigger a fake resize event to update all layouts
+        self.on_window_resize(Window, Window.width, Window.height)
+
+        # Also trigger canvas updates for all screens
+        if hasattr(self, "sm"):
+            for screen in self.sm.screens:
+                try:
+                    screen.canvas.ask_update()
+                except:
+                    pass
+
+    def on_window_resize(self, instance, width, height):
+        """Handle window resize for responsive layout"""
+        # Trigger layout updates for all screens
+        if hasattr(self, "sm"):
+            for screen in self.sm.screens:
+                if hasattr(screen, "update_layout"):
+                    screen.update_layout()
+                # Force canvas update for immediate visual changes
+                try:
+                    screen.canvas.ask_update()
+                except:
+                    pass
+
     def on_start(self):
+        # Force another layout update after app fully starts
+        Clock.schedule_once(self.force_layout_update, 0.2)
+
         # Avoid app crash at first installation, when Config is not added yet
         if "content" in Config.sections() and Config.has_option("content", "city"):
             if Config.get("content", "city"):
                 # Delay screen switch until app is fully initialized
-                Clock.schedule_once(self.jump_to_start_menu, 0)
+                Clock.schedule_once(self.jump_to_start_menu, 0.3)
 
     def jump_to_start_menu(self, dt):
         # Temporarily disable transitions

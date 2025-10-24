@@ -1,12 +1,13 @@
-#:kivy 2.3.0
-
+#:kivy 2.3.1
+#:import Window kivy.core.window.Window
+#:import dp kivy.metrics.dp
+#:import sp kivy.metrics.sp
 
 <Login>:
     name: "login"
 
     # IDs
     logo_hallein_layout: logo_hallein_layout
-    logo_team122_layout: logo_team122_layout
     login_label: login_label
     login_layout: login_layout
     city_scrollview: city_scrollview
@@ -17,33 +18,19 @@
     FloatLayout:
         id: logo_hallein_layout
     
-    # LOGO TEAM122
-    FloatLayout:
-        id: logo_team122_layout
-
     # SCREEN
     BoxLayout:
         orientation: 'vertical'
-        padding: "5dp"
-        spacing: "10dp"
+        padding: dp(5)
+        spacing: dp(10)
 
         # HEADER
         BoxLayout:
             size_hint_y: 2
-            spacing: "3dp"
+            spacing: dp(3)
 
             Label: # placeholder
                 size_hint_x: 4
-
-                #size_hint_x: 2
-
-            #Label:
-            #    size_hint_x: 1
-            #    id: login_label
-            #    font_size: "21sp"
-            #    halign: "center"
-            #    valign: "middle"
-            #    text_size: self.size
 
             BoxLayout:
                 size_hint_x: 2
@@ -55,7 +42,7 @@
                 Label:
                     size_hint_y: 1
                     id: login_label
-                    font_size: "21sp"
+                    font_size: dp(21) * max(0.8, min(1.5, Window.width / dp(600)))
                     halign: "center"
                     valign: "middle"
                     text_size: self.size
@@ -63,7 +50,7 @@
         # SEPARATOR
         BoxLayout:
             size_hint_y: None
-            height: 2
+            height: dp(2)
             canvas.before:
                 Color:
                     rgba: 0.5, 0.5, 0.5, 1
@@ -87,12 +74,12 @@
                     id: city_layout
                     size_hint_y: None
                     height: self.minimum_height
-                    spacing: "5dp"
+                    spacing: dp(5)
                 
         # SEPARATOR
         BoxLayout:
             size_hint_y: None
-            height: 2
+            height: dp(2)
             canvas.before:
                 Color:
                     rgba: 0.5, 0.5, 0.5, 1
@@ -106,7 +93,7 @@
 
             Button:
                 id: store_selection_button
-                font_size: "27sp"
+                font_size: dp(27) * max(0.8, min(1.5, Window.width / dp(600)))
                 on_release:
                     root.manager.get_screen('login').store_selection()
 
@@ -128,19 +115,18 @@
     # SCREEN
     BoxLayout:
         orientation: 'vertical'
-        padding: "5dp"
-        spacing: "10dp"
+        padding: dp(5)
+        spacing: dp(10)
 
         # HEADER
         BoxLayout:
             size_hint_y: 2
-            spacing: "3dp"
+            spacing: dp(3)
 
             # ACKNOWLEDGEMENT BUTTON
             Button:
                 size_hint_x: 3
                 id: acknowledgement_button
-                font_size: "20sp"
                 background_normal: ''
                 background_color: 0, 0, 0, 0
                 on_release:
@@ -153,14 +139,14 @@
             BoxLayout:
                 size_hint_x: 2
                 orientation: 'vertical'
-                spacing: "15dp"
-                padding: "15dp"
+                spacing: dp(15)
+                padding: dp(15)
 
                 # SCORE BUTTON
                 Button:
                     size_hint_y: 1
                     id: score_button
-                    font_size: "20sp"
+                    font_size: sp(25) * max(0.8, min(1.5, Window.width / sp(600)))
                     background_normal: ''
                     background_color: 0.2, 0.2, 0.2, 0.5
                     on_release:
@@ -171,7 +157,7 @@
                 Button:
                     size_hint_y: 1
                     id: all_cities_button
-                    font_size: "20sp"
+                    font_size: sp(25) * max(0.8, min(1.5, Window.width / sp(600)))
                     background_normal: ''
                     background_color: 0.2, 0.2, 0.2, 0.5
                     on_release:
@@ -181,7 +167,7 @@
         # SEPARATOR
         BoxLayout:
             size_hint_y: None
-            height: 2
+            height: dp(2)
             canvas.before:
                 Color:
                     rgba: 0.5, 0.5, 0.5, 1
@@ -194,18 +180,10 @@
             id: content_layout
             size_hint_y: 7.5
             orientation: "vertical"
-            spacing: "5dp"
+            spacing: dp(5)
         
         Label: # placeholder
             size_hint_y: 0.5
-
-    ## VERSION
-    #FloatLayout:
-    #    Label:
-    #        text: "Version 2.4.9"
-    #        font_size: "10sp"
-    #        size_hint: 0.1, 0.03
-    #        pos_hint: {"center_x": 0.5, "y": 0.025}
 
 
 <Highscore>:
@@ -214,46 +192,37 @@
     # IDs
     city_label: city_label
     score_text_label: score_text_label
-    #share_button: share_button
 
     # SCREEN
     BoxLayout:
         orientation: 'vertical'
-        spacing: "10dp"
-        padding: "5dp"
+        spacing: dp(10)
+        padding: dp(5)
 
         # HEADER
         BoxLayout:
             size_hint_y: 1
-            spacing: "3dp"
+            spacing: dp(3)
 
             Button:
                 size_hint_x: 1
                 text: "<"
-                font_size: "32sp"
+                font_size: dp(32) * max(0.8, min(1.5, Window.width / dp(600)))
                 on_release:
                     root.go_back()
             
             Label:
                 size_hint_x: 5
                 id: city_label
-                font_size: "25sp"
+                font_size: dp(25) * max(0.8, min(1.5, Window.width / dp(600)))
                 halign: "center"
                 valign: "middle"
                 text_size: self.size
-
-            ## SCREENSHOT
-            #Button:
-            #    id: share_button
-            #    size_hint_x: 4
-            #    font_size: "21sp"
-            #    on_release:
-            #        root.capture_scrollview()
     
         # SEPARATOR
         BoxLayout:
             size_hint_y: None
-            height: 2
+            height: dp(2)
             canvas.before:
                 Color:
                     rgba: 0.5, 0.5, 0.5, 1
@@ -268,7 +237,7 @@
 
             Label:
                 id: score_text_label
-                font_size: "15sp"
+                font_size: dp(15) * max(0.8, min(1.5, Window.width / dp(600)))
                 font_name: "CourierNew"
                 halign: "left"
                 valign: "top"
@@ -288,18 +257,18 @@
     # SCREEN
     BoxLayout:
         orientation: 'vertical'
-        spacing: "10dp"
-        padding: "5dp"
+        spacing: dp(10)
+        padding: dp(5)
 
         # HEADER
         BoxLayout:
             size_hint_y: 1
-            spacing: "3dp"
+            spacing: dp(3)
 
             Button:
                 size_hint_x: 1
                 text: "<"
-                font_size: "32sp"
+                font_size: dp(32) * max(0.8, min(1.5, Window.width / dp(600)))
                 on_release:
                     root.go_back()
             
@@ -309,7 +278,7 @@
             Label:
                 size_hint_x: 3
                 id: header_label
-                font_size: "25sp"
+                font_size: dp(25) * max(0.8, min(1.5, Window.width / dp(600)))
                 halign: "center"
                 valign: "middle"
                 text_size: self.size
@@ -317,7 +286,7 @@
         # SEPARATOR
         BoxLayout:
             size_hint_y: None
-            height: 2
+            height: dp(2)
             canvas.before:
                 Color:
                     rgba: 0.5, 0.5, 0.5, 1
@@ -332,7 +301,7 @@
 
             Label:
                 id: acknowledgement_label
-                font_size: "17sp"
+                font_size: dp(17) * max(0.8, min(1.5, Window.width / dp(600)))
                 halign: "left"
                 valign: "top"
                 size_hint_y: None
@@ -352,19 +321,19 @@
     # SCREEN
     BoxLayout:
         orientation: 'vertical'
-        padding: "5dp"
-        spacing: "10dp"
+        padding: dp(5)
+        spacing: dp(10)
 
         # HEADER
         BoxLayout:
             size_hint_y: 1
-            spacing: "3dp"
+            spacing: dp(3)
             orientation: 'horizontal'
 
             Button:
                 size_hint_x: 1
                 text: "<"
-                font_size: "32sp"
+                font_size: dp(32) * max(0.8, min(1.5, Window.width / dp(600)))
                 on_release:
                     root.go_back()
             
@@ -379,7 +348,7 @@
             Label:
                 size_hint_x: 3
                 id: modes_label
-                font_size: "25sp"
+                font_size: dp(25) * max(0.8, min(1.5, Window.width / dp(600)))
                 halign: "center"
                 valign: "middle"
                 text_size: self.size
@@ -388,7 +357,7 @@
         # SEPARATOR
         BoxLayout:
             size_hint_y: None
-            height: 2
+            height: dp(2)
             canvas.before:
                 Color:
                     rgba: 0.5, 0.5, 0.5, 1
@@ -401,8 +370,6 @@
             id: modes_layout
             orientation: 'vertical'
             size_hint_y: 9
-            # padding: "5dp"  # in Firetruck_mode python
-            # spacing: "10dp"  # in Firetruck_mode python
 
 
 <Firetruck_Menu>:
@@ -417,19 +384,19 @@
     # SCREEN
     BoxLayout:
         orientation: 'vertical'
-        spacing: "10dp"
-        padding: "5dp"
+        spacing: dp(10)
+        padding: dp(5)
     
         # HEADER
         BoxLayout:
             size_hint_y: 1
             orientation: 'horizontal'
-            spacing: "3dp"
+            spacing: dp(3)
 
             Button:
                 size_hint_x: 1
                 text: "<"
-                font_size: "32sp"
+                font_size: dp(32) * max(0.8, min(1.5, Window.width / dp(600)))
                 on_release:
                     root.go_back()
             
@@ -444,7 +411,7 @@
             Label:
                 size_hint_x: 3
                 id: mode_label
-                font_size: "25sp"
+                font_size: dp(25) * max(0.8, min(1.5, Window.width / dp(600)))
                 halign: "center"
                 valign: "middle"
                 text_size: self.size
@@ -452,7 +419,7 @@
         # SEPARATOR
         BoxLayout:
             size_hint_y: None
-            height: 2
+            height: dp(2)
             canvas.before:
                 Color:
                     rgba: 0.5, 0.5, 0.5, 1
@@ -470,7 +437,7 @@
                 orientation: 'vertical'
                 size_hint_y: None
                 height: self.minimum_height
-                spacing: "5dp"
+                spacing: dp(5)
 
 
 <Firetruck_Training>:
@@ -486,27 +453,25 @@
     # SCREEN
     BoxLayout:
         orientation: 'vertical'
-        spacing: "10dp"
-        padding: "5dp"
+        spacing: dp(10)
+        padding: dp(5)
 
         # HEADER
         BoxLayout:
             size_hint_y: 1
-            spacing: "3dp"
+            spacing: dp(3)
 
             Button:
                 size_hint_x: 1
                 text: "<"
-                font_size: "32sp"
+                font_size: dp(32) * max(0.8, min(1.5, Window.width / dp(600)))
                 on_release:
-                    #app.root.current = "firetruck_menu"
-                    #root.manager.transition.direction = "right"
                     root.go_back()
     
             Label:
                 size_hint_x: 2
                 id: firetruck_label
-                font_size: "20sp"
+                font_size: dp(20) * max(0.8, min(1.5, Window.width / dp(600)))
                 halign: "left"
                 valign: "middle"
                 text_size: self.size
@@ -521,7 +486,7 @@
                 Label:
                     size_hint_y: 1
                     id: high_score_label
-                    font_size: "20sp"
+                    font_size: dp(20) * max(0.8, min(1.5, Window.width / dp(600)))
                     halign: "center"
                     valign: "middle"
                     text_size: self.size
@@ -529,7 +494,7 @@
                 Label:
                     size_hint_y: 1
                     id: score_label
-                    font_size: "25sp"
+                    font_size: dp(25) * max(0.8, min(1.5, Window.width / dp(600)))
                     halign: "center"
                     valign: "middle"
                     text_size: self.size
@@ -537,24 +502,24 @@
         # SEPARATOR
         BoxLayout:
             size_hint_y: None
-            height: 2
+            height: dp(2)
             canvas.before:
                 Color:
                     rgba: 0.5, 0.5, 0.5, 1
                 Rectangle:
                     size: self.size
                     pos: self.pos
-
-        # TOOL
-        Label:
-            size_hint_y: 3
-            id: tool_label
-            font_size: "28sp"
-                
-        # FIRETRUCK ROOMS
-        BoxLayout:
-            size_hint_y: 6
-            id: firetruck_rooms_layout
+            
+            # TOOL
+            Label:
+                size_hint_y: 3
+                id: tool_label
+                font_size: dp(28) * max(0.8, min(1.5, Window.width / dp(600)))
+                    
+            # FIRETRUCK ROOMS
+            BoxLayout:
+                size_hint_y: 6
+                id: firetruck_rooms_layout
 
 
 <Firetruck_Training_With_Images>:
@@ -572,27 +537,25 @@
     # SCREEN
     BoxLayout:
         orientation: 'vertical'
-        spacing: "10dp"
-        padding: "5dp"
+        spacing: dp(10)
+        padding: dp(5)
 
         # HEADER
         BoxLayout:
             size_hint_y: 1
-            spacing: "3dp"
+            spacing: dp(3)
 
             Button:
                 size_hint_x: 1
                 text: "<"
-                font_size: "32sp"
+                font_size: dp(32) * max(0.8, min(1.5, Window.width / dp(600)))
                 on_release:
-                    #app.root.current = "firetruck_menu"
-                    #root.manager.transition.direction = "right"
                     root.go_back()
     
             Label:
                 size_hint_x: 2
                 id: firetruck_label
-                font_size: "20sp"
+                font_size: dp(20) * max(0.8, min(1.5, Window.width / dp(600)))
                 halign: "left"
                 valign: "middle"
                 text_size: self.size
@@ -607,7 +570,7 @@
                 Label:
                     size_hint_y: 1
                     id: high_score_label
-                    font_size: "20sp"
+                    font_size: dp(20) * max(0.8, min(1.5, Window.width / dp(600)))
                     halign: "center"
                     valign: "middle"
                     text_size: self.size
@@ -615,7 +578,7 @@
                 Label:
                     size_hint_y: 1
                     id: score_label
-                    font_size: "25sp"
+                    font_size: dp(25) * max(0.8, min(1.5, Window.width / dp(600)))
                     halign: "center"
                     valign: "middle"
                     text_size: self.size
@@ -636,16 +599,11 @@
 
                 # TOOL / IMAGE / ANSWER
                 BoxLayout:
-                    #size_hint_y: 4.5
                     id: tool_image_layout
                     orientation: 'vertical'
 
-                    # either tool-label + tool-image
-                    # or answer image
-
                 # FIRETRUCK ROOMS
                 BoxLayout:
-                    #size_hint_y: 4.5
                     id: firetruck_rooms_layout
 
 
@@ -664,26 +622,25 @@
     # SCREEN
     BoxLayout:
         orientation: 'vertical'
-        spacing: "10dp"
-        padding: "5dp"
+        spacing: dp(10)
+        padding: dp(5)
     
         # HEADER
         BoxLayout:
             size_hint_y: 1
-            spacing: "3dp"
+            spacing: dp(3)
             
             Button:
                 size_hint_x: 1
                 text: "<"
-                font_size: "32sp"
+                font_size: dp(32) * max(0.8, min(1.5, Window.width / dp(600)))
                 on_release:
                     root.manager.get_screen('firetruck_game').end_game()
-                    #root.go_back()
 
             Label:
                 size_hint_x: 2
                 id: firetruck_label
-                font_size: "20sp"
+                font_size: dp(20) * max(0.8, min(1.5, Window.width / dp(600)))
                 halign: "left"
                 valign: "middle"
                 text_size: self.size
@@ -691,7 +648,7 @@
             Label:
                 size_hint_x: 1
                 id: extra_time_label
-                font_size: "20sp"
+                font_size: dp(20) * max(0.8, min(1.5, Window.width / dp(600)))
                 halign: "center"
                 valign: "middle"
                 text_size: self.size
@@ -704,7 +661,7 @@
                 Label:
                     size_hint_y: 1
                     id: high_score_label
-                    font_size: "20sp"
+                    font_size: dp(20) * max(0.8, min(1.5, Window.width / dp(600)))
                     halign: "center"
                     valign: "middle"
                     text_size: self.size
@@ -712,7 +669,7 @@
                 Label:
                     size_hint_y: 1
                     id: score_label
-                    font_size: "25sp"
+                    font_size: dp(25) * max(0.8, min(1.5, Window.width / dp(600)))
                     halign: "center"
                     valign: "middle"
                     text_size: self.size
@@ -720,21 +677,21 @@
         # SEPARATOR == PROGRESSBAR
         ProgressBar:
             size_hint_y: None
-            height: 2
+            height: dp(2)
             id: progress_bar
         
-        # TOOL
-        Label:
-            size_hint_y: 2
-            id: tool_label
-            font_size: "28sp"
+            # TOOL
+            Label:
+                size_hint_y: 2
+                id: tool_label
+                font_size: dp(28) * max(0.8, min(1.5, Window.width / dp(600)))
 
-        # FIRETRUCK ROOMS
-        GridLayout:
-            size_hint_y: 7
-            id: firetruck_rooms_layout
-            spacing: "3dp"
-            cols: 2
+            # FIRETRUCK ROOMS
+            GridLayout:
+                size_hint_y: 7
+                id: firetruck_rooms_layout
+                spacing: dp(3)
+                cols: 2
 
 
 <Firetruck_Exam>:
@@ -750,25 +707,25 @@
     # SCREEN
     BoxLayout:
         orientation: 'vertical'
-        spacing: "10dp"
-        padding: "5dp"
+        spacing: dp(10)
+        padding: dp(5)
 
         # HEADER
         BoxLayout:
             size_hint_y: 1
-            spacing: "3dp"
+            spacing: dp(3)
 
             Button:
                 size_hint_x: 1
                 text: "<"
-                font_size: "32sp"
+                font_size: dp(32) * max(0.8, min(1.5, Window.width / dp(600)))
                 on_release:
                     root.go_back()
     
             Label:
                 size_hint_x: 2
                 id: firetruck_label
-                font_size: "20sp"
+                font_size: dp(20) * max(0.8, min(1.5, Window.width / dp(600)))
                 halign: "left"
                 valign: "middle"
                 text_size: self.size
@@ -783,7 +740,7 @@
                 Label:
                     size_hint_y: 1
                     id: high_score_label
-                    font_size: "20sp"
+                    font_size: dp(20) * max(0.8, min(1.5, Window.width / dp(600)))
                     halign: "center"
                     valign: "middle"
                     text_size: self.size
@@ -791,7 +748,7 @@
                 Label:
                     size_hint_y: 1
                     id: score_label
-                    font_size: "25sp"
+                    font_size: dp(25) * max(0.8, min(1.5, Window.width / dp(600)))
                     halign: "center"
                     valign: "middle"
                     text_size: self.size
@@ -799,25 +756,25 @@
         # SEPARATOR
         BoxLayout:
             size_hint_y: None
-            height: 2
+            height: dp(2)
             canvas.before:
                 Color:
                     rgba: 0.5, 0.5, 0.5, 1
                 Rectangle:
                     size: self.size
                     pos: self.pos
-
-        # TOOL
-        Label:
-            size_hint_y: 3
-            id: tool_label
-            font_size: "28sp"
-                
-        # FIRETRUCK ROOMS
-        BoxLayout:
-            size_hint_y: 6
-            id: firetruck_rooms_layout
-            # either GridLayout or FloatLayout
+            
+            # TOOL
+            Label:
+                size_hint_y: 3
+                id: tool_label
+                font_size: dp(28) * max(0.8, min(1.5, Window.width / dp(600)))
+                    
+            # FIRETRUCK ROOMS
+            BoxLayout:
+                size_hint_y: 6
+                id: firetruck_rooms_layout
+                # either GridLayout or FloatLayout
 
 
 <Label_List>:
@@ -839,21 +796,19 @@
     # SCREEN
     BoxLayout:
         orientation: 'vertical'
-        spacing: "10dp"
-        padding: "5dp"
+        padding: dp(5)
+        spacing: dp(10)
     
         # HEADER
         BoxLayout:
             size_hint_y: 1
-            spacing: "3dp"
+            spacing: dp(3)
             
             Button:
                 size_hint_x: 1
                 text: "<"
-                font_size: "32sp"
+                font_size: dp(32) * max(0.8, min(1.5, Window.width / dp(600)))
                 on_release:
-                    #app.root.current = "firetruck_menu"
-                    #root.manager.transition.direction = "right"
                     root.go_back()
     
             Label: # placeholder
@@ -862,7 +817,7 @@
             Label:
                 size_hint_x: 3
                 id: firetruck_label
-                font_size: "25sp"
+                font_size: dp(25) * max(0.8, min(1.5, Window.width / dp(600)))
                 halign: "left"
                 valign: "middle"
                 text_size: self.size
@@ -870,7 +825,7 @@
         # SEPARATOR
         BoxLayout:
             size_hint_y: None
-            height: 2
+            height: dp(2)
             canvas.before:
                 Color:
                     rgba: 0.5, 0.5, 0.5, 1
@@ -886,7 +841,7 @@
             Button:
                 size_hint_x: 1
                 id: filter_button
-                font_size: "32sp"
+                font_size: dp(32) * max(0.8, min(1.5, Window.width / dp(600)))
                 on_release:
                     root.manager.get_screen('firetruck_browse').filter_list()
 
@@ -895,13 +850,13 @@
                 id: filter_text
                 pos_hint: {'center_x': 0.5}
                 text_size: self.width, None
-                font_size: "25sp"
+                font_size: dp(25) * max(0.8, min(1.5, Window.width / dp(600)))
                 multiline: False
             
             Button:
                 size_hint_x: 1
                 text:  "X"
-                font_size: "32sp"
+                font_size: dp(32) * max(0.8, min(1.5, Window.width / dp(600)))
                 on_release:
                     root.manager.get_screen('firetruck_browse').remove_filter_text()
 
@@ -929,21 +884,19 @@
     # SCREEN
     BoxLayout:
         orientation: 'vertical'
-        spacing: "10dp"
-        padding: "5dp"
+        padding: dp(5)
+        spacing: dp(10)
 
         # HEADER
         BoxLayout:
             size_hint_y: 1
-            spacing: "3dp"
+            spacing: dp(3)
 
             Button:
                 size_hint_x: 1
                 text: "<"
-                font_size: "32sp"
+                font_size: dp(32) * max(0.8, min(1.5, Window.width / dp(600)))
                 on_release:
-                    #app.root.current = "firetruck_menu"
-                    #root.manager.transition.direction = "right"
                     root.go_back()
             
             Label: # placeholder
@@ -952,7 +905,7 @@
             Label:
                 size_hint_x: 3
                 id: firetruck_label
-                font_size: "25sp"
+                font_size: dp(25) * max(0.8, min(1.5, Window.width / dp(600)))
                 halign: "left"
                 valign: "middle"
                 text_size: self.size
@@ -960,7 +913,7 @@
         # SEPARATOR
         BoxLayout:
             size_hint_y: None
-            height: 2
+            height: dp(2)
             canvas.before:
                 Color:
                     rgba: 0.5, 0.5, 0.5, 1
@@ -977,342 +930,3 @@
                 orientation: 'vertical'
                 size_hint_y: None
                 height: self.minimum_height
-                padding: "15dp"
-                spacing: "5dp"
-
-
-<Competition_Menu>:
-    name: "competition_menu"
-
-    # IDs
-    logo_layout: logo_layout
-    mode_label: mode_label
-    mode_toggle_layout: mode_toggle_layout
-    mode_toggle_training: mode_toggle_training
-    mode_toggle_game: mode_toggle_game
-    competitions_layout_scrollview: competitions_layout_scrollview
-    competitions_layout: competitions_layout
-
-    # LOGO
-    #FloatLayout:
-    #    Image:
-    #        source: "assets/lfv_salzburg.png"
-    #        fit_mode: "fill"  # or "contain" if preserving aspect is needed
-    #        size_hint: 0.225, 0.092  # 20% width, 10% height of screen
-    #        pos_hint: {"x": 0.18, "y": 0.902}  # Stick to return button
-
-    # SCREEN
-    BoxLayout:
-        orientation: 'vertical'
-        spacing: "10dp"
-        padding: "5dp"
-    
-        # HEADER
-        BoxLayout:
-            size_hint_y: 2
-            spacing: "5dp"
-            orientation: 'vertical'
-
-            # ROW 1
-            BoxLayout:
-                size_hint_y: 1
-                spacing: "3dp"
-
-                Button:
-                    size_hint_x: 1
-                    text: "<"
-                    font_size: "32sp"
-                    on_release:
-                        root.go_back()
-
-                # LOGO
-                BoxLayout:
-                    id: logo_layout
-                    size_hint_x: 1
-
-                Label: # placeholder
-                    size_hint_x: 1
-
-                Label:
-                    size_hint_x: 3
-                    id: mode_label
-                    font_size: "25sp"
-                    halign: "center"
-                    valign: "middle"
-                    text_size: self.size
-            
-            # ROW 2
-            GridLayout:
-                id: mode_toggle_layout
-                cols: 2
-                size_hint_y: 1
-                height: self.minimum_height
-                row_default_height: '50dp'
-                spacing: '5dp'
-
-                ToggleButton:
-                    id: mode_toggle_training
-                    font_size: "32sp"
-                    group: 'mode'
-                    on_release: root.on_mode_toggle(self)
-
-                ToggleButton:
-                    id: mode_toggle_game
-                    font_size: "32sp"
-                    group: 'mode'
-                    on_release: root.on_mode_toggle(self)
-
-        # SEPARATOR
-        BoxLayout:
-            size_hint_y: None
-            height: 2
-            canvas.before:
-                Color:
-                    rgba: 0.5, 0.5, 0.5, 1
-                Rectangle:
-                    size: self.size
-                    pos: self.pos
-        
-        # COMPETITIONS
-        ScrollView:
-            size_hint_y: 8
-            id: competitions_layout_scrollview
-
-            BoxLayout:
-                id: competitions_layout
-                orientation: 'vertical'
-                size_hint_y: None
-                height: self.minimum_height
-                spacing: "5dp"
-
-
-<Competition_Training>:
-    name: "competition_training"
-
-    # IDs
-    competition_label: competition_label
-    question_id_label: question_id_label
-    question_scrollview: question_scrollview
-    question_label: question_label
-    solution_button: solution_button
-    random_question_button: random_question_button
-    previous_question_button: previous_question_button
-    next_question_button: next_question_button
-
-    # SCREEN
-    BoxLayout:
-        orientation: 'vertical'
-        padding: "5dp"
-        spacing: "10dp"
-
-        # HEADER
-        BoxLayout:
-            size_hint_y: 1
-            spacing: "3dp"
-
-            Button:
-                size_hint_x: 1
-                text: "<"
-                font_size: "32sp"
-                on_release:
-                    root.go_back()
-
-            BoxLayout:
-                size_hint_x: 2
-                orientation: 'vertical'
-
-                Label:
-                    size_hint_y: 1
-                    id: competition_label
-                    font_size: "20sp"
-                    halign: "left"
-                    valign: "middle"
-                    text_size: self.size
-
-                Label:  # placeholder
-                    size_hint_y: 1
-
-            Label:
-                size_hint_x: 3
-                id: question_id_label
-                font_size: "32sp"
-                halign: "right"
-                valign: "middle"
-                text_size: self.size
-
-        # SEPARATOR
-        BoxLayout:
-            size_hint_y: None
-            height: 2
-            canvas.before:
-                Color:
-                    rgba: 0.5, 0.5, 0.5, 1
-                Rectangle:
-                    size: self.size
-                    pos: self.pos
-        
-        # QUESTION
-        ScrollView:
-            size_hint_y: 7
-            id: question_scrollview
-
-            Label:
-                id: question_label
-                font_size: "32sp"
-                halign: "left"
-                valign: "top"
-                size_hint_y: None
-                text_size: self.width, None
-                height: self.texture_size[1]
-                markup: True
-
-        # NAVIGATION
-        BoxLayout:
-            size_hint_y: 1
-            spacing: "5dp"
-    
-            Button:
-                size_hint_x: 1
-                text: "<"
-                id: previous_question_button
-                font_size: "45sp"
-                on_release:
-                    root.manager.get_screen('competition_training').next_question(previous=True)
-
-            Button:
-                size_hint_x: 1
-                text: ">"
-                id: next_question_button
-                font_size: "45sp"
-                on_release:
-                    root.manager.get_screen('competition_training').next_question()
-        
-        # ANSWER
-        BoxLayout:
-            size_hint_y: 1
-            spacing: "5dp"
-
-            Button:
-                size_hint_x: 1
-                id: random_question_button
-                font_size: "32sp"
-                on_release:
-                    root.manager.get_screen('competition_training').random_question()
-        
-            Button:
-                size_hint_x: 1
-                id: solution_button
-                font_size: "32sp"
-                on_release:
-                    root.manager.get_screen('competition_training').reveal_answer()
-            
-
-<Competition_Game>:
-    name: "competition_game"
-
-    # IDs
-    competition_label: competition_label
-    score_label: score_label
-    high_score_label: high_score_label
-    extra_time_label: extra_time_label
-    progress_bar: progress_bar
-    question_id_label: question_id_label
-    question_scrollview: question_scrollview
-    question_label: question_label
-    answer_buttons_layout: answer_buttons_layout
-
-    # SCREEN
-    BoxLayout:
-        orientation: 'vertical'
-        spacing: "10dp"
-        padding: "5dp"
-
-        # HEADER
-        BoxLayout:
-            size_hint_y: 1
-            spacing: "3dp"
-
-            Button:
-                size_hint_x: 1
-                text: "<"
-                font_size: "32sp"
-                on_release:
-                    root.manager.get_screen('competition_game').end_game()
-
-            BoxLayout:
-                size_hint_x: 2
-                orientation: 'vertical'
-
-                Label:
-                    size_hint_y: 1
-                    id: competition_label
-                    font_size: "20sp"
-                    halign: "left"
-                    valign: "middle"
-                    text_size: self.size
-
-                Label:
-                    size_hint_y: 1
-                    id: question_id_label
-                    font_size: "20sp"
-                    halign: "left"
-                    valign: "middle"
-                    text_size: self.size
-    
-            Label:
-                size_hint_x: 1
-                id: extra_time_label
-                font_size: "20sp"
-                halign: "center"
-                valign: "middle"
-                text_size: self.size
-                color: (0,1,0,1)
-
-            BoxLayout:
-                size_hint_x: 2
-                orientation: 'vertical'
-
-                Label:
-                    size_hint_y: 1
-                    id: high_score_label
-                    font_size: "20sp"
-                    halign: "center"
-                    valign: "middle"
-                    text_size: self.size
-
-                Label:
-                    size_hint_y: 1
-                    id: score_label
-                    font_size: "25sp"
-                    halign: "center"
-                    valign: "middle"
-                    text_size: self.size
-
-        # SEPARATOR == PROGRESSBAR
-        ProgressBar:
-            size_hint_y: None
-            height: 2
-            id: progress_bar
-
-        # QUESTION        
-        ScrollView:
-            id: question_scrollview
-            size_hint_y: 8
-
-            Label:
-                id: question_label
-                font_size: "25sp"
-                halign: "left"
-                valign: "top"
-                size_hint_y: None
-                text_size: self.width, None
-                height: self.texture_size[1]
-                markup: True
-        
-        # ANSWER
-        GridLayout:
-            size_hint_y: 1
-            id: answer_buttons_layout
-            spacing: "3dp"
-            cols: 4
-
