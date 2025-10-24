@@ -35,4 +35,3 @@ Die FahrzeugkundeApp ist ein Open Source Projekt. Du kannst die Entwicklung unte
 Die Entwicklung wird unterstützt von
 
 - Freiwillige Feuerwehr der Stadt Hallein
-- team122.at

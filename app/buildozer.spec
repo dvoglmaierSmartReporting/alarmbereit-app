@@ -31,7 +31,7 @@ source.include_exts = py,png,jpg,kv,atlas,yaml,cfg,config,ini,ttf
 #source.exclude_patterns = license,images/*/*.jpg
 
 # (str) Application versioning (method 1)
-version = 2.7.0
+version = 2.7.2
 
 # (str) Application versioning (method 2)
 # version.regex = __version__ = ['"](.*)['"]
@@ -39,7 +39,7 @@ version = 2.7.0
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3,Pygments==2.17.2,urllib3==2.1.0,idna==3.6,charset-normalizer==3.3.2,certifi==2023.11.17,requests==2.31.0,Kivy-Garden==0.1.5,docutils==0.20.1,Kivy==2.3.0,PyYAML==6.0.1
+requirements = python3,filetype==1.2.0,certifi==2025.10.5,urllib3==2.5.0,idna==3.11,charset-normalizer==3.4.4,requests==2.32.5,Pygments==2.19.2,docutils==0.22.2,Kivy-Garden==0.1.5,Kivy==2.3.1,PyYAML==6.0.3
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
@@ -56,7 +56,9 @@ icon.filename = %(source.dir)s/assets/firetruck_icon.png
 
 # (list) Supported orientations
 # Valid options are: landscape, portrait, portrait-reverse or landscape-reverse
-orientation = portrait
+orientation = all
+# orientation = portrait
+# orientation = sensor
 
 # (list) List of service to declare
 #services = NAME:ENTRYPOINT_TO_PY,NAME2:ENTRYPOINT2_TO_PY
@@ -69,10 +71,11 @@ orientation = portrait
 # author = © Copyright Info
 
 # change the major version of python used by the app
-osx.python_version = 3
+# osx.python_version = 3
+# osx.python_version = 3.11.10
 
 # Kivy version to use
-osx.kivy_version = 2.7.0
+osx.kivy_version = 2.3.1
 
 #
 # Android specific
@@ -106,16 +109,25 @@ fullscreen = 0
 #android.features = android.hardware.usb.host
 
 # (int) Target Android API, should be as high as possible.
-android.api = 34
+# android.api = 34
+android.api = 35
 
 # (int) Minimum API your APK / AAB will support.
 #android.minapi = 28
+# android.minapi = 21
 
 # (int) Android SDK version to use
 #android.sdk = 30
+# android.sdk = 35 # deprecated and ignored
 
 # (str) Android NDK version to use
-#android.ndk = 21b
+# android.ndk = 21b # used for all releases until 2.7.0
+# android.ndk = 22b # failed
+# android.ndk = 25b # worked
+# android.ndk = 26c # failed
+# android.ndk = 27c # failed
+android.ndk = 28b # failed
+# android.ndk = 29 # failed
 
 # (int) Android NDK API to use. This is the minimum API your app will support, it should usually match android.minapi.
 #android.ndk_api = 21
@@ -124,10 +136,16 @@ android.api = 34
 #android.private_storage = True
 
 # (str) Android NDK directory (if empty, it will be automatically downloaded.)
-#android.ndk_path =
+# android.ndk_path =
+# android.ndk_path = /Users/dominikvoglmaier/Android/Sdk/ndk/25.2.9519653
+# android.ndk_path = /Users/dominikvoglmaier/Android/Sdk/ndk/26.3.11579264
+# android.ndk_path = /Users/dominikvoglmaier/Android/Sdk/ndk/27.3.13750724
+android.ndk_path = /Users/dominikvoglmaier/Android/Sdk/ndk/28.2.13676358
+# android.ndk_path = /Users/dominikvoglmaier/Android/Sdk/ndk/29.0.14206865
 
 # (str) Android SDK directory (if empty, it will be automatically downloaded.)
 #android.sdk_path =
+android.sdk_path = /Users/dominikvoglmaier/Android/Sdk
 
 # (str) ANT directory (if empty, it will be automatically downloaded.)
 #android.ant_path =
@@ -157,6 +175,7 @@ android.api = 34
 # (str) Extra xml to write directly inside the <manifest><application> tag of AndroidManifest.xml
 # use that parameter to provide a filename from where to load your custom XML arguments:
 #android.extra_manifest_application_arguments = ./src/android/extra_manifest_application_arguments.xml
+android.extra_manifest_application_arguments = android:resizeableActivity="true"
 
 # (str) Full name including package path of the Java class that implements Python Service
 # use that parameter to set custom Java class which extends PythonService
@@ -229,6 +248,7 @@ android.api = 34
 # please enclose in double quotes 
 # e.g. android.add_packaging_options = "exclude 'META-INF/common.kotlin_module'", "exclude 'META-INF/*.kotlin_module'"
 #android.add_packaging_options =
+# android.add_packaging_options = "jniLibs.useLegacyPackaging true"
 
 # (list) Java classes to add as activities to the manifest.
 #android.add_activities = com.example.ExampleActivity
@@ -340,6 +360,7 @@ p4a.branch = develop
 
 # (str) Filename to the hook for p4a
 #p4a.hook =
+# p4a.hook = p4a_16k_hook.py
 
 # (str) Bootstrap to use for android builds
 # p4a.bootstrap = sdl2

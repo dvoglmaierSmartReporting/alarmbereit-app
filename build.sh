@@ -51,7 +51,7 @@ parse_args_and_maybe_bump() {
         new_version="${major}.${minor}.${patch}"
         echo "$new_version" > "$VERSION_FILE"
 
-        sed -i '' -E "s/version = [0-9]+\.[0-9]+\.[0-9]+/version = $new_version/" $SPECS_FILE
+        sed -i '' -E "s/^version = [0-9]+\.[0-9]+\.[0-9]+/version = $new_version/" "$SPECS_FILE"
 
         echo "🔧 Version bumped to $new_version"
     }
