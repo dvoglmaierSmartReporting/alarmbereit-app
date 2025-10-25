@@ -2,7 +2,7 @@ from kivy.uix.label import Label
 from kivy.uix.button import Button
 from kivy.uix.screenmanager import Screen, SlideTransition
 from kivy.core.window import Window
-from kivy.metrics import dp, sp
+from kivy.metrics import dp
 
 from helper.functions import (
     get_firetruck_abbreviations,
@@ -26,11 +26,9 @@ class Start_Menu(Screen):
         self.ids.all_cities_button.text = strings.BUTTON_STR_ALL_CITIES
         self.version = load_app_version()
 
-        # Store references to dynamically created widgets for font updates
         self.dynamic_widgets = []
 
     def get_font_scale(self):
-        """Get responsive font scale based on window width - matches KV file implementation"""
         return max(0.8, min(1.5, Window.width / dp(600)))
 
     def on_pre_enter(self):
@@ -58,7 +56,7 @@ class Start_Menu(Screen):
             widget = widget_info["widget"]
             base_size = widget_info["base_size"]
             if hasattr(widget, "font_size"):
-                widget.font_size = f"{dp(base_size) * font_scale}sp"
+                widget.font_size = f"{dp(base_size) * font_scale}dp"
 
     def add_city_logo(self):
         self.ids.logo_layout.clear_widgets()
@@ -102,7 +100,7 @@ class Start_Menu(Screen):
         btn = Button(
             pos_hint={"center_x": 0.5},
             text=button_text,
-            font_size=f"{dp(base_font_size) * font_scale}sp",
+            font_size=f"{dp(base_font_size) * font_scale}dp",
             disabled=disabled,
         )
 
@@ -123,7 +121,7 @@ class Start_Menu(Screen):
         about_label = Label(
             size_hint=(1, 1),
             text=About_Text(self.version).TEXT,
-            font_size=f"{dp(base_font_size) * font_scale}sp",
+            font_size=f"{dp(base_font_size) * font_scale}dp",
             halign="center",
         )
 

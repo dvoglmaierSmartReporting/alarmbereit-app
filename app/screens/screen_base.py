@@ -2,6 +2,8 @@ from kivy.app import App
 from kivy.clock import Clock
 from kivy.uix.button import Button
 from kivy.uix.screenmanager import Screen
+from kivy.core.window import Window
+from kivy.metrics import dp
 
 from dataclasses import dataclass
 from random import shuffle
@@ -12,6 +14,33 @@ from helper.file_handling import *
 
 
 settings = Settings()
+
+
+@dataclass
+class FontSizeMethods:
+    # def __init__(self, **kwargs):
+    #     super(FontSizeMethods, self).__init__(**kwargs)
+    #     # Store references to dynamically created widgets for font updates
+    #     self.dynamic_widgets = []
+
+    def get_font_scale(self):
+        return max(0.8, min(1.5, Window.width / dp(600)))
+
+    def on_enter(self):
+        Window.bind(on_resize=self.update_font_sizes)
+
+    def on_leave(self):
+        Window.unbind(on_resize=self.update_font_sizes)
+
+    def update_font_sizes(self, *args):
+        font_scale = self.get_font_scale()
+
+        # Update dynamically created widgets
+        for widget_info in self.dynamic_widgets:
+            widget = widget_info["widget"]
+            base_size = widget_info["base_size"]
+            if hasattr(widget, "font_size"):
+                widget.font_size = f"{dp(base_size) * font_scale}dp"
 
 
 @dataclass

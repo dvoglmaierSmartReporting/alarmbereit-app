@@ -310,68 +310,6 @@
                 markup: True
 
 
-<Firetruck_Mode>:
-    name: "firetruck_mode"
-
-    # IDs
-    logo_layout: logo_layout
-    modes_label: modes_label
-    modes_layout: modes_layout
-
-    # SCREEN
-    BoxLayout:
-        orientation: 'vertical'
-        padding: dp(5)
-        spacing: dp(10)
-
-        # HEADER
-        BoxLayout:
-            size_hint_y: 1
-            spacing: dp(3)
-            orientation: 'horizontal'
-
-            Button:
-                size_hint_x: 1
-                text: "<"
-                font_size: dp(32) * max(0.8, min(1.5, Window.width / dp(600)))
-                on_release:
-                    root.go_back()
-            
-            # LOGO
-            BoxLayout:
-                id: logo_layout
-                size_hint_x: 1
-    
-            Label:  # placeholder
-                size_hint_x: 1
-            
-            Label:
-                size_hint_x: 3
-                id: modes_label
-                font_size: dp(25) * max(0.8, min(1.5, Window.width / dp(600)))
-                halign: "center"
-                valign: "middle"
-                text_size: self.size
-            
-        
-        # SEPARATOR
-        BoxLayout:
-            size_hint_y: None
-            height: dp(2)
-            canvas.before:
-                Color:
-                    rgba: 0.5, 0.5, 0.5, 1
-                Rectangle:
-                    size: self.size
-                    pos: self.pos
-
-        # MODES
-        BoxLayout:
-            id: modes_layout
-            orientation: 'vertical'
-            size_hint_y: 9
-
-
 <Firetruck_Menu>:
     name: "firetruck_menu"
 
@@ -510,16 +448,16 @@
                     size: self.size
                     pos: self.pos
             
-            # TOOL
-            Label:
-                size_hint_y: 3
-                id: tool_label
-                font_size: dp(28) * max(0.8, min(1.5, Window.width / dp(600)))
-                    
-            # FIRETRUCK ROOMS
-            BoxLayout:
-                size_hint_y: 6
-                id: firetruck_rooms_layout
+        # TOOL
+        Label:
+            size_hint_y: 3
+            id: tool_label
+            font_size: dp(28) * max(0.8, min(1.5, Window.width / dp(600)))
+                
+        # FIRETRUCK ROOMS
+        BoxLayout:
+            size_hint_y: 6
+            id: firetruck_rooms_layout
 
 
 <Firetruck_Training_With_Images>:
@@ -680,18 +618,18 @@
             height: dp(2)
             id: progress_bar
         
-            # TOOL
-            Label:
-                size_hint_y: 2
-                id: tool_label
-                font_size: dp(28) * max(0.8, min(1.5, Window.width / dp(600)))
+        # TOOL
+        Label:
+            size_hint_y: 2
+            id: tool_label
+            font_size: dp(28) * max(0.8, min(1.5, Window.width / dp(600)))
 
-            # FIRETRUCK ROOMS
-            GridLayout:
-                size_hint_y: 7
-                id: firetruck_rooms_layout
-                spacing: dp(3)
-                cols: 2
+        # FIRETRUCK ROOMS
+        GridLayout:
+            size_hint_y: 7
+            id: firetruck_rooms_layout
+            spacing: dp(3)
+            cols: 2
 
 
 <Firetruck_Exam>:
