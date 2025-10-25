@@ -521,6 +521,7 @@ Leiter:
       - tablet <Raumbild:hallein_leiter/mannschaft armatur>
       - Warnweste <Raumbild:hallein_leiter/mannschaft tuer>
       - Meldertasche <Raumbild:hallein_leiter/mannschaft tuer>
+      - LED Markierleuchte
     Korb:
       - Druckschlauch C 7 m <Bild:hallein_leiter/druckschlauch c 7 m>
       - Hohlstrahlrohr
