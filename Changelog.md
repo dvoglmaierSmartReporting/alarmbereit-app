@@ -1,5 +1,10 @@
 # version 2.7.2 (2.7.1 was forced to re-upload)
 
+BUG
+
+- high strike im Bildern!!!
+- font_size
+
 update:
 
 - remove team122 logos

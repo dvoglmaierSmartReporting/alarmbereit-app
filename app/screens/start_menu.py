@@ -95,7 +95,7 @@ class Start_Menu(Screen):
 
     def create_button(self, button_text: str, disabled: bool = False) -> Button:
         font_scale = self.get_font_scale()
-        base_font_size = 25
+        base_font_size = 20
 
         btn = Button(
             pos_hint={"center_x": 0.5},
@@ -116,7 +116,7 @@ class Start_Menu(Screen):
 
     def add_about_text(self):
         font_scale = self.get_font_scale()
-        base_font_size = 10
+        base_font_size = 7
 
         about_label = Label(
             size_hint=(1, 1),

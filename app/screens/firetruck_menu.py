@@ -28,19 +28,15 @@ class Firetruck_Menu(Screen):
         self.dynamic_widgets = []
 
     def get_font_scale(self):
-        """Get responsive font scale based on window width - matches KV file implementation"""
         return max(0.8, min(1.5, Window.width / dp(600)))
 
     def on_enter(self):
-        """Bind to window resize events for dynamic font updates"""
         Window.bind(on_resize=self.update_font_sizes)
 
     def on_leave(self):
-        """Unbind window resize events to prevent memory leaks"""
         Window.unbind(on_resize=self.update_font_sizes)
 
     def update_font_sizes(self, *args):
-        """Update font sizes of all dynamic widgets when window is resized"""
         font_scale = self.get_font_scale()
 
         # Update dynamically created buttons
@@ -163,7 +159,7 @@ class Firetruck_Menu(Screen):
     def add_firetruck_button(self, firetruck: str, disabled: bool = False):
         abbreviation = self.abbreviations.get(firetruck, "")
         font_scale = self.get_font_scale()
-        base_font_size = 32
+        base_font_size = 20
 
         if self.selected_city == "Hallein":
             button_height = 200
@@ -171,7 +167,7 @@ class Firetruck_Menu(Screen):
             button_height = 350
 
         btn = Button(
-            text=f"{firetruck}{' '*3}[size={int(30 * font_scale)}]{abbreviation}[/size]",
+            text=f"{firetruck}{' '*3}[size={int(50 * font_scale)}]{abbreviation}[/size]",
             markup=True,
             font_size=f"{dp(base_font_size) * font_scale}dp",
             size_hint_y=None,
