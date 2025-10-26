@@ -1,13 +1,11 @@
-# version 2.7.2 (2.7.1 was forced to re-upload)
+# version 2.7.3 (2.7.1 was forced to re-upload)
 
 update:
 
 - remove team122 logos
-
-tech depth:
-
 - introduce BaseMethode to share common methods between screens
-- upgrade Android SPK = 35 (Android 15) and NDK = 28b (28.2.13676358)
+- introduce FontSizeMixin to share dynamic font size methods between screens
+- upgrade to Android SPK = 35 (Android 15) and NDK = 28b (28.2.13676358)
 
 fix:
 
