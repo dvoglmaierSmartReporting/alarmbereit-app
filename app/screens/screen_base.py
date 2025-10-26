@@ -189,7 +189,7 @@ class BaseMethods:
         self.game.answers_correct += 1
 
         if self.game.score > self.current_high_score:
-            self.current_high_score = self.game.answers_correct
+            self.current_high_score = self.game.score
 
             self.update_high_score_label()
 
