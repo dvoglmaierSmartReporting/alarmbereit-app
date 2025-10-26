@@ -31,7 +31,7 @@ source.include_exts = py,png,jpg,kv,atlas,yaml,cfg,config,ini,ttf
 #source.exclude_patterns = license,images/*/*.jpg
 
 # (str) Application versioning (method 1)
-version = 2.7.2
+version = 2.7.3
 
 # (str) Application versioning (method 2)
 # version.regex = __version__ = ['"](.*)['"]
@@ -56,8 +56,8 @@ icon.filename = %(source.dir)s/assets/firetruck_icon.png
 
 # (list) Supported orientations
 # Valid options are: landscape, portrait, portrait-reverse or landscape-reverse
-orientation = all
-# orientation = portrait
+# orientation = all # not valid
+orientation = portrait
 # orientation = sensor
 
 # (list) List of service to declare
