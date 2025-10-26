@@ -58,6 +58,7 @@ def tool_name_2image_name(tool_name: str) -> str:
         .replace('"', "")
         .replace("/", "")
         .replace(".", "")
+        .replace(" ", "")
     )
 
 

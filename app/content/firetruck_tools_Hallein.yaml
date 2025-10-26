@@ -20,7 +20,7 @@ Kommando:
       - Warnblitzleuchte
       - Fernthermometer
     Schublade 1:
-      - LED Markierleuchtenset
+      - Kennzeichnungsleuchtenset
       - Warnweste
       - Anhaltekelle
       - Absperrband
@@ -58,7 +58,9 @@ RüstLösch:
       - Handfunkgerät
       - Gasmessgerät
       - Gefahrguthelfer
-      - Meldertasche
+      - Meldertasche # ?
+      - Dreikantschlüssel # ?
+      - Hinweiszettel Lift # ?
       - Auto-Öffnungswerkzeug
       - Atemschutzgerät
       - Atemschutz-Vollmaske
@@ -66,11 +68,9 @@ RüstLösch:
       - Defibrillator
       - Handlampe
       - Steuerung Seilwinde
-      - Dreikantschlüssel
       - Suchscheinwerfer
       - Reserve-Akku Strongarm
       - Schlüsselset
-      - Hinweiszettel Lift
     Mannschaft:
       - Anhaltekelle
       - Handfunkgerät
@@ -167,7 +167,7 @@ RüstLösch:
       - Absperrstangen
       - Bodenteller Absperrstangen
       - Verkehrsleitkegel
-      - LED Markierleuchtenset
+      - Kennzeichnungsleuchtenset
       - Erdungsspieß
       - Erdungszwingen
       - Erdungsschiene
@@ -521,7 +521,7 @@ Leiter:
       - tablet <Raumbild:hallein_leiter/mannschaft armatur>
       - Warnweste <Raumbild:hallein_leiter/mannschaft tuer>
       - Meldertasche <Raumbild:hallein_leiter/mannschaft tuer>
-      - LED Markierleuchte
+      - Kennzeichnungsleuchte orange <Bild:hallein_leiter/kennzeichnungsleuchte orange> <Raumbild:hallein_leiter/mannschaft armatur>
     Korb:
       - Druckschlauch C 7 m <Bild:hallein_leiter/druckschlauch c 7 m>
       - Hohlstrahlrohr
@@ -567,7 +567,8 @@ Leiter:
       - Feuerwehrgurt m. Verbindungsmittel <Raumbild:hallein_leiter/g2 rechts>
       - Straßenbesen <Raumbild:hallein_leiter/g2 kabine>
       - Alurandschaufel <Raumbild:hallein_leiter/g2 kabine>
-      - Vollmaske m. Filter # ???
+      - Filtermaske
+      - Filter
     G3:
       - ABC-Kupplungsschlüssel
       - Druckschlauch B 25 m orange <Bild:hallein_leiter/druckschlauch b 25 m orange>
@@ -609,7 +610,6 @@ Leiter:
       - Abgasschlauch Stromerzeuger
       - Benzinkanister
       - Drucklüfter <Bild:hallein_leiter/druckluefter>
-      - Rollgliss Bügel <Raumbild:hallein_leiter/dach anbauteile> # fehlt am Fahrzeug
       - Safety Peak <Bild:hallein_leiter/safety peak> <Raumbild:hallein_leiter/dach anbauteile>
       - Wenderohr <Bild:hallein_leiter/wenderohr> <Raumbild:hallein_leiter/dach anbauteile>
       - Verbindungsschlauch Wenderohr <Bild:hallein_leiter/verbindungsschlauch wenderohr> <Raumbild:hallein_leiter/dach anbauteile>

@@ -1,3 +1,38 @@
+ChatGPT:
+
+Lerne Fahrzeug- und Gerätekunde spielerisch – mit der FahrzeugkundeApp!
+
+Die FahrzeugkundeApp vermittelt Feuerwehrwissen mit einer gesunden Portion Gamification. Egal ob im Feuerwehrhaus oder unterwegs – du kannst jederzeit und überall üben.
+
+🚒 Fahrzeugkunde leicht gemacht
+
+- Verschiedene Lernpfade zum Üben der Fahrzeugbeladung
+- Übungsmodus: lerne in Ruhe die Geräteplätze deiner Fahrzeuge
+- Zeitdruckmodus: teste dein Wissen gegen die Uhr und verbessere deinen Highscore
+- Wiederholung stärkt dein Wissen für den nächsten Einsatz
+
+🧯 Individuell für deine Feuerwehr
+
+Jede Feuerwehr ist einzigartig – und das gilt auch für die Fahrzeugbeladung.
+Sende einfach die Beladeliste deiner Fahrzeuge per E-Mail, und wir fügen deine Feuerwehr kostenlos hinzu.
+
+📧 Kontakt: d.voglmaier@feuerwehr-hallein.at
+
+❤️ Hilf mit
+
+Die FahrzeugkundeApp ist für Alle. Du kannst sie kostenlos nutzen, mitgestalten oder unterstützen – z. B. durch:
+
+- Verwendung in deiner Feuerwehr
+- Bewertung im App Store
+- Teilen mit Kameradinnen & Kameraden
+- Spenden zur Weiterentwicklung
+
+Unterstützt von der Freiwilligen Feuerwehr der Stadt Hallein.
+
+Bereite dich mit Spaß und Motivation auf den nächsten Einsatz vor – mit der FahrzeugkundeApp!
+
+---
+
 # Motivation
 
 Mit einer gesunden Portion Gamifikation wird langweilige Fahrzeugkunde spielerisch und mit Spaß vermittelt.
