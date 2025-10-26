@@ -15,21 +15,18 @@ from helper.file_handling import (
 from helper.aspect_image import get_city_image
 from helper.strings import Strings, About_Text
 
+from screens.screen_base import FontSizeMixin
+
 
 strings = Strings()
 
 
-class Start_Menu(Screen):
+class Start_Menu(FontSizeMixin, Screen):
     def __init__(self, **kwargs):
         super(Start_Menu, self).__init__(**kwargs)
 
         self.ids.all_cities_button.text = strings.BUTTON_STR_ALL_CITIES
         self.version = load_app_version()
-
-        self.dynamic_widgets = []
-
-    def get_font_scale(self):
-        return max(0.8, min(1.5, Window.width / dp(600)))
 
     def on_pre_enter(self):
         self.selected_city, _ = get_selected_city_state()
@@ -43,20 +40,10 @@ class Start_Menu(Screen):
         self.add_about_text()
 
     def on_enter(self):
-        Window.bind(on_resize=self.update_font_sizes)
+        self.bind_font_scaling()
 
     def on_leave(self):
-        Window.unbind(on_resize=self.update_font_sizes)
-
-    def update_font_sizes(self, *args):
-        font_scale = self.get_font_scale()
-
-        # Update dynamically created buttons and labels
-        for widget_info in self.dynamic_widgets:
-            widget = widget_info["widget"]
-            base_size = widget_info["base_size"]
-            if hasattr(widget, "font_size"):
-                widget.font_size = f"{dp(base_size) * font_scale}dp"
+        self.unbind_font_scaling()
 
     def add_city_logo(self):
         self.ids.logo_layout.clear_widgets()
@@ -64,7 +51,7 @@ class Start_Menu(Screen):
 
     def add_mode_buttons(self):
         self.ids.content_layout.clear_widgets()
-        self.dynamic_widgets.clear()  # Clear previous widget references
+        self.clear_font_scaling_widgets()  # Clear previous widget references
 
         ### BUTTON Übung ###
         firetruck_training_btn = self.create_button(strings.BUTTON_STR_TRAINING)
@@ -94,18 +81,16 @@ class Start_Menu(Screen):
             self.ids.content_layout.add_widget(firetruck_training_with_images_btn)
 
     def create_button(self, button_text: str, disabled: bool = False) -> Button:
-        font_scale = self.get_font_scale()
         base_font_size = 20
 
         btn = Button(
             pos_hint={"center_x": 0.5},
             text=button_text,
-            font_size=f"{dp(base_font_size) * font_scale}dp",
             disabled=disabled,
         )
 
-        # Store reference for dynamic font updates
-        self.dynamic_widgets.append({"widget": btn, "base_size": base_font_size})
+        # Register button for font scaling
+        self.register_widget_for_font_scaling(btn, base_font_size)
 
         btn.bind(on_release=lambda instance: self.transit_screen("firetruck_menu"))
         btn.bind(
@@ -115,20 +100,16 @@ class Start_Menu(Screen):
         return btn
 
     def add_about_text(self):
-        font_scale = self.get_font_scale()
         base_font_size = 7
 
         about_label = Label(
             size_hint=(1, 1),
             text=About_Text(self.version).TEXT,
-            font_size=f"{dp(base_font_size) * font_scale}dp",
             halign="center",
         )
 
-        # Store reference for dynamic font updates
-        self.dynamic_widgets.append(
-            {"widget": about_label, "base_size": base_font_size}
-        )
+        # Register label for font scaling
+        self.register_widget_for_font_scaling(about_label, base_font_size)
 
         self.ids.content_layout.add_widget(about_label)
 

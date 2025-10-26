@@ -1,10 +1,5 @@
 # version 2.7.2 (2.7.1 was forced to re-upload)
 
-BUG
-
-- high strike im Bildern!!!
-- font_size
-
 update:
 
 - remove team122 logos
@@ -13,6 +8,11 @@ tech depth:
 
 - introduce BaseMethode to share common methods between screens
 - upgrade Android SPK = 35 (Android 15) and NDK = 28b (28.2.13676358)
+
+fix:
+
+- high strike updates correctly instead of using all correct answers from session
+- font_size of labels are adjusted
 
 # version 2.7.0
 

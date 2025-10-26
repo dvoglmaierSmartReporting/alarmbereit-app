@@ -62,27 +62,6 @@ else:
     )
 
 
-class ResponsiveLayout:
-    @staticmethod
-    def is_landscape():
-        return Window.width > Window.height
-
-    @staticmethod
-    def is_tablet():
-        # Consider screens wider than 600dp as tablets
-        return min(Window.width, Window.height) > dp(600)
-
-    @staticmethod
-    def get_font_scale():
-        # Scale fonts based on screen density
-        base_width = dp(600)
-        return max(0.8, min(2.0, Window.width / base_width))
-
-    @staticmethod
-    def get_spacing():
-        return dp(5) if ResponsiveLayout.is_landscape() else dp(10)
-
-
 class FeuerwehrApp(App):
     def build(self):
         # Bind to window size changes for responsive behavior

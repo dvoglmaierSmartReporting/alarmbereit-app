@@ -17,30 +17,39 @@ settings = Settings()
 
 
 @dataclass
-class FontSizeMethods:
-    # def __init__(self, **kwargs):
-    #     super(FontSizeMethods, self).__init__(**kwargs)
-    #     # Store references to dynamically created widgets for font updates
-    #     self.dynamic_widgets = []
+class FontSizeMixin:
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.dynamic_widgets = []
 
     def get_font_scale(self):
         return max(0.8, min(1.5, Window.width / dp(600)))
 
-    def on_enter(self):
-        Window.bind(on_resize=self.update_font_sizes)
+    def register_widget_for_font_scaling(self, widget, base_font_size):
+        self.dynamic_widgets.append({"widget": widget, "base_size": base_font_size})
 
-    def on_leave(self):
-        Window.unbind(on_resize=self.update_font_sizes)
+        # Apply initial font size
+        if hasattr(widget, "font_size"):
+            font_scale = self.get_font_scale()
+            widget.font_size = f"{dp(base_font_size) * font_scale}dp"
 
     def update_font_sizes(self, *args):
         font_scale = self.get_font_scale()
 
-        # Update dynamically created widgets
         for widget_info in self.dynamic_widgets:
             widget = widget_info["widget"]
             base_size = widget_info["base_size"]
             if hasattr(widget, "font_size"):
                 widget.font_size = f"{dp(base_size) * font_scale}dp"
+
+    def bind_font_scaling(self):
+        Window.bind(on_resize=self.update_font_sizes)
+
+    def unbind_font_scaling(self):
+        Window.unbind(on_resize=self.update_font_sizes)
+
+    def clear_font_scaling_widgets(self):
+        self.dynamic_widgets.clear()
 
 
 @dataclass

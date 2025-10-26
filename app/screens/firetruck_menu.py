@@ -17,35 +17,13 @@ from helper.file_handling import (
 from helper.aspect_image import get_city_image
 from helper.strings import Strings
 
+from screens.screen_base import FontSizeMixin
+
 
 strings = Strings()
 
 
-class Firetruck_Menu(Screen):
-    def __init__(self, **kwargs):
-        super(Firetruck_Menu, self).__init__(**kwargs)
-        # Store references to dynamically created widgets for font updates
-        self.dynamic_widgets = []
-
-    def get_font_scale(self):
-        return max(0.8, min(1.5, Window.width / dp(600)))
-
-    def on_enter(self):
-        Window.bind(on_resize=self.update_font_sizes)
-
-    def on_leave(self):
-        Window.unbind(on_resize=self.update_font_sizes)
-
-    def update_font_sizes(self, *args):
-        font_scale = self.get_font_scale()
-
-        # Update dynamically created buttons
-        for widget_info in self.dynamic_widgets:
-            widget = widget_info["widget"]
-            base_size = widget_info["base_size"]
-            if hasattr(widget, "font_size"):
-                widget.font_size = f"{dp(base_size) * font_scale}dp"
-
+class Firetruck_Menu(FontSizeMixin, Screen):
     def on_pre_enter(self):
         self.update_mode_label()
 
@@ -54,6 +32,12 @@ class Firetruck_Menu(Screen):
         self.abbreviations = get_firetruck_abbreviations(self.selected_city)
 
         self.update_firetruck_buttons()
+
+    def on_enter(self):
+        self.bind_font_scaling()
+
+    def on_leave(self):
+        self.unbind_font_scaling()
 
     def update_mode_label(self):
         self.selected_mode = get_selected_mode()
@@ -176,8 +160,8 @@ class Firetruck_Menu(Screen):
             disabled=disabled,
         )
 
-        # Store reference for dynamic font updates
-        self.dynamic_widgets.append({"widget": btn, "base_size": base_font_size})
+        # Register button for font scaling
+        self.register_widget_for_font_scaling(btn, base_font_size)
 
         btn.bind(on_release=self.on_button_release)
         self.ids.firetrucks_layout.add_widget(btn)
