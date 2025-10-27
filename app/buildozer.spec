@@ -1,12 +1,14 @@
 [app]
 
 # (str) Title of your application
-#title = FA1000
-title = FahrzeugkundeApp
+# title = FA1000
+# title = FahrzeugkundeApp
+title = Alarmbereit
 
 # (str) Package name
-#package.name = FA1000
-package.name = FahrzeugkundeApp
+# package.name = FA1000
+# package.name = FahrzeugkundeApp
+package.name = Alarmbereit
 
 # (str) Package domain (needed for android/ios packaging)
 package.domain = feuerwehrhallein.fahrzeugkundeapp
@@ -31,7 +33,7 @@ source.include_exts = py,png,jpg,kv,atlas,yaml,cfg,config,ini,ttf
 #source.exclude_patterns = license,images/*/*.jpg
 
 # (str) Application versioning (method 1)
-version = 2.7.3
+version = 2.7.8
 
 # (str) Application versioning (method 2)
 # version.regex = __version__ = ['"](.*)['"]
@@ -39,7 +41,7 @@ version = 2.7.3
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3,filetype==1.2.0,certifi==2025.10.5,urllib3==2.5.0,idna==3.11,charset-normalizer==3.4.4,requests==2.32.5,Pygments==2.19.2,docutils==0.22.2,Kivy-Garden==0.1.5,Kivy==2.3.1,PyYAML==6.0.3
+requirements = python3,filetype==1.2.0,certifi==2025.10.5,urllib3==2.5.0,idna==3.11,charset-normalizer==3.4.4,requests==2.32.5,Pygments==2.19.2,docutils==0.22.2,Kivy-Garden==0.1.5,Kivy==2.3.0,PyYAML==6.0.3
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
@@ -75,7 +77,7 @@ orientation = portrait
 # osx.python_version = 3.11.10
 
 # Kivy version to use
-osx.kivy_version = 2.3.1
+osx.kivy_version = 2.3.0
 
 #
 # Android specific

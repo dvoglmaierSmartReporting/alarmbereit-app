@@ -1,4 +1,14 @@
-# version 2.7.3 (2.7.1 was forced to re-upload)
+# next version
+
+fix:
+
+- Meldertaschen
+
+- truck list links orientiert
+
+# version 2.8.0
+
+new app title: Alarmbereit
 
 update:
 
@@ -11,6 +21,7 @@ fix:
 
 - high strike updates correctly instead of using all correct answers from session
 - font_size of labels are adjusted
+- Filtermaske changed in Leiter, RüstLösch, and Tank
 
 # version 2.7.0
 

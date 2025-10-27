@@ -6,6 +6,9 @@ set -u  # Treat unset variables as errors
 VERSION_FILE="app/app-version"
 SPECS_FILE="app/buildozer.spec"
 
+# Load environment variables
+source .prepare-env
+
 parse_args_and_maybe_bump() {
     # Ensure at least one argument is provided
     if [[ $# -lt 1 || $# -gt 2 ]]; then
@@ -144,9 +147,6 @@ build_android() {
         echo "Navigating to $TARGET_DIR..."
         cd "$TARGET_DIR" || { echo "Failed to navigate to $TARGET_DIR"; exit 1; }
     fi
-
-    # Load environment variables
-    source ../.prepare-env
 
     env | grep -i "p4a"
 

@@ -1,15 +1,16 @@
 Datenschutzerklärung
 
-Name der App: FahrzeugkundeApp
+Name der App: Alarmbereit (zuvor: FahrzeugkundeApp)
 Verantwortlich: Freiwillige Feuerwehr der Stadt Hallein
 
 1. Allgemeine Hinweise
 
-Der Schutz Ihrer persönlichen Daten ist uns ein besonderes Anliegen. Wir nehmen den Datenschutz sehr ernst und behandeln Ihre Daten vertraulich und entsprechend der gesetzlichen Vorschriften. Diese Webseite dient der Information über die App FahrzeugkundeApp. Die App selbst erhebt keinerlei personenbezogene Daten.
+Der Schutz Ihrer persönlichen Daten ist uns ein besonderes Anliegen. Wir nehmen den Datenschutz sehr ernst und behandeln Ihre Daten vertraulich und entsprechend der gesetzlichen Vorschriften. Diese Webseite dient der Information über die App Alarmbereit. Die App selbst erhebt keinerlei personenbezogene Daten.
 
 2. Datenerhebung durch die App
 
-Die FahrzeugkundeApp speichert oder verarbeitet keine personenbezogenen Daten. Es erfolgt keinerlei Erhebung von:
+Alarmbereit speichert oder verarbeitet keine personenbezogenen Daten. Es erfolgt keinerlei Erhebung von:
+
 - Nutzungsdaten
 - Standortdaten
 - Geräteinformationen
@@ -21,6 +22,7 @@ Die App ist vollständig offline nutzbar und benötigt keine Registrierung.
 3. Nutzung externer Dienste
 
 Die App verzichtet vollständig auf den Einsatz externer Dienste wie:
+
 - Tracking- oder Analyse-Tools (z. B. Google Analytics)
 - Werbung
 - Cloud-Speicher oder Datenbanken
@@ -38,4 +40,3 @@ Freiwillige Feuerwehr der Stadt Hallein
 6. Änderungen an dieser Datenschutzerklärung
 
 Diese Datenschutzerklärung kann bei Bedarf aktualisiert werden, z. B. bei funktionalen Änderungen der App. Die jeweils aktuelle Version ist auf dieser Webseite einsehbar.
-
