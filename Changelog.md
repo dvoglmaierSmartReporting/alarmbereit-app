@@ -6,6 +6,8 @@ fix:
 
 - truck list links orientiert
 
+- "kostenlos" text adjust to "in Pilotphase werden kostenlos hinzugefügt"
+
 # version 2.8.0
 
 new app title: Alarmbereit
