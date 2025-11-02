@@ -14,7 +14,7 @@ from helper.file_handling import (
     get_selected_firetruck,
 )
 from helper.settings import Settings
-from helper.strings import Strings, Firetruck_GameEndText
+from helper.strings import Strings, GameEndText
 from helper.game_class import GameCore
 from helper.firetruck_layouts import build_answer_layout
 
@@ -110,11 +110,11 @@ class Firetruck_Game(Screen, BaseMethods):
     def correct_answer(self):
         self.increment_score()
 
-        self.game.answers_correct_total += 1
+        # self.game.answers_correct_total += 1
+        self.game.answers_correct += 1
 
         if (
-            self.game.answers_correct_total
-            % settings.FIRETRUCK_GAME_CORRECT_FOR_EXTRA_TIME
+            self.game.answers_correct % settings.FIRETRUCK_GAME_CORRECT_FOR_EXTRA_TIME
             == 0
         ):
             self.add_time()
@@ -134,9 +134,10 @@ class Firetruck_Game(Screen, BaseMethods):
                 value=self.game.score,
             )
 
-        message = Firetruck_GameEndText(
+        message = GameEndText(
             answers_total=self.game.questions_len,
-            answers_correct=self.game.answers_correct_total,
+            # answers_correct=self.game.answers_correct_total,
+            answers_correct=self.game.answers_correct,
             score=self.game.score,
             is_new_highscore=self.game.score > self.current_high_score,
         ).TEXT

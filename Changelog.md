@@ -8,6 +8,30 @@ fix:
 
 - "kostenlos" text adjust to "in Pilotphase werden kostenlos hinzugefügt"
 
+- daily strike
+
+  - store last_access_date
+  - add daily_strike to scores.yaml
+  - calculate day difference from today to last_access_date
+    - if 1, add +1
+    - if >=2, subtract
+    - lowest is 0
+  - display difference in color
+    - if 0 before, don't display
+    - if adding, green
+    - if subtracting, red
+  - when to update last_access_date ???
+  - where to display strike
+
+- refactor the way of picking tools
+
+  - use storage file to hold set of tools for each truck
+  - use for next tool
+  - count correct and incorrect tools
+  - output percentage for each truck
+
+- "highscore" percentage of best and last set
+
 # version 2.8.0
 
 new app title: Alarmbereit

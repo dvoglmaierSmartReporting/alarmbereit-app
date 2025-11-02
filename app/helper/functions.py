@@ -2,6 +2,7 @@ from kivy.app import App
 
 import os
 from typing import cast
+from tabulate import tabulate
 
 from helper.settings import Settings
 from helper.strings import Strings
@@ -223,183 +224,118 @@ def break_tool_name(tool_name: str, max_character: int = 27) -> str:
 
 
 def create_scores_text(scores: scores, selected_city: str) -> str:
-    spacing = "   "
-    separator = " - "
-    section_line_char = "="
-    section_line = "\n\n" + section_line_char * 35 + "\n\n"
-    output = ""
-
     factor = settings.FIRETRUCK_TRAINING_STRIKE_FACTOR
     factor_image = settings.FIRETRUCK_TRAINING_STRIKE_IMAGE_FACTOR
 
-    filtered_scores = scores.get(map_selected_city_2short_name(selected_city), {})
+    city = map_selected_city_2short_name(selected_city)
+
+    filtered_scores = scores.get(city, {})
     filtered_scores = cast(departmentScores, filtered_scores)
+
+    running_score = filtered_scores.get("running_score")
 
     truck_scores = filtered_scores.get("firetrucks")
     truck_scores = cast(departmentTruckScores, truck_scores)
 
-    # Zeitdruck
-    output += create_firetruck_score_text(
-        truck_scores, spacing=spacing, separator=separator
-    )
-    total_score = sum_firetruck_scores(truck_scores)
-    output += f"{strings.TEXT_SUM}: {dot_separator(total_score)} {strings.TEXT_POINTS}"
-
-    # Übung
-    output += section_line
-    output += create_firetruck_score_text(
-        truck_scores,
-        spacing=spacing,
-        separator=separator,
-        key="high_strike",
-    )
-    total_strike = sum_firetruck_scores(truck_scores, key="high_strike")
-
-    output += f"{strings.TEXT_SUM}: {total_strike} x {factor} = {dot_separator(total_strike * factor)} {strings.TEXT_POINTS}\n\n"
-    output += strings.TEXT_STRIKE_CALCULATION
-
-    # Übung mit Bildern
-    if selected_city in ["Hallein"]:
-        output += section_line
-        output += create_firetruck_score_text(
-            truck_scores,
-            spacing=spacing,
-            separator=separator,
-            key="high_strike_image",
-        )
-        total_strike_image = sum_firetruck_scores(truck_scores, key="high_strike_image")
-        output += f"{strings.TEXT_SUM}: {total_strike_image} x {factor_image} = {dot_separator(total_strike_image * factor_image)} {strings.TEXT_POINTS}\n\n"
-        output += strings.TEXT_STRIKE_IMAGE_CALCULATION
-    else:
-        total_strike_image = 0
-
-    # Gesamtpunktzahl
-    output += section_line
-    total = total_score + total_strike * factor + total_strike_image * factor_image
-    output += f"[b]{strings.TEXT_TOTAL_POINTS}{separator}{dot_separator(total)} {strings.TEXT_POINTS}[/b]"
-
-    return output
-
-
-def extra_charactor(number: int) -> int:
-    if 999_999 >= number >= 1_000:
-        return len(str(number)) + 1
-    return len(str(number))
-
-
-def dot_separator(number: int) -> str:
-    return f"{number:,}".replace(",", ".")
-
-
-def create_firetruck_score_text(
-    scores: departmentTruckScores,
-    spacing: str,
-    separator: str,
-    key: str = "high_score",
-) -> str:
-    # output = strings.BUTTON_STR_FIRETRUCKS + ":\n\n"
-    output = ""
-
-    longest_key = len(max(scores.keys(), key=len))
-
-    # define score column width
-    characters = 0
-    for data in scores.values():
-        if isinstance(data.get(key), int):
-            score = data.get(key, 0)
-            score = cast(int, score)
-
-            if extra_charactor(score) > characters:
-                characters = extra_charactor(score)
-    characters += 1
-
-    if key == "high_score":
-        # game mode
-        output += strings.BUTTON_STR_GAME + ":\n\n"
-    elif key == "high_strike":
-        # training mode
-        output += strings.BUTTON_STR_TRAINING + ":\n\n"
-    elif key == "high_strike_image":
-        # training with images mode
-        output += strings.BUTTON_STR_TRAINING_NEW + ":\n\n"
-    else:
-        output += key + ":\n\n"
-
-    for truck, data in scores.items():
-        data = cast(dict, data)
-
-        # truck list is limited for "Übung mit Bildern"
-        if key == "high_strike_image":
-            if truck not in ["Leiter"]:
-                continue
-
-        truck_space = spacing + " " * (longest_key - len(truck)) + truck + separator
-
-        if isinstance(data.get(key), int):
-            score = data.get(key, 0)
-            score = cast(int, score)
-
-        score_space = " " * (characters - extra_charactor(score)) + dot_separator(score)
-        output += truck_space + score_space + "\n"
-
-    return output + "\n"
-
-
-def sum_firetruck_scores(scores: departmentTruckScores, key: str = "high_score") -> int:
-    total = 0
-
-    for data in scores.values():
-        data = cast(dict, data)
-
-        if isinstance(data.get(key), int):
-            score = data.get(key, 0)
-            score = cast(int, score)
-
-        total += score
-
-    return total
-
-
-def create_competition_score_text(
-    scores: departmentCompetitionScores,
-    spacing: str,
-    separator: str,
-) -> str:
-    output = strings.BUTTON_STR_COMPETITIONS + ":\n\n"
-
-    longest_key = len(max(scores.keys(), key=len))
-    # define score column width
-    characters = 0
-    for data in scores.values():
-        if isinstance(data.get("high_score"), int):
-            score = data.get("high_score", 0)
-            score = cast(int, score)
-
-            if extra_charactor(score) > characters:
-                characters = extra_charactor(score)
-    characters += 1
-
-    for comp, data in scores.items():
-        comp_space = spacing + " " * (longest_key - len(comp)) + comp + ":"
-
-        if isinstance(data.get("high_score"), int):
-            score = data.get("high_score", 0)
-            score = cast(int, score)
-
-        score_space = " " * (characters - extra_charactor(score)) + dot_separator(score)
-        output += comp_space + score_space + "\n"
-
-    return output
-
-
-def sum_competition_score(scores: departmentCompetitionScores) -> int:
+    table = list()
     total_score = 0
+    total_strike = 0
+    total_strike_image = 0
 
-    for data in scores.values():
-        if isinstance(data.get("high_score"), int):
-            score = data.get("high_score", 0)
-            score = cast(int, score)
+    third_column = True if city == "Hallein" else False
 
+    for truck, data in truck_scores.items():
+        score = data.get("high_score", 0)
         total_score += score
 
-    return total_score
+        strike = data.get("high_strike", 0)
+        total_strike += strike
+
+        if truck == "Leiter":
+            strike_image = data.get("high_strike_image", 0)
+            total_strike_image += strike_image
+            strike_image = str(strike_image)
+        else:
+            strike_image = ""
+
+        if third_column:
+            table.append([truck, separate(str(score)), str(strike), strike_image])
+        else:
+            table.append([truck, separate(str(score)), str(strike)])
+
+    empty_line = ["", "", ""]
+    factor_line = [
+        "Faktor",
+        "-",
+        f"x {factor}",
+    ]
+    hypon_line = ["-" * 10, "-" * 10, ""]
+    equal_line = ["=" * 13, "=" * 10, ""]
+
+    sum = [
+        "Punkte",
+        separate(str(total_score)),
+        separate(str(total_strike * factor)),
+    ]
+
+    total = [
+        "GESAMT",
+        separate(
+            str(
+                total_score
+                + (total_strike * factor)
+                + (total_strike_image * factor_image)
+            )
+        ),
+        "",
+    ]
+
+    running_score_line = ["Running Score", separate(str(running_score)), ""]
+    if third_column:
+        empty_line.append("")
+        factor_line.append(f"x {factor_image}")
+        hypon_line.append("")
+
+        sum.append(separate(str(total_strike_image * factor_image)))
+
+        total.append("")
+
+        equal_line.append("")
+        running_score_line.append("")
+
+    headers = ["FAHRZEUG", "ZEITDRUCK", "ÜBUNG"]
+    colalign = ["right", "right", "right"]
+    if third_column:
+        headers.append("BILDER")
+        colalign.append("right")
+
+    table.append(empty_line)
+    table.append(factor_line)
+    table.append(empty_line)
+    table.append(sum)
+    table.append(empty_line)
+    table.append(hypon_line)
+    table.append(empty_line)
+    table.append(total)
+
+    # Output running score
+    table.append(empty_line)
+    table.append(empty_line)
+    table.append(empty_line)
+    table.append(equal_line)
+    table.append(running_score_line)
+    table.append(equal_line)
+
+    return tabulate(
+        table,
+        headers=headers,
+        tablefmt="rounded_outline",
+        colalign=colalign,
+    )
+
+
+def separate(string: str) -> str:
+    # every 3rd character from the end, insert a underscore
+    reversed_string = string[::-1]
+    parts = [reversed_string[i : i + 3] for i in range(0, len(reversed_string), 3)]
+    return "_".join(parts)[::-1]

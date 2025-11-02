@@ -4,12 +4,12 @@ from random import shuffle
 
 @dataclass
 class GameCore:
-    answers_correct_total: int = 0
+    # answers_correct_total: int = 0
     answers_correct: int = 0
     score: int = 0
 
     # option to store all questions list here
-    # instead of funktions in the screen class
+    # instead of functions in the screen class
 
     # concat history to review after a session
     questions: list = field(default_factory=list, init=False, repr=False)

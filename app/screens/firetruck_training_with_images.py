@@ -17,8 +17,8 @@ from helper.file_handling import (
 from helper.settings import Settings
 from helper.strings import (
     Strings,
-    Firetruck_TrainingText_AllTools,
-    Firetruck_TrainingText_HalfTools,
+    TrainingText_AllTools,
+    TrainingText_HalfTools,
 )
 from helper.game_class import GameCore
 from helper.firetruck_layouts import build_answer_layout
@@ -114,7 +114,7 @@ class Firetruck_Training_With_Images(Screen, BaseMethods):
 
             # all tools have been trained
             info_popup = TextPopup(
-                message=Firetruck_TrainingText_AllTools(self.tool_amount).TEXT,
+                message=TrainingText_AllTools(self.tool_amount).TEXT,
                 title=strings.TITLE_INFO_POPUP,
                 size_hint=(0.6, 0.6),
             )
@@ -123,7 +123,7 @@ class Firetruck_Training_With_Images(Screen, BaseMethods):
         if len(self.tool_questions) == self.tool_amount // 2:
             # half of tools have been trained
             info_popup = TextPopup(
-                message=Firetruck_TrainingText_HalfTools(self.tool_amount).TEXT,
+                message=TrainingText_HalfTools(self.tool_amount).TEXT,
                 title=strings.TITLE_INFO_POPUP,
                 size_hint=(0.6, 0.6),
             )

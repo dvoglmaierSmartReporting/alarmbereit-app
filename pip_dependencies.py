@@ -3,7 +3,6 @@
 import argparse
 import subprocess
 import re
-import os
 import sys
 
 

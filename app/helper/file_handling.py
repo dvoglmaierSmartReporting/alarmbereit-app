@@ -201,6 +201,28 @@ def get_score_value(
     )
 
 
+def add2running_score(city: str, to_add: int) -> None:
+    content = read_scores_file()
+
+    city = map_selected_city_2short_name(city)
+
+    if not city in content.keys():
+        raise ValueError(f"City {city} not found in scores.yaml")
+
+    if not "running_score" in content.get(city, {}).keys():
+        raise ValueError(f"Key running_score not found in scores.yaml > {city}")
+
+    running_score = content.get(city, {}).get("running_score")
+
+    content[city]["running_score"] = running_score + to_add
+
+    scores_file_path = os.path.join(
+        get_user_data_dir(),
+        "scores.yaml",
+    )
+    save_to_yaml(scores_file_path, content)
+
+
 def save_to_scores_file(
     city: str,
     questions: str,

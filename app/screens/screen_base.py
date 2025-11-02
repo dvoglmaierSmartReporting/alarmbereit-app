@@ -9,8 +9,11 @@ from dataclasses import dataclass
 from random import shuffle
 
 from helper.settings import Settings
+from helper.strings import TrainingEndText
 from helper.functions import *
 from helper.file_handling import *
+
+from popups.text_popup import TextPopup
 
 
 settings = Settings()
@@ -264,14 +267,42 @@ class BaseMethods:
 
                 return True
 
+    def end_game(self, factor: int) -> None:
+        add2running_score(
+            city=self.selected_city,
+            to_add=int(self.game.answers_correct * factor),
+        )
+
+        message = TrainingEndText(
+            answers_total=self.game.questions_len,
+            answers_correct=self.game.answers_correct,
+            factor=factor,
+        ).TEXT
+
+        info_popup = TextPopup(
+            message=message,
+            title=strings.TITLE_INFO_POPUP,
+            size_hint=(0.6, 0.6),
+        )
+        info_popup.open()
+
     def go_back(self, *args) -> None:
         if self.current_screen in [
-            "firetruck_training",
-            "firetruck_training_with_images",
             "firetruck_browse",
             "firetruck_images",
         ]:
             change_screen_to("firetruck_menu")
+
+        elif self.current_screen == "firetruck_training":
+            self.end_game(factor=settings.FIRETRUCK_TRAINING_STRIKE_FACTOR)
+            change_screen_to("firetruck_menu")
+
+        elif self.current_screen == "firetruck_training_with_images":
+            self.end_game(factor=settings.FIRETRUCK_TRAINING_STRIKE_IMAGE_FACTOR)
+            change_screen_to("firetruck_menu")
+
+        elif self.current_screen == "firetruck_game":
+            self.end_game()  # screen method
 
         elif self.current_screen in [
             "highscore_screen",
@@ -279,9 +310,6 @@ class BaseMethods:
             "firetruck_menu",
         ]:
             change_screen_to("start_menu")
-
-        elif self.current_screen == "firetruck_game":
-            self.end_game()
 
         else:
             raise NotImplementedError("go_back() not implemented for this screen!")

@@ -1,4 +1,5 @@
 Altenmarkt:
+  running_score: 0
   competitions:
     ASLP Stufe I:
       high_score: 0
@@ -38,6 +39,7 @@ Altenmarkt:
       high_strike: 0
       high_strike_image: 0
 "D\xFCrrnberg":
+  running_score: 0
   competitions:
     ASLP Stufe I:
       high_score: 0
@@ -77,6 +79,7 @@ Altenmarkt:
       high_strike: 0
       high_strike_image: 0
 Hallein:
+  running_score: 0
   competitions:
     ASLP Stufe I:
       high_score: 0

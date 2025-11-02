@@ -4,12 +4,15 @@ import os
 # Define target size
 target_size = (1024, 500)  # Android, Google Play Store
 target_size = (1290, 2796)  # iPhonoe, Apple App Store
+target_size = (32, 32)  # iPhonoe, Apple App Store
 
 # List of uploaded image paths
 input_dir = "../../../Pictures/compress"
 input_dir = "./store_preview/new"
+input_dir = "../../../Pictures/compress"
 new_output_dir = "../../../Pictures/compress"
 new_output_dir = "./store_preview/ios"
+new_output_dir = "../../../Pictures/new"
 
 
 def run(input_folder, output_folder, target_size):

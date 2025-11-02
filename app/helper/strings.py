@@ -71,7 +71,7 @@ class Strings:
         self.ERROR_IMAGE_NOT_FOUND = "Bild nicht verfügbar"
 
 
-class Firetruck_TrainingText_AllTools:
+class TrainingText_AllTools:
     def __init__(self, tool_amount: int) -> None:
         self.TEXT = f"""
 
@@ -82,7 +82,7 @@ Du hast alle {tool_amount} Geräte des Fahrzeugs gelernt.
 Die Geräte werden neu geladen und weiterhin zufällig gezogen."""
 
 
-class Firetruck_TrainingText_HalfTools:
+class TrainingText_HalfTools:
     def __init__(self, tool_amount: int) -> None:
         self.TEXT = f"""
 
@@ -91,7 +91,7 @@ class Firetruck_TrainingText_HalfTools:
 Du hast bereits die Hälfte der {tool_amount} Geräte des Fahrzeugs gelernt."""
 
 
-class Firetruck_GameEndText:
+class GameEndText:
     def __init__(
         self,
         answers_total: int,
@@ -109,7 +109,7 @@ Du hast {answers_total} {self.is_plural(answers_total>1)} gespielt, davon {answe
         if is_new_highscore:
             return f"""
 
-Glückwunsch!
+[b]Glückwunsch![/b]
 Du hast deinen persönlichen Highscore an diesem Fahrzeug verbessert.
 
 Neuer Highscore: {score}"""
@@ -123,34 +123,23 @@ Punktestand: {score}"""
         return "Gerät"
 
 
-class Competition_GameEndText:
+class TrainingEndText:
     def __init__(
         self,
         answers_total: int,
         answers_correct: int,
-        score: int,
-        is_new_highscore: bool,
+        factor: int,
     ) -> None:
         self.TEXT = f"""
-[b]Spiel Ende![/b]
+[b]Pause![/b]
 
-Du hast {answers_total} {self.is_plural(answers_total > 1)} gespielt, davon {answers_correct} richtig beantwortet.
-
-{self.is_new_highscore(score, is_new_highscore)}
+Du hast {answers_total} {self.is_plural(answers_total>1)} gelernt, davon {answers_correct} richtig zugeordnet. [b]{answers_correct * factor} Punkte[/b] hast du deinem Running Score hinzugefügt.
 """
-
-    def is_new_highscore(self, score: int, is_new_highscore: bool) -> str:
-        if is_new_highscore:
-            return f"""[b]Glückwunsch![/b]
-Du hast deinen persönlichen Highscore in diesem Bewerb verbessert.
-
-Neuer Highscore: {score}"""
-        return f"\n\nPunktestand: {score}"
 
     def is_plural(self, is_plural: bool) -> str:
         if is_plural:
-            return "Fragen"
-        return "Frage"
+            return "Geräte"
+        return "Gerät"
 
 
 class Info_Text:
