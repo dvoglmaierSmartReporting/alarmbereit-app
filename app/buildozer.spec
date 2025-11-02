@@ -123,12 +123,12 @@ android.api = 35
 
 # (str) Android NDK version to use
 # android.ndk = 21b # used for all releases until 2.7.0
-# android.ndk = 22b # failed
-# android.ndk = 25b # worked
-# android.ndk = 26c # failed
-# android.ndk = 27c # failed
-android.ndk = 28b # failed
-# android.ndk = 29 # failed
+# android.ndk = 22b
+# android.ndk = 25b
+# android.ndk = 26c
+# android.ndk = 27c
+android.ndk = 28b
+# android.ndk = 29
 
 # (int) Android NDK API to use. This is the minimum API your app will support, it should usually match android.minapi.
 #android.ndk_api = 21
