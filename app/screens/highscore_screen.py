@@ -3,18 +3,24 @@ from kivy.uix.screenmanager import Screen
 from kivy.clock import Clock
 from kivy.config import Config
 
+from typing import cast
+from tabulate import tabulate
+
+from helper.settings import Settings
 from helper.strings import Strings
-from helper.functions import change_screen_to, create_scores_text
 from helper.file_handling import (
     get_selected_city_state,
     map_selected_city_2long_name,
     read_scores_file,
+    map_selected_city_2short_name,
 )
+from helper.custom_types import *
 
 from screens.screen_base import BaseMethods
 
 
 strings = Strings()
+settings = Settings()
 
 
 # TODO:
@@ -38,6 +44,8 @@ class Highscore(Screen, BaseMethods):
 
         self.update_city_label()
 
+        self.prepare_table()
+
         self.update_info_text()
 
     def update_city_label(self):
@@ -51,16 +59,186 @@ class Highscore(Screen, BaseMethods):
         self.ids.city_label.text = selected_city_displayed
 
     def update_info_text(self):
-        info_text = (
-            create_scores_text(read_scores_file(), self.selected_city) + "\n\n\n\n"
-        )
+        info_text = self.create_scores_text() + "\n\n\n\n"
 
         self.ids.score_text_label.text = info_text
 
-    # def go_back(self, *args) -> None:
-    #     change_screen_to("start_menu")
+    def prepare_table(self):
+        city = map_selected_city_2short_name(self.selected_city)
+        self.third_column = True if city == "Hallein" else False
+
+        self.running_score = read_scores_file().get(city, {}).get("running_score")
+        self.truck_scores = read_scores_file().get(city, {}).get("firetrucks")
+
+        self.empty_line = ["", "", ""] + ([""] if self.third_column else [])
+        self.hypon_line_short = ["-" * 13, "-" * 10, ""] + (
+            [""] if self.third_column else []
+        )
+        self.hypon_line_long = ["-" * 13, "-" * 10, "-" * 7] + (
+            ["-" * 9] if self.third_column else []
+        )
+        self.equal_line = ["=" * 13, "", ""] + ([""] if self.third_column else [])
+
+    def create_scores_text(self) -> str:
+        table = list()
+
+        # print running score table
+        for row in self.build_running_score_table():
+            table.append(row)
+        table.append(self.empty_line)
+
+        # print highscore table
+        for row in self.build_highscore_table():
+            table.append(row)
+        table.append(self.empty_line)
+        table.append(self.empty_line)
+
+        # print percentage table
+        for row in self.build_percentage_table():
+            table.append(row)
+
+        colalign = ["right", "right", "right"] + (
+            ["right"] if self.third_column else []
+        )
+
+        return tabulate(
+            table,
+            tablefmt="rounded_outline",
+            colalign=colalign,
+        )
+
+    def separate(self, string: str) -> str:
+        # every 3rd character from the end, insert a underscore
+        reversed_string = string[::-1]
+        parts = [reversed_string[i : i + 3] for i in range(0, len(reversed_string), 3)]
+        return "_".join(parts)[::-1]
+
+    def build_highscore_table(self) -> list[list[str]]:
+        factor = settings.FIRETRUCK_TRAINING_STRIKE_FACTOR
+        factor_image = settings.FIRETRUCK_TRAINING_STRIKE_IMAGE_FACTOR
+
+        rows = list()
+        total_score = 0
+        total_strike = 0
+        total_strike_image = 0
+
+        for truck, data in self.truck_scores.items():
+            score = data.get("high_score", 0)
+            total_score += score
+
+            strike = data.get("high_strike", 0)
+            total_strike += strike
+
+            if truck == "Leiter":
+                strike_image = data.get("high_strike_image", 0)
+                total_strike_image += strike_image
+                strike_image = str(strike_image)
+            else:
+                strike_image = ""
+
+            rows.append(
+                [truck, self.separate(str(score)), str(strike)]
+                + ([strike_image] if self.third_column else [])
+            )
+
+        factor_line = [
+            strings.ROW_FACTOR,
+            "-",
+            f"x {factor}",
+        ] + ([f"x {factor_image}"] if self.third_column else [])
+
+        total = [
+            strings.ROW_TOTAL,
+            self.separate(
+                str(
+                    total_score
+                    + (total_strike * factor)
+                    + (total_strike_image * factor_image)
+                )
+            ),
+            "",
+        ] + ([""] if self.third_column else [])
+
+        header_row = [
+            strings.COLUMN_FIRETRUCK,
+            strings.BUTTON_STR_GAME.upper(),
+            strings.BUTTON_STR_TRAINING.upper(),
+        ] + ([strings.COLUMN_TRAINING_WITH_IMAGES] if self.third_column else [])
+        title_row = [strings.ROW_HIGHSCORES, "", ""] + (
+            [""] if self.third_column else []
+        )
+
+        table = list()
+        table.append(self.equal_line)
+        table.append(title_row)
+        table.append(self.equal_line)
+        table.append(header_row)
+        table.append(self.empty_line)
+        for row in rows:
+            table.append(row)
+        table.append(self.empty_line)
+        table.append(factor_line)
+        table.append(self.hypon_line_long)
+        table.append(total)
+
+        return table
+
+    def build_running_score_table(self) -> list[list[str]]:
+        running_score_line = [
+            strings.ROW_RUNNING_SCORE,
+            self.separate(str(self.running_score)),
+            "",
+        ]
+
+        table = list()
+        table.append(self.equal_line)
+        table.append(running_score_line)
+        table.append(self.equal_line)
+
+        return table
+
+    def build_percentage_table(self) -> list[list[str]]:
+        rows = list()
+        total_percentage = 0
+
+        for truck, data in self.truck_scores.items():
+            percentages = data.get("percentages", [])
+            if len(percentages) == 0:
+                average_percentage = 0.0
+            else:
+                average_percentage = sum(percentages) / len(percentages)
+                total_percentage += average_percentage
+
+            rows.append(
+                [truck, f"{average_percentage:.1f} %", ""]
+                + ([""] if self.third_column else [])
+            )
+
+        average_line = [
+            strings.ROW_AVERAGE,
+            f"{total_percentage/len(self.truck_scores) if len(self.truck_scores) > 0 else 0:.1f} %",
+            "",
+        ] + ([""] if self.third_column else [])
+
+        title_row = [strings.ROW_PROCENTAGE, "", ""] + (
+            [""] if self.third_column else []
+        )
+
+        table = list()
+        table.append(self.equal_line)
+        table.append(title_row)
+        table.append(self.equal_line)
+        table.append(self.empty_line)
+        for row in rows:
+            table.append(row)
+        table.append(self.empty_line)
+        table.append(self.hypon_line_short)
+        table.append(average_line)
+
+        return table
 
     # Not used currently
+
     # idea: in internal competitions, use button to create image of highscore screen
     # to be able to share the whole values
     #

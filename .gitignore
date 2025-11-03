@@ -37,6 +37,7 @@ Unterlagen Bewerbe _ Leistungsabzeichen
 *.drawio
 !game_sequence.drawio
 *firetruck_layout.docx
+company logo.pptx
 
 # logs
 /app/logs

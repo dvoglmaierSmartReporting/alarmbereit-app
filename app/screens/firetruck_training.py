@@ -43,32 +43,104 @@ class Firetruck_Training(Screen, BaseMethods):
     def play(self):
         self.game = GameCore()
 
-        self.reset_tool_list()
+        # self.reset_tool_list()  # TODO: hide
+        # load_default_tool_list() # without shuffling
+        self.load_default_tool_list()
+        print(f"{self.set_length = }")
+
+        # get_current_tool_list() # from scores.yaml
+        self.get_current_tool_list()
+        print(f"{self.current_tool_list = }")
+
+        self.first_tool = True
+
+        # check_current_set_is_subset_of_default_set()
+        # if not, remove difference
+        self.check_tool_list()
 
         self.load_high_score()
+        # TODO: load_current_correct_answers() from scores.yaml
 
         self.reset_score()
+
+        # TODO: display set numbers in header
 
         self.next_tool()
 
     def next_tool(self, *args):
         self.accept_answers = True
 
-        if len(self.tool_questions) == 0:
-            self.reset_tool_list()
+        # TODO: get_current_tool_list() # from scores.yaml
+        # TODO: pop item and store back in scores.yaml
 
-            # all tools have been trained
-            info_popup = TextPopup(
-                message=TrainingText_AllTools(self.tool_amount).TEXT,
-                title=strings.TITLE_INFO_POPUP,
-                size_hint=(0.6, 0.6),
+        # if len(self.tool_questions) == 0:  # use new variable
+        if len(self.current_tool_list) == 0:
+            # self.reset_tool_list()
+            # if current_tool_list is empty: recreate current set and store in scores.yaml
+            self.reset_current_tool_list()
+
+            # write current_tool_list to scores.yaml current.set
+            self.save_truck_data(
+                key="set",
+                value=self.current_tool_list,
+                current=True,
             )
-            info_popup.open()
 
-        if len(self.tool_questions) == self.tool_amount // 2:
+            if not self.first_tool:
+                # store percentage in scores.yaml
+                # store result of previous set
+                percentage = round(
+                    (
+                        self.get_truck_data("correct_answers", current=True)
+                        / self.set_length
+                    )
+                    * 100.0,
+                    1,
+                )
+
+                results = self.get_truck_data("percentages")
+                print(f"{results = }")
+                if results is None:
+                    results = []
+                    print(f"{results = }")
+
+                # keep in 2 lines; append is returning None
+                results.append(percentage)
+                self.save_truck_data(
+                    key="percentages",
+                    value=results,
+                )
+
+                # restore correct_answers after percentage calculation and storage
+                self.save_truck_data(
+                    key="correct_answers",
+                    value=0,
+                    current=True,
+                )
+
+                # all tools have been trained
+                info_popup = TextPopup(
+                    message=TrainingText_AllTools(self.set_length).TEXT,
+                    title=strings.TITLE_INFO_POPUP,
+                    size_hint=(0.6, 0.6),
+                )
+                info_popup.open()
+
+            else:
+                # take sure correct_answers is zero at first tool
+                self.save_truck_data(
+                    key="correct_answers",
+                    value=0,
+                    current=True,
+                )
+
+        # if len(self.tool_questions) == self.tool_amount // 2:
+        if (
+            len(self.current_tool_list) == self.set_length // 2
+        ):  # TODO: update set length var
             # half of tools have been trained
             info_popup = TextPopup(
-                message=TrainingText_HalfTools(self.tool_amount).TEXT,
+                message=TrainingText_HalfTools(self.set_length).TEXT,
                 title=strings.TITLE_INFO_POPUP,
                 size_hint=(0.6, 0.6),
             )
@@ -79,7 +151,24 @@ class Firetruck_Training(Screen, BaseMethods):
 
         # troubleshooting: fix first popped tool
         # self.set_first_tool("Unterlegplatte")  # for testing
-        self.current_tool_question = self.tool_questions.pop()
+        # self.current_tool_question = self.tool_questions.pop()
+        # pop from current_tool_list
+        self.current_tool_name = self.current_tool_list.pop()
+
+        self.current_tool_question = [
+            item
+            for item in self.default_tool_list
+            if item.tool == self.current_tool_name
+        ][0]
+
+        self.first_tool = False
+
+        # # store in scores.yaml
+        # self.save_truck_data(
+        #     key="set",
+        #     value=self.current_tool_list,
+        #     current=True,
+        # )
 
         self.ids.tool_label.text = self.current_tool_question.tool
 
@@ -90,6 +179,13 @@ class Firetruck_Training(Screen, BaseMethods):
     def on_answer(self, instance):
         if not self.accept_answers:  # Check if answer processing is enabled
             return  # Ignore the button press if answer processing is disabled
+
+        # after tool was played, save updated set in scores.yaml
+        self.save_truck_data(
+            key="set",
+            value=self.current_tool_list,
+            current=True,
+        )
 
         # do not accept identical answer
         if instance.text in self.current_tool_question.room_answered:

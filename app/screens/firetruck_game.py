@@ -9,7 +9,7 @@ from helper.functions import (
     get_firetruck_layouts,
 )
 from helper.file_handling import (
-    save_to_scores_file,
+    save2scores_file,
     get_selected_city_state,
     get_selected_firetruck,
 )
@@ -126,7 +126,7 @@ class Firetruck_Game(Screen, BaseMethods):
         Clock.unschedule(self.update_timer)
 
         if self.game.score > self.current_high_score:
-            save_to_scores_file(
+            save2scores_file(
                 city=self.selected_city,
                 questions="firetrucks",
                 truck_or_comp=self.selected_firetruck,

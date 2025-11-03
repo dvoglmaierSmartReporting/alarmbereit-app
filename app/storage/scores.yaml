@@ -34,10 +34,20 @@ Altenmarkt:
       high_score: 0
       high_strike: 0
       high_strike_image: 0
+      set_length: 0
+      current:
+        set: []
+        correct_answers: 0
+      percentages: []
     LF8:
       high_score: 0
       high_strike: 0
       high_strike_image: 0
+      set_length: 0
+      current:
+        set: []
+        correct_answers: 0
+      percentages: []
 "D\xFCrrnberg":
   running_score: 0
   competitions:
@@ -74,10 +84,20 @@ Altenmarkt:
       high_score: 0
       high_strike: 0
       high_strike_image: 0
+      set_length: 0
+      current:
+        set: []
+        correct_answers: 0
+      percentages: []
     Tank:
       high_score: 0
       high_strike: 0
       high_strike_image: 0
+      set_length: 0
+      current:
+        set: []
+        correct_answers: 0
+      percentages: []
 Hallein:
   running_score: 0
   competitions:
@@ -114,31 +134,72 @@ Hallein:
       high_score: 0
       high_strike: 0
       high_strike_image: 0
+      set_length: 0
+      current:
+        set: []
+        correct_answers: 0
+      percentages: []
     Pumpe:
       high_score: 0
       high_strike: 0
       high_strike_image: 0
+      set_length: 0
+      current:
+        set: []
+        correct_answers: 0
+      percentages: []
     "R\xFCst":
       high_score: 0
       high_strike: 0
       high_strike_image: 0
+      set_length: 0
+      current:
+        set: []
+        correct_answers: 0
+      percentages: []
     "R\xFCstL\xF6sch":
       high_score: 0
       high_strike: 0
       high_strike_image: 0
+      set_length: 0
+      current:
+        set: []
+        correct_answers: 0
+      percentages: []
     Tank1:
       high_score: 0
       high_strike: 0
       high_strike_image: 0
+      set_length: 0
+      current:
+        set: []
+        correct_answers: 0
+      percentages: []
     Tank2:
       high_score: 0
       high_strike: 0
       high_strike_image: 0
+      set_length: 0
+      current:
+        set: []
+        correct_answers: 0
+      percentages: []
     Voraus:
       high_score: 0
       high_strike: 0
       high_strike_image: 0
+      set_length: 0
+      current:
+        set: []
+        correct_answers: 0
+      percentages: []
     Kommando:
       high_score: 0
       high_strike: 0
       high_strike_image: 0
+      set_length: 0
+      current:
+        set: []
+        correct_answers: 0
+      percentages: []
+  

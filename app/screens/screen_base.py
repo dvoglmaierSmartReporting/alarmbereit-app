@@ -58,12 +58,7 @@ class FontSizeMixin:
 @dataclass
 class BaseMethods:
     def load_high_score(self):
-        self.current_high_score = get_score_value(
-            city=self.selected_city,
-            questions="firetrucks",
-            truck_or_comp=self.selected_firetruck,
-            key=self.get_scores_key(),
-        )
+        self.current_high_score = self.get_truck_data(self.get_scores_key())
 
     def update_score_labels(self):
         self.update_score_label()
@@ -90,6 +85,42 @@ class BaseMethods:
         self.tool_amount = len(self.tool_questions)
 
         shuffle(self.tool_questions)
+
+    def load_default_tool_list(self):
+        (self.firetruck_rooms, self.default_tool_list) = get_ToolQuestion_instances(
+            self.selected_firetruck, self.selected_city
+        )
+        self.set_length = len(self.default_tool_list)
+
+        # save set_length to scores.yaml
+        self.save_truck_data(
+            key="set_length",
+            value=self.set_length,
+        )
+
+    def get_current_tool_list(self):
+        self.current_tool_list = self.get_truck_data("set", current=True)
+
+    def reset_current_tool_list(self):
+        # default_tool_list stores answered rooms in game_class instances
+        # take sure classes are re-created
+        self.load_default_tool_list()
+
+        self.current_tool_list = [item.tool for item in self.default_tool_list]
+        shuffle(self.current_tool_list)
+
+    def check_tool_list(self):
+        current = set(self.current_tool_list)
+        # ToolQuestion is unhashable, so we extract tool names
+        default = set([item.tool for item in self.default_tool_list])
+
+        if current.issubset(default):
+            return
+
+        # Keep only items that are in both lists, preserving original order
+        self.current_tool_list = [
+            item for item in self.current_tool_list if item in default
+        ]
 
     def hide_label(self, *args):
         self.ids.extra_time_label.opacity = 0
@@ -143,17 +174,6 @@ class BaseMethods:
         app = App.get_running_app()
         return app.root.current
 
-    def get_scores_key(self):
-        print(f"{self.current_screen = }")
-        if self.current_screen == "firetruck_training":
-            return "high_strike"
-        elif self.current_screen == "firetruck_training_with_images":
-            return "high_strike_image"
-        elif self.current_screen == "firetruck_game":
-            return "high_score"
-        else:
-            raise NotImplementedError("scores.yaml key not defined!")
-
     def _screen_name(self):
         # Prefer the instance's own Screen.name if present
         if isinstance(self, Screen) and getattr(self, "name", None):
@@ -195,23 +215,64 @@ class BaseMethods:
         except KeyError:
             raise NotImplementedError("self.current_screen not defined!")
 
+    def get_truck_data(self, key: str, current: bool = False):
+        if current:
+            return (
+                read_scores_file()
+                .get(map_selected_city_2short_name(self.selected_city), {})
+                .get("firetrucks", {})
+                .get(self.selected_firetruck, {})
+                .get("current", {})
+                .get(key, 0)
+            )
+
+        return (
+            read_scores_file()
+            .get(map_selected_city_2short_name(self.selected_city), {})
+            .get("firetrucks", {})
+            .get(self.selected_firetruck, {})
+            .get(key, 0)
+        )
+
+    def save_truck_data(
+        self, key: str, value: int | float, current: bool = False
+    ) -> None:
+        if current:
+            save2scores_file(
+                city=self.selected_city,
+                questions="firetrucks",
+                truck_or_comp=self.selected_firetruck,
+                key=key,
+                value=value,
+                current=True,
+            )
+        else:
+            save2scores_file(
+                city=self.selected_city,
+                questions="firetrucks",
+                truck_or_comp=self.selected_firetruck,
+                key=key,
+                value=value,
+                current=False,
+            )
+
     def correct_answer(self):
         self.increment_score()
 
         self.game.answers_correct += 1
+
+        self.save_truck_data(
+            key="correct_answers",
+            value=self.get_truck_data("correct_answers", current=True) + 1,
+            current=True,
+        )
 
         if self.game.score > self.current_high_score:
             self.current_high_score = self.game.score
 
             self.update_high_score_label()
 
-            save_to_scores_file(
-                city=self.selected_city,
-                questions="firetrucks",
-                truck_or_comp=self.selected_firetruck,
-                key=self.get_scores_key(),
-                value=self.game.score,
-            )
+            self.save_truck_data(key=self.get_scores_key(), value=self.game.score)
 
         self.feedback_green = True
 

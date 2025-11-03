@@ -24,13 +24,9 @@ fix:
   - where to display strike
 
 - refactor the way of picking tools
-
-  - use storage file to hold set of tools for each truck
-  - use for next tool
-  - count correct and incorrect tools
-  - output percentage for each truck
-
-- "highscore" percentage of best and last set
+  - DONE for training_screen
+  - not for game and images
+  - update screen header layout with infos on tools and percentage
 
 # version 2.8.0
 

@@ -45,6 +45,14 @@ class Strings:
         self.TEXT_SUM = "Summe"
         self.TEXT_POINTS = "Punkte"
         self.TEXT_TOTAL_POINTS = "Gesamtpunktzahl"
+        self.COLUMN_FIRETRUCK = "FAHRZEUG"
+        self.COLUMN_TRAINING_WITH_IMAGES = "BILDER"
+        self.ROW_FACTOR = "FAKTOR"
+        self.ROW_TOTAL = "GESAMT"
+        self.ROW_RUNNING_SCORE = "RUNNING SCORE"
+        self.ROW_HIGHSCORES = "HIGHSCORES"
+        self.ROW_PROCENTAGE = "PROZENT"
+        self.ROW_AVERAGE = "Durchschnitt"
 
         # firetruck modes
         self.LABEL_STR_MODES = "Lernpfad"
@@ -131,9 +139,9 @@ class TrainingEndText:
         factor: int,
     ) -> None:
         self.TEXT = f"""
-[b]Pause![/b]
+[b]Kurze Pause![/b]
 
-Du hast {answers_total} {self.is_plural(answers_total>1)} gelernt, davon {answers_correct} richtig zugeordnet. [b]{answers_correct * factor} Punkte[/b] hast du deinem Running Score hinzugefügt.
+Du hast {answers_total} {self.is_plural(answers_total>1)} gelernt, davon {answers_correct} richtig zugeordnet. Deinem Running Score werden [b]{answers_correct * factor} Punkte[/b] hinzugefügt.
 """
 
     def is_plural(self, is_plural: bool) -> str:

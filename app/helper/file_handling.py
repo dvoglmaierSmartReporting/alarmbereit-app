@@ -186,21 +186,6 @@ def get_logo_file_path(selected_long_name: str) -> str:
     return "assets/FFH_Logohalter.png"
 
 
-def get_score_value(
-    city: str,
-    questions: str,
-    truck_or_comp: str,
-    key: str,
-) -> int:
-    return (
-        read_scores_file()
-        .get(map_selected_city_2short_name(city), {})
-        .get(questions, {})
-        .get(truck_or_comp, {})
-        .get(key, 0)
-    )
-
-
 def add2running_score(city: str, to_add: int) -> None:
     content = read_scores_file()
 
@@ -223,12 +208,13 @@ def add2running_score(city: str, to_add: int) -> None:
     save_to_yaml(scores_file_path, content)
 
 
-def save_to_scores_file(
+def save2scores_file(
     city: str,
     questions: str,
     truck_or_comp: str,
     key: str,
     value: int,
+    current: bool = False,
 ) -> None:
     content = read_scores_file()
 
@@ -245,15 +231,31 @@ def save_to_scores_file(
             f"Firetruck {truck_or_comp} not found in scores.yaml > {city} > {questions}"
         )
 
-    if (
-        not key
-        in content.get(city, {}).get(questions, {}).get(truck_or_comp, {}).keys()
-    ):
-        raise ValueError(
-            f"Key {key} not found in scores.yaml > {city} > {questions} > {truck_or_comp}"
-        )
+    if not current:
+        if (
+            key
+            in content.get(city, {}).get(questions, {}).get(truck_or_comp, {}).keys()
+        ):
+            content[city][questions][truck_or_comp][key] = value
+        else:
+            raise ValueError(
+                f"Key {key} not found in scores.yaml > {city} > {questions} > {truck_or_comp}"
+            )
 
-    content[city][questions][truck_or_comp][key] = value
+    else:
+        if (
+            key
+            in content.get(city, {})
+            .get(questions, {})
+            .get(truck_or_comp, {})
+            .get("current")
+            .keys()
+        ):
+            content[city][questions][truck_or_comp]["current"][key] = value
+        else:
+            raise ValueError(
+                f"Key {key} not found in scores.yaml > {city} > {questions} > {truck_or_comp} > current"
+            )
 
     scores_file_path = os.path.join(
         get_user_data_dir(),
@@ -363,6 +365,7 @@ def transfer_file(file_path: str, file_name: str, new_file_name: str = "") -> No
         get_user_data_dir(),
         new_file_name,
     )
+    print(f"{get_user_data_dir() = }")
 
     if not os.path.exists(dst):
         copy_file_to_writable_dir(file_path, file_name, new_file_name)

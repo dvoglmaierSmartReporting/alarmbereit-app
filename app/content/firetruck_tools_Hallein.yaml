@@ -4,54 +4,71 @@ Kommando:
   Tools:
     Innenraum:
       - Kühlbox
-      - Handfunkgerät
-      - Schlüsselset
-      - Leichensack
-      - Kennzeichnungsleuchte grün
-      - Kennzeichnungsleuchte blau
     Oberboden:
       - Handlampe
-      - Überwurf Einsatzleiter
-      - Erste-Hilfe-Rucksack
-      - Fotoapparat
-      - GoPro
-      - Feldstecher
-      - Magnetlampe
-      - SO2 Messgerät
-      - Wärmebildkamera
-      - Warnblitzleuchte
-      - Fernthermometer
     Schublade 1:
-      - Kennzeichnungsleuchtenset
       - Warnweste
-      - Anhaltekelle
-      - Absperrband
-      - Warndreieck "Feuerwehr"
     Schublade 2:
       - Rettungsleine
-      - Personensicherungsset
-      - Dreieckstuch
-      - Lageführungskoffer
-      - Überwurf Gruppenkommandant
-      - Infomaterial Einsatzleitung
-      - Taktikfolie
     Schublade 3:
       - ABC-Pulverlöscher
-      - ABC-Trockenlöscher
-      - Löschdecke
-      - Halligan-Tool klein
-      - Bolzenschneider kurz
-      - Werkzeugkoffer
     Schublade 4:
-      - Schneeketten
       - Schutzhelm
-      - Atemschutz-Vollmaske
-      - Filtermaske
-      - Filter
-      - Ersatzfilter
-      - Schutzhandschuhe
-      - Schutzjacke
-      - Atemschutzgerät
+
+# Kommando:
+#   Layout: "Kommando"
+#   Abb: "KDO"
+#   Tools:
+#     Innenraum:
+#       - Kühlbox
+#       - Handfunkgerät
+#       - Schlüsselset
+#       - Leichensack
+#       - Kennzeichnungsleuchte grün
+#       - Kennzeichnungsleuchte blau
+#     Oberboden:
+#       - Handlampe
+#       - Überwurf Einsatzleiter
+#       - Erste-Hilfe-Rucksack
+#       - Fotoapparat
+#       - GoPro
+#       - Feldstecher
+#       - Magnetlampe
+#       - SO2 Messgerät
+#       - Wärmebildkamera
+#       - Warnblitzleuchte
+#       - Fernthermometer
+#     Schublade 1:
+#       - Kennzeichnungsleuchtenset
+#       - Warnweste
+#       - Anhaltekelle
+#       - Absperrband
+#       - Warndreieck "Feuerwehr"
+#     Schublade 2:
+#       - Rettungsleine
+#       - Personensicherungsset
+#       - Dreieckstuch
+#       - Lageführungskoffer
+#       - Überwurf Gruppenkommandant
+#       - Infomaterial Einsatzleitung
+#       - Taktikfolie
+#     Schublade 3:
+#       - ABC-Pulverlöscher
+#       - ABC-Trockenlöscher
+#       - Löschdecke
+#       - Halligan-Tool klein
+#       - Bolzenschneider kurz
+#       - Werkzeugkoffer
+#     Schublade 4:
+#       - Schneeketten
+#       - Schutzhelm
+#       - Atemschutz-Vollmaske
+#       - Filtermaske
+#       - Filter
+#       - Schutzhandschuhe
+#       - Schutzjacke
+#       - Atemschutzgerät
+
 
 RüstLösch:
   Layout: "7-Raum"
