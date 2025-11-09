@@ -99,8 +99,13 @@ class Firetruck_Training(Screen, BaseMethods):
 
         if len(self.current_tool_list) == self.set_length // 2:
             # half of tools have been trained
+
+            self.correct_answers = self.get_truck_data("correct_answers", current=True)
+
             info_popup = TextPopup(
-                message=TrainingText_HalfTools(self.set_length).TEXT,
+                message=TrainingText_HalfTools(
+                    self.set_length, self.correct_answers
+                ).TEXT,
                 title=strings.TITLE_INFO_POPUP,
                 size_hint=(0.6, 0.6),
             )
