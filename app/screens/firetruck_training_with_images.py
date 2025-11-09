@@ -54,11 +54,17 @@ class Firetruck_Training_With_Images(Screen, BaseMethods):
         self.play()
 
     def play(self):
+        # TODO BUG! not writing to scores.yaml > percentage correctly after play through
+
         self.game = GameCore()
 
-        self.reset_tool_list()
+        self.load_default_tool_list()
 
-        self.prewarmed_question = []
+        self.get_current_tool_list()
+
+        self.first_tool = True
+
+        self.prewarm_room_images()
 
         self.reset_progress_bar()
 
@@ -68,10 +74,16 @@ class Firetruck_Training_With_Images(Screen, BaseMethods):
 
         self.next_tool()
 
-    def prewarm_images(self, paths):
-        # kick off background loads and keep references so cache isn't GC'd
-        for p in paths:
-            self._img_proxies[p] = self._img_proxies.get(p) or Loader.image(p)
+    def prewarm_room_images(self):
+        room_image_paths = set()
+        for tool_question in self.default_tool_list:
+            if tool_question.room_image_name and tool_question.room_image_name != "":
+                room_image_paths.add(tool_question.room_image_name)
+
+        # Start background loading for all unique room images
+        for path in room_image_paths:
+            if path not in self._img_proxies:
+                self._img_proxies[path] = Loader.image(path)
 
     def add_image(self, layout, path, usage: str = "tool"):
         # get (or start) the background load
@@ -109,21 +121,47 @@ class Firetruck_Training_With_Images(Screen, BaseMethods):
     def next_tool(self, *args):
         self.accept_answers = True
 
-        if len(self.tool_questions) == 0:
-            self.reset_tool_list()
+        if len(self.current_tool_list) == 0:
+            self.reset_current_tool_list()
 
-            # all tools have been trained
-            info_popup = TextPopup(
-                message=TrainingText_AllTools(self.tool_amount).TEXT,
-                title=strings.TITLE_INFO_POPUP,
-                size_hint=(0.6, 0.6),
-            )
-            info_popup.open()
+            self.save_truck_data(key="set", value=self.current_tool_list, current=True)
 
-        if len(self.tool_questions) == self.tool_amount // 2:
+            if not self.first_tool:
+                self.correct_answers = self.get_truck_data(
+                    "correct_answers", current=True
+                )
+
+                percentage = round(
+                    (self.correct_answers / self.set_length) * 100.0,
+                    1,
+                )
+
+                results = self.get_truck_data("percentages")
+                if results is None:
+                    results = []
+
+                # keep in 2 lines; append is returning None
+                results.append(percentage)
+                self.save_truck_data(key="percentages", value=results)
+
+                # all tools have been trained
+                info_popup = TextPopup(
+                    message=TrainingText_AllTools(
+                        self.set_length, self.correct_answers
+                    ).TEXT,
+                    title=strings.TITLE_INFO_POPUP,
+                    size_hint=(0.6, 0.6),
+                )
+                info_popup.open()
+
+            self.save_truck_data(key="correct_answers", value=0, current=True)
+
+            self.update_score_labels()
+
+        if len(self.current_tool_list) == self.set_length // 2:
             # half of tools have been trained
             info_popup = TextPopup(
-                message=TrainingText_HalfTools(self.tool_amount).TEXT,
+                message=TrainingText_HalfTools(self.set_length).TEXT,
                 title=strings.TITLE_INFO_POPUP,
                 size_hint=(0.6, 0.6),
             )
@@ -137,19 +175,21 @@ class Firetruck_Training_With_Images(Screen, BaseMethods):
         layout.clear_widgets()
         layout.canvas.before.clear()
 
-        # first tool will be rendered without prewarm
-        # then prewarm next tool image
-        if self.prewarmed_question:
-            self.current_tool_question = self.prewarmed_question
-            tool_image_prewarmed = True
-        else:
-            # troubleshooting: fix first popped tool
-            # self.set_first_tool("Unterlegplatte")  # for testing
-            self.current_tool_question = self.tool_questions.pop()
-            tool_image_prewarmed = False
+        # # first tool will be rendered without prewarm
+        # # then prewarm next tool image
+        # if self.prewarmed_question:
+        #     self.current_tool_question = self.prewarmed_question
+        #     tool_image_prewarmed = True
+        # else:
+        #     # troubleshooting: fix first popped tool
+        #     # self.set_first_tool("Unterlegplatte")  # for testing
+        self.current_tool_name = self.current_tool_list.pop()
 
-        # always prewarm room image
-        self.prewarm_images([self.current_tool_question.room_image_name])
+        self.current_tool_question = [
+            item
+            for item in self.default_tool_list
+            if item.tool == self.current_tool_name
+        ][0]
 
         self.tool_label = Label(
             text=self.current_tool_question.tool,
@@ -165,21 +205,12 @@ class Firetruck_Training_With_Images(Screen, BaseMethods):
             if not tool_image_file_exists(self.current_tool_question.tool_image_name):
                 raise FileNotFoundError()
 
-            # first tool will be created and rendered without prewarm
-            # then prewarm next tool image
-            if tool_image_prewarmed:
-                self.add_image(
-                    self.ids.tool_image_layout,
-                    self.current_tool_question.tool_image_name,
-                )
-
-            else:
-                tool_image = Image(
-                    source=self.current_tool_question.tool_image_name,
-                    fit_mode="contain",
-                    size_hint_y=3,
-                )
-                self.ids.tool_image_layout.add_widget(tool_image)
+            tool_image = Image(
+                source=self.current_tool_question.tool_image_name,
+                fit_mode="contain",
+                size_hint_y=3,
+            )
+            self.ids.tool_image_layout.add_widget(tool_image)
 
         except Exception as e:
             print(
@@ -193,13 +224,13 @@ class Firetruck_Training_With_Images(Screen, BaseMethods):
 
         self.ids.firetruck_rooms_layout.add_widget(float)
 
-        # pick and prewarm upcoming tool question
-        self.prewarmed_question = self.tool_questions.pop()
-        self.prewarm_images([self.prewarmed_question.tool_image_name])
-
     def on_answer(self, instance):
+        self.first_tool = False
+
         if not self.accept_answers:  # Check if answer processing is enabled
             return  # Ignore the button press if answer processing is disabled
+
+        self.save_truck_data(key="set", value=self.current_tool_list, current=True)
 
         # do not accept identical answer
         if instance.text in self.current_tool_question.room_answered:
@@ -213,6 +244,8 @@ class Firetruck_Training_With_Images(Screen, BaseMethods):
         else:
             self.incorrect_answer()
             self.answer_correct = False
+
+        self.update_score_labels()
 
         if self.color_layout(instance):
             return
@@ -254,16 +287,6 @@ class Firetruck_Training_With_Images(Screen, BaseMethods):
 
             # Bind layout's pos/size to update the background rectangle
             layout.bind(pos=self.update_rect, size=self.update_rect)
-
-            # # tool name Label
-            # # tool + " in " + room
-            # tool_answer = f"{self.current_tool_question.tool} in {', '.join(self.current_tool_question.rooms)}"
-            # tool_label_answer = Label(
-            #     text=break_tool_name(tool_answer, 35),
-            #     size_hint_y=1,
-            #     font_size="20sp",  # "28sp"
-            # )
-            # layout.add_widget(tool_label_answer)
 
             # progress bar
             interval = settings.FIRETRUCK_TRAINING_WITH_IMAGES_FEEDBACK_SEC / 50

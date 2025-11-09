@@ -1,9 +1,5 @@
 from kivy.uix.screenmanager import Screen
 
-from kivy.clock import Clock
-from kivy.config import Config
-
-from typing import cast
 from tabulate import tabulate
 
 from helper.settings import Settings
@@ -71,13 +67,16 @@ class Highscore(Screen, BaseMethods):
         self.truck_scores = read_scores_file().get(city, {}).get("firetrucks")
 
         self.empty_line = ["", "", ""] + ([""] if self.third_column else [])
-        self.hypon_line_short = ["-" * 13, "-" * 10, ""] + (
+        self.em_dash1column = ["—" * 13, "", ""] + ([""] if self.third_column else [])
+        self.em_dash2column = ["—" * 13, "—" * 10, ""] + (
             [""] if self.third_column else []
         )
-        self.hypon_line_long = ["-" * 13, "-" * 10, "-" * 7] + (
-            ["-" * 9] if self.third_column else []
+        self.em_dash3column = ["—" * 13, "—" * 10, "—" * 7] + (
+            [""] if self.third_column else []
         )
-        self.equal_line = ["=" * 13, "", ""] + ([""] if self.third_column else [])
+        self.em_dash4column = ["—" * 13, "—" * 10, "—" * 7] + (
+            ["—" * 9] if self.third_column else []
+        )
 
     def create_scores_text(self) -> str:
         table = list()
@@ -161,24 +160,25 @@ class Highscore(Screen, BaseMethods):
 
         header_row = [
             strings.COLUMN_FIRETRUCK,
-            strings.BUTTON_STR_GAME.upper(),
-            strings.BUTTON_STR_TRAINING.upper(),
+            strings.COLUMN_QUIZ,
+            strings.COLUMN_TRAINING,
         ] + ([strings.COLUMN_TRAINING_WITH_IMAGES] if self.third_column else [])
+
         title_row = [strings.ROW_HIGHSCORES, "", ""] + (
             [""] if self.third_column else []
         )
 
         table = list()
-        table.append(self.equal_line)
+        table.append(self.em_dash1column)
         table.append(title_row)
-        table.append(self.equal_line)
+        table.append(self.em_dash1column)
         table.append(header_row)
         table.append(self.empty_line)
         for row in rows:
             table.append(row)
         table.append(self.empty_line)
         table.append(factor_line)
-        table.append(self.hypon_line_long)
+        table.append(self.em_dash4column)
         table.append(total)
 
         return table
@@ -191,33 +191,46 @@ class Highscore(Screen, BaseMethods):
         ]
 
         table = list()
-        table.append(self.equal_line)
+        table.append(self.em_dash1column)
         table.append(running_score_line)
-        table.append(self.equal_line)
+        table.append(self.em_dash1column)
 
         return table
 
     def build_percentage_table(self) -> list[list[str]]:
         rows = list()
-        total_percentage = 0
+        total_last_percentage = 0
+        total_best_percentage = 0
 
         for truck, data in self.truck_scores.items():
             percentages = data.get("percentages", [])
             if len(percentages) == 0:
-                average_percentage = 0.0
+                last_percentage = None
+                best_percentage = None
             else:
-                average_percentage = sum(percentages) / len(percentages)
-                total_percentage += average_percentage
+                last_percentage = percentages[-1]
+                total_last_percentage += last_percentage
+
+                best_percentage = max(percentages)
+                total_best_percentage += best_percentage
 
             rows.append(
-                [truck, f"{average_percentage:.1f} %", ""]
+                [truck]
+                + ([f"{last_percentage:.1f} %"] if last_percentage else ["- %"])
+                + ([f"{best_percentage:.1f} %"] if best_percentage else ["- %"])
                 + ([""] if self.third_column else [])
             )
 
         average_line = [
             strings.ROW_AVERAGE,
-            f"{total_percentage/len(self.truck_scores) if len(self.truck_scores) > 0 else 0:.1f} %",
-            "",
+            f"{total_last_percentage/len(self.truck_scores) if len(self.truck_scores) > 0 else 0:.1f} %",
+            f"{total_best_percentage/len(self.truck_scores) if len(self.truck_scores) > 0 else 0:.1f} %",
+        ] + ([""] if self.third_column else [])
+
+        header_row = [
+            strings.COLUMN_FIRETRUCK,
+            strings.COLUMN_LAST_SET,
+            strings.COLUMN_BEST_SET,
         ] + ([""] if self.third_column else [])
 
         title_row = [strings.ROW_PROCENTAGE, "", ""] + (
@@ -225,14 +238,15 @@ class Highscore(Screen, BaseMethods):
         )
 
         table = list()
-        table.append(self.equal_line)
+        table.append(self.em_dash1column)
         table.append(title_row)
-        table.append(self.equal_line)
+        table.append(self.em_dash1column)
+        table.append(header_row)
         table.append(self.empty_line)
         for row in rows:
             table.append(row)
         table.append(self.empty_line)
-        table.append(self.hypon_line_short)
+        table.append(self.em_dash3column)
         table.append(average_line)
 
         return table

@@ -39,10 +39,11 @@
                 Label: # placeholder
                     size_hint_y: 1
 
+                # WÄHLE DEINE FEUERWEHR
                 Label:
                     size_hint_y: 1
                     id: login_label
-                    font_size: dp(21) * max(0.8, min(1.5, Window.width / dp(600)))
+                    font_size: dp(20) * max(0.8, min(1.5, Window.width / dp(600)))
                     halign: "center"
                     valign: "middle"
                     text_size: self.size
@@ -104,7 +105,7 @@
     # IDs
     logo_layout: logo_layout
     content_layout: content_layout
-    score_button: score_button
+    #score_button: score_button
     acknowledgement_button: acknowledgement_button
     all_cities_button: all_cities_button
 
@@ -142,22 +143,25 @@
                 spacing: dp(15)
                 padding: dp(15)
 
-                # SCORE BUTTON
-                Button:
+                ## SCORE BUTTON
+                #Button:
+                #    size_hint_y: 1
+                #    id: score_button
+                #    font_size: dp(20) * max(0.8, min(1.5, Window.width / dp(600)))
+                #    background_normal: ''
+                #    background_color: 0.2, 0.2, 0.2, 0.5
+                #    on_release:
+                #        app.root.current = "highscore_screen"
+                #        root.manager.transition.direction = "left"
+
+                Label:  # placeholder
                     size_hint_y: 1
-                    id: score_button
-                    font_size: dp(25) * max(0.8, min(1.5, Window.width / dp(600)))
-                    background_normal: ''
-                    background_color: 0.2, 0.2, 0.2, 0.5
-                    on_release:
-                        app.root.current = "highscore_screen"
-                        root.manager.transition.direction = "left"
 
                 # ALL CITIES BUTTON
                 Button:
                     size_hint_y: 1
                     id: all_cities_button
-                    font_size: dp(25) * max(0.8, min(1.5, Window.width / dp(600)))
+                    font_size: dp(20) * max(0.8, min(1.5, Window.width / dp(600)))
                     background_normal: ''
                     background_color: 0.2, 0.2, 0.2, 0.5
                     on_release:
@@ -234,6 +238,8 @@
         ScrollView:
             size_hint_y: 9
             pos_hint: {'center_x': 0.5}
+            do_scroll_x: True
+            do_scroll_y: True
 
             Label:
                 id: score_text_label
@@ -242,9 +248,11 @@
                 halign: "left"
                 valign: "top"
                 size_hint_y: None
-                text_size: self.width, None
+                size_hint_x: None
+                text_size: None, None
+                width: self.texture_size[0]
                 height: self.texture_size[1]
-                markup: True
+                #markup: True
         
 
 <Acknowledgment>:
@@ -383,6 +391,8 @@
 
     # IDs
     firetruck_label: firetruck_label
+    tool_number_label: tool_number_label
+    percentage_label: percentage_label
     score_label: score_label
     high_score_label: high_score_label
     tool_label: tool_label
@@ -407,18 +417,35 @@
                     root.go_back()
     
             Label:
-                size_hint_x: 2
+                size_hint_x: 1.67
                 id: firetruck_label
                 font_size: dp(20) * max(0.8, min(1.5, Window.width / dp(600)))
                 halign: "left"
                 valign: "middle"
                 text_size: self.size
             
-            Label:  # placeholder
-                size_hint_x: 1
+            BoxLayout:
+                size_hint_x: 1.67
+                orientation: 'vertical'
+
+                Label:
+                    size_hint_y: 1
+                    id: tool_number_label
+                    font_size: dp(18) * max(0.8, min(1.5, Window.width / dp(600)))
+                    halign: "center"
+                    valign: "middle"
+                    text_size: self.size
+
+                Label:
+                    size_hint_y: 1
+                    id: percentage_label
+                    font_size: dp(23) * max(0.8, min(1.5, Window.width / dp(600)))
+                    halign: "center"
+                    valign: "middle"
+                    text_size: self.size
             
             BoxLayout:
-                size_hint_x: 2
+                size_hint_x: 1.67
                 orientation: 'vertical'
 
                 Label:
@@ -465,6 +492,8 @@
 
     # IDs
     firetruck_label: firetruck_label
+    percentage_label: percentage_label
+    high_score_label: high_score_label
     score_label: score_label
     high_score_label: high_score_label
     progress_bar_answer: progress_bar_answer
@@ -491,18 +520,35 @@
                     root.go_back()
     
             Label:
-                size_hint_x: 2
+                size_hint_x: 1.67
                 id: firetruck_label
                 font_size: dp(20) * max(0.8, min(1.5, Window.width / dp(600)))
                 halign: "left"
                 valign: "middle"
                 text_size: self.size
             
-            Label:  # placeholder
-                size_hint_x: 1
+            BoxLayout:
+                size_hint_x: 1.67
+                orientation: 'vertical'
+
+                Label:
+                    size_hint_y: 1
+                    id: tool_number_label
+                    font_size: dp(18) * max(0.8, min(1.5, Window.width / dp(600)))
+                    halign: "center"
+                    valign: "middle"
+                    text_size: self.size
+
+                Label:
+                    size_hint_y: 1
+                    id: percentage_label
+                    font_size: dp(23) * max(0.8, min(1.5, Window.width / dp(600)))
+                    halign: "center"
+                    valign: "middle"
+                    text_size: self.size
             
             BoxLayout:
-                size_hint_x: 2
+                size_hint_x: 1.67
                 orientation: 'vertical'
 
                 Label:
@@ -551,6 +597,8 @@
     # IDs
     firetruck_label: firetruck_label
     extra_time_label: extra_time_label
+    tool_number_label: tool_number_label
+    percentage_label: percentage_label
     score_label: score_label
     high_score_label: high_score_label
     tool_label: tool_label
@@ -575,25 +623,49 @@
                 on_release:
                     root.manager.get_screen('firetruck_game').end_game()
 
-            Label:
-                size_hint_x: 2
-                id: firetruck_label
-                font_size: dp(20) * max(0.8, min(1.5, Window.width / dp(600)))
-                halign: "left"
-                valign: "middle"
-                text_size: self.size
-            
-            Label:
-                size_hint_x: 1
-                id: extra_time_label
-                font_size: dp(20) * max(0.8, min(1.5, Window.width / dp(600)))
-                halign: "center"
-                valign: "middle"
-                text_size: self.size
-                color: (0,1,0,1)
+            BoxLayout:
+                size_hint_x: 1.67
+                orientation: 'vertical'
+
+                Label:
+                    size_hint_y: 1
+                    id: firetruck_label
+                    font_size: dp(20) * max(0.8, min(1.5, Window.width / dp(600)))
+                    halign: "left"
+                    valign: "middle"
+                    text_size: self.size
+                
+                Label:
+                    size_hint_y: 1
+                    id: extra_time_label
+                    font_size: dp(20) * max(0.8, min(1.5, Window.width / dp(600)))
+                    halign: "center"
+                    valign: "middle"
+                    text_size: self.size
+                    color: (0,1,0,1)
+
+            BoxLayout:
+                size_hint_x: 1.67
+                orientation: 'vertical'
+
+                Label:
+                    size_hint_y: 1
+                    id: tool_number_label
+                    font_size: dp(18) * max(0.8, min(1.5, Window.width / dp(600)))
+                    halign: "center"
+                    valign: "middle"
+                    text_size: self.size
+
+                Label:
+                    size_hint_y: 1
+                    id: percentage_label
+                    font_size: dp(23) * max(0.8, min(1.5, Window.width / dp(600)))
+                    halign: "center"
+                    valign: "middle"
+                    text_size: self.size
             
             BoxLayout:
-                size_hint_x: 2
+                size_hint_x: 1.67
                 orientation: 'vertical'
 
                 Label:

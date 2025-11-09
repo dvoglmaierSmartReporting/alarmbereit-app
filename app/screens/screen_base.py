@@ -63,12 +63,36 @@ class BaseMethods:
     def update_score_labels(self):
         self.update_score_label()
         self.update_high_score_label()
+        self.update_tool_number_label()
+        self.update_percentage_label()
 
     def update_score_label(self):
         self.ids.score_label.text = str(self.game.score)
 
     def update_high_score_label(self):
         self.ids.high_score_label.text = f"Best: {str(self.current_high_score)}"
+
+    def update_tool_number_label(self):
+        answered_tools = self.set_length - len(self.current_tool_list)
+        self.ids.tool_number_label.text = f"⚒ {answered_tools} / {self.set_length}"
+        self.ids.tool_number_label.font_name = "DejaVuSans"  # or "Roboto" if available
+
+    def update_percentage_label(self):
+        correct_answers = self.get_truck_data("correct_answers", current=True)
+        answered_tools = self.set_length - len(self.current_tool_list)
+        if answered_tools == 0:
+            percentage = "-"
+        else:
+            percentage = (correct_answers / answered_tools) * 100
+
+        self.ids.percentage_label.markup = True
+        self.ids.percentage_label.text = (
+            f"[color=00b300][size=65]✓[/size][/color] {percentage:.1f} %"
+            if percentage != "-"
+            else percentage
+        )  # ✓ ☑ 🎯
+        # Ensure the label uses a font that supports Unicode symbols
+        self.ids.percentage_label.font_name = "DejaVuSans"  # or "Roboto" if available
 
     def reset_score(self, *arg):
         self.game.score = 0
@@ -77,14 +101,6 @@ class BaseMethods:
     def increment_score(self):
         self.game.score += self.get_scores_value()
         self.update_score_label()
-
-    def reset_tool_list(self):
-        (self.firetruck_rooms, self.tool_questions) = get_ToolQuestion_instances(
-            self.selected_firetruck, self.selected_city
-        )
-        self.tool_amount = len(self.tool_questions)
-
-        shuffle(self.tool_questions)
 
     def load_default_tool_list(self):
         (self.firetruck_rooms, self.default_tool_list) = get_ToolQuestion_instances(
@@ -334,18 +350,19 @@ class BaseMethods:
             to_add=int(self.game.answers_correct * factor),
         )
 
-        message = TrainingEndText(
-            answers_total=self.game.questions_len,
-            answers_correct=self.game.answers_correct,
-            factor=factor,
-        ).TEXT
+        if not self.first_tool:
+            message = TrainingEndText(
+                answers_total=self.game.questions_len,
+                answers_correct=self.game.answers_correct,
+                factor=factor,
+            ).TEXT
 
-        info_popup = TextPopup(
-            message=message,
-            title=strings.TITLE_INFO_POPUP,
-            size_hint=(0.6, 0.6),
-        )
-        info_popup.open()
+            info_popup = TextPopup(
+                message=message,
+                title=strings.TITLE_INFO_POPUP,
+                size_hint=(0.6, 0.6),
+            )
+            info_popup.open()
 
     def go_back(self, *args) -> None:
         if self.current_screen in [

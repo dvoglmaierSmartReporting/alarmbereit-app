@@ -220,6 +220,8 @@ def save2scores_file(
 
     city = map_selected_city_2short_name(city)
 
+    # truck_or_comp = truck_or_comp.strip()
+
     if not city in content.keys():
         raise ValueError(f"City {city} not found in scores.yaml")
 
@@ -365,7 +367,6 @@ def transfer_file(file_path: str, file_name: str, new_file_name: str = "") -> No
         get_user_data_dir(),
         new_file_name,
     )
-    print(f"{get_user_data_dir() = }")
 
     if not os.path.exists(dst):
         copy_file_to_writable_dir(file_path, file_name, new_file_name)

@@ -2,7 +2,6 @@ from kivy.app import App
 
 import os
 from typing import cast
-from tabulate import tabulate
 
 from helper.settings import Settings
 from helper.strings import Strings
@@ -63,6 +62,8 @@ def get_ToolQuestion_instances(
     selected_firetruck: str, selected_city: str
 ) -> tuple[list[str], list[ToolQuestion]]:
     total_storage = load_total_storage(selected_city)
+
+    # selected_firetruck = selected_firetruck.strip()
 
     if isinstance(total_storage[selected_firetruck]["Tools"], dict):
         firetruck = total_storage[selected_firetruck]["Tools"]
@@ -174,11 +175,12 @@ def get_firetruck_abbreviations(selected_city: str) -> dict:
 
 
 def mode_str2bool(selected_mode: str) -> tuple:
+    # TODO only one can be True
     mode_training: bool = (
         True if selected_mode == strings.BUTTON_STR_TRAINING else False
     )
     mode_training_new: bool = (
-        True if selected_mode == strings.BUTTON_STR_TRAINING_NEW else False
+        True if selected_mode == strings.BUTTON_STR_TRAINING_WITH_IMAGES else False
     )
     mode_game: bool = True if selected_mode == strings.BUTTON_STR_GAME else False
     mode_browse: bool = True if selected_mode == strings.BUTTON_STR_BROWSE else False

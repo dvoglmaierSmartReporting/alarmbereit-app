@@ -20,7 +20,6 @@ import sys
 from screens.start_menu import Start_Menu
 from screens.login_screen import Login
 
-# from screens.info_screen import Info_Screen
 from screens.highscore_screen import Highscore
 from screens.acknowledgement_screen import Acknowledgment
 from screens.firetruck_menu import Firetruck_Menu
@@ -31,7 +30,6 @@ from screens.firetruck_game import Firetruck_Game
 # from screens.firetruck_browse import Firetruck_Browse
 # from screens.firetruck_images import Firetruck_Images
 
-# from popups.error_popup import ErrorPopup
 from popups.text_popup import TextPopup
 
 from helper.file_handling import transfer_file
@@ -114,7 +112,6 @@ class FeuerwehrApp(App):
                     pass
 
     def on_window_resize(self, instance, width, height):
-        """Handle window resize for responsive layout"""
         # Trigger layout updates for all screens
         if hasattr(self, "sm"):
             for screen in self.sm.screens:

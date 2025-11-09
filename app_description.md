@@ -14,7 +14,7 @@ Die FahrzeugkundeApp vermittelt Feuerwehrwissen mit einer gesunden Portion Gamif
 🧯 Individuell für deine Feuerwehr
 
 Jede Feuerwehr ist einzigartig – und das gilt auch für die Fahrzeugbeladung.
-Sende einfach die Beladeliste deiner Fahrzeuge per E-Mail, und wir fügen deine Feuerwehr kostenlos hinzu.
+Sende einfach die Beladeliste deiner Fahrzeuge per E-Mail. In der derzeitigen Pilotphase fügen wir deine Feuerwehr kostenlos hinzu.
 
 📧 Kontakt: d.voglmaier@feuerwehr-hallein.at
 

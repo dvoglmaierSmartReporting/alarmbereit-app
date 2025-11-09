@@ -15,15 +15,19 @@ class Strings:
         # start_nenu
         self.LABEL_STR_QUESTIONS = "Mission"
         self.BUTTON_STR_ALL_CITIES = "Wähle deine\nFeuerwehr"
-        self.BUTTON_STR_SCORE = "Highscore"
+        self.BUTTON_STR_SCORE = "Statistiken"
         self.BUTTON_STR_INFO = "Info"
         self.BUTTON_STR_ACKNOWLEDGEMENT = "Dank"
         self.BUTTON_STR_SETTINGS = "Einst."
-        self.BUTTON_STR_TRAINING = "Übung"  # "Lernen" # "Erkunden"
-        self.BUTTON_STR_TRAINING_NEW = f"{self.BUTTON_STR_TRAINING} mit Bildern"
-        self.BUTTON_STR_GAME = "Zeitdruck"  # "Herausfordern" # "Challengen"
+        self.BUTTON_STR_TRAINING = "Lernmodus"  # "Übung"  # "Lernen" # "Erkunden"
+        self.BUTTON_STR_TRAINING_WITH_IMAGES = (
+            "Bilder"  # f"{self.BUTTON_STR_TRAINING} mit Bildern"
+        )
+        self.BUTTON_STR_GAME = (
+            "Quiz starten"  #  "Zeitdruck"  # "Herausfordern" # "Challengen"
+        )
         self.BUTTON_STR_BROWSE = "Stöbern"
-        self.BUTTON_STR_IMAGES = "Bilder"
+        self.BUTTON_STR_IMAGES = "Bilder (coming soon)"
         self.BUTTON_STR_EXAM = "Leistungsprüfung"
         self.BUTTON_STR_FIRETRUCKS = "Fahrzeugkunde"
         self.BUTTON_STR_COMPETITIONS = "Bewerbsfragen"
@@ -41,17 +45,21 @@ class Strings:
         # highscore
         self.BUTTON_STR_SHARE = "Highscore via\nEmail senden"
         self.TEXT_STRIKE_CALCULATION = f"([i]Punkte aus '{self.BUTTON_STR_TRAINING}' werden mit\nFaktor {settings.FIRETRUCK_TRAINING_STRIKE_FACTOR} multipliziert[/i])"
-        self.TEXT_STRIKE_IMAGE_CALCULATION = f"([i]Punkte aus '{self.BUTTON_STR_TRAINING_NEW}' werden mit\nFaktor {settings.FIRETRUCK_TRAINING_STRIKE_IMAGE_FACTOR} multipliziert[/i])"
+        self.TEXT_STRIKE_IMAGE_CALCULATION = f"([i]Punkte aus '{self.BUTTON_STR_TRAINING_WITH_IMAGES}' werden mit\nFaktor {settings.FIRETRUCK_TRAINING_STRIKE_IMAGE_FACTOR} multipliziert[/i])"
         self.TEXT_SUM = "Summe"
         self.TEXT_POINTS = "Punkte"
         self.TEXT_TOTAL_POINTS = "Gesamtpunktzahl"
         self.COLUMN_FIRETRUCK = "FAHRZEUG"
+        self.COLUMN_QUIZ = "QUIZ"
+        self.COLUMN_TRAINING = "LERNMODUS"
         self.COLUMN_TRAINING_WITH_IMAGES = "BILDER"
         self.ROW_FACTOR = "FAKTOR"
         self.ROW_TOTAL = "GESAMT"
         self.ROW_RUNNING_SCORE = "RUNNING SCORE"
         self.ROW_HIGHSCORES = "HIGHSCORES"
         self.ROW_PROCENTAGE = "PROZENT"
+        self.COLUMN_LAST_SET = "ZULETZT"
+        self.COLUMN_BEST_SET = "BEST"
         self.ROW_AVERAGE = "Durchschnitt"
 
         # firetruck modes
@@ -80,26 +88,57 @@ class Strings:
 
 
 class TrainingText_AllTools:
-    def __init__(self, tool_amount: int) -> None:
+    def __init__(self, tool_amount: int, correct_answers: int) -> None:
+        self.correct_answers = correct_answers
         self.TEXT = f"""
 
 [b]Super![/b]
 
-Du hast alle {tool_amount} Geräte des Fahrzeugs gelernt.
+Du hast alle {tool_amount} Geräte des Fahrzeugs gelernt. {self.correct_answers} {self.is_plural()} {round(correct_answers/tool_amount*100, 1)} %.
 
 Die Geräte werden neu geladen und weiterhin zufällig gezogen."""
 
+    def is_plural(self) -> str:
+        if self.correct_answers == 1:
+            return "richtige Antwort entspricht"
+        return "richtige Antworten entsprechen"
+
 
 class TrainingText_HalfTools:
-    def __init__(self, tool_amount: int) -> None:
+    def __init__(self, tool_amount: int, correct_answers: int) -> None:
+        self.correct_answers = correct_answers
         self.TEXT = f"""
 
 [b]Bleib dran![/b]
 
-Du hast bereits die Hälfte der {tool_amount} Geräte des Fahrzeugs gelernt."""
+Du hast bereits die Hälfte der {tool_amount} Geräte des Fahrzeugs gelernt. Mit {self.correct_answers} richtigen {self.is_plural()} liegst du aktuell bei {round(correct_answers/tool_amount*100, 1)} %."""
+
+    def is_plural(self) -> str:
+        if self.correct_answers == 1:
+            return "Antwort"
+        return "Antworten"
 
 
-class GameEndText:
+class Base:
+    def is_plural(self) -> str:
+        if self.answers_total > 1:
+            return "Geräte"
+        return "Gerät"
+
+    def has_scored_in_training(self) -> str:
+        if self.answers_correct > 0:
+            return f"Deinem Running Score werden [b]{self.answers_correct * self.factor} Punkte[/b] hinzugefügt."
+        return ""
+
+    def has_scored_in_game(self) -> str:
+        if self.answers_correct > 0:
+            return (
+                f"Deinem Running Score werden [b]{self.score} Punkte[/b] hinzugefügt."
+            )
+        return ""
+
+
+class GameEndText(Base):
     def __init__(
         self,
         answers_total: int,
@@ -107,55 +146,54 @@ class GameEndText:
         score: int,
         is_new_highscore: bool,
     ) -> None:
+        self.answers_total = answers_total
+        self.answers_correct = answers_correct
+        self.score = score
+        self.is_new_highscore = is_new_highscore
+
         self.TEXT = f"""
 [b]Spiel Ende![/b]
 
-Du hast {answers_total} {self.is_plural(answers_total>1)} gespielt, davon {answers_correct} richtig zugeordnet. {self.add_text(score,is_new_highscore)}
+Du hast {self.answers_total} {self.is_plural()} gespielt, davon {self.answers_correct} richtig zugeordnet. {self.add_text()}\n\n{self.has_scored_in_game()}
 """
 
-    def add_text(self, score: int, is_new_highscore: bool) -> str:
-        if is_new_highscore:
+    def add_text(self) -> str:
+        if self.is_new_highscore:
             return f"""
 
 [b]Glückwunsch![/b]
 Du hast deinen persönlichen Highscore an diesem Fahrzeug verbessert.
 
-Neuer Highscore: {score}"""
+Neuer Highscore: {self.score}"""
         return f"""
 
-Punktestand: {score}"""
-
-    def is_plural(self, is_plural: bool) -> str:
-        if is_plural:
-            return "Geräte"
-        return "Gerät"
+Punktestand: {self.score}"""
 
 
-class TrainingEndText:
+class TrainingEndText(Base):
     def __init__(
         self,
         answers_total: int,
         answers_correct: int,
         factor: int,
     ) -> None:
+        self.answers_total = answers_total
+        self.answers_correct = answers_correct
+        self.factor = factor
+
         self.TEXT = f"""
 [b]Kurze Pause![/b]
 
-Du hast {answers_total} {self.is_plural(answers_total>1)} gelernt, davon {answers_correct} richtig zugeordnet. Deinem Running Score werden [b]{answers_correct * factor} Punkte[/b] hinzugefügt.
+Du hast {self.answers_total} {self.is_plural()} gelernt, davon {self.answers_correct} richtig zugeordnet.\n\n{self.has_scored_in_training()}
 """
-
-    def is_plural(self, is_plural: bool) -> str:
-        if is_plural:
-            return "Geräte"
-        return "Gerät"
 
 
 class Info_Text:
     def __init__(self) -> None:
         self.TEXT = """Meine Feuerwehr fehlt noch!
 
-Standorte können kostenlos hinzugefügt
-werden. Schicke deine Anfrage an
+In der derzeitigen Pilotphase fügen wir Standorte
+kostenlos hinzu. Schicke deine Anfrage an
 [b]d.voglmaier@feuerwehr-hallein.at[/b]"""
 
 

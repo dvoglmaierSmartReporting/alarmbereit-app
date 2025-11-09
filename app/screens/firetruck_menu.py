@@ -49,16 +49,20 @@ class Firetruck_Menu(FontSizeMixin, Screen):
         self.ids.logo_layout.add_widget(get_city_image(f"{self.selected_city}_small"))
 
     def on_button_release(self, instance):
+        for substring in [" ", "[size="]:
+            truck_name = instance.text.strip().split(substring)[0]
+            truck_name = truck_name.strip()
+
         update_config_firetruck(
             {
-                "selected_firetruck": instance.text.split(" ")[0],
+                "selected_firetruck": truck_name,
             }
         )
 
         mode = mode_str2bool(self.selected_mode)
         (
             mode_training,
-            mode_training_new,
+            mode_training_with_images,
             mode_game,
             mode_browse,
             mode_images,
@@ -68,20 +72,11 @@ class Firetruck_Menu(FontSizeMixin, Screen):
         if mode_training:
             next_screen = "firetruck_training"
 
-        elif mode_training_new:
+        elif mode_training_with_images:
             next_screen = "firetruck_training_with_images"
 
         elif mode_game:
             next_screen = "firetruck_game"
-
-        # elif mode_browse:
-        #     next_screen = "firetruck_browse"
-
-        # elif mode_images:
-        #     next_screen = "firetruck_images"
-
-        # elif mode_exam:
-        #     next_screen = "firetruck_exam"
 
         change_screen_to(next_screen, transition_direction="left")
 
@@ -99,7 +94,7 @@ class Firetruck_Menu(FontSizeMixin, Screen):
         mode = mode_str2bool(self.selected_mode)
         (
             mode_training,
-            mode_training_new,
+            mode_training_with_images,
             mode_game,
             mode_browse,
             mode_images,
@@ -122,43 +117,41 @@ class Firetruck_Menu(FontSizeMixin, Screen):
                 else:
                     self.add_firetruck_button(firetruck)
 
-        elif mode_browse:
-            for firetruck in self.total_firetrucks:
-                self.add_firetruck_button(firetruck)
-
-        elif mode_images:
-            firetruck = "RüstLösch"
-            self.add_firetruck_button(firetruck)
-
-        elif mode_exam:
-            # create button for BDLP-Tank1
-            firetruck = "BDLP-Tank1"
-            self.add_firetruck_button(firetruck)
-
-        elif mode_training_new:
-            # create button for BDLP-Tank1
+        elif mode_training_with_images:
             firetruck = "Leiter"
             self.add_firetruck_button(firetruck)
 
     def add_firetruck_button(self, firetruck: str, disabled: bool = False):
         abbreviation = self.abbreviations.get(firetruck, "")
         font_scale = self.get_font_scale()
-        base_font_size = 20
+        base_font_size = 15  # 20
+        font_size_pixels = dp(base_font_size) * font_scale
+        font_size_half_pixels = dp(base_font_size) * font_scale // 2
 
         if self.selected_city == "Hallein":
             button_height = 200
         else:
             button_height = 350
 
+        spacer_title = " " * 6
+        spacer_subtitle = " " * 13
         btn = Button(
-            text=f"{firetruck}{' '*3}[size={int(50 * font_scale)}]{abbreviation}[/size]",
+            text=f"{spacer_title}{firetruck}[size={font_size_half_pixels}dp]\n{spacer_subtitle}{abbreviation}[/size]",
             markup=True,
-            font_size=f"{dp(base_font_size) * font_scale}dp",
+            font_size=f"{font_size_pixels}dp",
             size_hint_y=None,
             height=button_height,
             size_hint_x=1,
             disabled=disabled,
+            halign="left",
+            text_size=(None, None),
         )
+
+        # Set text_size after button is created to enable text alignment
+        def set_text_size(instance, size):
+            instance.text_size = (size[0], None)
+
+        btn.bind(size=set_text_size)
 
         # Register button for font scaling
         self.register_widget_for_font_scaling(btn, base_font_size)

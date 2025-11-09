@@ -1,12 +1,12 @@
 # next version
 
+features:
+
+- update modi: (see image from Lio) emoji, Modi, subtitle (add statistics to modi)
+
 fix:
 
-- Meldertaschen
-
-- truck list links orientiert
-
-- "kostenlos" text adjust to "in Pilotphase werden kostenlos hinzugefügt"
+- revert Kommando & Leiter !!
 
 - daily strike
 
@@ -23,10 +23,23 @@ fix:
   - when to update last_access_date ???
   - where to display strike
 
-- refactor the way of picking tools
-  - DONE for training_screen
-  - not for game and images
-  - update screen header layout with infos on tools and percentage
+# version 2.9.0
+
+features:
+
+- introduce running score, incremented by every game played
+
+- update tool picking logic: play set of all tools, even when app was closed
+
+- introduce percentage of correct answered tools per car and set
+
+- display modi and truck names left aligned
+
+- update highscore screen: display running score, high scores, and percentages
+
+- display pop-up when at least one tools was played
+
+- new pop-up texts
 
 # version 2.8.0
 

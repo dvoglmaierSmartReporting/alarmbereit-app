@@ -1,18 +1,20 @@
 from kivy.uix.label import Label
 from kivy.uix.togglebutton import ToggleButton
 from kivy.uix.screenmanager import Screen
-from kivy.clock import Clock
+from kivy.metrics import dp
 
 from helper.functions import change_screen_to
 from helper.file_handling import update_config_content, map_selected_city_2long_name
 from helper.aspect_image import get_city_image
 from helper.strings import Strings, Info_Text
 
+from screens.screen_base import FontSizeMixin
+
 
 strings = Strings()
 
 
-class Login(Screen):
+class Login(FontSizeMixin, Screen):
     def __init__(self, **kwargs):
         super(Login, self).__init__(**kwargs)
         self.ids.login_label.text = strings.LABEL_STR_LOGIN
@@ -28,22 +30,36 @@ class Login(Screen):
         self.ids.city_layout.clear_widgets()
         self.ids.store_selection_button.disabled = True
 
+        # Font size scaling
+        base_font_size = 15
+        font_scale = self.get_font_scale()
+        font_size_pixels = dp(base_font_size) * font_scale
+        font_size_half_pixels = dp(base_font_size) * font_scale // 2
+
         self.cities = [
             ("Hallein", "Salzburg"),
             ("Bad Dürrnberg", "Salzburg"),
             ("Altenmarkt a.d. Alz", "Bayern"),
         ]
 
+        spacer = " " * 2
         for city, state in self.cities:
             btn = ToggleButton(
-                text=f"{city}\n[size=35]{state}[/size]",
+                text=f"{spacer}{city}\n{spacer}[size={font_size_half_pixels}dp]{state}[/size]",
                 markup=True,
-                font_size="32sp",
+                font_size=f"{font_size_pixels}dp",
                 group="city",
                 allow_no_selection=True,
+                halign="left",
+                text_size=(None, None),
                 size_hint_y=None,
                 height="150dp",
             )
+
+            def set_text_size(instance, size):
+                instance.text_size = (size[0], None)
+
+            btn.bind(size=set_text_size)
             btn.bind(on_release=self.on_city_toggle)
             self.ids.city_layout.add_widget(btn)
 

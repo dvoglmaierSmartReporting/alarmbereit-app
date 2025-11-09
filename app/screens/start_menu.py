@@ -1,7 +1,6 @@
 from kivy.uix.label import Label
 from kivy.uix.button import Button
 from kivy.uix.screenmanager import Screen, SlideTransition
-from kivy.core.window import Window
 from kivy.metrics import dp
 
 from helper.functions import (
@@ -35,7 +34,7 @@ class Start_Menu(FontSizeMixin, Screen):
 
         self.add_city_logo()
 
-        self.ids.score_button.text = strings.BUTTON_STR_SCORE
+        # self.ids.score_button.text = strings.BUTTON_STR_SCORE
         self.add_mode_buttons()
         self.add_about_text()
 
@@ -76,23 +75,58 @@ class Start_Menu(FontSizeMixin, Screen):
         ### BUTTON Übung mit Bildern ###
         if self.selected_city in ["Hallein"]:
             firetruck_training_with_images_btn = self.create_button(
-                strings.BUTTON_STR_TRAINING_NEW, disabled=False
+                strings.BUTTON_STR_TRAINING_WITH_IMAGES
             )
             self.ids.content_layout.add_widget(firetruck_training_with_images_btn)
 
-    def create_button(self, button_text: str, disabled: bool = False) -> Button:
-        base_font_size = 20
+        ### STATISTIK BUTTON ###
+        score_btn = self.create_button(
+            strings.BUTTON_STR_SCORE, target_screen="highscore_screen"
+        )
+        self.ids.content_layout.add_widget(score_btn)
 
+    def create_button(
+        self,
+        button_text: str,
+        disabled: bool = False,
+        target_screen: str = "firetruck_menu",
+    ) -> Button:
+        base_font_size = 15  # 20
+        font_scale = self.get_font_scale()
+        font_size_pixels = dp(base_font_size) * font_scale
+        font_size_half_pixels = dp(base_font_size) * font_scale // 2
+
+        mapping = {
+            strings.BUTTON_STR_TRAINING: "Lerne Gerätepositionen",
+            strings.BUTTON_STR_TRAINING_WITH_IMAGES: "von Geräten und Räumen",
+            strings.BUTTON_STR_GAME: "Teste dein Wissen unter Zeitdruck",
+            strings.BUTTON_STR_SCORE: "Verfolge deinen Lernfortschritt",
+        }
+
+        subtitle = mapping.get(button_text, "")
+
+        spacer_title = " " * 2
+        spacer_subtitle = " " * 5
         btn = Button(
             pos_hint={"center_x": 0.5},
-            text=button_text,
+            text=f"{spacer_title}{button_text}[size={font_size_half_pixels}dp]\n{spacer_subtitle}{subtitle}[/size]",
+            font_size=f"{font_size_pixels}dp",
             disabled=disabled,
+            halign="left",
+            text_size=(None, None),
+            markup=True,
         )
+
+        # Set text_size after button is created to enable text alignment
+        def set_text_size(instance, size):
+            instance.text_size = (size[0], None)
+
+        btn.bind(size=set_text_size)
 
         # Register button for font scaling
         self.register_widget_for_font_scaling(btn, base_font_size)
 
-        btn.bind(on_release=lambda instance: self.transit_screen("firetruck_menu"))
+        btn.bind(on_release=lambda instance: self.transit_screen(target_screen))
         btn.bind(
             on_release=lambda instance: update_config_firetruck({"mode": button_text})
         )
