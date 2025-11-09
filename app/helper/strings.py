@@ -88,13 +88,15 @@ class Strings:
 
 
 class TrainingText_AllTools:
-    def __init__(self, tool_amount: int, correct_answers: int) -> None:
+    def __init__(
+        self, tool_amount: int, correct_answers: int, percentage: float
+    ) -> None:
         self.correct_answers = correct_answers
         self.TEXT = f"""
 
 [b]Super![/b]
 
-Du hast alle {tool_amount} Geräte des Fahrzeugs gelernt. {self.correct_answers} {self.is_plural()} {round(correct_answers/tool_amount*100, 1)} %.
+Du hast alle {tool_amount} Geräte des Fahrzeugs gelernt. {self.correct_answers} {self.is_plural()} {percentage} %.
 
 Die Geräte werden neu geladen und weiterhin zufällig gezogen."""
 
@@ -105,13 +107,15 @@ Die Geräte werden neu geladen und weiterhin zufällig gezogen."""
 
 
 class TrainingText_HalfTools:
-    def __init__(self, tool_amount: int, correct_answers: int) -> None:
+    def __init__(
+        self, tool_amount: int, correct_answers: int, percentage: float
+    ) -> None:
         self.correct_answers = correct_answers
         self.TEXT = f"""
 
 [b]Bleib dran![/b]
 
-Du hast bereits die Hälfte der {tool_amount} Geräte des Fahrzeugs gelernt. Mit {self.correct_answers} richtigen {self.is_plural()} liegst du aktuell bei {round(correct_answers/tool_amount*100, 1)} %."""
+Du hast bereits die Hälfte der {tool_amount} Geräte des Fahrzeugs gelernt. Mit {self.correct_answers} richtigen {self.is_plural()} liegst du aktuell bei {percentage} %."""
 
     def is_plural(self) -> str:
         if self.correct_answers == 1:

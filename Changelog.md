@@ -4,10 +4,6 @@ features:
 
 - update modi: (see image from Lio) emoji, Modi, subtitle (add statistics to modi)
 
-fix:
-
-- revert Kommando & Leiter !!
-
 - daily strike
 
   - store last_access_date
@@ -26,6 +22,10 @@ fix:
 # version 2.9.0
 
 features:
+
+- TODO: iPhone: move tools label
+
+- menu texts and subtitles
 
 - introduce running score, incremented by every game played
 

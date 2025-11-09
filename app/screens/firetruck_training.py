@@ -86,7 +86,7 @@ class Firetruck_Training(Screen, BaseMethods):
                 # all tools have been trained
                 info_popup = TextPopup(
                     message=TrainingText_AllTools(
-                        self.set_length, self.correct_answers
+                        self.set_length, self.correct_answers, self.percentage
                     ).TEXT,
                     title=strings.TITLE_INFO_POPUP,
                     size_hint=(0.6, 0.6),
@@ -104,7 +104,7 @@ class Firetruck_Training(Screen, BaseMethods):
 
             info_popup = TextPopup(
                 message=TrainingText_HalfTools(
-                    self.set_length, self.correct_answers
+                    self.set_length, self.correct_answers, self.percentage
                 ).TEXT,
                 title=strings.TITLE_INFO_POPUP,
                 size_hint=(0.6, 0.6),

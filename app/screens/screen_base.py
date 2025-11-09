@@ -81,15 +81,15 @@ class BaseMethods:
         correct_answers = self.get_truck_data("correct_answers", current=True)
         answered_tools = self.set_length - len(self.current_tool_list)
         if answered_tools == 0:
-            percentage = "-"
+            self.percentage = "-"
         else:
-            percentage = (correct_answers / answered_tools) * 100
+            self.percentage = (correct_answers / answered_tools) * 100
 
         self.ids.percentage_label.markup = True
         self.ids.percentage_label.text = (
-            f"[color=00b300][size=65]✓[/size][/color] {percentage:.1f} %"
-            if percentage != "-"
-            else percentage
+            f"[color=00b300][size=65]✓[/size][/color] {self.percentage:.1f} %"
+            if self.percentage != "-"
+            else self.percentage
         )  # ✓ ☑ 🎯
         # Ensure the label uses a font that supports Unicode symbols
         self.ids.percentage_label.font_name = "DejaVuSans"  # or "Roboto" if available
