@@ -158,8 +158,8 @@ build_android() {
 
 main() {
     parse_args_and_maybe_bump "$@"
-    run_tests
     update_ios_proxy_dir
+    run_tests
     build_android
 }
 

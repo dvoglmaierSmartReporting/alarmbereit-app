@@ -65,66 +65,8 @@ class BaseMethods(FontSizeMixin):
     def on_leave(self):
         self.unbind_font_scaling()
 
-    # def load_high_score(self):
-    #     self.current_high_score = self.get_truck_data(self.get_scores_key())
-    def load_score_content(self):
-        score_content = read_scores_file()
-
-        score_truck = (
-            score_content.get(self.selected_city)
-            .get("firetrucks")
-            .get(self.selected_firetruck)
-        )
-
-        self.current_correct_answers = score_truck.get("current").get("correct_answers")
-        self.current_tool_list = score_truck.get("current").get("tool_list")
-        self.high = score_truck.get(self.get_scores_key())
-        self.percentages = score_truck.get("percentages", [])
-        # self.tool_amount = score_truck.get("tool_amount")
-
-    def save_score_content(self):
-        truck_content = {
-            "current": {
-                "correct_answers": self.current_correct_answers,
-                "tool_list": self.current_tool_list,
-            },
-            self.get_scores_key(): self.high,
-            # "percentages": ([] if self.percentages == None else self.percentages),
-            "tool_amount": self.tool_amount,
-        }
-
-        scores_file_path = os.path.join(
-            get_user_data_dir(),
-            "scores.yaml",
-        )
-
-        score_content = read_scores_file()
-
-        score_truck_content = score_content[self.selected_city]["firetrucks"][
-            self.selected_firetruck
-        ]
-
-        score_truck_content.update(truck_content)
-
-        score_content[self.selected_city]["firetrucks"][
-            self.selected_firetruck
-        ] = score_truck_content
-
-        save_to_yaml(scores_file_path, score_content)
-
-    def save_score_percentage(self):
-        scores_file_path = os.path.join(
-            get_user_data_dir(),
-            "scores.yaml",
-        )
-
-        score_content = read_scores_file()
-
-        score_content[self.selected_city]["firetrucks"][self.selected_firetruck][
-            "percentages"
-        ] = self.percentages
-
-        save_to_yaml(scores_file_path, score_content)
+    def load_high_score(self):
+        self.current_high_score = self.get_truck_data(self.get_scores_key())
 
     def update_score_labels(self):
         self.update_score_label()
@@ -136,8 +78,7 @@ class BaseMethods(FontSizeMixin):
         self.ids.score_label.text = str(self.game.score)
 
     def update_high_score_label(self):
-        # self.ids.high_score_label.text = f"Best: {str(self.current_high_score)}"
-        self.ids.high_score_label.text = f"Best: {str(self.high)}"
+        self.ids.high_score_label.text = f"Best: {str(self.current_high_score)}"
 
     def update_tool_number_label_ios(self):
         # Clear only existing label widgets, keep other widgets
@@ -153,7 +94,7 @@ class BaseMethods(FontSizeMixin):
 
         lbl = Label(
             size_hint_y=1,
-            text=f"⚒ {self.answered_tools} / {self.tool_amount}",
+            text=f"⚒ {self.answered_tools} / {self.set_length}",
             font_name="DejaVuSans",
             font_size=f"{17 * font_scale}dp",
             halign="left",
@@ -167,39 +108,32 @@ class BaseMethods(FontSizeMixin):
         self.ids.tool_number_label.text = ""
 
     def update_tool_number_label(self):
-        self.answered_tools = self.tool_amount - len(self.current_tool_list)
+        self.answered_tools = self.set_length - len(self.current_tool_list)
 
         if platform == "ios":
             self.update_tool_number_label_ios()
 
         else:
             self.ids.tool_number_label.text = (
-                f"⚒ {self.answered_tools} / {self.tool_amount}"
+                f"⚒ {self.answered_tools} / {self.set_length}"
             )
             self.ids.tool_number_label.font_name = (
                 "DejaVuSans"  # or "Roboto" if available
             )
 
     def update_percentage_label(self):
-        # correct_answers = self.get_truck_data("correct_answers", current=True)
-
-        if self.tool_amount - len(self.current_tool_list) == 0:
-            self.current_percentage = "-"
+        correct_answers = self.get_truck_data("correct_answers", current=True)
+        answered_tools = self.set_length - len(self.current_tool_list)
+        if answered_tools == 0:
+            self.percentage = "-"
         else:
-            self.current_percentage = round(
-                (
-                    self.current_correct_answers
-                    / (self.tool_amount - len(self.current_tool_list))
-                    * 100
-                ),
-                1,
-            )
+            self.percentage = (correct_answers / answered_tools) * 100
 
         self.ids.percentage_label.markup = True
         self.ids.percentage_label.text = (
-            f"[color=00b300][size=65]✓[/size][/color] {self.current_percentage:.1f} %"
-            if self.current_percentage != "-"
-            else self.current_percentage
+            f"[color=00b300][size=65]✓[/size][/color] {self.percentage:.1f} %"
+            if self.percentage != "-"
+            else self.percentage
         )  # ✓ ☑ 🎯
         # Ensure the label uses a font that supports Unicode symbols
         self.ids.percentage_label.font_name = "DejaVuSans"  # or "Roboto" if available
@@ -216,13 +150,13 @@ class BaseMethods(FontSizeMixin):
         (self.firetruck_rooms, self.default_tool_list) = get_ToolQuestion_instances(
             self.selected_firetruck, self.selected_city
         )
-        self.tool_amount = len(self.default_tool_list)
+        self.set_length = len(self.default_tool_list)
 
-        # # save set_length to scores.yaml
-        # self.save_truck_data(
-        #     key="set_length",
-        #     value=self.tool_amount,
-        # )
+        # save set_length to scores.yaml
+        self.save_truck_data(
+            key="set_length",
+            value=self.set_length,
+        )
 
     def get_current_tool_list(self):
         self.current_tool_list = self.get_truck_data("set", current=True)
@@ -234,8 +168,6 @@ class BaseMethods(FontSizeMixin):
 
         self.current_tool_list = [item.tool for item in self.default_tool_list]
         shuffle(self.current_tool_list)
-
-        self.current_correct_answers = 0
 
     def check_tool_list(self):
         current = set(self.current_tool_list)
@@ -362,57 +294,45 @@ class BaseMethods(FontSizeMixin):
             .get(key, 0)
         )
 
-    # def save_truck_data(
-    #     self, key: str, value: int | float, current: bool = False
-    # ) -> None:
-    #     if current:
-    #         save2scores_file(
-    #             city=self.selected_city,
-    #             questions="firetrucks",
-    #             truck_or_comp=self.selected_firetruck,
-    #             key=key,
-    #             value=value,
-    #             current=True,
-    #         )
-    #     else:
-    #         save2scores_file(
-    #             city=self.selected_city,
-    #             questions="firetrucks",
-    #             truck_or_comp=self.selected_firetruck,
-    #             key=key,
-    #             value=value,
-    #             current=False,
-    #         )
+    def save_truck_data(
+        self, key: str, value: int | float, current: bool = False
+    ) -> None:
+        if current:
+            save2scores_file(
+                city=self.selected_city,
+                questions="firetrucks",
+                truck_or_comp=self.selected_firetruck,
+                key=key,
+                value=value,
+                current=True,
+            )
+        else:
+            save2scores_file(
+                city=self.selected_city,
+                questions="firetrucks",
+                truck_or_comp=self.selected_firetruck,
+                key=key,
+                value=value,
+                current=False,
+            )
 
     def correct_answer(self):
         self.increment_score()
 
         self.game.answers_correct += 1
 
-        # self.save_truck_data(
-        #     key="correct_answers",
-        #     value=self.get_truck_data("correct_answers", current=True) + 1,
-        #     current=True,
-        # )
-        self.current_correct_answers += 1
+        self.save_truck_data(
+            key="correct_answers",
+            value=self.get_truck_data("correct_answers", current=True) + 1,
+            current=True,
+        )
 
-        # TODO move to save
-        # self.save_truck_data(
-        #     key="correct_answers",
-        #     value=self.correct_answers,
-        #     current=True,
-        # )
-
-        # if self.game.score > self.current_high_score:
-        #     self.current_high_score = self.game.score
-        if self.game.score > self.high:
-            self.high = self.game.score
+        if self.game.score > self.current_high_score:
+            self.current_high_score = self.game.score
 
             self.update_high_score_label()
 
-            # TODO move to save, incl condition!
-            # self.save_truck_data(key=self.get_scores_key(), value=self.game.score)
-            # self.save_truck_data(key=self.get_scores_key(), value=self.high)
+            self.save_truck_data(key=self.get_scores_key(), value=self.game.score)
 
         self.feedback_green = True
 

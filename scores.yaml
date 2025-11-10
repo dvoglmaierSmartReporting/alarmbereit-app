@@ -32,7 +32,7 @@ Altenmarkt:
     LF20:
       current:
         correct_answers: 0
-        set:
+        tool_list:
         - Rundschlinge
         - Rettungsleine
         - Rettungsweste
@@ -196,11 +196,11 @@ Altenmarkt:
       high_strike: 0
       high_strike_image: 0
       percentages: []
-      set_length: 151
+      tool_amount: 151
     LF8:
       current:
         correct_answers: 0
-        set:
+        tool_list:
         - Anhaltekelle
         - "Einrei\xDFhaken"
         - "Unterflur-Hydrantenschl\xFCssel\n"
@@ -334,7 +334,7 @@ Altenmarkt:
       high_strike: 0
       high_strike_image: 0
       percentages: []
-      set_length: 125
+      tool_amount: 125
   running_score: 0
 "D\xFCrrnberg":
   competitions:
@@ -370,7 +370,7 @@ Altenmarkt:
     Pumpe:
       current:
         correct_answers: 0
-        set:
+        tool_list:
         - "Kettengeh\xE4nge 56 kN"
         - Strahlrohr B
         - "\xD6lbindemittel"
@@ -525,11 +525,11 @@ Altenmarkt:
       high_strike: 0
       high_strike_image: 0
       percentages: []
-      set_length: 146
+      tool_amount: 146
     Tank:
       current:
         correct_answers: 0
-        set:
+        tool_list:
         - "Ausr\xE4umhaken"
         - Absperrstangen
         - Anhaltekelle
@@ -703,7 +703,7 @@ Altenmarkt:
       high_strike: 0
       high_strike_image: 0
       percentages: []
-      set_length: 159
+      tool_amount: 159
   running_score: 0
 Hallein:
   competitions:
@@ -739,7 +739,7 @@ Hallein:
     Kommando:
       current:
         correct_answers: 0
-        set:
+        tool_list:
         - Leichensack
         - Dreieckstuch
         - Schutzjacke
@@ -789,11 +789,11 @@ Hallein:
       high_strike: 0
       high_strike_image: 0
       percentages: []
-      set_length: 43
+      tool_amount: 43
     Leiter:
       current:
         correct_answers: 0
-        set:
+        tool_list:
         - "E-Motors\xE4ge"
         - Safety Peak Rucksack
         - Werkzeugkasten
@@ -907,11 +907,11 @@ Hallein:
       high_strike: 0
       high_strike_image: 0
       percentages: []
-      set_length: 97
+      tool_amount: 97
     Pumpe:
       current:
         correct_answers: 0
-        set:
+        tool_list:
         - Forstkeil
         - Verteiler
         - 'Abgasschlauch Stromerzeuger
@@ -1055,11 +1055,11 @@ Hallein:
       high_strike: 0
       high_strike_image: 0
       percentages: []
-      set_length: 133
+      tool_amount: 133
     "R\xFCst":
       current:
         correct_answers: 0
-        set:
+        tool_list:
         - Abschleppseil 12 mm
         - Rollgliss
         - Steckleiter
@@ -1308,11 +1308,11 @@ Hallein:
       high_strike: 0
       high_strike_image: 0
       percentages: []
-      set_length: 226
+      tool_amount: 226
     "R\xFCstL\xF6sch":
       current:
         correct_answers: 0
-        set:
+        tool_list:
         - "Dreikantschl\xFCssel"
         - Verteiler
         - Stromerzeuger
@@ -1543,11 +1543,11 @@ Hallein:
       high_strike: 0
       high_strike_image: 0
       percentages: []
-      set_length: 214
+      tool_amount: 214
     Tank1:
       current:
         correct_answers: 0
-        set:
+        tool_list:
         - Dekowanne
         - Dieselkanister
         - Schlauchbinden
@@ -1750,11 +1750,11 @@ Hallein:
       high_strike: 0
       high_strike_image: 0
       percentages: []
-      set_length: 190
+      tool_amount: 190
     Tank2:
       current:
         correct_answers: 0
-        set:
+        tool_list:
         - "Motors\xE4ge"
         - "Zubeh\xF6r Spineboard"
         - Hydrofix
@@ -1905,11 +1905,11 @@ Hallein:
       high_strike: 0
       high_strike_image: 0
       percentages: []
-      set_length: 142
+      tool_amount: 142
     Voraus:
       current:
         correct_answers: 0
-        set:
+        tool_list:
         - Trennschleifer
         - Rettungsleine
         - Gefahrguthelfer
@@ -2010,5 +2010,5 @@ Hallein:
       high_strike: 0
       high_strike_image: 0
       percentages: []
-      set_length: 94
+      tool_amount: 94
   running_score: 0

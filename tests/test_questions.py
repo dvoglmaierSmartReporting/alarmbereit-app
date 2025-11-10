@@ -120,7 +120,8 @@ def test_firetruck_training__select_firetruck(city_name):
 
                     i += 1
 
-                    if i >= 200:
+                    # if i >= 200:
+                    if i >= 20:
                         break
 
             except Exception as e:

@@ -49,13 +49,14 @@ class Firetruck_Game(Screen, BaseMethods):
 
         self.load_default_tool_list()
 
-        self.get_current_tool_list()
-
-        self.first_tool = True
+        # self.get_current_tool_list()
+        self.load_score_content()
 
         self.check_tool_list()
 
-        self.load_high_score()
+        self.first_tool = True
+
+        # self.load_high_score()
 
         self.reset_timer()
 
@@ -69,48 +70,56 @@ class Firetruck_Game(Screen, BaseMethods):
         self.accept_answers = True
 
         if len(self.current_tool_list) == 0:
+            # self.reset_current_tool_list()
+
+            # self.save_truck_data(
+            #     key="set",
+            #     value=self.current_tool_list,
+            #     current=True,
+            # )
+
+            self.percentages.append(self.current_percentage)
+
+            self.save_score_percentage()
+
             self.reset_current_tool_list()
 
-            self.save_truck_data(
-                key="set",
-                value=self.current_tool_list,
-                current=True,
-            )
+            self.update_score_labels()
 
-            if not self.first_tool:
-                percentage = round(
-                    (
-                        self.get_truck_data("correct_answers", current=True)
-                        / self.set_length
-                    )
-                    * 100.0,
-                    1,
-                )
+            # if not self.first_tool:
+            # percentage = round(
+            #     (
+            #         self.get_truck_data("correct_answers", current=True)
+            #         / self.tool_amount
+            #     )
+            #     * 100.0,
+            #     1,
+            # )
 
-                results = self.get_truck_data("percentages")
-                if results is None:
-                    results = []
+            # results = self.get_truck_data("percentages")
+            # if results is None:
+            #     results = []
 
-                # keep in 2 lines; append is returning None
-                results.append(percentage)
-                self.save_truck_data(
-                    key="percentages",
-                    value=results,
-                )
+            # # keep in 2 lines; append is returning None
+            # results.append(percentage)
+            # self.save_truck_data(
+            #     key="percentages",
+            #     value=results,
+            # )
 
-                self.save_truck_data(
-                    key="correct_answers",
-                    value=0,
-                    current=True,
-                )
+            # self.save_truck_data(
+            #     key="correct_answers",
+            #     value=0,
+            #     current=True,
+            # )
 
-            else:
-                # take sure correct_answers is zero at first tool
-                self.save_truck_data(
-                    key="correct_answers",
-                    value=0,
-                    current=True,
-                )
+            # else:
+            #     # take sure correct_answers is zero at first tool
+            #     self.save_truck_data(
+            #         key="correct_answers",
+            #         value=0,
+            #         current=True,
+            #     )
 
         # Reset image boxes
         self.ids.firetruck_rooms_layout.clear_widgets()
@@ -137,11 +146,11 @@ class Firetruck_Game(Screen, BaseMethods):
         if not self.accept_answers:  # Check if answer processing is enabled
             return  # Ignore the button press if answer processing is disabled
 
-        self.save_truck_data(
-            key="set",
-            value=self.current_tool_list,
-            current=True,
-        )
+        # self.save_truck_data(
+        #     key="set",
+        #     value=self.current_tool_list,
+        #     current=True,
+        # )
 
         # do not accept identical answer
         if instance.text in self.current_tool_question.room_answered:
@@ -162,25 +171,28 @@ class Firetruck_Game(Screen, BaseMethods):
         # document given answers in class instance
         self.current_tool_question.room_answered.append(instance.text)
 
-        self.accept_answers = (
-            False  # Disable answer processing after an answer is selected
-        )
+        # Disable answer processing after an answer is selected
+        self.accept_answers = False
 
         # tool ends here. document tool and given answers in question history
         self.game.questions.append(self.current_tool_question)
 
         Clock.schedule_once(self.next_tool, settings.FIRETRUCK_GAME_FEEDBACK_SEC)
 
+        self.save_score_content()
+
     def correct_answer(self):
         self.increment_score()
 
         self.game.answers_correct += 1
 
-        self.save_truck_data(
-            key="correct_answers",
-            value=self.get_truck_data("correct_answers", current=True) + 1,
-            current=True,
-        )
+        self.current_correct_answers += 1
+
+        # self.save_truck_data(
+        #     key="correct_answers",
+        #     value=self.get_truck_data("correct_answers", current=True) + 1,
+        #     current=True,
+        # )
 
         if (
             self.game.answers_correct % settings.FIRETRUCK_GAME_CORRECT_FOR_EXTRA_TIME
@@ -199,19 +211,20 @@ class Firetruck_Game(Screen, BaseMethods):
             to_add=int(self.game.score),
         )
 
-        if self.game.score > self.current_high_score:
-            save2scores_file(
-                city=self.selected_city,
-                questions="firetrucks",
-                truck_or_comp=self.selected_firetruck,
-                key="high_score",
-                value=self.game.score,
-            )
+        # if self.game.score > self.current_high_score:
+        # save2scores_file(
+        #     city=self.selected_city,
+        #     questions="firetrucks",
+        #     truck_or_comp=self.selected_firetruck,
+        #     key="high_score",
+        #     value=self.game.score,
+        # )
+        if self.game.score > self.high:
+            self.save_score_content()
 
         if not self.first_tool:
             message = GameEndText(
                 answers_total=self.game.questions_len,
-                # answers_correct=self.game.answers_correct_total,
                 answers_correct=self.game.answers_correct,
                 score=self.game.score,
                 is_new_highscore=self.game.score > self.current_high_score,

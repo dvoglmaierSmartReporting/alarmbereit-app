@@ -60,7 +60,10 @@ class Firetruck_Training_With_Images(Screen, BaseMethods):
 
         self.load_default_tool_list()
 
-        self.get_current_tool_list()
+        # self.get_current_tool_list()
+        self.load_score_content()
+
+        self.check_tool_list()
 
         self.first_tool = True
 
@@ -68,7 +71,7 @@ class Firetruck_Training_With_Images(Screen, BaseMethods):
 
         self.reset_progress_bar()
 
-        self.load_high_score()
+        # self.load_high_score()
 
         self.reset_score()
 
@@ -122,50 +125,58 @@ class Firetruck_Training_With_Images(Screen, BaseMethods):
         self.accept_answers = True
 
         if len(self.current_tool_list) == 0:
-            self.reset_current_tool_list()
+            # self.reset_current_tool_list()
 
-            self.save_truck_data(key="set", value=self.current_tool_list, current=True)
+            # self.save_truck_data(key="set", value=self.current_tool_list, current=True)
 
             if not self.first_tool:
-                self.correct_answers = self.get_truck_data(
-                    "correct_answers", current=True
-                )
+                # self.correct_answers = self.get_truck_data(
+                #     "correct_answers", current=True
+                # )
 
-                percentage = round(
-                    (self.correct_answers / self.set_length) * 100.0,
-                    1,
-                )
+                # percentage = round(
+                #     (self.correct_answers / self.tool_amount) * 100.0,
+                #     1,
+                # )
 
-                results = self.get_truck_data("percentages")
-                if results is None:
-                    results = []
+                # results = self.get_truck_data("percentages")
+                # if results is None:
+                #     results = []
 
                 # keep in 2 lines; append is returning None
-                results.append(percentage)
-                self.save_truck_data(key="percentages", value=results)
+                # results.append(percentage)
+                # self.save_truck_data(key="percentages", value=results)
+                self.percentages.append(self.current_percentage)
 
                 # all tools have been trained
                 info_popup = TextPopup(
                     message=TrainingText_AllTools(
-                        self.set_length, self.correct_answers, self.percentage
+                        self.tool_amount,
+                        self.current_correct_answers,
+                        self.current_percentage,
                     ).TEXT,
                     title=strings.TITLE_INFO_POPUP,
                     size_hint=(0.6, 0.6),
                 )
                 info_popup.open()
 
-            self.save_truck_data(key="correct_answers", value=0, current=True)
+            # self.save_truck_data(key="correct_answers", value=0, current=True)
+            self.save_score_percentage()
+
+            self.reset_current_tool_list()
 
             self.update_score_labels()
 
-        if len(self.current_tool_list) == self.set_length // 2:
+        if len(self.current_tool_list) == self.tool_amount // 2:
             # half of tools have been trained
 
-            self.correct_answers = self.get_truck_data("correct_answers", current=True)
+            # self.correct_answers = self.get_truck_data("correct_answers", current=True)
 
             info_popup = TextPopup(
                 message=TrainingText_HalfTools(
-                    self.set_length, self.correct_answers, self.percentage
+                    self.tool_amount,
+                    self.current_correct_answers,
+                    self.current_percentage,
                 ).TEXT,
                 title=strings.TITLE_INFO_POPUP,
                 size_hint=(0.6, 0.6),
@@ -235,7 +246,7 @@ class Firetruck_Training_With_Images(Screen, BaseMethods):
         if not self.accept_answers:  # Check if answer processing is enabled
             return  # Ignore the button press if answer processing is disabled
 
-        self.save_truck_data(key="set", value=self.current_tool_list, current=True)
+        # self.save_truck_data(key="set", value=self.current_tool_list, current=True)
 
         # do not accept identical answer
         if instance.text in self.current_tool_question.room_answered:
@@ -258,9 +269,8 @@ class Firetruck_Training_With_Images(Screen, BaseMethods):
         # document given answers in class instance
         self.current_tool_question.room_answered.append(instance.text)
 
-        self.accept_answers = (
-            False  # Disable answer processing after an answer is selected
-        )
+        # Disable answer processing after an answer is selected
+        self.accept_answers = False
 
         # tool ends here. document tool and given answers in question history
         self.game.questions.append(self.current_tool_question)
@@ -332,6 +342,8 @@ class Firetruck_Training_With_Images(Screen, BaseMethods):
             )
 
             self.root_layer.add_widget(self.overlay_button)
+
+        self.save_score_content()
 
     def on_overlay_button_release(self):
         self.root_layer.remove_widget(self.overlay_button)

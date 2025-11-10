@@ -390,6 +390,7 @@
     name: "firetruck_training"
 
     # IDs
+    firetruck_layout: firetruck_layout
     firetruck_label: firetruck_label
     tool_number_label: tool_number_label
     percentage_label: percentage_label
@@ -415,14 +416,19 @@
                 font_size: dp(32) * max(0.8, min(1.5, Window.width / dp(600)))
                 on_release:
                     root.go_back()
-    
-            Label:
+
+            BoxLayout:
                 size_hint_x: 1.67
-                id: firetruck_label
-                font_size: dp(20) * max(0.8, min(1.5, Window.width / dp(600)))
-                halign: "left"
-                valign: "middle"
-                text_size: self.size
+                orientation: 'vertical'
+                id: firetruck_layout
+
+                Label:
+                    size_hint_y: 1
+                    id: firetruck_label
+                    font_size: dp(20) * max(0.8, min(1.5, Window.width / dp(600)))
+                    halign: "left"
+                    valign: "middle"
+                    text_size: self.size
             
             BoxLayout:
                 size_hint_x: 1.67

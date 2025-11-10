@@ -178,6 +178,7 @@ class Highscore(Screen, BaseMethods):
             table.append(row)
         table.append(self.empty_line)
         table.append(factor_line)
+        table.append(self.empty_line)
         table.append(self.em_dash4column)
         table.append(total)
 
