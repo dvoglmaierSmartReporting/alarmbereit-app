@@ -33,165 +33,160 @@ Altenmarkt:
       current:
         correct_answers: 0
         tool_list:
-        - Rundschlinge
-        - Rettungsleine
-        - Rettungsweste
-        - Atemschutz-Vollmaske
-        - Hygienestation
-        - "CO2-L\xF6scher"
-        - "Absperrschl\xFCssel Gas"
-        - "Atemschutzger\xE4t"
-        - Reserveflasche
-        - Benzinkanister 20 l
+        - Alurandschaufel
+        - "Atemschutz \xDCberwachungstafel"
+        - Flankierer
         - "Zubeh\xF6r Tauchpumpe"
-        - Staubmaske
-        - Warnweste
-        - Sturmverspannung
-        - "Sch\xE4kel"
-        - "Oberflur-Hydrantenschl\xFCssel\n"
-        - "Sammelst\xFCck BBB-A"
-        - Deltabox
-        - "K\xFChlbox"
-        - Schiebeleiter 2-teilig
-        - Handwerkzeug
-        - Gummistiefel
-        - Lederhandschuhe
-        - Druckschlauch B
-        - "Verl\xE4ngerungskabel"
-        - 'Steckleiter Verbindungsteil
-
-          '
-        - Schachtabdeckung
-        - A-Saugschlauch
-        - Leichensack
-        - Lichtfluter
-        - "Motors\xE4ge"
-        - Verbandskasten
-        - Sperrwerkzeug
-        - "Hohlstrahlrohr\nB m. St\xFCtzkr\xFCmmer"
-        - "Sp\xFClmittel"
-        - FI-Schutzschalter
-        - "Grossfl\xE4chenleuchte"
-        - "ABC-Pulverl\xF6scher"
-        - Spaltaxt
-        - Eingebaute Kabeltrommel
-        - Saugkorb
-        - Spitzschaufel
-        - Mistgabel
-        - Chemieschutz
-        - Sprungretter
-        - VU-Koffer
-        - Wasserwerfer tragbar
-        - Erste-Hilfe-Rucksack
-        - "Bindestr\xE4nge"
-        - Warnblitzleuchte
-        - Kabeltrommel 230 V
-        - Federstangen
-        - Verkehrsleitkegel
-        - "Wasserbeh\xE4lter 5000 l"
-        - Auffangmulden
-        - Hydroschild C
-        - MicroCAFS
-        - Druckbegrenzungsventil
-        - Schachthaken
-        - Betankungsschlauch
-        - 'Abgasschlauch Stromerzeuger
-
-          '
-        - Schnittschutzhose
-        - "\xDCberwurf Einsatzleiter"
-        - Feuerpatsche
-        - Kurbel Schlauchhaspel
-        - HD-Schnellangriff
-        - Schlauchhaspel
-        - "Ersatzkette Motors\xE4ge"
-        - 'Hohlstrahlrohr
-
-          Hohlstrahlrohr'
-        - Bolzenschneider
-        - "Bogens\xE4ge"
-        - Warndreieck "Feuerwehr"
-        - Chemieschutzanzug leicht
-        - Arbeitsleine
-        - Sappel
-        - Schutzbrille
-        - "Ersatzs\xE4geblatt S\xE4bels\xE4ge"
-        - "\xDCbergangsst\xFCck B-C"
-        - Schlauchtragekorb
-        - Krankentrage
-        - Kugelhahn
-        - "\xDCbergangsst\xFCck C-D"
-        - "Stra\xDFenbesen"
-        - Schaumrohr Schnellangriff
-        - Absperrband
-        - "Einrei\xDFhaken"
-        - Brandfluchthaube
-        - Halligan-Tool
-        - "\xD6lwehr"
-        - Benzinkanister 5 l
-        - "Fluterbr\xFCcke"
-        - "Unterflur-Hydrantenschl\xFCssel\n"
-        - Schutzkorb Saugkorb
-        - Rauchvorhang
-        - Krankenhausdecke
-        - Rettungstrupptasche
-        - Druckluftschlauch
-        - "Zubeh\xF6r Tunnel"
-        - Einwegoverall
-        - Hitzeschutzanzug
-        - Standrohr
-        - Druckschlauch C
-        - Infektionsset
-        - Schlauchhalter
-        - Schleifkorbtrage
-        - Hydroschild B
-        - "Zubeh\xF6r Spineboard"
-        - "T\xFCrmarkierungen"
-        - Tragetuch
-        - Steckleiter
-        - Handlampe
-        - Schachtdeckelheber
-        - Gartenschlauch
-        - Chemieschutzhandschuhe
-        - Misthaken
-        - "Getr\xE4nke"
+        - Systemtrenner
         - Wasserwerfer Dach
-        - "\xD6lbindemittel"
-        - Ex-Ox-Meter
-        - "Atemschutz \xDCberwachungstafel\n"
-        - Anhaltekelle
-        - Unterflur-Deckelhammer
+        - Rundschlinge
+        - VU-Koffer
+        - "\xDCberwurf Einsatzleiter"
+        - Sprungretter
+        - Schlauchhaspel
+        - "\xD6lwehr"
+        - Warnweste
         - 'Druckschlauch B
 
           m. Verteiler'
+        - Brandfluchthaube
+        - "Ersatzs\xE4geblatt S\xE4bels\xE4ge"
+        - "Sch\xE4kel"
+        - Kombikanister
+        - Druckschlauch B
+        - Atemschutz-Vollmaske
+        - Mistgabel
+        - Druckluftschlauch
+        - Schleifkorbtrage
+        - "Unterflur-Hydrantenschl\xFCssel"
+        - Einweghandschuhe
+        - Axt
+        - Staubmaske
         - Akku-Lampe
-        - Fognail
+        - "S\xE4bels\xE4ge"
+        - Kugelhahn
+        - Unterflur-Deckelhammer
+        - Standrohr
+        - Absperrband
+        - Halligan-Tool
+        - Krankenhausdecke
+        - Misthaken
+        - "K\xFChlbox"
+        - Druckbegrenzungsventil
+        - Feuerwehraxt
+        - MicroCAFS
+        - "\xD6lbindemittel"
+        - Kabeltrommel 230 V
+        - Chemieschutzanzug leicht
+        - "Oberflur-Hydrantenschl\xFCssel"
+        - Schaumrohr Schnellangriff
+        - "Getr\xE4nke"
+        - Schnittschutzhose
+        - "Verl\xE4ngerungskabel"
+        - Chemieschutz
+        - Einwegoverall
+        - "Bindestr\xE4nge"
+        - Feuerpatsche
+        - Reserveflasche
+        - Spitzschaufel
+        - Schachtabdeckung
+        - Tauchpumpe
+        - Steckleiter Verbindungsteil
         - "Rettungss\xE4ge"
         - "Druckl\xFCfter"
+        - "\xDCbergangsst\xFCck B-C"
+        - Rettungsweste
+        - Sappel
+        - Hitzeschutzanzug
+        - Spaltaxt
+        - "Atemschutzger\xE4t"
+        - Saugkorb
+        - 'Hohlstrahlrohr
+
+          Hohlstrahlrohr'
+        - Sturmverspannung
+        - "Absperrschl\xFCssel Gas"
+        - Rettungstrupptasche
+        - Handlampe
         - "W\xE4rmebildkamera"
-        - Druckschlauch D
-        - "\xDCberwurf Gruppenf\xFChrer"
-        - Stativ
-        - "S\xE4bels\xE4ge"
-        - Patientenhelm
-        - Alurandschaufel
-        - Kaminwerkzeug
-        - Kombikanister
-        - "Handfunkger\xE4t"
-        - "ABC-Kupplungsschl\xFCssel"
         - Forsthelm
-        - Tauchpumpe
-        - Schaumaufsatz
-        - Spaten
-        - "Sammelst\xFCck BB-A"
-        - Feuerwehraxt
-        - Systemtrenner
-        - Axt
+        - Kurbel Schlauchhaspel
+        - Patientenhelm
         - Brechstange
-        - Flankierer
-        - Stromerzeuger
-        - Einweghandschuhe
+        - Schutzkorb Saugkorb
+        - Chemieschutzhandschuhe
+        - Druckschlauch D
+        - Wasserwerfer tragbar
+        - "Ersatzkette Motors\xE4ge"
+        - "Einrei\xDFhaken"
         - Spineboard
+        - "ABC-Pulverl\xF6scher"
+        - Schachtdeckelheber
+        - Stromerzeuger
+        - Hygienestation
+        - Rauchvorhang
+        - Leichensack
+        - FI-Schutzschalter
+        - Ex-Ox-Meter
+        - "Motors\xE4ge"
+        - Schlauchhalter
+        - Druckschlauch C
+        - Benzinkanister 20 l
+        - Steckleiter
+        - "Sp\xFClmittel"
+        - Warndreieck "Feuerwehr"
+        - Benzinkanister 5 l
+        - Tragetuch
+        - "T\xFCrmarkierungen"
+        - Krankentrage
+        - Infektionsset
+        - Bolzenschneider
+        - Arbeitsleine
+        - Abgasschlauch Stromerzeuger
+        - "Zubeh\xF6r Spineboard"
+        - "\xDCbergangsst\xFCck C-D"
+        - Gummistiefel
+        - Lichtfluter
+        - "Bogens\xE4ge"
+        - Warnblitzleuchte
+        - Deltabox
+        - "Wasserbeh\xE4lter 5000 l"
+        - Lederhandschuhe
+        - Fognail
+        - "Grossfl\xE4chenleuchte"
+        - Hydroschild C
+        - Sperrwerkzeug
+        - Spaten
+        - HD-Schnellangriff
+        - "Handfunkger\xE4t"
+        - "Sammelst\xFCck BB-A"
+        - Stativ
+        - Schaumaufsatz
+        - Erste-Hilfe-Rucksack
+        - Auffangmulden
+        - "Hohlstrahlrohr\nB m. St\xFCtzkr\xFCmmer"
+        - "CO2-L\xF6scher"
+        - Federstangen
+        - "Fluterbr\xFCcke"
+        - Schiebeleiter 2-teilig
+        - Schutzbrille
+        - Hydroschild B
+        - A-Saugschlauch
+        - Schachthaken
+        - Gartenschlauch
+        - Handwerkzeug
+        - Verkehrsleitkegel
+        - Betankungsschlauch
+        - "Zubeh\xF6r Tunnel"
+        - Kaminwerkzeug
+        - "\xDCberwurf Gruppenf\xFChrer"
+        - "Stra\xDFenbesen"
+        - Eingebaute Kabeltrommel
+        - "Sammelst\xFCck BBB-A"
+        - "ABC-Kupplungsschl\xFCssel"
+        - Verbandskasten
+        - Schlauchtragekorb
+        - Anhaltekelle
       high_score: 0
       high_strike: 0
       high_strike_image: 0
@@ -201,135 +196,132 @@ Altenmarkt:
       current:
         correct_answers: 0
         tool_list:
-        - Anhaltekelle
-        - "Einrei\xDFhaken"
-        - "Unterflur-Hydrantenschl\xFCssel\n"
-        - "Tr\xF6sterb\xE4r"
-        - Stab-Fast kurz
-        - Bolzenschneider
-        - Hydr. Zylinder kurz
-        - Warnblitzleuchte
-        - Abschleppstange
-        - Handlampe
-        - "\xDCberwurf Gruppenf\xFChrer"
-        - Schuttwanne
-        - Schleifkorbtrage
-        - "Sp\xFClmittel"
-        - Kombikanister
-        - Benzinkanister 5 l
-        - Schutzkorb Saugkorb
-        - Flankierer
-        - Glasmaster
-        - Hydr. Zylinder lang
-        - "T\xFCrmarkierungen"
-        - "Stufenh\xF6lzer"
-        - "Motors\xE4ge"
-        - Strahlrohr C
-        - Schutzbrille
-        - "Feuerl\xF6scher"
-        - Einweghandschuhe
-        - Lichtfluter
-        - Kurbel Schnellangriff
-        - "Stra\xDFenbesen"
-        - Halteleine
-        - "Unterlegh\xF6lzer"
-        - "Bogens\xE4ge"
-        - Signalfahnen
-        - "\xDCberwurf Einsatzleiter"
-        - Ventilleine
-        - Stromerzeuger
-        - Bereitstellungplane
-        - "Dreikantschl\xFCssel"
-        - 'Abgasschlauch Stromerzeuger
-
-          '
-        - Kantenschutz
-        - "Zubeh\xF6r Spineboard"
-        - Schnittschutzhose
-        - Druckschlauch C
-        - Erste-Hilfe-Rucksack
-        - "\xDCbergangsst\xFCck A-B"
-        - Werkzeugkasten
-        - Hygienestation
-        - Schlauchtragekorb
-        - Gartenschlauch
-        - "Sch\xE4kel"
-        - Patientenschutz
-        - Airbag Safe
-        - Rettungsleine
-        - HD-Schnellangriff
-        - Kettensatz Spreizer
-        - Mistgabel
-        - Hitzeschutzanzug
-        - Systemtrenner
-        - Tauchpumpe
-        - "Ersatzbl\xE4tter Trennschleifer\n"
-        - Kabeltrommel 230 V
-        - Einwegoverall
-        - "St\xFCtzkr\xFCmmer"
-        - Stativ
-        - Wasserhahn C
-        - Krankenhausdecke
-        - Schaumrohr Schnellangriff
-        - Warndreieck "Feuerwehr"
-        - "Getr\xE4nke"
-        - Steckleiter
-        - Verbandskasten
-        - Spitzschaufel
-        - Hohlstrahlrohr
-        - Stativ Powermoon
-        - Absperrband
-        - Elektrowerkzeug
-        - Warnweste
-        - Schlauchrollwagen
-        - Dunggabel
-        - A-Saugschlauch
-        - "Bindestr\xE4nge"
-        - "\xD6lbindeflies"
-        - "Zubeh\xF6r Motors\xE4ge"
-        - Alurandschaufel
-        - "T\xFCr\xF6ffnungsrucksack"
-        - Trennschleifer
         - Kugelhahn
-        - Rundschlinge
-        - Schlauchhalter
-        - "Sammelst\xFCck BB-A"
-        - "S\xE4bels\xE4ge"
-        - MicroCAFS
-        - Schachthaken
-        - Reserveflasche
-        - Spaten
-        - Verteiler
-        - "Zubeh\xF6r Stativ"
-        - Halligan-Tool
-        - "Handfunkger\xE4t"
-        - Sichtschutz
-        - Abgasschlauch TS
-        - Schwelleraufsatz
-        - Powermoon
-        - "\xD6lbindemittel"
-        - "Fluterbr\xFCcke"
+        - Wasserhahn C
+        - Schaumrohr Schnellangriff
+        - Absperrband
+        - Brechstange
+        - Standrohr
+        - "St\xFCtzkr\xFCmmer"
+        - Erste-Hilfe-Rucksack
         - "W\xE4rmebildkamera"
-        - Hydr. Rettungssatz
+        - Schnittschutzhose
         - Druckschlauch B
+        - "Vorschaltger\xE4t Powermoon"
+        - Elektrowerkzeug
+        - Verteiler
+        - Stativ
+        - Kantenschutz
+        - "Feuerl\xF6scher"
+        - Stab-Fast kurz
+        - Saugkorb
+        - Gartenschlauch
+        - Benzinkanister 5 l
+        - Glasmaster
+        - Verbandskasten
+        - Abschleppstange
+        - "Zubeh\xF6r Trennschleifer"
+        - Hydr. Zylinder lang
+        - "Getr\xE4nke"
+        - "\xDCbergangsst\xFCck A-B"
+        - Abgasschlauch Stromerzeuger
+        - Spineboard
+        - Warnblitzleuchte
+        - Schutzkorb Saugkorb
+        - HD-Schnellangriff
+        - "Sammelst\xFCck BB-A"
+        - Schlauchtragekorb
+        - "\xDCberwurf Gruppenf\xFChrer"
+        - "Zubeh\xF6r Spineboard"
         - 'Druckschlauch B
 
           m. Verteiler'
-        - Spineboard
-        - Tragkraftspritze
-        - Verkehrsleitkegel
-        - "Zubeh\xF6r Trennschleifer"
-        - "ABC-Kupplungsschl\xFCssel"
-        - Saugkorb
-        - Strahlrohr B
-        - Dreifachstecker
-        - "Vorschaltger\xE4t Powermoon"
-        - Brechstange
-        - Abschleppseil
-        - Standrohr
-        - Greifzug
-        - "Atemschutzger\xE4t"
+        - Hohlstrahlrohr
+        - Druckschlauch C
+        - Schlauchhalter
+        - Trennschleifer
+        - Schuttwanne
         - Stab-Fast lang
+        - Bolzenschneider
+        - "Sp\xFClmittel"
+        - Krankenhausdecke
+        - "ABC-Kupplungsschl\xFCssel"
+        - Einweghandschuhe
+        - "Stra\xDFenbesen"
+        - Handlampe
+        - Dreifachstecker
+        - Einwegoverall
+        - Schlauchrollwagen
+        - Halteleine
+        - Powermoon
+        - Patientenschutz
+        - A-Saugschlauch
+        - Stromerzeuger
+        - "Unterflur-Hydrantenschl\xFCssel"
+        - "Zubeh\xF6r Motors\xE4ge"
+        - "Motors\xE4ge"
+        - Alurandschaufel
+        - Abschleppseil
+        - Schutzbrille
+        - "Handfunkger\xE4t"
+        - Anhaltekelle
+        - "Bindestr\xE4nge"
+        - Dunggabel
+        - Sichtschutz
+        - "Bogens\xE4ge"
+        - MicroCAFS
+        - Lichtfluter
+        - Halligan-Tool
+        - "\xD6lbindemittel"
+        - Rundschlinge
+        - "Sch\xE4kel"
+        - Abgasschlauch TS
+        - "T\xFCrmarkierungen"
+        - "T\xFCr\xF6ffnungsrucksack"
+        - "Ersatzbl\xE4tter Trennschleifer"
+        - Systemtrenner
+        - Kabeltrommel 230 V
+        - Reserveflasche
+        - "Stufenh\xF6lzer"
+        - Hygienestation
+        - Hitzeschutzanzug
+        - "Tr\xF6sterb\xE4r"
+        - Bereitstellungplane
+        - Werkzeugkasten
+        - Strahlrohr B
+        - "Fluterbr\xFCcke"
+        - Hydr. Zylinder kurz
+        - Ventilleine
+        - Greifzug
+        - Tragkraftspritze
+        - Kettensatz Spreizer
+        - "Dreikantschl\xFCssel"
+        - Hydr. Rettungssatz
+        - Rettungsleine
+        - Airbag Safe
+        - "Zubeh\xF6r Stativ"
+        - Warnweste
+        - Signalfahnen
+        - Strahlrohr C
+        - "Unterlegh\xF6lzer"
+        - Kurbel Schnellangriff
+        - Flankierer
+        - "S\xE4bels\xE4ge"
+        - Schwelleraufsatz
+        - Tauchpumpe
+        - Spaten
+        - Kombikanister
+        - "Atemschutzger\xE4t"
+        - Spitzschaufel
+        - "Einrei\xDFhaken"
+        - Warndreieck "Feuerwehr"
+        - Verkehrsleitkegel
+        - "\xD6lbindeflies"
+        - "\xDCberwurf Einsatzleiter"
+        - Stativ Powermoon
+        - Schachthaken
+        - Mistgabel
+        - Steckleiter
       high_score: 0
       high_strike: 0
       high_strike_image: 0
@@ -371,156 +363,153 @@ Altenmarkt:
       current:
         correct_answers: 0
         tool_list:
-        - "Kettengeh\xE4nge 56 kN"
-        - Strahlrohr B
-        - "\xD6lbindemittel"
-        - "Wassersauger m. Zubeh\xF6r"
+        - Stromerzeuger
+        - Brechstange
+        - Bolzenschneider
+        - Fernsteuerung Lichtmast
+        - Arbeitsleine
+        - Handscheinwerfer
+        - "Kettengeh\xE4nge 67 kN"
+        - "E-Motors\xE4ge"
+        - "Absperrschl\xFCssel\nHauswasser"
+        - Druckschlauch B
+        - Forsthelm
+        - Luftschlauch m. Pistole
+        - Abdeckplane
+        - Spitzschaufel
+        - Alurandschaufel
+        - Schlauchbinden
+        - Zurrgurt 7 m
         - Hacke lang
-        - Krampen
-        - Handlampe
-        - Stromverteiler
-        - "Fluterbr\xFCcke"
-        - Kabeltrommel 400 V
+        - "Stra\xDFenbesen"
+        - Schwimmsauger
+        - "Kettengeh\xE4nge 40 kN"
+        - Atemschutz-Vollmaske
+        - "M\xFClls\xE4cke"
+        - "Einrei\xDFhaken"
+        - "Basisausr\xFCstung \xD6BFV"
+        - Kantenreiter
+        - Verkehrsleitkegel faltbar
+        - "Handf\xE4ustel"
         - Feuerwehrgurt
-        - "\xDCbergangsst\xFCck A125-A110"
-        - Druckschlauch C
-        - Krankenhausdecke
+        - Werkzeugkasten
+        - "Ersatzkette Motors\xE4ge"
+        - "L\xF6schdecke"
+        - "Atemschutzger\xE4t"
+        - Zimmermannshammer
+        - "Luftdruckpr\xFCfer"
+        - Schutzkorb Saugkorb
+        - "Handfunkger\xE4t"
+        - "Motors\xE4ge"
+        - Meldertasche
+        - Abschleppseil
+        - Strahlrohr B
+        - "\xDCbergangsst\xFCck A-B"
+        - "Verl\xE4ngerungskabel"
+        - "St\xFCtzkr\xFCmmer"
+        - Feuerwehraxt
+        - "Schn\xFCrleinen"
+        - "Unterflur-Hydrantenschl\xFCssel"
+        - Schlauchpaket
+        - Ventilleine
+        - Erste-Hilfe-Rucksack
+        - Rundschlinge 40 kN
+        - Steuerung Seilwinde
+        - Handlampe
+        - Betankungsgarnitur
+        - Schnittschutzhose
         - Tragkraftspritze
-        - "Einf\xFCllstutzen"
+        - Vorschlaghammer
+        - "Koffer Abschlepp\xF6sen"
+        - Kabeltrommel 230 V
+        - "Fluterbr\xFCcke"
+        - Warndreieck "Feuerwehr"
+        - Akku-Lampe
+        - Dieselkanister
+        - Vollmaske m. Filter
+        - "ABC-Kupplungsschl\xFCssel"
+        - Greifzugseil
+        - "\xD6lbindemittel"
+        - Hacke kurz
+        - RLS-Beleuchtungssystem
+        - Kabelbinder
+        - "Oberflur-Hydrantenschl\xFCssel"
+        - Sappel
+        - Standrohr
+        - Benzinkanister 20 l
+        - "Schlauchbr\xFCcken"
+        - Umlenkrolle 140 kN
+        - Rundschlinge 60 kN
         - 'Schleifringkabeltrommel
 
           400 V'
-        - Schwimmsauger
-        - Anhaltekelle
-        - Vorschlaghammer
-        - Arbeitsmesser
-        - Forsthelm
-        - Luftschlauch m. Pistole
-        - Einweghandschuhe
-        - Rundschlinge 40 kN
-        - Saugkorb
-        - "Sammelst\xFCck BB-A"
-        - Umlenkrolle 60 kN
-        - Akku-Lampe
-        - Warnblitzleuchte
-        - Hohlstrahlrohr
-        - "ABC-Kupplungsschl\xFCssel"
-        - Greifzug
-        - Schutzkorb Saugkorb
-        - Schlauchhalter
-        - Klebeband
-        - Verteiler
-        - Bindedraht
-        - Benzinkanister 20 l
-        - Schiebeleiter 2-teilig
-        - "Sch\xE4kel 120 kN"
-        - Tauchpumpe
-        - Kabeltrommel 230 V
-        - Erste-Hilfe-Rucksack
-        - Rundschlinge 22 kN
-        - Druckschlauch B
-        - "Ausr\xE4umhaken"
-        - Streuwagen
-        - Schlauchpaket
-        - Vollmaske m. Filter
-        - Hubwinde 100 kN
-        - Schutzhandschuhe
-        - Kantenreiter
-        - RLS-Beleuchtungssystem
-        - "Atemschutzger\xE4t"
-        - "Kettengeh\xE4nge 67 kN"
-        - Kombikanister
-        - "Sch\xE4kel 65 kN"
-        - TNT-Tool
-        - Betankungsgarnitur
-        - "L\xF6schdecke"
-        - "M\xFClls\xE4cke"
-        - Seilstropp 5 m
-        - Handscheinwerfer
-        - Reserveflasche
-        - Arbeitsleine
-        - Dieselkanister
-        - "\xDCbergangsst\xFCck A-B"
-        - "\xDCbergangsst\xFCck B-C"
-        - Schneeketten
-        - Feuerwehraxt
-        - "Koffer Abschlepp\xF6sen"
-        - "Basisausr\xFCstung \xD6BFV"
-        - "Oberflur-Hydrantenschl\xFCssel\n"
-        - Nageleisen
-        - "Kettengeh\xE4nge 40 kN"
-        - Sicherungsgeschirr
-        - "Unterlegh\xF6lzer"
-        - Stromerzeuger
-        - Bolzenschneider
-        - Tragetuch
-        - "Ger\xFCstklammer"
-        - Fernsteuerung Lichtmast
-        - Kabelbinder
-        - Korbtrage
-        - "Kettengeh\xE4nge 19 kN"
-        - Wathose
-        - Zurrgurt 7 m
-        - Spitzschaufel
-        - Hacke kurz
-        - Brechstange
-        - Werkzeugkasten
-        - Benzinkanister 10 l
-        - Warndreieck "Feuerwehr"
-        - "Schn\xFCrleinen"
-        - "Motors\xE4ge"
-        - Alurandschaufel
-        - "E-Motors\xE4ge"
-        - Forstkeil
-        - "Verl\xE4ngerungskabel"
-        - Rundschlinge 60 kN
-        - Schlauchhaspel
-        - Abdeckplane
-        - Warnweste
-        - Greifzugseil
-        - Schnittschutzhose
-        - "Unterflur-Hydrantenschl\xFCssel\n"
-        - Windenkeile
-        - Seilstropp 10 m
-        - Flankierer
-        - Sappel
         - Rettungsleine
-        - Verkehrsleitkegel faltbar
-        - Druckbegrenzungsventil
-        - Schlauchtragekorb
-        - "Ersatzkette Motors\xE4ge"
-        - "Handfunkger\xE4t"
-        - "Absperrschl\xFCssel\nHauswasser"
-        - Werkzeugsatz TS
-        - Ventilleine
-        - "ABC-Pulverl\xF6scher"
-        - Meldertasche
-        - Abschleppseil
-        - 'Abgasschlauch Stromerzeuger
-
-          '
-        - Umlenkrolle 140 kN
-        - Freilandverankerung
+        - Druckschlauch C
+        - "Wassersauger m. Zubeh\xF6r"
+        - Windenkeile
+        - Reserveflasche
+        - "Sch\xE4kel 120 kN"
+        - Greifzug
+        - Kombikanister
+        - Flankierer
+        - Streuwagen
+        - Warnblitzleuchte
+        - Tauchpumpe
+        - Korbtrage
+        - "Einf\xFCllstutzen"
+        - Hubwinde 100 kN
+        - TNT-Tool
+        - Wathose
+        - Abgasschlauch Stromerzeuger
+        - Bindedraht
         - Zurrgurt m. Ratsche
-        - "Handf\xE4ustel"
-        - "Luftdruckpr\xFCfer"
-        - "Stra\xDFenbesen"
-        - Steuerung Seilwinde
-        - Schlauchbinden
-        - "Einrei\xDFhaken"
-        - "St\xFCtzkr\xFCmmer"
-        - Absperrband
-        - Schaufeltrage
+        - Schneeketten
         - PVC-Folie
-        - Atemschutz-Vollmaske
-        - Standrohr
-        - A-Saugschlauch
-        - "Schlauchbr\xFCcken"
-        - Zimmermannshammer
-        - Heugabel
-        - "Tafel \"\xD6lspur\""
-        - "N\xE4gel"
+        - "\xDCbergangsst\xFCck A125-A110"
+        - "Unterlegh\xF6lzer"
+        - Saugkorb
         - Stativ
+        - Umlenkrolle 60 kN
+        - "Sch\xE4kel 65 kN"
+        - A-Saugschlauch
+        - Benzinkanister 10 l
+        - Sicherungsgeschirr
+        - Krampen
+        - Arbeitsmesser
+        - "ABC-Pulverl\xF6scher"
+        - "\xDCbergangsst\xFCck B-C"
+        - Schlauchhaspel
+        - Anhaltekelle
+        - Seilstropp 10 m
+        - Schaufeltrage
+        - "N\xE4gel"
+        - Freilandverankerung
+        - "Kettengeh\xE4nge 56 kN"
+        - Schlauchhalter
+        - Werkzeugsatz TS
+        - Einweghandschuhe
+        - Warnweste
+        - Kabeltrommel 400 V
+        - Tragetuch
+        - Forstkeil
+        - Klebeband
+        - "Ausr\xE4umhaken"
+        - "Kettengeh\xE4nge 19 kN"
+        - "Sammelst\xFCck BB-A"
+        - Krankenhausdecke
+        - Nageleisen
+        - Rundschlinge 22 kN
+        - Absperrband
+        - Druckbegrenzungsventil
+        - Seilstropp 5 m
+        - Schlauchtragekorb
+        - Heugabel
+        - Schutzhandschuhe
+        - "Tafel \"\xD6lspur\""
+        - Verteiler
+        - Schiebeleiter 2-teilig
+        - "Ger\xFCstklammer"
+        - Stromverteiler
       high_score: 0
       high_strike: 0
       high_strike_image: 0
@@ -530,175 +519,170 @@ Altenmarkt:
       current:
         correct_answers: 0
         tool_list:
-        - "Ausr\xE4umhaken"
-        - Absperrstangen
-        - Anhaltekelle
-        - Flankierer
-        - Abdeckplane
-        - "Schlauchbr\xFCcken"
-        - Strahlrohr B
-        - Hitzeschutzanzug
-        - Schaummittel
-        - Trennschleifer
-        - Forsthelm
-        - Dunggabel
-        - Bindedraht
-        - Sicherungsleine 2 m
-        - Rollgliss
-        - 'Abgasschlauch Stromerzeuger
-
-          '
-        - Stromerzeuger
-        - "Atemschutz \xDCberwachungstafel\n"
-        - "W\xE4rmebildkamera"
-        - Rauchfang-Werkzeug
-        - Rauchvorhang
-        - Rohrdichtkissen
-        - "\xDCbergangsst\xFCck\nStrom m. Polwender"
-        - "ABC-Kupplungsschl\xFCssel"
-        - Meldertasche
-        - Sitzgurt
-        - Hydrofix
-        - Kunststoffeimer
-        - Dekowanne
-        - Hacke lang
-        - "Steckschl\xFCsselsatz"
-        - Bolzenschneider
-        - "Handf\xE4ustel"
-        - "Gasmessger\xE4t"
-        - "Fassbund\xF6ffner"
-        - Standrohr
-        - "Sch\xE4kel"
-        - Benzinkanister
-        - Stativ
-        - "Absperrschl\xFCssel\nHauswasser"
-        - "Ger\xFCstklammer"
-        - Schlagbohrmaschine
-        - Verteiler
-        - Feuerpatsche
-        - Krampen
-        - "N\xE4gel"
-        - Druckbegrenzungsventil
-        - "Einf\xFCllstutzen"
-        - "Fluterbr\xFCcke"
-        - Rohrzange
-        - Schlauchtragekorb
-        - Abschleppseil
-        - Schutzbrille
-        - "L\xF6schrucksack Waldbrand"
-        - Druckschlauch B
-        - Druckluftschlauch
-        - 'Warnlichthaube
-
-          Handscheinwerfer'
-        - Schaufeltrage
-        - Zimmermannshammer
-        - "S\xE4ureschutzhandschuhe"
-        - "E-Motors\xE4ge"
-        - Handlampe
-        - Dieselkanister
-        - Seilstropp 5 m
-        - Motorseilwinde
-        - Hacke kurz
-        - Steckleiter
-        - Werkzeugkasten
-        - Schachtabdeckung
-        - "M\xFClls\xE4cke"
-        - Stahlblecheimer
-        - "Bogens\xE4ge"
-        - Stromschnellangriff
-        - Druckschlauch C
-        - "Verl\xE4ngerungskabel"
-        - Rettungsleine
-        - Bodenteller Absperrstangen
-        - Schutzhandschuhe
-        - Warndreieck "Feuerwehr"
-        - "Kanalsp\xFClratte"
-        - Arbeitsleine
-        - "L\xF6schdecke"
-        - "St\xFCtzkr\xFCmmer"
-        - Suchscheinwerfer
-        - "Druckl\xFCfter"
-        - Krankenhausdecke
-        - "Motors\xE4ge"
-        - Plane 4x4 m
-        - Heugabel
-        - "Fu\xDFtaster Haspel"
-        - Sappel
-        - Schnittschutzhose
-        - Kabeltrommel 230 V
-        - Arbeitsmesser
-        - Kurbel Schnellangriff
         - Brechstange
-        - Schlauchbinden
-        - Hydroschild C
-        - Halligan-Tool
-        - "T\xFCr\xF6ffner"
-        - Zurrgurt m. Ratsche
-        - Handluftpumpe
-        - "HD-Kupplungsschl\xFCssel"
-        - Auffangmulden
-        - Absperrband
-        - Mehrzweckleiter
-        - Fernsteuerung Lichtmast
-        - "\xDCbergangsst\xFCck A125-A110"
-        - "Einrei\xDFhaken"
-        - HD-Schnellangriff
-        - "\xDCbergangsst\xFCck B-C"
+        - Stromschnellangriff
         - Strahlrohr C
-        - "\xDCbergangsst\xFCck A-B"
-        - Alurandschaufel
-        - "\xD6lbindemittel"
-        - "Stra\xDFenbesen"
-        - Kartentasche
-        - Steuerung Lichtmast
-        - Wasserwerfer
-        - Unterlegkeil
-        - "Oberflur-Hydrantenschl\xFCssel\n"
-        - Handscheinwerfer
-        - Rundschlinge
-        - Atemschutztisch
-        - 'Schaumaufsatz Hohlstrahlrohr
-
-          '
-        - "Ersatzbl\xE4tter Trennschleifer\n"
-        - "Schl\xFCsselkasten"
-        - Schlauchhalter
-        - "Unterflur-Hydrantenschl\xFCssel\n"
-        - Schiebeleiter 3-teilig
-        - "Sammelst\xFCck BB-A"
-        - "CO2-L\xF6scher"
-        - Verkehrsleitkegel
-        - 'Chemieschutzanzug
-
-          m. Stiefel'
-        - Zumischer
-        - Vorschlaghammer
-        - Luftschnellangriff
-        - Schneeketten
-        - Schuttwanne
-        - Gefahrguthelfer
-        - Spitzschaufel
-        - Absperrschieber B
-        - Druckschlauch HD
-        - "Schn\xFCrleinen"
-        - Verbandskasten
-        - Kombikanister
-        - HD-Strahlrohr
-        - Tauchpumpe
-        - Hebekissensatz klein
-        - Schachthaken
-        - VU-Koffer
-        - "Handfunkger\xE4t"
-        - Heumesssonde
         - Tragetuch
+        - Steckleiter
+        - "Sch\xE4kel"
+        - Absperrstangen
+        - Heumesssonde
+        - Absperrband
+        - "Fassbund\xF6ffner"
+        - "ABC-Pulverl\xF6scher"
         - 'D-Saugschlauch
 
           Pumpenvormischer'
-        - "\xDCberwurf Einsatzleiter"
-        - "ABC-Pulverl\xF6scher"
+        - Standrohr
+        - 'Chemieschutzanzug
+
+          m. Stiefel'
+        - Meldertasche
+        - Schlauchbinden
+        - Schneeketten
+        - "St\xFCtzkr\xFCmmer"
+        - VU-Koffer
+        - 'Warnlichthaube
+
+          Handscheinwerfer'
+        - Bindedraht
+        - Luftschnellangriff
+        - "S\xE4ureschutzhandschuhe"
+        - Hacke kurz
+        - Forsthelm
+        - Alurandschaufel
+        - Auffangmulden
+        - Hebekissensatz klein
+        - HD-Strahlrohr
+        - Absperrschieber B
+        - Rettungsleine
+        - Rauchfang-Werkzeug
+        - HD-Schnellangriff
+        - "Ger\xFCstklammer"
+        - Kunststoffeimer
+        - Krampen
+        - "L\xF6schdecke"
+        - "Fluterbr\xFCcke"
+        - "Ersatzbl\xE4tter Trennschleifer"
+        - "\xDCbergangsst\xFCck A125-A110"
+        - "ABC-Kupplungsschl\xFCssel"
+        - "Sammelst\xFCck BB-A"
+        - Schaummittel
+        - Feuerpatsche
+        - Schaufeltrage
+        - Plane 4x4 m
+        - Schachtabdeckung
+        - Hacke lang
+        - Schutzbrille
+        - "Absperrschl\xFCssel\nHauswasser"
+        - Schachthaken
+        - "Kanalsp\xFClratte"
+        - Kabeltrommel 230 V
+        - Stahlblecheimer
+        - "Steckschl\xFCsselsatz"
+        - Kartentasche
+        - Schuttwanne
+        - Schaumaufsatz Hohlstrahlrohr
+        - Kombikanister
+        - Fernsteuerung Lichtmast
+        - Schiebeleiter 3-teilig
+        - "CO2-L\xF6scher"
+        - Sicherungsleine 2 m
+        - Spitzschaufel
+        - "Handf\xE4ustel"
+        - Rohrdichtkissen
+        - "Atemschutz \xDCberwachungstafel"
+        - Handlampe
+        - Tauchpumpe
+        - Benzinkanister
+        - Abschleppseil
+        - Steuerung Lichtmast
+        - Arbeitsmesser
+        - Zimmermannshammer
+        - Motorseilwinde
+        - Handluftpumpe
+        - Krankenhausdecke
+        - "Schl\xFCsselkasten"
+        - "Unterflur-Hydrantenschl\xFCssel"
+        - Mehrzweckleiter
+        - "\xD6lbindemittel"
+        - "Motors\xE4ge"
+        - "T\xFCr\xF6ffner"
         - Wathose
+        - Dunggabel
+        - Gefahrguthelfer
+        - Sitzgurt
+        - Strahlrohr B
+        - Druckschlauch B
+        - "\xDCbergangsst\xFCck B-C"
+        - "Schlauchbr\xFCcken"
+        - "N\xE4gel"
+        - Suchscheinwerfer
+        - "Handfunkger\xE4t"
+        - Hitzeschutzanzug
+        - Abgasschlauch Stromerzeuger
+        - "Fu\xDFtaster Haspel"
+        - "Druckl\xFCfter"
+        - Schutzhandschuhe
+        - "L\xF6schrucksack Waldbrand"
         - Hitzeschutzhandschuhe
+        - Sappel
+        - Rollgliss
+        - Rohrzange
+        - "Bogens\xE4ge"
+        - "\xDCberwurf Einsatzleiter"
+        - Zurrgurt m. Ratsche
+        - Rauchvorhang
+        - Heugabel
+        - Atemschutztisch
+        - Vorschlaghammer
+        - Dieselkanister
+        - "Verl\xE4ngerungskabel"
+        - Abdeckplane
+        - Druckbegrenzungsventil
+        - Bodenteller Absperrstangen
+        - "Ausr\xE4umhaken"
+        - "Oberflur-Hydrantenschl\xFCssel"
+        - Rundschlinge
+        - Flankierer
+        - Schlauchhalter
+        - Druckschlauch C
+        - "Einrei\xDFhaken"
+        - Bolzenschneider
+        - "\xDCbergangsst\xFCck A-B"
+        - Unterlegkeil
+        - Verbandskasten
+        - Schnittschutzhose
+        - Warndreieck "Feuerwehr"
+        - Druckluftschlauch
+        - "Schn\xFCrleinen"
+        - Anhaltekelle
+        - "E-Motors\xE4ge"
+        - Werkzeugkasten
+        - Dekowanne
+        - Seilstropp 5 m
+        - Druckschlauch HD
+        - "Einf\xFCllstutzen"
+        - "\xDCbergangsst\xFCck\nStrom m. Polwender"
+        - Kurbel Schnellangriff
+        - "W\xE4rmebildkamera"
+        - Hydrofix
+        - Verteiler
+        - Arbeitsleine
+        - Stativ
+        - Schlagbohrmaschine
+        - Hydroschild C
+        - Stromerzeuger
+        - Halligan-Tool
+        - Schlauchtragekorb
+        - "Gasmessger\xE4t"
+        - "M\xFClls\xE4cke"
+        - Verkehrsleitkegel
+        - "Stra\xDFenbesen"
+        - Zumischer
+        - Wasserwerfer
+        - Handscheinwerfer
+        - "HD-Kupplungsschl\xFCssel"
       high_score: 0
       high_strike: 0
       high_strike_image: 0
@@ -750,9 +734,6 @@ Hallein:
         - Absperrband
         - Kennzeichnungsleuchtenset
         - GoPro
-        - 'Infomaterial Einsatzleitung
-
-          '
         - Feldstecher
         - "L\xF6schdecke"
         - Personensicherungsset
@@ -784,7 +765,6 @@ Hallein:
         - "Atemschutzger\xE4t"
         - Anhaltekelle
         - Erste-Hilfe-Rucksack
-        - "Handfunkger\xE4t"
       high_score: 0
       high_strike: 0
       high_strike_image: 0
@@ -794,115 +774,112 @@ Hallein:
       current:
         correct_answers: 0
         tool_list:
-        - "E-Motors\xE4ge"
-        - Safety Peak Rucksack
-        - Werkzeugkasten
-        - Handlampe
-        - Aufstiegsleiter
-        - Atemschutz-Vollmaske
-        - Filter
-        - Warnweste
-        - tablet
-        - Wenderohr
-        - Dieselkanister
-        - 'Abgasschlauch Stromerzeuger
+        - Forsthelm
+        - "Atemschutzger\xE4t"
+        - 'Warnlichthaube
 
-          '
-        - "\xD6lkanister"
-        - Brandfluchthaube
+          Handscheinwerfer'
+        - Dieselkanister
+        - Sprungretter
+        - tablet
+        - Aufnahme Korbtrage
+        - Anhaltekelle
+        - Flankierer
+        - Einweghandschuhe
+        - Schneeketten
+        - Filtermaske
+        - Schnittschutzbeinlinge
+        - Schwerlastaufnahme
+        - Druckschlauch B
+        - Schutzhandschuhe
+        - Reserveflasche
+        - Verkehrsleitkegel
+        - Stativ
+        - 230 V Ausgang
+        - "Ersatzkette Motors\xE4ge"
+        - Arbeitsleine
+        - Filter
+        - "L\xF6schdecke"
+        - Krankentrage 2-teilig
+        - Halten u. Sichern Rucksack
+        - "Reserve-Akku E-Motors\xE4ge"
+        - Rettungsleine
+        - Alurandschaufel
+        - "ABC-Kupplungsschl\xFCssel"
+        - Hohlstrahlrohr
+        - "Schl\xFCsselset"
+        - "Stra\xDFenbesen"
+        - Alu-Rettungsdecke
+        - Absturzsicherung MSA
+        - Sturmleine
         - Schlauchhalter
         - 'Druckschlauch B
 
           25 m orange'
-        - Stativ
-        - Halten u. Sichern Rucksack
-        - 'Warnlichthaube
-
-          Handscheinwerfer'
-        - "Handfunkger\xE4t"
-        - Schnittschutzhose
-        - "Bogens\xE4ge"
-        - "ABC-Pulverl\xF6scher"
-        - 230 V Ausgang
-        - "Ersatzkette Motors\xE4ge"
-        - "Schn\xFCrleinen"
-        - Druckluftpistole
-        - Halligan-Tool
-        - Sturmleine
-        - "L\xF6schdecke"
+        - Hacke kurz
+        - Meldertasche
         - 'Kennzeichnungsleuchte
 
           orange'
-        - Rollgliss
-        - Forsthelm
-        - 'Feuerwehrgurt m.
-
-          Verbindungsmittel'
-        - Anhaltekelle
-        - Schneeketten
-        - Druckschlauch C 7 m
-        - Filtermaske
-        - Druckluft Ausgang
-        - Absperrband
-        - "Stra\xDFenbesen"
-        - Unterlegplatte
-        - "Handf\xE4ustel"
         - Safety Peak
-        - Arbeitsleine
-        - Notrettungsset
-        - Schlauchbinden
-        - Forstkiste Korbaufnahme
-        - Handscheinwerfer
-        - Warndreieck "Feuerwehr"
-        - Schwerlastaufnahme
-        - "ABC-Kupplungsschl\xFCssel"
-        - Krankentrage 2-teilig
-        - Kabeltrommel 230 V
-        - Aufnahme Korbtrage
-        - Schnittschutzjacke
-        - Druckluftschlauch
-        - "Reserve-Akku E-Motors\xE4ge"
-        - Meldertasche
-        - Suchscheinwerfer
-        - Druckschlauch B
-        - Alurandschaufel
-        - Benzinkanister
-        - Verkehrsleitkegel
-        - Absturzsicherung MSA
         - 'Verbindungsschlauch
 
           Wenderohr'
-        - Schaufeltrage
-        - Flankierer
-        - Korbtrage
-        - Hohlstrahlrohr
-        - Alu-Rettungsdecke
-        - Arbeitsmesser
-        - Lichtfluter
-        - "Einf\xFCllstutzen"
-        - Entfernungsmesser
-        - Verteiler
-        - "Schl\xFCsselset"
-        - Reserveflasche
-        - "Sch\xE4kel"
-        - "Schlauchbr\xFCcken"
-        - Einweghandschuhe
-        - Hacke kurz
-        - "Druckl\xFCfter"
-        - Auffahrbohlen
-        - Schnittschutzbeinlinge
-        - Schutzhandschuhe
-        - "Atemschutzger\xE4t"
-        - Stromerzeuger
-        - Sprungretter
-        - Druckschlauch C
-        - Druckbegrenzungsventil
+        - Notrettungsset
+        - Rollgliss
+        - Werkzeugkasten
+        - Wenderohr
+        - "ABC-Pulverl\xF6scher"
+        - Druckluftpistole
+        - Handscheinwerfer
+        - 'Feuerwehrgurt m.
+
+          Verbindungsmittel'
+        - Abgasschlauch Stromerzeuger
+        - "Handf\xE4ustel"
         - "\xDCbergangsst\xFCck B-C"
+        - Druckluftschlauch
+        - Auffahrbohlen
+        - Suchscheinwerfer
+        - "Druckl\xFCfter"
         - Baufolie 4 x 4 m
-        - Rettungsleine
         - "Hydrantenschl\xFCssel"
-        - Zimmermannshammer
+        - Arbeitsmesser
         - Feuerwehraxt
+        - Druckschlauch C 7 m
+        - Druckschlauch C
+        - "Schn\xFCrleinen"
+        - "Bogens\xE4ge"
+        - Schlauchbinden
+        - Stromerzeuger
+        - Kabeltrommel 230 V
+        - "Schlauchbr\xFCcken"
+        - Lichtfluter
+        - Atemschutz-Vollmaske
+        - Schnittschutzhose
+        - Handlampe
+        - Warnweste
+        - Absperrband
+        - Verteiler
+        - Benzinkanister
+        - Brandfluchthaube
+        - Korbtrage
+        - "Einf\xFCllstutzen"
+        - Schaufeltrage
+        - Forstkiste Korbaufnahme
+        - Zimmermannshammer
+        - Aufstiegsleiter
+        - Druckbegrenzungsventil
+        - "Sch\xE4kel"
+        - "\xD6lkanister"
+        - Warndreieck "Feuerwehr"
+        - Halligan-Tool
+        - Safety Peak Rucksack
+        - Druckluft Ausgang
+        - Entfernungsmesser
+        - Schnittschutzjacke
+        - "Handfunkger\xE4t"
+        - Unterlegplatte
       high_score: 0
       high_strike: 0
       high_strike_image: 0
@@ -912,145 +889,140 @@ Hallein:
       current:
         correct_answers: 0
         tool_list:
+        - Dunggabel
+        - Schneeketten
+        - Schlauchbinden
+        - "Kamint\xFCrschl\xFCssel"
+        - "Bogens\xE4ge"
+        - "Motors\xE4ge"
+        - Schutzkorb Saugkorb
+        - Druckbegrenzungsventil
+        - Saugkorb
+        - Schlauchladen
+        - Dieselkanister
+        - Klappkloben
+        - Notrettungsset
+        - "Schl\xFCsselkasten"
+        - Vorschlaghammer
+        - Stativ 1,7 m
+        - Erste-Hilfe-Rucksack
+        - "Handf\xE4ustel"
+        - Abgasschlauch Stromerzeuger
+        - Feuerwehrgurt
+        - B-Saugschlauch
         - Forstkeil
-        - Verteiler
-        - 'Abgasschlauch Stromerzeuger
-
-          '
+        - "Einrei\xDFhaken"
+        - Kunststoffplane
+        - Lichtfluter
+        - Arbeitsmesser
+        - Rettungsleine
         - Feuerwehraxt
-        - Stativ 5 m
+        - Forsthelm
+        - Anhaltekelle
+        - "Handfunkger\xE4t"
+        - Suchscheinwerfer
+        - "Atemschutzger\xE4t"
+        - "Zubeh\xF6r Motors\xE4ge"
+        - Feuerpatsche
+        - Werkzeugsatz TS
+        - "A125-Kupplungsschl\xFCssel"
+        - "Schlauchbr\xFCcken"
+        - "L\xF6schdecke"
+        - Handscheinwerfer
+        - Feuerwehrbeil
+        - Sicherungsgeschirr
+        - Rundschlinge
+        - "Eisens\xE4ge"
+        - Tragetuch
+        - Tauchpumpe
+        - Schachthaken
+        - Hohlstrahlrohr
+        - Segeltucheimer
+        - Steckleiter
+        - Dungkralle
+        - Tragkraftspritze
+        - Leinensatz
+        - Warndreieck "Feuerwehr"
+        - Schlauchtragekorb
+        - Greifzugseil
+        - "Rohrkr\xFCmmer"
+        - Hubwinde
+        - Verbandskasten
+        - A-Saugschlauch
+        - Strahlrohr B
+        - Kabeltrommel 230 V
+        - "Sammelst\xFCck BB-A"
+        - Wathose
+        - "\xDCbergangsst\xFCck A125-A110"
+        - Benzinkanister
+        - "Kettengeh\xE4nge"
+        - Warnweste
+        - Saugkorb B
+        - Stahlseil 2,5 m
+        - Schutzhandschuhe
+        - "BC-Kupplungsschl\xFCssel"
         - "ABC-Pulverl\xF6scher"
         - "\xD6lbindemittel"
-        - Schutzhandschuhe
-        - Druckschlauch B
-        - "\xDCbergangsst\xFCck A125-A110"
-        - Erste-Hilfe-Rucksack
-        - Heugabel
-        - Dieselkanister
-        - Flachansauger
-        - "M\xFClls\xE4cke"
-        - "Unterflur-Hydrantenschl\xFCssel\n"
-        - Hacke kurz
-        - "St\xFCtzstange"
-        - "Zubeh\xF6r Motors\xE4ge"
-        - Stativ 1,7 m
-        - Strahlrohr B
-        - Lichtfluter
-        - 'Steckleiter Verbindungsteil
-
-          '
-        - Anhaltekelle
-        - Rettungsleine
-        - "CO2-L\xF6scher"
-        - "Schl\xFCsselkasten"
-        - "Kettengeh\xE4nge"
-        - Leinensatz
-        - Feuerwehrbeil
+        - "\xDCbergangsst\xFCck A-B"
+        - "Atemschutz \xDCberwachungstafel"
+        - "ABC-Kupplungsschl\xFCssel"
+        - "Schn\xFCrleinen"
+        - Absperrband
         - Atemschutz-Vollmaske
-        - Kunststoffplane
-        - "BC-Kupplungsschl\xFCssel"
+        - "Hydrantenschl\xFCssel"
+        - Hydroschild C
+        - Zimmermannshammer
+        - Flachansauger
+        - "\xDCbergangsst\xFCck B-C"
+        - Halteleine
+        - Druckschlauch B
+        - "St\xFCtzkr\xFCmmer"
+        - "M\xFClls\xE4cke"
+        - Abschleppseil
+        - Kescher
+        - Homelite-Pumpe
+        - Druckschlauch C
         - Stromerzeuger MAG
-        - Feuerwehrgurt
-        - Flankierer
-        - "Atemschutzger\xE4t"
-        - Hubwinde
-        - Tauchpumpe
+        - Steckleiter Verbindungsteil
+        - Reserveflasche
+        - Brechstange kurz
+        - Kombikanister
+        - Stahlseil 5 m
+        - "Unterflur-Hydrantenschl\xFCssel"
+        - Arbeitsleine
+        - Sappel
+        - Bolzenschneider
+        - Schlauchknickschutz
         - Meldertasche
+        - Handlampe
+        - "Fluterbr\xFCcke"
+        - Heugabel
         - 'Warnlichthaube
 
           Handscheinwerfer'
-        - Saugkorb B
-        - Reserveflasche
-        - "Sch\xE4kel"
         - Greifzug
-        - Arbeitsleine
-        - "Motors\xE4ge"
-        - "\xDCbergangsst\xFCck B-C"
-        - "Stra\xDFenbesen"
-        - "Einf\xFCllstutzen"
-        - A-Saugschlauch
-        - "Schn\xFCrleinen"
-        - Feuerpatsche
-        - Arbeitsmesser
-        - Absperrband
-        - "St\xFCtzkr\xFCmmer"
-        - Abschleppseil
-        - Rundschlinge
-        - Greifzugseil
-        - Wathose
         - Hacke lang
-        - Krankenhausdecke
-        - Schneeketten
-        - "Sammelst\xFCck BB-A"
         - "Verl\xE4ngerungskabel"
-        - "\xDCbergangsst\xFCck A-B"
-        - "Einrei\xDFhaken"
-        - Benzinkanister
-        - Forsthelm
-        - Dunggabel
-        - Schlauchknickschutz
-        - Tragetuch
-        - Krampen
-        - Druckschlauch C
-        - "L\xF6schdecke"
+        - Flankierer
+        - Krankenhausdecke
         - "Steckschl\xFCsselsatz"
-        - Schutzkorb Saugkorb
-        - "Schlauchbr\xFCcken"
-        - Stromerzeuger klein
-        - "Rohrkr\xFCmmer"
-        - Segeltucheimer
-        - Handlampe
-        - Druckbegrenzungsventil
-        - Werkzeugkasten
-        - "ABC-Kupplungsschl\xFCssel"
-        - "A125-Kupplungsschl\xFCssel"
-        - Trichter
-        - Kombikanister
-        - "Hydrantenschl\xFCssel"
-        - Hohlstrahlrohr
-        - "Handfunkger\xE4t"
-        - Halteleine
-        - Saugkorb
-        - Schlauchtragekorb
-        - Verbandskasten
-        - Sicherungsgeschirr
-        - Schlauchladen
-        - Alurandschaufel
-        - Suchscheinwerfer
-        - Bolzenschneider
-        - Brechstange kurz
-        - Kescher
-        - "Bogens\xE4ge"
-        - Homelite-Pumpe
-        - Atemschutzfilter
-        - Schlauchbinden
-        - Tragkraftspritze
-        - Stahlseil 5 m
-        - Hydroschild C
-        - Notrettungsset
-        - "Eisens\xE4ge"
-        - "Fluterbr\xFCcke"
-        - Sappel
-        - "Atemschutz \xDCberwachungstafel\n"
-        - Standrohr
-        - Schnittschutzhose
-        - Stahlseil 2,5 m
-        - Kabeltrommel 230 V
-        - Steckleiter
-        - Dungkralle
-        - Vorschlaghammer
-        - Warnweste
-        - Klappkloben
-        - Brechstange lang
-        - "Handf\xE4ustel"
+        - Stativ 5 m
         - Schiebeleiter 2-teilig
-        - "Kamint\xFCrschl\xFCssel"
-        - B-Saugschlauch
-        - Werkzeugsatz TS
-        - Schachthaken
-        - Zimmermannshammer
-        - Handscheinwerfer
-        - Warndreieck "Feuerwehr"
+        - Schnittschutzhose
+        - Stromerzeuger klein
+        - "Sch\xE4kel"
+        - Krampen
+        - Alurandschaufel
+        - "Einf\xFCllstutzen"
+        - "Stra\xDFenbesen"
+        - Atemschutzfilter
+        - Trichter
+        - "St\xFCtzstange"
+        - Brechstange lang
+        - Werkzeugkasten
+        - Verteiler
+        - Hacke kurz
+        - Standrohr
       high_score: 0
       high_strike: 0
       high_strike_image: 0
@@ -1060,250 +1032,237 @@ Hallein:
       current:
         correct_answers: 0
         tool_list:
-        - Abschleppseil 12 mm
-        - Rollgliss
-        - Steckleiter
-        - "ABC-Pulverl\xF6scher 6 kg"
-        - Chemieschutzhandschuhe
-        - Kettenstrang 10 t 3 m
-        - Absperrband
-        - Rangierroller lenkbar
-        - Gurt f. Radklammer
-        - Stativ 5 m
-        - Helm m. Funkgarnitur
-        - Notrettungsset
-        - "Schn\xFCrleinen"
-        - Trennschleifer
-        - Unterschiebbock
-        - Halteleine
-        - Seilschlinge 16 mm 20 m
-        - Eckrohrzange funkenfrei
-        - Holzkeil
-        - Greifzug T35
-        - "Schl\xFCsselkasten"
-        - Kabeltrommel 230 V
-        - Rundschlinge 60 kN
-        - Bolzen Umlenkrolle
-        - Feuerwehraxt
-        - 'Fernsteuerung Suchscheinwerfer
-
-          '
-        - "ABC-Pulverl\xF6scher 12 kg"
-        - "Tr\xE4gerklemme 5 t"
-        - Kantenreiter
-        - "Schleifkorbtrage\nm. Geh\xE4nge"
-        - Signaltaschenlampe
-        - Kombikanister
-        - "R\xFCstholz"
-        - "Fluterbr\xFCcke"
-        - Fernsteuerung Seilwinde
-        - Hacke kurz
-        - "Einf\xFCllstutzen"
-        - "Sanit\xE4tskasten\nm. Beatmungsbeutel"
-        - "Hydrantenschl\xFCssel"
-        - Dichtpfropfen
-        - Rundschaufel
-        - "Rauchfangt\xFCrschl\xFCssel"
-        - Bolzenschneider
-        - Erdungslitze
-        - Atemluftflasche 300 bar
-        - Tauchpumpe 2400 l/min
-        - Heugabel
-        - "Motors\xE4ge kurz"
-        - "Ger\xFCstklemme"
-        - "Eisens\xE4ge"
-        - "Seilkeil gro\xDF"
-        - "Verl\xE4ngerungskabel 230 V"
-        - "Endst\xFCckbefestigung\nKranarm"
-        - "\xDCbergangsst\xFCck B-C"
-        - Abschleppseil 16 mm
-        - Erdungskabel
-        - Werkzeugkasten
-        - "Sch\xE4kel 10 t"
-        - "Kombis\xE4ge/Lochs\xE4ge"
-        - Alurandschaufel
-        - Drahtstift
-        - Abschleppstange
-        - "Absperrschl\xFCssel\nHauswasser"
-        - Radkreuz PKW
-        - Stahlseil 10 m
-        - Einweghandschuhe
-        - Umlenkrolle Kranseilwinde
-        - Klappkloben
-        - Lederhandschuhe
-        - Helmlampe
-        - "Hebekissensatz gro\xDF"
-        - Verzurreinrichtung
-        - "Handfunkger\xE4t"
-        - Seilkeil klein
-        - "Rundschlinge f. PKW-\xD6sen"
-        - Unterlegmatten Gummi
-        - "Steckschl\xFCsselsatz"
-        - Kurbel Hydraulikhaspel
-        - Stativ 1,7 m
-        - Krankentrage
-        - Filter
-        - Dichtungsband
-        - Krankenhausdecke
-        - Umlenkrolle 140 kN
-        - Tauchpumpe 850 l/min
-        - Krampen
-        - Schwelleraufsatz
-        - Schachtabdeckung
-        - Warndreieck "Feuerwehr"
-        - Warnblitzleuchte
-        - 'Einzelsteuerorgan
-
-          Hebekissen'
-        - Schnittschutzhose
-        - Feuerwehrgurt
-        - "M\xFClls\xE4cke"
-        - Gummihammer
-        - "Ausr\xE4umhaken"
-        - Hydr. Zylinder
-        - Hacke lang
-        - Verbundglasschneider
-        - Schlagbohrmaschine
-        - Spitzschaufel
-        - Meldertasche
-        - 'Stange f. Rangierwagenheber
-
-          '
-        - Teleskopleiter
-        - "S\xFCdbahnwinde"
-        - "Sch\xE4kel 12 t"
-        - Freilandverankerung
-        - Durchzugsnadel
-        - Feuerpatsche
-        - Rettungsleine
-        - Baumschoner
-        - Brechstange 1,7 m
-        - Hammer funkenfrei
-        - Auffangplane 5,5 x 5,5 m
-        - Stromerzeuger 10 kVA
-        - Schachthaken
-        - "ABC-Kupplungsschl\xFCssel"
-        - Umlenkrolle 200 kN
-        - "Kranabst\xFCtzunterlagen"
-        - Seilklemme
-        - Sitzgurt
-        - Kettenstrang 8 t 3 m
-        - Rettungsplattform
-        - Kantholz
-        - Seilschlinge 25 mm 3 m
-        - Plane 1,4 x 2,2 m
-        - Filtermaske
-        - "Motors\xE4ge lang"
-        - "Verl\xE4ngerungskabel 400 V"
-        - Unterlegrollen
-        - Handscheinwerfer
-        - "\xDCbergangsst\xFCck Strom"
-        - Airbag Safe
-        - Rohrzange funkenfrei
-        - Force Axt
-        - 'Ersatzbacken Rettungsspreizer
-
-          '
-        - Schaumgummimatte
-        - Aufsatz f. Rodator
-        - "Federk\xF6rner"
-        - Hebekissensatz klein
-        - Erdungsklemmen funkenfrei
-        - Leckdichtkissen
-        - "Einh\xE4ngefolie Faltbeh\xE4lter"
-        - Hitzeschutzhandschuhe
-        - Sappel
-        - Greifzug HIT/32
-        - "N\xE4gel"
-        - "Bogens\xE4ge"
-        - "Haken m. \xD6se 2 t"
-        - Arbeitsleine
-        - Hebegurt 6 m
-        - Kettenstrang 5 t 5 m
-        - Moosgummiplatte
-        - Strickleiter 20 m
-        - Auffangmulden
+        - Hydr. Rettungssatz
         - Dieselkanister
-        - "Deckenst\xFCtzen"
-        - "Einrei\xDFhaken"
+        - "Verl\xE4ngerungskabel 400 V"
+        - Rundschaufel
+        - Wathose
+        - Vorschlaghammer
+        - Rohrzange
+        - "Faltbeh\xE4lter"
+        - Filter
+        - "M\xFClls\xE4cke"
+        - Stahlseil 5 m
+        - Brechstange 1,7 m
+        - Moosgummiplatte
+        - Spitzschaufel
+        - Aufsatz f. Rodator
+        - "Verl\xE4ngerungskabel 230 V"
+        - Feuerwehraxt
+        - Hydr. Kompaktaggregat
+        - "\xDCbergangsst\xFCck Strom"
+        - Chemieschutzhandschuhe
+        - Spezial Hebematte 2,5 t
+        - Fernsteuerung Seilwinde
+        - Klappspaten
+        - Drahtstift
+        - Greifzug HIT/32
+        - Rundschlinge 60 kN
+        - Notrettungsset
+        - Bolzenschneider
+        - Arbeitsleine
+        - "Sch\xE4kel"
+        - Eckrohrzange funkenfrei
+        - Verzurreinrichtung
+        - Tauchpumpe 850 l/min
         - 'Doppelsteuerorgan
 
           Hebekissen'
-        - "Sch\xE4kel 6 t"
-        - Rohrzange
-        - "\xD6lbindemittel"
-        - Plane 4x4 m
-        - Arbeitsmesser
-        - 'Abgasschlauch Stromerzeuger
-
-          '
+        - Krankenhausdecke
         - Lichtfluter
-        - Klappspaten
-        - Schaleisen
-        - Druckschlauch B
-        - "Kransteuerger\xE4t"
-        - "Sch\xE4kel 15 t"
-        - "L\xF6schdecke"
-        - Stahlseil 2,5 m
-        - Spezial Hebematte 2,5 t
-        - Absperrstangen
-        - 'Ersatzmesser Rettungsschere
-
-          '
-        - "Fassschl\xFCssel funkenfrei"
-        - Holzhammer
-        - Brechstange 1,4 m
-        - Stahlseil 5 m
-        - Haken f. Kran
-        - "Hydr. Schlauchverl\xE4ngerung"
-        - "\xDCbergangsst\xFCck\nStrom m. Polwender"
-        - Schutzhandschuhe
-        - Schnittschutzbeinlinge
+        - Kettenstrang 10 t 3 m
+        - "Schl\xFCsselkasten"
+        - Hammer funkenfrei
+        - Kettenstrang 15 t 0,75 m
+        - "Tr\xE4gerklemme 5 t"
+        - Handlampe
+        - Rangierroller lenkbar
+        - Seilschlinge 16 mm 20 m
+        - Kettenstrang 8 t 3 m
+        - Filtermaske
+        - Hitzeschutzanzug
+        - Durchzugsnadel
+        - Umlenkrolle 140 kN
+        - Kurbel Hydraulikhaspel
+        - Einweghandschuhe
+        - Rettungsplattform
+        - Dichtungsband
+        - "Bogens\xE4ge"
+        - Umlenkrolle 200 kN
+        - Dunggabel
+        - Heugabel
         - 'Verbindungsschlauch
 
           Leckdichtkissen'
-        - Radklammer
-        - Hydr. Kompaktaggregat
-        - Schneeketten
-        - Dunggabel
-        - Forsthelm
-        - Hebegurt 4 m
-        - Kabeltrommel 400 V
-        - Kanister leer 10 l
-        - Vorschlaghammer
-        - Wirbelhaken
-        - Handlampe
-        - "Ger\xFCst Faltbeh\xE4lter"
-        - Benzinkanister
-        - Bohrhammer
-        - Pedalschneider
-        - Absperrpfropfen
-        - Rundschlinge 80 kN
-        - Wathose
-        - Stromschnellangriff
-        - "Sch\xE4kel"
-        - Zurrgurt
-        - Hydr. Rettungssatz
-        - Anhaltekelle
-        - Hakenelement Takler
-        - Stromerzeuger 30 kVA
-        - "Erdungsspie\xDF funkenfrei"
-        - Fussteil Kantenreiter
-        - Kettenstrang 15 t 0,75 m
-        - Gripp Plattengreifer
-        - "Stra\xDFenbesen"
-        - Brechstange 0,7 m
-        - Hitzeschutzanzug
-        - "Faltbeh\xE4lter"
-        - Radkreuz LKW
-        - Hebebaum
-        - "Grabenst\xFCtze"
-        - Rangierwagenheber 1,5 t
-        - Elektrowerkzeug
         - Verkehrsleitkegel
+        - Gripp Plattengreifer
+        - "Eisens\xE4ge"
+        - "Rundschlinge f. PKW-\xD6sen"
+        - Handscheinwerfer
+        - Forsthelm
+        - Schneeketten
+        - Elektrowerkzeug
+        - Feuerwehrgurt
+        - Bohrhammer
+        - Ersatzmesser Rettungsschere
+        - Pedalschneider
+        - Schaleisen
+        - Brechstange 0,7 m
+        - "Haken m. \xD6se 2 t"
+        - "\xDCbergangsst\xFCck B-C"
+        - Seilschlinge 25 mm 3 m
+        - Radkreuz LKW
+        - Rettungsleine
+        - "Motors\xE4ge lang"
+        - "Motors\xE4ge kurz"
+        - Signaltaschenlampe
+        - Sitzgurt
+        - "Ger\xFCst Faltbeh\xE4lter"
+        - Dichtpfropfen
+        - "Schn\xFCrleinen"
+        - Stromerzeuger 30 kVA
+        - "Endst\xFCckbefestigung\nKranarm"
+        - Holzhammer
+        - Rundschlinge 80 kN
+        - "Hydr. Schlauchverl\xE4ngerung"
+        - Meldertasche
+        - "Rauchfangt\xFCrschl\xFCssel"
+        - Schwelleraufsatz
+        - Absperrpfropfen
+        - Erdungsklemmen funkenfrei
+        - Alurandschaufel
+        - Freilandverankerung
+        - Hacke lang
+        - Stativ 5 m
+        - Trennschleifer
+        - Hitzeschutzhandschuhe
+        - "Schleifkorbtrage\nm. Geh\xE4nge"
+        - Plane 1,4 x 2,2 m
+        - Stahlseil 10 m
+        - Kabeltrommel 400 V
+        - Halteleine
+        - Steckleiter
+        - Strickleiter 20 m
+        - "Absperrschl\xFCssel\nHauswasser"
+        - Gurt f. Radklammer
+        - "Sanit\xE4tskasten\nm. Beatmungsbeutel"
+        - Benzinkanister
+        - Abgasschlauch Stromerzeuger
+        - "Federk\xF6rner"
+        - Unterschiebbock
+        - Schlagbohrmaschine
+        - Force Axt
+        - Helm m. Funkgarnitur
+        - Seilkeil klein
+        - Stromerzeuger 10 kVA
+        - Feuerpatsche
+        - "Fluterbr\xFCcke"
+        - Leckdichtkissen
+        - Hacke kurz
+        - Rangierwagenheber 1,5 t
+        - Plane 4x4 m
+        - Abschleppseil 16 mm
+        - "Sch\xE4kel 6 t"
+        - Haken f. Kran
+        - Warnblitzleuchte
+        - "Grabenst\xFCtze"
+        - "Kranabst\xFCtzunterlagen"
+        - Airbag Safe
+        - Baumschoner
+        - Kantholz
+        - Erdungslitze
+        - Brechstange 1,4 m
+        - Seilklemme
+        - "Einh\xE4ngefolie Faltbeh\xE4lter"
+        - Absperrstangen
+        - Fernsteuerung Suchscheinwerfer
+        - "N\xE4gel"
+        - Kombikanister
+        - Unterlegmatten Gummi
+        - "Einf\xFCllstutzen"
+        - Helmlampe
+        - Erdungskabel
+        - Radkreuz PKW
+        - "Einrei\xDFhaken"
+        - Absperrband
+        - "Kombis\xE4ge/Lochs\xE4ge"
+        - "Kransteuerger\xE4t"
+        - Abschleppseil 12 mm
+        - Krankentrage
+        - Radklammer
+        - Schaumgummimatte
+        - Hebekissensatz klein
+        - "R\xFCstholz"
+        - Rohrzange funkenfrei
+        - "\xDCbergangsst\xFCck\nStrom m. Polwender"
+        - Schnittschutzbeinlinge
+        - Stativ 1,7 m
+        - "S\xFCdbahnwinde"
+        - Zurrgurt
+        - Arbeitsmesser
+        - "ABC-Pulverl\xF6scher 12 kg"
+        - Umlenkrolle Kranseilwinde
+        - Werkzeugkasten
+        - "Sch\xE4kel 12 t"
+        - Stahlseil 2,5 m
+        - "ABC-Pulverl\xF6scher 6 kg"
+        - Kettenstrang 5 t 5 m
         - 'Verbindungsschlauch
 
           Hebekissen'
+        - "L\xF6schdecke"
+        - Tauchpumpe 2400 l/min
+        - Hebegurt 4 m
+        - "Sch\xE4kel 15 t"
+        - Hakenelement Takler
+        - Kantenreiter
+        - Schnittschutzhose
+        - Warndreieck "Feuerwehr"
+        - Unterlegrollen
+        - "Handfunkger\xE4t"
+        - "Stra\xDFenbesen"
+        - "Ger\xFCstklemme"
+        - Anhaltekelle
+        - "Sch\xE4kel 10 t"
+        - "Seilkeil gro\xDF"
+        - Stange f. Rangierwagenheber
+        - Schachtabdeckung
+        - "Hebekissensatz gro\xDF"
+        - Klappkloben
+        - Ersatzbacken Rettungsspreizer
+        - Holzkeil
+        - Druckschlauch B
+        - Bolzen Umlenkrolle
+        - Schutzhandschuhe
+        - "Deckenst\xFCtzen"
+        - Krampen
+        - "Hydrantenschl\xFCssel"
+        - Wirbelhaken
+        - "ABC-Kupplungsschl\xFCssel"
+        - "\xD6lbindemittel"
+        - Kanister leer 10 l
+        - "Ausr\xE4umhaken"
+        - Auffangmulden
+        - Greifzug T35
+        - Kabeltrommel 230 V
+        - Hebegurt 6 m
+        - Hydr. Zylinder
+        - Atemluftflasche 300 bar
+        - "Steckschl\xFCsselsatz"
+        - "Fassschl\xFCssel funkenfrei"
+        - Fussteil Kantenreiter
+        - Teleskopleiter
+        - Schachthaken
+        - Sappel
+        - Stromschnellangriff
+        - Rollgliss
+        - "Erdungsspie\xDF funkenfrei"
+        - Abschleppstange
+        - Hebebaum
+        - Lederhandschuhe
+        - Gummihammer
+        - Auffangplane 5,5 x 5,5 m
+        - Verbundglasschneider
       high_score: 0
       high_strike: 0
       high_strike_image: 0
@@ -1313,232 +1272,227 @@ Hallein:
       current:
         correct_answers: 0
         tool_list:
-        - "Dreikantschl\xFCssel"
-        - Verteiler
-        - Stromerzeuger
-        - Kabeltrommel 230 V
-        - Kurbel Schlauchhaspel
-        - "\xD6lbindemittel"
-        - Reserveflasche
-        - Windenkeile
-        - Auffangplane 3x4 m
-        - "CO2-L\xF6scher"
-        - Rundschlinge
-        - Erdungslitze
-        - "ABC-Trockenl\xF6scher"
-        - Druckschlauch B
-        - Erste-Hilfe-Rucksack
-        - Tauchpumpe
+        - Umlenkrolle 60 kN
+        - Halligan-Tool m. Hammer
+        - Brechstange
+        - "Einrei\xDFhaken"
         - "Auto-\xD6ffnungswerkzeug"
-        - Schlauchhaspel
-        - "\xDCbergangsst\xFCck A125-A110"
+        - Reservemaske
         - Werkzeugsatz VU
-        - Verteilerschnellangriff
+        - Schachtabdeckung
+        - Luftschlauch m. Pistole
+        - "Rettungss\xE4ge"
+        - Stab-Fast
+        - Filtermaske
+        - "Druckl\xFCfter"
+        - "N\xE4gel"
+        - "Waschb\xFCrste"
+        - Warndreieck "Feuerwehr"
+        - Stab-Pack
+        - Druckbegrenzungsventil
+        - "Sch\xE4kel 6,5 t"
+        - Kennzeichnungsleuchtenset
+        - Tauchpumpe
+        - Hydroschild C
+        - Bindedraht
+        - Gefahrguthelfer
+        - Auffangplane 3x4 m
+        - Arbeitsleine
+        - Strahlrohr B
+        - Pedalschneider
+        - Umlenkrolle 140 kN
+        - "Blindkupplungen \xD6lsperre"
+        - "Stra\xDFenbesen"
         - "Ausgie\xDFer"
-        - "S\xE4bels\xE4ge"
-        - Kabeltrommel 400 V
+        - "Hydrantenschl\xFCssel"
+        - Erdungslitze
+        - Handbohrmaschine
+        - "Schl\xFCsselset"
+        - Akku-Lampe
+        - Handwerkzeug
+        - Strongarm
+        - Greifzug 30 kN
+        - Benzinkanister
+        - "Schn\xFCrleinen"
+        - Druckluft Ausgang
+        - Defibrillator
+        - Absperrstangen
+        - "Rauchfangt\xFCrschl\xFCssel"
+        - Meldertasche
+        - Schlauchrollwagen
+        - Hebekissensatz
+        - Notrettungsset
+        - "Handf\xE4ustel"
+        - "Hydr. Schlauchverl\xE4ngerung"
+        - "Sammelst\xFCck BB-A"
+        - Auffangtank 1500 l
+        - Feuerwehraxt
+        - "Zubeh\xF6r Spineboard"
+        - Kunststoffeimer
+        - Feuerwehrgurt
+        - Spineboard
+        - "Schlauchbr\xFCcken Alu"
+        - Hydr. Schere
+        - Hacke kurz
+        - "Atemschutzger\xE4t"
+        - Krampen
+        - Gartenschlauch Ausgang
+        - Hohlstrahlrohr
+        - "Ersatzkette Motors\xE4ge"
+        - Rauchvorhang
+        - Handtuch
+        - "W\xE4rmebildkamera"
+        - Tragetuch
+        - Anhaltekelle
+        - Heugabel
+        - Bolzenschneider
+        - Trainingsanzug
+        - "HD-Kupplungsschl\xFCssel"
         - Bodenteller Absperrstangen
+        - Lichtfluter
+        - Hygienestation
+        - Spitzschaufel
+        - Hacke lang
+        - "Unterlegh\xF6lzer"
+        - Druckschlauch B
+        - "Ausr\xE4umhaken"
+        - Schiebeleiter 3-teilig
+        - HD-Schnellangriff
+        - Druckminderer Hebekissen
+        - Schlauchpaket
+        - Gartenschlauch m. Pistole
+        - Schaumschnellangriff
+        - "St\xFCtzkr\xFCmmer"
+        - Schuttwanne
+        - "Einf\xFCllstutzen"
+        - Kabeltrommel 400 V
+        - Reserve-Akku
+        - "Dreikantschl\xFCssel"
+        - "Ersatzkette Rettungss\xE4ge"
+        - Schutzbrille
+        - Hydr. Spreizer
         - 'Druckluftflasche
 
           Hebekissen'
-        - Gartenschlauch m. Pistole
-        - "Hydrantenschl\xFCssel"
-        - Vorschlaghammer
-        - "Fluterbr\xFCcke"
-        - Moosgummiplatte
-        - Schlauchbinden
-        - "ABC-Kupplungsschl\xFCssel"
-        - Kescher
-        - Warndreieck "Feuerwehr"
-        - "Waschb\xFCrste"
-        - Schlauchtragekorb
-        - Chemieschutzstiefel
-        - "Einf\xFCllstutzen"
-        - Druckbegrenzungsventil
-        - Krankenhausdecke
-        - Lichtfluter
-        - D-Saugschlauch Zumischer
-        - "Schn\xFCrleinen"
-        - Hygienestation
-        - Reserve-Akku
-        - "Kette zweistr\xE4ngig"
-        - Umlenkrolle 60 kN
-        - Einweghandschuhe
-        - "Sammelst\xFCck BB-A"
-        - Warnblitzleuchte
-        - Krampen
-        - Freilandverankerung
-        - Patientenschutz
-        - Sappel
-        - 'Verbindungsschlauch
-
-          Hebekissen'
-        - "\xDCbergangsst\xFCck A-B"
-        - "Ersatzkette Rettungss\xE4ge"
-        - "HD-Kupplungsschl\xFCssel"
-        - "Erdungsspie\xDF"
-        - "Schlauchbr\xFCcken Alu"
-        - Schlauchpaket
-        - Reserve-Akku Strongarm
-        - Schuttwanne
-        - Dieselkanister
-        - "Motors\xE4ge"
-        - "Rettungss\xE4ge"
-        - Stahlseil 5 m
-        - Schutzbrille
-        - "T\xFCr\xF6ffnungsrucksack"
-        - "CAFS-L\xF6scher"
-        - "Blindkupplungen \xD6lsperre"
-        - Ersatzbacken Spreizer
-        - "M\xFClls\xE4cke"
-        - "Atemschutzger\xE4t"
-        - 'Aggregat hydr.
-
-          Rettungssatz'
-        - Handwerkzeug
-        - Hydroschild C
-        - Stab-Fast
-        - Absperrband
-        - Dichtpfropfen
-        - Schwelleraufsatz
-        - Spineboard
-        - Brandfluchthaube
-        - "St\xFCtzkr\xFCmmer"
-        - Notrettungsset
-        - Druckminderer Hebekissen
-        - Feuerwehraxt
-        - Defibrillator
-        - 'Steckleiter Verbindungsteil
-
-          '
-        - Schachtabdeckung
-        - Leichensack
-        - Brechstange
-        - Zurrgurt
-        - Hydr. Zylinder
-        - Chemieschutzanzug Stufe 2
-        - Wasserwerfer tragbar
-        - Schnittschutzbeinlinge
-        - Filter
-        - Flankierer
-        - Umlenkrolle 140 kN
-        - "Zubeh\xF6r Spineboard"
-        - Hacke lang
-        - "Sch\xE4kel 6,5 t"
-        - Dichtkeil
-        - Reservemaske
-        - Strongarm
-        - SpillPack
-        - Druckschlauch C
-        - Schlagbohrmaschine
-        - Schutzhandschuhe
-        - Feuerwehrgurt
-        - Absperrstangen
-        - Kunststoffeimer
-        - Handtuch
-        - Eingebaute Kabeltrommel
-        - Luftschlauch m. Pistole
-        - "Handf\xE4ustel"
-        - Hohlstrahlrohr
-        - "Stra\xDFenbesen"
-        - Halligan-Tool m. Hammer
-        - "Bogens\xE4ge"
-        - Alurandschaufel
-        - Anhaltekelle
-        - Hacke kurz
-        - "\xDCbergangsst\xFCck B-C"
-        - "N\xE4gel"
-        - Auffangtank 1500 l
-        - "K\xFChlbox"
-        - Kennzeichnungsleuchtenset
-        - Lastaufnahmesack
-        - "Kette einstr\xE4ngig"
-        - "Handfunkger\xE4t"
-        - Filtermaske
-        - Bindedraht
-        - Plane
-        - Schlauchhalter
-        - Kombikanister
-        - Treibstoffpumpe
-        - Arbeitsmesser
-        - "Ersatzkette Motors\xE4ge"
-        - "L\xF6schdecke"
-        - "Hydr. Schlauchverl\xE4ngerung"
-        - Stativ
-        - Trennschleifer
-        - "W\xE4rmebildkamera"
-        - Verkehrsleitkegel
-        - Pedalschneider
-        - Steckleiter
-        - Schachthaken
-        - Gartenschlauch Ausgang
-        - Erdungsschiene
-        - Seilklemme
-        - "Verl\xE4ngerungskabel"
-        - "Ger\xFCstklammer"
-        - Hinweiszettel Lift
-        - Heugabel
-        - Basis Sichern/Auffangen
+        - Kantenreiter
         - 'Seilspeichertrommel
 
           Greifzug'
-        - "Ausr\xE4umhaken"
-        - Spitzschaufel
-        - Schiebeleiter 3-teilig
-        - Greifzug 30 kN
-        - Steuerorgan Hebekissen
-        - Arbeitsleine
-        - Hebekissensatz
-        - Schaummittel
-        - Personensicherungsset
-        - Suchscheinwerfer
-        - Handpumpe
-        - Schlauchrollwagen
-        - Handbohrmaschine
-        - Gefahrguthelfer
-        - "Gasmessger\xE4t"
-        - Erdungszwingen
-        - Chemieschutzhandschuhe
-        - Stab-Pack
-        - "Druckl\xFCfter"
-        - Druckluft Ausgang
-        - "Unterlegh\xF6lzer"
-        - Meldertasche
-        - Holzhammer
-        - HD-Schnellangriff
-        - Filteratemschutzset
-        - Ersatzfilter
-        - Winkelschleifer
-        - Kantenreiter
+        - Dieselkanister
+        - Brandfluchthaube
+        - Dichtpfropfen
         - Schneeketten
-        - Rauchvorhang
-        - Staubmaske
-        - Rettungsleine
-        - Trainingsanzug
-        - "Einrei\xDFhaken"
-        - Benzinkanister
-        - "Rauchfangt\xFCrschl\xFCssel"
-        - Handlampe
-        - Atemschutz-Vollmaske
-        - "Atemschutz \xDCberwachungstafel\n"
-        - Strahlrohr B
-        - "Schl\xFCsselset"
-        - Forsthelm
-        - Bolzenschneider
-        - Hydr. Spreizer
-        - Akku-Lampe
-        - Stahlseil 10 m
-        - 'Abgasschlauch Stromerzeuger
-
-          '
+        - Druckschlauch C
+        - "Gasmessger\xE4t"
+        - "M\xFClls\xE4cke"
+        - Schlauchbinden
+        - "Kette zweistr\xE4ngig"
+        - Schutzhandschuhe
+        - Stromerzeuger
+        - Winkelschleifer
+        - Filteratemschutzset
         - "Sch\xE4kel 12 t"
-        - Schaumschnellangriff
-        - Hydr. Schere
-        - Tragetuch
-        - Tablet
-        - Warnweste
-        - Steuerung Seilwinde
+        - Leichensack
+        - Hydr. Zylinder
+        - Erste-Hilfe-Rucksack
+        - "\xDCbergangsst\xFCck B-C"
+        - Stahlseil 5 m
+        - Schnittschutzbeinlinge
+        - Warnblitzleuchte
+        - Stativ
+        - Handlampe
+        - Filter
+        - "ABC-Trockenl\xF6scher"
+        - "CAFS-L\xF6scher"
+        - Arbeitsmesser
+        - Forsthelm
+        - "S\xE4bels\xE4ge"
+        - Ersatzbacken Spreizer
+        - "Handfunkger\xE4t"
+        - Wasserwerfer tragbar
+        - "L\xF6schdecke"
+        - "\xDCbergangsst\xFCck A125-A110"
+        - Treibstoffpumpe
+        - Rundschlinge
+        - Schlauchtragekorb
+        - "CO2-L\xF6scher"
+        - D-Saugschlauch Zumischer
+        - Kabeltrommel 230 V
+        - Einweghandschuhe
+        - Abgasschlauch Stromerzeuger
         - Zumischer Z2
+        - Schaummittel
+        - Plane
+        - Ersatzfilter
+        - Schlagbohrmaschine
+        - Sappel
+        - Freilandverankerung
+        - Dichtkeil
+        - "Kette einstr\xE4ngig"
+        - "Atemschutz \xDCberwachungstafel"
+        - Erdungsschiene
+        - Zurrgurt
+        - Absperrband
+        - Schlauchhaspel
+        - Chemieschutzanzug Stufe 2
+        - Krankenhausdecke
+        - Stahlseil 10 m
+        - Verteiler
+        - Verkehrsleitkegel
+        - "Fluterbr\xFCcke"
+        - Staubmaske
+        - 'Verbindungsschlauch
+
+          Hebekissen'
+        - Reserveflasche
+        - Chemieschutzhandschuhe
+        - Seilklemme
+        - Alurandschaufel
+        - Eingebaute Kabeltrommel
+        - 'Aggregat hydr.
+
+          Rettungssatz'
+        - Erdungszwingen
+        - Moosgummiplatte
+        - Steckleiter Verbindungsteil
+        - Steuerung Seilwinde
+        - "T\xFCr\xF6ffnungsrucksack"
+        - Patientenschutz
+        - Windenkeile
+        - Holzhammer
+        - Verteilerschnellangriff
+        - Reserve-Akku Strongarm
+        - Vorschlaghammer
+        - Steuerorgan Hebekissen
+        - Kombikanister
+        - "ABC-Kupplungsschl\xFCssel"
+        - "Bogens\xE4ge"
+        - "Erdungsspie\xDF"
+        - "Motors\xE4ge"
+        - Tablet
+        - Handpumpe
+        - Schachthaken
+        - Kurbel Schlauchhaspel
+        - Rettungsleine
+        - Steckleiter
+        - Kescher
+        - Chemieschutzstiefel
+        - Schlauchhalter
+        - Schwelleraufsatz
+        - "K\xFChlbox"
+        - Flankierer
+        - "\xDCbergangsst\xFCck A-B"
+        - SpillPack
+        - Personensicherungsset
+        - Lastaufnahmesack
+        - Trennschleifer
+        - "Verl\xE4ngerungskabel"
+        - Basis Sichern/Auffangen
+        - Suchscheinwerfer
+        - Atemschutz-Vollmaske
+        - "\xD6lbindemittel"
+        - Hinweiszettel Lift
+        - "Ger\xFCstklammer"
       high_score: 0
       high_strike: 0
       high_strike_image: 0
@@ -1548,204 +1502,201 @@ Hallein:
       current:
         correct_answers: 0
         tool_list:
-        - Dekowanne
-        - Dieselkanister
-        - Schlauchbinden
-        - PE-Plane 4x4 m
-        - Schaumaufsatz Wasserwerfer
-        - Tragetuch
-        - "LUKAS hydr. T\xFCr\xF6ffner"
-        - Tablet
-        - Krampen
-        - Atemschutz-Vollmaske
+        - Fernstuerung Lichtmast
+        - "CO2-L\xF6scher"
+        - Netzmittel
+        - Rettungsring
+        - Handpumpe
+        - Trainingsanzug
+        - Druckschlauch B
+        - Verteiler
+        - Absperrband
+        - "L\xF6schlanze"
+        - Schnittschutzbeinlinge
+        - "Absperrschl\xFCssel\nHauswasser"
+        - Anzeige Heumesssonde
+        - Feuerwehraxt
+        - Bolzenschneider
         - Gartenschlauch
+        - Krankenhausdecke
+        - Kunststoffeimer
+        - "Atemschutzger\xE4t"
+        - Handscheinwerfer
         - "Fettbrandl\xF6scher"
-        - Zimmermannshammer
-        - "Fu\xDFtaster Haspel"
-        - "E-Motors\xE4ge"
-        - Fognail
-        - Handlampe
-        - Hacke kurz
-        - Arbeitshandschuhe
+        - Hitzeschutzhandschuhe
+        - "Sch\xE4kel"
+        - Tragetuch
+        - "Absperrschl\xFCssel Gas"
         - Forsthelm
         - "T\xFCr\xF6ffnungsrucksack"
-        - Verteiler
-        - Hacke lang
-        - "Hydrantenschl\xFCssel"
-        - Absperrstangen
-        - Staubmaske
-        - Handtuch
-        - Hydroschild C
-        - Lichtfluter
-        - Druckschlauch C
-        - Kabeltrommel 230 V
-        - Trichter
-        - "M\xFClls\xE4cke"
-        - "Zubeh\xF6r Stativ"
-        - Gasbrenner
-        - Leichensack
-        - Rauchfang-Werkzeug
-        - Brechstange kurz
-        - Druckbegrenzungsventil
-        - "K\xFChlbox"
-        - "L\xF6schdecke"
-        - Elektrowerkzeug
-        - 'Abgasschlauch Stromerzeuger
-
-          '
-        - Schiebeleiter 2-teilig
-        - "Zubeh\xF6r Trennschleifer"
-        - "Schn\xFCrleinen"
-        - "\xDCbergangsst\xFCck A-B"
-        - Hygienestation
-        - Rauchvorhang
-        - Schaum-Pumpenvormischer
-        - Verbandskasten
-        - "Waschb\xFCrste"
-        - Reserveflasche
-        - "Pressluftschl\xE4uche"
-        - Vorschlaghammer
-        - "Metallbrandl\xF6scher"
-        - Wasserwerfer tragbar
-        - Warnweste
-        - Schlauchhalter
-        - Handscheinwerfer
-        - Heugabel
-        - "Absperrschl\xFCssel Gas"
-        - Schachtabdeckung
-        - "Stra\xDFenbesen"
-        - "Atemschutz \xDCberwachungstafel\n"
-        - TNT-Tool
-        - Druckschlauch D
-        - Hinweiszettel Lift
-        - "Handfunkger\xE4t"
-        - "Pressluftschlauchger\xE4t"
-        - Spitzschaufel
-        - Schneeketten
-        - Schlauchtragekorb
-        - "Auffangbeh\xE4lter"
-        - "CO2-L\xF6scher"
-        - Elektrorettungshaken
-        - Krankenhausdecke
-        - "ABC-Pulverl\xF6scher"
-        - "ABC-Kupplungsschl\xFCssel"
-        - Benzinkanister
-        - Mittelschaumpistole
-        - Einsatzschere
-        - Schutzbrille
-        - Stativ
-        - "Gasmessger\xE4t"
-        - FFP2-Maske
-        - HD-Strahlrohr
-        - Reserve-Akku
-        - Schachthaken
-        - Sappel
-        - Handpumpe
-        - Filter
-        - Anzeige Heumesssonde
-        - Plane 4x4 m
-        - Arbeitsleine
-        - Lanze Hydrofix
-        - Tauchpumpe
-        - Alurandschaufel
-        - "Verl\xE4ngerungskabel"
-        - "Schl\xFCsselset"
-        - Anhaltekelle
-        - "S\xE4ureschutzhandschuhe"
-        - "Fassschl\xFCssel"
-        - "Einrei\xDFhaken"
-        - "Atemschutzger\xE4t"
-        - "Bogens\xE4ge"
-        - Fernstuerung Lichtmast
-        - Strahlrohr B
-        - Schnittschutzbeinlinge
-        - Schaummittel
-        - "\xDCbergangsst\xFCck B-C"
-        - Hitzeschutzanzug
+        - "Atemschutz \xDCberwachungstafel"
         - "Motors\xE4ge"
-        - Steuerung Lichtmast
-        - Monsunrohr
-        - Hitzeschutzhandschuhe
-        - "Steckschl\xFCsselsatz"
-        - Notrettungsset
-        - Bolzenschneider
-        - Waldbrandrucksack
-        - Deckelabzieher
-        - Druckschlauch B
         - "Fluterbr\xFCcke"
-        - "Dreikantschl\xFCssel"
-        - "Schlauchbr\xFCcken"
-        - Schaufeltrage
-        - Hakenleiter
-        - "HD-Kupplungsschl\xFCssel"
-        - "Sammelst\xFCck BB-A"
-        - Kurbel Schlauchhaspel
-        - "Absperrschl\xFCssel\nHauswasser"
-        - Krankentrage
-        - Lederhandschuhe
-        - Spaten
-        - Schlauchpaket
-        - Gummihandschuhe
-        - Chemieschutzanzug
-        - Filtermaske
-        - Hydrofix
-        - 'Schleifringkabeltrommel
-
-          400 V'
-        - HD-Schnellangriff
-        - Gurtmesser
-        - Wachsstift
-        - Abschleppseil
-        - Stahlblecheimer
-        - Brechstange lang
-        - Trainingsanzug
-        - Rettungsleine
-        - Reservemaske
-        - Schaumschnellangriff
-        - "Sammelst\xFCck BBB-A"
-        - 'Warnlichthaube
-
-          Handscheinwerfer'
-        - Brandfluchthaube
-        - Feuerwehrgurt
-        - Flankierer
-        - Feuerpatsche
-        - Werkzeugkasten
         - 'Schlauch f. Schaumaufsatz
 
           Wasserwerfer'
-        - Kabeltrommel 400 V
-        - Absperrband
-        - "L\xF6schlanze"
-        - D-Saugschlauch
-        - Trennschleifer
-        - Bodenteller Absperrstangen
-        - Breithaue
-        - Kunststoffeimer
-        - Netzmittel
-        - "Druckl\xFCfter"
-        - Rettungsring
-        - Stromerzeuger
-        - "Sch\xE4kel"
-        - Verkehrsleitkegel
+        - Hacke lang
+        - Staubmaske
+        - Atemschutz-Vollmaske
+        - "Dreikantschl\xFCssel"
         - Warndreieck "Feuerwehr"
-        - Betankungsgarnitur
-        - Feuerwehraxt
-        - "W\xE4rmebildkamera"
-        - "Zubeh\xF6r Motors\xE4ge"
-        - Winkelschleifer
-        - "\xDCbergangsst\xFCck A125-A110"
-        - Notfallwanne
-        - Hohlstrahlrohr
-        - Kombikanister
-        - Stahlseil 5 m
-        - "Rettungss\xE4ge"
-        - Dunggabel
-        - "Handf\xE4ustel"
-        - Kombileiter
+        - Absperrstangen
+        - "Fassschl\xFCssel"
         - "St\xFCtzkr\xFCmmer"
+        - Krampen
+        - "ABC-Pulverl\xF6scher"
+        - Anhaltekelle
+        - Wachsstift
+        - Tauchpumpe
+        - Kabeltrommel 230 V
+        - Brandfluchthaube
+        - Reservemaske
+        - Werkzeugkasten
+        - "Schn\xFCrleinen"
+        - Strahlrohr B
+        - "Schl\xFCsselset"
+        - Waldbrandrucksack
+        - Feuerwehrgurt
+        - 'Warnlichthaube
+
+          Handscheinwerfer'
+        - Gasbrenner
+        - Hydrofix
+        - "K\xFChlbox"
+        - Schneeketten
+        - "E-Motors\xE4ge"
+        - Mittelschaumpistole
+        - 'Schleifringkabeltrommel
+
+          400 V'
+        - "Zubeh\xF6r Stativ"
+        - Verbandskasten
+        - Sappel
+        - Kabeltrommel 400 V
+        - "W\xE4rmebildkamera"
+        - Filtermaske
+        - Hakenleiter
+        - Monsunrohr
+        - "Hydrantenschl\xFCssel"
+        - Feuerpatsche
+        - "Zubeh\xF6r Trennschleifer"
+        - FFP2-Maske
+        - "Handf\xE4ustel"
+        - "Waschb\xFCrste"
+        - Stahlblecheimer
+        - Hitzeschutzanzug
+        - Hacke kurz
+        - "Steckschl\xFCsselsatz"
+        - "LUKAS hydr. T\xFCr\xF6ffner"
+        - "Fu\xDFtaster Haspel"
+        - Lanze Hydrofix
+        - Hohlstrahlrohr
+        - Abschleppseil
+        - Dieselkanister
+        - Lederhandschuhe
+        - Lichtfluter
+        - Benzinkanister
+        - Deckelabzieher
+        - "Gasmessger\xE4t"
+        - Rauchfang-Werkzeug
+        - HD-Schnellangriff
+        - Fognail
+        - "Rettungss\xE4ge"
+        - Wasserwerfer tragbar
+        - Zimmermannshammer
+        - Elektrowerkzeug
+        - "Handfunkger\xE4t"
+        - Schaummittel
+        - "Bogens\xE4ge"
+        - Schaumaufsatz Wasserwerfer
         - Halligan-Tool
+        - Arbeitshandschuhe
+        - "Druckl\xFCfter"
+        - Spitzschaufel
         - Suchscheinwerfer
+        - Tablet
+        - Trennschleifer
+        - Stahlseil 5 m
+        - Brechstange lang
+        - Flankierer
+        - Handlampe
+        - Reserveflasche
+        - Elektrorettungshaken
+        - Einsatzschere
+        - Bodenteller Absperrstangen
+        - Stromerzeuger
+        - Gurtmesser
+        - Rauchvorhang
+        - Abgasschlauch Stromerzeuger
+        - "\xDCbergangsst\xFCck A-B"
+        - "Metallbrandl\xF6scher"
+        - Krankentrage
+        - Leichensack
+        - Plane 4x4 m
+        - Handtuch
+        - "Verl\xE4ngerungskabel"
+        - Rettungsleine
+        - "Pressluftschl\xE4uche"
+        - D-Saugschlauch
+        - Schlauchhalter
+        - Dekowanne
+        - "Auffangbeh\xE4lter"
+        - "M\xFClls\xE4cke"
+        - Druckschlauch C
+        - Schachthaken
+        - "Zubeh\xF6r Motors\xE4ge"
+        - PE-Plane 4x4 m
+        - Betankungsgarnitur
+        - Vorschlaghammer
+        - "Pressluftschlauchger\xE4t"
+        - "Sammelst\xFCck BBB-A"
+        - "ABC-Kupplungsschl\xFCssel"
+        - Breithaue
+        - Stativ
+        - Chemieschutzanzug
+        - Schlauchpaket
+        - Schaum-Pumpenvormischer
+        - "\xDCbergangsst\xFCck B-C"
+        - Arbeitsleine
+        - Schutzbrille
+        - Brechstange kurz
+        - Hinweiszettel Lift
+        - Schiebeleiter 2-teilig
+        - Verkehrsleitkegel
+        - "L\xF6schdecke"
+        - "Schlauchbr\xFCcken"
+        - Dunggabel
+        - Schlauchbinden
+        - Winkelschleifer
+        - "Stra\xDFenbesen"
+        - TNT-Tool
+        - Schachtabdeckung
+        - "Sammelst\xFCck BB-A"
+        - Druckschlauch D
+        - Druckbegrenzungsventil
+        - Trichter
+        - Notrettungsset
+        - Notfallwanne
+        - Spaten
+        - Kurbel Schlauchhaspel
+        - Hygienestation
+        - Heugabel
+        - Warnweste
+        - Schlauchtragekorb
+        - Alurandschaufel
+        - Hydroschild C
+        - Gummihandschuhe
+        - "Einrei\xDFhaken"
+        - Kombikanister
+        - "HD-Kupplungsschl\xFCssel"
+        - Filter
+        - Schaumschnellangriff
+        - Reserve-Akku
+        - Kombileiter
+        - HD-Strahlrohr
+        - Schaufeltrage
+        - Steuerung Lichtmast
+        - "S\xE4ureschutzhandschuhe"
       high_score: 0
       high_strike: 0
       high_strike_image: 0
@@ -1755,152 +1706,147 @@ Hallein:
       current:
         correct_answers: 0
         tool_list:
-        - "Motors\xE4ge"
-        - "Zubeh\xF6r Spineboard"
-        - Hydrofix
-        - "Schn\xFCrleinen"
-        - "W\xE4rmebildkamera"
-        - Strahlrohr B
-        - "Handf\xE4ustel"
-        - "L\xF6schlanze"
-        - "Fluterbr\xFCcke"
-        - "Ersatzbl\xE4tter Trennschleifer\n"
-        - "Sammelst\xFCck BB-A"
-        - Meldertasche
-        - "Einrei\xDFhaken"
-        - "Verschlussband L\xFCfter"
-        - "ABC-Pulverl\xF6scher"
-        - Schlauchpaket
-        - Spitzschaufel
-        - Alurandschaufel
-        - "Atemschutz \xDCberwachungstafel\n"
-        - Benzinkanister
-        - Eingebaute Kabeltrommel
-        - Schnittschutzbeinlinge
-        - "Einf\xFCllstutzen"
-        - Absperrstangen
-        - "Schlauchbr\xFCcken"
-        - Schlauchtragekorb
-        - "CO2-L\xF6scher"
-        - "Druckl\xFCfter"
-        - Hygienestation
-        - Gorgui Werkzeug
-        - Kabeltrommel 400 V
-        - Spineboard
-        - Rauchfang-Werkzeug
-        - Wasserwerfer Dach
-        - Anhaltekelle
-        - Stromerzeuger
-        - Lichtfluter
-        - Schaummittel
-        - Vorschlaghammer
-        - Hacke lang
-        - Falttank 3000 l
-        - Werkzeugkasten
-        - Schachthaken
-        - Kombischaumrohr S4/M4
-        - Waldbrandrucksack
-        - Schlauchhaspel
-        - Hydroschild C
-        - Zumischer Z8
-        - Schlauchhalter
-        - Atemschutz-Vollmaske
-        - Chemieschutzanzug Stufe 2
-        - Leichtschaumaufsatz
-        - 'Steckleiter Verbindungsteil
-
-          '
-        - Absturzsicherung
-        - "L\xF6schdecke"
-        - "Sch\xE4kel"
-        - Kombikanister
-        - "\xD6lbindemittel"
-        - "Gro\xDFrauml\xFCfter"
-        - Rauchvorhang
         - Waldbrandhelm
-        - Bolzenschneider
-        - Kabelbinder
-        - "\xDCbergangsst\xFCck A-B"
-        - Abschleppseil
-        - Druckschlauch B
-        - D-Saugschlauch
-        - Krankenhausdecke
-        - Kabeltrommel 230 V
-        - "St\xFCtzkr\xFCmmer"
-        - "HD-Kupplungsschl\xFCssel"
-        - Dieselkanister
-        - "ABC-Kupplungsschl\xFCssel"
-        - Absperrband
-        - Flankierer
-        - "Stra\xDFenbesen"
-        - Verschlussband Lutte
-        - Brandfluchthaube
-        - Dunggabel
-        - "Bogens\xE4ge"
-        - Handlampe
-        - Einweghandschuhe
-        - Arbeitsleine
-        - Feuerwehrgurt
-        - "Hydrantenschl\xFCssel"
-        - Hohlstrahlrohr
-        - Tablet
-        - Lutte
-        - "Be- u. Entl\xFCftungsger\xE4t"
-        - Sappel
-        - Trainingsanzug
-        - Fernsteuerung Lichtmast
         - Saugschlauch Storz 38
-        - Wasserwerfer tragbar
-        - Trennschleifer
-        - Druckbegrenzungsventil
-        - Betankungsgarnitur
-        - "Rettungss\xE4ge"
-        - Mehrzweckleiter
-        - Druckschlauch C
-        - Schlauchbinden
-        - Stahlblecheimer
-        - "Ausr\xE4umhaken"
-        - Chemieschutzstiefel
-        - Steckleiter
-        - Warnweste
-        - "Kanalsp\xFClratte"
-        - 'Abgasschlauch Stromerzeuger
-
-          '
-        - "\xDCbergangsst\xFCck A125-A110"
-        - "\xDCbergangsst\xFCck B-C"
-        - Forsthelm
-        - Chemieschutzhandschuhe
-        - Heugabel
-        - "M\xFClls\xE4cke"
-        - Warndreieck "Feuerwehr"
-        - Schaumrohr S8/M8
-        - "Fettbrandl\xF6scher"
-        - Bodenteller Absperrstangen
-        - "Verl\xE4ngerungskabel"
-        - Krampen
-        - "L\xF6schrucksack Waldbrand"
-        - "Atemschutzger\xE4t"
-        - Brechstange
-        - Halligan-Tool
-        - Plane 4x4 m
+        - Tablet
+        - Hohlstrahlrohr
+        - Flankierer
         - Kurbel Schnellangriff
+        - "Bogens\xE4ge"
+        - "Druckl\xFCfter"
         - Hacke kurz
+        - Bodenteller Absperrstangen
+        - Rauchfang-Werkzeug
+        - Druckschlauch B
+        - "Handfunkger\xE4t"
+        - Forsthelm
+        - Fernsteuerung Lichtmast
+        - Druckbegrenzungsventil
+        - "W\xE4rmebildkamera"
+        - "L\xF6schlanze"
+        - Hydrofix
+        - "Schlauchbr\xFCcken"
+        - "M\xFClls\xE4cke"
+        - Trennschleifer
+        - Kombischaumrohr S4/M4
+        - Dunggabel
+        - Leichtschaumaufsatz
+        - Lutte
+        - "Ausr\xE4umhaken"
+        - Eingebaute Kabeltrommel
+        - "Zubeh\xF6r Spineboard"
+        - Dieselkanister
+        - "ABC-Pulverl\xF6scher"
+        - Abschleppseil
+        - Absperrband
+        - Wasserwerfer Dach
+        - Spitzschaufel
+        - Stromerzeuger
+        - "Be- u. Entl\xFCftungsger\xE4t"
+        - Plane 4x4 m
+        - Warndreieck "Feuerwehr"
+        - "L\xF6schdecke"
+        - Schaumrohr S8/M8
+        - Gorgui Werkzeug
+        - Kombikanister
+        - Druckschlauch C
+        - Einweghandschuhe
+        - D-Saugschlauch
+        - "Fluterbr\xFCcke"
+        - Spineboard
+        - Chemieschutzanzug Stufe 2
+        - Brandfluchthaube
+        - Trainingsanzug
+        - Rauchvorhang
+        - "\xDCbergangsst\xFCck A-B"
+        - Kabelbinder
+        - Warnweste
+        - Absturzsicherung
+        - "Einrei\xDFhaken"
+        - Stativ
+        - Schaummittel
+        - Waldbrandrucksack
+        - Atemschutz-Vollmaske
+        - Hacke lang
+        - "Handf\xE4ustel"
+        - Falttank 3000 l
         - Tauchpumpe
+        - Chemieschutzstiefel
         - Verteiler
+        - Abgasschlauch Stromerzeuger
+        - Schlauchhalter
+        - Kabeltrommel 230 V
+        - "CO2-L\xF6scher"
+        - "A125-Kupplungsschl\xFCssel"
+        - Anhaltekelle
+        - Lichtfluter
         - Rettungsleine
-        - Pularskiaxt
+        - Schlauchtragekorb
+        - Schachthaken
+        - "Gro\xDFrauml\xFCfter"
+        - Absperrstangen
+        - Sappel
+        - Hydroschild C
+        - Strahlrohr B
+        - "Stra\xDFenbesen"
+        - Zumischer Z8
+        - Mehrzweckleiter
+        - Werkzeugkasten
+        - Halligan-Tool
+        - Schlauchhaspel
+        - "Atemschutzger\xE4t"
+        - Arbeitsleine
+        - "Sch\xE4kel"
+        - Meldertasche
+        - Benzinkanister
+        - Steckleiter
+        - Kabeltrommel 400 V
+        - "Sammelst\xFCck BB-A"
+        - Brechstange
+        - Feuerwehraxt
+        - "ABC-Kupplungsschl\xFCssel"
+        - Alurandschaufel
+        - Krampen
+        - "Atemschutz \xDCberwachungstafel"
+        - Handlampe
+        - Schnittschutzbeinlinge
         - "Ersatzkette Motors\xE4ge"
-        - Reserveflasche
-        - Schuttwanne
+        - Verschlussband Lutte
+        - Hygienestation
+        - "HD-Kupplungsschl\xFCssel"
+        - Krankenhausdecke
+        - Bolzenschneider
+        - "\xDCbergangsst\xFCck A125-A110"
+        - "Fettbrandl\xF6scher"
+        - Feuerwehrgurt
+        - "Motors\xE4ge"
+        - Schlauchpaket
+        - Steckleiter Verbindungsteil
+        - "Rettungss\xE4ge"
+        - Chemieschutzhandschuhe
+        - Wasserwerfer tragbar
+        - "L\xF6schrucksack Waldbrand"
+        - "\xD6lbindemittel"
+        - Vorschlaghammer
+        - Heugabel
+        - "Kanalsp\xFClratte"
+        - Warnblitzleuchte
+        - "Verschlussband L\xFCfter"
         - "K\xFChlbox"
         - Wasserdieb
+        - Schuttwanne
+        - "Verl\xE4ngerungskabel"
+        - "\xDCbergangsst\xFCck B-C"
+        - Stahlblecheimer
         - "Ersatzkette Rettungss\xE4ge"
-        - Feuerwehraxt
-        - "Handfunkger\xE4t"
-        - Warnblitzleuchte
-        - Stativ
-        - "A125-Kupplungsschl\xFCssel"
+        - Betankungsgarnitur
+        - Pularskiaxt
+        - "Einf\xFCllstutzen"
+        - Reserveflasche
+        - "Hydrantenschl\xFCssel"
+        - "Schn\xFCrleinen"
+        - "St\xFCtzkr\xFCmmer"
+        - Schlauchbinden
       high_score: 0
       high_strike: 0
       high_strike_image: 0
@@ -1910,102 +1856,99 @@ Hallein:
       current:
         correct_answers: 0
         tool_list:
-        - Trennschleifer
-        - Rettungsleine
         - Gefahrguthelfer
-        - Notrettungsset
-        - Brandfluchthaube
-        - Kurbel Schnellangriff
-        - Absperrband
-        - Powerflares
-        - Suchstock
-        - "Zylinder Verl\xE4ngerung"
-        - "S\xE4bels\xE4ge"
-        - Dieselkanister
-        - Steuerung Lichtmast
-        - "Schl\xFCsselkasten"
         - Erste-Hilfe-Rucksack
-        - Schwelleraufsatz
-        - Anhaltekelle
-        - Halligan-Tool
         - Stab-Fast
-        - Suchscheinwerfer
+        - Brandfluchthaube
+        - Sauerstoff-Selbstretter
+        - "Druckl\xF6schger\xE4t BioVersal"
+        - Bolzenschneider
+        - Schneeketten
         - FFP2-Maske
+        - Werkzeugkasten
+        - Handlampe
+        - Rettungsleine
+        - Warnblitzleuchte
+        - "\xD6lbindemittel"
+        - Brechstange kurz
+        - Kurbel Schnellangriff
+        - "Verl\xE4ngerungskabel"
+        - "Gasmessger\xE4t"
+        - Einweghandschuhe
+        - "L\xF6schdecke"
+        - Alu-Rettungsdecke
+        - Glasmanagement Set
+        - Akku-Schere
+        - Kabeltrommel 230 V
+        - Stab-Pack
+        - "Anh\xE4ngekupplung Kugelkopf"
+        - Steuerung Lichtmast
+        - Halligan-Tool
+        - "Stra\xDFenbesen"
+        - Doppelaxt
+        - Schwelleraufsatz
+        - Notfallwanne
+        - Hacke kurz
+        - Trennschleifer
+        - Anhaltekelle
+        - Patientenschutz
+        - Notrettungsset
+        - RLS-Beleuchtungssystem
+        - "Schn\xFCrleinen"
+        - "M\xFClls\xE4cke"
+        - "Akku-Kombiger\xE4t"
+        - "Handfunkger\xE4t"
+        - Schutzhandschuhe
+        - Stativ
+        - Verkehrsleitkegel
+        - Teleskopleiter
+        - Absperrband
+        - Schaufeltrage
+        - "Anh\xE4ngekupplung\nMaulkupplung"
+        - Arbeitsmesser
+        - "Atemschutz \xDCberwachungstafel"
+        - Akku-Lampe
+        - Suchstock
+        - "W\xE4rmebildkamera"
+        - Warndreieck "Feuerwehr"
+        - Meldertasche
+        - Dieselkanister
+        - Druckschlauch C
+        - Arbeitsleine
+        - Adapter 7/13-Pol
+        - "Handf\xE4ustel"
+        - "Zylinder Verl\xE4ngerung"
+        - "Unterlegh\xF6lzer"
         - Sichtschutz
         - "Zubeh\xF6r Schere/Spreizer"
-        - Krankenhausdecke
-        - Warndreieck "Feuerwehr"
-        - Airbag Safe
-        - "Anh\xE4ngekupplung\nMaulkupplung"
-        - "Schn\xFCrleinen"
-        - Handscheinwerfer
-        - Hacke kurz
-        - Einweghandschuhe
-        - "Sch\xE4kel"
-        - Rettungswerkzeug
-        - "M\xFClls\xE4cke"
-        - Brechstange lang
-        - Atemschutz-Vollmaske
-        - Warnweste
-        - Akku-Zylinder
-        - Werkzeugkasten
-        - Warnblitzleuchte
-        - "ABC-Pulverl\xF6scher"
-        - "Handfunkger\xE4t"
-        - Verkehrsleitkegel
-        - "Unterlegh\xF6lzer"
-        - Doppelaxt
-        - "Anh\xE4ngekupplung Kugelkopf"
-        - Bolzenschneider
-        - Schutzhandschuhe
-        - "Gasmessger\xE4t"
-        - Handlampe
-        - Akku-Lampe
-        - Schneeketten
-        - "L\xF6schanlage"
-        - "Verl\xE4ngerungskabel"
-        - Adapter 7/13-Pol
-        - Notfallwanne
-        - Arbeitsleine
-        - "Druckl\xF6schger\xE4t BioVersal"
-        - Schutzbrille
-        - Patientenschutz
-        - Schleifkorbtrage
-        - Alurandschaufel
-        - "ABC-Kupplungsschl\xFCssel"
-        - Alu-Rettungsdecke
-        - Meldertasche
-        - Sauerstoff-Selbstretter
-        - "\xD6lbindemittel"
-        - Abschleppseil
-        - "Handf\xE4ustel"
-        - RLS-Beleuchtungssystem
-        - "W\xE4rmebildkamera"
-        - "Akku-Kombiger\xE4t"
         - "Einf\xFCllstutzen"
-        - 'Notstromkabel Schere/Spreizer
-
-          '
-        - Stab-Pack
-        - Arbeitsmesser
-        - Stativ
-        - Unterlegsgestell
-        - Stromerzeuger
-        - Teleskopleiter
-        - Schaufeltrage
-        - Akku-Schere
-        - Feuerwehrgurt
-        - Kabeltrommel 230 V
+        - Schutzbrille
         - Akku-Spreizer
-        - "Stra\xDFenbesen"
-        - "Atemschutz \xDCberwachungstafel\n"
-        - "L\xF6schdecke"
-        - Glasmanagement Set
-        - Druckschlauch C
-        - Tablet
-        - Brechstange kurz
-        - "Atemschutzger\xE4t"
+        - "ABC-Kupplungsschl\xFCssel"
+        - Brechstange lang
+        - Warnweste
         - "Akku-Ladeger\xE4t"
+        - Krankenhausdecke
+        - "Atemschutzger\xE4t"
+        - Atemschutz-Vollmaske
+        - Suchscheinwerfer
+        - Unterlegsgestell
+        - "Schl\xFCsselkasten"
+        - Notstromkabel Schere/Spreizer
+        - Handscheinwerfer
+        - Rettungswerkzeug
+        - "L\xF6schanlage"
+        - Feuerwehrgurt
+        - "Sch\xE4kel"
+        - Tablet
+        - Powerflares
+        - Abschleppseil
+        - Akku-Zylinder
+        - "ABC-Pulverl\xF6scher"
+        - Alurandschaufel
+        - "S\xE4bels\xE4ge"
+        - Stromerzeuger
+        - Schleifkorbtrage
       high_score: 0
       high_strike: 0
       high_strike_image: 0

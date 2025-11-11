@@ -54,13 +54,10 @@ class Firetruck_Training_With_Images(Screen, BaseMethods):
         self.play()
 
     def play(self):
-        # TODO BUG! not writing to scores.yaml > percentage correctly after play through
-
         self.game = GameCore()
 
         self.load_default_tool_list()
 
-        # self.get_current_tool_list()
         self.load_score_content()
 
         self.check_tool_list()
@@ -70,8 +67,6 @@ class Firetruck_Training_With_Images(Screen, BaseMethods):
         self.prewarm_room_images()
 
         self.reset_progress_bar()
-
-        # self.load_high_score()
 
         self.reset_score()
 
@@ -125,27 +120,7 @@ class Firetruck_Training_With_Images(Screen, BaseMethods):
         self.accept_answers = True
 
         if len(self.current_tool_list) == 0:
-            # self.reset_current_tool_list()
-
-            # self.save_truck_data(key="set", value=self.current_tool_list, current=True)
-
             if not self.first_tool:
-                # self.correct_answers = self.get_truck_data(
-                #     "correct_answers", current=True
-                # )
-
-                # percentage = round(
-                #     (self.correct_answers / self.tool_amount) * 100.0,
-                #     1,
-                # )
-
-                # results = self.get_truck_data("percentages")
-                # if results is None:
-                #     results = []
-
-                # keep in 2 lines; append is returning None
-                # results.append(percentage)
-                # self.save_truck_data(key="percentages", value=results)
                 self.percentages.append(self.current_percentage)
 
                 # all tools have been trained
@@ -160,7 +135,6 @@ class Firetruck_Training_With_Images(Screen, BaseMethods):
                 )
                 info_popup.open()
 
-            # self.save_truck_data(key="correct_answers", value=0, current=True)
             self.save_score_percentage()
 
             self.reset_current_tool_list()
@@ -169,9 +143,6 @@ class Firetruck_Training_With_Images(Screen, BaseMethods):
 
         if len(self.current_tool_list) == self.tool_amount // 2:
             # half of tools have been trained
-
-            # self.correct_answers = self.get_truck_data("correct_answers", current=True)
-
             info_popup = TextPopup(
                 message=TrainingText_HalfTools(
                     self.tool_amount,
@@ -191,14 +162,6 @@ class Firetruck_Training_With_Images(Screen, BaseMethods):
         layout.clear_widgets()
         layout.canvas.before.clear()
 
-        # # first tool will be rendered without prewarm
-        # # then prewarm next tool image
-        # if self.prewarmed_question:
-        #     self.current_tool_question = self.prewarmed_question
-        #     tool_image_prewarmed = True
-        # else:
-        #     # troubleshooting: fix first popped tool
-        #     # self.set_first_tool("Unterlegplatte")  # for testing
         self.current_tool_name = self.current_tool_list.pop()
 
         self.current_tool_question = [
@@ -246,14 +209,18 @@ class Firetruck_Training_With_Images(Screen, BaseMethods):
         if not self.accept_answers:  # Check if answer processing is enabled
             return  # Ignore the button press if answer processing is disabled
 
-        # self.save_truck_data(key="set", value=self.current_tool_list, current=True)
-
         # do not accept identical answer
         if instance.text in self.current_tool_question.room_answered:
             return
 
+        if len(self.current_tool_question.rooms_to_be_answered) <= 1:
+            self.single_correct_answer = True
+        else:
+            self.single_correct_answer = False
+
         # process actual answer
         if instance.text in self.current_tool_question.rooms:
+            # TODO if multiple correct answers possible, increment correct answer only once!
             self.correct_answer()
             self.answer_correct = True
 

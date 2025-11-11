@@ -497,6 +497,7 @@
     name: "firetruck_training_with_images"
 
     # IDs
+    firetruck_layout: firetruck_layout
     firetruck_label: firetruck_label
     percentage_label: percentage_label
     high_score_label: high_score_label
@@ -524,14 +525,19 @@
                 font_size: dp(32) * max(0.8, min(1.5, Window.width / dp(600)))
                 on_release:
                     root.go_back()
-    
-            Label:
+
+            BoxLayout:
                 size_hint_x: 1.67
-                id: firetruck_label
-                font_size: dp(20) * max(0.8, min(1.5, Window.width / dp(600)))
-                halign: "left"
-                valign: "middle"
-                text_size: self.size
+                orientation: 'vertical'
+                id: firetruck_layout
+
+                Label:
+                    size_hint_y: 1
+                    id: firetruck_label
+                    font_size: dp(20) * max(0.8, min(1.5, Window.width / dp(600)))
+                    halign: "left"
+                    valign: "middle"
+                    text_size: self.size
             
             BoxLayout:
                 size_hint_x: 1.67
@@ -601,6 +607,7 @@
     name: "firetruck_game"
 
     # IDs
+    firetruck_layout: firetruck_layout
     firetruck_label: firetruck_label
     extra_time_label: extra_time_label
     tool_number_label: tool_number_label
@@ -632,6 +639,7 @@
             BoxLayout:
                 size_hint_x: 1.67
                 orientation: 'vertical'
+                id: firetruck_layout
 
                 Label:
                     size_hint_y: 1
@@ -641,14 +649,14 @@
                     valign: "middle"
                     text_size: self.size
                 
-                Label:
-                    size_hint_y: 1
-                    id: extra_time_label
-                    font_size: dp(20) * max(0.8, min(1.5, Window.width / dp(600)))
-                    halign: "center"
-                    valign: "middle"
-                    text_size: self.size
-                    color: (0,1,0,1)
+                #Label:
+                #    size_hint_y: 1
+                #    id: extra_time_label
+                #    font_size: dp(20) * max(0.8, min(1.5, Window.width / dp(600)))
+                #    halign: "center"
+                #    valign: "middle"
+                #    text_size: self.size
+                #    color: (0,1,0,1)
 
             BoxLayout:
                 size_hint_x: 1.67
@@ -696,9 +704,20 @@
             height: dp(2)
             id: progress_bar
         
+        # EXTRA TIME LABEL
+        Label:
+            size_hint_y: 0.3
+            id: extra_time_label
+            font_size: dp(20) * max(0.8, min(1.5, Window.width / dp(600)))
+            halign: "center"
+            valign: "middle"
+            text_size: self.size
+            color: (0,1,0,1)
+        
         # TOOL
         Label:
-            size_hint_y: 2
+            # size_hint_y: 2
+            size_hint_y: 1.7
             id: tool_label
             font_size: dp(33) * max(0.8, min(1.5, Window.width / dp(600)))
 

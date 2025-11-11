@@ -213,10 +213,11 @@ def break_tool_name(tool_name: str, max_character: int = 27) -> str:
     if len(tool_name) >= max_character:
         max_character_half = max_character // 2 + 1
         tool_name_lst: list = tool_name[max_character_half:].split(" ")
-        return (
+        output = (
             tool_name[:max_character_half]
             + tool_name_lst[0]
             + "\n"
             + " ".join(tool_name_lst[1:])
         )
+        return output.strip()
     return tool_name

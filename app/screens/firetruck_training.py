@@ -46,10 +46,6 @@ class Firetruck_Training(Screen, BaseMethods):
 
         self.load_default_tool_list()
 
-        # self.get_current_tool_list()
-
-        # # LOAD SCORES.YAML HERE
-        # # self.load_high_score()
         self.load_score_content()
 
         self.check_tool_list()
@@ -64,33 +60,9 @@ class Firetruck_Training(Screen, BaseMethods):
         self.accept_answers = True
 
         if len(self.current_tool_list) == 0:
-            # self.reset_current_tool_list()
-
-            # TODO move to save
-            # self.save_truck_data(key="set", value=self.tool_list, current=True)
-
             self.percentages.append(self.current_percentage)
 
             if not self.first_tool:
-                # self.correct_answers = self.get_truck_data(
-                #     "correct_answers", current=True
-                # )
-
-                # percentage = round(
-                #     (self.current_correct_answers / self.tool_amount) * 100.0,
-                #     1,
-                # )
-
-                # results = self.get_truck_data("percentages")
-                # if results is None:
-                #     results = []
-
-                # keep in 2 lines; append is returning None
-                # self.percentages.append(self.current_percentage)
-
-                # TODO move to save
-                # self.save_truck_data(key="percentages", value=results)
-
                 # all tools have been trained
                 info_popup = TextPopup(
                     message=TrainingText_AllTools(
@@ -103,9 +75,6 @@ class Firetruck_Training(Screen, BaseMethods):
                 )
                 info_popup.open()
 
-            # TODO move to save
-            # self.save_truck_data(key="correct_answers", value=0, current=True)
-
             self.save_score_percentage()
 
             self.reset_current_tool_list()
@@ -114,9 +83,6 @@ class Firetruck_Training(Screen, BaseMethods):
 
         if len(self.current_tool_list) == self.tool_amount // 2:
             # half of tools have been trained
-
-            # self.correct_answers = self.get_truck_data("correct_answers", current=True)
-
             info_popup = TextPopup(
                 message=TrainingText_HalfTools(
                     self.tool_amount,
@@ -153,11 +119,14 @@ class Firetruck_Training(Screen, BaseMethods):
         if not self.accept_answers:  # Check if answer processing is enabled
             return  # Ignore the button press if answer processing is disabled
 
-        # self.save_truck_data(key="set", value=self.current_tool_list, current=True)
-
         # do not accept identical answer
         if instance.text in self.current_tool_question.room_answered:
             return
+
+        if len(self.current_tool_question.rooms_to_be_answered) <= 1:
+            self.single_correct_answer = True
+        else:
+            self.single_correct_answer = False
 
         # process actual answer
         if instance.text in self.current_tool_question.rooms:
@@ -182,7 +151,4 @@ class Firetruck_Training(Screen, BaseMethods):
 
         Clock.schedule_once(self.next_tool, settings.FIRETRUCK_TRAINING_FEEDBACK_SEC)
 
-        # SAVE TO SCORES.YAML
-        # Use delay time for saving to avoid slowing down UI responsiveness
-        # self.save_truck_data(key="set", value=self.current_tool_list, current=True)
         self.save_score_content()

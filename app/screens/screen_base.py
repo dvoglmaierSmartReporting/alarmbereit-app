@@ -65,13 +65,13 @@ class BaseMethods(FontSizeMixin):
     def on_leave(self):
         self.unbind_font_scaling()
 
-    # def load_high_score(self):
-    #     self.current_high_score = self.get_truck_data(self.get_scores_key())
     def load_score_content(self):
         score_content = read_scores_file()
 
+        self.selected_city_short = map_selected_city_2short_name(self.selected_city)
+
         score_truck = (
-            score_content.get(self.selected_city)
+            score_content.get(self.selected_city_short)
             .get("firetrucks")
             .get(self.selected_firetruck)
         )
@@ -100,13 +100,13 @@ class BaseMethods(FontSizeMixin):
 
         score_content = read_scores_file()
 
-        score_truck_content = score_content[self.selected_city]["firetrucks"][
+        score_truck_content = score_content[self.selected_city_short]["firetrucks"][
             self.selected_firetruck
         ]
 
         score_truck_content.update(truck_content)
 
-        score_content[self.selected_city]["firetrucks"][
+        score_content[self.selected_city_short]["firetrucks"][
             self.selected_firetruck
         ] = score_truck_content
 
@@ -120,7 +120,7 @@ class BaseMethods(FontSizeMixin):
 
         score_content = read_scores_file()
 
-        score_content[self.selected_city]["firetrucks"][self.selected_firetruck][
+        score_content[self.selected_city_short]["firetrucks"][self.selected_firetruck][
             "percentages"
         ] = self.percentages
 
@@ -136,7 +136,6 @@ class BaseMethods(FontSizeMixin):
         self.ids.score_label.text = str(self.game.score)
 
     def update_high_score_label(self):
-        # self.ids.high_score_label.text = f"Best: {str(self.current_high_score)}"
         self.ids.high_score_label.text = f"Best: {str(self.high)}"
 
     def update_tool_number_label_ios(self):
@@ -181,10 +180,9 @@ class BaseMethods(FontSizeMixin):
             )
 
     def update_percentage_label(self):
-        # correct_answers = self.get_truck_data("correct_answers", current=True)
-
         if self.tool_amount - len(self.current_tool_list) == 0:
             self.current_percentage = "-"
+
         else:
             self.current_percentage = round(
                 (
@@ -200,8 +198,7 @@ class BaseMethods(FontSizeMixin):
             f"[color=00b300][size=65]✓[/size][/color] {self.current_percentage:.1f} %"
             if self.current_percentage != "-"
             else self.current_percentage
-        )  # ✓ ☑ 🎯
-        # Ensure the label uses a font that supports Unicode symbols
+        )
         self.ids.percentage_label.font_name = "DejaVuSans"  # or "Roboto" if available
 
     def reset_score(self, *arg):
@@ -217,12 +214,6 @@ class BaseMethods(FontSizeMixin):
             self.selected_firetruck, self.selected_city
         )
         self.tool_amount = len(self.default_tool_list)
-
-        # # save set_length to scores.yaml
-        # self.save_truck_data(
-        #     key="set_length",
-        #     value=self.tool_amount,
-        # )
 
     def get_current_tool_list(self):
         self.current_tool_list = self.get_truck_data("set", current=True)
@@ -286,7 +277,6 @@ class BaseMethods(FontSizeMixin):
         )
 
     def update_timer(self, *args):
-        # update game time
         self.update_progress_bar()
 
         if self.time_left > 0.0:
@@ -343,76 +333,19 @@ class BaseMethods(FontSizeMixin):
         except KeyError:
             raise NotImplementedError("self.current_screen not defined!")
 
-    def get_truck_data(self, key: str, current: bool = False):
-        if current:
-            return (
-                read_scores_file()
-                .get(map_selected_city_2short_name(self.selected_city), {})
-                .get("firetrucks", {})
-                .get(self.selected_firetruck, {})
-                .get("current", {})
-                .get(key, 0)
-            )
-
-        return (
-            read_scores_file()
-            .get(map_selected_city_2short_name(self.selected_city), {})
-            .get("firetrucks", {})
-            .get(self.selected_firetruck, {})
-            .get(key, 0)
-        )
-
-    # def save_truck_data(
-    #     self, key: str, value: int | float, current: bool = False
-    # ) -> None:
-    #     if current:
-    #         save2scores_file(
-    #             city=self.selected_city,
-    #             questions="firetrucks",
-    #             truck_or_comp=self.selected_firetruck,
-    #             key=key,
-    #             value=value,
-    #             current=True,
-    #         )
-    #     else:
-    #         save2scores_file(
-    #             city=self.selected_city,
-    #             questions="firetrucks",
-    #             truck_or_comp=self.selected_firetruck,
-    #             key=key,
-    #             value=value,
-    #             current=False,
-    #         )
-
     def correct_answer(self):
         self.increment_score()
 
         self.game.answers_correct += 1
 
-        # self.save_truck_data(
-        #     key="correct_answers",
-        #     value=self.get_truck_data("correct_answers", current=True) + 1,
-        #     current=True,
-        # )
-        self.current_correct_answers += 1
+        # increment if all tool answers are correct
+        if self.single_correct_answer:
+            self.current_correct_answers += 1
 
-        # TODO move to save
-        # self.save_truck_data(
-        #     key="correct_answers",
-        #     value=self.correct_answers,
-        #     current=True,
-        # )
-
-        # if self.game.score > self.current_high_score:
-        #     self.current_high_score = self.game.score
         if self.game.score > self.high:
             self.high = self.game.score
 
             self.update_high_score_label()
-
-            # TODO move to save, incl condition!
-            # self.save_truck_data(key=self.get_scores_key(), value=self.game.score)
-            # self.save_truck_data(key=self.get_scores_key(), value=self.high)
 
         self.feedback_green = True
 
@@ -428,16 +361,16 @@ class BaseMethods(FontSizeMixin):
 
         # indicate if correct or incorrect answer
         # for single correct answer
-        if len(self.current_tool_question.rooms_to_be_answered) <= 1:
+        if self.single_correct_answer:
             # always identify and indicate the correct answer
             # for child in children:
             for child in float_layout.children:
                 if isinstance(child, Button):
                     if child.text in self.current_tool_question.rooms:
-                        child.background_color = (0, 1, 0, 1)
+                        child.background_color = (0, 1, 0, 1)  # green
             # if, indicate incorrect answer
             if instance.text not in self.current_tool_question.rooms:
-                instance.background_color = (1, 0, 0, 1)
+                instance.background_color = (1, 0, 0, 1)  # red
 
         # for multiple correct answers
         else:
@@ -446,18 +379,16 @@ class BaseMethods(FontSizeMixin):
 
             if instance.text not in self.current_tool_question.rooms:
                 # if, indicate incorrect and all correct answers and close
-                instance.background_color = (1, 0, 0, 1)
+                instance.background_color = (1, 0, 0, 1)  # red
                 # for child in children:
                 for child in float_layout.children:
                     if isinstance(child, Button):
                         if child.text in self.current_tool_question.rooms:
-                            child.background_color = (0, 1, 0, 1)
-
-                return False  # pass
+                            child.background_color = (0, 1, 0, 1)  # green
 
             else:
                 # answer in correct answers
-                instance.background_color = (0, 0, 1, 1)
+                instance.background_color = (0, 0, 1, 1)  # blue
 
                 if self.current_screen == "firetruck_training_with_images":
                     self.tool_label.text += "\n"
@@ -467,6 +398,8 @@ class BaseMethods(FontSizeMixin):
                     self.ids.tool_label.text += strings.HINT_STR_MULTIPLE_ANSWERS
 
                 return True
+
+        return False  # pass
 
     def end_game(self, factor: int) -> None:
         add2running_score(
@@ -504,7 +437,7 @@ class BaseMethods(FontSizeMixin):
             change_screen_to("firetruck_menu")
 
         elif self.current_screen == "firetruck_game":
-            self.end_game()  # screen method
+            self.end_game()
 
         elif self.current_screen in [
             "highscore_screen",
